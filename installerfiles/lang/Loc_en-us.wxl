@@ -4,6 +4,8 @@
 	<String Id="ManufacturerName">David Meier</String>
 	<String Id="JREError">Java Runtime Environment is not installed or outdated. Please install Oracle JRE 1.6 or later.</String>
 	<String Id="VersionError">A newer version of EasyTournament is already installed.</String>
-	<String Id="LaunchET">Launch EasyTournament</String>
+	<String Id="ShowReadme">Readme anzeigen</String>
 	<String Id="CompleteDesc">The complete installation.</String>
+	<String Id="LANG">1033</String>
+	<String Id="LicenseRtf" Overridable="yes">..\LICENSE.rtf</String>  
 </WixLocalization>

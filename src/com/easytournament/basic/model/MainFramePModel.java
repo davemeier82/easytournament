@@ -4,6 +4,7 @@ import java.awt.Desktop;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
+import java.net.URI;
 import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
@@ -266,12 +267,27 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
               }
             }
             catch (Exception e) {
-              ErrorLogger.getLogger().throwing("MainFramePModel", "update", e);
-              ErrorDialog ed = new ErrorDialog(Organizer.getInstance()
-                  .getMainFrame(), ResourceManager.getText(Text.ERROR),
-                  e.toString(), e);
-              ed.setVisible(true);
-              e.printStackTrace();
+              try {
+                if (Desktop.isDesktopSupported()) {
+                  Desktop desktop = Desktop.getDesktop();
+                  desktop.browse(new URI(ResourceManager.getText(Text.ONLINEHELPLINK)));
+                }
+                else {
+                  JOptionPane.showMessageDialog(organizer.getMainFrame(),
+                      ResourceManager.getText(Text.OPEN_FILE_BROWSER)+"\n"
+                          + ResourceManager.getText(Text.ONLINEHELPLINK),
+                      ResourceManager.getText(Text.ERROR),
+                      JOptionPane.ERROR_MESSAGE);
+                }
+              }
+              catch (Exception ex) {
+                ErrorLogger.getLogger().throwing("MainFramePModel", "update", ex);
+                ErrorDialog ed = new ErrorDialog(Organizer.getInstance()
+                    .getMainFrame(), ResourceManager.getText(Text.ERROR),
+                    ex.toString(), ex);
+                ed.setVisible(true);
+                ex.printStackTrace();
+              }
             }
             break;
           case IMPORT: {

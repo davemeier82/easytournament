@@ -1,8 +1,11 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-   <Product Id="*" UpgradeCode="12345678-1234-1234-1234-111111111111" 
-            Name="!(loc.ApplicationName)" Version="0.5.7" Manufacturer="!(loc.ManufacturerName)" Language="1033">
-      <Package InstallerVersion="300" Compressed="yes" Comments="Windows Installer Package"/>
+   <Product Id="*" UpgradeCode="6F8C1A8E-3974-4A74-9E37-0B43AE0E16FE" 
+            Name="!(loc.ApplicationName)" Version="0.5.7" Manufacturer="!(loc.ManufacturerName)" Language="1033" Codepage="1252">
+			
+      <Package Id="*" InstallerVersion="300" Compressed="yes" Description="!(loc.ApplicationName) 0.5.7 Installer" 
+		Comments="!(loc.ApplicationName) Installer" Manufacturer="!(loc.ManufacturerName)"/>
+	  
       <Media Id="1" Cabinet="easytournament.cab" EmbedCab="yes"/>
 	  <Icon Id="ProductIcon" SourceFile="../res/icons/start.ico"/>
       <Property Id="ARPPRODUCTICON" Value="ProductIcon"/>
@@ -15,7 +18,7 @@
 		<RegistrySearch Id="JRE_CURRENT_VERSION_REGSEARCH" Root="HKLM" Key="SOFTWARE\JavaSoft\Java Runtime Environment" Name="CurrentVersion" Type="raw" />
 	  </Property>
 	  <Condition Message="!(loc.JREError)"><![CDATA[Installed OR (JAVA_CURRENT_VERSION >= "1.6")]]></Condition>
-	  <Upgrade Id="19345678-1234-1234-1234-222222222222">
+	  <Upgrade Id="6F8C1A8E-3974-4A74-9E37-0B43AE0E16FE">
          <UpgradeVersion Minimum="0.5.7" OnlyDetect="yes" Property="NEWERVERSIONDETECTED"/>
          <UpgradeVersion Minimum="0.0.0" Maximum="0.5.7" IncludeMinimum="yes" IncludeMaximum="no" 
                          Property="OLDERVERSIONBEINGUPGRADED"/>	  
@@ -25,28 +28,53 @@
       <Directory Id="TARGETDIR" Name="SourceDir">
          <Directory Id="ProgramFilesFolder">
             <Directory Id="INSTALLDIR" Name="!(loc.ApplicationName)">
-               <Component Id="ApplicationFiles" Guid="12345678-1234-1234-1234-222222222222" KeyPath="yes" >
+               <Component Id="ApplicationFiles" Guid="EDB5FFC1-642E-45E8-8EEF-05AC1FB0F40E" KeyPath="yes" >
                   <File Id="StartFile" Source="../Release/EasyTournament.exe"/>
 				  <File Id="ReadmeFile" Source="../README.txt"/>
 				  <File Id="LicenseFile" Source="../LICENSE.txt"/>
                </Component>
+			   <Component Id="ApplicationFilesDe" Guid="14FCF52E-B5DD-4A6A-ACAE-8A98C9A82E8F" KeyPath="yes" >
+				  <Condition>!(loc.LANG) = 1031</Condition>
+				  <File Id="ReadmeFileDe" Source="../README_DEUTSCH.txt"/>
+				  <File Id="LicenseFileDe" Source="../LIZENZ.txt"/>
+               </Component>
 			   <Directory Id="helpdir" Name ="help">
-				   <Component Id="helpFolder" Guid="13345678-1234-1234-1234-222222222222" KeyPath="yes"> 
+					<Component Id="helpFolder" Guid="F4A698D4-9C84-4488-8CE8-1EF43F1F0B85" KeyPath="yes"> 
 						<CreateFolder /> 
-					</Component> 
+					</Component>
+					<Directory Id="helpdirDe" Name ="de">
+						<Component Id="helpFolderDe" Guid="F7D3E9F1-39AB-4FDF-AB96-1B3D1D3448AD" KeyPath="yes"> 
+							<CreateFolder /> 
+						</Component> 
+					</Directory>
+					<Directory Id="helpdirEn" Name ="en">
+						<Component Id="helpFolderEn" Guid="7F252A84-D79F-4CB3-A2FB-16C404428753" KeyPath="yes"> 
+							<CreateFolder /> 
+						</Component> 
+					</Directory>
+					<Component Id="HelpFiles" Guid="331CD482-5217-41BF-B8BF-EA8ABD302CA3" KeyPath="yes" >
+					  <File Id="helpcssFile" Source="../help/style.css"/>
+					  <File Id="helppropFile" Source="../help/help.properties"/>
+					</Component>
+					<Component Id="HelpPropFilesDe" Guid="293230E7-404C-4B27-ACE3-82E3BB31DCAC" KeyPath="yes" >
+					  <File Id="helppropFileDe" Source="../help/help_de.properties"/>
+					</Component>
+					<Component Id="HelpPropFilesEn" Guid="114C9843-35E2-4C0E-9EB5-9BA58F88F7BC" KeyPath="yes" >
+					  <File Id="helppropFileEn" Source="../help/help_en.properties"/>
+					</Component>
 				</Directory>
 				<Directory Id="resdir" Name ="res">
-				   <Component Id="resFolder" Guid="14345678-1234-1234-1234-222222222222" KeyPath="yes"> 
+					<Component Id="resFolder" Guid="A4179963-0006-4199-82CF-C8C155131A26" KeyPath="yes"> 
 						<CreateFolder /> 
 					</Component> 
 				</Directory>
 				<Directory Id="libdir" Name ="lib">
-				   <Component Id="libFolder" Guid="15345678-1234-1234-1234-222222222222" KeyPath="yes"> 
+				   <Component Id="libFolder" Guid="078FC530-5A15-4015-9BF0-72904AE24525" KeyPath="yes"> 
 						<CreateFolder /> 
 					</Component> 
 				</Directory>
 				<Directory Id="sportsdir" Name ="sports">
-				   <Component Id="sportsFolder" Guid="16345678-1234-1234-1234-222222222222" KeyPath="yes"> 
+				   <Component Id="sportsFolder" Guid="F53F7DBA-2A58-4C36-9AF0-33A2C8C39241" KeyPath="yes"> 
 						<CreateFolder /> 
 					</Component> 
 				</Directory>
@@ -55,9 +83,9 @@
 		 
 		 <Directory Id="ProgramMenuFolder">
             <Directory Id="ProgramMenuSubfolder" Name="!(loc.ApplicationName)">
-               <Component Id="ApplicationShortcuts" Guid="12845678-1234-1234-1234-333333333333">
+               <Component Id="ApplicationShortcuts" Guid="84157511-87B3-4B06-8ACE-C0A8195B4402">
                   <Shortcut Id="ApplicationShortcut1" Name="!(loc.ApplicationName)" Description="!(loc.ApplicationName)" 
-                            Target="[INSTALLDIR]!(loc.ApplicationName).exe" WorkingDirectory="INSTALLDIR"/>
+                            Target="[INSTALLDIR]EasyTournament.exe" WorkingDirectory="INSTALLDIR"/>
                   <Shortcut Id="UninstallProduct"             
 						    Name="Uninstall"
 						    Description="Uninstalls !(loc.ApplicationName)"
@@ -75,37 +103,58 @@
          <RemoveExistingProducts After="InstallValidate"/>
       </InstallExecuteSequence>
 	  	  
-	  <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="!(loc.LaunchET)" />
+	  <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="!(loc.ShowReadme)" />
 	  <UI>
 		<UIRef Id="WixUI_Mondo" />
 		<UIRef Id="WixUI_ErrorProgressText" />
+		<Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDialogOverwritten">1</Publish>
+		<Publish Dialog="LicenseAgreementDialogOverwritten" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+		<Publish Dialog="LicenseAgreementDialogOverwritten" Control="Next" Event="NewDialog" Value="InstallDirDlg">LicenseAcceptedOverwritten = "1" AND NOT OLDER_VERSION_FOUND</Publish>
+		<Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="LicenseAgreementDialogOverwritten">1</Publish>
 		<Publish Dialog="ExitDialog"
 		Control="Finish" 
 		Event="DoAction" 
-		Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+		Value="LaunchReadme">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
 	  </UI>
+	  <WixVariable Id="WixUILicenseRtf" Value="../LICENSE.rtf" />
 	  
 	  <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
 	  
-	  <Property Id="WixShellExecTarget" Value="[#EasyTournament.exe]" />
-	  <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+	  <Property Id='NOTEPAD'>Notepad.exe</Property>
+	  <CustomAction Id='LaunchReadme' Property='NOTEPAD' ExeCommand='[INSTALLDIR]README.txt' Return='asyncNoWait' />	  
  
       <Feature Id="Complete" Title="!(loc.ApplicationName) 0.5.7" Description="!(loc.CompleteDesc)" Display="expand" Level="1" ConfigurableDirectory='INSTALLDIR'>
-		<Feature Id='MainProgram' Title='Program' Description='The main executable.' Level='1'>
+		<Feature Id='MainProgram' Title='Program' Description='The main executable.' Level='1' Absent='disallow' AllowAdvertise='no'>
 			<ComponentRef Id="helpFolder"/>
 			<ComponentRef Id="resFolder"/>
+			<ComponentRef Id="sportsFolder"/>	
 			<ComponentRef Id="libFolder"/>
-			<ComponentRef Id="sportsFolder"/>
 			<ComponentRef Id="ApplicationFiles"/>
-			<ComponentGroupRef Id="helpFiles"/>
+			<ComponentRef Id="ApplicationFilesDe"/>
+			<ComponentRef Id="HelpFiles"/>
 			<ComponentGroupRef Id="resFiles"/>
-			<ComponentGroupRef Id="libFiles"/>
 			<ComponentGroupRef Id="sportsFiles"/>
+			<ComponentGroupRef Id="libFiles"/>
 			<ComponentRef Id="ApplicationShortcuts"/>
+		</Feature>
+		<Feature Id='HelpEn' Title='English Help Files' Description='English Help Files' Level='1000' AllowAdvertise='no'>	
+			<ComponentRef Id="helpFolderEn"/>		
+			<ComponentRef Id="HelpPropFilesEn"/>
+			<ComponentGroupRef Id="helpFilesEn"/>
+			<Condition Level="1">
+			  !(loc.LANG) = 1033
+			</Condition>
+		</Feature>
+		<Feature Id='HelpDe' Title='German Help Files' Description='German Help Files' Level='1000' AllowAdvertise='no'>	
+			<ComponentRef Id="helpFolderDe"/>	
+			<ComponentRef Id="HelpPropFilesDe"/>			
+			<ComponentGroupRef Id="helpFilesDe"/>
+			<Condition Level="1">
+			  !(loc.LANG) = 1031
+			</Condition>
 		</Feature>
       </Feature>
 	  
-	  <Icon Id="EasyTournament.exe" SourceFile="../Release/EasyTournament.exe" />
    </Product>
 </Wix>
   
