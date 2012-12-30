@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="sport" version="0.0.1">
+	<sport id="floorball" textrb="floorball_text" iconrb="floorball_icons">
+	  <settings>
+		<game numgametimes="3" minpergametime="20" numovertimes="1" minperovertime="20" />
+		<points>
+		  <win home="3" away="3" />
+		  <draw home="1" away="1" />
+		  <defeat home="0" away="0" />
+		  <winot home="2" away="2" />
+		  <drawot home="1" away="1" />
+		  <defeatot home="1" away="1" />
+		  <winp home="2" away="2" />
+		  <defeatp home="1" away="1" />
+		</points>
+	  </settings>
+	  <rules>
+		<rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+	  </rules>
+	  <gameevents>
+		<gameevent type="GOAL" nameResourceId="GOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="1" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="PENALTY_GOAL" iconResourceId="PENALTYGOAL" pointsTeam="1" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="2MIN_PENALTY" iconResourceId="2MIN" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="5MIN_PENALTY" iconResourceId="5MIN" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="10MIN_PENALTY" iconResourceId="10MIN" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="MATCH_PENALTY" iconResourceId="MATCHPENALTY" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="OTHER" nameResourceId="MISSED_PENALTY" iconResourceId="MISSEDPENALTY" pointsTeam="0" pointsOpponent="0"/>
+	  </gameevents>
+	</sport>
+</filetype>

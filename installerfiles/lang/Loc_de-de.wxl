@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="de-de" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="ApplicationName">EasyTournament</String>
+	<String Id="ManufacturerName">David Meier</String>
+	<String Id="JREError">Java Runtime Environment ist nicht installiert oder zu alt. Bitte installieren Sie Oracle JRE 1.6 oder neuer.</String>
+	<String Id="VersionError">Eine neuere Version von EasyTournament ist bereits installiert.</String>
+	<String Id="LaunchET">EasyTournament starten</String>
+	<String Id="CompleteDesc">Komplette Installation.</String>
+</WixLocalization>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/substance"/>
+	<classpathentry kind="lib" path="lib/jgoodies-binding-2.5.0.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-forms-1.4.2.jar"/>
+	<classpathentry kind="lib" path="lib/jgoodies-common-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/trident-7.0.jar"/>
+	<classpathentry kind="lib" path="lib/laf-plugin-7.0.jar"/>
+	<classpathentry kind="lib" path="lib/laf-widget-7.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/jdom-1.1.3.jar"/>
+	<classpathentry kind="lib" path="lib/substance-7.0.jar"/>
+	<classpathentry kind="lib" path="lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/jgraphx-1.10.4.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

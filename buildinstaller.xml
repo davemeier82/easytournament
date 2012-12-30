@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<project name="EasyTournament" default="exeinstaller" basedir=".">
+	<property name="name" value="EasyTournament" />
+	<property name="version" value="0.5.7.0" />
+	<property name="author" value="David Meier" />
+	<property name="release" value="${name}" />
+	<property name="release.dir" location="release" />
+	<property name="jar.name" value="${name}.jar" />
+	<property name="jar.path" location="${release.dir}/${jar.name}" />
+	<property name="zip.name" value="${release}-${version}.zip" />
+	<property name="zip.path" location="${release.dir}/${zip.name}" />
+	<property name="launch4j.dir" location="C:/Program Files (x86)/Launch4j" />
+	<fileset id="jars" dir="lib">
+		<include name="*.jar" />
+	</fileset>
+	<path id="classpath">
+		<fileset dir="lib" includes="**/*.jar" />
+	</path>
+	<path id="cp">
+		<fileset refid="jars" />
+	</path>
+	<pathconvert property="classpath" refid="cp" pathsep=" " dirsep="/">
+		<map from="C:/workspace/TournamentOrganizer/lib" to="lib" />
+	</pathconvert>
+
+	<target name="clean">
+		<delete>
+			<fileset dir="bin" includes="**/*.*" />
+		</delete>
+	</target>
+
+	<target name="compile" depends="clean">
+		<javac target="1.6" source="1.6" srcdir="src" destdir="bin" classpathref="classpath" debug="true" debuglevel="lines,vars,source" includeantruntime="false" />
+	</target>
+	<target name="jar" depends="compile">
+		<delete>
+			<fileset dir="${release.dir}" includes="**/*.*" />
+		</delete>
+		<jar destfile="${jar.path}" basedir="bin">
+			<manifest>
+				<attribute name="Class-Path" value="${classpath}" />
+				<attribute name="Main-Class" value="com.easytournament.basic.Main" />
+				<attribute name="Implementation-Title" value="${name}" />
+				<attribute name="Implementation-Version" value="${version}" />
+				<attribute name="Implementation-Vendor" value="${author}" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="zip" depends="jar">
+		<delete>
+			<fileset dir="logs" includes="**/*.*" />
+		</delete>
+		<zip destfile="${zip.path}">
+			<zipfileset dir="${basedir}" prefix="${release}">
+				<include name="README*.txt" />
+				<include name="LICENSE.txt" />
+				<include name="LIZENZ.txt" />
+				<include name="${name}.bat" />
+			</zipfileset>
+			<zipfileset dir="release" includes="${jar.name}" prefix="${release}" />
+			<zipfileset dir="res" prefix="${release}/res" />
+			<zipfileset dir="sports" prefix="${release}/sports" />
+			<zipfileset dir="lib" prefix="${release}/lib" />
+			<zipfileset dir="help" prefix="${release}/help" />
+		</zip>
+		<delete file="${jar.path}" />
+	</target>
+
+	<target name="izpack" depends="etexe">
+		<copy file="installerfiles/installer.xml" toFile="installerfiles/install_rel.xml" overwrite="true">
+			<filterset>
+				<filter token="APP_NAME" value="${name}" />
+				<filter token="APP_VERSION" value="${version}" />
+			</filterset>
+		</copy>
+		<taskdef name="izpack" classpath="installerfiles/standalone-compiler.jar" classname="com.izforge.izpack.ant.IzPackTask" />
+		<izpack input="installerfiles/install_rel.xml" output="${release.dir}/ETInstaller-${version}.jar" basedir="." />
+		<delete file="installerfiles/install_rel.xml" />
+	</target>
+
+	<target name="yguard">
+		<taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" classpath="installerfiles/yguard.jar" />
+		<yguard>
+			<inoutpair in="release/EasyTournament.jar" out="release/EasyTournamentOb.jar" />
+
+			<externalclasses>
+				<pathelement location="lib/jcalendar.jar" />
+				<pathelement location="lib/jdom-1.1.3.jar" />
+				<pathelement location="lib/jgoodies-binding-2.5.0.jar" />
+				<pathelement location="lib/jgoodies-common-1.2.1.jar" />
+				<pathelement location="lib/jgoodies-forms-1.4.2.jar" />
+				<pathelement location="lib/laf-plugin-7.0.jar" />
+				<pathelement location="lib/laf-widget-7.0.jar" />
+				<pathelement location="lib/mxgraph-all.jar" />
+				<pathelement location="lib/substance-7.0.jar" />
+				<pathelement location="lib/trident-7.0.jar" />
+				<pathelement location="lib/common-codec-1.6.jar" />
+			</externalclasses>
+
+			<rename mainclass="com.easytournament.basic.Main" logfile="renamelog.xml">
+				<property name="error-checking" value="pedantic" />
+				<keep>
+					<class name="javax.swing.ExtendedTablePrintable" />
+					<class classes="none" methods="public" fields="none">
+						<patternset>
+							<include name="**.*" />
+						</patternset>
+					</class>
+				</keep>
+			</rename>
+
+		</yguard>
+	</target>
+
+
+	<target name="etexe" depends="jar">
+		<copy file="installerfiles/EasyTournament.xml" toFile="installerfiles/EasyTournament_rel.xml" overwrite="true">
+			<filterset>
+				<filter token="VERSION" value="${version}" />
+			</filterset>
+		</copy>
+		<taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir}/launch4j.jar
+	        :${launch4j.dir}/lib/xstream.jar" />
+		<launch4j configFile="installerfiles/EasyTournament_rel.xml" />
+		<delete file="installerfiles/EasyTournament_rel.xml" />
+	</target>
+
+
+	<target name="exeinstaller" depends="izpack">
+		<copy file="installerfiles/InstallerEXE.xml" toFile="installerfiles/InstallerEXE_rel.xml" overwrite="true">
+			<filterset>
+				<filter token="VERSION" value="${version}" />
+				<filter token="JAR_PATH" value="${release.dir}/ETInstaller-${version}.jar" />
+				<filter token="OUT_FILE" value="${release.dir}/ETInstaller-${version}.exe" />
+				<filter token="FILE_NAME" value="ETInstaller-${version}.exe" />
+			</filterset>
+		</copy>
+		<taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.dir}/launch4j.jar
+	        :${launch4j.dir}/lib/xstream.jar" />
+		<launch4j configFile="installerfiles/InstallerEXE_rel.xml" />
+		<delete file="installerfiles/InstallerEXE_rel.xml" />
+	</target>
+</project>

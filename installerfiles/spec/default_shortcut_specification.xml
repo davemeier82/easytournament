@@ -1,0 +1,33 @@
+<shortcuts>
+  <skipIfNotSupported/>
+  <programGroup defaultName="EasyTournament"
+                location="startMenu"/>
+  <shortcut
+    name="EasyTournament"
+    target="$INSTALL_PATH\EasyTournament.exe"
+    workingDirectory="$INSTALL_PATH"
+    iconFile="$INSTALL_PATH\res\icons\start.ico"
+    initialState="minimized"
+    programGroup="yes"
+    desktop="yes"
+    applications="no"
+    startMenu="yes"
+    startup="no">
+
+    <createForPack name="Core"/>
+  </shortcut>
+  
+  <shortcut
+    name="Uninstall"
+    target="$INSTALL_PATH\uninstall.bat"
+	workingDirectory="$INSTALL_PATH"
+    iconFile="$INSTALL_PATH\res\icons\uninstall.ico"
+    programGroup="yes"
+    desktop="no"
+    applications="no"
+    startMenu="no"
+    startup="no">
+
+    <createForPack name="Core"/>
+  </shortcut>
+</shortcuts>

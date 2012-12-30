@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="sport" version="0.0.1">
+	<sport id="basketball" textrb="basketball_text" iconrb="basketball_icons">
+	  <settings>
+		<game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+		<points>
+		  <win home="1" away="1" />
+		  <draw home="0" away="0" />
+		  <defeat home="0" away="0" />
+		  <winot home="1" away="1" />
+		  <drawot home="0" away="0" />
+		  <defeatot home="0" away="0" />
+		  <winp home="1" away="1" />
+		  <defeatp home="0" away="0" />
+		</points>
+	  </settings>
+	  <rules>
+		<rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+	  </rules>
+	  <gameevents>
+		<gameevent type="GOAL" nameResourceId="2PNTGOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="2" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="3PNTGOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="3" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="PENALTY_GOAL" iconResourceId="PENALTYGOAL" pointsTeam="1" pointsOpponent="0"/>
+		<gameevent type="OTHER" nameResourceId="MISSED_PENALTY" iconResourceId="MISSEDPENALTY" pointsTeam="0" pointsOpponent="0"/>
+	  </gameevents>
+	</sport>
+</filetype>

@@ -1,0 +1,3006 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="tournament" version="0.1.2">
+  <tournament name="Euro 2008" website="" description="" location="Switzerland" firstname="" lastname="" address="" phone="" email="" notes="" begin="1212854400000" end="1214776740000">
+    <sport id="soccer" name="Fussball" edited="1">
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+      <gameevents>
+        <gameevent type="GOAL" name="Tor" id="0" secondary="Assist von Spieler" sportid="soccer" nameResourceId="GOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="1" pointsOpponent="0" />
+        <gameevent type="GOAL" name="Elfmeter Tor" id="1" sportid="soccer" nameResourceId="PENALTY_GOAL" iconResourceId="PENALTYGOAL" pointsTeam="1" pointsOpponent="0" />
+        <gameevent type="PENALTY" name="Gelbe Karte" id="2" secondary="Gefoulter Spieler" sportid="soccer" nameResourceId="YELLOW_CARD" iconResourceId="YELLOWCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="PENALTY" name="2. Gelbe Karte" id="3" secondary="Gefoulter Spieler" sportid="soccer" nameResourceId="SECOND_YELLOW_CARD" iconResourceId="SECONDYELLOWCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="PENALTY" name="Rote Karte" id="4" secondary="Gefoulter Spieler" sportid="soccer" nameResourceId="RED_CARD" iconResourceId="REDCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="OTHER" name="Abseits" id="5" sportid="soccer" nameResourceId="OFFSIDE" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="OTHER" name="Verschossener Elfmeter" id="6" sportid="soccer" nameResourceId="MISSED_PENALTY" iconResourceId="MISSEDPENALTY" pointsTeam="0" pointsOpponent="0" />
+      </gameevents>
+    </sport>
+  </tournament>
+  <teams>
+    <team id="0" randomPos="1850738479" name="Austria" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="0" gender="0" prename="René" name="Aufhauser" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="1" gender="0" prename="Christian" name="Fuchs" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="2" gender="0" prename="György" name="Garics" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="3" gender="0" prename="Ronald" name="Gercaliu" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
+        <player id="4" gender="0" prename="Martin" name="Harnik" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="5" gender="0" prename="Martin" name="Hiden" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="6" gender="0" prename="Erwin" name="Hoffer" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="7" gender="0" prename="Andreas" name="Ivanschitz" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="8" gender="0" prename="Markus" name="Katzer" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="9" gender="0" prename="Roman" name="Kienast" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="10" gender="0" prename="Ümit" name="Korkmaz" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="11" gender="0" prename="Christoph" name="Leitgeb" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="12" gender="0" prename="Roland" name="Linz" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="13" gender="0" prename="Jürgen" name="Macho" address="" bdate="0" email="" phone="" notes="" number="21" position="GK" />
+        <player id="14" gender="0" prename="Alexander " name="Manninger" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="15" gender="0" prename="Jürgen" name="Patocka" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="16" gender="0" prename="Emanuel" name="Pogatetz" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="17" gender="0" prename="Sebastian" name="Prödl" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="18" gender="0" prename="Joachim" name="Standfest" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="19" gender="0" prename="Martin" name="Stranzl" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="20" gender="0" prename="Jürgen" name="Säumel" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="21" gender="0" prename="Ivica" name="Vastic" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="22" gender="0" prename="Ramazan" name="Özcan" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+      </players>
+      <staff />
+    </team>
+    <team id="1" randomPos="294752355" name="Croatia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="23" gender="0" prename="Igor" name="Budan" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="24" gender="0" prename="Mario" name="Galinovi&#x107;" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="25" gender="0" prename="Nikola" name="Kalini&#x107;" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="26" gender="0" prename="Ivan" name="Klasni&#x107;" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="27" gender="0" prename="Dario" name="Kne&#x17e;evi&#x107;" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="28" gender="0" prename="Niko" name="Kova&#x10d;" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="29" gender="0" prename="Robert" name="Kova&#x10d;" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="30" gender="0" prename="Niko" name="Kranj&#x10d;ar" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="31" gender="0" prename="Jerko" name="Leko" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="32" gender="0" prename="Luka" name="Modri&#x107;" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="33" gender="0" prename="Ivica" name="Oli&#x107;" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="34" gender="0" prename="Mladen" name="Petri&#x107;" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="35" gender="0" prename="Stipe" name="Pletikosa" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="36" gender="0" prename="Nikola" name="Pokriva&#x10d;" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="37" gender="0" prename="Danijel" name="Pranji&#x107;" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="38" gender="0" prename="Ivan" name="Rakiti&#x107;" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="39" gender="0" prename="Vedran" name="Runje" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="40" gender="0" prename="Darijo" name="Srna" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="41" gender="0" prename="Hrvoje" name="Veji&#x107;" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="42" gender="0" prename="Ognjen" name="Vukojevi&#x107;" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="43" gender="0" prename="Vedran" name="&#x106;orluka" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="44" gender="0" prename="Dario" name="&#x160;imi&#x107;" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="45" gender="0" prename="Josip" name="&#x160;imuni&#x107;" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="2" randomPos="417418556" name="Czech Republic" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="46" gender="0" prename="Milan" name="Baro&#x161;" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="47" gender="0" prename="Jaromír" name="Bla&#x17e;ek" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
+        <player id="48" gender="0" prename="Martin" name="Fenin" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="49" gender="0" prename="Tomá&#x161;" name="Galásek" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="50" gender="0" prename="Zden&#x11b;k" name="Grygera" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="51" gender="0" prename="Marek" name="Jankulovski" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="52" gender="0" prename="David" name="Jarolím" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="53" gender="0" prename="Michal" name="Kadlec" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="54" gender="0" prename="Jan" name="Koller" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="55" gender="0" prename="Radoslav" name="Ková&#x10d;" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="56" gender="0" prename="Marek" name="Mat&#x11b;jovský" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="57" gender="0" prename="Jaroslav" name="Pla&#x161;il" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="58" gender="0" prename="Jan" name="Polák" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="59" gender="0" prename="David" name="Rozehnal" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="60" gender="0" prename="Libor" name="Sionko" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="61" gender="0" prename="Tomá&#x161;" name="Sivok" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="62" gender="0" prename="Rudolf" name="Skácel" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="63" gender="0" prename="Václav" name="Sv&#x11b;rko&#x161;" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="64" gender="0" prename="Tomá&#x161;" name="Ujfalu&#x161;i" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="65" gender="0" prename="Stanislav" name="Vl&#x10d;ek" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="66" gender="0" prename="Daniel" name="Zítka" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="67" gender="0" prename="Petr" name="&#x10c;ech" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+      </players>
+      <staff />
+    </team>
+    <team id="3" randomPos="1070201531" name="France" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="68" gender="0" prename="Éric" name="Abidal" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="69" gender="0" prename="Nicolas" name="Anelka" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="70" gender="0" prename="Karim" name="Benzema" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="71" gender="0" prename="Jean-Alain" name="Boumsong" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="72" gender="0" prename="François" name="Clerc" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="73" gender="0" prename="Grégory" name="Coupet" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="74" gender="0" prename="Lassana" name="Diarra" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="75" gender="0" prename="Patrice" name="Evra" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="76" gender="0" prename="Sébastien" name="Frey" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
+        <player id="77" gender="0" prename="William" name="Gallas" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="78" gender="0" prename="Bafétimbi" name="Gomis" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="79" gender="0" prename="Sidney" name="Govou" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="80" gender="0" prename="Thierry" name="Henry" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
+        <player id="81" gender="0" prename="Claude" name="Makelele" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="82" gender="0" prename="Florent" name="Malouda" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="83" gender="0" prename="Steve" name="Mandanda" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="84" gender="0" prename="Samir" name="Nasri" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="85" gender="0" prename="Franck" name="Ribéry" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="86" gender="0" prename="Willy" name="Sagnol" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="87" gender="0" prename="Sébastien" name="Squillaci" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="88" gender="0" prename="Lilian" name="Thuram" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="89" gender="0" prename="Jérémy" name="Toulalan" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="90" gender="0" prename="Patrick" name="Vieira" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="4" randomPos="771891109" name="Germany" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="91" gender="0" prename="René" name="Adler" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="92" gender="0" prename="Michael " name="Ballack" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="93" gender="0" prename="Tim" name="Borowski" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="94" gender="0" prename="Robert" name="Enke" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="95" gender="0" prename="Arne" name="Friedrich" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="96" gender="0" prename="Torsten" name="Frings" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="97" gender="0" prename="Clemens" name="Fritz" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="98" gender="0" prename="Mario" name="Gomez" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="99" gender="0" prename="Thomas" name="Hitzlsperger" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="100" gender="0" prename="Marcell" name="Jansen" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="101" gender="0" prename="Miroslav" name="Klose" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="102" gender="0" prename="Kevin" name="Kuranyi" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="103" gender="0" prename="Philipp" name="Lahm" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="104" gender="0" prename="Jens" name="Lehmann" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="105" gender="0" prename="Per" name="Mertesacker" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="106" gender="0" prename="Christoph" name="Metzelder" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="107" gender="0" prename="Oliver" name="Neuville" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="108" gender="0" prename="David" name="Odonkor" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="109" gender="0" prename="Lukas" name="Podolski" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="110" gender="0" prename="Simon" name="Rolfes" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="111" gender="0" prename="Bastian" name="Schweinsteiger" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="112" gender="0" prename="Piotr" name="Trochowski" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="113" gender="0" prename="Heiko" name="Westermann" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="5" randomPos="1994777003" name="Greece" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="114" gender="0" prename="Giannis" name="Amanatidis" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="115" gender="0" prename="Paraskevas" name="Antzas" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="116" gender="0" prename="Angelos" name="Basinas" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="117" gender="0" prename="Kostas" name="Chalkias" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="118" gender="0" prename="Angelos" name="Charisteas" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="119" gender="0" prename="Traianos" name="Dellas" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="120" gender="0" prename="Fanis" name="Gekas" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="121" gender="0" prename="Stelios" name="Giannakopoulos" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="122" gender="0" prename="Giannis" name="Goumas" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="123" gender="0" prename="Giorgos" name="Karagounis" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="124" gender="0" prename="Kostas" name="Katsouranis" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="125" gender="0" prename="Sotiris" name="Kyrgiakos" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="126" gender="0" prename="Nikos" name="Liberopoulos" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="127" gender="0" prename="Antonis" name="Nikopolidis" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="128" gender="0" prename="Christos" name="Patsatzoglou" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="129" gender="0" prename="Dimitris" name="Salpingidis" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="130" gender="0" prename="Giorgos" name="Samaras" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="131" gender="0" prename="Giourkas" name="Seitaridis" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="132" gender="0" prename="Nikos" name="Spyropoulos" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="133" gender="0" prename="Vassilis" name="Torossidis" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="134" gender="0" prename="Alexandros" name="Tziolis" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="135" gender="0" prename="Alexandros" name="Tzorvas" address="" bdate="0" email="" phone="" notes="" number="13" position="GK" />
+        <player id="136" gender="0" prename="Loukas" name="Vyntra" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="6" randomPos="1088042662" name="Italy" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="137" gender="0" prename="Massimo" name="Ambrosini" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="138" gender="0" prename="Marco" name="Amelia" address="" bdate="0" email="" phone="" notes="" number="14" position="GK" />
+        <player id="139" gender="0" prename="Alberto" name="Aquilani" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="140" gender="0" prename="Andrea" name="Barzagli" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="141" gender="0" prename="Marco" name="Borriello" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
+        <player id="142" gender="0" prename="Gianluigi" name="Buffon" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="143" gender="0" prename="Mauro" name="Camoranesi" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="144" gender="0" prename="Antonio" name="Cassano" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="145" gender="0" prename="Giorgio" name="Chiellini" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="146" gender="0" prename="Daniele" name="De Rossi" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="147" gender="0" prename="Morgan" name="De Sanctis" address="" bdate="0" email="" phone="" notes="" number="17" position="GK" />
+        <player id="148" gender="0" prename="Alessandro" name="Del Piero" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="149" gender="0" prename="Antonio" name="Di Natale" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="150" gender="0" prename="Alessandro" name="Gamberini" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="151" gender="0" prename="Gennaro" name="Gattuso" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="152" gender="0" prename="Fabio" name="Grosso" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="153" gender="0" prename="Marco" name="Materazzi" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="154" gender="0" prename="Christian" name="Panucci" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="155" gender="0" prename="Simone" name="Perrotta" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="156" gender="0" prename="Andrea" name="Pirlo" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="157" gender="0" prename="Fabio" name="Quagliarella" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="158" gender="0" prename="Luca" name="Toni" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="159" gender="0" prename="Gianluca" name="Zambrotta" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="7" randomPos="1551142918" name="Netherlands" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="160" gender="0" prename="Ibrahim" name="Afellay" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="161" gender="0" prename="Khalid" name="Boulahrouz" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="162" gender="0" prename="Wilfred" name="Bouma" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="163" gender="0" prename="Tim" name="de Cler" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="164" gender="0" prename="Nigel" name="de Jong" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="165" gender="0" prename="Demy" name="de Zeeuw" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="166" gender="0" prename="Orlando" name="Engelaar" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="167" gender="0" prename="John" name="Heitinga" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="168" gender="0" prename="Klaas-Jan" name="Huntelaar" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="169" gender="0" prename="Dirk" name="Kuyt" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="170" gender="0" prename="Joris" name="Mathijsen" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="171" gender="0" prename="Mario" name="Melchiot" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
+        <player id="172" gender="0" prename="André" name="Ooijer" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="173" gender="0" prename="Arjen" name="Robben" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="174" gender="0" prename="Wesley" name="Sneijder" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="175" gender="0" prename="Maarten " name="Stekelenburg" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
+        <player id="176" gender="0" prename="Henk" name="Timmer" address="" bdate="0" email="" phone="" notes="" number="13" position="GK" />
+        <player id="177" gender="0" prename="Giovanni" name="van Bronckhorst" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="178" gender="0" prename="Edwin" name="van der Sar" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="179" gender="0" prename="Rafael" name="van der Vaart" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="180" gender="0" prename="Ruud" name="van Nistelrooy" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="181" gender="0" prename="Robin" name="van Persie" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="182" gender="0" prename="Jan" name="Vennegoor of Hesselink" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="8" randomPos="1786510736" name="Poland" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="183" gender="0" prename="Artur" name="Boruc" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="184" gender="0" prename="Jacek" name="B&#x105;k" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="185" gender="0" prename="Dariusz" name="Dudka" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="186" gender="0" prename="&#x141;ukasz" name="Fabia&#x144;ski" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="187" gender="0" prename="&#x141;ukasz" name="Gargu&#x142;a" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="188" gender="0" prename="Pawe&#x142;" name="Gola&#x144;ski" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="189" gender="0" prename="Roger" name="Guerreiro" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="190" gender="0" prename="Mariusz" name="Jop" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="191" gender="0" prename="Adam" name="Kokoszka" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="192" gender="0" prename="Jacek" name="Krzynówek" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="193" gender="0" prename="Mariusz" name="Lewandowski" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="194" gender="0" prename="Rafa&#x142;" name="Murawski" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="195" gender="0" prename="Micha&#x142;" name="Pazdan" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="196" gender="0" prename="&#x141;ukasz" name="Piszczek" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="197" gender="0" prename="Marek" name="Saganowski" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="198" gender="0" prename="Ebi" name="Smolarek" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="199" gender="0" prename="Marcin" name="Wasilewski" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="200" gender="0" prename="Jakub" name="Wawrzyniak" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="201" gender="0" prename="Tomasz" name="Zahorski" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="202" gender="0" prename="Wojciech" name="&#x141;obodzi&#x144;ski" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="203" gender="0" prename="Micha&#x142;" name="&#x17b;ew&#x142;akow" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="204" gender="0" prename="Maciej" name="&#x17b;urawski" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="9" randomPos="1935498165" name="Portugal" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="205" gender="0" prename="Hugo" name="Almeida" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="206" gender="0" prename="Bruno" name="Alves" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="207" gender="0" prename="José" name="Bosingwa" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="208" gender="0" prename="Ricardo" name="Carvalho" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="209" gender="0" prename="" name="Deco" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="210" gender="0" prename="Paulo" name="Ferreira" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="211" gender="0" prename="Nuno" name="Gomes" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="212" gender="0" prename="Fernando" name="Meira" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="213" gender="0" prename="Raul" name="Meireles" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="214" gender="0" prename="" name="Miguel" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="215" gender="0" prename="João" name="Moutinho" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="216" gender="0" prename="" name="Nani" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="217" gender="0" prename="Rui" name="Patrício" address="" bdate="0" email="" phone="" notes="" number="22" position="GK" />
+        <player id="218" gender="0" prename="" name="Pepe" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="219" gender="0" prename="" name="Petit" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="220" gender="0" prename="Hélder" name="Postiga" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="221" gender="0" prename="Ricardo" name="Quaresma" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="222" gender="0" prename="Jorge" name="Ribeiro" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="223" gender="0" prename="" name="Ricardo" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="224" gender="0" prename="Cristiano" name="Ronaldo" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="225" gender="0" prename="" name="Simão" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="226" gender="0" prename="Miguel" name="Veloso" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="10" randomPos="1580698520" name="Romania" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="227" gender="0" prename="Cristian" name="Chivu" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="228" gender="0" prename="R&#x103;zvan" name="Coci&#x15f;" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="229" gender="0" prename="Paul" name="Codrea" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="230" gender="0" prename="Cosmin" name="Contra" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="231" gender="0" prename="Adrian" name="Cristea" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="232" gender="0" prename="Nicolae " name="Dic&#x103;" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="233" gender="0" prename="Sorin" name="Ghionea" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="234" gender="0" prename="Dorin" name="Goian" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="235" gender="0" prename="Bogdan " name="Lobon&#x163;" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="236" gender="0" prename="Ciprian" name="Marica" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="237" gender="0" prename="Cosmin" name="Mo&#x163;i" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="238" gender="0" prename="Adrian" name="Mutu" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="239" gender="0" prename="B&#x103;nel" name="Nicoli&#x163;&#x103;" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="240" gender="0" prename="Daniel" name="Niculae" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="241" gender="0" prename="Marius" name="Niculae" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="242" gender="0" prename="Florentin" name="Petre" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="243" gender="0" prename="Marius" name="Popa" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="244" gender="0" prename="&#x15e;tefan" name="Radu" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="245" gender="0" prename="R&#x103;zvan" name="Ra&#x163;" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="246" gender="0" prename="Mirel" name="R&#x103;doi" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="247" gender="0" prename="Eduard" name="St&#x103;ncioiu" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="248" gender="0" prename="Cristian" name="S&#x103;punaru" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="249" gender="0" prename="Gabriel" name="Tama&#x15f;" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="11" randomPos="1080985380" name="Russia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="250" gender="0" prename="Roman" name="Adamov" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="251" gender="0" prename="Igor" name="Akinfeev" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="252" gender="0" prename="Aleksandr" name="Anyukov" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="253" gender="0" prename="Andrey" name="Arshavin" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="254" gender="0" prename="Aleksei" name="Berezutski" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="255" gender="0" prename="Vasili" name="Berezutski" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="256" gender="0" prename="Diniyar" name="Bilyaletdinov" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="257" gender="0" prename="Vladimir" name="Bystrov" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="258" gender="0" prename="Vladimir" name="Gabulov" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="259" gender="0" prename="Sergei" name="Ignashevich" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="260" gender="0" prename="Oleg" name="Ivanov" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="261" gender="0" prename="Denis" name="Kolodin" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="262" gender="0" prename="Vyacheslav" name="Malafeev" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
+        <player id="263" gender="0" prename="Roman" name="Pavlyuchenko" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="264" gender="0" prename="Ivan" name="Saenko" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="265" gender="0" prename="Sergei" name="Semak" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="266" gender="0" prename="Igor" name="Semshov" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="267" gender="0" prename="Roman" name="Shirokov" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="268" gender="0" prename="Dmitri" name="Sychev" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="269" gender="0" prename="Dmitri" name="Torbinski" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="270" gender="0" prename="Renat" name="Yanbaev" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="271" gender="0" prename="Yuri" name="Zhirkov" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="272" gender="0" prename="Konstantin" name="Zyryanov" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="12" randomPos="1516392417" name="Spain" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="273" gender="0" prename="Raúl" name="Albiol" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="274" gender="0" prename="Xabi" name="Alonso" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="275" gender="0" prename="Álvaro" name="Arbeloa" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="276" gender="0" prename="Joan" name="Capdevila" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="277" gender="0" prename="Iker" name="Casillas" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="278" gender="0" prename="Santi" name="Cazorla" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
+        <player id="279" gender="0" prename="Rubén" name="de la Red" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="280" gender="0" prename="Cesc" name="Fàbregas" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="281" gender="0" prename="Sergio" name="García" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="282" gender="0" prename="Daniel" name="Güiza" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="283" gender="0" prename="Xavi" name="Hernández" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="284" gender="0" prename="Andrés" name="Iniesta" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="285" gender="0" prename="" name="Juanito" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="286" gender="0" prename="Carlos" name="Marchena" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="287" gender="0" prename="Fernando" name="Navarro" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="288" gender="0" prename="Andrés" name="Palop" address="" bdate="0" email="" phone="" notes="" number="13" position="GK" />
+        <player id="289" gender="0" prename="Carles" name="Puyol" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="290" gender="0" prename="Sergio" name="Ramos" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="291" gender="0" prename="Pepe" name="Reina" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="292" gender="0" prename="Marcos" name="Senna" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="293" gender="0" prename="David" name="Silva" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="294" gender="0" prename="Fernando" name="Torres" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="295" gender="0" prename="David" name="Villa" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="13" randomPos="907294019" name="Sweden" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="296" gender="0" prename="Niclas" name="Alexandersson" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="297" gender="0" prename="Marcus" name="Allbäck" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="298" gender="0" prename="Daniel" name="Andersson" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="299" gender="0" prename="Mikael" name="Dorsin" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="300" gender="0" prename="Johan" name="Elmander" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="301" gender="0" prename="Andreas" name="Granqvist" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="302" gender="0" prename="Petter" name="Hansson" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="303" gender="0" prename="Zlatan" name="Ibrahimovi&#x107;" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="304" gender="0" prename="Andreas" name="Isaksson" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="305" gender="0" prename="Kim" name="Källström" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="306" gender="0" prename="Henrik" name="Larsson" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="307" gender="0" prename="Sebastian" name="Larsson" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="308" gender="0" prename="Tobias" name="Linderoth" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="309" gender="0" prename="Fredrik" name="Ljungberg" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="310" gender="0" prename="Daniel" name="Majstorovic" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="311" gender="0" prename="Olof" name="Mellberg" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="312" gender="0" prename="Mikael" name="Nilsson" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="313" gender="0" prename="Markus" name="Rosenberg" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="314" gender="0" prename="Rami" name="Shaaban" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="315" gender="0" prename="Fredrik" name="Stoor" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="316" gender="0" prename="Anders" name="Svensson" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="317" gender="0" prename="Johan" name="Wiland" address="" bdate="0" email="" phone="" notes="" number="13" position="GK" />
+        <player id="318" gender="0" prename="Christian" name="Wilhelmsson" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+      </players>
+      <staff />
+    </team>
+    <team id="14" randomPos="1820447354" name="Switzerland" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="319" gender="0" prename="Tranquillo" name="Barnetta" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="320" gender="0" prename="Valon" name="Behrami" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="321" gender="0" prename="Diego" name="Benaglio" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="322" gender="0" prename="Ricardo" name="Cabanas" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="323" gender="0" prename="Philipp" name="Degen" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="324" gender="0" prename="Eren" name="Derdiyok" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
+        <player id="325" gender="0" prename="Johan" name="Djourou" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="326" gender="0" prename="Gelson" name="Fernandes" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="327" gender="0" prename="Alexander" name="Frei" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="328" gender="0" prename="Stéphane" name="Grichting" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="329" gender="0" prename="Daniel" name="Gygax" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="330" gender="0" prename="Benjamin" name="Huggel" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="331" gender="0" prename="Gökhan" name="Inler" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="332" gender="0" prename="Eldin" name="Jakupovi&#x107;" address="" bdate="0" email="" phone="" notes="" number="21" position="GK" />
+        <player id="333" gender="0" prename="Stephan" name="Lichtsteiner" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="334" gender="0" prename="Ludovic" name="Magnin" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="335" gender="0" prename="Patrick" name="Müller" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="336" gender="0" prename="Philippe" name="Senderos" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="337" gender="0" prename="Christoph" name="Spycher" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="338" gender="0" prename="Marco" name="Streller" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="339" gender="0" prename="Johan" name="Vonlanthen" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="340" gender="0" prename="Hakan" name="Yakin" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="341" gender="0" prename="Pascal" name="Zuberbühler" address="" bdate="0" email="" phone="" notes="" number="18" position="GK" />
+      </players>
+      <staff id="0">
+        <person gender="0" prename="Jakob" name="Kuhn" address="" bdate="0" email="" phone="" notes="" function="Coach" />
+      </staff>
+    </team>
+    <team id="15" randomPos="337301692" name="Turkey" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players>
+        <player id="342" gender="0" prename="Ayhan" name="Akman" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="343" gender="0" prename="Hamit" name="Alt&#x131;ntop" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="344" gender="0" prename="Mehmet" name="Aurélio" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="345" gender="0" prename="Emre" name="A&#x15f;&#x131;k" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="346" gender="0" prename="Hakan" name="Balta" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="347" gender="0" prename="Emre" name="Belözo&#x11f;lu" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="348" gender="0" prename="U&#x11f;ur" name="Boral" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="349" gender="0" prename="Volkan" name="Demirel" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="350" gender="0" prename="Mevlüt" name="Erdinç" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="351" gender="0" prename="Emre" name="Güngör" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="352" gender="0" prename="Nihat" name="Kahveci" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="353" gender="0" prename="Gökdeniz" name="Karadeniz" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="354" gender="0" prename="Tümer" name="Metin" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="355" gender="0" prename="Rü&#x15f;tü" name="Reçber" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="356" gender="0" prename="Colin Kaz&#x131;m" name="Richards" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="357" gender="0" prename="Sabri" name="Sar&#x131;o&#x11f;lu" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="358" gender="0" prename="Mehmet" name="Topal" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="359" gender="0" prename="Arda" name="Turan" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="360" gender="0" prename="Gökhan" name="Zan" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="361" gender="0" prename="Tolga" name="Zengin" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="362" gender="0" prename="Servet" name="Çetin" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="363" gender="0" prename="Tuncay" name="&#x15e;anl&#x131;" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="364" gender="0" prename="Semih" name="&#x15e;entürk" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+      </players>
+      <staff />
+    </team>
+  </teams>
+  <refrees>
+    <refree id="0" gender="0" prename="Massimo" name="Busacca" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="1" gender="0" prename="Matthias" name="Arnet" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="2" gender="0" prename="Stephane" name="Cuhat" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="3" gender="0" prename="Frank" name="De Bleeckere" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="4" gender="0" prename="Peter" name="Hermans" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="5" gender="0" prename="Alex" name="Verstraeten" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="6" gender="0" prename="Herbert" name="Fandel" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="7" gender="0" prename="Carsten" name="Kadach" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="8" gender="0" prename="Volker" name="Wezel" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="9" gender="0" prename="Peter" name="Fröjdfeldt" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="10" gender="0" prename="Henrik" name="Andren" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="11" gender="0" prename="Stefan" name="Wittberg" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="12" gender="0" prename="Tom" name="Henning Øvrebø" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="13" gender="0" prename="Erik" name="Ræstad" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="14" gender="0" prename="Geir" name="Åge Holen" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="15" gender="0" prename="Manuel" name="Mejuto González" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="16" gender="0" prename="Jesús" name="Calvo Guadamuro" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="17" gender="0" prename="Juan Carlos" name="Yuste Jiménez" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="18" gender="0" prename="&#x13d;ubo&#x161;" name="Miche&#x13e;" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="19" gender="0" prename="Martin" name="Balko" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="20" gender="0" prename="Roman" name="Slysko" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="21" gender="0" prename="Konrad" name="Plautz" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="22" gender="0" prename="Egon" name="Bereuter" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="23" gender="0" prename="Markus" name="Mayr" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="24" gender="0" prename="Roberto" name="Rosetti" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="25" gender="0" prename="Paolo" name="Calcagno" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="26" gender="0" prename="Alessandro" name="Griselli" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="27" gender="0" prename="Kyros" name="Vassaras" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="28" gender="0" prename="Dimitiris" name="Bozartzidis" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="29" gender="0" prename="Dimitiris" name="Saraidaris" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="30" gender="0" prename="Pieter" name="Vink" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="31" gender="0" prename="Adriaan" name="Inia" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="32" gender="0" prename="Hans" name="Ten Hoove" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+    <refree id="33" gender="0" prename="Howard" name="Webb" address="" bdate="0" email="" phone="" notes="">
+      <assistants>
+        <assistant id="34" gender="0" prename="Darren" name="Cann" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="35" gender="0" prename="Mike" name="Mullarkey" address="" bdate="0" email="" phone="" notes="" function="" />
+      </assistants>
+    </refree>
+  </refrees>
+  <plan>
+    <group name="Group A" id="0" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group A" id="0" team="14">
+          <next id="16" />
+        </position>
+        <position name="2. Group A" id="1" team="2">
+          <next id="18" />
+        </position>
+        <position name="3. Group A" id="2" team="9" />
+        <position name="4. Group A" id="3" team="15" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group B" id="1" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group B" id="4" team="0">
+          <next id="19" />
+        </position>
+        <position name="2. Group B" id="5" team="1">
+          <next id="17" />
+        </position>
+        <position name="3. Group B" id="6" team="4" />
+        <position name="4. Group B" id="7" team="8" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group C" id="2" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group C" id="8" team="10">
+          <next id="20" />
+        </position>
+        <position name="2. Group C" id="9" team="3">
+          <next id="22" />
+        </position>
+        <position name="3. Group C" id="10" team="7" />
+        <position name="4. Group C" id="11" team="6" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group D" id="3" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group D" id="12" team="12">
+          <next id="23" />
+        </position>
+        <position name="2. Group D" id="13" team="11">
+          <next id="21" />
+        </position>
+        <position name="3. Group D" id="14" team="5" />
+        <position name="4. Group D" id="15" team="13" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter-Final 1" id="4" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter-Final 1" id="16" prev="0" team="9">
+          <next id="24" />
+        </position>
+        <position name="Verlierer Quarter-Final 1" id="17" prev="5" team="4" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter-Final 2" id="5" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter-Final 2" id="18" prev="1" team="15">
+          <next id="25" />
+        </position>
+        <position name="Verlierer Quarter-Final 2" id="19" prev="4" team="1" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter-Final 3" id="6" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter-Final 3" id="20" prev="8" team="7">
+          <next id="26" />
+        </position>
+        <position name="Verlierer Quarter-Final 3" id="21" prev="13" team="11" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter-Final 4" id="7" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter-Final 4" id="22" prev="9" team="6">
+          <next id="27" />
+        </position>
+        <position name="Verlierer Quarter-Final 4" id="23" prev="12" team="12" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Semi-Final 1" id="8" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Semi-Final 1" id="24" prev="16" team="4">
+          <next id="28" />
+        </position>
+        <position name="Verlierer Semi-Final 1" id="25" prev="18" team="1" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Semi-Final 2" id="9" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Semi-Final 2" id="26" prev="20" team="11">
+          <next id="29" />
+        </position>
+        <position name="Verlierer Semi-Final 2" id="27" prev="22" team="6" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Final" id="10" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Final" id="28" prev="24" team="4" />
+        <position name="Verlierer Final" id="29" prev="26" team="6" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+  </plan>
+  <gui>
+    <cell id="0" parent="none" edge="0" vertex="0" />
+    <cell id="1" parent="0" edge="0" vertex="0" />
+    <cell id="19" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="33" targetid="43" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="450.0" y="360.0" />
+        </points>
+        <source x="400.0" y="460.0" />
+        <target x="380.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="20" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="45" targetid="49" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="860.0" y="200.0" />
+        </points>
+        <source x="810.0" y="280.0" />
+        <target x="650.0" y="120.0" />
+      </geometry>
+    </cell>
+    <cell id="21" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="42" targetid="48" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="320.0" y="190.0" />
+        </points>
+        <source x="270.0" y="280.0" />
+        <target x="510.0" y="140.0" />
+      </geometry>
+    </cell>
+    <cell id="22" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="36" targetid="45" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="720.0" y="360.0" />
+        </points>
+        <source x="740.0" y="465.0" />
+        <target x="480.0" y="285.0" />
+      </geometry>
+    </cell>
+    <cell id="23" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="39" targetid="46" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="1010.0" y="350.0" />
+        </points>
+        <source x="960.0" y="420.0" />
+        <target x="930.0" y="290.0" />
+      </geometry>
+    </cell>
+    <cell id="24" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="30" targetid="42" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="180.0" y="350.0" />
+        </points>
+        <source x="130.0" y="440.0" />
+        <target x="370.0" y="290.0" />
+      </geometry>
+    </cell>
+    <groupcell id="25" parent="1" groupid="0" x="140.0" y="550.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="2" style="team;whiteSpace=wrap" />
+      <positioncell id="3" style="team;whiteSpace=wrap" />
+      <positioncell id="4" style="team;whiteSpace=wrap" />
+      <positioncell id="5" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="26" parent="1" groupid="1" x="400.0" y="550.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="6" style="team;whiteSpace=wrap" />
+      <positioncell id="7" style="team;whiteSpace=wrap" />
+      <positioncell id="8" style="team;whiteSpace=wrap" />
+      <positioncell id="9" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="27" parent="1" groupid="2" x="660.0" y="550.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="10" style="team;whiteSpace=wrap" />
+      <positioncell id="11" style="team;whiteSpace=wrap" />
+      <positioncell id="12" style="team;whiteSpace=wrap" />
+      <positioncell id="13" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="28" parent="1" groupid="3" x="920.0" y="550.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="14" style="team;whiteSpace=wrap" />
+      <positioncell id="15" style="team;whiteSpace=wrap" />
+      <positioncell id="16" style="team;whiteSpace=wrap" />
+      <positioncell id="17" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="29" parent="1" groupid="4" x="80.0" y="380.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="30" style="team;whiteSpace=wrap" />
+      <positioncell id="31" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="32" parent="1" groupid="5" x="350.0" y="400.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="33" style="team;whiteSpace=wrap" />
+      <positioncell id="34" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="35" parent="1" groupid="6" x="620.0" y="400.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="36" style="team;whiteSpace=wrap" />
+      <positioncell id="37" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="38" parent="1" groupid="7" x="910.0" y="380.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="39" style="team;whiteSpace=wrap" />
+      <positioncell id="40" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="41" parent="1" groupid="8" x="200.0" y="210.0" width="230.0" height="100.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="42" style="team;whiteSpace=wrap" />
+      <positioncell id="43" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="44" parent="1" groupid="9" x="750.0" y="210.0" width="230.0" height="100.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="45" style="team;whiteSpace=wrap" />
+      <positioncell id="46" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="47" parent="1" groupid="10" x="480.0" y="70.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="48" style="team;whiteSpace=wrap" />
+      <positioncell id="49" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <cell id="50" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="2" targetid="30" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="60.0" y="500.0" />
+        </points>
+        <source x="190.0" y="600.0" />
+        <target x="130.0" y="420.0" />
+      </geometry>
+    </cell>
+    <cell id="51" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="7" targetid="31" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="330.0" y="540.0" />
+        </points>
+        <source x="450.0" y="640.0" />
+        <target x="290.0" y="420.0" />
+      </geometry>
+    </cell>
+    <cell id="52" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="3" targetid="33" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="300.0" y="520.0" />
+        </points>
+        <source x="190.0" y="640.0" />
+        <target x="410.0" y="450.0" />
+      </geometry>
+    </cell>
+    <cell id="53" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="10" targetid="36" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="590.0" y="530.0" />
+        </points>
+        <source x="710.0" y="600.0" />
+        <target x="640.0" y="450.0" />
+      </geometry>
+    </cell>
+    <cell id="54" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="15" targetid="37" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="970.0" y="640.0" />
+        <target x="800.0" y="450.0" />
+      </geometry>
+    </cell>
+    <cell id="55" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="11" targetid="39" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="710.0" y="640.0" />
+        <target x="930.0" y="420.0" />
+      </geometry>
+    </cell>
+    <cell id="56" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="14" targetid="40" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="1130.0" y="510.0" />
+        </points>
+        <source x="970.0" y="600.0" />
+        <target x="1100.0" y="410.0" />
+      </geometry>
+    </cell>
+    <cell id="57" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="6" targetid="34" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="580.0" y="520.0" />
+        </points>
+        <source x="450.0" y="600.0" />
+        <target x="540.0" y="460.0" />
+      </geometry>
+    </cell>
+  </gui>
+  <pageformat orientation="0">
+    <paper width="595.4456692913386" height="841.5496062992125" imageablex="72.0" imageabley="72.0" imageablewidth="451.44566929133856" imageableheight="697.5496062992125" />
+  </pageformat>
+  <schedule>
+    <sheduleentry home="0" away="1" place="Basel" date="1212854400000" played="1">
+      <refrees>
+        <refree id="24" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="14" timemin="59" timesec="0">
+          <mainplayer>
+            <player id="334" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="2" timemin="71" timesec="0">
+          <mainplayer>
+            <player id="63" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="14" timemin="76" timesec="0">
+          <mainplayer>
+            <player id="339" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="14" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="319" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="2" away="3" place="Geneva" date="1212864300000" played="1">
+      <refrees>
+        <refree id="6" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="15" timemin="4" timesec="0">
+          <mainplayer>
+            <player id="356" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="51" timesec="0">
+          <mainplayer>
+            <player id="360" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="9" timemin="61" timesec="0">
+          <mainplayer>
+            <player id="218" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="73" timesec="0">
+          <mainplayer>
+            <player id="357" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="9" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="213" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="4" away="5" place="Vienna" date="1212940800000" played="1">
+      <refrees>
+        <refree id="30" />
+      </refrees>
+      <results>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="0" timemin="3" timesec="0">
+          <mainplayer>
+            <player id="16" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="1" timemin="4" timesec="0">
+          <mainplayer>
+            <player id="32" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="0" timemin="21" timesec="0">
+          <mainplayer>
+            <player id="20" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="1" timemin="51" timesec="0">
+          <mainplayer>
+            <player id="29" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="0" timemin="68" timesec="0">
+          <mainplayer>
+            <player id="17" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="6" away="7" place="Klagenfurt" date="1212950700000" played="1">
+      <refrees>
+        <refree id="12" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="4" timemin="20" timesec="0">
+          <mainplayer>
+            <player id="109" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="8" timemin="40" timesec="0">
+          <mainplayer>
+            <player id="198" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="8" timemin="60" timesec="0">
+          <mainplayer>
+            <player id="193" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="4" timemin="64" timesec="0">
+          <mainplayer>
+            <player id="111" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="72" timesec="0">
+          <mainplayer>
+            <player id="109" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="8" away="9" place="Zurich" date="1213027200000" played="1">
+      <refrees>
+        <refree id="15" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="10" timemin="27" timesec="0">
+          <mainplayer>
+            <player id="240" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="10" timemin="40" timesec="0">
+          <mainplayer>
+            <player id="230" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="10" timemin="43" timesec="0">
+          <mainplayer>
+            <player id="234" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="3" timemin="51" timesec="0">
+          <mainplayer>
+            <player id="86" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="10" away="11" place="Bern" date="1213037100000" played="1">
+      <refrees>
+        <refree id="9" />
+      </refrees>
+      <results>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">3</result>
+        <result checked="1">0</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="7" timemin="26" timesec="0">
+          <mainplayer>
+            <player id="180" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="27" timesec="0">
+          <mainplayer>
+            <player id="158" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="7" timemin="31" timesec="0">
+          <mainplayer>
+            <player id="174" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="35" timesec="0">
+          <mainplayer>
+            <player id="159" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="51" timesec="0">
+          <mainplayer>
+            <player id="151" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="7" timemin="58" timesec="0">
+          <mainplayer>
+            <player id="164" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="7" timemin="79" timesec="0">
+          <mainplayer>
+            <player id="177" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="12" away="13" place="Innsbruck" date="1213113600000" played="1">
+      <refrees>
+        <refree id="21" />
+      </refrees>
+      <results>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">4</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="12" timemin="20" timesec="0">
+          <mainplayer>
+            <player id="295" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="44" timesec="0">
+          <mainplayer>
+            <player id="295" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="75" timesec="0">
+          <mainplayer>
+            <player id="295" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="11" timemin="86" timesec="0">
+          <mainplayer>
+            <player id="263" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="280" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="14" away="15" place="Salzburg" date="1213123500000" played="1">
+      <refrees>
+        <refree id="0" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="5" timemin="1" timesec="0">
+          <mainplayer>
+            <player id="118" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="5" timemin="51" timesec="0">
+          <mainplayer>
+            <player id="131" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="5" timemin="61" timesec="0">
+          <mainplayer>
+            <player id="133" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="13" timemin="67" timesec="0">
+          <mainplayer>
+            <player id="303" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="13" timemin="72" timesec="0">
+          <mainplayer>
+            <player id="302" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="1" away="2" place="Geneva" date="1213200000000" played="1">
+      <refrees>
+        <refree id="27" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">3</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="9" timemin="8" timesec="0">
+          <mainplayer>
+            <player id="209" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="2" timemin="17" timesec="0">
+          <mainplayer>
+            <player id="60" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="2" timemin="22" timesec="0">
+          <mainplayer>
+            <player id="58" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="31" timesec="0">
+          <mainplayer>
+            <player id="207" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="9" timemin="63" timesec="0">
+          <mainplayer>
+            <player id="224" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="9" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="221" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="0" away="3" place="Basel" date="1213209900000" played="1">
+      <refrees>
+        <refree id="18" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="15" timemin="31" timesec="0">
+          <mainplayer>
+            <player id="363" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="14" timemin="32" timesec="0">
+          <mainplayer>
+            <player id="340" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="41" timesec="0">
+          <mainplayer>
+            <player id="344" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="48" timesec="0">
+          <mainplayer>
+            <player id="346" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="14" timemin="55" timesec="0">
+          <mainplayer>
+            <player id="324" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="15" timemin="57" timesec="0">
+          <mainplayer>
+            <player id="364" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="15" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="359" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="5" away="6" place="Klagenfurt" date="1213286400000" played="1">
+      <refrees>
+        <refree id="3" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="1" timemin="24" timesec="0">
+          <mainplayer>
+            <player id="40" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="1" timemin="27" timesec="0">
+          <mainplayer>
+            <player id="40" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="1" timemin="45" timesec="0">
+          <mainplayer>
+            <player id="45" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="1" timemin="62" timesec="0">
+          <mainplayer>
+            <player id="33" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="4" timemin="75" timesec="0">
+          <mainplayer>
+            <player id="92" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="79" timesec="0">
+          <mainplayer>
+            <player id="109" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="1" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="32" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="1" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="31" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="4" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="104" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="4" teamid="4" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="111" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="4" away="7" place="Vienna" date="1213296300000" played="1">
+      <refrees>
+        <refree id="33" />
+      </refrees>
+      <results>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="8" timemin="30" timesec="0">
+          <mainplayer>
+            <player id="189" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="0" timemin="56" timesec="0">
+          <mainplayer>
+            <player id="10" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="8" timemin="58" timesec="0">
+          <mainplayer>
+            <player id="199" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="8" timemin="61" timesec="0">
+          <mainplayer>
+            <player id="192" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="0" timemin="72" timesec="0">
+          <mainplayer>
+            <player id="17" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="0" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="21" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="8" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="184" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="11" away="8" place="Zurich" date="1213372800000" played="1">
+      <refrees>
+        <refree id="12" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="10" timemin="43" timesec="0">
+          <mainplayer>
+            <player id="238" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="10" timemin="55" timesec="0">
+          <mainplayer>
+            <player id="238" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="6" timemin="56" timesec="0">
+          <mainplayer>
+            <player id="154" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="10" timemin="58" timesec="0">
+          <mainplayer>
+            <player id="227" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="61" timesec="0">
+          <mainplayer>
+            <player id="156" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="10" timemin="73" timesec="0">
+          <mainplayer>
+            <player id="234" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="6" teamid="10" timemin="81" timesec="0">
+          <mainplayer>
+            <player id="238" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="146" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="10" away="9" place="Bern" date="1213382700000" played="1">
+      <refrees>
+        <refree id="6" />
+      </refrees>
+      <results>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">4</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="7" timemin="9" timesec="0">
+          <mainplayer>
+            <player id="169" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="7" timemin="11" timesec="0">
+          <mainplayer>
+            <player id="173" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="3" timemin="32" timesec="0">
+          <mainplayer>
+            <player id="81" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="7" timemin="51" timesec="0">
+          <mainplayer>
+            <player id="172" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="7" timemin="59" timesec="0">
+          <mainplayer>
+            <player id="181" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="3" timemin="71" timesec="0">
+          <mainplayer>
+            <player id="80" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="3" timemin="82" timesec="0">
+          <mainplayer>
+            <player id="89" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="7" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="174" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="15" away="12" place="Innsbruck" date="1213459200000" played="1">
+      <refrees>
+        <refree id="30" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="12" timemin="15" timesec="0">
+          <mainplayer>
+            <player id="294" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="13" timemin="34" timesec="0">
+          <mainplayer>
+            <player id="303" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="12" timemin="53" timesec="0">
+          <mainplayer>
+            <player id="286" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="13" timemin="55" timesec="0">
+          <mainplayer>
+            <player id="316" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="295" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="14" away="13" place="Salzburg" date="1213469100000" played="1">
+      <refrees>
+        <refree id="24" />
+      </refrees>
+      <results>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="11" timemin="33" timesec="0">
+          <mainplayer>
+            <player id="272" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="5" timemin="42" timesec="0">
+          <mainplayer>
+            <player id="123" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="5" timemin="58" timesec="0">
+          <mainplayer>
+            <player id="126" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="77" timesec="0">
+          <mainplayer>
+            <player id="264" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="84" timesec="0">
+          <mainplayer>
+            <player id="269" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="0" away="2" place="Basel" date="1213545600000" played="1">
+      <refrees>
+        <refree id="21" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="14" timemin="27" timesec="0">
+          <mainplayer>
+            <player id="340" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="30" timesec="0">
+          <mainplayer>
+            <player id="210" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="14" timemin="37" timesec="0">
+          <mainplayer>
+            <player id="339" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="64" timesec="0">
+          <mainplayer>
+            <player id="222" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="14" timemin="71" timesec="0">
+          <mainplayer>
+            <player id="340" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="78" timesec="0">
+          <mainplayer>
+            <player id="212" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="14" timemin="81" timesec="0">
+          <mainplayer>
+            <player id="319" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="81" timesec="0">
+          <mainplayer>
+            <player id="214" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="14" timemin="83" timesec="0">
+          <mainplayer>
+            <player id="340" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="14" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="326" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="3" away="1" place="Geneva" date="1213555500000" played="1">
+      <refrees>
+        <refree id="9" />
+      </refrees>
+      <results>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="1">3</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">3</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="15" timemin="6" timesec="0">
+          <mainplayer>
+            <player id="358" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="10" timesec="0">
+          <mainplayer>
+            <player id="344" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="2" timemin="34" timesec="0">
+          <mainplayer>
+            <player id="54" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="62" timesec="0">
+          <mainplayer>
+            <player id="359" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="2" timemin="62" timesec="0">
+          <mainplayer>
+            <player id="57" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="73" timesec="0">
+          <mainplayer>
+            <player id="345" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="15" timemin="75" timesec="0">
+          <mainplayer>
+            <player id="359" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="2" timemin="80" timesec="0">
+          <mainplayer>
+            <player id="49" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="15" timemin="87" timesec="0">
+          <mainplayer>
+            <player id="352" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="15" timemin="89" timesec="0">
+          <mainplayer>
+            <player id="352" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="4" teamid="15" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="349" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="2" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="64" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="2" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="46" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="7" away="5" place="Klagenfurt" date="1213632000000" played="1">
+      <refrees>
+        <refree id="27" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="8" timemin="38" timesec="0">
+          <mainplayer>
+            <player id="193" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="1" timemin="45" timesec="0">
+          <mainplayer>
+            <player id="41" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="1" timemin="83" timesec="0">
+          <mainplayer>
+            <player id="26" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="8" timemin="84" timesec="0">
+          <mainplayer>
+            <player id="201" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="1" timemin="85" timesec="0">
+          <mainplayer>
+            <player id="42" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="4" away="6" place="Vienna" date="1213641900000" played="1">
+      <refrees>
+        <refree id="15" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="0" timemin="13" timesec="0">
+          <mainplayer>
+            <player id="19" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="0" timemin="31" timesec="0">
+          <mainplayer>
+            <player id="6" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="0" timemin="48" timesec="0">
+          <mainplayer>
+            <player id="7" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="49" timesec="0">
+          <mainplayer>
+            <player id="92" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="10" away="8" place="Bern" date="1213718400000" played="1">
+      <refrees>
+        <refree id="0" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="7" timemin="54" timesec="0">
+          <mainplayer>
+            <player id="168" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="10" timemin="78" timesec="0">
+          <mainplayer>
+            <player id="227" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="7" timemin="87" timesec="0">
+          <mainplayer>
+            <player id="181" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="9" away="11" place="Zurich" date="1213728300000" played="1">
+      <refrees>
+        <refree id="18" />
+      </refrees>
+      <results>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="3" timemin="18" timesec="0">
+          <mainplayer>
+            <player id="75" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="4" teamid="3" timemin="24" timesec="0">
+          <mainplayer>
+            <player id="68" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="6" timemin="25" timesec="0">
+          <mainplayer>
+            <player id="156" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="44" timesec="0">
+          <mainplayer>
+            <player id="156" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="45" timesec="0">
+          <mainplayer>
+            <player id="145" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="3" timemin="47" timesec="0">
+          <mainplayer>
+            <player id="79" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="54" timesec="0">
+          <mainplayer>
+            <player id="151" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="6" timemin="62" timesec="0">
+          <mainplayer>
+            <player id="146" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="3" timemin="72" timesec="0">
+          <mainplayer>
+            <player id="71" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="3" timemin="85" timesec="0">
+          <mainplayer>
+            <player id="80" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="14" away="12" place="Salzburg" date="1213804800000" played="1">
+      <refrees>
+        <refree id="33" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="5" timemin="34" timesec="0">
+          <mainplayer>
+            <player id="123" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="12" timemin="41" timesec="0">
+          <mainplayer>
+            <player id="282" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="5" timemin="42" timesec="0">
+          <mainplayer>
+            <player id="118" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="12" timemin="45" timesec="0">
+          <mainplayer>
+            <player id="275" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="61" timesec="0">
+          <mainplayer>
+            <player id="279" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="5" timemin="72" timesec="0">
+          <mainplayer>
+            <player id="116" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="88" timesec="0">
+          <mainplayer>
+            <player id="282" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="5" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="136" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="13" away="15" place="Innsbruck" date="1213814700000" played="1">
+      <refrees>
+        <refree id="3" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="1">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">0</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="13" timemin="10" timesec="0">
+          <mainplayer>
+            <player id="304" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="11" timemin="24" timesec="0">
+          <mainplayer>
+            <player id="263" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="13" timemin="49" timesec="0">
+          <mainplayer>
+            <player id="300" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="11" timemin="50" timesec="0">
+          <mainplayer>
+            <player id="253" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="57" timesec="0">
+          <mainplayer>
+            <player id="265" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="65" timesec="0">
+          <mainplayer>
+            <player id="253" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="76" timesec="0">
+          <mainplayer>
+            <player id="261" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="16" away="17" place="Basel" date="1213901100000" played="1">
+      <refrees>
+        <refree id="9" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">2</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">2</result>
+        <result checked="1">3</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="4" timemin="22" timesec="0">
+          <mainplayer>
+            <player id="111" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="26" timesec="0">
+          <mainplayer>
+            <player id="219" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="26" timesec="0">
+          <mainplayer>
+            <player id="101" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="9" timemin="40" timesec="0">
+          <mainplayer>
+            <player id="211" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="4" timemin="48" timesec="0">
+          <mainplayer>
+            <player id="95" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="4" timemin="49" timesec="0">
+          <mainplayer>
+            <player id="103" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="60" timesec="0">
+          <mainplayer>
+            <player id="218" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="61" timesec="0">
+          <mainplayer>
+            <player id="92" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="9" timemin="87" timesec="0">
+          <mainplayer>
+            <player id="220" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="9" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="220" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="18" away="19" place="Vienna" date="1213987500000" played="1">
+      <refrees>
+        <refree id="24" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="1">3</result>
+        <result checked="1">1</result>
+        <result checked="1">4</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="15" timemin="27" timesec="0">
+          <mainplayer>
+            <player id="363" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="49" timesec="0">
+          <mainplayer>
+            <player id="359" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="89" timesec="0">
+          <mainplayer>
+            <player id="348" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="107" timesec="0">
+          <mainplayer>
+            <player id="345" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="1" timemin="119" timesec="0">
+          <mainplayer>
+            <player id="26" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="15" timemin="120" timesec="0">
+          <mainplayer>
+            <player id="364" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="6" teamid="15" timemin="121" timesec="0">
+          <mainplayer>
+            <player id="32" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="15" timemin="122" timesec="0">
+          <mainplayer>
+            <player id="359" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="1" timemin="123" timesec="0">
+          <mainplayer>
+            <player id="40" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="15" timemin="124" timesec="0">
+          <mainplayer>
+            <player id="364" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="6" teamid="1" timemin="125" timesec="0">
+          <mainplayer>
+            <player id="38" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="15" timemin="126" timesec="0">
+          <mainplayer>
+            <player id="343" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="6" teamid="1" timemin="127" timesec="0">
+          <mainplayer>
+            <player id="34" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="20" away="21" place="Basel" date="1214073900000" played="1">
+      <refrees>
+        <refree id="0" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">1</result>
+        <result checked="1">3</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="7" timemin="50" timesec="0">
+          <mainplayer>
+            <player id="161" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="7" timemin="55" timesec="0">
+          <mainplayer>
+            <player id="181" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="11" timemin="56" timesec="0">
+          <mainplayer>
+            <player id="263" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="7" timemin="60" timesec="0">
+          <mainplayer>
+            <player id="179" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="71" timesec="0">
+          <mainplayer>
+            <player id="261" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="7" timemin="86" timesec="0">
+          <mainplayer>
+            <player id="180" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="7" timemin="103" timesec="0">
+          <mainplayer />
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="111" timesec="0">
+          <mainplayer>
+            <player id="269" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="11" timemin="112" timesec="0">
+          <mainplayer>
+            <player id="269" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="11" timemin="116" timesec="0">
+          <mainplayer>
+            <player id="253" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="22" away="23" place="Vienna" date="1214160300000" played="1">
+      <refrees>
+        <refree id="6" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">0</result>
+        <result checked="1">0</result>
+        <result checked="1">0</result>
+        <result checked="1">2</result>
+        <result checked="1">4</result>
+        <result checked="1">2</result>
+        <result checked="1">4</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="2" teamid="12" timemin="11" timesec="0">
+          <mainplayer>
+            <player id="284" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="6" timemin="31" timesec="0">
+          <mainplayer>
+            <player id="137" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="12" timemin="72" timesec="0">
+          <mainplayer>
+            <player id="295" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="12" timemin="112" timesec="0">
+          <mainplayer>
+            <player id="278" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="12" timemin="121" timesec="0">
+          <mainplayer>
+            <player id="295" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="6" timemin="122" timesec="0">
+          <mainplayer>
+            <player id="152" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="12" timemin="123" timesec="0">
+          <mainplayer>
+            <player id="278" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="6" teamid="6" timemin="124" timesec="0">
+          <mainplayer>
+            <player id="146" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="12" timemin="125" timesec="0">
+          <mainplayer>
+            <player id="292" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="6" timemin="126" timesec="0">
+          <mainplayer>
+            <player id="143" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="6" teamid="12" timemin="127" timesec="0">
+          <mainplayer>
+            <player id="282" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="6" teamid="6" timemin="128" timesec="0">
+          <mainplayer>
+            <player id="149" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="1" teamid="12" timemin="129" timesec="0">
+          <mainplayer>
+            <player id="280" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="24" away="25" place="Basel" date="1214419500000" played="1">
+      <refrees>
+        <refree id="0" />
+      </refrees>
+      <results>
+        <result checked="1">1</result>
+        <result checked="1">1</result>
+        <result checked="1">2</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">3</result>
+        <result checked="1">2</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="15" timemin="22" timesec="0">
+          <mainplayer>
+            <player id="348" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="26" timesec="0">
+          <mainplayer>
+            <player id="111" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="53" timesec="0">
+          <mainplayer>
+            <player id="364" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="79" timesec="0">
+          <mainplayer>
+            <player id="101" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="15" timemin="86" timesec="0">
+          <mainplayer>
+            <player id="364" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="4" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="103" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="15" timemin="90" timesec="0">
+          <mainplayer>
+            <player id="357" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="26" away="27" place="Vienna" date="1214505900000" played="1">
+      <refrees>
+        <refree id="3" />
+      </refrees>
+      <results>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">3</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">3</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="12" timemin="50" timesec="0">
+          <mainplayer>
+            <player id="283" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="56" timesec="0">
+          <mainplayer>
+            <player id="271" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="11" timemin="60" timesec="0">
+          <mainplayer>
+            <player id="256" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="73" timesec="0">
+          <mainplayer>
+            <player id="282" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="0" teamid="12" timemin="82" timesec="0">
+          <mainplayer>
+            <player id="293" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+    <sheduleentry home="28" away="29" place="Vienna" date="1214765100000" played="1">
+      <refrees>
+        <refree id="24" />
+      </refrees>
+      <results>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">0</result>
+        <result checked="1">1</result>
+      </results>
+      <gameevententries>
+        <gameevententry gameeventid="0" teamid="12" timemin="33" timesec="0">
+          <mainplayer>
+            <player id="294" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="4" timemin="43" timesec="0">
+          <mainplayer>
+            <player id="92" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="12" timemin="43" timesec="0">
+          <mainplayer>
+            <player id="277" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="12" timemin="74" timesec="0">
+          <mainplayer>
+            <player id="294" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+        <gameevententry gameeventid="2" teamid="4" timemin="88" timesec="0">
+          <mainplayer>
+            <player id="102" />
+          </mainplayer>
+          <secondaryplayer />
+        </gameevententry>
+      </gameevententries>
+    </sheduleentry>
+  </schedule>
+</filetype>
+

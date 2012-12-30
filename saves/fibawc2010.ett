@@ -1,0 +1,3374 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="tournament" version="0.1.2">
+  <tournament name="FIBA World Cup 2010" website="" description="" location="Turkey" firstname="" lastname="" address="" phone="" email="" notes="" begin="1282946400000" end="1284328740000">
+    <sport id="basketball" name="Basketball" edited="1">
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+      <gameevents>
+        <gameevent type="GOAL" name="Zwei Punkte" id="0" secondary="Assist von Spieler" sportid="basketball" nameResourceId="2PNTGOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="2" pointsOpponent="0" />
+        <gameevent type="GOAL" name="Drei Punkte" id="1" secondary="Assist von Spieler" sportid="basketball" nameResourceId="3PNTGOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="3" pointsOpponent="0" />
+        <gameevent type="GOAL" name="Freiwurf Punkt" id="2" sportid="basketball" nameResourceId="PENALTY_GOAL" iconResourceId="PENALTYGOAL" pointsTeam="1" pointsOpponent="0" />
+        <gameevent type="OTHER" name="Verschossener Freiwurf" id="3" sportid="basketball" nameResourceId="MISSED_PENALTY" iconResourceId="MISSEDPENALTY" pointsTeam="0" pointsOpponent="0" />
+      </gameevents>
+    </sport>
+  </tournament>
+  <teams>
+    <team id="0" randomPos="2046249937" name="Angola" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="1" randomPos="111210147" name="Argentina" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="2" randomPos="2088952874" name="Australia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="3" randomPos="704482718" name="Brazil" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="4" randomPos="572636095" name="Canada" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="5" randomPos="698694160" name="China" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="6" randomPos="477356139" name="Cote d'Ivoire" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="7" randomPos="1499265439" name="Croatia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="8" randomPos="1861635798" name="France" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="9" randomPos="2010685787" name="Germany" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="10" randomPos="2117506887" name="Greece" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="11" randomPos="1886869612" name="Iran" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="12" randomPos="502506347" name="Jordan" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="13" randomPos="828963317" name="Lebanon" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="14" randomPos="1439732910" name="Lithuania" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="15" randomPos="566341267" name="New Zealand" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="16" randomPos="1303450339" name="Puerto Rico" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="17" randomPos="1264798731" name="Russia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="18" randomPos="961001657" name="Serbia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="19" randomPos="1691800296" name="Slovenia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="20" randomPos="1916158216" name="Spain" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="21" randomPos="2123900470" name="Tunisia" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="22" randomPos="998476145" name="Turkey" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="23" randomPos="15186139" name="USA" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+  </teams>
+  <refrees />
+  <plan>
+    <group name="Gruppe A" id="0" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Gruppe A" id="0" team="0">
+          <next id="24" />
+        </position>
+        <position name="2. Gruppe A" id="1" team="1">
+          <next id="34" />
+        </position>
+        <position name="3. Gruppe A" id="2" team="2">
+          <next id="27" />
+        </position>
+        <position name="4. Gruppe A" id="3" team="9">
+          <next id="33" />
+        </position>
+        <position name="5. Gruppe A" id="4" team="12" />
+        <position name="6. Gruppe A" id="5" team="18" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Gruppe B" id="1" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Gruppe B" id="6" team="3">
+          <next id="32" />
+        </position>
+        <position name="2. Gruppe B" id="7" team="7">
+          <next id="26" />
+        </position>
+        <position name="3. Gruppe B" id="8" team="11">
+          <next id="35" />
+        </position>
+        <position name="4. Gruppe B" id="9" team="19">
+          <next id="25" />
+        </position>
+        <position name="5. Gruppe B" id="10" team="21" />
+        <position name="6. Gruppe B" id="11" team="23" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Gruppe C" id="2" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Gruppe C" id="12" team="5">
+          <next id="28" />
+        </position>
+        <position name="2. Gruppe C" id="13" team="6">
+          <next id="38" />
+        </position>
+        <position name="3. Gruppe C" id="14" team="10">
+          <next id="31" />
+        </position>
+        <position name="4. Gruppe C" id="15" team="16">
+          <next id="37" />
+        </position>
+        <position name="5. Gruppe C" id="16" team="17" />
+        <position name="6. Gruppe C" id="17" team="22" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Gruppe D" id="3" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Gruppe D" id="18" team="4">
+          <next id="36" />
+        </position>
+        <position name="2. Gruppe D" id="19" team="8">
+          <next id="30" />
+        </position>
+        <position name="3. Gruppe D" id="20" team="13">
+          <next id="39" />
+        </position>
+        <position name="4. Gruppe D" id="21" team="14">
+          <next id="29" />
+        </position>
+        <position name="5. Gruppe D" id="22" team="15" />
+        <position name="6. Gruppe D" id="23" team="20" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 1" id="4" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 1" id="24" prev="0" team="18">
+          <next id="40" />
+        </position>
+        <position name="Verlierer Eight-Final 1" id="25" prev="9" team="7" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 3" id="5" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 3" id="26" prev="7" team="19">
+          <next id="43" />
+        </position>
+        <position name="Verlierer Eight-Final 3" id="27" prev="2" team="2" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 4" id="6" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 4" id="28" prev="12" team="22">
+          <next id="42" />
+        </position>
+        <position name="Verlierer Eight-Final 4" id="29" prev="21" team="8" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 2" id="7" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 2" id="30" prev="19" team="20">
+          <next id="41" />
+        </position>
+        <position name="Verlierer Eight-Final 2" id="31" prev="14" team="10" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 5" id="8" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 5" id="32" prev="6" team="23">
+          <next id="44" />
+        </position>
+        <position name="Verlierer Eight-Final 5" id="33" prev="3" team="0" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 7" id="9" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 7" id="34" prev="1" team="1">
+          <next id="47" />
+        </position>
+        <position name="Verlierer Eight-Final 7" id="35" prev="8" team="3" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 8" id="10" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 8" id="36" prev="18" team="14">
+          <next id="46" />
+        </position>
+        <position name="Verlierer Eight-Final 8" id="37" prev="15" team="5" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eight-Final 6" id="11" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Eight-Final 6" id="38" prev="13" team="17">
+          <next id="45" />
+        </position>
+        <position name="Verlierer Eight-Final 6" id="39" prev="20" team="15" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter Final 1" id="12" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter Final 1" id="40" prev="24" team="18">
+          <next id="48" />
+        </position>
+        <position name="Verlierer Quarter Final 1" id="41" prev="30" team="20">
+          <next id="56" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter Final 2" id="13" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter Final 2" id="42" prev="28" team="22">
+          <next id="49" />
+        </position>
+        <position name="Verlierer Quarter Final 2" id="43" prev="26" team="19">
+          <next id="57" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter Final 3" id="14" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter Final 3" id="44" prev="32" team="23">
+          <next id="50" />
+        </position>
+        <position name="Verlierer Quarter Final 3" id="45" prev="38" team="17">
+          <next id="58" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter Final 4" id="15" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Quarter Final 4" id="46" prev="36" team="14">
+          <next id="51" />
+        </position>
+        <position name="Verlierer Quarter Final 4" id="47" prev="34" team="1">
+          <next id="59" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Semi-Final 1" id="16" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Semi-Final 1" id="48" prev="40" team="18">
+          <next id="52" />
+        </position>
+        <position name="Verlierer Semi-Final 1" id="49" prev="42" team="22">
+          <next id="54" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Semi-Final 2" id="17" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Semi-Final 2" id="50" prev="44" team="23">
+          <next id="53" />
+        </position>
+        <position name="Verlierer Semi-Final 2" id="51" prev="46" team="14">
+          <next id="55" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Final" id="18" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Final" id="52" prev="48" team="22" />
+        <position name="Verlierer Final" id="53" prev="50" team="23" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="3rd Place" id="19" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger 3rd Place" id="54" prev="49" team="18" />
+        <position name="Verlierer 3rd Place" id="55" prev="51" team="14" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Classification (5-8) 1" id="20" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Classification (5-8) 1" id="56" prev="41" team="20">
+          <next id="60" />
+        </position>
+        <position name="Verlierer Classification (5-8) 1" id="57" prev="43" team="19">
+          <next id="62" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Classification (5-8) 2" id="21" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger Classification (5-8) 2" id="58" prev="45" team="17">
+          <next id="61" />
+        </position>
+        <position name="Verlierer Classification (5-8) 2" id="59" prev="47" team="1">
+          <next id="63" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="5th Place" id="22" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger 5th Place" id="60" prev="56" team="20" />
+        <position name="Verlierer 5th Place" id="61" prev="58" team="1" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="7th Place" id="23" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Sieger 7th Place" id="62" prev="57" team="19" />
+        <position name="Verlierer 7th Place" id="63" prev="59" team="17" />
+      </positions>
+      <settings>
+        <game numgametimes="4" minpergametime="10" numovertimes="4" minperovertime="5" />
+        <points>
+          <win home="2" away="2" />
+          <draw home="0" away="0" />
+          <defeat home="1" away="1" />
+          <winot home="2" away="2" />
+          <drawot home="0" away="0" />
+          <defeatot home="1" away="1" />
+          <winp home="2" away="2" />
+          <defeatp home="1" away="1" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_POINT_RULE" ascending="false" />
+        <rule rule="DIRECT_GAME_GOALDIFF_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+  </plan>
+  <gui>
+    <cell id="0" parent="none" edge="0" vertex="0" />
+    <cell id="1" parent="0" edge="0" vertex="0" />
+    <cell id="27" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="72" targetid="119" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="180.0" y="430.0" />
+        <target x="210.0" y="340.0" />
+      </geometry>
+    </cell>
+    <cell id="28" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="75" targetid="120" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="460.0" y="430.0" />
+        <target x="340.0" y="340.0" />
+      </geometry>
+    </cell>
+    <cell id="29" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="78" targetid="122" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="710.0" y="430.0" />
+        <target x="720.0" y="340.0" />
+      </geometry>
+    </cell>
+    <cell id="30" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="81" targetid="123" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="950.0" y="430.0" />
+        <target x="840.0" y="350.0" />
+      </geometry>
+    </cell>
+    <cell id="31" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="119" targetid="129" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="250.0" y="300.0" />
+        </points>
+        <source x="200.0" y="340.0" />
+        <target x="310.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="32" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="120" targetid="126" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="560.0" y="300.0" />
+        </points>
+        <source x="310.0" y="340.0" />
+        <target x="600.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="33" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="123" targetid="127" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="810.0" y="300.0" />
+        </points>
+        <source x="860.0" y="340.0" />
+        <target x="740.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="34" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="2" targetid="95" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="300.0" y="640.0" />
+        <target x="50.0" y="520.0" />
+      </geometry>
+    </cell>
+    <cell id="35" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="11" targetid="96" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="400.0" y="670.0" />
+        </points>
+        <source x="530.0" y="730.0" />
+        <target x="200.0" y="520.0" />
+      </geometry>
+    </cell>
+    <cell id="36" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#00FF00;endArrow=classic;endSize=5;strokeWidth=2" sourceid="21" targetid="98" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="420.0" y="650.0" />
+        </points>
+        <source x="960.0" y="670.0" />
+        <target x="970.0" y="520.0" />
+      </geometry>
+    </cell>
+    <cell id="37" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#996633;endArrow=classic;endSize=5;strokeWidth=2" sourceid="16" targetid="99" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="630.0" y="650.0" />
+        </points>
+        <source x="750.0" y="700.0" />
+        <target x="1090.0" y="530.0" />
+      </geometry>
+    </cell>
+    <cell id="38" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="14" targetid="104" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="750.0" y="640.0" />
+        <target x="700.0" y="520.0" />
+      </geometry>
+    </cell>
+    <cell id="39" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="23" targetid="105" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="960.0" y="730.0" />
+        <target x="800.0" y="530.0" />
+      </geometry>
+    </cell>
+    <cell id="40" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#00FFFF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="4" targetid="102" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="860.0" y="660.0" />
+        </points>
+        <source x="300.0" y="700.0" />
+        <target x="470.0" y="520.0" />
+      </geometry>
+    </cell>
+    <cell id="41" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="9" targetid="101" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="640.0" y="630.0" />
+        </points>
+        <source x="530.0" y="670.0" />
+        <target x="350.0" y="510.0" />
+      </geometry>
+    </cell>
+    <cell id="42" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF0000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="8" targetid="107" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="10.0" y="580.0" />
+        </points>
+        <source x="530.0" y="640.0" />
+        <target x="80.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="43" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="5" targetid="108" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="300.0" y="730.0" />
+        <target x="190.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="44" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="15" targetid="116" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="750.0" y="670.0" />
+        <target x="1020.0" y="380.0" />
+      </geometry>
+    </cell>
+    <cell id="45" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="22" targetid="117" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="960.0" y="700.0" />
+        <target x="1090.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="46" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#800080;endArrow=classic;endSize=5;strokeWidth=2" sourceid="20" targetid="113" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="830.0" y="590.0" />
+        </points>
+        <source x="960.0" y="640.0" />
+        <target x="710.0" y="390.0" />
+      </geometry>
+    </cell>
+    <cell id="47" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="17" targetid="114" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="750.0" y="730.0" />
+        <target x="830.0" y="380.0" />
+      </geometry>
+    </cell>
+    <cell id="48" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="3" targetid="110" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="300.0" y="670.0" />
+        <target x="340.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="49" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="10" targetid="111" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="530.0" y="700.0" />
+        <target x="470.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="50" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="95" targetid="71" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="20.0" y="430.0" />
+        </points>
+        <source x="80.0" y="530.0" />
+        <target x="60.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="51" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF8000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="98" targetid="72" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="260.0" y="420.0" />
+        </points>
+        <source x="1000.0" y="530.0" />
+        <target x="180.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="52" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF00FF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="104" targetid="74" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="290.0" y="430.0" />
+        </points>
+        <source x="710.0" y="530.0" />
+        <target x="350.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="53" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#0000FF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="101" targetid="75" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="540.0" y="500.0" />
+        </points>
+        <source x="360.0" y="530.0" />
+        <target x="430.0" y="280.0" />
+      </geometry>
+    </cell>
+    <cell id="54" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF0000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="107" targetid="77" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="550.0" y="430.0" />
+        </points>
+        <source x="80.0" y="400.0" />
+        <target x="690.0" y="260.0" />
+      </geometry>
+    </cell>
+    <cell id="55" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="116" targetid="78" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="1000.0" y="400.0" />
+        <target x="790.0" y="270.0" />
+      </geometry>
+    </cell>
+    <cell id="56" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FFFF00;endArrow=classic;endSize=5;strokeWidth=2" sourceid="113" targetid="80" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="790.0" y="430.0" />
+        </points>
+        <source x="710.0" y="400.0" />
+        <target x="970.0" y="260.0" />
+      </geometry>
+    </cell>
+    <cell id="57" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#00FF00;endArrow=classic;endSize=5;strokeWidth=2" sourceid="110" targetid="81" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="1030.0" y="390.0" />
+        </points>
+        <source x="360.0" y="400.0" />
+        <target x="1070.0" y="260.0" />
+      </geometry>
+    </cell>
+    <cell id="58" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="71" targetid="83" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="80.0" y="270.0" />
+        <target x="200.0" y="130.0" />
+      </geometry>
+    </cell>
+    <cell id="59" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="74" targetid="84" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="360.0" y="270.0" />
+        <target x="320.0" y="120.0" />
+      </geometry>
+    </cell>
+    <cell id="60" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#006600;endArrow=classic;endSize=5;strokeWidth=2" sourceid="77" targetid="86" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="790.0" y="280.0" />
+        </points>
+        <source x="710.0" y="270.0" />
+        <target x="820.0" y="150.0" />
+      </geometry>
+    </cell>
+    <cell id="61" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="80" targetid="87" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="990.0" y="260.0" />
+        <target x="930.0" y="140.0" />
+      </geometry>
+    </cell>
+    <cell id="62" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="83" targetid="89" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="220.0" y="140.0" />
+        <target x="490.0" y="60.0" />
+      </geometry>
+    </cell>
+    <cell id="63" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="86" targetid="90" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="830.0" y="150.0" />
+        <target x="620.0" y="80.0" />
+      </geometry>
+    </cell>
+    <cell id="64" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="84" targetid="92" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="320.0" y="140.0" />
+        <target x="480.0" y="170.0" />
+      </geometry>
+    </cell>
+    <cell id="65" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="87" targetid="93" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="930.0" y="150.0" />
+        <target x="610.0" y="160.0" />
+      </geometry>
+    </cell>
+    <groupcell id="66" parent="1" groupid="0" x="260.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="2" style="team;whiteSpace=wrap" />
+      <positioncell id="3" style="team;whiteSpace=wrap" />
+      <positioncell id="4" style="team;whiteSpace=wrap" />
+      <positioncell id="5" style="team;whiteSpace=wrap" />
+      <positioncell id="6" style="team;whiteSpace=wrap" />
+      <positioncell id="7" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="67" parent="1" groupid="1" x="470.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="8" style="team;whiteSpace=wrap" />
+      <positioncell id="9" style="team;whiteSpace=wrap" />
+      <positioncell id="10" style="team;whiteSpace=wrap" />
+      <positioncell id="11" style="team;whiteSpace=wrap" />
+      <positioncell id="12" style="team;whiteSpace=wrap" />
+      <positioncell id="13" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="68" parent="1" groupid="2" x="720.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="14" style="team;whiteSpace=wrap" />
+      <positioncell id="15" style="team;whiteSpace=wrap" />
+      <positioncell id="16" style="team;whiteSpace=wrap" />
+      <positioncell id="17" style="team;whiteSpace=wrap" />
+      <positioncell id="18" style="team;whiteSpace=wrap" />
+      <positioncell id="19" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="69" parent="1" groupid="3" x="910.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="20" style="team;whiteSpace=wrap" />
+      <positioncell id="21" style="team;whiteSpace=wrap" />
+      <positioncell id="22" style="team;whiteSpace=wrap" />
+      <positioncell id="23" style="team;whiteSpace=wrap" />
+      <positioncell id="24" style="team;whiteSpace=wrap" />
+      <positioncell id="25" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="70" parent="1" groupid="12" x="30.0" y="380.0" width="200.0" height="70.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="71" style="team;whiteSpace=wrap" />
+      <positioncell id="72" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="73" parent="1" groupid="13" x="310.0" y="380.0" width="200.0" height="70.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="74" style="team;whiteSpace=wrap" />
+      <positioncell id="75" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="76" parent="1" groupid="14" x="560.0" y="380.0" width="200.0" height="70.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="77" style="team;whiteSpace=wrap" />
+      <positioncell id="78" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="79" parent="1" groupid="15" x="800.0" y="380.0" width="200.0" height="70.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="80" style="team;whiteSpace=wrap" />
+      <positioncell id="81" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="82" parent="1" groupid="16" x="170.0" y="80.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="83" style="team;whiteSpace=wrap" />
+      <positioncell id="84" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="85" parent="1" groupid="17" x="780.0" y="90.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="86" style="team;whiteSpace=wrap" />
+      <positioncell id="87" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="88" parent="1" groupid="18" x="450.0" y="10.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="89" style="team;whiteSpace=wrap" />
+      <positioncell id="90" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="91" parent="1" groupid="19" x="450.0" y="110.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="92" style="team;whiteSpace=wrap" />
+      <positioncell id="93" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="94" parent="1" groupid="4" x="200.0" y="540.0" width="180.0" height="50.0" titleHeight="25.714285714285715" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="95" style="team;whiteSpace=wrap" />
+      <positioncell id="96" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="97" parent="1" groupid="7" x="430.0" y="540.0" width="180.0" height="50.0" titleHeight="24.285714285714285" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="98" style="team;whiteSpace=wrap" />
+      <positioncell id="99" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="100" parent="1" groupid="5" x="670.0" y="540.0" width="180.0" height="50.0" titleHeight="24.285714285714285" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="101" style="team;whiteSpace=wrap" />
+      <positioncell id="102" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="103" parent="1" groupid="6" x="890.0" y="540.0" width="180.0" height="50.0" titleHeight="24.285714285714285" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="104" style="team;whiteSpace=wrap" />
+      <positioncell id="105" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="106" parent="1" groupid="8" x="30.0" y="470.0" width="200.0" height="50.0" titleHeight="24.285714285714285" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="107" style="team;whiteSpace=wrap" />
+      <positioncell id="108" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="109" parent="1" groupid="9" x="310.0" y="470.0" width="200.0" height="50.0" titleHeight="24.285714285714285" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="110" style="team;whiteSpace=wrap" />
+      <positioncell id="111" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="112" parent="1" groupid="10" x="560.0" y="470.0" width="200.0" height="50.0" titleHeight="22.857142857142858" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="113" style="team;whiteSpace=wrap" />
+      <positioncell id="114" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="115" parent="1" groupid="11" x="800.0" y="470.0" width="200.0" height="50.0" titleHeight="25.714285714285715" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="116" style="team;whiteSpace=wrap" />
+      <positioncell id="117" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="118" parent="1" groupid="20" x="140.0" y="300.0" width="230.0" height="60.0" titleHeight="21.42857142857143" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="119" style="team;whiteSpace=wrap" />
+      <positioncell id="120" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="121" parent="1" groupid="21" x="680.0" y="300.0" width="240.0" height="60.0" titleHeight="24.285714285714285" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="122" style="team;whiteSpace=wrap" />
+      <positioncell id="123" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <cell id="124" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF0000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="122" targetid="130" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="540.0" y="310.0" />
+        </points>
+        <source x="740.0" y="340.0" />
+        <target x="470.0" y="270.0" />
+      </geometry>
+    </cell>
+    <groupcell id="125" parent="1" groupid="23" x="580.0" y="220.0" width="200.0" height="70.0" titleHeight="21.42857142857143" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="126" style="team;whiteSpace=wrap" />
+      <positioncell id="127" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="128" parent="1" groupid="22" x="290.0" y="210.0" width="220.0" height="70.0" titleHeight="22.857142857142858" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="129" style="team;whiteSpace=wrap" />
+      <positioncell id="130" style="team;whiteSpace=wrap" />
+    </groupcell>
+  </gui>
+  <pageformat orientation="0">
+    <paper width="595.4456692913386" height="841.5496062992125" imageablex="72.0" imageabley="72.0" imageablewidth="451.44566929133856" imageableheight="697.5496062992125" />
+  </pageformat>
+  <schedule>
+    <sheduleentry home="14" away="12" place="Ankara" date="1283004000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">25</result>
+        <result checked="0">18</result>
+        <result checked="0">22</result>
+        <result checked="0">19</result>
+        <result checked="0">18</result>
+        <result checked="0">25</result>
+        <result checked="0">24</result>
+        <result checked="0">19</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">89</result>
+        <result checked="1">81</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="22" away="21" place="Izmir" date="1283004000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">24</result>
+        <result checked="0">25</result>
+        <result checked="0">10</result>
+        <result checked="0">25</result>
+        <result checked="0">27</result>
+        <result checked="0">24</result>
+        <result checked="0">18</result>
+        <result checked="0">18</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">79</result>
+        <result checked="1">92</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="2" away="4" place="Kayseri" date="1283005800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">12</result>
+        <result checked="0">18</result>
+        <result checked="0">20</result>
+        <result checked="0">21</result>
+        <result checked="0">24</result>
+        <result checked="0">16</result>
+        <result checked="0">20</result>
+        <result checked="0">20</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">76</result>
+        <result checked="1">75</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="10" away="9" place="Istanbul" date="1283005800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">14</result>
+        <result checked="0">22</result>
+        <result checked="0">14</result>
+        <result checked="0">17</result>
+        <result checked="0">12</result>
+        <result checked="0">24</result>
+        <result checked="0">16</result>
+        <result checked="0">17</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">56</result>
+        <result checked="1">80</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="16" away="15" place="Ankara" date="1283013000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">14</result>
+        <result checked="0">8</result>
+        <result checked="0">22</result>
+        <result checked="0">26</result>
+        <result checked="0">18</result>
+        <result checked="0">21</result>
+        <result checked="0">21</result>
+        <result checked="0">11</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">75</result>
+        <result checked="1">66</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="18" away="20" place="Izmir" date="1283013000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">20</result>
+        <result checked="0">20</result>
+        <result checked="0">17</result>
+        <result checked="0">14</result>
+        <result checked="0">21</result>
+        <result checked="0">23</result>
+        <result checked="0">13</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">71</result>
+        <result checked="1">81</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="0" away="5" place="Kayseri" date="1283014800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">9</result>
+        <result checked="0">25</result>
+        <result checked="0">9</result>
+        <result checked="0">18</result>
+        <result checked="0">14</result>
+        <result checked="0">34</result>
+        <result checked="0">12</result>
+        <result checked="0">17</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">44</result>
+        <result checked="1">94</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="11" away="7" place="Istanbul" date="1283014800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">20</result>
+        <result checked="0">26</result>
+        <result checked="0">6</result>
+        <result checked="0">30</result>
+        <result checked="0">22</result>
+        <result checked="0">28</result>
+        <result checked="0">30</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">106</result>
+        <result checked="1">78</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="13" away="17" place="Ankara" date="1283022000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">11</result>
+        <result checked="0">23</result>
+        <result checked="0">11</result>
+        <result checked="0">17</result>
+        <result checked="0">14</result>
+        <result checked="0">13</result>
+        <result checked="0">11</result>
+        <result checked="0">33</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">47</result>
+        <result checked="1">86</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="19" away="23" place="Izmir" date="1283022000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">9</result>
+        <result checked="0">18</result>
+        <result checked="0">18</result>
+        <result checked="0">10</result>
+        <result checked="0">16</result>
+        <result checked="0">16</result>
+        <result checked="0">29</result>
+        <result checked="0">22</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">72</result>
+        <result checked="1">66</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="3" away="1" place="Kayseri" date="1283023800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">18</result>
+        <result checked="0">23</result>
+        <result checked="0">24</result>
+        <result checked="0">16</result>
+        <result checked="0">12</result>
+        <result checked="0">26</result>
+        <result checked="0">20</result>
+        <result checked="0">13</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">74</result>
+        <result checked="1">78</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="8" away="6" place="Istanbul" date="1283023800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">12</result>
+        <result checked="0">22</result>
+        <result checked="0">17</result>
+        <result checked="0">17</result>
+        <result checked="0">17</result>
+        <result checked="0">22</result>
+        <result checked="0">19</result>
+        <result checked="0">20</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">65</result>
+        <result checked="1">81</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="12" away="13" place="Ankara" date="1283090400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">21</result>
+        <result checked="0">17</result>
+        <result checked="0">20</result>
+        <result checked="0">16</result>
+        <result checked="0">25</result>
+        <result checked="0">18</result>
+        <result checked="0">17</result>
+        <result checked="0">22</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">83</result>
+        <result checked="1">73</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="21" away="18" place="Izmir" date="1283090400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">12</result>
+        <result checked="0">20</result>
+        <result checked="0">21</result>
+        <result checked="0">23</result>
+        <result checked="0">22</result>
+        <result checked="0">14</result>
+        <result checked="0">15</result>
+        <result checked="0">11</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">70</result>
+        <result checked="1">68</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="4" away="0" place="Kayseri" date="1283092200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">17</result>
+        <result checked="0">16</result>
+        <result checked="0">18</result>
+        <result checked="0">13</result>
+        <result checked="0">12</result>
+        <result checked="0">17</result>
+        <result checked="0">18</result>
+        <result checked="0">33</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">65</result>
+        <result checked="1">79</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="9" away="11" place="Istanbul" date="1283092200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">11</result>
+        <result checked="0">23</result>
+        <result checked="0">17</result>
+        <result checked="0">19</result>
+        <result checked="0">18</result>
+        <result checked="0">25</result>
+        <result checked="0">31</result>
+        <result checked="0">32</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">77</result>
+        <result checked="1">99</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="15" away="14" place="Ankara" date="1283099400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">23</result>
+        <result checked="0">21</result>
+        <result checked="0">18</result>
+        <result checked="0">14</result>
+        <result checked="0">15</result>
+        <result checked="0">24</result>
+        <result checked="0">24</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">80</result>
+        <result checked="1">83</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="20" away="19" place="Izmir" date="1283099400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">20</result>
+        <result checked="0">22</result>
+        <result checked="0">8</result>
+        <result checked="0">20</result>
+        <result checked="0">19</result>
+        <result checked="0">21</result>
+        <result checked="0">12</result>
+        <result checked="0">23</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">59</result>
+        <result checked="1">86</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="5" away="3" place="Kayseri" date="1283101200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">17</result>
+        <result checked="0">14</result>
+        <result checked="0">18</result>
+        <result checked="0">23</result>
+        <result checked="0">19</result>
+        <result checked="0">19</result>
+        <result checked="0">15</result>
+        <result checked="0">13</result>
+        <result checked="1">4</result>
+        <result checked="0">4</result>
+        <result checked="1">8</result>
+        <result checked="0">9</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">81</result>
+        <result checked="1">82</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="7" away="8" place="Istanbul" date="1283101200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">13</result>
+        <result checked="0">22</result>
+        <result checked="0">11</result>
+        <result checked="0">9</result>
+        <result checked="0">16</result>
+        <result checked="0">22</result>
+        <result checked="0">14</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">75</result>
+        <result checked="1">54</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="17" away="16" place="Ankara" date="1283108400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">16</result>
+        <result checked="0">15</result>
+        <result checked="0">17</result>
+        <result checked="0">7</result>
+        <result checked="0">15</result>
+        <result checked="0">15</result>
+        <result checked="0">17</result>
+        <result checked="0">19</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">65</result>
+        <result checked="1">56</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="23" away="22" place="Izmir" date="1283108400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">28</result>
+        <result checked="0">19</result>
+        <result checked="0">20</result>
+        <result checked="0">25</result>
+        <result checked="0">29</result>
+        <result checked="0">19</result>
+        <result checked="0">24</result>
+        <result checked="0">21</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">101</result>
+        <result checked="1">84</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="1" away="2" place="Kayseri" date="1283110200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">20</result>
+        <result checked="0">25</result>
+        <result checked="0">13</result>
+        <result checked="0">14</result>
+        <result checked="0">19</result>
+        <result checked="0">17</result>
+        <result checked="0">22</result>
+        <result checked="0">16</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">74</result>
+        <result checked="1">72</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="6" away="10" place="Istanbul" date="1283110200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">26</result>
+        <result checked="0">16</result>
+        <result checked="0">17</result>
+        <result checked="0">14</result>
+        <result checked="0">16</result>
+        <result checked="0">18</result>
+        <result checked="0">21</result>
+        <result checked="0">17</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">80</result>
+        <result checked="1">65</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="4" away="5" place="Kayseri" date="1283178600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">20</result>
+        <result checked="0">33</result>
+        <result checked="0">17</result>
+        <result checked="0">24</result>
+        <result checked="0">11</result>
+        <result checked="0">26</result>
+        <result checked="0">21</result>
+        <result checked="0">29</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">69</result>
+        <result checked="1">112</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="9" away="7" place="Istanbul" date="1283178600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">16</result>
+        <result checked="0">18</result>
+        <result checked="0">23</result>
+        <result checked="0">26</result>
+        <result checked="0">26</result>
+        <result checked="0">15</result>
+        <result checked="0">26</result>
+        <result checked="0">25</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">91</result>
+        <result checked="1">84</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="2" away="3" place="Kayseri" date="1283187600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">19</result>
+        <result checked="0">7</result>
+        <result checked="0">19</result>
+        <result checked="0">13</result>
+        <result checked="0">24</result>
+        <result checked="0">11</result>
+        <result checked="0">16</result>
+        <result checked="0">12</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">78</result>
+        <result checked="1">43</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="10" away="8" place="Istanbul" date="1283187600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">11</result>
+        <result checked="0">23</result>
+        <result checked="0">12</result>
+        <result checked="0">10</result>
+        <result checked="0">13</result>
+        <result checked="0">22</result>
+        <result checked="0">22</result>
+        <result checked="0">16</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">58</result>
+        <result checked="1">71</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="0" away="1" place="Kayseri" date="1283196600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">20</result>
+        <result checked="0">23</result>
+        <result checked="0">12</result>
+        <result checked="0">22</result>
+        <result checked="0">27</result>
+        <result checked="0">19</result>
+        <result checked="0">11</result>
+        <result checked="0">27</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">70</result>
+        <result checked="1">91</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="11" away="6" place="Istanbul" date="1283196600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">28</result>
+        <result checked="0">21</result>
+        <result checked="0">18</result>
+        <result checked="0">18</result>
+        <result checked="0">13</result>
+        <result checked="0">9</result>
+        <result checked="0">9</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">70</result>
+        <result checked="1">68</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="16" away="13" place="Ankara" date="1283263200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">17</result>
+        <result checked="0">12</result>
+        <result checked="0">17</result>
+        <result checked="0">18</result>
+        <result checked="0">19</result>
+        <result checked="0">14</result>
+        <result checked="0">19</result>
+        <result checked="0">22</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">72</result>
+        <result checked="1">66</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="22" away="20" place="Izmir" date="1283263200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">32</result>
+        <result checked="0">16</result>
+        <result checked="0">19</result>
+        <result checked="0">16</result>
+        <result checked="0">30</result>
+        <result checked="0">24</result>
+        <result checked="0">27</result>
+        <result checked="0">20</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">108</result>
+        <result checked="1">76</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="15" away="12" place="Ankara" date="1283272200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">20</result>
+        <result checked="0">21</result>
+        <result checked="0">24</result>
+        <result checked="0">16</result>
+        <result checked="0">19</result>
+        <result checked="0">20</result>
+        <result checked="0">21</result>
+        <result checked="0">19</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">84</result>
+        <result checked="1">76</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="19" away="18" place="Izmir" date="1283272200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">15</result>
+        <result checked="0">15</result>
+        <result checked="0">13</result>
+        <result checked="0">13</result>
+        <result checked="0">18</result>
+        <result checked="0">20</result>
+        <result checked="0">22</result>
+        <result checked="0">15</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">68</result>
+        <result checked="1">63</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="14" away="17" place="Ankara" date="1283281200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">15</result>
+        <result checked="0">22</result>
+        <result checked="0">24</result>
+        <result checked="0">19</result>
+        <result checked="0">12</result>
+        <result checked="0">24</result>
+        <result checked="0">14</result>
+        <result checked="0">11</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">65</result>
+        <result checked="1">76</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="23" away="21" place="Izmir" date="1283281200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">11</result>
+        <result checked="0">21</result>
+        <result checked="0">24</result>
+        <result checked="0">21</result>
+        <result checked="0">18</result>
+        <result checked="0">9</result>
+        <result checked="0">23</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">73</result>
+        <result checked="1">76</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="12" away="16" place="Ankara" date="1283349600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">21</result>
+        <result checked="0">15</result>
+        <result checked="0">22</result>
+        <result checked="0">25</result>
+        <result checked="0">19</result>
+        <result checked="0">23</result>
+        <result checked="0">18</result>
+        <result checked="0">26</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">80</result>
+        <result checked="1">89</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="18" away="22" place="Izmir" date="1283349600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">8</result>
+        <result checked="0">11</result>
+        <result checked="0">20</result>
+        <result checked="0">24</result>
+        <result checked="0">13</result>
+        <result checked="0">12</result>
+        <result checked="0">20</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">61</result>
+        <result checked="1">71</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="5" away="2" place="Kayseri" date="1283351400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">16</result>
+        <result checked="0">12</result>
+        <result checked="0">27</result>
+        <result checked="0">25</result>
+        <result checked="0">26</result>
+        <result checked="0">24</result>
+        <result checked="0">25</result>
+        <result checked="0">18</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">94</result>
+        <result checked="1">79</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="7" away="10" place="Istanbul" date="1283351400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">23</result>
+        <result checked="0">12</result>
+        <result checked="0">20</result>
+        <result checked="0">11</result>
+        <result checked="0">22</result>
+        <result checked="0">17</result>
+        <result checked="0">19</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">84</result>
+        <result checked="1">64</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="13" away="14" place="Ankara" date="1283358600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">14</result>
+        <result checked="0">20</result>
+        <result checked="0">5</result>
+        <result checked="0">27</result>
+        <result checked="0">19</result>
+        <result checked="0">34</result>
+        <result checked="0">22</result>
+        <result checked="0">16</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">60</result>
+        <result checked="1">97</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="20" away="23" place="Izmir" date="1283358600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">21</result>
+        <result checked="0">10</result>
+        <result checked="0">22</result>
+        <result checked="0">15</result>
+        <result checked="0">29</result>
+        <result checked="0">10</result>
+        <result checked="0">19</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">57</result>
+        <result checked="1">91</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="3" away="0" place="Kayseri" date="1283360400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">19</result>
+        <result checked="0">19</result>
+        <result checked="0">16</result>
+        <result checked="0">21</result>
+        <result checked="0">19</result>
+        <result checked="0">18</result>
+        <result checked="0">24</result>
+        <result checked="0">20</result>
+        <result checked="1">10</result>
+        <result checked="0">14</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">88</result>
+        <result checked="1">92</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="8" away="11" place="Istanbul" date="1283360400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">13</result>
+        <result checked="0">19</result>
+        <result checked="0">15</result>
+        <result checked="0">23</result>
+        <result checked="0">11</result>
+        <result checked="0">20</result>
+        <result checked="0">12</result>
+        <result checked="0">26</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">51</result>
+        <result checked="1">88</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="17" away="15" place="Ankara" date="1283367600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">19</result>
+        <result checked="0">19</result>
+        <result checked="0">11</result>
+        <result checked="0">18</result>
+        <result checked="0">26</result>
+        <result checked="0">20</result>
+        <result checked="0">23</result>
+        <result checked="0">20</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">79</result>
+        <result checked="1">77</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="21" away="19" place="Izmir" date="1283367600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">11</result>
+        <result checked="0">24</result>
+        <result checked="0">13</result>
+        <result checked="0">6</result>
+        <result checked="0">28</result>
+        <result checked="0">11</result>
+        <result checked="0">17</result>
+        <result checked="0">14</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">69</result>
+        <result checked="1">55</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="1" away="4" place="Kayseri" date="1283369400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">35</result>
+        <result checked="0">19</result>
+        <result checked="0">14</result>
+        <result checked="0">18</result>
+        <result checked="0">12</result>
+        <result checked="0">18</result>
+        <result checked="0">27</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">88</result>
+        <result checked="1">79</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="6" away="9" place="Istanbul" date="1283369400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">18</result>
+        <result checked="0">20</result>
+        <result checked="0">12</result>
+        <result checked="0">24</result>
+        <result checked="0">21</result>
+        <result checked="0">23</result>
+        <result checked="0">26</result>
+        <result checked="0">13</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">77</result>
+        <result checked="1">80</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="15" away="13" place="Ankara" date="1283436000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">14</result>
+        <result checked="0">19</result>
+        <result checked="0">19</result>
+        <result checked="0">20</result>
+        <result checked="0">26</result>
+        <result checked="0">25</result>
+        <result checked="0">20</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">79</result>
+        <result checked="1">88</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="23" away="18" place="Izmir" date="1283436000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">28</result>
+        <result checked="0">17</result>
+        <result checked="0">14</result>
+        <result checked="0">20</result>
+        <result checked="0">21</result>
+        <result checked="0">11</result>
+        <result checked="0">26</result>
+        <result checked="0">19</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">89</result>
+        <result checked="1">67</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="0" away="2" place="Kayseri" date="1283437800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">18</result>
+        <result checked="0">15</result>
+        <result checked="0">11</result>
+        <result checked="0">24</result>
+        <result checked="0">9</result>
+        <result checked="0">21</result>
+        <result checked="0">17</result>
+        <result checked="0">16</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">55</result>
+        <result checked="1">76</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="11" away="10" place="Istanbul" date="1283437800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">19</result>
+        <result checked="0">13</result>
+        <result checked="0">20</result>
+        <result checked="0">20</result>
+        <result checked="0">24</result>
+        <result checked="0">13</result>
+        <result checked="0">29</result>
+        <result checked="0">11</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">92</result>
+        <result checked="1">57</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="14" away="16" place="Ankara" date="1283445000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">10</result>
+        <result checked="0">20</result>
+        <result checked="0">20</result>
+        <result checked="0">10</result>
+        <result checked="0">13</result>
+        <result checked="0">29</result>
+        <result checked="0">26</result>
+        <result checked="0">14</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">69</result>
+        <result checked="1">73</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="20" away="21" place="Izmir" date="1283445000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">16</result>
+        <result checked="0">16</result>
+        <result checked="0">16</result>
+        <result checked="0">23</result>
+        <result checked="0">19</result>
+        <result checked="0">25</result>
+        <result checked="0">15</result>
+        <result checked="0">20</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">66</result>
+        <result checked="1">84</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="1" away="5" place="Kayseri" date="1283446800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">20</result>
+        <result checked="0">17</result>
+        <result checked="0">20</result>
+        <result checked="0">15</result>
+        <result checked="0">18</result>
+        <result checked="0">28</result>
+        <result checked="0">26</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">82</result>
+        <result checked="1">84</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="9" away="8" place="Istanbul" date="1283446800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">19</result>
+        <result checked="0">6</result>
+        <result checked="0">9</result>
+        <result checked="0">17</result>
+        <result checked="0">24</result>
+        <result checked="0">11</result>
+        <result checked="0">13</result>
+        <result checked="0">26</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">65</result>
+        <result checked="1">60</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="17" away="12" place="Ankara" date="1283454000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">15</result>
+        <result checked="0">6</result>
+        <result checked="0">24</result>
+        <result checked="0">7</result>
+        <result checked="0">27</result>
+        <result checked="0">12</result>
+        <result checked="0">21</result>
+        <result checked="0">15</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">87</result>
+        <result checked="1">40</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="22" away="19" place="Izmir" date="1283454000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">17</result>
+        <result checked="0">20</result>
+        <result checked="0">22</result>
+        <result checked="0">5</result>
+        <result checked="0">19</result>
+        <result checked="0">18</result>
+        <result checked="0">24</result>
+        <result checked="0">27</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">82</result>
+        <result checked="1">70</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="4" away="3" place="Kayseri" date="1283455800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">17</result>
+        <result checked="0">28</result>
+        <result checked="0">16</result>
+        <result checked="0">12</result>
+        <result checked="0">17</result>
+        <result checked="0">27</result>
+        <result checked="0">23</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">73</result>
+        <result checked="1">91</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="6" away="7" place="Istanbul" date="1283455800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">19</result>
+        <result checked="0">26</result>
+        <result checked="0">16</result>
+        <result checked="0">24</result>
+        <result checked="0">15</result>
+        <result checked="0">20</result>
+        <result checked="0">24</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">92</result>
+        <result checked="1">74</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="24" away="25" place="Istanbul" date="1283616000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">19</result>
+        <result checked="0">27</result>
+        <result checked="0">15</result>
+        <result checked="0">9</result>
+        <result checked="0">20</result>
+        <result checked="0">14</result>
+        <result checked="0">19</result>
+        <result checked="0">22</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">73</result>
+        <result checked="1">72</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="30" away="31" place="Istanbul" date="1283626800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">19</result>
+        <result checked="0">15</result>
+        <result checked="0">12</result>
+        <result checked="0">15</result>
+        <result checked="0">20</result>
+        <result checked="0">28</result>
+        <result checked="0">21</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">80</result>
+        <result checked="1">72</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="26" away="27" place="Istanbul" date="1283702400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">16</result>
+        <result checked="0">8</result>
+        <result checked="0">26</result>
+        <result checked="0">13</result>
+        <result checked="0">29</result>
+        <result checked="0">24</result>
+        <result checked="0">16</result>
+        <result checked="0">13</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">87</result>
+        <result checked="1">58</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="28" away="29" place="Istanbul" date="1283713200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">19</result>
+        <result checked="0">14</result>
+        <result checked="0">24</result>
+        <result checked="0">14</result>
+        <result checked="0">28</result>
+        <result checked="0">17</result>
+        <result checked="0">24</result>
+        <result checked="0">32</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">95</result>
+        <result checked="1">77</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="32" away="33" place="Istanbul" date="1283788800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">33</result>
+        <result checked="0">13</result>
+        <result checked="0">32</result>
+        <result checked="0">25</result>
+        <result checked="0">26</result>
+        <result checked="0">18</result>
+        <result checked="0">30</result>
+        <result checked="0">10</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">121</result>
+        <result checked="1">66</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="38" away="39" place="Istanbul" date="1283799600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">13</result>
+        <result checked="0">15</result>
+        <result checked="0">18</result>
+        <result checked="0">12</result>
+        <result checked="0">20</result>
+        <result checked="0">13</result>
+        <result checked="0">27</result>
+        <result checked="0">16</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">78</result>
+        <result checked="1">56</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="34" away="35" place="Istanbul" date="1283875200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">25</result>
+        <result checked="0">25</result>
+        <result checked="0">21</result>
+        <result checked="0">23</result>
+        <result checked="0">20</result>
+        <result checked="0">18</result>
+        <result checked="0">27</result>
+        <result checked="0">23</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">93</result>
+        <result checked="1">89</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="36" away="37" place="Istanbul" date="1283886000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">17</result>
+        <result checked="0">22</result>
+        <result checked="0">26</result>
+        <result checked="0">18</result>
+        <result checked="0">21</result>
+        <result checked="0">11</result>
+        <result checked="0">14</result>
+        <result checked="0">16</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">78</result>
+        <result checked="1">67</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="40" away="41" place="Istanbul" date="1283961600000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">27</result>
+        <result checked="0">23</result>
+        <result checked="0">22</result>
+        <result checked="0">18</result>
+        <result checked="0">18</result>
+        <result checked="0">23</result>
+        <result checked="0">25</result>
+        <result checked="0">25</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">92</result>
+        <result checked="1">89</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="42" away="43" place="Istanbul" date="1283972400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">27</result>
+        <result checked="0">14</result>
+        <result checked="0">23</result>
+        <result checked="0">17</result>
+        <result checked="0">21</result>
+        <result checked="0">12</result>
+        <result checked="0">24</result>
+        <result checked="0">25</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">95</result>
+        <result checked="1">68</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="44" away="45" place="Istanbul" date="1284048000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">25</result>
+        <result checked="0">25</result>
+        <result checked="0">19</result>
+        <result checked="0">14</result>
+        <result checked="0">26</result>
+        <result checked="0">17</result>
+        <result checked="0">19</result>
+        <result checked="0">23</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">89</result>
+        <result checked="1">79</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="46" away="47" place="Istanbul" date="1284058800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">28</result>
+        <result checked="0">18</result>
+        <result checked="0">22</result>
+        <result checked="0">12</result>
+        <result checked="0">35</result>
+        <result checked="0">23</result>
+        <result checked="0">19</result>
+        <result checked="0">32</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">104</result>
+        <result checked="1">85</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="56" away="57" place="Istanbul" date="1284134400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">16</result>
+        <result checked="0">23</result>
+        <result checked="0">22</result>
+        <result checked="0">18</result>
+        <result checked="0">26</result>
+        <result checked="0">21</result>
+        <result checked="0">33</result>
+        <result checked="0">18</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">97</result>
+        <result checked="1">80</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="58" away="59" place="Istanbul" date="1284145200000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">11</result>
+        <result checked="0">15</result>
+        <result checked="0">22</result>
+        <result checked="0">21</result>
+        <result checked="0">19</result>
+        <result checked="0">18</result>
+        <result checked="0">9</result>
+        <result checked="0">19</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">61</result>
+        <result checked="1">73</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="62" away="63" place="Istanbul" date="1284210000000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">23</result>
+        <result checked="0">21</result>
+        <result checked="0">14</result>
+        <result checked="0">9</result>
+        <result checked="0">22</result>
+        <result checked="0">22</result>
+        <result checked="0">19</result>
+        <result checked="0">31</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">78</result>
+        <result checked="1">83</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="48" away="49" place="Istanbul" date="1284224400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">20</result>
+        <result checked="0">17</result>
+        <result checked="0">22</result>
+        <result checked="0">18</result>
+        <result checked="0">21</result>
+        <result checked="0">25</result>
+        <result checked="0">19</result>
+        <result checked="0">23</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">82</result>
+        <result checked="1">83</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="50" away="51" place="Istanbul" date="1284233400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">23</result>
+        <result checked="0">12</result>
+        <result checked="0">19</result>
+        <result checked="0">15</result>
+        <result checked="0">23</result>
+        <result checked="0">26</result>
+        <result checked="0">24</result>
+        <result checked="0">21</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">89</result>
+        <result checked="1">74</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="60" away="61" place="Istanbul" date="1284296400000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">16</result>
+        <result checked="0">23</result>
+        <result checked="0">16</result>
+        <result checked="0">26</result>
+        <result checked="0">30</result>
+        <result checked="0">16</result>
+        <result checked="0">19</result>
+        <result checked="0">21</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">81</result>
+        <result checked="1">86</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="54" away="55" place="Istanbul" date="1284310800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">22</result>
+        <result checked="0">23</result>
+        <result checked="0">16</result>
+        <result checked="0">25</result>
+        <result checked="0">16</result>
+        <result checked="0">24</result>
+        <result checked="0">34</result>
+        <result checked="0">27</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">88</result>
+        <result checked="1">99</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+    <sheduleentry home="52" away="53" place="Istanbul" date="1284319800000" played="1">
+      <refrees />
+      <results>
+        <result checked="0">17</result>
+        <result checked="0">22</result>
+        <result checked="0">15</result>
+        <result checked="0">20</result>
+        <result checked="0">16</result>
+        <result checked="0">19</result>
+        <result checked="0">16</result>
+        <result checked="0">20</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="0">0</result>
+        <result checked="1">64</result>
+        <result checked="1">81</result>
+      </results>
+      <gameevententries />
+    </sheduleentry>
+  </schedule>
+</filetype>
+

@@ -1,0 +1,35 @@
+EasyTournament Lizenz
+======================
+
+Copyright (c) 2012 David Meier. All rights reserved.
+
+WEITERVERBREITUNG
+Das Weiterverbreiten von EasyTournament, nachfolgend ET genannt, ist unter folgenden Voraussetzungen erlaubt:
+ - ET darf nicht verändert werden. Es muss exakt dem entsprechen, was auf www.easy-tournament.com zum Download angeboten wird.
+ - Eine Webseite die ET zum Download bereitstellt, muss einen Link auf www.easy-tournament.com haben.
+ - ET oder Teile davon dürfen nicht in anderen Software-Produkten verwendet werden (ausgenommen den von ET verwendeten Bibliotheken).
+ - ET darf nur kostenlos zur Verfügung gestellt werden (sofern es auf www.easy-tournament.com kostenlos angeboten wird).
+   Alle Einnahmen, welche durch ET erzielt wurden stehen vollumfänglich David Meier, dem Hersteller von ET zu.
+   Es gelten folgende Ausnahmen (abschliessend): 
+   - Auf Einnahmen, welche durch ein Turnier erzielt werden, das mit ET erstellt und/oder durchgeführt wurde, stellt ET keinen Anspruch.
+   
+GARANTIE
+ET und deren Entwickler übernehmen keine Haftung für Schäden verursacht durch ET. 
+Dies schliesst auch Folgeschäden durch falsch berechnete Resultate usw. ein.
+Die Benutzung von EasyTournament geschieht auf eigenes Risiko!
+
+VERWENDETE BIBLIOTHEKEN
+ET verwendet folgende Bibliotheken:
+- Apache Common-Codec (http://commons.apache.org/codec/)
+- JCalendar (www.toedter.com/en/jcalendar/)
+- JDom (www.jdom.org)
+- JGoodies (www.jgoodies.com)
+- JGraph (www.jgraph.com)
+- Substance (http://insubstantial.posterous.com/)
+
+Mit der Benutzung von ET verpflichten sie sich auch die Lizenzen dieser Bibliotheken einzuhalten. 
+Sie finden diese entweder im Installationsverzeichnis im Verzeichnis "libs" oder auf den oben aufgeführten Webseiten.
+
+VERWENDETE ICONS
+- Fugue (http://p.yusukekamiyamane.com/)
+ET verwendet das Fugue Icon-Set. Mit der Benutzung von ET verpflichten sie sich die Lizenz des Herstellers einzuhalten.

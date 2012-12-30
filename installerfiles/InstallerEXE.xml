@@ -1,0 +1,34 @@
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>@JAR_PATH@</jar>
+  <outfile>@OUT_FILE@</outfile>
+  <errTitle>Java not found</errTitle>
+  <cmdLine></cmdLine>
+  <chdir></chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl>http://easy-tournament.com/forum</supportUrl>
+  <customProcName>false</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  <icon>..\res\icons\start.ico</icon>
+  <jre>
+    <path></path>
+    <minVersion>1.6.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0.0</txtFileVersion>
+    <fileDescription>EasyTournament Installer</fileDescription>
+    <copyright>David Meier</copyright>
+    <productVersion>@VERSION@</productVersion>
+    <txtProductVersion>@VERSION@</txtProductVersion>
+    <productName>EasyTournament</productName>
+    <companyName></companyName>
+    <internalName>EasyTournament</internalName>
+    <originalFilename>@FILE_NAME@</originalFilename>
+  </versionInfo>
+</launch4jConfig>

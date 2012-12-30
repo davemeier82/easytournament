@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<langpack>
+	<str id="mainpack" txt="Program files"/>
+	<str id="mainpack.description" txt="This packet contains the necessary files to run EasyTournament"/>
+	<str id="helpgerman" txt="Help - German"/>
+	<str id="helpgerman.description" txt="German help files"/>
+</langpack>

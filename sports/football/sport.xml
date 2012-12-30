@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="sport" version="0.0.1">
+	<sport id="football" textrb="football_text" iconrb="football_icons">
+	  <settings>
+		<game numgametimes="4" minpergametime="15" numovertimes="1" minperovertime="15" />
+		<points>
+		  <win home="1" away="1" />
+		  <draw home="0" away="0" />
+		  <defeat home="0" away="0" />
+		  <winot home="1" away="1" />
+		  <drawot home="0" away="0" />
+		  <defeatot home="0" away="0" />
+		  <winp home="1" away="1" />
+		  <defeatp home="0" away="0" />
+		</points>
+	  </settings>
+	  <rules>
+		<rule rule="WINS_RULE" ascending="false" />
+		<rule rule="DRAWS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+	  </rules>
+	  <gameevents>
+		<gameevent type="GOAL" nameResourceId="TOUCHDOWN" iconResourceId="TOUCHDOWN" secondaryResourceId="ASSIST" pointsTeam="6" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="FIELDGOAL" iconResourceId="FIELDGOAL" pointsTeam="3" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="PNTAFTERTD" secondaryResourceId="ASSIST" pointsTeam="1" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="2PNTCONVERSION" pointsTeam="2" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="SAFTY" pointsTeam="2" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="OFFSIDE" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="INTERFERENCE" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="CLIPPING" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="FALSESTART" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="HOLDING" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="CHOPBLOCK" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="FACEMASK" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="BLOCKBACK" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="BLOCKWAIST" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="ENCROACHMENT" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="ROUGHING" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="OTHER" nameResourceId="MISSEDFIELDGOAL" iconResourceId="MISSEDFIELDGOAL" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="OTHER" nameResourceId="MISSEDPNTAFTERTD" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="OTHER" nameResourceId="INTERCEPTION" pointsTeam="0" pointsOpponent="0"/>
+	  </gameevents>
+	</sport>
+</filetype>

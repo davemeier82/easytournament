@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="sport" version="0.0.1">
+	<sport id="soccer" textrb="soccer_text" iconrb="soccer_icons">
+	  <settings>
+		<game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+		<points>
+		  <win home="3" away="3" />
+		  <draw home="1" away="1" />
+		  <defeat home="0" away="0" />
+		  <winot home="3" away="3" />
+		  <drawot home="1" away="1" />
+		  <defeatot home="0" away="0" />
+		  <winp home="3" away="3" />
+		  <defeatp home="0" away="0" />
+		</points>
+	  </settings>
+	  <rules>
+		<rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+	  </rules>
+	  <gameevents>
+		<gameevent type="GOAL" nameResourceId="GOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="1" pointsOpponent="0"/>
+		<gameevent type="GOAL" nameResourceId="PENALTY_GOAL" iconResourceId="PENALTYGOAL" pointsTeam="1" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="YELLOW_CARD" iconResourceId="YELLOWCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="SECOND_YELLOW_CARD" iconResourceId="SECONDYELLOWCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="PENALTY" nameResourceId="RED_CARD"  iconResourceId="REDCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0"/>		
+		<gameevent type="OTHER" nameResourceId="OFFSIDE" pointsTeam="0" pointsOpponent="0"/>
+		<gameevent type="OTHER" nameResourceId="MISSED_PENALTY" iconResourceId="MISSEDPENALTY" pointsTeam="0" pointsOpponent="0"/>
+	  </gameevents>
+	</sport>
+</filetype>

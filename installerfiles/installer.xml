@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<installation version="1.0">
+
+	<!--AllgemeineAngabenzurApplikation-->
+	<info>
+		<appname>@APP_NAME@</appname>
+		<appversion>@APP_VERSION@</appversion>
+		<appsubpath>EasyTournament</appsubpath>
+		<url>http://www.easy-tournament.com</url>
+		<authors>
+			<author name="David Meier" email=""/>
+		</authors>
+		<javaversion>1.6</javaversion>
+		<uninstaller/> 
+		<run-privileged ondition="izpack.windowsinstall.vista|izpack.windowsinstall.7"/>
+	</info>
+
+	<!--Grösse des Installer - Fenster definieren.-->
+	<guiprefs width="640" height="480" resizable="no"/>
+
+	<!--Desktop Shortcut Checkbox aktivieren.-->
+	<variables>
+		<variable name="DesktopShortcutCheckboxEnabled" value="true"/>
+	</variables>
+
+	<!--Definition der Sprachen, die der Benutzer auswählen kann.-->
+	<locale>
+		<langpack iso3="eng"/>
+		<langpack iso3="deu"/>
+		<langpack iso3="fra"/>
+	</locale>
+
+	<!--Ressourcen, weche vom Installer benötigt werden. Im Verzeichnis lang sind die Übersetzungen der Pakete und im Verzeichnis spec die Spezifikation und Übersetzung der Shortcuts.-->
+	<resources>
+		<res id="LicencePanel.licence" src="LICENSE.txt"/>
+		<res id="LicencePanel.licence_deu" src="LIZENZ.txt"/>
+		<res id="InfoPanel.info" src="README.txt"/>
+		<res id="InfoPanel.info_deu" src="README_DEUTSCH.txt"/>
+		<res src="installerfiles/lang/packsLang.xml" id="packsLang.xml"/>
+		<res src="installerfiles/lang/packsLang_deu.xml" id="packsLang.xml_deu"/>
+		<res src="installerfiles/lang/packsLang_fra.xml" id="packsLang.xml_fra"/>
+		<res src="installerfiles/spec/default_shortcut_specification.xml" id="shortcutSpec.xml"/>
+		<!--  res src="installerfiles/spec/unix_shortcut_specification.xml" id="UnixshortcutSpec.xml"/-->
+	</resources>
+
+	<!--Panels, welche angezeigt werden sollen und deren Reihenfolge-->
+	<panels>
+		<panel classname="HelloPanel"/>
+		<panel classname="InfoPanel"/>
+		<panel classname="LicencePanel"/>
+		<panel classname="TargetPanel"/>
+		<panel classname="PacksPanel"/>
+		<panel classname="InstallPanel"/>
+		<panel classname="ShortcutPanel" condition="izpack.windowsinstall"/>
+		<panel classname="FinishPanel"/>
+	</panels>
+
+	<!--DefinitionderPakete-->
+	<packs>
+		<!--ZwingendesPaketmitProgrammdateien-->
+		<pack id="mainpack" name="Core" required="yes">
+			<description>Program files</description>
+			<file src="LICENSE.txt" targetdir="$INSTALL_PATH"/>
+			<file src="LIZENZ.txt" targetdir="$INSTALL_PATH"/>
+			<file os="unix" src="release/EasyTournament.jar" targetdir="$INSTALL_PATH"/>
+			<file os="mac" src="release/EasyTournament.jar" targetdir="$INSTALL_PATH"/>
+			<fileset defaultexcludes="yes" dir="." targetdir="$INSTALL_PATH">
+				<include name="README*.txt"/>
+				<include name="res"/>
+				<include name="lib"/>
+				<include name="sports"/>
+				<include name="help"/>
+				<include name="lib/*.jar"/>
+				<include name="lib/*.txt"/>
+				<include name="res/**/*.*"/>
+				<include name="sports/**/*.*"/>
+				<include name="help/help.properties"/>
+				<include name="help/help_en.properties"/>
+				<include name="help/style.css"/>
+				<include name="help/en/**/*.*"/>
+			</fileset>
+			<fileset defaultexcludes="yes" dir="." targetdir="$USER_HOME">			
+				<include name="installerfiles/EasyTournament/"/>
+			</fileset>
+			<file os="windows" src="release/EasyTournament.exe" targetdir="$INSTALL_PATH"/>
+			<file os="windows" src="installerfiles/uninstall.bat" targetdir="$INSTALL_PATH"/>
+			<file os="windows" src="installerfiles/elevate.vbs" targetdir="$INSTALL_PATH"/>
+			<file os="windows" src="installerfiles/elevate.cmd" targetdir="$INSTALL_PATH"/>
+			<file os="windows" src="installerfiles/uninstallXP.bat" targetdir="$INSTALL_PATH" condition="izpack.windowsinstall.xp"/>
+		</pack>
+		<pack id="helpgerman" name="Hilfe - Deutsch" required="no" preselected="yes">
+			<description>German help files</description>
+			<fileset defaultexcludes="yes" dir="." targetdir="$INSTALL_PATH">
+				<include name="help/help_de.properties"/>
+				<include name="help/de/**/*.*"/>
+			</fileset>
+		</pack>
+	</packs>
+
+	<!--Native Library für Shortcuts in Windows-->
+	<native type="izpack" name="ShellLink.dll"/>
+	<native type="izpack" name="ShellLink_x64.dll"/>
+
+</installation>
