@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
    <Product Id="*" UpgradeCode="6F8C1A8E-3974-4A74-9E37-0B43AE0E16FE" 
-            Name="!(loc.ApplicationName)" Version="0.5.7" Manufacturer="!(loc.ManufacturerName)" Language="1033" Codepage="1252">
+            Name="!(loc.ApplicationName)" Version="@VERSION@" Manufacturer="!(loc.ManufacturerName)" Language="1033" Codepage="1252">
 			
-      <Package Id="*" InstallerVersion="300" Compressed="yes" Description="!(loc.ApplicationName) 0.5.7 Installer" 
+      <Package Id="*" InstallerVersion="300" Compressed="yes" Description="!(loc.ApplicationName) @VERSION@ Installer" 
 		Comments="!(loc.ApplicationName) Installer" Manufacturer="!(loc.ManufacturerName)"/>
 	  
       <Media Id="1" Cabinet="easytournament.cab" EmbedCab="yes"/>
@@ -19,8 +19,8 @@
 	  </Property>
 	  <Condition Message="!(loc.JREError)"><![CDATA[Installed OR (JAVA_CURRENT_VERSION >= "1.6")]]></Condition>
 	  <Upgrade Id="6F8C1A8E-3974-4A74-9E37-0B43AE0E16FE">
-         <UpgradeVersion Minimum="0.5.7" OnlyDetect="yes" Property="NEWERVERSIONDETECTED"/>
-         <UpgradeVersion Minimum="0.0.0" Maximum="0.5.7" IncludeMinimum="yes" IncludeMaximum="no" 
+         <UpgradeVersion Minimum="@VERSION@" OnlyDetect="yes" Property="NEWERVERSIONDETECTED"/>
+         <UpgradeVersion Minimum="0.0.0" Maximum="@VERSION@" IncludeMinimum="yes" IncludeMaximum="no" 
                          Property="OLDERVERSIONBEINGUPGRADED"/>	  
       </Upgrade>
       <Condition Message="!(loc.VersionError)">NOT NEWERVERSIONDETECTED</Condition>
@@ -128,7 +128,7 @@
 	  <CustomAction Id='LaunchReadme' Property='NOTEPAD' ExeCommand='[INSTALLDIR]README.txt' Return='asyncNoWait' />
 	  <CustomAction Id='LaunchReadmeDe' Property='NOTEPAD' ExeCommand='[INSTALLDIR]README_DEUTSCH.txt' Return='asyncNoWait' />	  
  
-      <Feature Id="Complete" Title="!(loc.ApplicationName) 0.5.7" Description="!(loc.CompleteDesc)" Display="expand" Level="1" ConfigurableDirectory='INSTALLDIR'>
+      <Feature Id="Complete" Title="!(loc.ApplicationName)" Description="!(loc.CompleteDesc)" Display="expand" Level="1" ConfigurableDirectory='INSTALLDIR'>
 		<Feature Id='MainProgram' Title='!(loc.MainTitle)' Description='!(loc.MainDesc)' Level='1' Absent='disallow' AllowAdvertise='no'>
 			<ComponentRef Id="helpFolder"/>
 			<ComponentRef Id="resFolder"/>

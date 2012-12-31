@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="EasyTournament" default="exeinstaller" basedir=".">
+<project name="EasyTournament" default="msiinstaller" basedir=".">
 	<property name="name" value="EasyTournament" />
 	<property name="version" value="0.5.7.0" />
 	<property name="author" value="David Meier" />
@@ -139,5 +139,25 @@
 	        :${launch4j.dir}/lib/xstream.jar" />
 		<launch4j configFile="installerfiles/InstallerEXE_rel.xml" />
 		<delete file="installerfiles/InstallerEXE_rel.xml" />
+	</target>
+	
+	<target name="msiinstaller" depends="izpack">
+		<copy file="installerfiles/make_msi_installer.bat" toFile="installerfiles/make_msi_installer_rel.bat" overwrite="true">
+			<filterset>
+				<filter token="VERSION" value="${version}" />
+			</filterset>
+		</copy>
+		<copy file="installerfiles/wixinstaller.wxs" toFile="installerfiles/wixinstaller_rel.wxs" overwrite="true">
+			<filterset>
+				<filter token="VERSION" value="${version}" />
+			</filterset>
+		</copy>
+		<exec dir="installerfiles" executable="cmd">
+		  <arg line="/c make_msi_installer_rel.bat"/>
+		</exec>
+		<delete file="${release.dir}/EasyTournament-${version}.msi" />
+		<move file="installerfiles/EasyTournament-${version}.msi" todir="${release.dir}"/>
+		<delete file="installerfiles/make_msi_installer_rel.bat" />
+		<delete file="installerfiles/wixinstaller_rel.wxs" />
 	</target>
 </project>
