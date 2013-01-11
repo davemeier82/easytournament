@@ -100,6 +100,7 @@ public class SchedulePanel extends JPanel implements TableModelListener {
     schedTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
     schedTable.setSelectionModel(pm.getSelectionModel());
     schedTable.setFillsViewportHeight(true);
+    schedTable.getTableHeader().setReorderingAllowed(false);
     tcm = schedTable.getColumnModel();
     schedTable.addKeyListener(new KeyAdapter() {
 

@@ -51,27 +51,30 @@ public class SportSettings extends Model {
   public SportSettings() {}
   
   public void setSportSettings(SportSettings t){
-    this.setNumGameTimes(t.numGameTimes);
-    this.setMinPerGameTime(t.minPerGameTime);
-    this.setNumOvertimes(t.numOvertimes);
-    this.setMinPerOvertime(t.minPerOvertime);
-      
-    this.setPointPerHomeWin(t.pointPerHomeWin);
-    this.setPointPerHomeDraw(t.pointPerHomeDraw);
-    this.setPointPerHomeDefeat(t.pointPerHomeDefeat);
-    this.setPointPerHomeWinOvertime(t.pointPerHomeWinOvertime);
-    this.setPointPerHomeDrawOvertime(t.pointPerHomeDrawOvertime);
-    this.setPointPerHomeDefeatOvertime(t.pointPerHomeDefeatOvertime);
-    this.setPointPerHomeWinPenalty(t.pointPerHomeWinPenalty);
-    this.setPointPerHomeDefeatPenalty(t.pointPerHomeDefeatPenalty);
-    this.setPointPerAwayWin(t.pointPerAwayWin);
-    this.setPointPerAwayDraw(t.pointPerAwayDraw);
-    this.setPointPerAwayDefeat(t.pointPerAwayDefeat);
-    this.setPointPerAwayWinOvertime(t.pointPerAwayWinOvertime);
-    this.setPointPerAwayDrawOvertime(t.pointPerAwayDrawOvertime);
-    this.setPointPerAwayDefeatOvertime(t.pointPerAwayDefeatOvertime);
-    this.setPointPerAwayWinPenalty(t.pointPerAwayWinPenalty);
-    this.setPointPerAwayDefeatPenalty(t.pointPerAwayDefeatPenalty);
+    if(t != null)
+    {
+      this.setNumGameTimes(t.numGameTimes);
+      this.setMinPerGameTime(t.minPerGameTime);
+      this.setNumOvertimes(t.numOvertimes);
+      this.setMinPerOvertime(t.minPerOvertime);
+        
+      this.setPointPerHomeWin(t.pointPerHomeWin);
+      this.setPointPerHomeDraw(t.pointPerHomeDraw);
+      this.setPointPerHomeDefeat(t.pointPerHomeDefeat);
+      this.setPointPerHomeWinOvertime(t.pointPerHomeWinOvertime);
+      this.setPointPerHomeDrawOvertime(t.pointPerHomeDrawOvertime);
+      this.setPointPerHomeDefeatOvertime(t.pointPerHomeDefeatOvertime);
+      this.setPointPerHomeWinPenalty(t.pointPerHomeWinPenalty);
+      this.setPointPerHomeDefeatPenalty(t.pointPerHomeDefeatPenalty);
+      this.setPointPerAwayWin(t.pointPerAwayWin);
+      this.setPointPerAwayDraw(t.pointPerAwayDraw);
+      this.setPointPerAwayDefeat(t.pointPerAwayDefeat);
+      this.setPointPerAwayWinOvertime(t.pointPerAwayWinOvertime);
+      this.setPointPerAwayDrawOvertime(t.pointPerAwayDrawOvertime);
+      this.setPointPerAwayDefeatOvertime(t.pointPerAwayDefeatOvertime);
+      this.setPointPerAwayWinPenalty(t.pointPerAwayWinPenalty);
+      this.setPointPerAwayDefeatPenalty(t.pointPerAwayDefeatPenalty);
+    }
   }
 
   public int getNumGameTimes() {

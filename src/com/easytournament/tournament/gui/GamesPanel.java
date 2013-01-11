@@ -66,6 +66,7 @@ public class GamesPanel extends JPanel implements TableModelListener {
     gamesTable = new JTable(tm);
     gamesTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
     gamesTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
+    gamesTable.getTableHeader().setReorderingAllowed(false);
     gamesTable.addMouseListener(new MouseAdapter() {
 
       @Override
