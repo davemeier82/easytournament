@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
-<project name="EasyTournament" default="msiinstaller" basedir=".">
+<project name="EasyTournament" default="buildall" basedir=".">
 	<property name="name" value="EasyTournament" />
-	<property name="version" value="0.5.7.0" />
+	<property name="version" value="0.6.0.0" />
 	<property name="author" value="David Meier" />
 	<property name="release" value="${name}" />
 	<property name="release.dir" location="release" />
 	<property name="jar.name" value="${name}.jar" />
+	<property name="exe.name" value="${name}.exe" />
 	<property name="jar.path" location="${release.dir}/${jar.name}" />
 	<property name="zip.name" value="${release}-${version}.zip" />
 	<property name="zip.path" location="${release.dir}/${zip.name}" />
-	<property name="launch4j.dir" location="E:\Program Files (x86)\Launch4j" />
+	<property name="launch4j.dir" location="C:\Program Files (x86)\Launch4j" />
 	<fileset id="jars" dir="lib">
 		<include name="*.jar" />
 	</fileset>
@@ -20,7 +21,7 @@
 		<fileset refid="jars" />
 	</path>
 	<pathconvert property="classpath" refid="cp" pathsep=" " dirsep="/">
-		<map from="E:/workspace/Easytournament/lib" to="lib" />
+		<map from="C:/workspace/EasyTournament/lib" to="lib" />
 	</pathconvert>
 
 	<target name="clean">
@@ -46,10 +47,7 @@
 			</manifest>
 		</jar>
 	</target>
-	<target name="zip" depends="jar">
-		<delete>
-			<fileset dir="logs" includes="**/*.*" />
-		</delete>
+	<target name="zip" depends="jar,etexe">
 		<zip destfile="${zip.path}">
 			<zipfileset dir="${basedir}" prefix="${release}">
 				<include name="README*.txt" />
@@ -58,12 +56,12 @@
 				<include name="${name}.bat" />
 			</zipfileset>
 			<zipfileset dir="release" includes="${jar.name}" prefix="${release}" />
+			<zipfileset dir="release" includes="${exe.name}" prefix="${release}" />
 			<zipfileset dir="res" prefix="${release}/res" />
 			<zipfileset dir="sports" prefix="${release}/sports" />
 			<zipfileset dir="lib" prefix="${release}/lib" />
 			<zipfileset dir="help" prefix="${release}/help" />
 		</zip>
-		<delete file="${jar.path}" />
 	</target>
 
 	<target name="izpack" depends="etexe">
@@ -141,7 +139,7 @@
 		<delete file="installerfiles/InstallerEXE_rel.xml" />
 	</target>
 	
-	<target name="msiinstaller" depends="izpack">
+	<target name="msiinstaller" depends="etexe">
 		<copy file="installerfiles/make_msi_installer.bat" toFile="installerfiles/make_msi_installer_rel.bat" overwrite="true">
 			<filterset>
 				<filter token="VERSION" value="${version}" />
@@ -160,4 +158,9 @@
 		<delete file="installerfiles/make_msi_installer_rel.bat" />
 		<delete file="installerfiles/wixinstaller_rel.wxs" />
 	</target>
+	
+	<target name="buildall" depends="izpack,zip,msiinstaller">
+	
+	</target>
+	
 </project>

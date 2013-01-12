@@ -5,8 +5,8 @@ public class MetaInfos {
   public static final String APP_WEBSITE = "www.easy-tournament.com";
   public static final String AUTHOR = "David Meier";
   public static final int VERSION_MAIN = 0;
-  public static final int VERSION_MAJOR = 5;
-  public static final int VERSION_MINOR = 6;
+  public static final int VERSION_MAJOR = 6;
+  public static final int VERSION_MINOR = 0;
 
   public static final String FILE_APPLICATION = "easytournament";
   public static final String FILE_MAINFILETYPE = "tournament";
