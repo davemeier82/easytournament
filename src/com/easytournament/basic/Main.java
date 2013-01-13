@@ -1,3 +1,12 @@
+/* Main.java - EasyTournament StartUp Class
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic;
 
 import java.awt.Dimension;
@@ -25,6 +34,12 @@ import com.easytournament.basic.model.MainFramePModel;
 import com.easytournament.basic.settings.SettingsRegistry;
 import com.easytournament.basic.valueholder.Rule;
 
+/**
+ * The Main class to start EasyTournament
+ * 
+ * @author David Meier
+ * @version 
+ */
 public class Main {
 
   /**
