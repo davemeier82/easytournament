@@ -11,9 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 
-import com.easytournament.basic.MainMenuObservable;
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.action.MainMenuAction;
+import com.easytournament.basic.gui.MainMenuObservable;
 import com.easytournament.basic.gui.dialog.ErrorDialog;
 import com.easytournament.basic.model.MainMenuPModel;
 import com.easytournament.basic.navigationitem.NaviNode;

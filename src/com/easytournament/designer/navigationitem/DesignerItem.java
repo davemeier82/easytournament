@@ -11,11 +11,11 @@ import org.jdom.Element;
 
 
 
-import com.easytournament.basic.MainMenuObservable;
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.action.MainMenuAction;
 import com.easytournament.basic.export.ExportRegistry;
 import com.easytournament.basic.export.ImportRegistry;
+import com.easytournament.basic.gui.MainMenuObservable;
 import com.easytournament.basic.model.MainMenuPModel;
 import com.easytournament.basic.navigationitem.NavTreeActions;
 import com.easytournament.basic.navigationitem.NaviNode;

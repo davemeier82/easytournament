@@ -11,8 +11,8 @@ import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
-import com.easytournament.basic.MainMenuObservable;
 import com.easytournament.basic.action.MainMenuAction;
+import com.easytournament.basic.gui.MainMenuObservable;
 import com.easytournament.basic.resources.Icon;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;

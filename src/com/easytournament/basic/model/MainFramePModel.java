@@ -25,10 +25,10 @@ import javax.swing.tree.TreeSelectionModel;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import com.easytournament.basic.MainMenuObservable;
 import com.easytournament.basic.MetaInfos;
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.action.MainMenuAction;
+import com.easytournament.basic.gui.MainMenuObservable;
 import com.easytournament.basic.gui.dialog.AboutDialog;
 import com.easytournament.basic.gui.dialog.ErrorDialog;
 import com.easytournament.basic.gui.dialog.ExportDialog;

@@ -15,22 +15,16 @@ public class Goal {
     return penalty;
   }
 
-
-
   public void setPenalty(boolean penalty) {
     this.penalty = penalty;
   }
-
-
 
   public Goal(Person scorer, Date time, boolean owngoal) {
     super();
     this.scorer = scorer;
     this.time = time;
     this.owngoal = owngoal;
-  }
-  
-  
+  }  
   
   public Goal(Person scorer, ArrayList<Person> assist, Date time,
       boolean owngoal) {
@@ -40,8 +34,6 @@ public class Goal {
     this.time = time;
     this.owngoal = owngoal;
   }
-
-
 
   public Person getScorer() {
     return scorer;

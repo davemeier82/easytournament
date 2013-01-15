@@ -6,8 +6,8 @@ import java.util.Collection;
 import javax.swing.*;
 
 
-import com.easytournament.basic.MainMenuObservable;
 import com.easytournament.basic.action.MainMenuAction;
+import com.easytournament.basic.gui.MainMenuObservable;
 import com.jgoodies.binding.beans.Model;
 
 /**

@@ -1,4 +1,4 @@
-package com.easytournament.basic;
+package com.easytournament.basic.gui;
 
 import java.util.Observable;
 

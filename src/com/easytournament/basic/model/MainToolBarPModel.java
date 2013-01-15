@@ -6,8 +6,8 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 
 
-import com.easytournament.basic.MainMenuObservable;
 import com.easytournament.basic.action.MainMenuAction;
+import com.easytournament.basic.gui.MainMenuObservable;
 import com.jgoodies.binding.beans.Model;
 
 public class MainToolBarPModel extends Model {

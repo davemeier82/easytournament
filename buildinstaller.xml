@@ -10,7 +10,9 @@
 	<property name="jar.path" location="${release.dir}/${jar.name}" />
 	<property name="zip.name" value="${release}-${version}.zip" />
 	<property name="zip.path" location="${release.dir}/${zip.name}" />
-	<property name="launch4j.dir" location="C:\Program Files (x86)\Launch4j" />
+	<property name="launch4j.dir" location="E:\Program Files (x86)\Launch4j" />
+	<property name="eclipse.dir" location="E:\Program Files (x86)\Eclipse" />
+	<property name="reports.tests" location="reports" />
 	<fileset id="jars" dir="lib">
 		<include name="*.jar" />
 	</fileset>
@@ -21,7 +23,7 @@
 		<fileset refid="jars" />
 	</path>
 	<pathconvert property="classpath" refid="cp" pathsep=" " dirsep="/">
-		<map from="C:/workspace/EasyTournament/lib" to="lib" />
+		<map from="E:/workspace/EasyTournament/lib" to="lib" />
 	</pathconvert>
 
 	<target name="clean">
@@ -32,8 +34,17 @@
 
 	<target name="compile" depends="clean">
 		<javac target="1.6" source="1.6" srcdir="src" destdir="bin" classpathref="classpath" debug="true" debuglevel="lines,vars,source" includeantruntime="false" />
+		<javac target="1.6" source="1.6" srcdir="test" destdir="bin_test" debug="true" debuglevel="lines,vars,source" includeantruntime="false">
+			<classpath>
+				<pathelement location="${eclipse.dir}\plugins\org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
+				<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+				<pathelement location="bin"/>
+				<pathelement location="bin_test"/>
+			</classpath>
+		</javac>
+			
 	</target>
-	<target name="jar" depends="compile">
+	<target name="jar" depends="compile,unit-tests">
 		<delete>
 			<fileset dir="${release.dir}" includes="**/*.*" />
 		</delete>
@@ -163,4 +174,27 @@
 	
 	</target>
 	
+	<target name="unit-tests" >
+		<delete>
+			<fileset dir="${reports.tests}" includes="**/*.*" />
+		</delete>
+
+	    <junit printsummary="yes" haltonfailure="yes">
+	      <classpath>
+	      	<pathelement location="${eclipse.dir}\plugins\org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
+	      	<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+	      	<pathelement location="bin"/>
+	      	<pathelement location="bin_test"/>
+	      </classpath>
+
+	      <formatter type="plain"/>
+	      <formatter type="xml"/>
+
+	      <batchtest fork="yes" todir="${reports.tests}">
+	        <fileset dir="test">
+	          <include name="**/*Test*.java"/>
+	        </fileset>
+	      </batchtest>
+	    </junit>
+	</target>	
 </project>
