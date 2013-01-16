@@ -89,6 +89,7 @@ public class Group extends AbstractGroup {
         new Integer(this.getNumPositions()));
   }
 
+  @Override
   protected void addPosition(Position p) {
     super.addPosition(p);
   }
@@ -98,7 +99,7 @@ public class Group extends AbstractGroup {
       p.removePropertyChangeListener(pcl);
     }
     p.clear();
-    boolean r = positions.remove(p);
+    boolean r = this.positions.remove(p);
     return r;
   }
 

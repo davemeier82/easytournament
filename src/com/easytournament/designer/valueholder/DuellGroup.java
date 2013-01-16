@@ -10,10 +10,6 @@ public class DuellGroup extends AbstractGroup {
 
   private static final long serialVersionUID = -5796055372818322003L;
 
-  public int getNumPositions() {
-    return positions.getSize();
-  }
-
   public DuellGroup(String name) {
     this(name, true);
   }
@@ -77,5 +73,4 @@ public class DuellGroup extends AbstractGroup {
       this.addPropertyChangeListener(pcl);
     }
   }
-
 }

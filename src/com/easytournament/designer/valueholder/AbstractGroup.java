@@ -46,7 +46,7 @@ public abstract class AbstractGroup extends Model implements
   protected boolean tableOutOfDate = false;
 
   public int getNumPositions() {
-    return positions.getSize();
+    return this.positions.getSize();
   }
   
   //no id
@@ -83,18 +83,18 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public ArrayList<Position> getPositions() {
-    return positions;
+    return this.positions;
   }
 
   protected void addPosition(Position p) {
     p.addPropertyChangeListener(this);
-    positions.add(p);
+    this.positions.add(p);
     p.setGroup(this);
-    tableOutOfDate = true;
+    this.tableOutOfDate = true;
   }
 
   public ArrayListModel<Rule> getRules() {
-    return rules;
+    return this.rules;
   }
 
   public void setRules(ArrayListModel<Rule> rules) {
@@ -104,13 +104,13 @@ public abstract class AbstractGroup extends Model implements
     this.rules = rules;
     if(this.rules != null)
       this.rules.addListDataListener(this);
-    tableOutOfDate = true;
+    this.tableOutOfDate = true;
     this.firePropertyChange(PROPERTY_RULES, old, this.rules);
   }
 
   public int getNumStartPos() {
     int i = 0;
-    for (Position p : positions) {
+    for (Position p : this.positions) {
       if (p.getPrev() == null)
         i++;
     }
@@ -119,7 +119,7 @@ public abstract class AbstractGroup extends Model implements
 
   public ArrayListModel<Position> getStartPos() {
     ArrayListModel<Position> spos = new ArrayListModel<Position>();
-    for (Position p : positions) {
+    for (Position p : this.positions) {
       if (p.getPrev() == null)
         spos.add(p);
     }
@@ -127,7 +127,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public ArrayListModel<Team> getTeams() {
-    return teams;
+    return this.teams;
   }
 
   public void setTeams(ArrayListModel<Team> teams) {
@@ -139,7 +139,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public ArrayListModel<ScheduleEntry> getSchedules() {
-    return schedules;
+    return this.schedules;
   }
 
   public void setSchedules(ArrayListModel<ScheduleEntry> schedules) {
@@ -151,7 +151,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public ArrayListModel<TableEntry> getTable() {
-    return table;
+    return this.table;
   }
 
   public void setTable(ArrayListModel<TableEntry> table) {
@@ -162,7 +162,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public void setName(String name) {
@@ -182,7 +182,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public int getId() {
-    return id;
+    return this.id;
   }
 
   @Override
@@ -231,7 +231,7 @@ public abstract class AbstractGroup extends Model implements
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + id;
+    result = prime * result + this.id;
     return result;
   }
 
@@ -244,13 +244,13 @@ public abstract class AbstractGroup extends Model implements
     if (getClass() != obj.getClass())
       return false;
     AbstractGroup other = (AbstractGroup)obj;
-    if (id != other.id)
+    if (this.id != other.id)
       return false;
     return true;
   }
 
   public SportSettings getSettings() {
-    return settings;
+    return this.settings;
   }
 
   public void setSettings(SportSettings settings) {
@@ -265,7 +265,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public boolean isDefaultSettings() {
-    return defaultSettings;
+    return this.defaultSettings;
   }
 
   public void setDefaultSettings(boolean defaultSettings) {
@@ -276,7 +276,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public boolean isDefaultRules() {
-    return defaultRules;
+    return this.defaultRules;
   }
 
   public void setDefaultRules(boolean defaultRules) {
@@ -287,7 +287,7 @@ public abstract class AbstractGroup extends Model implements
   }
 
   public boolean isTableOutOfDate() {
-    return tableOutOfDate;
+    return this.tableOutOfDate;
   }
 
   public void setTableOutOfDate(boolean tableOutOfDate) {

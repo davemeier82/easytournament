@@ -299,116 +299,10 @@ public class DesignerXMLHandler {
     for (Object o : guiElement.getChildren()) {
       Element cellElement = (Element)o;
       if (cellElement.getName().equals("groupcell")) {
-        double x = Double.parseDouble(cellElement.getAttributeValue("x"));
-        double y = Double.parseDouble(cellElement.getAttributeValue("y"));
-        double width = Double.parseDouble(cellElement
-            .getAttributeValue("width"));
-        double height = Double.parseDouble(cellElement
-            .getAttributeValue("height"));
-        double titleHeight = Double.parseDouble(cellElement
-            .getAttributeValue("titleHeight"));
-        mxGeometry geom = new mxGeometry(x, y, width, height);
-        DuellGroupCell groupcell = null;
-        if (cellElement.getAttributeValue("type").equals(
-            GroupType.NORMAL.toString())) {
-          groupcell = new GroupCell((Group)groupmap.get(Integer
-              .valueOf(cellElement.getAttributeValue("groupid"))), geom,
-              titleHeight);
-        }
-        else {
-          groupcell = new DuellGroupCell(groupmap.get(Integer
-              .valueOf(cellElement.getAttributeValue("groupid"))), geom,
-              titleHeight);
-        }
-        groupcell.setStyle(cellElement.getAttributeValue("style"));
-        Integer parent = Integer.valueOf(cellElement
-            .getAttributeValue("parent"));
-        if (orderingMap.containsKey(parent)) {
-          orderingMap.get(parent).add(groupcell);
-        }
-        else {
-          ArrayList<mxICell> list = new ArrayList<mxICell>();
-          list.add(groupcell);
-          orderingMap.put(parent, list);
-        }
-        cells.put(Integer.valueOf(cellElement.getAttributeValue("id")),
-            groupcell);
-
-        int i = 0;
-        for (Object pco : cellElement.getChildren("positioncell")) {
-          Element posCellElement = (Element)pco;
-          posCellmap.put(
-              Integer.valueOf(posCellElement.getAttributeValue("id")),
-              groupcell.getChildAt(i));
-          groupcell.setPositionStyle(i,
-              posCellElement.getAttributeValue("style"));
-          i++;
-        }
+        readGroupCell(groupmap, posCellmap, orderingMap, cells, cellElement);
       }
       else {
-        Element geomElement = cellElement.getChild("geometry");
-
-        mxGeometry geom = null;
-        if (geomElement != null) {
-          geom = new mxGeometry();
-
-          List<mxPoint> pointList = new ArrayList<mxPoint>();
-
-          Element pointsElement = geomElement.getChild("points");
-          for (Object po : pointsElement.getChildren("point")) {
-            Element pointElement = (Element)po;
-            pointList.add(new mxPoint(Double.parseDouble(pointElement
-                .getAttributeValue("x")), Double.parseDouble(pointElement
-                .getAttributeValue("y"))));
-          }
-          geom.setPoints(pointList);
-
-          Element sourceElement = geomElement.getChild("source");
-          Element targetElement = geomElement.getChild("target");
-          Element offsetElement = geomElement.getChild("offset");
-
-          if (sourceElement != null)
-            geom.setSourcePoint(new mxPoint(Double.parseDouble(sourceElement
-                .getAttributeValue("x")), Double.parseDouble(sourceElement
-                .getAttributeValue("y"))));
-          if (targetElement != null)
-            geom.setTargetPoint(new mxPoint(Double.parseDouble(targetElement
-                .getAttributeValue("x")), Double.parseDouble(targetElement
-                .getAttributeValue("y"))));
-          if (offsetElement != null)
-            geom.setOffset(new mxPoint(Double.parseDouble(offsetElement
-                .getAttributeValue("x")), Double.parseDouble(offsetElement
-                .getAttributeValue("y"))));
-        }
-
-        mxCell edge = new mxCell(cellElement.getAttributeValue("value"), geom,
-            cellElement.getAttributeValue("style"));
-
-        Integer id = Integer.valueOf(cellElement.getAttributeValue("id"));
-        String source = cellElement.getAttributeValue("sourceid");
-        String target = cellElement.getAttributeValue("targetid");
-        if (source != null && target != null) {
-          edges.add(id);
-          edges.add(Integer.valueOf(source));
-          edges.add(Integer.valueOf(target));
-        }
-
-        edge.setEdge(cellElement.getAttributeValue("edge").equals("1"));
-        edge.setVertex(cellElement.getAttributeValue("vertex").equals("1"));
-
-        String parentStr = cellElement.getAttributeValue("parent");
-        if (!parentStr.equals("none")) {
-          Integer parent = Integer.valueOf(parentStr);
-          if (orderingMap.containsKey(parent)) {
-            orderingMap.get(parent).add(edge);
-          }
-          else {
-            ArrayList<mxICell> list = new ArrayList<mxICell>();
-            list.add(edge);
-            orderingMap.put(parent, list);
-          }
-        }
-        cells.put(id, edge);
+        readCell(orderingMap, cells, edges, cellElement);
       }
     }
 
@@ -434,15 +328,145 @@ public class DesignerXMLHandler {
       mxCell edge = (mxCell)cells.get(edges.get(i++));
       mxICell source = posCellmap.get(edges.get(i++));
       mxICell target = posCellmap.get(edges.get(i));
-      edge.setSource(source);
-      edge.setTarget(target);
-      source.insertEdge(edge, true);
-      target.insertEdge(edge, false);
+
+      if (source != null) {
+        edge.setSource(source);
+        source.insertEdge(edge, true);
+      }
+      if (target != null) {
+        edge.setTarget(target);
+        target.insertEdge(edge, false);
+      }
     }
 
     graph.refresh();
     gcomp.repaint();
 
+  }
+
+  private static void readCell(HashMap<Integer,ArrayList<mxICell>> orderingMap,
+      HashMap<Integer,mxICell> cells, ArrayList<Integer> edges,
+      Element cellElement) {
+    Element geomElement = cellElement.getChild("geometry");
+
+    mxGeometry geom = null;
+    if (geomElement != null) {
+      geom = new mxGeometry();
+
+      List<mxPoint> pointList = new ArrayList<mxPoint>();
+
+      Element pointsElement = geomElement.getChild("points");
+      for (Object po : pointsElement.getChildren("point")) {
+        Element pointElement = (Element)po;
+        pointList.add(new mxPoint(Double.parseDouble(pointElement
+            .getAttributeValue("x")), Double.parseDouble(pointElement
+            .getAttributeValue("y"))));
+      }
+      geom.setPoints(pointList);
+
+      Element sourceElement = geomElement.getChild("source");
+      Element targetElement = geomElement.getChild("target");
+      Element offsetElement = geomElement.getChild("offset");
+
+      if (sourceElement != null)
+        geom.setSourcePoint(new mxPoint(Double.parseDouble(sourceElement
+            .getAttributeValue("x")), Double.parseDouble(sourceElement
+            .getAttributeValue("y"))));
+      if (targetElement != null)
+        geom.setTargetPoint(new mxPoint(Double.parseDouble(targetElement
+            .getAttributeValue("x")), Double.parseDouble(targetElement
+            .getAttributeValue("y"))));
+      if (offsetElement != null)
+        geom.setOffset(new mxPoint(Double.parseDouble(offsetElement
+            .getAttributeValue("x")), Double.parseDouble(offsetElement
+            .getAttributeValue("y"))));
+    }
+
+    mxCell edge = new mxCell(cellElement.getAttributeValue("value"), geom,
+        cellElement.getAttributeValue("style"));
+
+    Integer id = Integer.valueOf(cellElement.getAttributeValue("id"));
+    String source = cellElement.getAttributeValue("sourceid");
+    String target = cellElement.getAttributeValue("targetid");
+    if (source != null && target != null) {
+      edges.add(id);
+      edges.add(Integer.valueOf(source));
+      edges.add(Integer.valueOf(target));
+    }
+
+    edge.setEdge(cellElement.getAttributeValue("edge").equals("1"));
+    edge.setVertex(cellElement.getAttributeValue("vertex").equals("1"));
+
+    String parentStr = cellElement.getAttributeValue("parent");
+    if (!parentStr.equals("none")) {
+      Integer parent = Integer.valueOf(parentStr);
+      if (orderingMap.containsKey(parent)) {
+        orderingMap.get(parent).add(edge);
+      }
+      else {
+        ArrayList<mxICell> list = new ArrayList<mxICell>();
+        list.add(edge);
+        orderingMap.put(parent, list);
+      }
+    }
+    cells.put(id, edge);
+  }
+
+  private static void readGroupCell(HashMap<Integer,AbstractGroup> groupmap,
+      HashMap<Integer,mxICell> posCellmap,
+      HashMap<Integer,ArrayList<mxICell>> orderingMap,
+      HashMap<Integer,mxICell> cells, Element cellElement) {
+    double x = Double.parseDouble(cellElement.getAttributeValue("x"));
+    double y = Double.parseDouble(cellElement.getAttributeValue("y"));
+    double width = Double.parseDouble(cellElement.getAttributeValue("width"));
+    double height = Double.parseDouble(cellElement.getAttributeValue("height"));
+    double titleHeight = Double.parseDouble(cellElement
+        .getAttributeValue("titleHeight"));
+    mxGeometry geom = new mxGeometry(x, y, width, height);
+    
+    List<Element> posCellElements = cellElement.getChildren("positioncell");
+    
+    AbstractGroup group = groupmap.get(Integer.valueOf(cellElement
+          .getAttributeValue("groupid")));
+    
+    if(posCellElements.size() != group.getNumPositions())
+    {
+      try {
+        ((Group)group).setNumPositions(posCellElements.size());
+      }
+      catch(ClassCastException ex)
+      {
+       // it is a duell group and must therefore have 2 teams
+      }      
+    }      
+    
+    DuellGroupCell groupcell = null;
+    if (cellElement.getAttributeValue("type").equals(
+        GroupType.NORMAL.toString())) {
+      groupcell = new GroupCell((Group)group, geom, titleHeight);
+    }
+    else {
+      groupcell = new DuellGroupCell(group, geom, titleHeight);
+    }
+    groupcell.setStyle(cellElement.getAttributeValue("style"));
+    Integer parent = Integer.valueOf(cellElement.getAttributeValue("parent"));
+    if (orderingMap.containsKey(parent)) {
+      orderingMap.get(parent).add(groupcell);
+    }
+    else {
+      ArrayList<mxICell> list = new ArrayList<mxICell>();
+      list.add(groupcell);
+      orderingMap.put(parent, list);
+    }
+    cells.put(Integer.valueOf(cellElement.getAttributeValue("id")), groupcell);
+
+    int i = 0;
+    for (Element posCellElement : posCellElements) {
+      posCellmap.put(Integer.valueOf(posCellElement.getAttributeValue("id")),
+          groupcell.getChildAt(i));
+      groupcell.setPositionStyle(i, posCellElement.getAttributeValue("style"));
+      i++;
+    }
   }
 
   private static void saveGuiElements(Element gui, mxICell cell) {
