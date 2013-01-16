@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.jdom.Element;
+import org.junit.internal.ExactComparisonCriteria;
 
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.gui.dialog.ErrorDialog;
@@ -437,6 +438,23 @@ public class DesignerXMLHandler {
       catch(ClassCastException ex)
       {
        // it is a duell group and must therefore have 2 teams
+        if(posCellElements.size() > group.getNumPositions())
+        {
+          while(posCellElements.size() > group.getNumPositions())
+          {
+            posCellElements.remove(posCellElements.size()-1);
+          }
+        }
+        else
+        {
+          Exception tfex = new Exception("Too few elements in DuellGroup");
+          ErrorLogger.getLogger().throwing("DesignerXMLHandler", "readGroupCell", tfex);
+          ErrorDialog ed = new ErrorDialog(
+              Organizer.getInstance().getMainFrame(),
+              ResourceManager.getText(Text.ERROR), tfex.toString(), tfex);
+          ed.setVisible(true);
+          tfex.printStackTrace();
+        }
       }      
     }      
     
