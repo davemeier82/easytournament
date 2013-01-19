@@ -17,7 +17,7 @@ public class TournamentPlan extends Model implements ListDataListener {
   public static final String PROPERTY_GROUPS = "groups";
   private static final long serialVersionUID = 6615248444314752699L;
   private ArrayListModel<AbstractGroup> groups = new ArrayListModel<AbstractGroup>();
-  GroupNameComperator<AbstractGroup> gnc = new GroupNameComperator<AbstractGroup>();
+  private GroupNameComperator<AbstractGroup> gnc = new GroupNameComperator<AbstractGroup>();
 
   public TournamentPlan() {
     groups.addListDataListener(this);
@@ -113,6 +113,32 @@ public class TournamentPlan extends Model implements ListDataListener {
   public void intervalRemoved(ListDataEvent e) {
     this.firePropertyChange(PROPERTY_GROUPS, null, groups);
 
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((this.groups == null)? 0 : this.groups.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    TournamentPlan other = (TournamentPlan)obj;
+    if (this.groups == null) {
+      if (other.groups != null)
+        return false;
+    }
+    else if (!this.groups.equals(other.groups))
+      return false;
+    return true;
   }
 
 }

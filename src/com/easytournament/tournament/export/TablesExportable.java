@@ -18,7 +18,7 @@ import com.easytournament.tournament.html.TablesHTMLHandler;
 public class TablesExportable implements Exportable {
 
   @Override
-  public void export() {
+  public void doExport() {
     JFileChooser chooser = new JFileChooser();
     chooser.setFileFilter(new FileFilter() {
       public boolean accept(File f) {

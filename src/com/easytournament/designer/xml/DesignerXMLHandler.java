@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Set;
 
 import org.jdom.Element;
-import org.junit.internal.ExactComparisonCriteria;
 
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.gui.dialog.ErrorDialog;

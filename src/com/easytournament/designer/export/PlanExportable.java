@@ -32,7 +32,7 @@ import com.mxgraph.util.mxCellRenderer.CanvasFactory;
 public class PlanExportable implements Exportable {
 
   @Override
-  public void export() {
+  public void doExport() {
     JFileChooser chooser = new JFileChooser();
     chooser.setFileFilter(new FileFilter() {
       public boolean accept(File f) {

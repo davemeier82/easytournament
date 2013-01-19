@@ -41,15 +41,18 @@ public class Sport extends Model implements Cloneable, PropertyChangeListener, L
   }
   
   public void setSport(Sport s){
-    this.setId(s.id);
-    this.setName(s.name);
-    this.setEdited(s.edited);
-    this.setPath(s.path);    
-    this.setTextResourceBundle(s.textResourceBundle);
-    this.setIconResourceBundle(s.iconResourceBundle);
-    this.setSettings(s.getSettings());
-    this.setRules(s.getRules());
-    this.setGameEvents(s.getGameEvents());
+    if(s != null)
+    {
+      this.setId(s.id);
+      this.setName(s.name);
+      this.setEdited(s.edited);
+      this.setPath(s.path);    
+      this.setTextResourceBundle(s.textResourceBundle);
+      this.setIconResourceBundle(s.iconResourceBundle);
+      this.setSettings(s.getSettings());
+      this.setRules(s.getRules());
+      this.setGameEvents(s.getGameEvents());
+    }
   }
   
   public String getId() {
@@ -178,6 +181,86 @@ public class Sport extends Model implements Cloneable, PropertyChangeListener, L
     } else if (e.getSource() == this.gameEvents){
       this.firePropertyChange(PROPERTY_GAMEEVENTS, null, this.gameEvents);
     }
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + (this.edited? 1231 : 1237);
+    result = prime * result + ((this.gameEvents == null)? 0 : this.gameEvents.hashCode());
+    result = prime * result
+        + ((this.iconResourceBundle == null)? 0 : this.iconResourceBundle.hashCode());
+    result = prime * result + ((this.id == null)? 0 : this.id.hashCode());
+    result = prime * result + ((this.name == null)? 0 : this.name.hashCode());
+    result = prime * result + ((this.path == null)? 0 : this.path.hashCode());
+    result = prime * result + ((this.rules == null)? 0 : this.rules.hashCode());
+    result = prime * result + ((this.settings == null)? 0 : this.settings.hashCode());
+    result = prime * result
+        + ((this.textResourceBundle == null)? 0 : this.textResourceBundle.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Sport other = (Sport)obj;
+    if (this.edited != other.edited)
+      return false;
+    if (this.gameEvents == null) {
+      if (other.gameEvents != null)
+        return false;
+    }
+    else if (!this.gameEvents.equals(other.gameEvents))
+      return false;
+    if (this.iconResourceBundle == null) {
+      if (other.iconResourceBundle != null)
+        return false;
+    }
+    else if (!this.iconResourceBundle.equals(other.iconResourceBundle))
+      return false;
+    if (this.id == null) {
+      if (other.id != null)
+        return false;
+    }
+    else if (!this.id.equals(other.id))
+      return false;
+    if (this.name == null) {
+      if (other.name != null)
+        return false;
+    }
+    else if (!this.name.equals(other.name))
+      return false;
+    if (this.path == null) {
+      if (other.path != null)
+        return false;
+    }
+    else if (!this.path.equals(other.path))
+      return false;
+    if (this.rules == null) {
+      if (other.rules != null)
+        return false;
+    }
+    else if (!this.rules.equals(other.rules))
+      return false;
+    if (this.settings == null) {
+      if (other.settings != null)
+        return false;
+    }
+    else if (!this.settings.equals(other.settings))
+      return false;
+    if (this.textResourceBundle == null) {
+      if (other.textResourceBundle != null)
+        return false;
+    }
+    else if (!this.textResourceBundle.equals(other.textResourceBundle))
+      return false;
+    return true;
   }  
 
 }

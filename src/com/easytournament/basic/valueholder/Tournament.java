@@ -84,17 +84,17 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
     setBegin(new GregorianCalendar(ResourceManager.getLocale()));
     setEnd(new GregorianCalendar(ResourceManager.getLocale()));
     setLogo(null);
-    teams.clear();
-    unassignedteams.clear();
-    refrees.clear();
-    schedules.clear();
-    sport.reset();
+    this.teams.clear();
+    this.unassignedteams.clear();
+    this.refrees.clear();
+    this.schedules.clear();
+    this.sport.reset();
     
     setPlan(new com.easytournament.designer.valueholder.TournamentPlan()); //TODO refecence in designer not good
   }
 
   public String getDescription() {
-    return description;
+    return this.description;
   }
 
   public void setDescription(String description) {
@@ -104,7 +104,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public ImageIcon getLogo() {
-    return logo;
+    return this.logo;
   }
 
   public void setLogo(ImageIcon logo) {
@@ -114,7 +114,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public void setName(String name) {
@@ -124,7 +124,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public ArrayListModel<Team> getTeams() {
-    return teams;
+    return this.teams;
   }
 
   public void setTeams(ArrayListModel<Team> teams) {
@@ -133,7 +133,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public TournamentPlan getPlan() {
-    return plan;
+    return this.plan;
   }
 
   public void setPlan(TournamentPlan plan) {
@@ -147,7 +147,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public ArrayListModel<Refree> getRefrees() {
-    return refrees;
+    return this.refrees;
   }
 
   public void setRefrees(ArrayListModel<Refree> refees) {
@@ -156,7 +156,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public ArrayListModel<Team> getUnassignedteams() {
-    return unassignedteams;
+    return this.unassignedteams;
   }
 
   public void setUnassignedteams(ArrayListModel<Team> unassignedteams) {
@@ -164,7 +164,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public ArrayListModel<ScheduleEntry> getSchedules() {
-    return schedules;
+    return this.schedules;
   }
 
   public void setSchedules(ArrayListModel<ScheduleEntry> schedules) {
@@ -201,7 +201,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public Sport getSport() {
-    return sport;
+    return this.sport;
   }
 
   public void setSport(Sport sport) {
@@ -210,7 +210,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getLocation() {
-    return location;
+    return this.location;
   }
 
   public void setLocation(String location) {
@@ -220,7 +220,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getFirstname() {
-    return firstname;
+    return this.firstname;
   }
 
   public void setFirstname(String firstname) {
@@ -230,7 +230,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getLastname() {
-    return lastname;
+    return this.lastname;
   }
 
   public void setLastname(String lastname) {
@@ -240,7 +240,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getAddress() {
-    return address;
+    return this.address;
   }
 
   public void setAddress(String address) {
@@ -250,7 +250,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getPhone() {
-    return phone;
+    return this.phone;
   }
 
   public void setPhone(String phone) {
@@ -260,7 +260,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getEmail() {
-    return email;
+    return this.email;
   }
 
   public void setEmail(String email) {
@@ -270,7 +270,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public String getNotes() {
-    return notes;
+    return this.notes;
   }
 
   public void setNotes(String notes) {
@@ -280,7 +280,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public Calendar getBegin() {
-    return begin;
+    return this.begin;
   }
 
   public void setBegin(Calendar begin) {
@@ -299,7 +299,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
 
   public Calendar getEnd() {
-    return end;
+    return this.end;
   }
 
   public void setEnd(Calendar end) {
@@ -318,7 +318,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
   }
   
   public String getWebsite() {
-    return website;
+    return this.website;
   }
 
   public void setWebsite(String website) {
@@ -374,6 +374,160 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
     } else if(e.getSource() == this.refrees) {
       this.firePropertyChange(PROPERTY_REFREES, null, this.refrees);
     }
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((this.address == null)? 0 : this.address.hashCode());
+    result = prime * result + ((this.begin == null)? 0 : this.begin.hashCode());
+    result = prime * result
+        + ((this.description == null)? 0 : this.description.hashCode());
+    result = prime * result + ((this.email == null)? 0 : this.email.hashCode());
+    result = prime * result + ((this.end == null)? 0 : this.end.hashCode());
+    result = prime * result + ((this.firstname == null)? 0 : this.firstname.hashCode());
+    result = prime * result + ((this.lastname == null)? 0 : this.lastname.hashCode());
+    result = prime * result + ((this.location == null)? 0 : this.location.hashCode());
+    result = prime * result + ((this.logo == null)? 0 : this.logo.hashCode());
+    result = prime * result + ((this.name == null)? 0 : this.name.hashCode());
+    result = prime * result + ((this.notes == null)? 0 : this.notes.hashCode());
+    result = prime * result + ((this.phone == null)? 0 : this.phone.hashCode());
+    result = prime * result + ((this.plan == null)? 0 : this.plan.hashCode());
+    result = prime * result + ((this.refrees == null)? 0 : this.refrees.hashCode());
+    result = prime * result + ((this.schedules == null)? 0 : this.schedules.hashCode());
+    result = prime * result + ((this.sport == null)? 0 : this.sport.hashCode());
+    result = prime * result + ((this.teams == null)? 0 : this.teams.hashCode());
+    result = prime * result
+        + ((this.unassignedteams == null)? 0 : this.unassignedteams.hashCode());
+    result = prime * result + ((this.website == null)? 0 : this.website.hashCode());
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Tournament other = (Tournament)obj;
+    if (this.address == null) {
+      if (other.address != null)
+        return false;
+    }
+    else if (!this.address.equals(other.address))
+      return false;
+    if (this.begin == null) {
+      if (other.begin != null)
+        return false;
+    }
+    else if (!this.begin.equals(other.begin))
+      return false;
+    if (this.description == null) {
+      if (other.description != null)
+        return false;
+    }
+    else if (!this.description.equals(other.description))
+      return false;
+    if (this.email == null) {
+      if (other.email != null)
+        return false;
+    }
+    else if (!this.email.equals(other.email))
+      return false;
+    if (this.end == null) {
+      if (other.end != null)
+        return false;
+    }
+    else if (!this.end.equals(other.end))
+      return false;
+    if (this.firstname == null) {
+      if (other.firstname != null)
+        return false;
+    }
+    else if (!this.firstname.equals(other.firstname))
+      return false;
+    if (this.lastname == null) {
+      if (other.lastname != null)
+        return false;
+    }
+    else if (!this.lastname.equals(other.lastname))
+      return false;
+    if (this.location == null) {
+      if (other.location != null)
+        return false;
+    }
+    else if (!this.location.equals(other.location))
+      return false;
+    if (this.logo == null) {
+      if (other.logo != null)
+        return false;
+    }
+    else if (!this.logo.equals(other.logo))
+      return false;
+    if (this.name == null) {
+      if (other.name != null)
+        return false;
+    }
+    else if (!this.name.equals(other.name))
+      return false;
+    if (this.notes == null) {
+      if (other.notes != null)
+        return false;
+    }
+    else if (!this.notes.equals(other.notes))
+      return false;
+    if (this.phone == null) {
+      if (other.phone != null)
+        return false;
+    }
+    else if (!this.phone.equals(other.phone))
+      return false;
+    if (this.plan == null) {
+      if (other.plan != null)
+        return false;
+    }
+    else if (!this.plan.equals(other.plan))
+      return false;
+    if (this.refrees == null) {
+      if (other.refrees != null)
+        return false;
+    }
+    else if (!this.refrees.equals(other.refrees))
+      return false;
+    if (this.schedules == null) {
+      if (other.schedules != null)
+        return false;
+    }
+    else if (!this.schedules.equals(other.schedules))
+      return false;
+    if (this.sport == null) {
+      if (other.sport != null)
+        return false;
+    }
+    else if (!this.sport.equals(other.sport))
+      return false;
+    if (this.teams == null) {
+      if (other.teams != null)
+        return false;
+    }
+    else if (!this.teams.equals(other.teams))
+      return false;
+    if (this.unassignedteams == null) {
+      if (other.unassignedteams != null)
+        return false;
+    }
+    else if (!this.unassignedteams.equals(other.unassignedteams))
+      return false;
+    if (this.website == null) {
+      if (other.website != null)
+        return false;
+    }
+    else if (!this.website.equals(other.website))
+      return false;
+    return true;
   }
   
   

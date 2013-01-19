@@ -36,6 +36,9 @@
 		<javac target="1.6" source="1.6" srcdir="src" destdir="bin" classpathref="classpath" debug="true" debuglevel="lines,vars,source" includeantruntime="false" />
 		<javac target="1.6" source="1.6" srcdir="test" destdir="bin_test" debug="true" debuglevel="lines,vars,source" includeantruntime="false">
 			<classpath>
+				<fileset id="my.file.set" dir="lib">
+				    <include name="**/*.jar" />
+				</fileset>
 				<pathelement location="${eclipse.dir}\plugins\org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
 				<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.1.0.v20090501071000.jar"/>
 				<pathelement location="bin"/>
@@ -181,6 +184,9 @@
 
 	    <junit printsummary="yes" haltonfailure="yes">
 	      <classpath>
+	      	<fileset id="my.file.set" dir="lib">
+			    <include name="**/*.jar" />
+			</fileset>
 	      	<pathelement location="${eclipse.dir}\plugins\org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
 	      	<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.1.0.v20090501071000.jar"/>
 	      	<pathelement location="bin"/>

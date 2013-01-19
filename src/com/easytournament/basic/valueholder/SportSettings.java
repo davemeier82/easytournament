@@ -275,5 +275,84 @@ public class SportSettings extends Model {
     int old = this.pointPerAwayDrawOvertime;
     this.pointPerAwayDrawOvertime = pointPerAwayDrawOvertime;
     this.firePropertyChange(PROPERTY_POINTPER_A_DRAW_OT, old, this.pointPerAwayDrawOvertime);
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + this.minPerGameTime;
+    result = prime * result + this.minPerOvertime;
+    result = prime * result + this.numGameTimes;
+    result = prime * result + this.numOvertimes;
+    result = prime * result + this.pointPerAwayDefeat;
+    result = prime * result + this.pointPerAwayDefeatOvertime;
+    result = prime * result + this.pointPerAwayDefeatPenalty;
+    result = prime * result + this.pointPerAwayDraw;
+    result = prime * result + this.pointPerAwayDrawOvertime;
+    result = prime * result + this.pointPerAwayWin;
+    result = prime * result + this.pointPerAwayWinOvertime;
+    result = prime * result + this.pointPerAwayWinPenalty;
+    result = prime * result + this.pointPerHomeDefeat;
+    result = prime * result + this.pointPerHomeDefeatOvertime;
+    result = prime * result + this.pointPerHomeDefeatPenalty;
+    result = prime * result + this.pointPerHomeDraw;
+    result = prime * result + this.pointPerHomeDrawOvertime;
+    result = prime * result + this.pointPerHomeWin;
+    result = prime * result + this.pointPerHomeWinOvertime;
+    result = prime * result + this.pointPerHomeWinPenalty;
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    SportSettings other = (SportSettings)obj;
+    if (this.minPerGameTime != other.minPerGameTime)
+      return false;
+    if (this.minPerOvertime != other.minPerOvertime)
+      return false;
+    if (this.numGameTimes != other.numGameTimes)
+      return false;
+    if (this.numOvertimes != other.numOvertimes)
+      return false;
+    if (this.pointPerAwayDefeat != other.pointPerAwayDefeat)
+      return false;
+    if (this.pointPerAwayDefeatOvertime != other.pointPerAwayDefeatOvertime)
+      return false;
+    if (this.pointPerAwayDefeatPenalty != other.pointPerAwayDefeatPenalty)
+      return false;
+    if (this.pointPerAwayDraw != other.pointPerAwayDraw)
+      return false;
+    if (this.pointPerAwayDrawOvertime != other.pointPerAwayDrawOvertime)
+      return false;
+    if (this.pointPerAwayWin != other.pointPerAwayWin)
+      return false;
+    if (this.pointPerAwayWinOvertime != other.pointPerAwayWinOvertime)
+      return false;
+    if (this.pointPerAwayWinPenalty != other.pointPerAwayWinPenalty)
+      return false;
+    if (this.pointPerHomeDefeat != other.pointPerHomeDefeat)
+      return false;
+    if (this.pointPerHomeDefeatOvertime != other.pointPerHomeDefeatOvertime)
+      return false;
+    if (this.pointPerHomeDefeatPenalty != other.pointPerHomeDefeatPenalty)
+      return false;
+    if (this.pointPerHomeDraw != other.pointPerHomeDraw)
+      return false;
+    if (this.pointPerHomeDrawOvertime != other.pointPerHomeDrawOvertime)
+      return false;
+    if (this.pointPerHomeWin != other.pointPerHomeWin)
+      return false;
+    if (this.pointPerHomeWinOvertime != other.pointPerHomeWinOvertime)
+      return false;
+    if (this.pointPerHomeWinPenalty != other.pointPerHomeWinPenalty)
+      return false;
+    return true;
   }  
 }

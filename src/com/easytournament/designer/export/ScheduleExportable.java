@@ -19,7 +19,7 @@ import com.easytournament.designer.html.ScheduleHTMLHandler;
 public class ScheduleExportable implements Exportable {
 
   @Override
-  public void export() {
+  public void doExport() {
     JFileChooser chooser = new JFileChooser();
     chooser.setFileFilter(new FileFilter() {
       public boolean accept(File f) {

@@ -1,3 +1,12 @@
+/* MainMenuAction.java - Actions of the main menu and the toolbar
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.action;
 
 import javax.swing.ImageIcon;
@@ -6,17 +15,26 @@ import com.easytournament.basic.resources.Icon;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 
-
+/**
+ * Enumerator of all main menu and toolbar actions
+ * @author David Meier
+ *
+ */
 public enum MainMenuAction {
-  NEW, OPEN, SAVE, SAVEAS, PAGESETUP, PRINT, CLOSE, PATIENT, EXIT, IMPORT, EXPORT, COPY, PASTE, CUT, DELETE, UNDO, REDO, SELECTALL, PREFERENCES, HELP, INFO, GRID, 
+  NEW, OPEN, SAVE, SAVEAS, PAGESETUP, PRINT, CLOSE, EXIT, IMPORT, EXPORT, COPY, PASTE, CUT, DELETE, UNDO, REDO, SELECTALL, HELP, INFO, GRID, 
   RULER, ZOOMIN, ZOOMOUT, ZOOM400, ZOOM200, ZOOM150, ZOOM100, ZOOM75, ZOOM50, ZOOMSELECT, ZOOMPAGE, ZOOMWITH, ZOOMREAL, CELL_FILLCOLOR, CELL_COLORGRADIENT, 
   CELL_OPACITY, FONT_COLOR, TEXT_ALIGN_TOP, TEXT_ALIGN_MIDDLE, TEXT_ALIGN_BOTTOM, TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER, TEXT_ALIGN_RIGHT, LINE_COLOR, LINE_DASHED, 
   LINE_WIDTH, CON_STRAIGHT, CON_HORIZ, CON_VERT, CON_ARROW, END_OPEN, END_CLASSIC, END_BLOCK, END_SIZE, SHAPE_UP, SHAPE_DOWN, SHAPE_ALIGN_LEFT, 
   SHAPE_ALIGN_CENTER, SHAPE_ALIGN_RIGHT, SHAPE_ALIGN_TOP, SHAPE_ALIGN_MIDDLE, SHAPE_ALIGN_BOTTOM, DIAG_FILLCOLOR, DIAG_PAGE_BACKCOLOR, GRID_SIZE, GRID_COLOR, 
   GRID_DASHED, GRID_POINT, GRID_LINE, GRID_CROSS, SETTINGS;
 
-  public static String getText(MainMenuAction a) {
-    switch (a) {
+  /**
+   * Returns the translated text of a main menu item
+   * @param action the action to get the text for
+   * @return the translated text of a main menu item
+   */
+  public static String getText(MainMenuAction action) {
+    switch (action) {
       case NEW:
         return ResourceManager.getText(Text.NEW_MENU);
       case OPEN:
@@ -117,7 +135,6 @@ public enum MainMenuAction {
         return ResourceManager.getText(Text.CON_VERT_MENU);
       case CON_ARROW:
         return ResourceManager.getText(Text.CON_ARROW_MENU);
-
       case END_OPEN:
         return ResourceManager.getText(Text.END_OPEN_MENU);
       case END_CLASSIC:
@@ -126,7 +143,6 @@ public enum MainMenuAction {
         return ResourceManager.getText(Text.END_BLOCK_MENU);
       case END_SIZE:
         return ResourceManager.getText(Text.END_SIZE_MENU);
-
       case SHAPE_UP:
         return ResourceManager.getText(Text.SHAPE_UP_MENU);
       case SHAPE_DOWN:
@@ -143,7 +159,6 @@ public enum MainMenuAction {
         return ResourceManager.getText(Text.SHAPE_ALIGN_MIDDLE_MENU);
       case SHAPE_ALIGN_BOTTOM:
         return ResourceManager.getText(Text.SHAPE_ALIGN_BOTTOM_MENU);
-
       case DIAG_FILLCOLOR:
         return ResourceManager.getText(Text.DIAG_FILLCOLOR_MENU);
       case DIAG_PAGE_BACKCOLOR:
@@ -162,12 +177,19 @@ public enum MainMenuAction {
         return ResourceManager.getText(Text.GRID_CROSS_MENU);
       case SETTINGS:
         return ResourceManager.getText(Text.SETTINGS_MENU);
+      default:
+        break;
     }
     return null;
   }
 
-  public static ImageIcon getIcon(MainMenuAction a) {
-    switch (a) {
+  /**
+   * Returns the icon to a main menu item
+   * @param action the action to get the icon for
+   * @return icon to a main menu item
+   */
+  public static ImageIcon getIcon(MainMenuAction action) {
+    switch (action) {
       case NEW:
         return ResourceManager.getIcon(Icon.NEW_ICON_SMALL);
       case OPEN:
@@ -248,9 +270,9 @@ public enum MainMenuAction {
         return ResourceManager.getIcon(Icon.SHAPE_TOBACK_ICON_SMALL);
       case LINE_COLOR: 
         return ResourceManager.getIcon(Icon.LINECOLOR_ICON_SMALL);
-        
+      default:
+        break;        
     }
-
     return null;
   }
 }

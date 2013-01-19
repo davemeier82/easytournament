@@ -56,7 +56,7 @@ public class ExportDialogPModel extends Model {
             ExportDialogPModel.this.firePropertyChange(DISPOSE, "1", "2");
             Exportable ex = exportables.get(selection);
             if (ex != null)
-              ex.export();
+              ex.doExport();
           }
         };
       case CANCEL_ACTION:

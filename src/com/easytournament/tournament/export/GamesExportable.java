@@ -19,7 +19,7 @@ import com.easytournament.tournament.html.GamesHTMLHandler;
 public class GamesExportable implements Exportable {
 
   @Override
-  public void export() {
+  public void doExport() {
     JFileChooser chooser = new JFileChooser();
     chooser.setFileFilter(new FileFilter() {
       public boolean accept(File f) {

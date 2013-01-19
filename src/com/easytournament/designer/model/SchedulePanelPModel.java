@@ -91,7 +91,7 @@ public class SchedulePanelPModel extends Model implements TableModelListener, Pr
 
           @Override
           public void actionPerformed(ActionEvent arg0) {
-            e.export();
+            e.doExport();
           }
         };
       case CHANGE_TEAMVIEW_ACTION:
