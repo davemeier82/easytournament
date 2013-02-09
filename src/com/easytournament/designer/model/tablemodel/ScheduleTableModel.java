@@ -133,7 +133,7 @@ public class ScheduleTableModel extends DefaultTableModel implements
                 calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
             Collections.sort(this.data, comp);
           }
-          catch (ClassCastException e) {/* do nothing */}
+          catch (Exception e) {/* do nothing */}
           break;
         case 4:
           try {

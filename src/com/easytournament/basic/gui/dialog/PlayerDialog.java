@@ -1,3 +1,12 @@
+/* PlayerDialog.java - Dialog to create or edit a player
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -28,10 +37,25 @@ import com.jgoodies.binding.adapter.BasicComponentFactory;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+/**
+ * Dialog to add and edit a player
+ * @author David Meier
+ *
+ */
 public class PlayerDialog extends JDialog implements PropertyChangeListener {
 
-  private PlayerDialogPModel pm;
+  private static final long serialVersionUID = -5127725018049651082L;
+  /**
+   * The presentation model
+   */
+  protected PlayerDialogPModel pm;
   
+  /**
+   * Constructor
+   * @param owner The owner of the dialog
+   * @param pm The presentation model
+   * @param modal True if the dialog is modal
+   */
   public PlayerDialog(Dialog owner, PlayerDialogPModel pm, boolean modal) {
     super(owner, ResourceManager.getText(Text.PLAYER), modal);
     this.pm = pm;
@@ -39,25 +63,32 @@ public class PlayerDialog extends JDialog implements PropertyChangeListener {
     this.setLocationRelativeTo(owner);
     this.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
         PlayerDialog.this.pm.removePropertyChangeListener(PlayerDialog.this);
         super.windowClosed(e);
       }
-
     });
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     this.setVisible(true);
   }
 
+  /**
+   * Initializes the dialog
+   */
   private void init() {
-    pm.addPropertyChangeListener(this);
+    this.pm.addPropertyChangeListener(this);
     Container cpane = this.getContentPane();
     cpane.setLayout(new BorderLayout());
 
     JTabbedPane tabbedPane = new JTabbedPane();
+    // the first tab contains the person panel
     tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO),
-        new PersonPanel(pm.getPersonPanelPModel()));
+        new PersonPanel(this.pm.getPersonPanelPModel()));
+    // the second tab is used for player specific information
     tabbedPane.addTab(ResourceManager.getText(Text.PLAYER), getPlayerPanel());
 
     cpane.add(tabbedPane, BorderLayout.CENTER);
@@ -65,59 +96,70 @@ public class PlayerDialog extends JDialog implements PropertyChangeListener {
     this.pack();
   }
 
+  /**
+   * Creates the panel for player specific information
+   * @return The player panel
+   */
   private Component getPlayerPanel() {
-    JPanel p = new JPanel();
-    p.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    JPanel panel = new JPanel();
+    panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     FormLayout formlayout1 = new FormLayout(
         "FILL:90PX:NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    p.setLayout(formlayout1);
+    panel.setLayout(formlayout1);
 
     JLabel genderLabel = new JLabel();
     genderLabel.setText(ResourceManager.getText(Text.NUMBER));
-    p.add(genderLabel, cc.xy(1, 2));
+    panel.add(genderLabel, cc.xy(1, 2));
 
     JLabel firstNameLabel = new JLabel();
     firstNameLabel.setText(ResourceManager.getText(Text.POSITION));
-    p.add(firstNameLabel, cc.xy(1, 4));
+    panel.add(firstNameLabel, cc.xy(1, 4));
 
-    JTextField numberTF = BasicComponentFactory.createTextField(pm
+    JTextField numberTF = BasicComponentFactory.createTextField(this.pm
         .getPlayerValueModel(Player.PROPERTY_NR));
-    p.add(numberTF, cc.xy(3, 2));
+    panel.add(numberTF, cc.xy(3, 2));
 
-    JTextField positionTF = BasicComponentFactory.createTextField(pm
+    JTextField positionTF = BasicComponentFactory.createTextField(this.pm
         .getPlayerValueModel(Player.PROPERTY_POSITION));
-    p.add(positionTF, cc.xy(3, 4));
+    panel.add(positionTF, cc.xy(3, 4));
 
-    addFillComponents(p, new int[] {1, 2, 3}, new int[] {1, 3});
+    addFillComponents(panel, new int[] {1, 2, 3}, new int[] {1, 3});
 
-    return p;
+    return panel;
   }
 
+  /**
+   * Creates the button panel
+   * @return The button panel
+   */
   private Component getButtonPanel() {
     JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    JButton okBtn = new JButton(pm.getAction(PlayerDialogPModel.OK_ACTION));
+    JButton okBtn = new JButton(this.pm.getAction(PlayerDialogPModel.OK_ACTION));
     JButton cancelBtn = new JButton(
-        pm.getAction(PlayerDialogPModel.CANCEL_ACTION));
+        this.pm.getAction(PlayerDialogPModel.CANCEL_ACTION));
     bPanel.add(okBtn);
     bPanel.add(cancelBtn);
     return bPanel;
   }
 
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName().equals(PlayerDialogPModel.DISPOSE)) {
-      pm.removePropertyChangeListener(this);
+      this.pm.removePropertyChangeListener(this);
       this.dispose();
     }
-
   }
 
   /**
    * Adds fill components to empty cells in the first row and first column of
    * the grid. This ensures that the grid spacing will be the same as shown in
    * the designer.
+   * @param panel
    * @param cols
    *          an array of column indices in the first row where fill components
    *          should be added.
@@ -151,7 +193,5 @@ public class PlayerDialog extends JDialog implements PropertyChangeListener {
       }
       panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
     }
-
   }
-
 }

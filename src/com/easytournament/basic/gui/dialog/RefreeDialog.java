@@ -1,3 +1,12 @@
+/* RefreeDialog.java - Dialog to edit a refree
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -29,11 +38,28 @@ import com.jgoodies.binding.adapter.BasicComponentFactory;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+/**
+ * @author David Meier
+ *
+ */
 public class RefreeDialog extends JDialog implements PropertyChangeListener {
 
-  private RefreeDialogPModel pm;
-  private boolean isAssistant;
+  private static final long serialVersionUID = -5030453237241031703L;
+  /**
+   * 
+   */
+  protected RefreeDialogPModel pm;
+  /**
+   * 
+   */
+  protected boolean isAssistant;
 
+  /**
+   * @param f
+   * @param pm
+   * @param modal
+   * @param isAssistant
+   */
   public RefreeDialog(Frame f, RefreeDialogPModel pm, boolean modal,
       boolean isAssistant) {
     super(f, ResourceManager.getText(Text.REFREE), modal);
@@ -46,6 +72,12 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
     this.setVisible(true);
   }
 
+  /**
+   * @param d
+   * @param pm
+   * @param modal
+   * @param isAssistant
+   */
   public RefreeDialog(Dialog d, RefreeDialogPModel pm, boolean modal,
       boolean isAssistant) {
     super(d, ResourceManager.getText(Text.REFREE), modal);
@@ -58,21 +90,24 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
     this.setVisible(true);
   }
 
+  /**
+   * 
+   */
   private void init() {
 
-    pm.addPropertyChangeListener(this);
+    this.pm.addPropertyChangeListener(this);
     Container cpane = this.getContentPane();
     cpane.setLayout(new BorderLayout());
 
     JTabbedPane tabbedPane = new JTabbedPane();
     tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO),
-        new PersonPanel(pm.getPersonPanelPModel()));
+        new PersonPanel(this.pm.getPersonPanelPModel()));
     if (this.isAssistant)
       tabbedPane.addTab(ResourceManager.getText(Text.JOB),
           this.getDetailPanel());
     else
       tabbedPane.addTab(ResourceManager.getText(Text.ASSISTANTS),
-          new AssistantsTabPanel(pm.getAssistantsTabPanelPModel(), this));
+          new AssistantsTabPanel(this.pm.getAssistantsTabPanelPModel(), this));
 
     cpane.add(tabbedPane, BorderLayout.CENTER);
     cpane.add(getButtonPanel(), BorderLayout.SOUTH);
@@ -80,6 +115,9 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
 
     this.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
         RefreeDialog.this.pm.removePropertyChangeListener(RefreeDialog.this);
@@ -90,6 +128,9 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
   }
 
+  /**
+   * @return
+   */
   private Component getDetailPanel() {
     JPanel p = new JPanel();
     p.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -103,7 +144,7 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
     genderLabel.setText(ResourceManager.getText(Text.FUNCTION));
     p.add(genderLabel, cc.xy(1, 2));
 
-    JTextField functionTF = BasicComponentFactory.createTextField(pm
+    JTextField functionTF = BasicComponentFactory.createTextField(this.pm
         .getRefreeValueModel(Refree.PROPERTY_FUNCTION));
     p.add(functionTF, cc.xy(3, 2));
 
@@ -111,20 +152,26 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
     return p;
   }
 
+  /**
+   * @return
+   */
   private Component getButtonPanel() {
     JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    JButton okBtn = new JButton(pm.getAction(RefreeDialogPModel.OK_ACTION));
+    JButton okBtn = new JButton(this.pm.getAction(RefreeDialogPModel.OK_ACTION));
     JButton cancelBtn = new JButton(
-        pm.getAction(RefreeDialogPModel.CANCEL_ACTION));
+        this.pm.getAction(RefreeDialogPModel.CANCEL_ACTION));
     bPanel.add(okBtn);
     bPanel.add(cancelBtn);
     return bPanel;
   }
 
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName().equals(RefreeDialogPModel.DISPOSE)) {
-      pm.removePropertyChangeListener(this);
+      this.pm.removePropertyChangeListener(this);
       this.dispose();
     }
 
@@ -140,6 +187,11 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
    * @param rows
    *          an array of row indices in the first column where fill components
    *          should be added.
+   */
+  /**
+   * @param panel
+   * @param cols
+   * @param rows
    */
   void addFillComponents(Container panel, int[] cols, int[] rows) {
     Dimension filler = new Dimension(10, 10);

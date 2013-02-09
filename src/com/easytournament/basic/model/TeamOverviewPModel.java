@@ -264,7 +264,7 @@ public class TeamOverviewPModel extends Model implements ListDataListener {
           for (int i = 0; i < iteams.size(); i++)
             selection.add(new Boolean(true));
 
-          ImportListDialogPModel<Team> ilpm = new ImportListDialogPModel<Team>(
+          ImportListDialogPModel ilpm = new ImportListDialogPModel(
               new TeamImportTableModel(iteams, selection));
 
           new ImportListDialog(Organizer.getInstance().getMainFrame(),

@@ -1,3 +1,12 @@
+/* ErrorDialog.java - Dialog to show an error message to the user
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -37,41 +46,79 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.settings.GeneralSettings;
 
+/**
+ * Dialog that shows an error message to the user.
+ * It provides the possibility to send the error to
+ * the developer
+ * @author David Meier
+ *
+ */
 public class ErrorDialog extends JDialog {
 
-  private static final long serialVersionUID = 1L;
-  private static final Dimension SMALL_DIM = new Dimension(600, 250);
-  private static final Dimension EXTENDED_DIM = new Dimension(600, 450);
+  private static final long serialVersionUID = -3888328940736943085L;
+  /**
+   * Size of the dialog if no details are shown
+   */
+  static final Dimension SMALL_DIM = new Dimension(600, 250);
+  /**
+   * Size of the dialog with details
+   */
+  static final Dimension EXTENDED_DIM = new Dimension(600, 450);
+  /**
+   * The text show in the error dialog
+   */
   private String text;
-  private Throwable t;
-  private JPanel cp;
+  /**
+   * The error object
+   */
+  private Throwable throwable;
+  /**
+   * The main panel of the dialog
+   */
+  private JPanel mainPanel;
+  /**
+   * The button to show or hide the details
+   */
   private JButton detailButton;
+  /**
+   * True if the details are hidden
+   */
   private boolean detailHidden = false;
+  /**
+   * The scroll pain that contains the detailed error message
+   */
   private JScrollPane detailPane;
+  /**
+   * The text field for the optional e-mail address of the user
+   */
   private JTextField emailTf = new JTextField();
 
   /**
-   * @param owner
-   * @param title
-   *          Dialog-Title
+   * Constructor
+   * @param owner The parent dialog
+   * @param title The dialog title
+   * @param text The text show in the error dialog
+   * @param t The error object
    */
   public ErrorDialog(Dialog owner, String title, String text, Throwable t) {
     super(owner, title, true);
     this.text = text;
-    this.t = t;
+    this.throwable = t;
     this.init();
     this.setLocationRelativeTo(owner);
   }
 
   /**
-   * @param owner
-   * @param title
-   *          Dialog-Title
+   * Constructor
+   * @param owner The parent dialog
+   * @param title The dialog title
+   * @param text The text show in the error dialog
+   * @param t The error object
    */
   public ErrorDialog(Frame owner, String title, String text, Throwable t) {
     super(owner, title, true);
     this.text = text;
-    this.t = t;
+    this.throwable = t;
     this.init();
     this.setLocationRelativeTo(owner);
   }
@@ -80,11 +127,13 @@ public class ErrorDialog extends JDialog {
    * 
    */
   private void init() {
-    cp = new JPanel();
+    this.mainPanel = new JPanel();
     this.setMinimumSize(SMALL_DIM);
-    cp.setLayout(new BorderLayout(10, 10));
-    cp.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    this.mainPanel.setLayout(new BorderLayout(10, 10));
+    this.mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     Box box = Box.createVerticalBox();
+    
+    // inform the user if there is a new version available
     if(GeneralSettings.getInstance().hasNewVersion())
     {
       JLabel label = new JLabel(ResourceManager.getText(Text.ERROR_DIALOG_NEW_VERSION));
@@ -94,104 +143,93 @@ public class ErrorDialog extends JDialog {
       box.add(Box.createVerticalStrut(10));
     }
     
-    JLabel label = new JLabel(text);
+    JLabel label = new JLabel(this.text);
     box.add(label);
     box.add(Box.createVerticalStrut(10));
     // create detail button
-    detailButton = new JButton(ResourceManager.getText(Text.SHOW_DETAILS));
-    detailButton.addActionListener(new ActionListener() {
+    this.detailButton = new JButton(ResourceManager.getText(Text.SHOW_DETAILS));
+    this.detailButton.addActionListener(new ActionListener() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+       */
+      @Override
       public void actionPerformed(ActionEvent e) {
-        if (detailHidden) {
-          cp.remove(detailPane);
-          detailButton.setText(ResourceManager.getText(Text.DETAILS));
+        JPanel contentPane = getMainPanel();
+        if (isDetailHidden()) {
+          contentPane.remove(getDetailPane());
+          setDetailButtonText(ResourceManager.getText(Text.DETAILS));
           ErrorDialog.this.setSize(SMALL_DIM);
-          detailHidden = false;
+          setDetailHidden(false);
         }
         else {
-          detailButton.setText(ResourceManager.getText(Text.HIDE_DETAILS));
-          // create detail string
-          String message = "";
-          StringWriter sw = new StringWriter();
-          PrintWriter pw = new PrintWriter(sw, true);
-          pw.print("OS: ");
-          pw.println(System.getProperty("os.name"));
-          pw.print("OS Architecture: ");
-          pw.println(System.getProperty("os.arch"));
-          pw.print("OS Version: ");
-          pw.println(System.getProperty("os.version"));
-          pw.print("Java Vendor: ");
-          pw.println(System.getProperty("java.vendor"));
-          pw.print("Java Version: ");
-          pw.println(System.getProperty("java.version"));
-          pw.print("Version: ");
-          pw.println(MetaInfos.getVersionNr());
-          pw.print("Language: ");
-          pw.println(ResourceManager.getLocale().toString()); // TODO
-                                                              // toLanguageTag()
-                                                              // if java version
-                                                              // 7
-          t.printStackTrace(pw);
-          pw.flush();
-          sw.flush();
-          message = sw.toString();
-          // crate detail textarea
-          JTextArea ta = new JTextArea();
-          ta.setEditable(false);
-          ta.setText(message);
-          detailPane = new JScrollPane(ta);
-          cp.add(detailPane, BorderLayout.CENTER);
+          if(getDetailPane() == null) {
+            createDetailPane();
+          }
+          contentPane.add(getDetailPane(), BorderLayout.CENTER);
           ErrorDialog.this.setSize(EXTENDED_DIM);
-          detailHidden = true;
-          pw.close();
-          try {
-            sw.close();
-          }
-          catch (IOException e1) {
-            // do nothing
-          }
+          setDetailHidden(true);
         }
       }
-
     });
 
-    box.add(detailButton);
+    box.add(this.detailButton);
     box.add(Box.createVerticalStrut(10));
     box.add(new JLabel(ResourceManager.getText(Text.SUPPORT_EMAIL)));
-    box.add(emailTf);
-    cp.add(box, BorderLayout.NORTH);
-    this.getContentPane().add(cp);
+    box.add(this.emailTf);
+    this.mainPanel.add(box, BorderLayout.NORTH);
+    this.getContentPane().add(this.mainPanel);
 
     JPanel btnPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    btnPanel.add(new JButton(new SendAction(t)));
-    JButton okButton = new JButton(ResourceManager.getText(Text.CLOSE));
-    okButton.addActionListener(new ActionListener() {
+    btnPanel.add(new JButton(new SendAction(this.throwable)));
+    JButton closeButton = new JButton(ResourceManager.getText(Text.CLOSE));
+    closeButton.addActionListener(new ActionListener() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+       */
+      @Override
       public void actionPerformed(ActionEvent e) {
         // close dialog
         ErrorDialog.this.dispose();
       }
     });
-    btnPanel.add(okButton);
-    cp.add(btnPanel, BorderLayout.SOUTH);
+    btnPanel.add(closeButton);
+    this.mainPanel.add(btnPanel, BorderLayout.SOUTH);
     this.setSize(SMALL_DIM);
   }
 
+  /**
+   * Action to send the error message to the developer
+   * @author David Meier
+   *
+   */
   class SendAction extends AbstractAction {
 
+    private static final long serialVersionUID = -8583011695449954032L;
+    /**
+     * The error object
+     */
     private Throwable t;
 
+    /**
+     * @param t The error object
+     */
     public SendAction(Throwable t) {
       super(ResourceManager.getText(Text.SEND_ERROR_REPORT));
       this.t = t;
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
 
+      // setting up the error message url
       try {
         String urlStr = "email="
-            + URLEncoder.encode(emailTf.getText(), "UTF-8");
+            + URLEncoder.encode(getEmailTf().getText(), "UTF-8");
         urlStr += "&version="
             + URLEncoder.encode(MetaInfos.getVersionNr(), "UTF-8");
         urlStr += "&lang="
@@ -213,7 +251,7 @@ public class ErrorDialog extends JDialog {
 
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw, true);
-        t.printStackTrace(pw);
+        this.t.printStackTrace(pw);
         pw.flush();
         sw.flush();
 
@@ -222,6 +260,7 @@ public class ErrorDialog extends JDialog {
         pw.close();
         sw.close();
 
+        // connect to the url
         URL errorUrl = new URL("http://easy-tournament.com/logerror.php"); 
         HttpURLConnection connection = (HttpURLConnection) errorUrl.openConnection();           
         connection.setDoOutput(true);
@@ -233,6 +272,7 @@ public class ErrorDialog extends JDialog {
         connection.setRequestProperty("Content-Length", "" + Integer.toString(urlStr.getBytes().length));
         connection.setUseCaches (false);
 
+        // send message
         DataOutputStream wr = new DataOutputStream(connection.getOutputStream ());
         wr.writeBytes(urlStr);
         wr.flush();
@@ -255,6 +295,7 @@ public class ErrorDialog extends JDialog {
         ex.printStackTrace();
       }
 
+      // show thank you message
       JOptionPane.showMessageDialog(ErrorDialog.this,
           ResourceManager.getText(Text.THANKS_ERROR_REPORT),
           ResourceManager.getText(Text.THANK_YOU),
@@ -263,4 +304,100 @@ public class ErrorDialog extends JDialog {
       ErrorDialog.this.dispose();
     }
   }
+
+  /**
+   * @return the main panel
+   */
+  public JPanel getMainPanel() {
+    return this.mainPanel;
+  }
+
+  /**
+   * @return True if the details are hidden
+   */
+  public boolean isDetailHidden() {
+    return this.detailHidden;
+  }
+
+  /**
+   * @param detailHidden True to hide the details
+   */
+  public void setDetailHidden(boolean detailHidden) {
+    this.detailHidden = detailHidden;
+  }
+
+  /**
+   * @return the error object
+   */
+  public Throwable getThrowable() {
+    return this.throwable;
+  }
+
+  /**
+   * @return the user email address text field
+   */
+  public JTextField getEmailTf() {
+    return this.emailTf;
+  }
+
+  /**
+   * Sets the text that is displayed on the detail button
+   * @param The text of the detail button
+   */
+  public void setDetailButtonText(String text)
+  {
+    this.detailButton.setText(text);
+  }
+  
+  /**
+   * Creates the detail message
+   */
+  public void createDetailPane()
+  {
+    setDetailButtonText(ResourceManager.getText(Text.HIDE_DETAILS));
+    // create detail string
+    String message = "";
+    StringWriter sw = new StringWriter();
+    PrintWriter pw = new PrintWriter(sw, true);
+    pw.print("OS: ");
+    pw.println(System.getProperty("os.name"));
+    pw.print("OS Architecture: ");
+    pw.println(System.getProperty("os.arch"));
+    pw.print("OS Version: ");
+    pw.println(System.getProperty("os.version"));
+    pw.print("Java Vendor: ");
+    pw.println(System.getProperty("java.vendor"));
+    pw.print("Java Version: ");
+    pw.println(System.getProperty("java.version"));
+    pw.print("Version: ");
+    pw.println(MetaInfos.getVersionNr());
+    pw.print("Language: ");
+    pw.println(ResourceManager.getLocale().toString()); // TODO
+                                                        // toLanguageTag()
+                                                        // if java version
+                                                        // 7
+    getThrowable().printStackTrace(pw);
+    pw.flush();
+    sw.flush();
+    message = sw.toString();
+    // crate detail textarea
+    JTextArea ta = new JTextArea();
+    ta.setEditable(false);
+    ta.setText(message);
+    this.detailPane = new JScrollPane(ta);
+    pw.close();
+    try {
+      sw.close();
+    }
+    catch (IOException e1) {
+      // do nothing
+    }
+  }
+
+  /**
+   * @return the scroll pane containing the detailed error message
+   */
+  public JScrollPane getDetailPane() {
+    return this.detailPane;
+  }  
 }

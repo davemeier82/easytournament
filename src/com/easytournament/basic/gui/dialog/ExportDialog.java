@@ -1,3 +1,12 @@
+/* ExportDialog.java - Dialog to choose the item to export
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -23,24 +32,40 @@ import com.easytournament.basic.resources.Text;
 import com.jgoodies.binding.adapter.BasicComponentFactory;
 
 
+/**
+ * Dialog to choose the item to export.
+ * @author David Meier
+ *
+ */
 public class ExportDialog extends JDialog implements PropertyChangeListener {
 
+  private static final long serialVersionUID = 2521568147694965233L;
+  /**
+   * The presentation model
+   */
   protected ExportDialogPModel pm;
 
   /**
-   * Default constructor
+   * Constructor
+   * @param frame The parent frame
+   * @param modal True if the dialog should be modal
+   * @param pm The presentation model
    */
-  public ExportDialog(Frame f, boolean modal, ExportDialogPModel pm) {
-    super(f, ResourceManager.getText(Text.SELECT_EXPORT_ITEM), modal);
+  public ExportDialog(Frame frame, boolean modal, ExportDialogPModel pm) {
+    super(frame, ResourceManager.getText(Text.SELECT_EXPORT_ITEM), modal);
     this.pm = pm;
     this.pm.addPropertyChangeListener(this);
     initializePanel();
     this.setMinimumSize(new Dimension(450,110));
-    this.setLocationRelativeTo(f);
+    this.setLocationRelativeTo(frame);
     this.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
+        // remove the property change listener if the window is closed
         ExportDialog.this.pm.removePropertyChangeListener(ExportDialog.this);
         super.windowClosed(e);
       }
@@ -51,14 +76,18 @@ public class ExportDialog extends JDialog implements PropertyChangeListener {
   }
 
   /**
-   * Initializer
+   * Initializes the dialog panels
    */
   protected void initializePanel() {
     setLayout(new BorderLayout());
-    add(createPanel(), BorderLayout.CENTER);
+    add(createMainPanel(), BorderLayout.CENTER);
     add(this.getButtonPanel(), BorderLayout.SOUTH);
   }
 
+  /**
+   * Creates the button panel
+   * @return The button panel
+   */
   private Component getButtonPanel() {
     JPanel panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
     JButton ok = new JButton(this.pm.getAction(ExportDialogPModel.OK_ACTION));
@@ -69,20 +98,27 @@ public class ExportDialog extends JDialog implements PropertyChangeListener {
     return panel;
   }
 
-  public Component createPanel() {
+  /**
+   * Creates the main panel
+   * @return The main panel
+   */
+  public Component createMainPanel() {
     Box vBox = Box.createVerticalBox();
-    JComboBox<String> exportCombo = BasicComponentFactory.createComboBox(pm
+    @SuppressWarnings("unchecked")
+    JComboBox<String> exportCombo = BasicComponentFactory.createComboBox(this.pm
         .getSelectionInList(ExportDialogPModel.EXPORT_LIST));
     vBox.add(exportCombo);
     return vBox;
   }
 
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName().equals(GEventDialogPModel.DISPOSE)) {
-      pm.removePropertyChangeListener(this);
+      this.pm.removePropertyChangeListener(this);
       this.dispose();
     }
   }
-
 }

@@ -34,26 +34,26 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>EasyTournament</Program_Name>
-		<Program_Version>0.5.6</Program_Version>
-		<Program_Release_Month>07</Program_Release_Month>
-		<Program_Release_Day>29</Program_Release_Day>
-		<Program_Release_Year>2012</Program_Release_Year>
+		<Program_Version>0.6.0</Program_Version>
+		<Program_Release_Month>01</Program_Release_Month>
+		<Program_Release_Day>19</Program_Release_Day>
+		<Program_Release_Year>2013</Program_Release_Year>
 		<Program_Cost_Dollars>0</Program_Cost_Dollars>
 		<Program_Cost_Other_Code />
 		<Program_Cost_Other />
 		<Program_Type>Freeware</Program_Type>
 		<Program_Release_Status>Beta</Program_Release_Status>
 		<Program_Install_Support>Install and Uninstall</Program_Install_Support>
-		<Program_OS_Support>Win7 x32,Win7 x64,WinVista,WinVista x64,WinXP</Program_OS_Support>
+		<Program_OS_Support>Win8 x32,Win8 x64,Win7 x32,Win7 x64,WinVista,WinVista x64,WinXP</Program_OS_Support>
 		<Program_Language>English,French,German</Program_Language>
 		<Program_Change_Info />
 		<Program_Specific_Category>Home/Hobby</Program_Specific_Category>
 		<Program_Category_Class>Home &amp; Hobby::Other</Program_Category_Class>
 		<Program_System_Requirements>Java 1.6</Program_System_Requirements>
 		<File_Info>
-			<File_Size_Bytes>8459671</File_Size_Bytes>
-			<File_Size_K>8460</File_Size_K>
-			<File_Size_MB>8.46</File_Size_MB>
+			<File_Size_Bytes>7712768</File_Size_Bytes>
+			<File_Size_K>7713</File_Size_K>
+			<File_Size_MB>7.7</File_Size_MB>
 		</File_Info>
 		<Expire_Info>
 			<Has_Expire_Info>N</Has_Expire_Info>
@@ -108,7 +108,7 @@ Hier eine Auswahl der Funktionen:
 			<Application_XML_File_URL>http://easy-tournament.com/downloads/PAD_FILE.XML</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>http://easy-tournament.com/downloads/ETInstaller-0.5.6.0.exe</Primary_Download_URL>
+			<Primary_Download_URL>http://easy-tournament.com/downloads/EasyTournament-0.6.0.0.msi</Primary_Download_URL>
 			<Secondary_Download_URL />
 			<Additional_Download_URL_1 />
 			<Additional_Download_URL_2 />

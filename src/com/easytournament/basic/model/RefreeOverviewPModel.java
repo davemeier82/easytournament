@@ -219,7 +219,7 @@ public class RefreeOverviewPModel extends Model implements ListDataListener {
           for (int i = 0; i < irefree.size(); i++)
             selection.add(new Boolean(true));
 
-          ImportListDialogPModel<Team> ilpm = new ImportListDialogPModel<Team>(
+          ImportListDialogPModel ilpm = new ImportListDialogPModel(
               new RefreeImportTableModel(irefree, selection));
 
           new ImportListDialog(Organizer.getInstance().getMainFrame(),

@@ -1,3 +1,12 @@
+/* PlayersTabPanel.java - Tab to add/edit/delete players to a team
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -42,24 +51,56 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.util.popupmenu.TablePopupMenu;
 
+/**
+ * Tab used in the Team Dialog to add/edit/remove players
+ * @author David Meier
+ *
+ */
 public class PlayersTabPanel extends JPanel implements TableModelListener,
     PropertyChangeListener {
 
-  private static final long serialVersionUID = 1L;
-  private PlayersTabPanelPModel pm;
-  private TablePopupMenu popup;
-  private JTable players;
+  private static final long serialVersionUID = -598175856761748559L;
+  /**
+   * The presentation model
+   */
+  protected PlayersTabPanelPModel pm;
+  /**
+   * The context menu to add/edit/remove players
+   */
+  protected TablePopupMenu popup;
+  /**
+   * Table that lists the players
+   */
+  protected JTable playerTable;
+  /**
+   * The table column model
+   */
   protected TableColumnModel tcm;
+  /**
+   * The dialog that contains this tab
+   */
   protected JDialog owner;
 
+  /**
+   * Constructor
+   * @param pm The presentation model
+   * @param owner  The dialog that contains this tab
+   */
   public PlayersTabPanel(PlayersTabPanelPModel pm, JDialog owner) {
     this.pm = pm;
     this.owner = owner;
     pm.addPropertyChangeListener(this);
     owner.addWindowListener(new WindowAdapter() {
 
+      /*
+       * (non-Javadoc)
+       * 
+       * @see
+       * java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
+        // remove the property change listener when the dialog is closed
         PlayersTabPanel.this.pm
             .removePropertyChangeListener(PlayersTabPanel.this);
         super.windowClosed(e);
@@ -68,180 +109,278 @@ public class PlayersTabPanel extends JPanel implements TableModelListener,
     init();
   }
 
+  /**
+   * initialize the panels of the tab
+   */
   private void init() {
     this.setLayout(new BorderLayout(0, 10));
     this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-    this.add(getGroupsComponent(), BorderLayout.CENTER);
+    this.add(getPlayerComponent(), BorderLayout.CENTER);
     this.add(getButtonComponent(), BorderLayout.SOUTH);
   }
 
-  private JComponent getGroupsComponent() {
-    TableModel tm = pm.getTableModel();
-    players = new JTable(tm);
-    //players.setAutoCreateRowSorter(true); //TODO enable if deleting is ok
-    tcm = players.getColumnModel();
+  /**
+   * @return The component that contains the player table
+   */
+  private JComponent getPlayerComponent() {
+    TableModel tm = this.pm.getTableModel();
+    this.playerTable = new JTable(tm);
+    // players.setAutoCreateRowSorter(true); //TODO enable if deleting is ok
+    this.tcm = this.playerTable.getColumnModel();
     tm.addTableModelListener(this);
-    players.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-    players.setSelectionModel(pm.getSelectionModel());
-    players.setFillsViewportHeight(true);
-    players.addMouseListener(new MouseAdapter() {
+    this.playerTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+    this.playerTable.getTableHeader().setReorderingAllowed(false);
+    this.playerTable.setSelectionModel(this.pm.getSelectionModel());
+    this.playerTable.setFillsViewportHeight(true);
+    this.playerTable.addMouseListener(new MouseAdapter() {
 
+      /*
+       * (non-Javadoc)
+       * 
+       * @see
+       * java.awt.event.MouseAdapter#mouseClicked(java.awt.event.MouseEvent)
+       */
       @Override
       public void mouseClicked(MouseEvent me) {
         super.mouseClicked(me);
         if (me.getClickCount() > 1) {
-          int row = players.rowAtPoint(me.getPoint());
+          // double click on a row opens the player dialog to edit a player
+          int row = PlayersTabPanel.this.playerTable.rowAtPoint(me.getPoint());
           if (row >= 0)
-            showPlayerDialog(pm.getPlayerDModel(players.convertRowIndexToModel(row)));
+            showPlayerDialog(PlayersTabPanel.this.pm
+                .getPlayerDModel(PlayersTabPanel.this.playerTable
+                    .convertRowIndexToModel(row)));
         }
       }
-
     });
-    players.addKeyListener(new KeyAdapter() {
+    
+    // add listener to delete player with the delete-key
+    this.playerTable.addKeyListener(new KeyAdapter() {
 
+      /*
+       * (non-Javadoc)
+       * 
+       * @see java.awt.event.KeyAdapter#keyReleased(java.awt.event.KeyEvent)
+       */
       @Override
       public void keyReleased(KeyEvent ke) {
         super.keyReleased(ke);
         if (ke.getKeyCode() == KeyEvent.VK_DELETE) {
-          pm.deleteAction();
+          PlayersTabPanel.this.pm.deleteAction();
         }
       }
-
     });
     DefaultTableCellRenderer sdtcr = null;
-    if(Organizer.getInstance().isSubstance())        
+    if (Organizer.getInstance().isSubstance())
       sdtcr = new SubstanceDefaultTableCellRenderer();
     else
       sdtcr = new DefaultTableCellRenderer();
     sdtcr.setHorizontalAlignment(SwingConstants.CENTER);
-    tcm.getColumn(0).setCellRenderer(sdtcr);
-    JScrollPane spane = new JScrollPane(players);
+    this.tcm.getColumn(0).setCellRenderer(sdtcr);
+    
+    JScrollPane spane = new JScrollPane(this.playerTable);
 
-    popup = new TablePopupMenu();
+    // the context menu
+    this.popup = new TablePopupMenu();
     JMenuItem newItem = new JMenuItem(
-        pm.getAction(PlayersTabPanelPModel.NEW_PLAYER_ACTION));
-    popup.add(newItem);
+        this.pm.getAction(PlayersTabPanelPModel.NEW_PLAYER_ACTION));
+    this.popup.add(newItem);
     JMenuItem editItem = new JMenuItem(new AbstractAction(
         ResourceManager.getText(Text.EDIT_PLAYER),
         ResourceManager.getIcon(Icon.EDIT_ICON_SMALL)) {
 
+      private static final long serialVersionUID = -6462438435319590701L;
+
+      /*
+       * (non-Javadoc)
+       * 
+       * @see
+       * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent
+       * )
+       */
       @Override
       public void actionPerformed(ActionEvent e) {
-        int row = popup.getRow();
+        int row = PlayersTabPanel.this.popup.getRow();
         if (row >= 0) {
-          showPlayerDialog(pm.getPlayerDModel(players.convertRowIndexToModel(row)));
+          showPlayerDialog(PlayersTabPanel.this.pm
+              .getPlayerDModel(PlayersTabPanel.this.playerTable
+                  .convertRowIndexToModel(row)));
         }
       }
     });
-    popup.add(editItem);
+    this.popup.add(editItem);
     JMenuItem deleteItem = new JMenuItem(
-        pm.getAction(PlayersTabPanelPModel.DELETE_PLAYER_ACTION));
-    popup.add(deleteItem);
-    players.addMouseListener(new PopupListener());
+        this.pm.getAction(PlayersTabPanelPModel.DELETE_PLAYER_ACTION));
+    this.popup.add(deleteItem);
+    this.playerTable.addMouseListener(new PopupListener());
     spane.addMouseListener(new PopupListener());
+    
     this.setColumnWidths();
-
     return spane;
   }
 
+  /**
+   * Component with various buttons to change the player table entries
+   * @return the button component
+   */
   private JComponent getButtonComponent() {
     Box hBox = Box.createHorizontalBox();
     hBox.setAlignmentY(Component.TOP_ALIGNMENT);
-    hBox.add(new JButton(pm.getAction(PlayersTabPanelPModel.NEW_PLAYER_ACTION)));
+    hBox.add(new JButton(this.pm
+        .getAction(PlayersTabPanelPModel.NEW_PLAYER_ACTION)));
     hBox.add(Box.createHorizontalStrut(10));
-    hBox.add(new JButton(pm
+    hBox.add(new JButton(this.pm
         .getAction(PlayersTabPanelPModel.DELETE_PLAYER_ACTION)));
     hBox.add(Box.createHorizontalStrut(10));
-    hBox.add(new JButton(pm
+    hBox.add(new JButton(this.pm
         .getAction(PlayersTabPanelPModel.IMPORT_PLAYER_ACTION)));
     hBox.add(Box.createHorizontalStrut(10));
-    hBox.add(new JButton(pm
+    hBox.add(new JButton(this.pm
         .getAction(PlayersTabPanelPModel.EXPORT_PLAYER_ACTION)));
 
     return hBox;
   }
 
+  /*
+   * (non-Javadoc)
+   * 
+   * @see javax.swing.event.TableModelListener#tableChanged(javax.swing.event.
+   * TableModelEvent)
+   */
   @Override
   public void tableChanged(TableModelEvent e) {
     this.setColumnWidths();
   }
 
+  /**
+   * adjusts the column width if the table entries changed
+   */
   public void setColumnWidths() {
     SwingUtilities.invokeLater(new Runnable() {
 
+      /*
+       * (non-Javadoc)
+       * 
+       * @see java.lang.Runnable#run()
+       */
       @Override
       public void run() {
-        FontMetrics fm = players.getTableHeader().getFontMetrics(
-            players.getTableHeader().getFont());
+        JTable pTable = PlayersTabPanel.this.playerTable;
+        FontMetrics fm = pTable.getTableHeader().getFontMetrics(
+            pTable.getTableHeader().getFont());
 
-        for (int i = 0; i < players.getColumnCount(); i++) {
-          int width = fm.stringWidth((String)tcm.getColumn(i).getHeaderValue());
-          for (int r = 0; r < players.getRowCount(); r++) {
+        for (int i = 0; i < pTable.getColumnCount(); i++) {
+          int width = fm.stringWidth((String)PlayersTabPanel.this.tcm
+              .getColumn(i).getHeaderValue());
+          for (int r = 0; r < pTable.getRowCount(); r++) {
             width = Math.max(width,
-                fm.stringWidth(players.getValueAt(r, i).toString()));
+                fm.stringWidth(pTable.getValueAt(r, i).toString()));
           }
           if (i == 0)
             width = Math.max(50, width + 20);
           else
             width = Math.max(150, width + 20);
 
-          tcm.getColumn(i).setPreferredWidth(width);
-          tcm.getColumn(i).setWidth(width);
+          PlayersTabPanel.this.tcm.getColumn(i).setPreferredWidth(width);
+          PlayersTabPanel.this.tcm.getColumn(i).setWidth(width);
         }
       }
     });
   }
 
+  /**
+   * Creates and shows the dialog to create/edit a player
+   * @param pdm The presentation model
+   */
   public void showPlayerDialog(PlayerDialogPModel pdm) {
-    final PlayerDialog pDialog = new PlayerDialog(owner, pdm, true);
+    final PlayerDialog pDialog = new PlayerDialog(this.owner, pdm, true);
     pDialog.addWindowListener(new WindowAdapter() {
 
+      /*
+       * (non-Javadoc)
+       * 
+       * @see
+       * java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
-        pm.sortPlayers();
+        PlayersTabPanel.this.pm.sortPlayers();
         pDialog.removeWindowListener(this);
         super.windowClosing(e);
       }
     });
   }
 
+  /**
+   * Listener to show the context menu
+   * @author David Meier
+   * 
+   */
   class PopupListener extends MouseAdapter {
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.awt.event.MouseAdapter#mousePressed(java.awt.event.MouseEvent)
+     */
+    @Override
     public void mousePressed(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
+     */
+    @Override
     public void mouseReleased(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /**
+     * Shows the context menu if the right mouse button is pressed
+     * on the player table
+     * @param e The mouse event
+     */
     private void maybeShowPopup(MouseEvent e) {
       if (e.isPopupTrigger()) {
-        int row = players.rowAtPoint(e.getPoint());
+        JTable pTable = PlayersTabPanel.this.playerTable;
+        int row = pTable.rowAtPoint(e.getPoint());
 
-        popup.setRow(row);
-        popup.setCol(players.rowAtPoint(e.getPoint()));
+        TablePopupMenu popupMenu = PlayersTabPanel.this.popup;
+        popupMenu.setRow(row);
+        popupMenu.setCol(pTable.rowAtPoint(e.getPoint()));
 
+        // hide the "edit" entry if the right click was not 
+        // on a player row
         if (row < 0) {
-          popup.getComponent(1).setVisible(false);
+          popupMenu.getComponent(1).setVisible(false);
         }
         else {
-          if (!players.isCellSelected(row, 0))
-            players.setRowSelectionInterval(row, row);
-          popup.getComponent(1).setVisible(true);
+          if (!pTable.isCellSelected(row, 0))
+            pTable.setRowSelectionInterval(row, row);
+          popupMenu.getComponent(1).setVisible(true);
         }
 
-        popup.show(e.getComponent(), e.getX(), e.getY());
+        popupMenu.show(e.getComponent(), e.getX(), e.getY());
       }
     }
   }
 
+  /*
+   * (non-Javadoc)
+   * 
+   * @see
+   * java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent
+   * )
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName() == PlayersTabPanelPModel.PROPERTY_SHOW_PLAYERDIALOG) {
       this.showPlayerDialog((PlayerDialogPModel)evt.getNewValue());
     }
     else if (evt.getPropertyName().equals(TeamDialogPModel.DISPOSE)) {
-      pm.removePropertyChangeListener(this);
+      this.pm.removePropertyChangeListener(this);
     }
   }
 }

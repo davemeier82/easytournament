@@ -1,3 +1,12 @@
+/* GameEventDialog.java - Dialog to create or edit game events
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -34,47 +43,70 @@ import com.jgoodies.binding.adapter.SpinnerAdapterFactory;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+/**
+ * This dialog allows to create/edit game events
+ * @author David Meier
+ *
+ */
 public class GameEventDialog extends JDialog implements PropertyChangeListener,
     ChangeListener {
 
   private static final long serialVersionUID = 4775688030231693269L;
+  /**
+   * The presentation model
+   */
   protected GEventDialogPModel pm;
-  protected JTextField textTF;
+  /**
+   * Text field for the secondary player (assist,...)
+   */
+  protected JTextField secondaryTF;
+  /**
+   * Checkbox to activate the secondary player
+   */
   protected JCheckBox secondaryChB;
 
   /**
-   * Default constructor
+   * @param frame The parent frame
+   * @param modal True if the dialog is modal
+   * @param pm The presentation model
    */
-  public GameEventDialog(Frame f, boolean modal, GEventDialogPModel pm) {
-    super(f, ResourceManager.getText(Text.GAMEEVENT), modal);
+  public GameEventDialog(Frame frame, boolean modal, GEventDialogPModel pm) {
+    super(frame, ResourceManager.getText(Text.GAMEEVENT), modal);
     this.pm = pm;
     this.pm.addPropertyChangeListener(this);
     initializePanel();
     this.pack();
-    this.setLocationRelativeTo(f);
+    this.setLocationRelativeTo(frame);
     this.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
+        // remove the property change listener if the dialog is closed
         GameEventDialog.this.pm
             .removePropertyChangeListener(GameEventDialog.this);
         super.windowClosed(e);
       }
-
     });
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     this.setVisible(true);
   }
 
   /**
-   * Initializer
+   * Initialize the dialog panels
    */
   protected void initializePanel() {
     setLayout(new BorderLayout());
-    add(createPanel(), BorderLayout.CENTER);
+    add(createMainPanel(), BorderLayout.CENTER);
     add(this.getButtonPanel(), BorderLayout.SOUTH);
   }
 
+  /**
+   * Creates the panel with the OK and cancel buttons
+   * @return the button panel
+   */
   private Component getButtonPanel() {
     JPanel panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
     JButton ok = new JButton(this.pm.getAction(GEventDialogPModel.OK_ACTION));
@@ -83,6 +115,101 @@ public class GameEventDialog extends JDialog implements PropertyChangeListener,
     panel.add(ok);
     panel.add(cancel);
     return panel;
+  }
+
+  /**
+   * Creates the main panel
+   * @return the main panel
+   */
+  public JPanel createMainPanel() {
+    JPanel mainPanel = new JPanel();
+    mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    FormLayout formlayout1 = new FormLayout(
+        "FILL:MAX(80PX;DEFAULT):NONE,FILL:DEFAULT:NONE,FILL:MAX(200PX;DEFAULT):NONE,FILL:DEFAULT:NONE,FILL:MAX(200PX;DEFAULT):NONE",
+        "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
+    CellConstraints cc = new CellConstraints();
+    mainPanel.setLayout(formlayout1);
+
+    JLabel nameLabel = new JLabel();
+    nameLabel.setText(ResourceManager.getText(Text.NAME));
+    mainPanel.add(nameLabel, cc.xy(1, 2));    
+
+    JTextField nameTF = BasicComponentFactory.createTextField(this.pm
+        .getGameEventValueModel(GameEvent.PROPERTY_NAME));
+    nameTF.setEditable(this.pm.isNameEditable());
+    mainPanel.add(nameTF, cc.xy(3, 2));
+
+    JLabel typeLabel = new JLabel();
+    typeLabel.setText(ResourceManager.getText(Text.TYPE));
+    mainPanel.add(typeLabel, cc.xy(1, 4));
+
+    JLabel teamLabel = new JLabel();
+    teamLabel.setText(ResourceManager.getText(Text.TEAM));
+    mainPanel.add(teamLabel, cc.xy(3, 6));
+
+    JLabel opponentLabel = new JLabel();
+    opponentLabel.setText(ResourceManager.getText(Text.OPPONENT));
+    mainPanel.add(opponentLabel, cc.xy(5, 6));
+
+    JSpinner pointsTeamS = new JSpinner(
+        SpinnerAdapterFactory.createNumberAdapter(
+            this.pm.getGameEventValueModel(GameEvent.PROPERTY_POINTS_TEAM), 0,
+            -1000, +1000, 1));
+    mainPanel.add(pointsTeamS, cc.xy(3, 8));
+
+    JSpinner pointsOppS = new JSpinner(
+        SpinnerAdapterFactory.createNumberAdapter(
+            this.pm.getGameEventValueModel(GameEvent.PROPERTY_POINTS_OPPONENT), 0,
+            -1000, +1000, 1));
+    mainPanel.add(pointsOppS, cc.xy(5, 8));
+
+    JLabel pointsLabel = new JLabel();
+    pointsLabel.setText(ResourceManager.getText(Text.POINTS));
+    mainPanel.add(pointsLabel, cc.xy(1, 8));
+
+    @SuppressWarnings("unchecked")
+    JComboBox<String> typeCb = BasicComponentFactory.createComboBox(this.pm
+        .getTypeSelectionInList());
+    mainPanel.add(typeCb, cc.xy(3, 4));
+
+    this.secondaryChB = BasicComponentFactory.createCheckBox(
+        this.pm.getGameEventValueModel(GameEvent.PROPERTY_SECONDARY_PLAYER),
+        ResourceManager.getText(Text.EVENT_SECOND_PLAYER));
+    this.secondaryChB.setEnabled(this.pm.isNameEditable());
+    mainPanel.add(this.secondaryChB, cc.xyw(1, 10, 5));
+    this.secondaryChB.addChangeListener(this);
+
+    JLabel textLabel = new JLabel();
+    textLabel.setText(ResourceManager.getText(Text.TEXT));
+    mainPanel.add(textLabel, cc.xy(1, 12));
+
+    this.secondaryTF = BasicComponentFactory.createTextField(this.pm
+        .getGameEventValueModel(GameEvent.PROPERTY_SECONDARY_TEXT));
+    this.secondaryTF.setEditable(this.pm.isNameEditable() && this.secondaryChB.isSelected());
+    mainPanel.add(this.secondaryTF, cc.xyw(3, 12, 3));
+
+    addFillComponents(mainPanel, new int[] {1, 2, 3, 4, 5}, new int[] {1, 3, 5,
+        6, 7, 9, 11});
+    return mainPanel;
+  }
+
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+    if (evt.getPropertyName().equals(GEventDialogPModel.DISPOSE)) {
+      this.pm.removePropertyChangeListener(this);
+      this.dispose();
+    }
+  }
+
+  /* (non-Javadoc)
+   * @see javax.swing.event.ChangeListener#stateChanged(javax.swing.event.ChangeEvent)
+   */
+  @Override
+  public void stateChanged(ChangeEvent e) {
+    this.secondaryTF.setEditable(this.secondaryChB.isSelected());
   }
 
   /**
@@ -98,7 +225,7 @@ public class GameEventDialog extends JDialog implements PropertyChangeListener,
    */
   void addFillComponents(Container panel, int[] cols, int[] rows) {
     Dimension filler = new Dimension(10, 10);
-
+  
     boolean filled_cell_11 = false;
     CellConstraints cc = new CellConstraints();
     if (cols.length > 0 && rows.length > 0) {
@@ -108,106 +235,19 @@ public class GameEventDialog extends JDialog implements PropertyChangeListener,
         filled_cell_11 = true;
       }
     }
-
+  
     for (int index = 0; index < cols.length; index++) {
       if (cols[index] == 1 && filled_cell_11) {
         continue;
       }
       panel.add(Box.createRigidArea(filler), cc.xy(cols[index], 1));
     }
-
+  
     for (int index = 0; index < rows.length; index++) {
       if (rows[index] == 1 && filled_cell_11) {
         continue;
       }
       panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
-    }
-
+    }  
   }
-
-  public JPanel createPanel() {
-    JPanel jpanel1 = new JPanel();
-    jpanel1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-    FormLayout formlayout1 = new FormLayout(
-        "FILL:MAX(80PX;DEFAULT):NONE,FILL:DEFAULT:NONE,FILL:MAX(200PX;DEFAULT):NONE,FILL:DEFAULT:NONE,FILL:MAX(200PX;DEFAULT):NONE",
-        "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
-    CellConstraints cc = new CellConstraints();
-    jpanel1.setLayout(formlayout1);
-
-    JLabel jlabel1 = new JLabel();
-    jlabel1.setText(ResourceManager.getText(Text.NAME));
-    jpanel1.add(jlabel1, cc.xy(1, 2));
-
-    JLabel jlabel2 = new JLabel();
-    jlabel2.setText(ResourceManager.getText(Text.TYPE));
-    jpanel1.add(jlabel2, cc.xy(1, 4));
-
-    JLabel jlabel3 = new JLabel();
-    jlabel3.setText(ResourceManager.getText(Text.TEAM));
-    jpanel1.add(jlabel3, cc.xy(3, 6));
-
-    JLabel jlabel4 = new JLabel();
-    jlabel4.setText(ResourceManager.getText(Text.OPPONENT));
-    jpanel1.add(jlabel4, cc.xy(5, 6));
-
-    JTextField nameTF = BasicComponentFactory.createTextField(pm
-        .getGameEventValueModel(GameEvent.PROPERTY_NAME));
-    nameTF.setEditable(pm.isNameEditable());
-    jpanel1.add(nameTF, cc.xy(3, 2));
-
-    JSpinner pointsTeamS = new JSpinner(
-        SpinnerAdapterFactory.createNumberAdapter(
-            pm.getGameEventValueModel(GameEvent.PROPERTY_POINTS_TEAM), 0,
-            -1000, +1000, 1));
-    jpanel1.add(pointsTeamS, cc.xy(3, 8));
-
-    JSpinner pointsOppS = new JSpinner(
-        SpinnerAdapterFactory.createNumberAdapter(
-            pm.getGameEventValueModel(GameEvent.PROPERTY_POINTS_OPPONENT), 0,
-            -1000, +1000, 1));
-    jpanel1.add(pointsOppS, cc.xy(5, 8));
-
-    JLabel jlabel5 = new JLabel();
-    jlabel5.setText(ResourceManager.getText(Text.POINTS));
-    jpanel1.add(jlabel5, cc.xy(1, 8));
-
-    JComboBox<String> typeCb = BasicComponentFactory.createComboBox(pm
-        .getTypeSelectionInList());
-    jpanel1.add(typeCb, cc.xy(3, 4));
-
-    secondaryChB = BasicComponentFactory.createCheckBox(
-        pm.getGameEventValueModel(GameEvent.PROPERTY_SECONDARY_PLAYER),
-        ResourceManager.getText(Text.EVENT_SECOND_PLAYER));
-    secondaryChB.setEnabled(pm.isNameEditable());
-    jpanel1.add(secondaryChB, cc.xyw(1, 10, 5));
-    secondaryChB.addChangeListener(this);
-
-    JLabel jlabel6 = new JLabel();
-    jlabel6.setText(ResourceManager.getText(Text.TEXT));
-    jpanel1.add(jlabel6, cc.xy(1, 12));
-
-    textTF = BasicComponentFactory.createTextField(pm
-        .getGameEventValueModel(GameEvent.PROPERTY_SECONDARY_TEXT));
-    textTF.setEditable(pm.isNameEditable() && secondaryChB.isSelected());
-    jpanel1.add(textTF, cc.xyw(3, 12, 3));
-
-    addFillComponents(jpanel1, new int[] {1, 2, 3, 4, 5}, new int[] {1, 3, 5,
-        6, 7, 9, 11});
-    return jpanel1;
-  }
-
-  @Override
-  public void propertyChange(PropertyChangeEvent evt) {
-    if (evt.getPropertyName().equals(GEventDialogPModel.DISPOSE)) {
-      pm.removePropertyChangeListener(this);
-      this.dispose();
-    }
-
-  }
-
-  @Override
-  public void stateChanged(ChangeEvent e) {
-    textTF.setEditable(secondaryChB.isSelected());
-  }
-
 }

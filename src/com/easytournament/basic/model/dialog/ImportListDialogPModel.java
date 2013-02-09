@@ -12,8 +12,9 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.jgoodies.binding.beans.Model;
 
-public class ImportListDialogPModel<T> extends Model {
+public class ImportListDialogPModel extends Model {
 
+  private static final long serialVersionUID = -2018160535498881654L;
   public static final int OK_ACTION = 0;
   public static final int CANCEL_ACTION = 1;
 

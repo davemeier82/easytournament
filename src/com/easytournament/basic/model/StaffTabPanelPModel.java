@@ -202,7 +202,7 @@ public class StaffTabPanelPModel extends Model {
           for (int i = 0; i < istaff.size(); i++)
             selection.add(new Boolean(true));
 
-          ImportListDialogPModel<Team> ilpm = new ImportListDialogPModel<Team>(
+          ImportListDialogPModel ilpm = new ImportListDialogPModel(
               new StaffImportTableModel(istaff, selection));
 
           new ImportListDialog(Organizer.getInstance().getMainFrame(),

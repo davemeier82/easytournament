@@ -1,3 +1,12 @@
+/* ImportListDialog.java - Dialog that shows a table of elements to import
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -12,97 +21,132 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
 import javax.swing.table.TableColumnModel;
 
 import com.easytournament.basic.gui.tablecellrenderer.CheckboxCellRenderer;
 import com.easytournament.basic.model.dialog.GEventDialogPModel;
 import com.easytournament.basic.model.dialog.ImportListDialogPModel;
 
-
+/**
+ * Dialog that shows a table of elements to import
+ * @author David Meier
+ * 
+ */
 public class ImportListDialog extends JDialog implements PropertyChangeListener {
 
   private static final long serialVersionUID = 4775688030231693269L;
-  protected ImportListDialogPModel<?> pm;
-  protected JTextField textTF;
-  protected JCheckBox secondaryChB;
+  /**
+   * The presentation model
+   */
+  protected ImportListDialogPModel pm;
 
   /**
-   * Default constructor
+   * @param frame
+   *          The parent frame
+   * @param title
+   *          The dialog title
+   * @param modal
+   *          True if the dialog is modal
+   * @param pm
+   *          The presentation model
    */
-  public ImportListDialog(Frame f,  String title, boolean modal,ImportListDialogPModel<?> pm) {
-    super(f, title, modal);
+  public ImportListDialog(Frame frame, String title, boolean modal,
+      ImportListDialogPModel pm) {
+    super(frame, title, modal);
     this.pm = pm;
     this.pm.addPropertyChangeListener(this);
     initializePanel();
-    this.setSize(800,600);
-    this.setLocationRelativeTo(f);
+    this.setSize(800, 600);
+    this.setLocationRelativeTo(frame);
     this.addWindowListener(new WindowAdapter() {
 
       @Override
       public void windowClosed(WindowEvent e) {
-        ImportListDialog.this.pm.removePropertyChangeListener(ImportListDialog.this);
+        // remove the property change listener when the window is closed
+        ImportListDialog.this.pm
+            .removePropertyChangeListener(ImportListDialog.this);
         super.windowClosed(e);
       }
-      
     });
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     this.setVisible(true);
   }
 
   /**
-   * Initializer
+   * Initialize the dialog panels
    */
   protected void initializePanel() {
     setLayout(new BorderLayout());
-    add(createPanel(), BorderLayout.CENTER);
+    add(createMainPanel(), BorderLayout.CENTER);
     add(this.getButtonPanel(), BorderLayout.SOUTH);
   }
-  
+
+  /**
+   * Creates the button panel
+   * @return The button panel
+   */
   private Component getButtonPanel() {
     JPanel panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    JButton ok = new JButton(this.pm.getAction(GEventDialogPModel.OK_ACTION)); 
-    JButton cancel = new JButton(this.pm.getAction(GEventDialogPModel.CANCEL_ACTION));
+    JButton ok = new JButton(this.pm.getAction(GEventDialogPModel.OK_ACTION));
+    JButton cancel = new JButton(
+        this.pm.getAction(GEventDialogPModel.CANCEL_ACTION));
     panel.add(ok);
     panel.add(cancel);
     return panel;
   }
 
-  public JPanel createPanel() {
+  /**
+   * Creates the main panel
+   * @return the main panel
+   */
+  public JPanel createMainPanel() {
     JPanel p = new JPanel(new BorderLayout());
-    final JTable table = new JTable(pm.getTableModel());
+    final JTable table = new JTable(this.pm.getTableModel());
     TableColumnModel tcm = table.getColumnModel();
     tcm.getColumn(0).setCellRenderer(new CheckboxCellRenderer());
     tcm.getColumn(0).setMaxWidth(30);
-    
+
     table.addMouseListener(new MouseAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.MouseAdapter#mouseClicked(java.awt.event.MouseEvent)
+       */
       @Override
       public void mouseClicked(MouseEvent e) {
         int row = table.rowAtPoint(e.getPoint());
-        pm.toggleSelected(row);
+        getPresentationModel().toggleSelected(row);
       }
-
     });
-    
+
     JScrollPane pane = new JScrollPane(table);
     p.add(pane);
-
     return p;
   }
 
+  /*
+   * (non-Javadoc)
+   * 
+   * @see
+   * java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent
+   * )
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
-    if(evt.getPropertyName().equals(GEventDialogPModel.DISPOSE)){
-      pm.removePropertyChangeListener(this);
+    if (evt.getPropertyName().equals(GEventDialogPModel.DISPOSE)) {
+      this.pm.removePropertyChangeListener(this);
       this.dispose();
     }
-    
+  }
+
+  /**
+   * @return the presentation model
+   */
+  public ImportListDialogPModel getPresentationModel() {
+    return this.pm;
   }
 
 }

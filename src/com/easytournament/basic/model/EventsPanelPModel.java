@@ -261,7 +261,7 @@ public class EventsPanelPModel extends Model implements GEventDialogPModel,
                 for (int i = 0; i < ievents.size(); i++)
                   selection.add(new Boolean(true));
 
-                ImportListDialogPModel<GameEvent> ilpm = new ImportListDialogPModel<GameEvent>(
+                ImportListDialogPModel ilpm = new ImportListDialogPModel(
                     new EventImportTableModel(ievents, selection));
 
                 new ImportListDialog(Organizer.getInstance().getMainFrame(),

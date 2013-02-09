@@ -199,7 +199,7 @@ public class PlayersTabPanelPModel extends Model {
           for (int i = 0; i < iplayer.size(); i++)
             selection.add(new Boolean(true));
 
-          ImportListDialogPModel<Team> ilpm = new ImportListDialogPModel<Team>(
+          ImportListDialogPModel ilpm = new ImportListDialogPModel(
               new PlayerImportTableModel(iplayer, selection));
 
           new ImportListDialog(Organizer.getInstance().getMainFrame(),

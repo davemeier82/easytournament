@@ -73,6 +73,7 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
 
     TableModel tm = pm.getTableModel();
     staff = new JTable(tm);
+    staff.getTableHeader().setReorderingAllowed(false);
     //staff.setAutoCreateRowSorter(true); //TODO enable if deleting is ok
     tcm = staff.getColumnModel();
     tm.addTableModelListener(this);

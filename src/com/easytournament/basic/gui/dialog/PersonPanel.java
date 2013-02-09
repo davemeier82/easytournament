@@ -1,3 +1,12 @@
+/* PersonPanel.java - Panel to add person information
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -33,24 +42,63 @@ import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 import com.toedter.calendar.JDateChooser;
 
+/**
+ * This panel allows to add informations (Name, date of birth,...) to a person. 
+ * @author David Meier
+ *
+ */
 public class PersonPanel extends JPanel {
+
+  private static final long serialVersionUID = -9098409780227271839L;
+  /**
+   * Checkbox to choose the gender
+   */
   protected JComboBox<String> genderCB = new JComboBox<String>();
+  /**
+   * Text field for the first name
+   */
   protected JTextField firstNameTF;
+  /**
+   * Text field for the last name
+   */
   protected JTextField lastNameTF;
+  /**
+   * Date chooser for the date of birth
+   */
   protected JDateChooser bDateChooser;
+  /**
+   * Text field for the phone number
+   */
   protected JTextField phoneTF;
+  /**
+   * Text field for the email address
+   */
   protected JTextField emailTF;
+  /**
+   * Button to add an image to a person
+   */
   protected JButton pictureButton;
+  /**
+   * Text area for the address
+   */
   protected JTextArea addressTA;
+  /**
+   * Text area to add some notes
+   */
   protected JTextArea notesTA;
+  /**
+   * Presentation model
+   */
   protected PersonPanelPModel pm;
+  /**
+   * Context menu on the picture button
+   */
   protected JPopupMenu popup;
 
   /**
    * Default constructor
    */
   public PersonPanel(PersonPanelPModel pm) {
-
     this.pm = pm;
     initializePanel();
   }
@@ -95,109 +143,117 @@ public class PersonPanel extends JPanel {
 
   }
 
+  /**
+   * Creates the main panel
+   * @return The main panel
+   */
+  @SuppressWarnings("unchecked")
   public JPanel createPanel() {
-    JPanel jpanel1 = new JPanel();
+    JPanel mainpanel = new JPanel();
     FormLayout formlayout1 = new FormLayout(
         "FILL:90PX:NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE",
         "CENTER:DEFAULT:NONE,CENTER:30PX:NONE,CENTER:10PX:NONE,CENTER:30PX:NONE,CENTER:10PX:NONE,CENTER:30PX:NONE,CENTER:10PX:NONE,CENTER:30PX:NONE,CENTER:50PX:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:80PX:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    jpanel1.setLayout(formlayout1);
+    mainpanel.setLayout(formlayout1);
 
     JLabel genderLabel = new JLabel();
     genderLabel.setText(ResourceManager.getText(Text.GENDER));
-    jpanel1.add(genderLabel, cc.xy(1, 2));
+    mainpanel.add(genderLabel, cc.xy(1, 2));
 
     JLabel firstNameLabel = new JLabel();
     firstNameLabel.setText(ResourceManager.getText(Text.FIRSTNAME));
-    jpanel1.add(firstNameLabel, cc.xy(1, 4));
+    mainpanel.add(firstNameLabel, cc.xy(1, 4));
 
     JLabel lastNameLAbel = new JLabel();
     lastNameLAbel.setText(ResourceManager.getText(Text.LASTNAME));
-    jpanel1.add(lastNameLAbel, cc.xy(1, 6));
-
+    mainpanel.add(lastNameLAbel, cc.xy(1, 6));
     
-    ComboBoxAdapter<ArrayListModel<String>> genderAdaper = new ComboBoxAdapter<ArrayListModel<String>>(pm.getGenderSelectionInList());
-    genderCB = new JComboBox<String>(genderAdaper);
-    jpanel1.add(genderCB, cc.xy(3, 2));
+    ComboBoxAdapter<ArrayListModel<String>> genderAdaper = new ComboBoxAdapter<ArrayListModel<String>>(this.pm.getGenderSelectionInList());
+    this.genderCB = new JComboBox<String>(genderAdaper);
+    mainpanel.add(this.genderCB, cc.xy(3, 2));
 
-    firstNameTF = BasicComponentFactory.createTextField(pm.getPersonValueModel(Person.PROPERTY_PRENAME));
-    jpanel1.add(firstNameTF, cc.xy(3, 4));
+    this.firstNameTF = BasicComponentFactory.createTextField(this.pm.getPersonValueModel(Person.PROPERTY_PRENAME));
+    mainpanel.add(this.firstNameTF, cc.xy(3, 4));
 
-    lastNameTF = BasicComponentFactory.createTextField(pm.getPersonValueModel(Person.PROPERTY_NAME));
-    jpanel1.add(lastNameTF, cc.xy(3, 6));
+    this.lastNameTF = BasicComponentFactory.createTextField(this.pm.getPersonValueModel(Person.PROPERTY_NAME));
+    mainpanel.add(this.lastNameTF, cc.xy(3, 6));
 
     JLabel bdateLabel = new JLabel();
     bdateLabel.setText(ResourceManager.getText(Text.BIRTHDATE));
-    jpanel1.add(bdateLabel, cc.xy(1, 8));
+    mainpanel.add(bdateLabel, cc.xy(1, 8));
 
-    bDateChooser = new JDateChooser();
-    Bindings.bind(bDateChooser, "date", pm.getPersonValueModel(Person.PROPERTY_BDATE));
-    bDateChooser.setLocale(ResourceManager.getLocale());
-    jpanel1.add(bDateChooser, cc.xy(3, 8));
+    this.bDateChooser = new JDateChooser();
+    Bindings.bind(this.bDateChooser, "date", this.pm.getPersonValueModel(Person.PROPERTY_BDATE));
+    this.bDateChooser.setLocale(ResourceManager.getLocale());
+    mainpanel.add(this.bDateChooser, cc.xy(3, 8));
 
     JLabel addressLabel = new JLabel();
     addressLabel.setText(ResourceManager.getText(Text.ADDRESS));
-    jpanel1.add(addressLabel, cc.xy(1, 12));
+    mainpanel.add(addressLabel, cc.xy(1, 12));
 
     JLabel phoneLabel = new JLabel();
     phoneLabel.setText(ResourceManager.getText(Text.PHONE));
-    jpanel1.add(phoneLabel, cc.xy(1, 19));
+    mainpanel.add(phoneLabel, cc.xy(1, 19));
 
     JLabel emailLabel = new JLabel();
     emailLabel.setText(ResourceManager.getText(Text.EMAIL));
-    jpanel1.add(emailLabel, cc.xy(1, 21));
+    mainpanel.add(emailLabel, cc.xy(1, 21));
 
-    phoneTF = BasicComponentFactory.createTextField(pm.getPersonValueModel(Person.PROPERTY_PHONE));
-    jpanel1.add(phoneTF, cc.xy(3, 19));
+    this.phoneTF = BasicComponentFactory.createTextField(this.pm.getPersonValueModel(Person.PROPERTY_PHONE));
+    mainpanel.add(this.phoneTF, cc.xy(3, 19));
 
-    emailTF = BasicComponentFactory.createTextField(pm.getPersonValueModel(Person.PROPERTY_EMAIL));
-    jpanel1.add(emailTF, cc.xy(3, 21));
+    this.emailTF = BasicComponentFactory.createTextField(this.pm.getPersonValueModel(Person.PROPERTY_EMAIL));
+    mainpanel.add(this.emailTF, cc.xy(3, 21));
 
-    pictureButton = new JButton(pm.getAction(PersonPanelPModel.PICTURE_ACTION));
-    pictureButton.setFocusable(false);
-    jpanel1.add(pictureButton, cc.xywh(5, 2, 1, 8));
+    this.pictureButton = new JButton(this.pm.getAction(PersonPanelPModel.PICTURE_ACTION));
+    this.pictureButton.setFocusable(false);
+    mainpanel.add(this.pictureButton, cc.xywh(5, 2, 1, 8));
 
     JLabel notesLabel = new JLabel();
     notesLabel.setText(ResourceManager.getText(Text.NOTES));
-    jpanel1.add(notesLabel, cc.xy(5, 12));
+    mainpanel.add(notesLabel, cc.xy(5, 12));
 
     JScrollPane jscrollpane1 = new JScrollPane();
-    addressTA = BasicComponentFactory.createTextArea(pm.getPersonValueModel(Person.PROPERTY_ADDRESS));
-    jscrollpane1.setViewportView(addressTA);
+    this.addressTA = BasicComponentFactory.createTextArea(this.pm.getPersonValueModel(Person.PROPERTY_ADDRESS));
+    jscrollpane1.setViewportView(this.addressTA);
     jscrollpane1
         .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
     jscrollpane1
         .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    jpanel1.add(jscrollpane1, cc.xywh(1, 13, 3, 5));
+    mainpanel.add(jscrollpane1, cc.xywh(1, 13, 3, 5));
 
     JScrollPane jscrollpane2 = new JScrollPane();
-    notesTA = BasicComponentFactory.createTextArea(pm.getPersonValueModel(Person.PROPERTY_NOTES));
-    jscrollpane2.setViewportView(notesTA);
+    this.notesTA = BasicComponentFactory.createTextArea(this.pm.getPersonValueModel(Person.PROPERTY_NOTES));
+    jscrollpane2.setViewportView(this.notesTA);
     jscrollpane2
         .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
     jscrollpane2
         .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    jpanel1.add(jscrollpane2, cc.xywh(5, 13, 1, 9));
+    mainpanel.add(jscrollpane2, cc.xywh(5, 13, 1, 9));
     
-    popup = new JPopupMenu();
-    JMenuItem mi = new JMenuItem(pm.getAction(PersonPanelPModel.RESET_ICON_ACTION));
-    popup.add(mi);
+    // add context menu to the picture button
+    this.popup = new JPopupMenu();
+    JMenuItem mi = new JMenuItem(this.pm.getAction(PersonPanelPModel.RESET_ICON_ACTION));
+    this.popup.add(mi);
     mi.addActionListener(new ActionListener() {
       
+      /* (non-Javadoc)
+       * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+       */
       @Override
       public void actionPerformed(ActionEvent e) {
-        pictureButton.setIcon(null);       
+        PersonPanel.this.pictureButton.setIcon(null);       
       }
     });
-    pictureButton.addMouseListener(new PopupListener());
+    this.pictureButton.addMouseListener(new PopupListener());
 
-    addFillComponents(jpanel1, new int[] {1, 2, 3, 4, 5}, new int[] {1, 3, 5,
+    addFillComponents(mainpanel, new int[] {1, 2, 3, 4, 5}, new int[] {1, 3, 5,
         7, 9, 10, 11, 14, 15, 16, 17, 18, 20});
-    return jpanel1;
+    return mainpanel;
   }
 
   /**
-   * Initializer
+   * Initializes the panel
    */
   protected void initializePanel() {
     this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -205,20 +261,36 @@ public class PersonPanel extends JPanel {
     add(createPanel(), BorderLayout.CENTER);
   }
   
+  /**
+   * Popup listener for the context menu on the picture button
+   * @author David Meier
+   *
+   */
   class PopupListener extends MouseAdapter {
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mousePressed(java.awt.event.MouseEvent)
+     */
+    @Override
     public void mousePressed(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
+     */
+    @Override
     public void mouseReleased(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /**
+     * Show the context menu if the right mouse button is pressed
+     * @param e The mouse event
+     */
     private void maybeShowPopup(MouseEvent e) {
       if (e.isPopupTrigger()) {
-        popup.show(e.getComponent(), e.getX(), e.getY());
+        PersonPanel.this.popup.show(e.getComponent(), e.getX(), e.getY());
       }
     }
   }
-
 }

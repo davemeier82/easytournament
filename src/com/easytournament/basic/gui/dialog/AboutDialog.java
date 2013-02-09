@@ -1,3 +1,12 @@
+/* AboutDialog.java Window of application and license information
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -35,20 +44,28 @@ import com.easytournament.basic.resources.Text;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+/**
+ * @author David Meier
+ * 
+ */
 public class AboutDialog extends JDialog {
 
-  private static final String LICENSE_TXT = ResourceManager
-      .getPath(Path.LICENSE);
-  JTextArea jtextarea1 = new JTextArea();
-  JLabel logo;
-  JLabel website, ccodec, jcalendar, jdom, substance, jgoodies, jgraph, fugue;
+  private static final long serialVersionUID = 25300622888927060L;
+
+  /**
+   * UI elements
+   */
+  JTextArea licenseTextfield = new JTextArea();
+  JLabel logo, website, ccodec, jcalendar, jdom, substance, jgoodies, jgraph,
+      fugue;
 
   /**
    * Default constructor
    */
   public AboutDialog(Frame f, boolean modal) {
     super(f, ResourceManager.getText(Text.INFO_MENU), modal);
-    initializePanel();
+    setLayout(new BorderLayout());
+    add(createPanel(), BorderLayout.CENTER);
     this.pack();
     this.setLocationRelativeTo(f);
     this.setResizable(false);
@@ -94,137 +111,159 @@ public class AboutDialog extends JDialog {
 
   }
 
+  /**
+   * Creates the main panel of the window
+   * @return The main panel
+   */
   public JPanel createPanel() {
 
     LinkMouseListener lml = Desktop.isDesktopSupported()? new LinkMouseListener()
         : null;
 
-    JPanel jpanel1 = new JPanel();
+    JPanel mainpanel = new JPanel();
     FormLayout formlayout1 = new FormLayout(
         "FILL:MAX(130PX;DEFAULT):NONE,FILL:10PX:NONE,FILL:MAX(160PX;DEFAULT):NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,FILL:200PX:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    jpanel1.setLayout(formlayout1);
+    mainpanel.setLayout(formlayout1);
 
-    JLabel jlabel1 = new JLabel();
-    jlabel1.setText(ResourceManager.getText(Text.VERSION) + ":");
-    jpanel1.add(jlabel1, cc.xy(1, 3));
+    // Version text
+    JLabel versionLabel = new JLabel();
+    versionLabel.setText(ResourceManager.getText(Text.VERSION) + ":");
+    mainpanel.add(versionLabel, cc.xy(1, 3));
+    
+    JLabel versionNrLabel = new JLabel();
+    versionNrLabel.setText(MetaInfos.getVersionNr());
+    mainpanel.add(versionNrLabel, cc.xy(3, 3));
 
-    logo = new JLabel();
-    logo.setIcon(ResourceManager.getIcon(Icon.SPLASHSCREEN));
+    // Logo image
+    this.logo = new JLabel();
+    this.logo.setIcon(ResourceManager.getIcon(Icon.SPLASHSCREEN));
 
-    jpanel1.add(logo, new CellConstraints(1, 1, 3, 1, CellConstraints.CENTER,
-        CellConstraints.CENTER));
+    mainpanel.add(this.logo, new CellConstraints(1, 1, 3, 1,
+        CellConstraints.CENTER, CellConstraints.CENTER));
 
-    JLabel jlabel2 = new JLabel();
-    jlabel2.setText(ResourceManager.getText(Text.AUTHOR) + ":");
-    jpanel1.add(jlabel2, cc.xy(1, 5));
+    // Author 
+    JLabel authorLabel = new JLabel();
+    authorLabel.setText(ResourceManager.getText(Text.AUTHOR) + ":");
+    mainpanel.add(authorLabel, cc.xy(1, 5));
 
-    JLabel jlabel3 = new JLabel();
-    jlabel3.setText(MetaInfos.getVersionNr());
-    jpanel1.add(jlabel3, cc.xy(3, 3));
+    JLabel authorNameLabel = new JLabel();
+    authorNameLabel.setText(MetaInfos.AUTHOR);
+    mainpanel.add(authorNameLabel, cc.xy(3, 5));
+    
+    // Website
+    JLabel websiteLabel = new JLabel();
+    websiteLabel.setText(ResourceManager.getText(Text.WEBSITE) + ":");
+    mainpanel.add(websiteLabel, cc.xy(1, 7));
 
-    JLabel jlabel4 = new JLabel();
-    jlabel4.setText(MetaInfos.AUTHOR);
-    jpanel1.add(jlabel4, cc.xy(3, 5));
+    this.website = new JLabel();
+    this.website.setText("<html><u>" + MetaInfos.APP_WEBSITE + "</u></html>");
 
-    JLabel jlabel5 = new JLabel();
-    jlabel5.setText(ResourceManager.getText(Text.WEBSITE) + ":");
-    jpanel1.add(jlabel5, cc.xy(1, 7));
+    mainpanel.add(this.website, cc.xy(3, 7));
 
-    website = new JLabel();
-    website.setText("<html><u>" + MetaInfos.APP_WEBSITE + "</u></html>");
+    // License
+    JLabel licenseLabel = new JLabel();
+    licenseLabel.setText(ResourceManager.getText(Text.LICENSE) + ":");
+    mainpanel.add(licenseLabel, cc.xy(1, 18));
 
-    jpanel1.add(website, cc.xy(3, 7));
-
-    JLabel jlabel7 = new JLabel();
-    jlabel7.setText(ResourceManager.getText(Text.LICENSE) + ":");
-    jpanel1.add(jlabel7, cc.xy(1, 18));
-
-    jtextarea1.setEditable(false);
-    JScrollPane jscrollpane1 = new JScrollPane();
-    jscrollpane1.setViewportView(jtextarea1);
-    jscrollpane1
+    this.licenseTextfield.setEditable(false);
+    JScrollPane licenseScrollPane = new JScrollPane();
+    licenseScrollPane.setViewportView(this.licenseTextfield);
+    licenseScrollPane
         .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-    jscrollpane1
+    licenseScrollPane
         .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    jpanel1.add(jscrollpane1, cc.xywh(1, 19, 3, 1));
+    mainpanel.add(licenseScrollPane, cc.xywh(1, 19, 3, 1));
+    
+    readLicenseFile();
 
-    JButton jbutton1 = new JButton(new AbstractAction(
-        ResourceManager.getText(Text.CLOSE)) {
+    // Libraries
+    JLabel libraryLabel = new JLabel();
+    libraryLabel.setText(ResourceManager.getText(Text.USEDLIBS) + ":");
+    mainpanel.add(libraryLabel, cc.xy(1, 9));
+
+    this.jcalendar = new JLabel();
+    this.jcalendar.setText("<html><u>JCalendar</u></html>");
+    mainpanel.add(this.jcalendar, cc.xy(3, 10));
+
+    this.ccodec = new JLabel();
+    this.ccodec.setText("<html><u>" + "Common-Codec");
+    mainpanel.add(this.ccodec, cc.xy(3, 9));
+
+    this.jdom = new JLabel();
+    this.jdom.setText("<html><u>" + "JDom");
+    mainpanel.add(this.jdom, cc.xy(3, 11));
+
+    this.substance = new JLabel();
+    this.substance.setText("<html><u>Substance</u></html>");
+    mainpanel.add(this.substance, cc.xy(3, 14));
+
+    this.jgoodies = new JLabel();
+    this.jgoodies.setText("<html><u>JGoodies</u></html>");
+    mainpanel.add(this.jgoodies, cc.xy(3, 12));
+
+    this.jgraph = new JLabel();
+    this.jgraph.setText("<html><u>JGraph</u></html>");
+    mainpanel.add(this.jgraph, cc.xy(3, 13));
+
+    JLabel jlabel14 = new JLabel();
+    jlabel14.setText(ResourceManager.getText(Text.ICON_SET) + ":");
+    mainpanel.add(jlabel14, cc.xy(1, 16));
+
+    this.fugue = new JLabel();
+    this.fugue.setText("<html><u>Fugue</u></html>");
+    mainpanel.add(this.fugue, cc.xy(3, 16));
+
+    // only add mouselistener if links are supported 
+    if (lml != null) {
+      this.logo.addMouseListener(lml);
+      this.website.addMouseListener(lml);
+      this.ccodec.addMouseListener(lml);
+      this.jdom.addMouseListener(lml);
+      this.substance.addMouseListener(lml);
+      this.jgoodies.addMouseListener(lml);
+      this.jgraph.addMouseListener(lml);
+      this.fugue.addMouseListener(lml);
+    }
+
+    JButton closeButton = new JButton(
+     /** 
+     * Button action to close the window
+     * @author David Meier
+     * 
+     */
+    new AbstractAction(ResourceManager.getText(Text.CLOSE)) {
+
+      private static final long serialVersionUID = -2836468451019152571L;
+
+      /*
+       * (non-Javadoc)
+       * 
+       * @see
+       * java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent
+       * )
+       */
       @Override
       public void actionPerformed(ActionEvent e) {
         AboutDialog.this.dispose();
       }
     });
-    jpanel1.add(jbutton1, new CellConstraints(3, 21, 1, 1,
+    mainpanel.add(closeButton, new CellConstraints(3, 21, 1, 1,
         CellConstraints.RIGHT, CellConstraints.CENTER));
 
-    JLabel jlabel8 = new JLabel();
-    jlabel8.setText(ResourceManager.getText(Text.USEDLIBS) + ":");
-    jpanel1.add(jlabel8, cc.xy(1, 9));
-
-    jcalendar = new JLabel();
-    jcalendar.setText("<html><u>JCalendar</u></html>");
-    jpanel1.add(jcalendar, cc.xy(3, 10));
-
-    ccodec = new JLabel();
-    ccodec.setText("<html><u>" + "Common-Codec");
-    jpanel1.add(ccodec, cc.xy(3, 9));
-
-    jdom = new JLabel();
-    jdom.setText("<html><u>" + "JDom");
-    jpanel1.add(jdom, cc.xy(3, 11));
-
-    substance = new JLabel();
-    substance.setText("<html><u>Substance</u></html>");
-    jpanel1.add(substance, cc.xy(3, 14));
-
-    jgoodies = new JLabel();
-    jgoodies.setText("<html><u>JGoodies</u></html>");
-    jpanel1.add(jgoodies, cc.xy(3, 12));
-
-    jgraph = new JLabel();
-    jgraph.setText("<html><u>JGraph</u></html>");
-    jpanel1.add(jgraph, cc.xy(3, 13));
-
-    JLabel jlabel14 = new JLabel();
-    jlabel14.setText(ResourceManager.getText(Text.ICON_SET) + ":");
-    jpanel1.add(jlabel14, cc.xy(1, 16));
-
-    fugue = new JLabel();
-    fugue.setText("<html><u>Fugue</u></html>");
-    jpanel1.add(fugue, cc.xy(3, 16));
-
-    if (lml != null) {
-      logo.addMouseListener(lml);
-      website.addMouseListener(lml);
-      ccodec.addMouseListener(lml);
-      jdom.addMouseListener(lml);
-      substance.addMouseListener(lml);
-      jgoodies.addMouseListener(lml);
-      jgraph.addMouseListener(lml);
-      fugue.addMouseListener(lml);
-    }
-
-    readLicenseFile();
-
-    addFillComponents(jpanel1, new int[] {2, 3}, new int[] {2, 4, 6, 8, 11, 12,
+    addFillComponents(mainpanel, new int[] {2, 3}, new int[] {2, 4, 6, 8, 11, 12,
         13, 14, 15, 17, 20, 21});
-    jpanel1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-    return jpanel1;
+    mainpanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    return mainpanel;
   }
+
 
   /**
-   * Initializer
+   * Reads the license file and adds the text to the license text field
    */
-  protected void initializePanel() {
-    setLayout(new BorderLayout());
-    add(createPanel(), BorderLayout.CENTER);
-  }
-
   protected void readLicenseFile() {
-    File file = new File(LICENSE_TXT);
+    File file = new File(ResourceManager.getPath(Path.LICENSE));
     StringBuffer contents = new StringBuffer();
     BufferedReader reader = null;
 
@@ -232,14 +271,16 @@ public class AboutDialog extends JDialog {
       reader = new BufferedReader(new FileReader(file));
       String text = null;
 
-      // repeat until all lines is read
+      // repeat until all lines are read
       while ((text = reader.readLine()) != null) {
         contents.append(text).append(System.getProperty("line.separator"));
       }
-      jtextarea1.setText(contents.toString());
+      this.licenseTextfield.setText(contents.toString());
     }
     catch (Exception e) {
-      jtextarea1.setText(ResourceManager.getText(Text.LICENCE_FILE_NOT_FOUND));
+      // reading of the license file failed
+      this.licenseTextfield.setText(ResourceManager
+          .getText(Text.LICENCE_FILE_NOT_FOUND));
     }
     finally {
       try {
@@ -253,29 +294,37 @@ public class AboutDialog extends JDialog {
     }
   }
 
+  /**
+   * @author David Meier
+   * 
+   */
   class LinkMouseListener extends MouseAdapter {
 
-    Desktop desktop = Desktop.getDesktop();
-
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseReleased(MouseEvent e) {
+      Desktop desktop = Desktop.getDesktop();
       Component c = e.getComponent();
       try {
-        if (c == logo || c == website)
+        if (c == AboutDialog.this.logo || c == AboutDialog.this.website)
           desktop.browse(new URI(MetaInfos.APP_WEBSITE));
-        else if (c == ccodec)
+        else if (c == AboutDialog.this.ccodec)
           desktop.browse(new URI("http://commons.apache.org/codec/"));
-        else if (c == jcalendar)
+        else if (c == AboutDialog.this.jcalendar)
           desktop.browse(new URI("www.toedter.com/en/jcalendar/"));
-        else if (c == jdom)
+        else if (c == AboutDialog.this.jdom)
           desktop.browse(new URI("www.jdom.org"));
-        else if (c == jgoodies)
+        else if (c == AboutDialog.this.jgoodies)
           desktop.browse(new URI("www.jgoodies.com"));
-        else if (c == jgraph)
+        else if (c == AboutDialog.this.jgraph)
           desktop.browse(new URI("www.jgraph.com"));
-        else if (c == substance)
+        else if (c == AboutDialog.this.substance)
           desktop.browse(new URI("http://insubstantial.posterous.com/"));
-        else if (c == fugue)
+        else if (c == AboutDialog.this.fugue)
           desktop.browse(new URI("http://p.yusukekamiyamane.com/"));
       }
       catch (Exception ex) {
@@ -285,18 +334,29 @@ public class AboutDialog extends JDialog {
       super.mouseReleased(e);
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.awt.event.MouseAdapter#mouseEntered(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseEntered(MouseEvent e) {
+      // change cursor to hand cursor when mouse is moved over a link
       e.getComponent()
           .setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
       super.mouseEntered(e);
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.awt.event.MouseAdapter#mouseExited(java.awt.event.MouseEvent)
+     */
     @Override
     public void mouseExited(MouseEvent e) {
+      // reset the mouse cursor back to the default one when leaving a link
       e.getComponent().setCursor(Cursor.getDefaultCursor());
       super.mouseExited(e);
     }
-
   }
 }
