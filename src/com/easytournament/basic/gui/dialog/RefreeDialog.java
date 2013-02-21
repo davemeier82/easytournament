@@ -39,6 +39,7 @@ import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
+ * Dialog to edit a refree
  * @author David Meier
  *
  */
@@ -46,68 +47,75 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
 
   private static final long serialVersionUID = -5030453237241031703L;
   /**
-   * 
+   * The presentation model
    */
   protected RefreeDialogPModel pm;
   /**
-   * 
+   * True if it is a assistant dialog, False if it is an refree diaolg
    */
   protected boolean isAssistant;
 
   /**
-   * @param f
-   * @param pm
-   * @param modal
-   * @param isAssistant
+   * Constructor
+   * @param owener The owner of the dialog
+   * @param pm The presentation model
+   * @param modal True it the dialog is modal
+   * @param isAssistant True if it is a assistant dialog, False if it is an refree dialog
    */
-  public RefreeDialog(Frame f, RefreeDialogPModel pm, boolean modal,
+  public RefreeDialog(Frame owener, RefreeDialogPModel pm, boolean modal,
       boolean isAssistant) {
-    super(f, ResourceManager.getText(Text.REFREE), modal);
+    super(owener, ResourceManager.getText(Text.REFREE), modal);
     if (isAssistant)
       this.setTitle(ResourceManager.getText(Text.ASSISTANT));
     this.pm = pm;
     this.isAssistant = isAssistant;
     init();
-    this.setLocationRelativeTo(f);
+    this.setLocationRelativeTo(owener);
     this.setVisible(true);
   }
 
   /**
-   * @param d
-   * @param pm
-   * @param modal
-   * @param isAssistant
+   * Constructor
+   * @param owner The owner of the dialog
+   * @param pm The presentation model
+   * @param modal True it the dialog is modal
+   * @param isAssistant  True if it is a assistant dialog, False if it is an refree dialog
    */
-  public RefreeDialog(Dialog d, RefreeDialogPModel pm, boolean modal,
+  public RefreeDialog(Dialog owner, RefreeDialogPModel pm, boolean modal,
       boolean isAssistant) {
-    super(d, ResourceManager.getText(Text.REFREE), modal);
+    super(owner, ResourceManager.getText(Text.REFREE), modal);
     if (isAssistant)
       this.setTitle(ResourceManager.getText(Text.ASSISTANT));
     this.pm = pm;
     this.isAssistant = isAssistant;
     init();
-    this.setLocationRelativeTo(d);
+    this.setLocationRelativeTo(owner);
     this.setVisible(true);
   }
 
   /**
-   * 
+   * Initializes the dialog
    */
   private void init() {
-
     this.pm.addPropertyChangeListener(this);
     Container cpane = this.getContentPane();
     cpane.setLayout(new BorderLayout());
 
     JTabbedPane tabbedPane = new JTabbedPane();
+    // the first tab contains the person panel
     tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO),
         new PersonPanel(this.pm.getPersonPanelPModel()));
-    if (this.isAssistant)
+    
+    if (this.isAssistant) {
+      // the second tab is used for assistant specific information
       tabbedPane.addTab(ResourceManager.getText(Text.JOB),
-          this.getDetailPanel());
-    else
+          this.getAssistantsDetailPanel());
+    }      
+    else {
+      // the second tab is used to add/remove assistants to a refree
       tabbedPane.addTab(ResourceManager.getText(Text.ASSISTANTS),
           new AssistantsTabPanel(this.pm.getAssistantsTabPanelPModel(), this));
+    }
 
     cpane.add(tabbedPane, BorderLayout.CENTER);
     cpane.add(getButtonPanel(), BorderLayout.SOUTH);
@@ -129,31 +137,33 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
   }
 
   /**
-   * @return
+   * Creates a panel that allows to edit assistant specific information
+   * @return The assistants panel
    */
-  private Component getDetailPanel() {
-    JPanel p = new JPanel();
-    p.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+  private Component getAssistantsDetailPanel() {
+    JPanel panel = new JPanel();
+    panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     FormLayout formlayout1 = new FormLayout(
         "FILL:90PX:NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    p.setLayout(formlayout1);
+    panel.setLayout(formlayout1);
 
     JLabel genderLabel = new JLabel();
     genderLabel.setText(ResourceManager.getText(Text.FUNCTION));
-    p.add(genderLabel, cc.xy(1, 2));
+    panel.add(genderLabel, cc.xy(1, 2));
 
     JTextField functionTF = BasicComponentFactory.createTextField(this.pm
         .getRefreeValueModel(Refree.PROPERTY_FUNCTION));
-    p.add(functionTF, cc.xy(3, 2));
+    panel.add(functionTF, cc.xy(3, 2));
 
-    addFillComponents(p, new int[] {1, 2}, new int[] {1, 3});
-    return p;
+    addFillComponents(panel, new int[] {1, 2}, new int[] {1, 3});
+    return panel;
   }
 
   /**
-   * @return
+   * Creates the button panel
+   * @return The button panel
    */
   private Component getButtonPanel() {
     JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -219,7 +229,5 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
       }
       panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
     }
-
   }
-
 }

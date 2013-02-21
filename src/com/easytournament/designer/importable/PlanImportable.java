@@ -1,6 +1,7 @@
 package com.easytournament.designer.importable;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -45,7 +46,17 @@ public class PlanImportable implements Importable {
 
     answer = chooser.showOpenDialog(Organizer.getInstance().getMainFrame());
     if (answer == JFileChooser.APPROVE_OPTION) {
-      Document doc = XMLHandler.openXMLDoc(chooser.getSelectedFile());
+      Document doc;
+      try {
+        doc = XMLHandler.openXMLDoc(chooser.getSelectedFile());
+      }
+      catch (FileNotFoundException e) {
+        JOptionPane.showMessageDialog(Organizer.getInstance()
+            .getMainFrame(), ResourceManager
+            .getText(Text.FILE_NOT_FOUND), ResourceManager
+            .getText(Text.FILE_NOT_FOUND), JOptionPane.ERROR_MESSAGE);
+        return;
+      }
       if (doc != null) {
 
         Element filetype = doc.getRootElement();

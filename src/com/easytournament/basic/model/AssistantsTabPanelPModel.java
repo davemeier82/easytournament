@@ -2,6 +2,7 @@ package com.easytournament.basic.model;
 
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -143,7 +144,17 @@ public class AssistantsTabPanelPModel extends Model {
           .getMainFrame());
 
       if (answer == JFileChooser.APPROVE_OPTION) {
-        Document doc = XMLHandler.openXMLDoc(chooser.getSelectedFile());
+        Document doc;
+        try {
+          doc = XMLHandler.openXMLDoc(chooser.getSelectedFile());
+        }
+        catch (FileNotFoundException e1) {
+          JOptionPane.showMessageDialog(Organizer.getInstance()
+              .getMainFrame(), ResourceManager
+              .getText(Text.FILE_NOT_FOUND), ResourceManager
+              .getText(Text.FILE_NOT_FOUND), JOptionPane.ERROR_MESSAGE);
+          return;
+        }
         if (doc != null) {
           Element filetype = doc.getRootElement();
           String app = filetype.getAttributeValue("application");

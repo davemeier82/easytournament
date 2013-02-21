@@ -1,3 +1,12 @@
+/* SettingsDialog.java - Dialog for application settings
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -31,59 +40,98 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 
 
+/**
+ * Dialog for application settings
+ * This class is a singleton
+ * @author David Meier
+ *
+ */
 public class SettingsDialog extends JDialog implements PropertyChangeListener {
 
   private static final long serialVersionUID = 1L;
+  /**
+   * 
+   */
   private static final Dimension DIALOG_SIZE = new Dimension(800, 600);
+  /**
+   * 
+   */
   private static final Dimension TREE_SIZE = new Dimension(200, -1);
+  /**
+   * 
+   */
   public static final Dimension PANEL_DIMENSION = new Dimension(570, 480);
+  /**
+   * 
+   */
   private static SettingsDialog instance;
-  private JTree tree;
+  /**
+   * 
+   */
+  protected JTree tree;
+  /**
+   * 
+   */
   private SettingsDialogPModel pm;
+  /**
+   * 
+   */
   private JLabel titleLabel;
+  /**
+   * 
+   */
   private JViewport jvp;
 
-  public SettingsDialog(SettingsDialogPModel pm) {
+  /**
+   * @param pm
+   */
+  private SettingsDialog(SettingsDialogPModel pm) {
     super(Organizer.getInstance().getMainFrame(), ResourceManager.getText(Text.SETTINGS_MENU), true);
     this.pm = pm;
     pm.addPropertyChangeListener(this);
     this.init();
-    tree.setSelectionRow(0);
+    this.tree.setSelectionRow(0);
     this.setLocationRelativeTo(Organizer.getInstance().getMainFrame());
   }
 
+  /**
+   * 
+   */
   private void init() {
     this.setSize(DIALOG_SIZE);
     Container pane = this.getContentPane();
     pane.setLayout(new BorderLayout());
-    tree = new JTree(pm.getTreeModel());
+    this.tree = new JTree(this.pm.getTreeModel());
     DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
     renderer.setOpenIcon(ResourceManager.getIcon(Icon.CONTRACT_ICON_SMALL));
     renderer.setClosedIcon(ResourceManager.getIcon(Icon.EXPAND_ICON_SMALL));
     renderer.setLeafIcon(ResourceManager.getIcon(Icon.TRANSPARENT_ICON_SMALL));
-    tree.setCellRenderer(renderer);
-    tree.setOpaque(false);
-    JScrollPane spane = new JScrollPane(tree);
+    this.tree.setCellRenderer(renderer);
+    this.tree.setOpaque(false);
+    JScrollPane spane = new JScrollPane(this.tree);
     //spane.getViewport().setBackground(Color.WHITE);
     spane.getViewport().setOpaque(false);
     spane.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-    tree.setPreferredSize(TREE_SIZE);
+    this.tree.setPreferredSize(TREE_SIZE);
     this.add(spane, BorderLayout.WEST);
-    tree.getSelectionModel().setSelectionMode(
+    this.tree.getSelectionModel().setSelectionMode(
         TreeSelectionModel.SINGLE_TREE_SELECTION);
-    tree.setRootVisible(false);
+    this.tree.setRootVisible(false);
     //tree.setBackground(Color.white);
-    tree.addTreeSelectionListener(pm.getTreeSelectionListener());
-    tree.addMouseListener(new MouseAdapter() {
+    this.tree.addTreeSelectionListener(this.pm.getTreeSelectionListener());
+    this.tree.addMouseListener(new MouseAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.MouseAdapter#mouseClicked(java.awt.event.MouseEvent)
+       */
       @Override
       public void mouseClicked(MouseEvent e) {
         if(e.getClickCount() == 1) {
-          TreePath tp = tree.getPathForLocation(e.getX(), e.getY());
-          if(tree.isCollapsed(tp))
-            tree.expandPath(tp);
+          TreePath tp = SettingsDialog.this.tree.getPathForLocation(e.getX(), e.getY());
+          if(SettingsDialog.this.tree.isCollapsed(tp))
+            SettingsDialog.this.tree.expandPath(tp);
           else
-            tree.collapsePath(tp);
+            SettingsDialog.this.tree.collapsePath(tp);
         } else {
           super.mouseClicked(e);
         }
@@ -95,17 +143,20 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
 
   }
 
+  /**
+   * @return
+   */
   private JComponent getCenterPanel() {
     Box box = Box.createVerticalBox();
-    titleLabel = new JLabel();
-    titleLabel.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 5));
-    titleLabel.setFont(titleLabel.getFont().deriveFont(Font.BOLD, titleLabel.getFont().getSize()+2));
+    this.titleLabel = new JLabel();
+    this.titleLabel.setBorder(BorderFactory.createEmptyBorder(5, 15, 5, 5));
+    this.titleLabel.setFont(this.titleLabel.getFont().deriveFont(Font.BOLD, this.titleLabel.getFont().getSize()+2));
     Box titleBox = Box.createHorizontalBox();
-    titleBox.add(titleLabel);
+    titleBox.add(this.titleLabel);
     titleBox.add(Box.createHorizontalGlue());
     box.add(titleBox);
     JScrollPane pane = new JScrollPane();
-    jvp = pane.getViewport();
+    this.jvp = pane.getViewport();
     box.add(pane);
     box.add(Box.createHorizontalGlue());
     return box;
@@ -116,9 +167,9 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
    */
   private JPanel getButtonPanel() {
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    JButton okBtn = new JButton(pm.getOKAction());
+    JButton okBtn = new JButton(this.pm.getOKAction());
     buttonPanel.add(okBtn);
-    JButton cancelBtn = new JButton(pm.getCancelAction());
+    JButton cancelBtn = new JButton(this.pm.getCancelAction());
     buttonPanel.add(cancelBtn);
     int width = Math.max(okBtn.getPreferredSize().width,
         cancelBtn.getPreferredSize().width);
@@ -130,22 +181,32 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
   }
 
 
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
+  @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName() == SettingsDialogPModel.UPDATE_PANEL) {
       JComponent comp = (JComponent)evt.getNewValue();
-      titleLabel.setText(comp.getName());
-      jvp.setView((JComponent)evt.getNewValue());
+      this.titleLabel.setText(comp.getName());
+      this.jvp.setView((JComponent)evt.getNewValue());
     }
     if (evt.getPropertyName() == SettingsDialogPModel.DISPOSE) {
       this.dispose();
     }
   }
 
+  /**
+   * @param pm
+   */
   public static void showPreferencesDialog(SettingsDialogPModel pm) {
     instance = new SettingsDialog(pm);
     instance.setVisible(true);
   }
 
+  /**
+   * @return
+   */
   public static SettingsDialog getInstance() {
     return SettingsDialog.instance;
   }

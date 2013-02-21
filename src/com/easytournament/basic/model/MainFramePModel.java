@@ -4,6 +4,7 @@ import java.awt.Desktop;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URI;
 import java.util.Date;
 import java.util.Observable;
@@ -102,8 +103,17 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
       root.add(item.getNode());
     }
     if (HISTORY_PATH.exists())
-      organizer.setHistory(HistoryXMLHandler.readHistory(XMLHandler
-          .openXMLDoc(HISTORY_PATH)));
+      try {
+        organizer.setHistory(HistoryXMLHandler.readHistory(XMLHandler
+            .openXMLDoc(HISTORY_PATH)));
+      }
+      catch (FileNotFoundException e) {
+        ErrorLogger.getLogger().throwing("XMLHandler", "openXMLDoc", e);
+        ErrorDialog ed = new ErrorDialog(Organizer.getInstance().getMainFrame(),
+            ResourceManager.getText(Text.ERROR), e.toString(), e);
+        ed.setVisible(true);
+        e.printStackTrace();
+      }
     else if (!organizer.isWriteAccess() && !USERDIR.exists())
       USERDIR.mkdirs();
   }
@@ -448,7 +458,17 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
 
   public void open(File filename) {
 
-    Document doc = XMLHandler.openXMLDoc(filename);
+    Document doc;
+    try {
+      doc = XMLHandler.openXMLDoc(filename);
+    }
+    catch (FileNotFoundException e) {
+      JOptionPane.showMessageDialog(Organizer.getInstance()
+          .getMainFrame(), ResourceManager
+          .getText(Text.FILE_NOT_FOUND), ResourceManager
+          .getText(Text.FILE_NOT_FOUND), JOptionPane.ERROR_MESSAGE);
+      return;
+    }
     if (doc == null) {
       JOptionPane.showMessageDialog(Organizer.getInstance().getMainFrame(),
           ResourceManager.getText(Text.FILE_NOT_SUPPORTED),

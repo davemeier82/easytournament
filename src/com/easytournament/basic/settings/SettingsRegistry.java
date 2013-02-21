@@ -1,6 +1,7 @@
 package com.easytournament.basic.settings;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import java.util.ArrayList;
 
@@ -11,6 +12,10 @@ import org.jdom.Element;
 
 import com.easytournament.basic.MetaInfos;
 import com.easytournament.basic.Organizer;
+import com.easytournament.basic.gui.dialog.ErrorDialog;
+import com.easytournament.basic.logging.ErrorLogger;
+import com.easytournament.basic.resources.ResourceManager;
+import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.xml.XMLHandler;
 
 public class SettingsRegistry {
@@ -38,7 +43,18 @@ public class SettingsRegistry {
     }
     // FIXME hack because of early call of generalsettings
     if (settingsFile.exists()) {
-      Document doc = XMLHandler.openXMLDoc(settingsFile);
+      Document doc;
+      try {
+        doc = XMLHandler.openXMLDoc(settingsFile);
+      }
+      catch (FileNotFoundException e) {
+        ErrorLogger.getLogger().throwing("XMLHandler", "openXMLDoc", e);
+        ErrorDialog ed = new ErrorDialog(Organizer.getInstance().getMainFrame(),
+            ResourceManager.getText(Text.ERROR), e.toString(), e);
+        ed.setVisible(true);
+        e.printStackTrace();
+        return;
+      }
       s.read(doc == null? null : doc.getRootElement());
     }
     else {
@@ -69,7 +85,18 @@ public class SettingsRegistry {
     }
     
     if (settingsFile.exists()) {
-      Document doc = XMLHandler.openXMLDoc(settingsFile);
+      Document doc;
+      try {
+        doc = XMLHandler.openXMLDoc(settingsFile);
+      }
+      catch (FileNotFoundException e) {
+        ErrorLogger.getLogger().throwing("XMLHandler", "openXMLDoc", e);
+        ErrorDialog ed = new ErrorDialog(Organizer.getInstance().getMainFrame(),
+            ResourceManager.getText(Text.ERROR), e.toString(), e);
+        ed.setVisible(true);
+        e.printStackTrace();
+        return;
+      }
       // TODO do file check
       for (Settings s : settings) {
         s.read(doc == null? null : doc.getRootElement());

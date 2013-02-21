@@ -1,6 +1,7 @@
 package com.easytournament.basic.xml;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -19,7 +20,7 @@ public class XMLHandler {
 
   private static final String ENCODING = "iso-8859-1";
 
-  public static Document openXMLDoc(File filename) {
+  public static Document openXMLDoc(File filename) throws FileNotFoundException {
     Document doc = null;
 
     if (filename != null
@@ -30,6 +31,9 @@ public class XMLHandler {
 
     try {
       doc = new SAXBuilder().build(filename);
+    }
+    catch (FileNotFoundException e) {
+      throw e;
     }
     catch (Exception e) {
       ErrorLogger.getLogger().throwing("XMLHandler", "openXMLDoc", e);
