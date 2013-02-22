@@ -1,3 +1,12 @@
+/* TeamDialog.java - Dialog to create and modify teams
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -38,28 +47,74 @@ import com.jgoodies.binding.adapter.BasicComponentFactory;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+/**
+ * Dialog to create and modify teams.
+ * @author David Meier
+ *
+ */
 public class TeamDialog extends JDialog implements PropertyChangeListener {
 
-  protected JTextField jtextfield1;
-  protected JTextField jtextfield2;
-  protected JTextField websiteTF;
-  protected JButton jbutton1;
-  protected JTextArea jtextarea1;
-  protected JTextArea jtextarea2;
-  protected JTextField jtextfield3;
-  protected JTextField jtextfield4;
-  protected JTextField jtextfield5;
+  /**
+   * Text field for the phone number
+   */
+  protected JTextField phoneTextField;
+  /**
+   * Text field for the email address
+   */
+  protected JTextField emailTextField;
+  /**
+   * Text field for the website URL
+   */
+  protected JTextField websiteTextField;
+  /**
+   * Button to show and change the team logo
+   */
+  protected JButton logoButton;
+  /**
+   * Text area for the address
+   */
+  protected JTextArea addressTextArea;
+  /**
+   * Text area for additional notes
+   */
+  protected JTextArea notesTextArea;
+  /**
+   * Text field for the team name
+   */
+  protected JTextField nameTextField;
+  /**
+   * Text field for the first name of the contact person
+   */
+  protected JTextField contactFirstNameTextField;
+  /**
+   * Text field for the last name of the contact person
+   */
+  protected JTextField contactLastNameTextField;
+  /**
+   * The context menu on the logo button
+   */
   protected JPopupMenu popup;
 
+  /**
+   * The presentation model
+   */
   private TeamDialogPModel pm;
 
-  public TeamDialog(Frame f, TeamDialogPModel pm, boolean modal) {
-    super(f, ResourceManager.getText(Text.TEAM), modal);
+  /**
+   * @param owner The owner of this dialog
+   * @param pm The presentation model
+   * @param modal True if the dialog is modal
+   */
+  public TeamDialog(Frame owner, TeamDialogPModel pm, boolean modal) {
+    super(owner, ResourceManager.getText(Text.TEAM), modal);
     this.pm = pm;
     init();
     pm.addPropertyChangeListener(this);    
     this.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
         TeamDialog.this.pm.removePropertyChangeListener(TeamDialog.this);
@@ -69,173 +124,150 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     });
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     this.pack();
-    this.setLocationRelativeTo(f);
+    this.setLocationRelativeTo(owner);
     this.setVisible(true);
   }
 
+  /**
+   * Initializes the dialog
+   */
   private void init() {
     Container cpane = this.getContentPane();
     cpane.setLayout(new BorderLayout());
 
     JTabbedPane tabbedPane = new JTabbedPane();
+    // the first tab contains general team information
     tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO), getGeneralInfoPanel());
+    // the second tab allows to add and edit players of the team
     tabbedPane.addTab(ResourceManager.getText(Text.PLAYERS),
         new PlayersTabPanel(pm.getPlayersTabPanelPModel(), this));
+    // the third tab allows to add and edit the staff of the team
     tabbedPane.addTab(ResourceManager.getText(Text.STAFF), new StaffTabPanel(pm.getStaffTabPanelPModel(), this));
     cpane.add(tabbedPane, BorderLayout.CENTER);
     cpane.add(getButtonPanel(), BorderLayout.SOUTH);
   }
 
   /**
-   * Adds fill components to empty cells in the first row and first column of
-   * the grid. This ensures that the grid spacing will be the same as shown in
-   * the designer.
-   * @param cols
-   *          an array of column indices in the first row where fill components
-   *          should be added.
-   * @param rows
-   *          an array of row indices in the first column where fill components
-   *          should be added.
+   * Creates the general information panel
+   * @return The general information panel
    */
-  void addFillComponents(Container panel, int[] cols, int[] rows) {
-    Dimension filler = new Dimension(10, 10);
-
-    boolean filled_cell_11 = false;
-    CellConstraints cc = new CellConstraints();
-    if (cols.length > 0 && rows.length > 0) {
-      if (cols[0] == 1 && rows[0] == 1) {
-        /** add a rigid area */
-        panel.add(Box.createRigidArea(filler), cc.xy(1, 1));
-        filled_cell_11 = true;
-      }
-    }
-
-    for (int index = 0; index < cols.length; index++) {
-      if (cols[index] == 1 && filled_cell_11) {
-        continue;
-      }
-      panel.add(Box.createRigidArea(filler), cc.xy(cols[index], 1));
-    }
-
-    for (int index = 0; index < rows.length; index++) {
-      if (rows[index] == 1 && filled_cell_11) {
-        continue;
-      }
-      panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
-    }
-
-  }
-
   public JPanel getGeneralInfoPanel() {
-    JPanel p = new JPanel();
-    p.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    JPanel panel = new JPanel();
+    panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     FormLayout formlayout1 = new FormLayout(
         "FILL:90PX:NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE",
         "CENTER:DEFAULT:NONE,CENTER:30PX:NONE,CENTER:10PX:NONE,CENTER:40PX:NONE,CENTER:10px:NONE,CENTER:30PX:NONE,CENTER:10PX:NONE,CENTER:30PX:NONE,CENTER:10PX:NONE,CENTER:30PX:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:80PX:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    p.setLayout(formlayout1);
+    panel.setLayout(formlayout1);
+    
+    logoButton = new JButton(pm.getAction(TeamDialogPModel.LOGO_ACTION));
+    logoButton.setFocusable(false);
+    panel.add(logoButton, cc.xywh(5, 2, 1, 9));
 
-    JLabel jlabel1 = new JLabel();
-    jlabel1.setText(ResourceManager.getText(Text.NAME));
-    p.add(jlabel1, cc.xy(1, 2));
+    JLabel nameLabel = new JLabel();
+    nameLabel.setText(ResourceManager.getText(Text.NAME));
+    panel.add(nameLabel, cc.xy(1, 2));
+    
+    nameTextField = BasicComponentFactory.createTextField(pm
+        .getTeamValueModel(Team.PROPERTY_NAME));
+    panel.add(nameTextField, cc.xy(3, 2));
 
     JLabel websiteLabel = new JLabel();
     websiteLabel.setText(ResourceManager.getText(Text.WEBSITE));
-    p.add(websiteLabel, cc.xy(1, 4));
+    panel.add(websiteLabel, cc.xy(1, 4));
 
-    JLabel jlabel2 = new JLabel();
-    jlabel2.setText(ResourceManager.getText(Text.ADDRESS));
-    p.add(jlabel2, cc.xy(1, 12));
-
-    JLabel jlabel3 = new JLabel();
-    jlabel3.setText(ResourceManager.getText(Text.PHONE));
-    p.add(jlabel3, cc.xy(1, 19));
-
-    JLabel jlabel4 = new JLabel();
-    jlabel4.setText(ResourceManager.getText(Text.EMAIL));
-    p.add(jlabel4, cc.xy(1, 21));
-
-    jtextfield1 = BasicComponentFactory.createTextField(pm
-        .getTeamValueModel(Team.PROPERTY_PHONE));
-    p.add(jtextfield1, cc.xy(3, 19));
-
-    jtextfield2 = BasicComponentFactory.createTextField(pm
-        .getTeamValueModel(Team.PROPERTY_EMAIL));
-    p.add(jtextfield2, cc.xy(3, 21));
-
-    jbutton1 = new JButton(pm.getAction(TeamDialogPModel.LOGO_ACTION));
-    jbutton1.setFocusable(false);
-    p.add(jbutton1, cc.xywh(5, 2, 1, 9));
-
-    JLabel jlabel5 = new JLabel();
-    jlabel5.setText(ResourceManager.getText(Text.NOTES));
-    p.add(jlabel5, cc.xy(5, 12));
-
-    JScrollPane jscrollpane1 = new JScrollPane();
-    jtextarea1 = BasicComponentFactory.createTextArea(pm
-        .getTeamValueModel(Team.PROPERTY_ADDRESS));
-    jscrollpane1.setViewportView(jtextarea1);
-    jscrollpane1
-        .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-    jscrollpane1
-        .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    p.add(jscrollpane1, cc.xywh(1, 13, 3, 5));
-
-    JScrollPane jscrollpane2 = new JScrollPane();
-    jtextarea2 = BasicComponentFactory.createTextArea(pm
-        .getTeamValueModel(Team.PROPERTY_NOTES));
-    jscrollpane2.setViewportView(jtextarea2);
-    jscrollpane2
-        .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-    jscrollpane2
-        .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-    p.add(jscrollpane2, cc.xywh(5, 13, 1, 9));
-
-    jtextfield3 = BasicComponentFactory.createTextField(pm
-        .getTeamValueModel(Team.PROPERTY_NAME));
-    p.add(jtextfield3, cc.xy(3, 2));
-
-    websiteTF = BasicComponentFactory.createTextField(pm
+    websiteTextField = BasicComponentFactory.createTextField(pm
         .getTeamValueModel(Team.PROPERTY_WEBSITE));
-    p.add(websiteTF, cc.xy(3, 4));
+    panel.add(websiteTextField, cc.xy(3, 4));    
 
     JLabel contactLabel = new JLabel(ResourceManager.getText(Text.CONTACT_PERSON));
-    p.add(contactLabel, cc.xywh(1, 6, 3, 1));
+    panel.add(contactLabel, cc.xywh(1, 6, 3, 1));
 
-    JLabel jlabel6 = new JLabel();
-    jlabel6.setText(ResourceManager.getText(Text.FIRSTNAME));
-    p.add(jlabel6, cc.xy(1, 8));
-
-    JLabel jlabel7 = new JLabel();
-    jlabel7.setText(ResourceManager.getText(Text.LASTNAME));
-    p.add(jlabel7, cc.xy(1, 10));
-
-    jtextfield4 = BasicComponentFactory.createTextField(pm
-        .getTeamValueModel(Team.PROPERTY_CONTACT_PRENAME));
-    p.add(jtextfield4, cc.xy(3, 8));
-
-    jtextfield5 = BasicComponentFactory.createTextField(pm
-        .getTeamValueModel(Team.PROPERTY_CONTACT_NAME));
-    p.add(jtextfield5, cc.xy(3, 10));
+    JLabel firstNameLabel = new JLabel();
+    firstNameLabel.setText(ResourceManager.getText(Text.FIRSTNAME));
+    panel.add(firstNameLabel, cc.xy(1, 8));
     
+    contactFirstNameTextField = BasicComponentFactory.createTextField(pm
+        .getTeamValueModel(Team.PROPERTY_CONTACT_PRENAME));
+    panel.add(contactFirstNameTextField, cc.xy(3, 8));
+
+    JLabel lastNameLabel = new JLabel();
+    lastNameLabel.setText(ResourceManager.getText(Text.LASTNAME));
+    panel.add(lastNameLabel, cc.xy(1, 10));
+    
+    contactLastNameTextField = BasicComponentFactory.createTextField(pm
+        .getTeamValueModel(Team.PROPERTY_CONTACT_NAME));
+    panel.add(contactLastNameTextField, cc.xy(3, 10));
+
+    JLabel addressLabel = new JLabel();
+    addressLabel.setText(ResourceManager.getText(Text.ADDRESS));
+    panel.add(addressLabel, cc.xy(1, 12));
+    
+    JLabel notesLabel = new JLabel();
+    notesLabel.setText(ResourceManager.getText(Text.NOTES));
+    panel.add(notesLabel, cc.xy(5, 12));
+
+    JScrollPane addressScrollPane = new JScrollPane();
+    addressTextArea = BasicComponentFactory.createTextArea(pm
+        .getTeamValueModel(Team.PROPERTY_ADDRESS));
+    addressScrollPane.setViewportView(addressTextArea);
+    addressScrollPane
+        .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    addressScrollPane
+        .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    panel.add(addressScrollPane, cc.xywh(1, 13, 3, 5));
+    
+    JScrollPane notesScrollPane = new JScrollPane();
+    notesTextArea = BasicComponentFactory.createTextArea(pm
+        .getTeamValueModel(Team.PROPERTY_NOTES));
+    notesScrollPane.setViewportView(notesTextArea);
+    notesScrollPane
+        .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+    notesScrollPane
+        .setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    panel.add(notesScrollPane, cc.xywh(5, 13, 1, 9));
+    
+    JLabel phoneLabel = new JLabel();
+    phoneLabel.setText(ResourceManager.getText(Text.PHONE));
+    panel.add(phoneLabel, cc.xy(1, 19));
+    
+    phoneTextField = BasicComponentFactory.createTextField(pm
+        .getTeamValueModel(Team.PROPERTY_PHONE));
+    panel.add(phoneTextField, cc.xy(3, 19));
+
+    JLabel emailLabel = new JLabel();
+    emailLabel.setText(ResourceManager.getText(Text.EMAIL));
+    panel.add(emailLabel, cc.xy(1, 21));
+
+    emailTextField = BasicComponentFactory.createTextField(pm
+        .getTeamValueModel(Team.PROPERTY_EMAIL));
+    panel.add(emailTextField, cc.xy(3, 21));
+
     popup = new JPopupMenu();
-    JMenuItem mi = new JMenuItem(pm.getAction(TeamDialogPModel.RESET_ICON_ACTION));
-    popup.add(mi);
-    mi.addActionListener(new ActionListener() {
+    JMenuItem menuItem = new JMenuItem(pm.getAction(TeamDialogPModel.RESET_ICON_ACTION));
+    popup.add(menuItem);
+    menuItem.addActionListener(new ActionListener() {
       
+      /* (non-Javadoc)
+       * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+       */
       @Override
       public void actionPerformed(ActionEvent e) {
-        jbutton1.setIcon(null);       
+        logoButton.setIcon(null);       
       }
     });
     
-    jbutton1.addMouseListener(new PopupListener());
+    logoButton.addMouseListener(new PopupListener());
 
-    addFillComponents(p, new int[] {1, 2, 3, 4, 5}, new int[] {1, 3, 4, 5, 7,
+    addFillComponents(panel, new int[] {1, 2, 3, 4, 5}, new int[] {1, 3, 4, 5, 7,
         9, 11, 14, 15, 16, 17, 18, 20});
-    return p;
+    return panel;
   }
 
+  /**
+   * Creates the button panel
+   * @return The button panel
+   */
   private Component getButtonPanel() {
     JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
     JButton okBtn = new JButton(pm.getAction(TeamDialogPModel.OK_ACTION));
@@ -246,6 +278,11 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     return bPanel;
   }
 
+
+
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName().equals(TeamDialogPModel.DISPOSE)) {
@@ -254,20 +291,75 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     }
   }
   
+  /**
+   * Adds fill components to empty cells in the first row and first column of
+   * the grid. This ensures that the grid spacing will be the same as shown in
+   * the designer.
+   * @param panel
+   * @param cols
+   *          an array of column indices in the first row where fill components
+   *          should be added.
+   * @param rows
+   *          an array of row indices in the first column where fill components
+   *          should be added.
+   */
+  void addFillComponents(Container panel, int[] cols, int[] rows) {
+    Dimension filler = new Dimension(10, 10);
+  
+    boolean filled_cell_11 = false;
+    CellConstraints cc = new CellConstraints();
+    if (cols.length > 0 && rows.length > 0) {
+      if (cols[0] == 1 && rows[0] == 1) {
+        /** add a rigid area */
+        panel.add(Box.createRigidArea(filler), cc.xy(1, 1));
+        filled_cell_11 = true;
+      }
+    }
+  
+    for (int index = 0; index < cols.length; index++) {
+      if (cols[index] == 1 && filled_cell_11) {
+        continue;
+      }
+      panel.add(Box.createRigidArea(filler), cc.xy(cols[index], 1));
+    }
+  
+    for (int index = 0; index < rows.length; index++) {
+      if (rows[index] == 1 && filled_cell_11) {
+        continue;
+      }
+      panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
+    }
+  
+  }
+
+  /**
+   * Mouse listener for the context menu on the logo button
+   * @author David Meier
+   *
+   */
   class PopupListener extends MouseAdapter {
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mousePressed(java.awt.event.MouseEvent)
+     */
     public void mousePressed(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
+     */
     public void mouseReleased(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /**
+     * Shows the context menu
+     * @param e The mouse event
+     */
     private void maybeShowPopup(MouseEvent e) {
       if (e.isPopupTrigger()) {
         popup.show(e.getComponent(), e.getX(), e.getY());
       }
     }
   }
-
 }

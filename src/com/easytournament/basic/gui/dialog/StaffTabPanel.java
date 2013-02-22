@@ -1,3 +1,12 @@
+/* StaffTabPanel.java - Panel to create and edit the staff of a team
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -37,22 +46,49 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.util.popupmenu.TablePopupMenu;
 
+/**
+ * Panel to create and edit the staff of a team.
+ * This panel is used as a tab in the team dialog.
+ * @author David Meier
+ *
+ */
 public class StaffTabPanel extends JPanel implements TableModelListener,
     PropertyChangeListener {
 
-  private static final long serialVersionUID = 1L;
+  /**
+   * The presentation model
+   */
   private StaffTabPanelPModel pm;
+  /**
+   * The popup menu for the context menu
+   */
   private TablePopupMenu popup;
+  /**
+   * The table that show the staff
+   */
   private JTable staff;
+  /**
+   * The table column model of the table
+   */
   protected TableColumnModel tcm;
+  /**
+   * The owner of this dialog
+   */
   protected JDialog owner;
 
+  /**
+   * @param pm The presentation model
+   * @param owner The owner of this panel
+   */
   public StaffTabPanel(StaffTabPanelPModel pm, JDialog owner) {
     this.pm = pm;
     this.owner = owner;
     pm.addPropertyChangeListener(this);
     owner.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
         StaffTabPanel.this.pm.removePropertyChangeListener(StaffTabPanel.this);
@@ -62,6 +98,9 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     init();
   }
 
+  /**
+   * Initializes the dialog
+   */
   private void init() {
     this.setLayout(new BorderLayout(0, 10));
     this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -69,6 +108,10 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     this.add(getButtonComponent(), BorderLayout.SOUTH);
   }
 
+  /**
+   * Creates the table
+   * @return The staff table
+   */
   private JComponent getStaffComponent() {
 
     TableModel tm = pm.getTableModel();
@@ -82,6 +125,9 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     staff.setFillsViewportHeight(true);
     staff.addMouseListener(new MouseAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.MouseAdapter#mouseClicked(java.awt.event.MouseEvent)
+       */
       @Override
       public void mouseClicked(MouseEvent me) {
         super.mouseClicked(me);
@@ -95,6 +141,9 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     });
     staff.addKeyListener(new KeyAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.KeyAdapter#keyReleased(java.awt.event.KeyEvent)
+       */
       @Override
       public void keyReleased(KeyEvent ke) {
         super.keyReleased(ke);
@@ -102,11 +151,22 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
           pm.deleteAction();
         }
       }
-
     });
 
     JScrollPane spane = new JScrollPane(staff);
 
+    createAndAddContextMenu();
+    staff.addMouseListener(new PopupListener());
+    spane.addMouseListener(new PopupListener());
+    this.setColumnWidths();
+
+    return spane;
+  }
+
+  /**
+   * Creates and add the context menu
+   */
+  private void createAndAddContextMenu() {
     popup = new TablePopupMenu();
     JMenuItem newItem = new JMenuItem(
         pm.getAction(StaffTabPanelPModel.NEW_STAFF_ACTION));
@@ -126,13 +186,12 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     JMenuItem deleteItem = new JMenuItem(
         pm.getAction(StaffTabPanelPModel.DELETE_STAFF_ACTION));
     popup.add(deleteItem);
-    staff.addMouseListener(new PopupListener());
-    spane.addMouseListener(new PopupListener());
-    this.setColumnWidths();
-
-    return spane;
   }
 
+  /**
+   * Creates the button panel
+   * @return The button panel
+   */
   private JComponent getButtonComponent() {
     Box hBox = Box.createHorizontalBox();
     hBox.setAlignmentY(Component.TOP_ALIGNMENT);
@@ -147,14 +206,23 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     return hBox;
   }
 
+  /* (non-Javadoc)
+   * @see javax.swing.event.TableModelListener#tableChanged(javax.swing.event.TableModelEvent)
+   */
   @Override
   public void tableChanged(TableModelEvent e) {
     this.setColumnWidths();
   }
 
+  /**
+   * Updates the table column widths according to the table elements
+   */
   public void setColumnWidths() {
     SwingUtilities.invokeLater(new Runnable() {
 
+      /* (non-Javadoc)
+       * @see java.lang.Runnable#run()
+       */
       @Override
       public void run() {
         FontMetrics fm = staff.getTableHeader().getFontMetrics(
@@ -175,10 +243,17 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     });
   }
 
+  /**
+   * Creates and shows the dialog to add and edit a person of the staff
+   * @param pdm
+   */
   public void showStaffDialog(StaffDialogPModel pdm) {
     final StaffDialog pDialog = new StaffDialog(owner, pdm, true);
     pDialog.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
         pm.sortStaff();
@@ -188,15 +263,30 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     });
   }
 
+  /**
+   * The popup listener that shows the context menu
+   * @author David Meier
+   *
+   */
   class PopupListener extends MouseAdapter {
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mousePressed(java.awt.event.MouseEvent)
+     */
     public void mousePressed(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /* (non-Javadoc)
+     * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
+     */
     public void mouseReleased(MouseEvent e) {
       maybeShowPopup(e);
     }
 
+    /**
+     * Shows the popup menu
+     * @param e The mouse event
+     */
     private void maybeShowPopup(MouseEvent e) {
       if (e.isPopupTrigger()) {
         int row = staff.rowAtPoint(e.getPoint());
@@ -218,6 +308,9 @@ public class StaffTabPanel extends JPanel implements TableModelListener,
     }
   }
 
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName() == StaffTabPanelPModel.PROPERTY_SHOW_STAFFDIALOG) {

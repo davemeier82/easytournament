@@ -1,3 +1,12 @@
+/* StaffDialog.java - Dialog to create and edit the staff of a team
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -28,63 +37,91 @@ import com.jgoodies.binding.adapter.BasicComponentFactory;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+/**
+ * Dialog to create and edit the staff of a team
+ * @author David Meier
+ *
+ */
 public class StaffDialog extends JDialog implements PropertyChangeListener{
 
+  /**
+   * The presentation model
+   */
   private StaffDialogPModel pm;
 
-  public StaffDialog(Dialog d, StaffDialogPModel pm, boolean modal) {
-    super(d, ResourceManager.getText(Text.STAFF), modal);
+  /**
+   * @param dialog The parent dialog
+   * @param pm The presentation model
+   * @param modal True if the dialog is modal
+   */
+  public StaffDialog(Dialog dialog, StaffDialogPModel pm, boolean modal) {
+    super(dialog, ResourceManager.getText(Text.STAFF), modal);
     this.pm = pm;
     init();
     this.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
         StaffDialog.this.pm.removePropertyChangeListener(StaffDialog.this);
         super.windowClosed(e);
-      }
-      
+      }      
     });
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     this.pack();
-    this.setLocationRelativeTo(d);
+    this.setLocationRelativeTo(dialog);
     this.setVisible(true);
   }
 
+  /**
+   * Initializes the dialog
+   */
   private void init() {
     pm.addPropertyChangeListener(this);
     Container cpane = this.getContentPane();
     cpane.setLayout(new BorderLayout());
 
     JTabbedPane tabbedPane = new JTabbedPane();
+    // The first tab contains general information about the person
     tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO), new PersonPanel(pm.getPersonPanelPModel()));
+    // The second tab contains staff specific information
     tabbedPane.addTab(ResourceManager.getText(Text.JOB), getStaffPanel());
     
     cpane.add(tabbedPane, BorderLayout.CENTER);
     cpane.add(getButtonPanel(), BorderLayout.SOUTH);
   }
   
+  /**
+   * Creates and returns the panel with staff specific information
+   * @return The staff panel
+   */
   private Component getStaffPanel() {
-    JPanel p = new JPanel();
-    p.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-    FormLayout formlayout1 = new FormLayout(
+    JPanel panel = new JPanel();
+    panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    FormLayout formlayout = new FormLayout(
         "FILL:90PX:NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    p.setLayout(formlayout1);
+    panel.setLayout(formlayout);
     
-    JLabel genderLabel = new JLabel();
-    genderLabel.setText(ResourceManager.getText(Text.FUNCTION));
-    p.add(genderLabel, cc.xy(1, 2));
+    JLabel functionLabel = new JLabel();
+    functionLabel.setText(ResourceManager.getText(Text.FUNCTION));
+    panel.add(functionLabel, cc.xy(1, 2));
     
-    JTextField numberTF = BasicComponentFactory.createTextField(pm.getStaffValueModel(Refree.PROPERTY_FUNCTION));
-    p.add(numberTF, cc.xy(3, 2));
+    JTextField functionTF = BasicComponentFactory.createTextField(pm.getStaffValueModel(Refree.PROPERTY_FUNCTION));
+    panel.add(functionTF, cc.xy(3, 2));
     
-    addFillComponents(p, new int[] {1, 2}, new int[] {1, 3});
+    addFillComponents(panel, new int[] {1, 2}, new int[] {1, 3});
     
-    return p;
+    return panel;
   }
 
+  /**
+   * Creates the button panel
+   * @return The button panel
+   */
   private Component getButtonPanel() {
     JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
     JButton okBtn = new JButton(pm.getAction(StaffDialogPModel.OK_ACTION));
@@ -94,19 +131,22 @@ public class StaffDialog extends JDialog implements PropertyChangeListener{
     return bPanel;
   }
 
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if(evt.getPropertyName().equals(StaffDialogPModel.DISPOSE)){
       pm.removePropertyChangeListener(this);
       this.dispose();
-    }
-    
+    }    
   }
   
   /**
    * Adds fill components to empty cells in the first row and first column of
    * the grid. This ensures that the grid spacing will be the same as shown in
    * the designer.
+   * @param panel
    * @param cols
    *          an array of column indices in the first row where fill components
    *          should be added.
@@ -140,7 +180,5 @@ public class StaffDialog extends JDialog implements PropertyChangeListener{
       }
       panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
     }
-
   }
-
 }

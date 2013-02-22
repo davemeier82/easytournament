@@ -42,7 +42,6 @@ import com.easytournament.basic.resources.Text;
 
 /**
  * Dialog for application settings
- * This class is a singleton
  * @author David Meier
  *
  */
@@ -50,40 +49,37 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
 
   private static final long serialVersionUID = 1L;
   /**
-   * 
+   * The dialog size
    */
   private static final Dimension DIALOG_SIZE = new Dimension(800, 600);
   /**
-   * 
+   * The dimensions of the tree view on the left side in the dialog
    */
   private static final Dimension TREE_SIZE = new Dimension(200, -1);
   /**
-   * 
+   * The dimension of the settings part on the right side of the dialog
    */
   public static final Dimension PANEL_DIMENSION = new Dimension(570, 480);
   /**
-   * 
-   */
-  private static SettingsDialog instance;
-  /**
-   * 
+   * The settings tree
    */
   protected JTree tree;
   /**
-   * 
+   * The presentation model
    */
   private SettingsDialogPModel pm;
   /**
-   * 
+   * The label that shows the title of the current selected setting
    */
   private JLabel titleLabel;
   /**
-   * 
+   * The viewport containing the selected setting
    */
   private JViewport jvp;
 
   /**
-   * @param pm
+   * Constructor
+   * @param pm The presentation model
    */
   private SettingsDialog(SettingsDialogPModel pm) {
     super(Organizer.getInstance().getMainFrame(), ResourceManager.getText(Text.SETTINGS_MENU), true);
@@ -95,12 +91,22 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
   }
 
   /**
-   * 
+   * Initializes the dialog
    */
   private void init() {
     this.setSize(DIALOG_SIZE);
     Container pane = this.getContentPane();
-    pane.setLayout(new BorderLayout());
+    pane.setLayout(new BorderLayout());    
+    
+    createAndAddTree();
+    this.add(getCenterPanel(), BorderLayout.CENTER);
+    this.add(getButtonPanel(), BorderLayout.SOUTH);
+  }
+  
+  /**
+   * Creates and adds the settings tree on the left side of the dialog
+   */
+  private void createAndAddTree() {
     this.tree = new JTree(this.pm.getTreeModel());
     DefaultTreeCellRenderer renderer = new DefaultTreeCellRenderer();
     renderer.setOpenIcon(ResourceManager.getIcon(Icon.CONTRACT_ICON_SMALL));
@@ -109,7 +115,6 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
     this.tree.setCellRenderer(renderer);
     this.tree.setOpaque(false);
     JScrollPane spane = new JScrollPane(this.tree);
-    //spane.getViewport().setBackground(Color.WHITE);
     spane.getViewport().setOpaque(false);
     spane.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
     this.tree.setPreferredSize(TREE_SIZE);
@@ -117,7 +122,6 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
     this.tree.getSelectionModel().setSelectionMode(
         TreeSelectionModel.SINGLE_TREE_SELECTION);
     this.tree.setRootVisible(false);
-    //tree.setBackground(Color.white);
     this.tree.addTreeSelectionListener(this.pm.getTreeSelectionListener());
     this.tree.addMouseListener(new MouseAdapter() {
 
@@ -138,13 +142,11 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
       }
       
     });
-    this.add(getCenterPanel(), BorderLayout.CENTER);
-    this.add(getButtonPanel(), BorderLayout.SOUTH);
-
   }
 
   /**
-   * @return
+   * Creates the panel that shows the selected settings on the right side of the dialog
+   * @return The center panel
    */
   private JComponent getCenterPanel() {
     Box box = Box.createVerticalBox();
@@ -163,7 +165,8 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
   }
 
   /**
-   * @return
+   * Creates the button panel
+   * @return The button panel
    */
   private JPanel getButtonPanel() {
     JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -187,9 +190,10 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName() == SettingsDialogPModel.UPDATE_PANEL) {
+      // updates the center panel to a new setting
       JComponent comp = (JComponent)evt.getNewValue();
       this.titleLabel.setText(comp.getName());
-      this.jvp.setView((JComponent)evt.getNewValue());
+      this.jvp.setView(comp);
     }
     if (evt.getPropertyName() == SettingsDialogPModel.DISPOSE) {
       this.dispose();
@@ -197,17 +201,11 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
   }
 
   /**
-   * @param pm
+   * Creates and shows a settings dialog
+   * @param pm The presentation model
    */
   public static void showPreferencesDialog(SettingsDialogPModel pm) {
-    instance = new SettingsDialog(pm);
-    instance.setVisible(true);
-  }
-
-  /**
-   * @return
-   */
-  public static SettingsDialog getInstance() {
-    return SettingsDialog.instance;
+    SettingsDialog dialog = new SettingsDialog(pm);
+    dialog.setVisible(true);
   }
 }

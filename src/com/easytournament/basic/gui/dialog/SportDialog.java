@@ -1,3 +1,12 @@
+/* SportDialog.java - Dialog to create and modify sports
+ * Copyright (c) 2013 David Meier
+ * david.meier@easy-tournament.com
+ * www.easy-tournament.com
+ * 
+ * This source code must not be used, copied or modified in any way 
+ * without the permission of David Meier.
+ */
+
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
@@ -31,36 +40,59 @@ import com.jgoodies.binding.beans.PropertyAdapter;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
+/**
+ * Dialog to create and modify sports
+ * @author David Meier
+ *
+ */
 public class SportDialog extends JDialog implements PropertyChangeListener {
 
+  /**
+   * The presentation model
+   */
   private SportDialogPModel pm;
 
-  public SportDialog(Frame f, boolean modal, SportDialogPModel pm) {
-    super(f, ResourceManager.getText(Text.SPORT), modal);
+  /**
+   * Constructor that creates and shows the sport dialog
+   * @param owner The owner of the dialog
+   * @param modal True if the dialog is modal
+   * @param pm The presentation model
+   */
+  public SportDialog(Frame owner, boolean modal, SportDialogPModel pm) {
+    super(owner, ResourceManager.getText(Text.SPORT), modal);
     this.pm = pm;
     this.pm.addPropertyChangeListener(this);
     this.init();
     this.pack();
-    this.setLocationRelativeTo(f);
+    this.setLocationRelativeTo(owner);
     this.addWindowListener(new WindowAdapter() {
 
+      /* (non-Javadoc)
+       * @see java.awt.event.WindowAdapter#windowClosed(java.awt.event.WindowEvent)
+       */
       @Override
       public void windowClosed(WindowEvent e) {
         SportDialog.this.pm.removePropertyChangeListener(SportDialog.this);
         super.windowClosed(e);
-      }
-      
+      }      
     });
     this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     this.setVisible(true);
   }
 
+  /**
+   * Initializes the dialog
+   */
   private void init() {
     setLayout(new BorderLayout());
     add(getCenterPanel(), BorderLayout.CENTER);
     add(getButtonPanel(), BorderLayout.SOUTH);
   }
   
+  /**
+   * Creates the button dialog
+   * @return The button dialog
+   */
   private Component getButtonPanel() {
     JPanel panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
     JButton ok = new JButton(this.pm.getAction(SportDialogPModel.OK_ACTION)); 
@@ -70,61 +102,68 @@ public class SportDialog extends JDialog implements PropertyChangeListener {
     return panel;
   }
 
+  /**
+   * Creates the main panel of the dialog
+   * @return The center panel
+   */
   private Component getCenterPanel() {
-    JPanel p = new JPanel();
-    p.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    JPanel panel = new JPanel();
+    panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     FormLayout formlayout1 = new FormLayout(
         "FILL:MAX(DEFAULT;90PX):NONE,FILL:DEFAULT:NONE,FILL:200PX:NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    p.setLayout(formlayout1);
+    panel.setLayout(formlayout1);
 
     JLabel nameLabel = new JLabel(ResourceManager.getText(Text.NAME));
-    p.add(nameLabel, cc.xy(1, 2));
+    panel.add(nameLabel, cc.xy(1, 2));
 
     JTextField nameTf = BasicComponentFactory
         .createTextField(new PropertyAdapter<SportDialogPModel>(pm,
             SportDialogPModel.PROPERTY_NAME));
     nameTf.setEditable(pm.isNameEditable());
-    p.add(nameTf, cc.xy(3, 2));
+    panel.add(nameTf, cc.xy(3, 2));
 
     JLabel fromLabel = new JLabel(ResourceManager.getText(Text.IMPORTFROM));
-    p.add(fromLabel, cc.xy(3, 4));
+    panel.add(fromLabel, cc.xy(3, 4));
 
     JLabel settingsLabel = new JLabel(ResourceManager.getText(Text.GAME_DUR_POINTS));
-    p.add(settingsLabel, cc.xy(1, 6));
+    panel.add(settingsLabel, cc.xy(1, 6));
 
+    @SuppressWarnings("unchecked")
     JComboBox<Sport> settCB = new JComboBox<Sport>(new ComboBoxAdapter<Sport>(
         pm.getList(), new PropertyAdapter<SportDialogPModel>(pm,
             SportDialogPModel.PROPERTY_SETTINGS_IMPORT)));
-    p.add(settCB, cc.xy(3, 6));
+    panel.add(settCB, cc.xy(3, 6));
 
     JLabel rulesLabels = new JLabel(ResourceManager.getText(Text.RULES));
-    p.add(rulesLabels, cc.xy(1, 8));
+    panel.add(rulesLabels, cc.xy(1, 8));
 
+    @SuppressWarnings("unchecked")
     JComboBox<Sport> rulesCB = new JComboBox<Sport>(new ComboBoxAdapter<Sport>(
         pm.getList(), new PropertyAdapter<SportDialogPModel>(pm,
             SportDialogPModel.PROPERTY_RULES_IMPORT)));
-    p.add(rulesCB, cc.xy(3, 8));
+    panel.add(rulesCB, cc.xy(3, 8));
 
     JLabel eventsLabel = new JLabel(ResourceManager.getText(Text.EVENTS));
-    p.add(eventsLabel, cc.xy(1, 10));
+    panel.add(eventsLabel, cc.xy(1, 10));
 
+    @SuppressWarnings("unchecked")
     JComboBox<Sport> eventsCB = new JComboBox<Sport>(
         new ComboBoxAdapter<Sport>(pm.getList(),
             new PropertyAdapter<SportDialogPModel>(pm,
                 SportDialogPModel.PROPERTY_EVENTS_IMPORT)));
-    p.add(eventsCB, cc.xy(3, 10));
+    panel.add(eventsCB, cc.xy(3, 10));
 
-    addFillComponents(p, new int[] {1, 2, 3}, new int[] {1, 3, 5, 7, 9});
-
-    return p;
+    addFillComponents(panel, new int[] {1, 2, 3}, new int[] {1, 3, 5, 7, 9});
+    return panel;
   }
 
   /**
    * Adds fill components to empty cells in the first row and first column of
    * the grid. This ensures that the grid spacing will be the same as shown in
    * the designer.
+   * @param panel
    * @param cols
    *          an array of column indices in the first row where fill components
    *          should be added.
@@ -158,15 +197,16 @@ public class SportDialog extends JDialog implements PropertyChangeListener {
       }
       panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
     }
-
   }
 
+  /* (non-Javadoc)
+   * @see java.beans.PropertyChangeListener#propertyChange(java.beans.PropertyChangeEvent)
+   */
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if(evt.getPropertyName().equals(SportDialogPModel.DISPOSE)){
       pm.removePropertyChangeListener(this);
       this.dispose();
-    }
-    
+    }    
   }
 }
