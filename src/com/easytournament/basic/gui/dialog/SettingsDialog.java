@@ -67,15 +67,15 @@ public class SettingsDialog extends JDialog implements PropertyChangeListener {
   /**
    * The presentation model
    */
-  private SettingsDialogPModel pm;
+  protected SettingsDialogPModel pm;
   /**
    * The label that shows the title of the current selected setting
    */
-  private JLabel titleLabel;
+  protected JLabel titleLabel;
   /**
    * The viewport containing the selected setting
    */
-  private JViewport jvp;
+  protected JViewport jvp;
 
   /**
    * Constructor

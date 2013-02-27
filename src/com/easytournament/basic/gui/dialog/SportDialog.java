@@ -47,10 +47,11 @@ import com.jgoodies.forms.layout.FormLayout;
  */
 public class SportDialog extends JDialog implements PropertyChangeListener {
 
+  private static final long serialVersionUID = 7802697607687750066L;
   /**
    * The presentation model
    */
-  private SportDialogPModel pm;
+  protected SportDialogPModel pm;
 
   /**
    * Constructor that creates and shows the sport dialog
@@ -119,9 +120,9 @@ public class SportDialog extends JDialog implements PropertyChangeListener {
     panel.add(nameLabel, cc.xy(1, 2));
 
     JTextField nameTf = BasicComponentFactory
-        .createTextField(new PropertyAdapter<SportDialogPModel>(pm,
+        .createTextField(new PropertyAdapter<SportDialogPModel>(this.pm,
             SportDialogPModel.PROPERTY_NAME));
-    nameTf.setEditable(pm.isNameEditable());
+    nameTf.setEditable(this.pm.isNameEditable());
     panel.add(nameTf, cc.xy(3, 2));
 
     JLabel fromLabel = new JLabel(ResourceManager.getText(Text.IMPORTFROM));
@@ -132,7 +133,7 @@ public class SportDialog extends JDialog implements PropertyChangeListener {
 
     @SuppressWarnings("unchecked")
     JComboBox<Sport> settCB = new JComboBox<Sport>(new ComboBoxAdapter<Sport>(
-        pm.getList(), new PropertyAdapter<SportDialogPModel>(pm,
+        this.pm.getList(), new PropertyAdapter<SportDialogPModel>(this.pm,
             SportDialogPModel.PROPERTY_SETTINGS_IMPORT)));
     panel.add(settCB, cc.xy(3, 6));
 
@@ -141,7 +142,7 @@ public class SportDialog extends JDialog implements PropertyChangeListener {
 
     @SuppressWarnings("unchecked")
     JComboBox<Sport> rulesCB = new JComboBox<Sport>(new ComboBoxAdapter<Sport>(
-        pm.getList(), new PropertyAdapter<SportDialogPModel>(pm,
+        this.pm.getList(), new PropertyAdapter<SportDialogPModel>(this.pm,
             SportDialogPModel.PROPERTY_RULES_IMPORT)));
     panel.add(rulesCB, cc.xy(3, 8));
 
@@ -150,8 +151,8 @@ public class SportDialog extends JDialog implements PropertyChangeListener {
 
     @SuppressWarnings("unchecked")
     JComboBox<Sport> eventsCB = new JComboBox<Sport>(
-        new ComboBoxAdapter<Sport>(pm.getList(),
-            new PropertyAdapter<SportDialogPModel>(pm,
+        new ComboBoxAdapter<Sport>(this.pm.getList(),
+            new PropertyAdapter<SportDialogPModel>(this.pm,
                 SportDialogPModel.PROPERTY_EVENTS_IMPORT)));
     panel.add(eventsCB, cc.xy(3, 10));
 
@@ -205,7 +206,7 @@ public class SportDialog extends JDialog implements PropertyChangeListener {
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if(evt.getPropertyName().equals(SportDialogPModel.DISPOSE)){
-      pm.removePropertyChangeListener(this);
+      SportDialog.this.pm.removePropertyChangeListener(this);
       this.dispose();
     }    
   }

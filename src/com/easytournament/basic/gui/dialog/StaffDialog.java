@@ -44,10 +44,11 @@ import com.jgoodies.forms.layout.FormLayout;
  */
 public class StaffDialog extends JDialog implements PropertyChangeListener{
 
+  private static final long serialVersionUID = -7144655054971045528L;
   /**
    * The presentation model
    */
-  private StaffDialogPModel pm;
+  protected StaffDialogPModel pm;
 
   /**
    * @param dialog The parent dialog
@@ -79,13 +80,13 @@ public class StaffDialog extends JDialog implements PropertyChangeListener{
    * Initializes the dialog
    */
   private void init() {
-    pm.addPropertyChangeListener(this);
+    this.pm.addPropertyChangeListener(this);
     Container cpane = this.getContentPane();
     cpane.setLayout(new BorderLayout());
 
     JTabbedPane tabbedPane = new JTabbedPane();
     // The first tab contains general information about the person
-    tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO), new PersonPanel(pm.getPersonPanelPModel()));
+    tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO), new PersonPanel(this.pm.getPersonPanelPModel()));
     // The second tab contains staff specific information
     tabbedPane.addTab(ResourceManager.getText(Text.JOB), getStaffPanel());
     
@@ -110,7 +111,7 @@ public class StaffDialog extends JDialog implements PropertyChangeListener{
     functionLabel.setText(ResourceManager.getText(Text.FUNCTION));
     panel.add(functionLabel, cc.xy(1, 2));
     
-    JTextField functionTF = BasicComponentFactory.createTextField(pm.getStaffValueModel(Refree.PROPERTY_FUNCTION));
+    JTextField functionTF = BasicComponentFactory.createTextField(this.pm.getStaffValueModel(Refree.PROPERTY_FUNCTION));
     panel.add(functionTF, cc.xy(3, 2));
     
     addFillComponents(panel, new int[] {1, 2}, new int[] {1, 3});
@@ -124,8 +125,8 @@ public class StaffDialog extends JDialog implements PropertyChangeListener{
    */
   private Component getButtonPanel() {
     JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    JButton okBtn = new JButton(pm.getAction(StaffDialogPModel.OK_ACTION));
-    JButton cancelBtn = new JButton(pm.getAction(StaffDialogPModel.CANCEL_ACTION));
+    JButton okBtn = new JButton(this.pm.getAction(StaffDialogPModel.OK_ACTION));
+    JButton cancelBtn = new JButton(this.pm.getAction(StaffDialogPModel.CANCEL_ACTION));
     bPanel.add(okBtn);
     bPanel.add(cancelBtn);
     return bPanel;
@@ -137,7 +138,7 @@ public class StaffDialog extends JDialog implements PropertyChangeListener{
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if(evt.getPropertyName().equals(StaffDialogPModel.DISPOSE)){
-      pm.removePropertyChangeListener(this);
+      this.pm.removePropertyChangeListener(this);
       this.dispose();
     }    
   }

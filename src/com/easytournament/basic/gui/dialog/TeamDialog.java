@@ -54,6 +54,7 @@ import com.jgoodies.forms.layout.FormLayout;
  */
 public class TeamDialog extends JDialog implements PropertyChangeListener {
 
+  private static final long serialVersionUID = -5455770462414834316L;
   /**
    * Text field for the phone number
    */
@@ -98,7 +99,7 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
   /**
    * The presentation model
    */
-  private TeamDialogPModel pm;
+  protected TeamDialogPModel pm;
 
   /**
    * @param owner The owner of this dialog
@@ -140,9 +141,9 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     tabbedPane.addTab(ResourceManager.getText(Text.GENERALINFO), getGeneralInfoPanel());
     // the second tab allows to add and edit players of the team
     tabbedPane.addTab(ResourceManager.getText(Text.PLAYERS),
-        new PlayersTabPanel(pm.getPlayersTabPanelPModel(), this));
+        new PlayersTabPanel(this.pm.getPlayersTabPanelPModel(), this));
     // the third tab allows to add and edit the staff of the team
-    tabbedPane.addTab(ResourceManager.getText(Text.STAFF), new StaffTabPanel(pm.getStaffTabPanelPModel(), this));
+    tabbedPane.addTab(ResourceManager.getText(Text.STAFF), new StaffTabPanel(this.pm.getStaffTabPanelPModel(), this));
     cpane.add(tabbedPane, BorderLayout.CENTER);
     cpane.add(getButtonPanel(), BorderLayout.SOUTH);
   }
@@ -160,25 +161,25 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     CellConstraints cc = new CellConstraints();
     panel.setLayout(formlayout1);
     
-    logoButton = new JButton(pm.getAction(TeamDialogPModel.LOGO_ACTION));
-    logoButton.setFocusable(false);
-    panel.add(logoButton, cc.xywh(5, 2, 1, 9));
+    this.logoButton = new JButton(this.pm.getAction(TeamDialogPModel.LOGO_ACTION));
+    this.logoButton.setFocusable(false);
+    panel.add(this.logoButton, cc.xywh(5, 2, 1, 9));
 
     JLabel nameLabel = new JLabel();
     nameLabel.setText(ResourceManager.getText(Text.NAME));
     panel.add(nameLabel, cc.xy(1, 2));
     
-    nameTextField = BasicComponentFactory.createTextField(pm
+    this.nameTextField = BasicComponentFactory.createTextField(this.pm
         .getTeamValueModel(Team.PROPERTY_NAME));
-    panel.add(nameTextField, cc.xy(3, 2));
+    panel.add(this.nameTextField, cc.xy(3, 2));
 
     JLabel websiteLabel = new JLabel();
     websiteLabel.setText(ResourceManager.getText(Text.WEBSITE));
     panel.add(websiteLabel, cc.xy(1, 4));
 
-    websiteTextField = BasicComponentFactory.createTextField(pm
+    this.websiteTextField = BasicComponentFactory.createTextField(this.pm
         .getTeamValueModel(Team.PROPERTY_WEBSITE));
-    panel.add(websiteTextField, cc.xy(3, 4));    
+    panel.add(this.websiteTextField, cc.xy(3, 4));    
 
     JLabel contactLabel = new JLabel(ResourceManager.getText(Text.CONTACT_PERSON));
     panel.add(contactLabel, cc.xywh(1, 6, 3, 1));
@@ -187,17 +188,17 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     firstNameLabel.setText(ResourceManager.getText(Text.FIRSTNAME));
     panel.add(firstNameLabel, cc.xy(1, 8));
     
-    contactFirstNameTextField = BasicComponentFactory.createTextField(pm
+    this.contactFirstNameTextField = BasicComponentFactory.createTextField(this.pm
         .getTeamValueModel(Team.PROPERTY_CONTACT_PRENAME));
-    panel.add(contactFirstNameTextField, cc.xy(3, 8));
+    panel.add(this.contactFirstNameTextField, cc.xy(3, 8));
 
     JLabel lastNameLabel = new JLabel();
     lastNameLabel.setText(ResourceManager.getText(Text.LASTNAME));
     panel.add(lastNameLabel, cc.xy(1, 10));
     
-    contactLastNameTextField = BasicComponentFactory.createTextField(pm
+    this.contactLastNameTextField = BasicComponentFactory.createTextField(this.pm
         .getTeamValueModel(Team.PROPERTY_CONTACT_NAME));
-    panel.add(contactLastNameTextField, cc.xy(3, 10));
+    panel.add(this.contactLastNameTextField, cc.xy(3, 10));
 
     JLabel addressLabel = new JLabel();
     addressLabel.setText(ResourceManager.getText(Text.ADDRESS));
@@ -208,9 +209,9 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     panel.add(notesLabel, cc.xy(5, 12));
 
     JScrollPane addressScrollPane = new JScrollPane();
-    addressTextArea = BasicComponentFactory.createTextArea(pm
+    this.addressTextArea = BasicComponentFactory.createTextArea(this.pm
         .getTeamValueModel(Team.PROPERTY_ADDRESS));
-    addressScrollPane.setViewportView(addressTextArea);
+    addressScrollPane.setViewportView(this.addressTextArea);
     addressScrollPane
         .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
     addressScrollPane
@@ -218,9 +219,9 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     panel.add(addressScrollPane, cc.xywh(1, 13, 3, 5));
     
     JScrollPane notesScrollPane = new JScrollPane();
-    notesTextArea = BasicComponentFactory.createTextArea(pm
+    this.notesTextArea = BasicComponentFactory.createTextArea(this.pm
         .getTeamValueModel(Team.PROPERTY_NOTES));
-    notesScrollPane.setViewportView(notesTextArea);
+    notesScrollPane.setViewportView(this.notesTextArea);
     notesScrollPane
         .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
     notesScrollPane
@@ -231,21 +232,21 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     phoneLabel.setText(ResourceManager.getText(Text.PHONE));
     panel.add(phoneLabel, cc.xy(1, 19));
     
-    phoneTextField = BasicComponentFactory.createTextField(pm
+    this.phoneTextField = BasicComponentFactory.createTextField(this.pm
         .getTeamValueModel(Team.PROPERTY_PHONE));
-    panel.add(phoneTextField, cc.xy(3, 19));
+    panel.add(this.phoneTextField, cc.xy(3, 19));
 
     JLabel emailLabel = new JLabel();
     emailLabel.setText(ResourceManager.getText(Text.EMAIL));
     panel.add(emailLabel, cc.xy(1, 21));
 
-    emailTextField = BasicComponentFactory.createTextField(pm
+    this.emailTextField = BasicComponentFactory.createTextField(this.pm
         .getTeamValueModel(Team.PROPERTY_EMAIL));
-    panel.add(emailTextField, cc.xy(3, 21));
+    panel.add(this.emailTextField, cc.xy(3, 21));
 
-    popup = new JPopupMenu();
-    JMenuItem menuItem = new JMenuItem(pm.getAction(TeamDialogPModel.RESET_ICON_ACTION));
-    popup.add(menuItem);
+    this.popup = new JPopupMenu();
+    JMenuItem menuItem = new JMenuItem(this.pm.getAction(TeamDialogPModel.RESET_ICON_ACTION));
+    this.popup.add(menuItem);
     menuItem.addActionListener(new ActionListener() {
       
       /* (non-Javadoc)
@@ -253,11 +254,11 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
        */
       @Override
       public void actionPerformed(ActionEvent e) {
-        logoButton.setIcon(null);       
+        TeamDialog.this.logoButton.setIcon(null);       
       }
     });
     
-    logoButton.addMouseListener(new PopupListener());
+    this.logoButton.addMouseListener(new PopupListener());
 
     addFillComponents(panel, new int[] {1, 2, 3, 4, 5}, new int[] {1, 3, 4, 5, 7,
         9, 11, 14, 15, 16, 17, 18, 20});
@@ -270,9 +271,9 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
    */
   private Component getButtonPanel() {
     JPanel bPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-    JButton okBtn = new JButton(pm.getAction(TeamDialogPModel.OK_ACTION));
+    JButton okBtn = new JButton(this.pm.getAction(TeamDialogPModel.OK_ACTION));
     JButton cancelBtn = new JButton(
-        pm.getAction(TeamDialogPModel.CANCEL_ACTION));
+        this.pm.getAction(TeamDialogPModel.CANCEL_ACTION));
     bPanel.add(okBtn);
     bPanel.add(cancelBtn);
     return bPanel;
@@ -286,7 +287,7 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
   @Override
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getPropertyName().equals(TeamDialogPModel.DISPOSE)) {
-      pm.removePropertyChangeListener(this);
+      this.pm.removePropertyChangeListener(this);
       this.dispose();
     }
   }
@@ -341,6 +342,7 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     /* (non-Javadoc)
      * @see java.awt.event.MouseAdapter#mousePressed(java.awt.event.MouseEvent)
      */
+    @Override
     public void mousePressed(MouseEvent e) {
       maybeShowPopup(e);
     }
@@ -348,6 +350,7 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
     /* (non-Javadoc)
      * @see java.awt.event.MouseAdapter#mouseReleased(java.awt.event.MouseEvent)
      */
+    @Override
     public void mouseReleased(MouseEvent e) {
       maybeShowPopup(e);
     }
@@ -358,7 +361,7 @@ public class TeamDialog extends JDialog implements PropertyChangeListener {
      */
     private void maybeShowPopup(MouseEvent e) {
       if (e.isPopupTrigger()) {
-        popup.show(e.getComponent(), e.getX(), e.getY());
+        TeamDialog.this.popup.show(e.getComponent(), e.getX(), e.getY());
       }
     }
   }
