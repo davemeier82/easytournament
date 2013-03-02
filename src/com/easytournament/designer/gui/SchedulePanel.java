@@ -9,6 +9,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -51,8 +53,10 @@ import com.easytournament.tournament.gui.renderer.SubstDateTableCellRenderer;
 import com.jgoodies.binding.adapter.Bindings;
 import com.jgoodies.binding.beans.PropertyAdapter;
 import com.toedter.calendar.JDateChooser;
+import com.toedter.calendar.JTextFieldDateEditor;
 
-public class SchedulePanel extends JPanel implements TableModelListener {
+public class SchedulePanel extends JPanel implements TableModelListener,
+    PropertyChangeListener {
 
   private static final long serialVersionUID = 1L;
 
@@ -67,6 +71,7 @@ public class SchedulePanel extends JPanel implements TableModelListener {
     this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     this.add(getGroupsComponent(), BorderLayout.CENTER);
     this.add(getButtonComponent(), BorderLayout.SOUTH);
+    this.pm.addPropertyChangeListener(this);
   }
 
   private JComponent getButtonComponent() {
@@ -97,7 +102,7 @@ public class SchedulePanel extends JPanel implements TableModelListener {
     TableModel tm = pm.getTableModel();
     tm.addTableModelListener(this);
     schedTable = new JTable(tm);
-    schedTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
+    // schedTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
     schedTable.setSelectionModel(pm.getSelectionModel());
     schedTable.setFillsViewportHeight(true);
     schedTable.getTableHeader().setReorderingAllowed(false);
@@ -152,10 +157,23 @@ public class SchedulePanel extends JPanel implements TableModelListener {
           new PropertyAdapter<SchedulePanelPModel>(pm,
               SchedulePanelPModel.PROPERTY_SHOW_TEAMS, true));
     }
-    JDateChooser cal = new JDateChooser();
+    JTextFieldDateEditor dateTextfield =  new JTextFieldDateEditor();
+    JDateChooser cal = new JDateChooser(dateTextfield);
     cal.setLocale(ResourceManager.getLocale());
     date.setCellEditor(new DateCellEditor(cal));
     time.setCellRenderer(dtcr);
+    
+    // stop editing if the enter button was pressed in the datechooser
+    dateTextfield.addKeyListener(new KeyAdapter() {
+      @Override
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+          super.keyPressed(e);
+          if (schedTable.isEditing())
+            schedTable.getCellEditor().stopCellEditing();
+        }
+      }
+    });
 
     schedTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
@@ -239,5 +257,14 @@ public class SchedulePanel extends JPanel implements TableModelListener {
 
   public JTable getTable() {
     return schedTable;
+  }
+
+  @Override
+  public void propertyChange(PropertyChangeEvent evt) {
+    if (evt.getPropertyName().equals(
+        SchedulePanelPModel.PROPERTY_STOP_CELL_EDITING)) {
+      if (schedTable.isEditing())
+        schedTable.getCellEditor().stopCellEditing();
+    }
   }
 }

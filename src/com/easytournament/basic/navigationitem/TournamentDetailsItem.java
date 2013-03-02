@@ -91,7 +91,7 @@ public class TournamentDetailsItem extends NavigationItem {
   }
 
   public boolean deactivate() {
-    if(eventPModel.isEventsChanged()){
+    if(eventPModel != null && eventPModel.isEventsChanged()){
       for(ScheduleEntry se :organizer.getCurrentTournament().getSchedules()){
         se.updateScore();
       }

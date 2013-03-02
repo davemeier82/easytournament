@@ -1,4 +1,4 @@
-/* AboutDialog.java Window of application and license information
+/* AboutDialog.java - Dialog of application and license information
  * Copyright (c) 2013 David Meier
  * david.meier@easy-tournament.com
  * www.easy-tournament.com
@@ -45,6 +45,7 @@ import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
 /**
+ * Dialog of application and license information
  * @author David Meier
  * 
  */

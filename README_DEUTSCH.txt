@@ -16,6 +16,10 @@ Fehler und Verbesserungswünsche können sie uns wie folgt mitteilen:
 - Absenden des Error-Reports falls ein Fehler auftritt
 - Schreiben einer Nachricht im Forum auf easy-tournament.com/forum
 
+Änderungen zur Version 0.6.0
+****************************
+- Diverse Fehler behoben
+
 Änderungen zur Version 0.5.6
 ****************************
 - Neuer Kalender zur Auswahl der Daten

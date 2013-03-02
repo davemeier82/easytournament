@@ -34,9 +34,9 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>EasyTournament</Program_Name>
-		<Program_Version>0.6.0</Program_Version>
-		<Program_Release_Month>01</Program_Release_Month>
-		<Program_Release_Day>19</Program_Release_Day>
+		<Program_Version>0.6.1</Program_Version>
+		<Program_Release_Month>03</Program_Release_Month>
+		<Program_Release_Day>02</Program_Release_Day>
 		<Program_Release_Year>2013</Program_Release_Year>
 		<Program_Cost_Dollars>0</Program_Cost_Dollars>
 		<Program_Cost_Other_Code />
@@ -108,7 +108,7 @@ Hier eine Auswahl der Funktionen:
 			<Application_XML_File_URL>http://easy-tournament.com/downloads/PAD_FILE.XML</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>http://easy-tournament.com/downloads/EasyTournament-0.6.0.0.msi</Primary_Download_URL>
+			<Primary_Download_URL>http://easy-tournament.com/downloads/EasyTournament-0.6.1.0.msi</Primary_Download_URL>
 			<Secondary_Download_URL />
 			<Additional_Download_URL_1 />
 			<Additional_Download_URL_2 />
@@ -118,7 +118,7 @@ Hier eine Auswahl der Funktionen:
 		<Distribution_Permissions>EasyTournament License
 ======================
 
-Copyright (c) 2012 David Meier. All rights reserved.
+Copyright (c) 2012-2013 David Meier. All rights reserved.
 
 REDISTRIBUTION
 The redistribution of EasyTournament, hereinafter referred to as ET, is allowed under the following conditions:

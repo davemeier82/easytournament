@@ -137,7 +137,7 @@ public class ScheduleTableModel extends DefaultTableModel implements
           break;
         case 4:
           try {
-            calendar.setTime((Date) value);
+            calendar.setTime(timeFormatter.parse((String) value));
             tempdata.getDate().set(Calendar.HOUR, calendar.get(Calendar.HOUR));
             tempdata.getDate().set(Calendar.MINUTE,
                 calendar.get(Calendar.MINUTE));
@@ -149,7 +149,7 @@ public class ScheduleTableModel extends DefaultTableModel implements
                 .set(Calendar.AM_PM, calendar.get(Calendar.AM_PM));
             Collections.sort(this.data, comp);
           }
-          catch (ClassCastException e) {/* do nothing */}
+          catch (Exception e) {/* do nothing */}
           break;
         case 5:
           if (value == null)

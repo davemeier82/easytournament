@@ -16,6 +16,10 @@ Errors and feature wishes can you tell us as follows:
 - Submitting of an error report if an error occurs.
 - Post a message in the forum at www.easy-tournament.com/forum
 
+Changes to version 0.6.0
+****************************
+- Bugfixes
+
 Changes to version 0.5.6
 ****************************
 - New calendar to select dates

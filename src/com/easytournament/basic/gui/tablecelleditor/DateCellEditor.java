@@ -84,7 +84,7 @@ public class DateCellEditor extends AbstractCellEditor implements
    */
   @Override
   public Object getCellEditorValue() {
-    return this.delegate.getCellEditorValue();
+    return this.dateChooser.getDate();
   }
 
   /* (non-Javadoc)

@@ -33,7 +33,8 @@ public class GroupAssignItem extends NavigationItem {
 
   public boolean deactivate() {
     super.deactivate();
-    panel.save();
+    if(panel != null)
+      panel.save();
     return true;
   }
 
@@ -47,7 +48,7 @@ public class GroupAssignItem extends NavigationItem {
   }
 
   public void propertyChange(PropertyChangeEvent evt) {
-    if (active
+    if (active && panel != null
         && (evt.getPropertyName().equals(NavTreeActions.OPEN.name()) || evt
             .getPropertyName().equals(NavTreeActions.NEW.name()))) {
       panel.init();

@@ -61,7 +61,9 @@ public class ScheduleItem extends NavigationItem {
 
   public boolean deactivate() {
     super.deactivate();
-    if (spm.isDataChanged()) {
+    if (spm != null)
+      spm.stopCellEditing();
+      if(spm.isDataChanged()) {
       for (AbstractGroup g : Organizer.getInstance().getCurrentTournament()
           .getPlan().getOrderedGroups()) {
         Calculator.calcTableEntries(g, false);

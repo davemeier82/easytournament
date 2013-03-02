@@ -35,6 +35,7 @@ public class SchedulePanelPModel extends Model implements TableModelListener, Pr
 
   private static final long serialVersionUID = -7596821302494623927L;
   public static final String PROPERTY_SHOW_TEAMS = "showTeams";
+  public static final String PROPERTY_STOP_CELL_EDITING = "stopCellEditing";
   public static final int NEW_ACTION = 0;
   public static final int DELETE_ACTION = 1;
   public static final int EXPORT_ACTION = 2;
@@ -166,5 +167,9 @@ public class SchedulePanelPModel extends Model implements TableModelListener, Pr
     this.showTeams = showTeams;
     this.firePropertyChange(PROPERTY_SHOW_TEAMS, old, this.showTeams);
     this.table.fireTableDataChanged();
+  }
+  
+  public void stopCellEditing() {
+    this.firePropertyChange(PROPERTY_STOP_CELL_EDITING, false, true);
   }
 }

@@ -31,6 +31,11 @@ import com.easytournament.basic.resources.Text;
 import com.jgoodies.binding.adapter.BasicComponentFactory;
 
 
+/**
+ * Dialog to choose the item to import
+ * @author David Meier
+ *
+ */
 public class ImportDialog extends JDialog implements PropertyChangeListener {
 
   private static final long serialVersionUID = -4399000176669371622L;
@@ -41,17 +46,17 @@ public class ImportDialog extends JDialog implements PropertyChangeListener {
 
   /**
    * Constructor
-   * @param f
-   * @param modal
-   * @param pm
+   * @param owner The owner
+   * @param modal True if the dialog is modal
+   * @param pm The presentation model
    */
-  public ImportDialog(Frame f, boolean modal, ImportDialogPModel pm) {
-    super(f, ResourceManager.getText(Text.SELECT_IMPORT_ITEM), modal);
+  public ImportDialog(Frame owner, boolean modal, ImportDialogPModel pm) {
+    super(owner, ResourceManager.getText(Text.SELECT_IMPORT_ITEM), modal);
     this.pm = pm;
     this.pm.addPropertyChangeListener(this);
     initializePanel();
     this.setMinimumSize(new Dimension(450,110));
-    this.setLocationRelativeTo(f);
+    this.setLocationRelativeTo(owner);
     this.addWindowListener(new WindowAdapter() {
 
       /* (non-Javadoc)
@@ -114,5 +119,4 @@ public class ImportDialog extends JDialog implements PropertyChangeListener {
       this.dispose();
     }
   }
-
 }
