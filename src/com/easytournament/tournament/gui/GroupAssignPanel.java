@@ -91,7 +91,6 @@ public class GroupAssignPanel extends JPanel implements ListDataListener {
       minHeight += dim.getHeight() + 10;
     }
 
-    gBox.setPreferredSize(new Dimension(400, minHeight));
     return gBox;
   }
 

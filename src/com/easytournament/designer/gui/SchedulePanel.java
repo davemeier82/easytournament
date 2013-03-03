@@ -231,7 +231,7 @@ public class SchedulePanel extends JPanel implements TableModelListener,
               String dateStr = dateFormatter.format(date);
               width = fm.stringWidth(dateStr) + 50;
             }
-            catch (ClassCastException ex) {
+            catch (Exception ex) {
               // do nothing
             }
           }

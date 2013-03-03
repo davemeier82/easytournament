@@ -403,8 +403,10 @@ public class TeamOverviewPModel extends Model implements ListDataListener {
 
   @Override
   public void contentsChanged(ListDataEvent arg0) {
+    teams.removeListDataListener(this);
     Collections.sort(teams, tnc);
     teamTModel.fireTableDataChanged();
+    teams.addListDataListener(this);
 
   }
 

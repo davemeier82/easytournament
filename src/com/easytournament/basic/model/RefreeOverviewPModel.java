@@ -338,9 +338,10 @@ public class RefreeOverviewPModel extends Model implements ListDataListener {
 
   @Override
   public void contentsChanged(ListDataEvent e) {
+    refrees.removeListDataListener(this);
     Collections.sort(refrees, pnc);
     personTModel.fireTableDataChanged();
-
+    refrees.addListDataListener(this);
   }
 
   @Override
