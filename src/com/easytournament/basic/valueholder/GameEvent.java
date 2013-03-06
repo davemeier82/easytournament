@@ -26,7 +26,7 @@ public class GameEvent extends Model implements Cloneable {
    
   protected int id;
   protected String sportId = null;
-  protected String name;
+  protected String name = "";
   protected String nameResourceId = null;
   protected String iconResourceId = null;
   protected String secondResourceId = null;
@@ -36,7 +36,7 @@ public class GameEvent extends Model implements Cloneable {
   protected int pointsForOpponent;
   protected GameEventType type = GameEventType.GOAL;  
   protected boolean secondaryPlayer = false;
-  protected String secondaryPlayerText;
+  protected String secondaryPlayerText = "";
 
   public GameEvent(){
     this(CURRENT_MAX_ID++);

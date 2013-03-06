@@ -15,7 +15,7 @@ public class SubstPositionTableCellRenderer extends
     SubstanceDefaultTableCellRenderer {
 
   private static final long serialVersionUID = 100452192651676523L;
-  public static final String PROPERTY_SHOE_TEAMS = "showTeams";
+  public static final String PROPERTY_SHOW_TEAMS = "showTeams";
 
   protected boolean showTeams = false;
 

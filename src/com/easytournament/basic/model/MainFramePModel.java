@@ -228,13 +228,13 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
                         ((DefaultMutableTreeNode)root.getFirstChild())
                             .getPath()));
                   }
+                  this.currentFile = null;
+                  firePropertyChange(PROPERTY_TITLE, "", MetaInfos.APP_NAME);
                   break;
                 default:
                   break;
               }
             }
-            this.currentFile = null;
-            firePropertyChange(PROPERTY_TITLE, "", MetaInfos.APP_NAME);
             break;
           }
           case CLOSE:

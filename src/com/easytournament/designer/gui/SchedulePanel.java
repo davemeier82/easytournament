@@ -19,6 +19,7 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -44,10 +45,12 @@ import com.easytournament.basic.valueholder.Refree;
 import com.easytournament.designer.gui.dialog.ScheduleGeneratorDialog;
 import com.easytournament.designer.gui.editor.PositionSelectionEditor;
 import com.easytournament.designer.gui.editor.RefreeSelectionEditor;
+import com.easytournament.designer.gui.renderer.PositionListCellRenderer;
 import com.easytournament.designer.gui.renderer.PositionTableCellRenderer;
 import com.easytournament.designer.gui.renderer.SubstPositionTableCellRenderer;
 import com.easytournament.designer.model.SchedulePanelPModel;
 import com.easytournament.designer.model.dialog.SGeneratorPModel;
+import com.easytournament.designer.valueholder.Position;
 import com.easytournament.tournament.gui.renderer.DateTableCellRenderer;
 import com.easytournament.tournament.gui.renderer.SubstDateTableCellRenderer;
 import com.jgoodies.binding.adapter.Bindings;
@@ -137,14 +140,21 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     TableColumn date = tcm.getColumn(3);
     TableColumn time = tcm.getColumn(4);
 
-    home.setCellEditor(new PositionSelectionEditor());
-    away.setCellEditor(new PositionSelectionEditor(0));
+    PositionListCellRenderer listCellRenderer = new PositionListCellRenderer();
+    Bindings.bind(listCellRenderer,
+        PositionListCellRenderer.PROPERTY_SHOW_TEAMS,
+        new PropertyAdapter<SchedulePanelPModel>(pm,
+            SchedulePanelPModel.PROPERTY_SHOW_TEAMS, true));
+
+    home.setCellEditor(new PositionSelectionEditor(listCellRenderer));
+    away.setCellEditor(new PositionSelectionEditor(0, listCellRenderer));
+
     if (Organizer.getInstance().isSubstance()) {
       SubstPositionTableCellRenderer cellrenderer = new SubstPositionTableCellRenderer();
       home.setCellRenderer(cellrenderer);
       away.setCellRenderer(cellrenderer);
       Bindings.bind(cellrenderer,
-          SubstPositionTableCellRenderer.PROPERTY_SHOE_TEAMS,
+          SubstPositionTableCellRenderer.PROPERTY_SHOW_TEAMS,
           new PropertyAdapter<SchedulePanelPModel>(pm,
               SchedulePanelPModel.PROPERTY_SHOW_TEAMS, true));
     }
@@ -153,16 +163,16 @@ public class SchedulePanel extends JPanel implements TableModelListener,
       home.setCellRenderer(cellrenderer);
       away.setCellRenderer(cellrenderer);
       Bindings.bind(cellrenderer,
-          SubstPositionTableCellRenderer.PROPERTY_SHOE_TEAMS,
+          PositionTableCellRenderer.PROPERTY_SHOW_TEAMS,
           new PropertyAdapter<SchedulePanelPModel>(pm,
               SchedulePanelPModel.PROPERTY_SHOW_TEAMS, true));
     }
-    JTextFieldDateEditor dateTextfield =  new JTextFieldDateEditor();
+    JTextFieldDateEditor dateTextfield = new JTextFieldDateEditor();
     JDateChooser cal = new JDateChooser(dateTextfield);
     cal.setLocale(ResourceManager.getLocale());
     date.setCellEditor(new DateCellEditor(cal));
     time.setCellRenderer(dtcr);
-    
+
     // stop editing if the enter button was pressed in the datechooser
     dateTextfield.addKeyListener(new KeyAdapter() {
       @Override
@@ -238,8 +248,25 @@ public class SchedulePanel extends JPanel implements TableModelListener,
           else {
             for (int r = 0; r < schedTable.getRowCount(); r++) {
               Object value = schedTable.getValueAt(r, i);
-              if (value != null)
-                width = Math.max(width, fm.stringWidth(value.toString()));
+              try {
+                Position p = (Position)value;
+                if (pm.isDataChanged()) {
+                  JLabel label = (JLabel) schedTable.getCellRenderer(r, i)
+                      .getTableCellRendererComponent(schedTable, value, false,
+                          false, r, i);
+                  width = Math.max(width, fm.stringWidth(label.getText()));
+                }
+                else {
+                  if (p != null)
+                    width = Math.max(width, fm.stringWidth(p.toString()));
+                }
+
+              }
+              catch (Exception ex) {
+                if (value != null)
+                  width = Math.max(width, fm.stringWidth(value.toString()));
+              }
+
             }
             if (i < 2)
               width += 50;

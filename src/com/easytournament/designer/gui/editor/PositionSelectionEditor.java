@@ -5,6 +5,7 @@ import java.awt.Component;
 import javax.swing.AbstractCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.ListCellRenderer;
 import javax.swing.table.TableCellEditor;
 
 import com.easytournament.basic.Organizer;
@@ -17,26 +18,23 @@ public class PositionSelectionEditor extends AbstractCellEditor implements
     TableCellEditor {
 
   private static final long serialVersionUID = 1L;
+  
+  public static final String PROPERTY_SHOW_TEAMS = "showTeams";
+
   private JComboBox<Position> combobox;
   private int serachCol;
   private boolean allteams = true;
 
-  public PositionSelectionEditor(int col) {
+  public PositionSelectionEditor(int col, ListCellRenderer<? super Position> renderer) {
     this.combobox = new JComboBox<Position>();
     this.serachCol = col;
-    if (Organizer.getInstance().isSubstance())
-      this.combobox.setRenderer(new SubstPositionListCellRenderer());
-    else
-      this.combobox.setRenderer(new PositionListCellRenderer());
+    this.combobox.setRenderer(renderer);
     this.allteams = false;
   }
 
-  public PositionSelectionEditor() {
+  public PositionSelectionEditor(ListCellRenderer<? super Position> renderer) {
     this.combobox = new JComboBox<Position>();
-    if (Organizer.getInstance().isSubstance())
-      this.combobox.setRenderer(new SubstPositionListCellRenderer());
-    else
-      this.combobox.setRenderer(new PositionListCellRenderer());
+      this.combobox.setRenderer(renderer);
   }
 
   public Component getTableCellEditorComponent(JTable table, Object value,
@@ -83,5 +81,4 @@ public class PositionSelectionEditor extends AbstractCellEditor implements
   public Object getCellEditorValue() {
     return combobox.getSelectedItem();
   }
-
 }

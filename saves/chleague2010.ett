@@ -1,0 +1,1043 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="tournament" version="0.1.2">
+  <tournament name="Champions League 2010-2011" website="" description="" location="" firstname="" lastname="" address="" phone="" email="" notes="" begin="1284576390128" end="1306608390130">
+    <sport id="soccer" name="Fussball" edited="1">
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+      <gameevents>
+        <gameevent type="GOAL" name="Tor" id="0" secondary="Assist von Spieler" sportid="soccer" nameResourceId="GOAL" iconResourceId="GOAL" secondaryResourceId="ASSIST" pointsTeam="1" pointsOpponent="0" />
+        <gameevent type="GOAL" name="Elfmeter Tor" id="1" sportid="soccer" nameResourceId="PENALTY_GOAL" iconResourceId="PENALTYGOAL" pointsTeam="1" pointsOpponent="0" />
+        <gameevent type="PENALTY" name="Gelbe Karte" id="2" secondary="Gefoulter Spieler" sportid="soccer" nameResourceId="YELLOW_CARD" iconResourceId="YELLOWCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="PENALTY" name="2. Gelbe Karte" id="3" secondary="Gefoulter Spieler" sportid="soccer" nameResourceId="SECOND_YELLOW_CARD" iconResourceId="SECONDYELLOWCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="PENALTY" name="Rote Karte" id="4" secondary="Gefoulter Spieler" sportid="soccer" nameResourceId="RED_CARD" iconResourceId="REDCARD" secondaryResourceId="FOULED" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="OTHER" name="Abseits" id="5" sportid="soccer" nameResourceId="OFFSIDE" pointsTeam="0" pointsOpponent="0" />
+        <gameevent type="OTHER" name="Verschossener Elfmeter" id="6" sportid="soccer" nameResourceId="MISSED_PENALTY" iconResourceId="MISSEDPENALTY" pointsTeam="0" pointsOpponent="0" />
+      </gameevents>
+    </sport>
+  </tournament>
+  <teams>
+    <team id="0" randomPos="1372179464" name="A.C. Milan" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="1" randomPos="1062802784" name="A.F.C. Ajax" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="2" randomPos="2095665797" name="A.S. Roma" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="3" randomPos="1583734806" name="AJ Auxerre" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="4" randomPos="1152506456" name="Arsenal F.C." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="5" randomPos="1308539815" name="Bursaspor" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="6" randomPos="594959794" name="CFR Cluj" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="7" randomPos="1416546295" name="Chelsea F.C." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="8" randomPos="190736205" name="F.C. Barcelona" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="9" randomPos="608953419" name="F.C. Basel" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="10" randomPos="486625731" name="F.C. Bayern Munich" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="11" randomPos="450147747" name="F.C. Copenhagen" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="12" randomPos="328270481" name="F.C. Internazionale Milano" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="13" randomPos="28777382" name="F.C. Rubin Kazan" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="14" randomPos="435121102" name="F.C. Schalke 04" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="15" randomPos="1744596076" name="F.C. Shakhtar Donetsk" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="16" randomPos="245525076" name="F.C. Spartak Moscow" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="17" randomPos="1286492325" name="F.C. Twente " website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="18" randomPos="1084060213" name="F.K. Partizan" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="19" randomPos="547642860" name="Hapoel Tel Aviv F.C." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="20" randomPos="1458654712" name="Manchester United F.C." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="21" randomPos="1697117118" name="M&#x160;K &#x17d;ilina" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="22" randomPos="597376355" name="Olympique de Marseille" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="23" randomPos="1647568620" name="Olympique Lyonnais" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="24" randomPos="169701462" name="Panathinaikos F.C." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="25" randomPos="2002339851" name="Rangers F.C." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="26" randomPos="414352206" name="Real Madrid C.F." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="27" randomPos="650171264" name="S.C. Braga" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="28" randomPos="901044944" name="S.L. Benfica" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="29" randomPos="1166742005" name="S.V. Werder Bremen" website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="30" randomPos="1077915721" name="Tottenham Hotspur F.C." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+    <team id="31" randomPos="426324441" name="Valencia C.F." website="" cprename="" cname="" address="" email="" phone="" notes="">
+      <players />
+      <staff />
+    </team>
+  </teams>
+  <refrees>
+    <refree id="30" gender="0" prename="Martin" name="Atkinson" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="29" gender="0" prename="Cristian" name="Balaj" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="12" gender="0" prename="Ivan" name="Bebek" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="9" gender="0" prename="Olegário" name="Benquerença" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="40" gender="0" prename="Vladislav" name="Bezborodov" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="41" gender="0" prename="Kevin" name="Blom" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="23" gender="0" prename="Felix" name="Brych" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="0" gender="0" prename="Massimo" name="Busacca" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="10" gender="0" prename="Carlos Velasco" name="Carballo" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="26" gender="0" prename="Tony" name="Chapron" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="42" gender="0" prename="Mark" name="Clattenburg" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="16" gender="0" prename="William" name="Collum" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="18" gender="0" prename="Frank" name="De Bleeckere" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="35" gender="0" prename="Laurent" name="Duhamel" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="27" gender="0" prename="Thomas" name="Einwaller" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="31" gender="0" prename="Jonas" name="Eriksson" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="28" gender="0" prename="Manuel" name="Gräfe" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="22" gender="0" prename="Serge" name="Gumienny" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="6" gender="0" prename="Alain" name="Hamer" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="36" gender="0" prename="Martin" name="Hansson" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="2" gender="0" prename="Terje" name="Hauge" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="38" gender="0" prename="Stefan" name="Johannesson" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="7" gender="0" prename="Viktor " name="Kassai" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="33" gender="0" prename="Alan" name="Kelly" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="34" gender="0" prename="Björn" name="Kuipers" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="8" gender="0" prename="Stéphane" name="Lannoy" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="5" gender="0" prename="Claus Bo" name="Larsen" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="3" gender="0" prename="Alberto Undiano" name="Mallenco" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="32" gender="0" prename="Florian" name="Meyer" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="21" gender="0" prename="Svein Oddvar" name="Moen" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="13" gender="0" prename="Aleksei" name="Nikolaev" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="25" gender="0" prename="Bruno" name="Paixão" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="1" gender="0" prename="Pedro" name="Proença" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="20" gender="0" prename="Nicola" name="Rizzoli" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="15" gender="0" prename="Gianluca" name="Rocchi" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="39" gender="0" prename="Robert" name="Schörgenhofer" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="4" gender="0" prename="Damir" name="Skomina" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="24" gender="0" prename="Wolfgang " name="Stark" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="43" gender="0" prename="Paolo" name="Tagliavento" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="19" gender="0" prename="Craig" name="Thomson" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="37" gender="0" prename="István" name="Vad" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="14" gender="0" prename="Howard" name="Webb" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+    <refree id="11" gender="0" prename="Cüneyt" name="Çak&#x131;r" address="" bdate="0" email="" phone="" notes="">
+      <assistants />
+    </refree>
+  </refrees>
+  <plan>
+    <group name="Group A" id="0" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group A" id="0" team="30" />
+        <position name="2. Group A" id="1" team="12" />
+        <position name="3. Group A" id="2" team="17" />
+        <position name="4. Group A" id="3" team="29" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group B" id="1" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group B" id="4" team="14" />
+        <position name="2. Group B" id="5" team="23" />
+        <position name="3. Group B" id="6" team="28" />
+        <position name="4. Group B" id="7" team="19" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group C" id="2" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group C" id="8" team="20" />
+        <position name="2. Group C" id="9" team="31" />
+        <position name="3. Group C" id="10" team="25" />
+        <position name="4. Group C" id="11" team="5" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group D" id="3" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group D" id="12" team="8" />
+        <position name="2. Group D" id="13" team="11" />
+        <position name="3. Group D" id="14" team="13" />
+        <position name="4. Group D" id="15" team="24" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group E" id="4" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group E" id="16" team="10" />
+        <position name="2. Group E" id="17" team="2" />
+        <position name="3. Group E" id="18" team="9" />
+        <position name="4. Group E" id="19" team="6" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group F" id="5" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group F" id="20" team="7" />
+        <position name="2. Group F" id="21" team="22" />
+        <position name="3. Group F" id="22" team="16" />
+        <position name="4. Group F" id="23" team="21" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group G" id="6" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group G" id="24" team="26" />
+        <position name="2. Group G" id="25" team="0" />
+        <position name="3. Group G" id="26" team="1" />
+        <position name="4. Group G" id="27" team="3" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group H" id="7" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group H" id="28" team="15" />
+        <position name="2. Group H" id="29" team="4" />
+        <position name="3. Group H" id="30" team="27" />
+        <position name="4. Group H" id="31" team="18" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+  </plan>
+  <gui>
+    <cell id="0" parent="none" edge="0" vertex="0" />
+    <cell id="1" parent="0" edge="0" vertex="0" />
+    <groupcell id="35" parent="1" groupid="0" x="20.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="2" style="team;whiteSpace=wrap" />
+      <positioncell id="3" style="team;whiteSpace=wrap" />
+      <positioncell id="4" style="team;whiteSpace=wrap" />
+      <positioncell id="5" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="36" parent="1" groupid="1" x="160.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="6" style="team;whiteSpace=wrap" />
+      <positioncell id="7" style="team;whiteSpace=wrap" />
+      <positioncell id="8" style="team;whiteSpace=wrap" />
+      <positioncell id="9" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="37" parent="1" groupid="2" x="310.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="10" style="team;whiteSpace=wrap" />
+      <positioncell id="11" style="team;whiteSpace=wrap" />
+      <positioncell id="12" style="team;whiteSpace=wrap" />
+      <positioncell id="13" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="38" parent="1" groupid="3" x="460.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="14" style="team;whiteSpace=wrap" />
+      <positioncell id="15" style="team;whiteSpace=wrap" />
+      <positioncell id="16" style="team;whiteSpace=wrap" />
+      <positioncell id="17" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="39" parent="1" groupid="4" x="610.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="18" style="team;whiteSpace=wrap" />
+      <positioncell id="19" style="team;whiteSpace=wrap" />
+      <positioncell id="20" style="team;whiteSpace=wrap" />
+      <positioncell id="21" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="40" parent="1" groupid="5" x="760.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="22" style="team;whiteSpace=wrap" />
+      <positioncell id="23" style="team;whiteSpace=wrap" />
+      <positioncell id="24" style="team;whiteSpace=wrap" />
+      <positioncell id="25" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="41" parent="1" groupid="6" x="910.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="26" style="team;whiteSpace=wrap" />
+      <positioncell id="27" style="team;whiteSpace=wrap" />
+      <positioncell id="28" style="team;whiteSpace=wrap" />
+      <positioncell id="29" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="42" parent="1" groupid="7" x="1060.0" y="620.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="30" style="team;whiteSpace=wrap" />
+      <positioncell id="31" style="team;whiteSpace=wrap" />
+      <positioncell id="32" style="team;whiteSpace=wrap" />
+      <positioncell id="33" style="team;whiteSpace=wrap" />
+    </groupcell>
+  </gui>
+  <pageformat orientation="0">
+    <paper width="595.4456692913386" height="841.5496062992125" imageablex="72.0" imageabley="72.0" imageablewidth="451.44566929133856" imageableheight="697.5496062992125" />
+  </pageformat>
+  <schedule>
+    <sheduleentry home="2" away="1" place="De Grolsch Veste, Enschede" date="1284489900000" played="0">
+      <refrees>
+        <refree id="1" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="3" away="0" place="Weserstadion, Bremen" date="1284489900000" played="0">
+      <refrees>
+        <refree id="0" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="14" away="12" place="Central Stadium, Kazan" date="1362591000000" played="0">
+      <refrees>
+        <refree id="11" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="14" away="15" place="Central Stadium, Kazan" date="1362591000000" played="0">
+      <refrees>
+        <refree id="26" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="14" away="13" place="Central Stadium, Kazan" date="1362591000000" played="0">
+      <refrees>
+        <refree id="30" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="22" away="23" place="Luzhniki Stadium, Moscow" date="1362591000000" played="0">
+      <refrees>
+        <refree id="36" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="22" away="20" place="Luzhniki Stadium, Moscow" date="1362591000000" played="0">
+      <refrees>
+        <refree id="10" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="22" away="21" place="Luzhniki Stadium, Moscow" date="1362591000000" played="0">
+      <refrees>
+        <refree id="24" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="0" away="2" place="White Hart Lane, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="2" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="1" away="3" place="San Siro, Milan" date="1362599100000" played="0">
+      <refrees>
+        <refree id="3" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="1" away="0" place="San Siro, Milan" date="1362599100000" played="0">
+      <refrees>
+        <refree id="4" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="2" away="3" place="De Grolsch Veste, Enschede" date="1362599100000" played="0">
+      <refrees>
+        <refree id="5" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="0" away="1" place="White Hart Lane, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="7" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="3" away="2" place="Weserstadion, Bremen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="6" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="1" away="2" place="San Siro, Milan" date="1362599100000" played="0">
+      <refrees>
+        <refree id="8" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="0" away="3" place="White Hart Lane, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="9" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="2" away="0" place="De Grolsch Veste, Enschede" date="1362599100000" played="0">
+      <refrees>
+        <refree id="10" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="3" away="1" place="Weserstadion, Bremen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="11" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="5" away="4" place="Stade de Gerland, Lyon" date="1362599100000" played="0">
+      <refrees>
+        <refree id="12" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="6" away="7" place="Estádio da Luz, Lisbon" date="1362599100000" played="0">
+      <refrees>
+        <refree id="13" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="7" away="5" place="Bloomfield Stadium, Tel Aviv" date="1362599100000" played="0">
+      <refrees>
+        <refree id="14" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="4" away="6" place="Veltins-Arena, Gelsenkirchen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="15" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="4" away="7" place="Veltins-Arena, Gelsenkirchen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="16" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="5" away="6" place="Stade de Gerland, Lyon" date="1362599100000" played="0">
+      <refrees>
+        <refree id="3" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="7" away="4" place="Bloomfield Stadium, Tel Aviv" date="1362599100000" played="0">
+      <refrees>
+        <refree id="18" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="6" away="5" place="Estádio da Luz, Lisbon" date="1362599100000" played="0">
+      <refrees>
+        <refree id="19" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="4" away="5" place="Veltins-Arena, Gelsenkirchen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="20" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="7" away="6" place="Bloomfield Stadium, Tel Aviv" date="1362599100000" played="0">
+      <refrees>
+        <refree id="6" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="5" away="7" place="Stade de Gerland, Lyon" date="1362599100000" played="0">
+      <refrees>
+        <refree id="21" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="6" away="4" place="Estádio da Luz, Lisbon" date="1362599100000" played="0">
+      <refrees>
+        <refree id="14" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="8" away="10" place="Old Trafford, Manchester" date="1362599100000" played="0">
+      <refrees>
+        <refree id="9" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="11" away="9" place="Bursa Atatürk Stadium, Bursa" date="1362599100000" played="0">
+      <refrees>
+        <refree id="21" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="9" away="8" place="Mestalla Stadium, Valencia" date="1362599100000" played="0">
+      <refrees>
+        <refree id="7" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="10" away="11" place="Ibrox Stadium, Glasgow" date="1362599100000" played="0">
+      <refrees>
+        <refree id="22" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="10" away="9" place="Ibrox Stadium, Glasgow" date="1362599100000" played="0">
+      <refrees>
+        <refree id="20" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="8" away="11" place="Old Trafford, Manchester" date="1362599100000" played="0">
+      <refrees>
+        <refree id="15" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="9" away="10" place="Mestalla Stadium, Valencia" date="1362599100000" played="0">
+      <refrees>
+        <refree id="23" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="11" away="8" place="Bursa Atatürk Stadium, Bursa" date="1362599100000" played="0">
+      <refrees>
+        <refree id="24" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="10" away="8" place="Ibrox Stadium, Glasgow" date="1362599100000" played="0">
+      <refrees>
+        <refree id="0" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="9" away="11" place="Mestalla Stadium, Valencia" date="1362599100000" played="0">
+      <refrees>
+        <refree id="25" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="8" away="9" place="Old Trafford, Manchester" date="1362599100000" played="0">
+      <refrees>
+        <refree id="1" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="11" away="10" place="Bursa Atatürk Stadium, Bursa" date="1362599100000" played="0">
+      <refrees>
+        <refree id="26" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="12" away="15" place="Camp Nou, Barcelona" date="1362599100000" played="0">
+      <refrees>
+        <refree id="20" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="13" away="14" place="Parken Stadium, Copenhagen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="27" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="15" away="13" place="Olympic Stadium, Athens" date="1362599100000" played="0">
+      <refrees>
+        <refree id="16" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="15" away="14" place="Olympic Stadium, Athens" date="1362599100000" played="0">
+      <refrees>
+        <refree id="28" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="12" away="13" place="Camp Nou, Barcelona" date="1362599100000" played="0">
+      <refrees>
+        <refree id="8" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="13" away="12" place="Parken Stadium, Copenhagen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="29" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="15" away="12" place="Olympic Stadium, Athens" date="1362599100000" played="0">
+      <refrees>
+        <refree id="15" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="12" away="14" place="Camp Nou, Barcelona" date="1362599100000" played="0">
+      <refrees>
+        <refree id="31" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="13" away="15" place="Parken Stadium, Copenhagen" date="1362599100000" played="0">
+      <refrees>
+        <refree id="32" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="16" away="17" place="Allianz Arena, Munich" date="1362599100000" played="0">
+      <refrees>
+        <refree id="8" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="19" away="18" place="Stadionul Dr. Constantin R&#x103;dulescu, Cluj-Napoca" date="1362599100000" played="0">
+      <refrees>
+        <refree id="33" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="18" away="16" place="St. Jakob-Park, Basel" date="1362599100000" played="0">
+      <refrees>
+        <refree id="19" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="17" away="19" place="Stadio Olimpico, Rome" date="1362599100000" played="0">
+      <refrees>
+        <refree id="31" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="17" away="18" place="Stadio Olimpico, Rome" date="1362599100000" played="0">
+      <refrees>
+        <refree id="13" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="16" away="19" place="Allianz Arena, Munich" date="1362599100000" played="0">
+      <refrees>
+        <refree id="30" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="18" away="17" place="St. Jakob-Park, Basel" date="1362599100000" played="0">
+      <refrees>
+        <refree id="34" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="19" away="16" place="Stadionul Dr. Constantin R&#x103;dulescu, Cluj-Napoca" date="1362599100000" played="0">
+      <refrees>
+        <refree id="22" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="17" away="16" place="Stadio Olimpico, Rome" date="1362599100000" played="0">
+      <refrees>
+        <refree id="3" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="18" away="19" place="St. Jakob-Park, Basel" date="1362599100000" played="0">
+      <refrees>
+        <refree id="35" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="16" away="18" place="Allianz Arena, Munich" date="1362599100000" played="0">
+      <refrees>
+        <refree id="36" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="19" away="17" place="Stadionul Dr. Constantin R&#x103;dulescu, Cluj-Napoca" date="1362599100000" played="0">
+      <refrees>
+        <refree id="16" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="21" away="22" place="Stade Vélodrome, Marseille" date="1362599100000" played="0">
+      <refrees>
+        <refree id="32" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="23" away="20" place="&#x160;tadión pod Dub&#x148;om, &#x17d;ilina" date="1362599100000" played="0">
+      <refrees>
+        <refree id="34" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="20" away="21" place="Stamford Bridge, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="18" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="21" away="23" place="Stade Vélodrome, Marseille" date="1362599100000" played="0">
+      <refrees>
+        <refree id="37" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="20" away="22" place="Stamford Bridge, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="11" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="23" away="21" place="&#x160;tadión pod Dub&#x148;om, &#x17d;ilina" date="1362599100000" played="0">
+      <refrees>
+        <refree id="38" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="20" away="23" place="Stamford Bridge, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="39" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="21" away="20" place="Stade Vélodrome, Marseille" date="1362599100000" played="0">
+      <refrees>
+        <refree id="40" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="23" away="22" place="&#x160;tadión pod Dub&#x148;om, &#x17d;ilina" date="1362599100000" played="0">
+      <refrees>
+        <refree id="41" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="24" away="26" place="Santiago Bernabéu Stadium, Madrid" date="1362599100000" played="0">
+      <refrees>
+        <refree id="4" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="25" away="27" place="San Siro, Milan" date="1362599100000" played="0">
+      <refrees>
+        <refree id="29" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="27" away="24" place="Stade de l'Abbé-Deschamps, Auxerre" date="1362599100000" played="0">
+      <refrees>
+        <refree id="5" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="26" away="25" place="Amsterdam Arena, Amsterdam" date="1362599100000" played="0">
+      <refrees>
+        <refree id="23" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="26" away="27" place="Amsterdam Arena, Amsterdam" date="1362599100000" played="0">
+      <refrees>
+        <refree id="9" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="24" away="25" place="Santiago Bernabéu Stadium, Madrid" date="1362599100000" played="0">
+      <refrees>
+        <refree id="1" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="27" away="26" place="Stade de l'Abbé-Deschamps, Auxerre" date="1362599100000" played="0">
+      <refrees>
+        <refree id="42" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="25" away="24" place="San Siro, Milan" date="1362599100000" played="0">
+      <refrees>
+        <refree id="14" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="26" away="24" place="Amsterdam Arena, Amsterdam" date="1362599100000" played="0">
+      <refrees>
+        <refree id="19" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="27" away="25" place="Stade de l'Abbé-Deschamps, Auxerre" date="1362599100000" played="0">
+      <refrees>
+        <refree id="4" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="24" away="27" place="Santiago Bernabéu Stadium, Madrid" date="1362599100000" played="0">
+      <refrees>
+        <refree id="22" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="25" away="26" place="San Siro, Milan" date="1362599100000" played="0">
+      <refrees>
+        <refree id="5" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="29" away="30" place="Emirates Stadium, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="6" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="28" away="31" place="Donbass Arena, Donetsk" date="1362599100000" played="0">
+      <refrees>
+        <refree id="10" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="31" away="29" place="Stadion FK Partizan, Belgrade" date="1362599100000" played="0">
+      <refrees>
+        <refree id="24" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="30" away="28" place="Estádio Municipal de Braga, Braga" date="1362599100000" played="0">
+      <refrees>
+        <refree id="41" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="30" away="31" place="Estádio Municipal de Braga, Braga" date="1362599100000" played="0">
+      <refrees>
+        <refree id="35" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="29" away="28" place="Emirates Stadium, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="21" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="31" away="30" place="Stadion FK Partizan, Belgrade" date="1362599100000" played="0">
+      <refrees>
+        <refree id="36" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="28" away="29" place="Donbass Arena, Donetsk" date="1362599100000" played="0">
+      <refrees>
+        <refree id="0" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="30" away="29" place="Estádio Municipal de Braga, Braga" date="1362599100000" played="0">
+      <refrees>
+        <refree id="7" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="31" away="28" place="Stadion FK Partizan, Belgrade" date="1362599100000" played="0">
+      <refrees>
+        <refree id="18" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="29" away="31" place="Emirates Stadium, London" date="1362599100000" played="0">
+      <refrees>
+        <refree id="43" />
+      </refrees>
+    </sheduleentry>
+    <sheduleentry home="28" away="30" place="Donbass Arena, Donetsk" date="1362599100000" played="0">
+      <refrees>
+        <refree id="23" />
+      </refrees>
+    </sheduleentry>
+  </schedule>
+</filetype>
+
