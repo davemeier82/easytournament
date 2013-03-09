@@ -42,8 +42,9 @@ public class Position extends Model implements PropertyChangeListener,
   }
 
   public boolean addNext(Position next) {
+    if(next == null)
+      return false;
     return this.next.add(next);
-
   }
 
   public boolean removeNext(Position next) {
@@ -191,5 +192,4 @@ public class Position extends Model implements PropertyChangeListener,
       return false;
     return true;
   }
-
 }

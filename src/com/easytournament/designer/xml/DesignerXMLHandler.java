@@ -75,9 +75,11 @@ public class DesignerXMLHandler {
         position.setAttribute("name", tm.getName());
         position.setAttribute("id", tm.getId() + "");
         for (Position p : tm.getNext()) {
-          Element nextElement = new Element("next");
-          nextElement.setAttribute("id", p.getId() + "");
-          position.addContent(nextElement);
+          if(p != null) {
+            Element nextElement = new Element("next");
+            nextElement.setAttribute("id", p.getId() + "");
+            position.addContent(nextElement);
+          }
         }
         Position prev = tm.getPrev();
         if (prev != null) {
