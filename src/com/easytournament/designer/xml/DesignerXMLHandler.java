@@ -69,7 +69,6 @@ public class DesignerXMLHandler {
         group.setAttribute("type", GroupType.DUELL.toString());
       }
       Element positions = new Element("positions");
-      int teamIndex = 0;
       for (Position tm : g.getPositions()) {
         Element position = new Element("position");
         position.setAttribute("name", tm.getName());
@@ -85,14 +84,13 @@ public class DesignerXMLHandler {
         if (prev != null) {
           position.setAttribute("prev", prev.getId() + "");
         }
-        if (!export && teams.size() > teamIndex) {
-          Team temp = teams.get(teamIndex);
+        if (!export) {
+          Team temp = tm.getTeam();
           if (temp != null)
             position.setAttribute("team", temp.getId() + "");
         }
 
         positions.addContent(position);
-        teamIndex++;
       }
       group.addContent(positions);
       if (g.isDefaultSettings()) {
