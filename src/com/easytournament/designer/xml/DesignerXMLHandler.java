@@ -93,7 +93,7 @@ public class DesignerXMLHandler {
         positions.addContent(position);
       }
       group.addContent(positions);
-      if (g.isDefaultSettings()) {
+      if (g.isDefaultSettings() || g.getSettings() == null) {
         RulesXMLHandler.saveTSettings(group, tourn.getSettings());
       }
       else {
