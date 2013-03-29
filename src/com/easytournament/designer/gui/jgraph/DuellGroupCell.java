@@ -100,15 +100,17 @@ public class DuellGroupCell extends mxCell implements PropertyChangeListener {
   }
   
   public void updateLabels(){
-    mxGraph graph = TournamentViewer.getGraphComponent().getGraph();
-    mxCellState state = graph.getView().getState(this.getChildAt(0));
-    state.setLabel(getLabel(this.getGroup(), 0));
-    if(this.getChildCount() > 1) {
-      this.getChildAt(0).setValue(state.getLabel());
-      state = graph.getView().getState(this.getChildAt(1));
-      state.setLabel(getLabel(this.getGroup(), 1));
-      this.getChildAt(1).setValue(state.getLabel());
-    }
+	if(this.getChildCount() > 0) {
+		mxGraph graph = TournamentViewer.getGraphComponent().getGraph();
+		mxCellState state = graph.getView().getState(this.getChildAt(0));
+		state.setLabel(getLabel(this.getGroup(), 0));
+		if(this.getChildCount() > 1) {
+		  this.getChildAt(0).setValue(state.getLabel());
+		  state = graph.getView().getState(this.getChildAt(1));
+		  state.setLabel(getLabel(this.getGroup(), 1));
+		  this.getChildAt(1).setValue(state.getLabel());
+		}
+	}
   }
 
   @Override
