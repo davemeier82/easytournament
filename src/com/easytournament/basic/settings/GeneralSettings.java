@@ -161,8 +161,8 @@ public class GeneralSettings implements Settings {
       }
       rd.close();
       // System.out.println(sb.toString());
-      String version = sb.toString();
-      if (!MetaInfos.getVersionNr().equals(version))
+      String downloadableVersion = sb.toString();
+      if(MetaInfos.compareVersionNr(MetaInfos.getVersionNr(), downloadableVersion)  < 0)
         return true;
 
     }
