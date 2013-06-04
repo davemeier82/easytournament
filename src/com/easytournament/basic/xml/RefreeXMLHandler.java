@@ -60,7 +60,7 @@ public class RefreeXMLHandler {
       if(!export)
         assiEl.setAttribute("id", a.getId()+"");
       PersonXMLHandler.writePerson(a, assiEl);      
-      assiEl.setAttribute("function", a.getFunction());   
+      assiEl.setAttribute("function", a.getFunction()==null?"":a.getFunction());   
       assisEl.addContent(assiEl);
     }
     return assisEl;

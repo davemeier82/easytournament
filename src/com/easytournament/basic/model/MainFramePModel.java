@@ -61,7 +61,7 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
   private static File HISTORY_PATH = null;
   public static final String PROPERTY_TITLE = "title";
   public static final String SET_VAR_TOOLBAR = "setvartoolbar";
-  public static final String REMOVE_VAT_TOOLBAR = "removevartoolbar";
+  public static final String REMOVE_VAR_TOOLBAR = "removevartoolbar";
   public static final String NAVTREE_VISIBLE = "navTreeVisible";
   public static final String SHOW_HOMESCREEN = "showHomeScreen";
   private DefaultMutableTreeNode root = new DefaultMutableTreeNode();
@@ -541,7 +541,7 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
   }
 
   public void removeVariableToolbar() {
-    this.firePropertyChange(REMOVE_VAT_TOOLBAR, null, "1");
+    this.firePropertyChange(REMOVE_VAR_TOOLBAR, null, "1");
   }
 
   @Override

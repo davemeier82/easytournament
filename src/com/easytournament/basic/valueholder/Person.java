@@ -23,14 +23,14 @@ public class Person extends Model implements Cloneable {
   public static final String PROPERTY_NOTES = "notes";
   
   protected short gender  = MALE;
-  protected String name;
-  protected String prename;
-  protected String address;
-  protected String phone;
-  protected String email;
+  protected String name = "";
+  protected String prename = "";
+  protected String address = "";
+  protected String phone = "";
+  protected String email = "";
   protected Date bdate;
   protected ImageIcon picture;  
-  protected String notes;
+  protected String notes = "";
 
   public Person(String name, String prename, String address,
       Date bdate, short gender, String phone, String email, String notes, ImageIcon picture) {

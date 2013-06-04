@@ -59,14 +59,14 @@ public class TeamsXMLHandler {
       teamEl.setAttribute("id", team.getId() + "");
       teamEl.setAttribute("randomPos", team.getRandomPosition().toString());
     }
-    teamEl.setAttribute("name", team.getName());
-    teamEl.setAttribute("website", team.getWebsite());
-    teamEl.setAttribute("cprename", team.getContactPrename());
-    teamEl.setAttribute("cname", team.getContactName());
-    teamEl.setAttribute("address", team.getAddress());
-    teamEl.setAttribute("email", team.getEmail());
-    teamEl.setAttribute("phone", team.getPhone());
-    teamEl.setAttribute("notes", team.getNotes());
+    teamEl.setAttribute("name", team.getName() == null ? "" : team.getName());
+    teamEl.setAttribute("website", team.getWebsite() == null ? "" : team.getWebsite());
+    teamEl.setAttribute("cprename", team.getContactPrename() == null ? "" : team.getContactPrename());
+    teamEl.setAttribute("cname", team.getContactName() == null ? "" : team.getContactName());
+    teamEl.setAttribute("address", team.getAddress() == null ? "" : team.getAddress());
+    teamEl.setAttribute("email", team.getEmail() == null ? "" : team.getEmail());
+    teamEl.setAttribute("phone", team.getPhone() == null ? "" : team.getPhone());
+    teamEl.setAttribute("notes", team.getNotes() == null ? "" : team.getNotes());
     
     if(team.getLogo()!= null){
       Element logoEl = new Element("logo");         
@@ -88,8 +88,8 @@ public class TeamsXMLHandler {
       if(!export)
         playerEl.setAttribute("id", p.getId()+"");
       PersonXMLHandler.writePerson(p, playerEl);      
-      playerEl.setAttribute("number", p.getNumber());
-      playerEl.setAttribute("position", p.getPosition());      
+      playerEl.setAttribute("number", p.getNumber() == null ? "" : p.getNumber());
+      playerEl.setAttribute("position", p.getPosition() == null ? "" : p.getPosition());      
       playersEl.addContent(playerEl);
     }
     return playersEl;
@@ -106,7 +106,7 @@ public class TeamsXMLHandler {
         staffEl.setAttribute("id", s.getId()+"");
       Element personEl = new Element("person"); 
       PersonXMLHandler.writePerson(s, personEl);
-      personEl.setAttribute("function", s.getFunction());
+      personEl.setAttribute("function", s.getFunction() == null ? "" : s.getFunction());
       staffEl.addContent(personEl);
     }
     return staffEl;

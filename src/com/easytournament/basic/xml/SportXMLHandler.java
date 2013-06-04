@@ -18,14 +18,13 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.valueholder.Sport;
 
-
 public class SportXMLHandler {
 
   public static void saveTournamentSport(Element tournamentEL, Sport s) {
     Element sportEl = new Element("sport");
-    sportEl.setAttribute("id", s.getId());
-    sportEl.setAttribute("name", s.getName());
-    sportEl.setAttribute("edited", s.isEdited()?"1":"0");
+    sportEl.setAttribute("id", s.getId() == null? "" : s.getId());
+    sportEl.setAttribute("name", s.getName() == null? "" : s.getName());
+    sportEl.setAttribute("edited", s.isEdited()? "1" : "0");
 
     RulesXMLHandler.saveTSettings(sportEl, s.getSettings());
     RulesXMLHandler.saveRules(sportEl, s.getRules());
@@ -57,25 +56,28 @@ public class SportXMLHandler {
 
   public static Sport readTorunamentSport(Element tournamentEL) {
     Element sportEl = tournamentEL.getChild("sport");
-    Sport s = Organizer.getInstance().getSports().get(sportEl.getAttributeValue("id"));
+    Sport s = Organizer.getInstance().getSports()
+        .get(sportEl.getAttributeValue("id"));
     boolean edited = sportEl.getAttributeValue("edited").equals("1");
-    if(s == null){
+    if (s == null) {
       s = new Sport();
       s.setName(sportEl.getAttributeValue("name"));
-    } else if(edited) {
+    }
+    else if (edited) {
       try {
-        s = (Sport) s.clone();
+        s = (Sport)s.clone();
       }
       catch (CloneNotSupportedException e) {
-        ErrorLogger.getLogger().throwing("SportXMLHandler", "readTorunamentSport", e);
+        ErrorLogger.getLogger().throwing("SportXMLHandler",
+            "readTorunamentSport", e);
         e.printStackTrace();
       }
     }
-    
-    s.setId(sportEl.getAttributeValue("id"));    
+
+    s.setId(sportEl.getAttributeValue("id"));
     s.setEdited(edited);
-    
-    //always take the settings of the file
+
+    // always take the settings of the file
     s.setSettings(RulesXMLHandler.readSettings(sportEl));
     s.setRules(RulesXMLHandler.readRules(sportEl));
     s.setGameEvents(GameEventsXMLHandler.readGameEvent(sportEl, false));
@@ -112,17 +114,16 @@ public class SportXMLHandler {
           File xml = new File(dir.getPath(), "sport.xml");
           if (xml.isFile()) {
             Sport sport = readSportXML(xml, dir.getAbsoluteFile());
-            if (sport != null && !sport.getId().equals(""))
-            {
+            if (sport != null && !sport.getId().equals("")) {
               sports.put(sport.getId(), sport);
-            }              
+            }
           }
         }
         catch (Exception e) {
           ErrorLogger.getLogger().throwing("SportXMLHandler", "readSports", e);
-          ErrorDialog ed = new ErrorDialog(
-              Organizer.getInstance().getMainFrame(),
-              ResourceManager.getText(Text.ERROR), e.toString(), e);
+          ErrorDialog ed = new ErrorDialog(Organizer.getInstance()
+              .getMainFrame(), ResourceManager.getText(Text.ERROR),
+              e.toString(), e);
           ed.setVisible(true);
           e.printStackTrace();
         }

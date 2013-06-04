@@ -7,18 +7,17 @@ import org.jdom.Element;
 
 import com.easytournament.basic.valueholder.Person;
 
-
 public class PersonXMLHandler {
 
   public static void writePerson(Person p, Element playerEl) {
     playerEl.setAttribute("gender", p.getGender() + "");
-    playerEl.setAttribute("prename", p.getPrename());
-    playerEl.setAttribute("name", p.getName());
-    playerEl.setAttribute("address", p.getAddress());
+    playerEl.setAttribute("prename", p.getPrename() == null ? "" : p.getPrename());
+    playerEl.setAttribute("name", p.getName() == null ? "" : p.getName());
+    playerEl.setAttribute("address", p.getAddress() == null ? "" : p.getAddress());
     playerEl.setAttribute("bdate", p.getBdate().getTime() + "");
-    playerEl.setAttribute("email", p.getEmail());
-    playerEl.setAttribute("phone", p.getPhone());
-    playerEl.setAttribute("notes", p.getNotes());
+    playerEl.setAttribute("email", p.getEmail() == null ? "" : p.getEmail());
+    playerEl.setAttribute("phone", p.getPhone() == null ? "" : p.getPhone());
+    playerEl.setAttribute("notes", p.getNotes() == null ? "" : p.getNotes());
     if (p.getPicture() != null) {
       Element picEl = new Element("picture");
       Image logo = p.getPicture().getImage();

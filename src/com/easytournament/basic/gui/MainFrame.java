@@ -80,17 +80,23 @@ public class MainFrame extends JFrame implements PropertyChangeListener {
     else if (evt.getPropertyName() == MainFramePModel.PROPERTY_TITLE) {
       this.setTitle((String)evt.getNewValue());
     }
-    else if (evt.getPropertyName() == MainFramePModel.SET_VAR_TOOLBAR) {
-      this.variableToolbar = ((JToolBar)evt.getNewValue());
-      this.p.add(this.variableToolbar, BorderLayout.CENTER);
-      this.validate();
-      this.repaint();
+    else if (evt.getPropertyName() == MainFramePModel.SET_VAR_TOOLBAR) {      
+      if(this.p != null) {
+        this.variableToolbar = ((JToolBar)evt.getNewValue());
+        if(this.variableToolbar != null) {
+          this.p.add(this.variableToolbar, BorderLayout.CENTER);
+          this.validate();
+          this.repaint();
+        }
+      }
     }
-    else if (evt.getPropertyName() == MainFramePModel.REMOVE_VAT_TOOLBAR) {
-      this.p.remove(this.variableToolbar);
-      this.variableToolbar = null;
-      this.validate();
-      this.repaint();
+    else if (evt.getPropertyName() == MainFramePModel.REMOVE_VAR_TOOLBAR) {
+      if(this.p != null && this.variableToolbar != null) {
+        this.p.remove(this.variableToolbar);
+        this.variableToolbar = null;
+        this.validate();
+        this.repaint();
+      }
     }
     else if (evt.getPropertyName() == MainFramePModel.NAVTREE_VISIBLE) {
       if((Boolean) evt.getNewValue())
