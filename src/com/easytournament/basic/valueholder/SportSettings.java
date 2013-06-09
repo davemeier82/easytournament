@@ -50,6 +50,10 @@ public class SportSettings extends Model {
 
   public SportSettings() {}
   
+  public SportSettings(SportSettings settings) {
+    setSportSettings(settings);
+  }
+  
   public void setSportSettings(SportSettings t){
     if(t != null)
     {

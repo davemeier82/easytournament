@@ -7,6 +7,7 @@ import javax.swing.event.ListDataEvent;
 
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.valueholder.Rule;
+import com.easytournament.basic.valueholder.SportSettings;
 import com.easytournament.basic.valueholder.Team;
 import com.jgoodies.common.collect.ArrayListModel;
 
@@ -108,6 +109,9 @@ public class Group extends AbstractGroup {
    * @param g
    */
   public void setGroup(Group g) {
+    if(g == null)
+      return;
+    
     PropertyChangeListener[] listeners = this.getPropertyChangeListeners()
         .clone();
     for (PropertyChangeListener pcl : this.getPropertyChangeListeners()) {
@@ -128,9 +132,15 @@ public class Group extends AbstractGroup {
       }
     }
     if (this.defaultSettings) {
+      // add reference to default settings
       this.setSettings(g.settings);
     }
+    else if(this.settings == null){
+      // copy settings
+      this.setSettings(new SportSettings(g.settings));
+    }
     else {
+      // copy settings
       this.settings.setSportSettings(g.settings);
     }
     int nPos = this.getNumPositions();
