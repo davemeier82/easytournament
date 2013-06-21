@@ -61,6 +61,7 @@ public class PlayerDialog extends JDialog implements PropertyChangeListener {
     this.pm = pm;
     init();
     this.setLocationRelativeTo(owner);
+    this.pm.addPropertyChangeListener(this);
     this.addWindowListener(new WindowAdapter() {
 
       /* (non-Javadoc)
@@ -80,7 +81,6 @@ public class PlayerDialog extends JDialog implements PropertyChangeListener {
    * Initializes the dialog
    */
   private void init() {
-    this.pm.addPropertyChangeListener(this);
     Container cpane = this.getContentPane();
     cpane.setLayout(new BorderLayout());
 

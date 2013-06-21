@@ -14,6 +14,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -47,6 +48,8 @@ public class HomeScreen extends JPanel implements MouseListener {
     JPanel p = new JPanel();
     p.setOpaque(false);
     p.setPreferredSize(new Dimension(300, 200));
+    JButton wizardButton = new JButton(this.pm.getWizardAction());
+    p.add(wizardButton);
     return p;
   }
 
