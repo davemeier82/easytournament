@@ -32,7 +32,7 @@ public class SettingsRegistry {
   public static void register(Settings s) {
     settings.add(s);
     File settingsFile;
-    boolean writeAccess = Organizer.getInstance().isWriteAccess();
+    boolean writeAccess = Organizer.getInstance().hasWriteAccess();
     if(writeAccess)
     {
       settingsFile = new File("settings.xml");
@@ -74,7 +74,7 @@ public class SettingsRegistry {
   public static void readSettings() {
     
     File settingsFile;
-    boolean writeAccess = Organizer.getInstance().isWriteAccess();
+    boolean writeAccess = Organizer.getInstance().hasWriteAccess();
     if(writeAccess)
     {
       settingsFile = new File("settings.xml");
@@ -124,7 +124,7 @@ public class SettingsRegistry {
       s.save(filetype);
     }
     File settingsFile;
-    if(Organizer.getInstance().isWriteAccess())
+    if(Organizer.getInstance().hasWriteAccess())
     {
       settingsFile = new File("settings.xml");
     }

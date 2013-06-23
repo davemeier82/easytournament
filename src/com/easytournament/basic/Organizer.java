@@ -199,7 +199,7 @@ public class Organizer extends Model implements PropertyChangeListener {
    * Returns true if there are no unsaved changes in the current tournament
    * @return true if there are no unsaved changes in the current tournament
    */
-  public boolean isWriteAccess() {
+  public boolean hasWriteAccess() {
     return this.writeAccess;
   }
 

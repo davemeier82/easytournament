@@ -14,9 +14,7 @@ import com.easytournament.basic.valueholder.HistoryFile;
 import com.easytournament.basic.valueholder.Sport;
 
 
-public class HistoryXMLHandler {
-  
-  
+public class HistoryXMLHandler {  
 
   public static ArrayList<HistoryFile> readHistory(Document doc) {
     ArrayList<HistoryFile> history = new ArrayList<HistoryFile>();

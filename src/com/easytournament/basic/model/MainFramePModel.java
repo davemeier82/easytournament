@@ -85,7 +85,7 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
   }
 
   private void retrieveData() {
-   if(organizer.isWriteAccess()){
+   if(organizer.hasWriteAccess()){
      HISTORY_PATH = new File("history.xml");
    }
    else
@@ -114,7 +114,7 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
         ed.setVisible(true);
         e.printStackTrace();
       }
-    else if (!organizer.isWriteAccess() && !USERDIR.exists())
+    else if (!organizer.hasWriteAccess() && !USERDIR.exists())
       USERDIR.mkdirs();
   }
 

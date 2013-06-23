@@ -9,7 +9,7 @@ import javax.swing.Action;
 import javax.swing.JPanel;
 
 import com.easytournament.basic.gui.wizard.TournamentTypeWizardPanel;
-import com.easytournament.basic.valueholder.TournamentWizardData;
+import com.easytournament.basic.tournamentwizard.TournamentWizardData;
 
 public class TournamentTypeWizardModel extends WizardModel {
 

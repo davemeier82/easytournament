@@ -25,7 +25,7 @@ public class ErrorLogger {
       FileHandler fh;
       try {
         File dir;
-        if(Organizer.getInstance().isWriteAccess())
+        if(Organizer.getInstance().hasWriteAccess())
         {
           dir = new File("logs");          
         }
