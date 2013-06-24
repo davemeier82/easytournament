@@ -8,7 +8,6 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JPanel;
 
-import com.easytournament.basic.gui.wizard.TWizardNTeamsSelectionPanel;
 import com.easytournament.basic.gui.wizard.TWizardTSelectionPanel;
 import com.easytournament.basic.tournamentwizard.TournamentWizardData;
 
