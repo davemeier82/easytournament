@@ -27,11 +27,11 @@
     </group>
     <group name="Semi final 1" id="1" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Winner Semi final 1" id="2" prev="9">
+        <position name="Winner Semi final 1" id="2" prev="6">
           <next id="0" />
         </position>
-        <position name="Loser Semi final 1" id="3" prev="6">
-          <next id="14" />
+        <position name="Loser Semi final 1" id="3" prev="9">
+          <next id="10" />
         </position>
       </positions>
       <settings>
@@ -59,7 +59,7 @@
           <next id="1" />
         </position>
         <position name="Loser Semi final 2" id="5" prev="8">
-          <next id="15" />
+          <next id="11" />
         </position>
       </positions>
       <settings>
@@ -84,7 +84,7 @@
     <group name="Group" id="3" defaultsettings="1" defaultrules="1" type="NORMAL">
       <positions>
         <position name="1. Group" id="6">
-          <next id="3" />
+          <next id="2" />
         </position>
         <position name="2. Group" id="7">
           <next id="4" />
@@ -93,25 +93,25 @@
           <next id="5" />
         </position>
         <position name="4. Group" id="9">
-          <next id="2" />
+          <next id="3" />
         </position>
-        <position name="5. Group" id="30" />
-        <position name="6. Group" id="51" />
-        <position name="7. Group" id="76" />
-        <position name="8. Group" id="105" />
-        <position name="9. Group" id="138" />
-        <position name="10. Group" id="175" />
-        <position name="11. Group" id="216" />
-        <position name="12. Group" id="261" />
-        <position name="13. Group" id="310" />
-        <position name="14. Group" id="363" />
-        <position name="15. Group" id="420" />
-        <position name="16. Group" id="481" />
-        <position name="17. Group" id="546" />
-        <position name="18. Group" id="615" />
-        <position name="19. Group" id="688" />
-        <position name="20. Group" id="765" />
-        <position name="21. Group" id="860" />
+        <position name="5. Group" id="12" />
+        <position name="6. Group" id="33" />
+        <position name="7. Group" id="58" />
+        <position name="8. Group" id="87" />
+        <position name="9. Group" id="120" />
+        <position name="10. Group" id="157" />
+        <position name="11. Group" id="198" />
+        <position name="12. Group" id="243" />
+        <position name="13. Group" id="292" />
+        <position name="14. Group" id="345" />
+        <position name="15. Group" id="402" />
+        <position name="16. Group" id="463" />
+        <position name="17. Group" id="528" />
+        <position name="18. Group" id="597" />
+        <position name="19. Group" id="732" />
+        <position name="20. Group" id="809" />
+        <position name="21. Group" id="890" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -132,10 +132,10 @@
         <rule rule="RANDOM_RULE" ascending="false" />
       </rules>
     </group>
-    <group name="Bronce medal" id="5" defaultsettings="1" defaultrules="1" type="DUELL">
+    <group name="Bronce medal" id="4" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Sieger Bronce medal" id="14" prev="3" />
-        <position name="Verlierer Bronce medal" id="15" prev="5" />
+        <position name="Sieger Bronce medal" id="10" prev="3" />
+        <position name="Verlierer Bronce medal" id="11" prev="5" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -160,14 +160,14 @@
   <gui>
     <cell id="0" parent="none" edge="0" vertex="0" />
     <cell id="1" parent="0" edge="0" vertex="0" />
-    <cell id="27" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="14" targetid="25" edge="1" vertex="0">
+    <cell id="7" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="15" targetid="26" edge="1" vertex="0">
       <geometry>
         <points />
         <source x="900.0" y="180.0" />
         <target x="640.0" y="170.0" />
       </geometry>
     </cell>
-    <cell id="7" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="13" targetid="11" edge="1" vertex="0">
+    <cell id="8" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="14" targetid="12" edge="1" vertex="0">
       <geometry>
         <points>
           <point x="850.0" y="100.0" />
@@ -176,7 +176,7 @@
         <target x="640.0" y="70.0" />
       </geometry>
     </cell>
-    <cell id="8" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="21" targetid="10" edge="1" vertex="0">
+    <cell id="9" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="22" targetid="11" edge="1" vertex="0">
       <geometry>
         <points>
           <point x="260.0" y="120.0" />
@@ -185,68 +185,15 @@
         <target x="480.0" y="70.0" />
       </geometry>
     </cell>
-    <groupcell id="9" parent="1" groupid="0" x="450.0" y="10.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="10" style="team;whiteSpace=wrap" />
+    <groupcell id="10" parent="1" groupid="0" x="450.0" y="10.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
       <positioncell id="11" style="team;whiteSpace=wrap" />
+      <positioncell id="12" style="team;whiteSpace=wrap" />
     </groupcell>
-    <groupcell id="12" parent="1" groupid="2" x="750.0" y="100.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="13" style="team;whiteSpace=wrap" />
+    <groupcell id="13" parent="1" groupid="2" x="750.0" y="110.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
       <positioncell id="14" style="team;whiteSpace=wrap" />
+      <positioncell id="15" style="team;whiteSpace=wrap" />
     </groupcell>
-    <cell id="16" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="228" targetid="22" edge="1" vertex="0">
-      <geometry>
-        <points>
-          <point x="310.0" y="230.0" />
-        </points>
-        <source x="550.0" y="250.0" />
-        <target x="310.0" y="170.0" />
-      </geometry>
-    </cell>
-    <cell id="17" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="229" targetid="13" edge="1" vertex="0">
-      <geometry>
-        <points>
-          <point x="800.0" y="270.0" />
-        </points>
-        <source x="600.0" y="325.0" />
-        <target x="820.0" y="225.0" />
-      </geometry>
-    </cell>
-    <cell id="18" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="231" targetid="21" edge="1" vertex="0">
-      <geometry>
-        <points>
-          <point x="210.0" y="295.0" />
-        </points>
-        <source x="630.0" y="405.0" />
-        <target x="290.0" y="205.0" />
-      </geometry>
-    </cell>
-    <cell id="19" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="230" targetid="14" edge="1" vertex="0">
-      <geometry>
-        <points>
-          <point x="900.0" y="250.0" />
-        </points>
-        <source x="550.0" y="360.0" />
-        <target x="920.0" y="180.0" />
-      </geometry>
-    </cell>
-    <groupcell id="20" parent="1" groupid="1" x="160.0" y="100.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="21" style="team;whiteSpace=wrap" />
-      <positioncell id="22" style="team;whiteSpace=wrap" />
-    </groupcell>
-    <groupcell id="23" parent="1" groupid="5" x="450.0" y="100.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="24" style="team;whiteSpace=wrap" />
-      <positioncell id="25" style="team;whiteSpace=wrap" />
-    </groupcell>
-    <cell id="26" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="22" targetid="24" edge="1" vertex="0">
-      <geometry>
-        <points />
-        <source x="310.0" y="180.0" />
-        <target x="470.0" y="180.0" />
-      </geometry>
-    </cell>
-    <groupcell id="15" parent="1" groupid="3" x="500.0" y="190.0" width="100.0" height="640.0" titleHeight="25.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="228" style="team;whiteSpace=wrap" />
-      <positioncell id="229" style="team;whiteSpace=wrap" />
+    <groupcell id="16" parent="1" groupid="3" x="500.0" y="210.0" width="100.0" height="610.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
       <positioncell id="230" style="team;whiteSpace=wrap" />
       <positioncell id="231" style="team;whiteSpace=wrap" />
       <positioncell id="232" style="team;whiteSpace=wrap" />
@@ -266,7 +213,60 @@
       <positioncell id="246" style="team;whiteSpace=wrap" />
       <positioncell id="247" style="team;whiteSpace=wrap" />
       <positioncell id="248" style="team;whiteSpace=wrap" />
+      <positioncell id="249" style="team;whiteSpace=wrap" />
+      <positioncell id="250" style="team;whiteSpace=wrap" />
     </groupcell>
+    <cell id="18" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="231" targetid="14" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="800.0" y="250.0" />
+        </points>
+        <source x="600.0" y="305.0" />
+        <target x="820.0" y="205.0" />
+      </geometry>
+    </cell>
+    <cell id="20" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="232" targetid="15" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="900.0" y="230.0" />
+        </points>
+        <source x="550.0" y="340.0" />
+        <target x="920.0" y="160.0" />
+      </geometry>
+    </cell>
+    <groupcell id="21" parent="1" groupid="1" x="160.0" y="110.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="22" style="team;whiteSpace=wrap" />
+      <positioncell id="23" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="24" parent="1" groupid="4" x="450.0" y="110.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="25" style="team;whiteSpace=wrap" />
+      <positioncell id="26" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <cell id="27" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="23" targetid="25" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="310.0" y="180.0" />
+        <target x="470.0" y="180.0" />
+      </geometry>
+    </cell>
+    <cell id="28" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="230" targetid="22" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="210.0" y="240.0" />
+        </points>
+        <source x="550.0" y="280.0" />
+        <target x="200.0" y="200.0" />
+      </geometry>
+    </cell>
+    <cell id="29" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="233" targetid="23" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="310.0" y="300.0" />
+        </points>
+        <source x="550.0" y="410.0" />
+        <target x="300.0" y="190.0" />
+      </geometry>
+    </cell>
   </gui>
   <pageformat orientation="0">
     <paper width="595.3322834645669" height="841.9181102362205" imageablex="72.0" imageabley="72.0" imageablewidth="451.3322834645669" imageableheight="697.9181102362205" />
