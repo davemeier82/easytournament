@@ -79,10 +79,10 @@
     </group>
     <group name="Quarter final 1" id="4" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Sieger Quarter final 1" id="14" prev="22">
+        <position name="Winner Quarter final 1" id="14" prev="22">
           <next id="2" />
         </position>
-        <position name="Verlierer Quarter final 1" id="15" prev="29" />
+        <position name="Loser Quarter final 1" id="15" prev="29" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -105,10 +105,10 @@
     </group>
     <group name="Quarter final 2" id="5" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Sieger Quarter final 2" id="16" prev="27">
+        <position name="Winner Quarter final 2" id="16" prev="27">
           <next id="3" />
         </position>
-        <position name="Verlierer Quarter final 2" id="17" prev="24" />
+        <position name="Loser Quarter final 2" id="17" prev="24" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -131,10 +131,10 @@
     </group>
     <group name="Quarter final 3" id="6" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Sieger Quarter final 3" id="18" prev="26">
+        <position name="Winner Quarter final 3" id="18" prev="26">
           <next id="4" />
         </position>
-        <position name="Verlierer Quarter final 3" id="19" prev="25" />
+        <position name="Loser Quarter final 3" id="19" prev="25" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -157,10 +157,10 @@
     </group>
     <group name="Quarter final 4" id="7" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Sieger Quarter final 4" id="20" prev="23">
+        <position name="Winner Quarter final 4" id="20" prev="23">
           <next id="5" />
         </position>
-        <position name="Verlierer Quarter final 4" id="21" prev="28" />
+        <position name="Loser Quarter final 4" id="21" prev="28" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />

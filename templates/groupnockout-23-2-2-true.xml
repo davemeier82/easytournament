@@ -83,8 +83,8 @@
     </group>
     <group name="Bronce medal" id="3" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Sieger Bronce medal" id="6" prev="3" />
-        <position name="Verlierer Bronce medal" id="7" prev="5" />
+        <position name="Winner Bronce medal" id="6" prev="3" />
+        <position name="Loser Bronce medal" id="7" prev="5" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
