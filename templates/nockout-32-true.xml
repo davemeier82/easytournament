@@ -1,0 +1,1249 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="plan" version="0.1.2">
+  <plan>
+    <group name="Final" id="0" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Final" id="0" prev="2" />
+        <position name="Loser Final" id="1" prev="4" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Semi final 1" id="1" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Semi final 1" id="2" prev="6">
+          <next id="0" />
+        </position>
+        <position name="Loser Semi final 1" id="3" prev="8">
+          <next id="62" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Semi final 2" id="2" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Semi final 2" id="4" prev="10">
+          <next id="1" />
+        </position>
+        <position name="Loser Semi final 2" id="5" prev="12">
+          <next id="63" />
+        </position>
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter final 1" id="3" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Quarter final 1" id="6" prev="14">
+          <next id="2" />
+        </position>
+        <position name="Loser Quarter final 1" id="7" prev="16" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter final 2" id="4" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Quarter final 2" id="8" prev="18">
+          <next id="3" />
+        </position>
+        <position name="Loser Quarter final 2" id="9" prev="20" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter final 3" id="5" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Quarter final 3" id="10" prev="22">
+          <next id="4" />
+        </position>
+        <position name="Loser Quarter final 3" id="11" prev="24" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Quarter final 4" id="6" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Quarter final 4" id="12" prev="26">
+          <next id="5" />
+        </position>
+        <position name="Loser Quarter final 4" id="13" prev="28" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 1" id="7" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 1" id="14" prev="30">
+          <next id="6" />
+        </position>
+        <position name="Loser Eighth final 1" id="15" prev="32" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 2" id="8" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 2" id="16" prev="34">
+          <next id="7" />
+        </position>
+        <position name="Loser Eighth final 2" id="17" prev="36" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 3" id="9" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 3" id="18" prev="38">
+          <next id="8" />
+        </position>
+        <position name="Loser Eighth final 3" id="19" prev="40" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 4" id="10" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 4" id="20" prev="42">
+          <next id="9" />
+        </position>
+        <position name="Loser Eighth final 4" id="21" prev="50" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 5" id="11" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 5" id="22" prev="44">
+          <next id="10" />
+        </position>
+        <position name="Loser Eighth final 5" id="23" prev="48" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 6" id="12" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 6" id="24" prev="60">
+          <next id="11" />
+        </position>
+        <position name="Loser Eighth final 6" id="25" prev="46" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 7" id="13" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 7" id="26" prev="54">
+          <next id="12" />
+        </position>
+        <position name="Loser Eighth final 7" id="27" prev="58" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Eighth final 8" id="14" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Eighth final 8" id="28" prev="56">
+          <next id="13" />
+        </position>
+        <position name="Loser Eighth final 8" id="29" prev="52" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Game A" id="15" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Game A" id="30">
+          <next id="14" />
+        </position>
+        <position name="Loser Game A" id="31" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Game B" id="16" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Game B" id="32">
+          <next id="15" />
+        </position>
+        <position name="Loser Game B" id="33" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Game C" id="17" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Game C" id="34">
+          <next id="16" />
+        </position>
+        <position name="Loser Game C" id="35" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Game D" id="18" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Game D" id="36">
+          <next id="17" />
+        </position>
+        <position name="Loser Game D" id="37" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Game E" id="19" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Game E" id="38">
+          <next id="18" />
+        </position>
+        <position name="Loser Game E" id="39" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Game F" id="20" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Game F" id="40">
+          <next id="19" />
+        </position>
+        <position name="Loser Game F" id="41" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group G" id="21" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group G" id="42">
+          <next id="20" />
+        </position>
+        <position name="Loser Group G" id="43" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group I" id="22" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group I" id="44">
+          <next id="22" />
+        </position>
+        <position name="Loser Group I" id="45" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group L" id="23" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group L" id="46">
+          <next id="25" />
+        </position>
+        <position name="Loser Group L" id="47" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group J" id="24" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group J" id="48">
+          <next id="23" />
+        </position>
+        <position name="Loser Group J" id="49" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group H" id="25" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group H" id="50">
+          <next id="21" />
+        </position>
+        <position name="Loser Group H" id="51" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group P" id="26" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group P" id="52">
+          <next id="29" />
+        </position>
+        <position name="Loser Group P" id="53" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group M" id="27" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group M" id="54">
+          <next id="26" />
+        </position>
+        <position name="Loser Group M" id="55" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group O" id="28" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group O" id="56">
+          <next id="28" />
+        </position>
+        <position name="Loser Group O" id="57" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group N" id="29" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group N" id="58">
+          <next id="27" />
+        </position>
+        <position name="Loser Group N" id="59" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Group K" id="30" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Group K" id="60">
+          <next id="24" />
+        </position>
+        <position name="Loser Group K" id="61" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+    <group name="Bronce medal" id="31" defaultsettings="1" defaultrules="1" type="DUELL">
+      <positions>
+        <position name="Winner Bronce medal" id="62" prev="3" />
+        <position name="Loser Bronce medal" id="63" prev="5" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+  </plan>
+  <gui>
+    <cell id="0" parent="none" edge="0" vertex="0" />
+    <cell id="1" parent="0" edge="0" vertex="0" />
+    <cell id="130" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="38" targetid="128" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="780.0" y="170.0" />
+        </points>
+        <source x="930.0" y="190.0" />
+        <target x="640.0" y="180.0" />
+      </geometry>
+    </cell>
+    <cell id="3" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="97" targetid="64" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="440.0" y="700.0" />
+        <target x="440.0" y="520.0" />
+      </geometry>
+    </cell>
+    <cell id="4" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF0000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="109" targetid="65" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="530.0" y="720.0" />
+        </points>
+        <source x="440.0" y="800.0" />
+        <target x="500.0" y="500.0" />
+      </geometry>
+    </cell>
+    <cell id="5" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#006600;endArrow=classic;endSize=5;strokeWidth=2" sourceid="94" targetid="62" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="410.0" y="600.0" />
+        </points>
+        <source x="480.0" y="710.0" />
+        <target x="450.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="6" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#996633;endArrow=classic;endSize=5;strokeWidth=2" sourceid="91" targetid="61" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="340.0" y="490.0" />
+        </points>
+        <source x="480.0" y="610.0" />
+        <target x="340.0" y="410.0" />
+      </geometry>
+    </cell>
+    <cell id="7" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF00FF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="88" targetid="59" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="270.0" y="710.0" />
+        <target x="250.0" y="520.0" />
+      </geometry>
+    </cell>
+    <cell id="8" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#0000FF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="85" targetid="58" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="180.0" y="530.0" />
+        </points>
+        <source x="270.0" y="610.0" />
+        <target x="190.0" y="510.0" />
+      </geometry>
+    </cell>
+    <cell id="9" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF0000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="82" targetid="56" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="160.0" y="630.0" />
+        </points>
+        <source x="60.0" y="710.0" />
+        <target x="140.0" y="380.0" />
+      </geometry>
+    </cell>
+    <cell id="10" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="79" targetid="55" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="60.0" y="610.0" />
+        <target x="60.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="11" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="76" targetid="53" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="1150.0" y="400.0" />
+        </points>
+        <source x="1020.0" y="520.0" />
+        <target x="1110.0" y="300.0" />
+      </geometry>
+    </cell>
+    <cell id="12" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="73" targetid="52" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="980.0" y="360.0" />
+        </points>
+        <source x="930.0" y="430.0" />
+        <target x="970.0" y="300.0" />
+      </geometry>
+    </cell>
+    <cell id="13" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="70" targetid="50" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="870.0" y="380.0" />
+        </points>
+        <source x="730.0" y="520.0" />
+        <target x="820.0" y="300.0" />
+      </geometry>
+    </cell>
+    <cell id="14" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="67" targetid="49" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="700.0" y="350.0" />
+        </points>
+        <source x="650.0" y="430.0" />
+        <target x="700.0" y="290.0" />
+      </geometry>
+    </cell>
+    <cell id="15" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="64" targetid="47" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="560.0" y="400.0" />
+        </points>
+        <source x="430.0" y="520.0" />
+        <target x="490.0" y="300.0" />
+      </geometry>
+    </cell>
+    <cell id="16" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="61" targetid="46" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="390.0" y="360.0" />
+        </points>
+        <source x="370.0" y="430.0" />
+        <target x="420.0" y="300.0" />
+      </geometry>
+    </cell>
+    <cell id="17" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="58" targetid="44" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="280.0" y="390.0" />
+        </points>
+        <source x="340.0" y="430.0" />
+        <target x="290.0" y="290.0" />
+      </geometry>
+    </cell>
+    <cell id="18" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="55" targetid="43" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="110.0" y="350.0" />
+        </points>
+        <source x="100.0" y="430.0" />
+        <target x="120.0" y="300.0" />
+      </geometry>
+    </cell>
+    <cell id="19" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="52" targetid="38" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="1020.0" y="260.0" />
+        </points>
+        <source x="970.0" y="340.0" />
+        <target x="950.0" y="190.0" />
+      </geometry>
+    </cell>
+    <cell id="20" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="49" targetid="37" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="740.0" y="240.0" />
+        </points>
+        <source x="770.0" y="330.0" />
+        <target x="820.0" y="190.0" />
+      </geometry>
+    </cell>
+    <cell id="21" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="46" targetid="41" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="430.0" y="220.0" />
+        </points>
+        <source x="390.0" y="340.0" />
+        <target x="340.0" y="190.0" />
+      </geometry>
+    </cell>
+    <cell id="22" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="43" targetid="40" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="150.0" y="230.0" />
+        </points>
+        <source x="265.0" y="341.0" />
+        <target x="275.0" y="201.0" />
+      </geometry>
+    </cell>
+    <cell id="23" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="37" targetid="35" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="880.0" y="110.0" />
+        </points>
+        <source x="830.0" y="190.0" />
+        <target x="670.0" y="80.0" />
+      </geometry>
+    </cell>
+    <cell id="24" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="40" targetid="34" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="290.0" y="130.0" />
+        </points>
+        <source x="240.0" y="200.0" />
+        <target x="510.0" y="80.0" />
+      </geometry>
+    </cell>
+    <cell id="25" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#0000FF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="100" targetid="67" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="660.0" y="700.0" />
+        <target x="650.0" y="410.0" />
+      </geometry>
+    </cell>
+    <cell id="26" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF00FF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="106" targetid="68" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="750.0" y="720.0" />
+        </points>
+        <source x="660.0" y="800.0" />
+        <target x="740.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="27" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="124" targetid="70" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="770.0" y="550.0" />
+        </points>
+        <source x="850.0" y="600.0" />
+        <target x="730.0" y="500.0" />
+      </geometry>
+    </cell>
+    <cell id="28" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#996633;endArrow=classic;endSize=5;strokeWidth=2" sourceid="103" targetid="71" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="850.0" y="700.0" />
+        <target x="840.0" y="510.0" />
+      </geometry>
+    </cell>
+    <cell id="29" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#006600;endArrow=classic;endSize=5;strokeWidth=2" sourceid="115" targetid="73" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="920.0" y="590.0" />
+        </points>
+        <source x="850.0" y="800.0" />
+        <target x="930.0" y="400.0" />
+      </geometry>
+    </cell>
+    <cell id="30" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#FF0000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="121" targetid="74" edge="1" vertex="0">
+      <geometry>
+        <points />
+        <source x="1040.0" y="600.0" />
+        <target x="1020.0" y="410.0" />
+      </geometry>
+    </cell>
+    <cell id="31" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="118" targetid="76" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="1020.0" y="590.0" />
+        </points>
+        <source x="1040.0" y="700.0" />
+        <target x="1000.0" y="490.0" />
+      </geometry>
+    </cell>
+    <cell id="32" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#0000FF;endArrow=classic;endSize=5;strokeWidth=2" sourceid="112" targetid="77" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="1120.0" y="640.0" />
+        </points>
+        <source x="1040.0" y="800.0" />
+        <target x="1090.0" y="510.0" />
+      </geometry>
+    </cell>
+    <groupcell id="33" parent="1" groupid="0" x="480.0" y="20.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="34" style="team;whiteSpace=wrap" />
+      <positioncell id="35" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="36" parent="1" groupid="2" x="780.0" y="130.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="37" style="team;whiteSpace=wrap" />
+      <positioncell id="38" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="39" parent="1" groupid="1" x="190.0" y="130.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="40" style="team;whiteSpace=wrap" />
+      <positioncell id="41" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="42" parent="1" groupid="3" x="50.0" y="230.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="43" style="team;whiteSpace=wrap" />
+      <positioncell id="44" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="45" parent="1" groupid="4" x="330.0" y="230.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="46" style="team;whiteSpace=wrap" />
+      <positioncell id="47" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="48" parent="1" groupid="5" x="640.0" y="230.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="49" style="team;whiteSpace=wrap" />
+      <positioncell id="50" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="51" parent="1" groupid="6" x="920.0" y="230.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="52" style="team;whiteSpace=wrap" />
+      <positioncell id="53" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="54" parent="1" groupid="7" x="10.0" y="340.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="55" style="team;whiteSpace=wrap" />
+      <positioncell id="56" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="57" parent="1" groupid="8" x="100.0" y="440.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="58" style="team;whiteSpace=wrap" />
+      <positioncell id="59" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="60" parent="1" groupid="9" x="290.0" y="340.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="61" style="team;whiteSpace=wrap" />
+      <positioncell id="62" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="63" parent="1" groupid="10" x="380.0" y="440.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="64" style="team;whiteSpace=wrap" />
+      <positioncell id="65" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="66" parent="1" groupid="11" x="600.0" y="340.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="67" style="team;whiteSpace=wrap" />
+      <positioncell id="68" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="69" parent="1" groupid="12" x="690.0" y="440.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="70" style="team;whiteSpace=wrap" />
+      <positioncell id="71" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="72" parent="1" groupid="13" x="880.0" y="340.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="73" style="team;whiteSpace=wrap" />
+      <positioncell id="74" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="75" parent="1" groupid="14" x="970.0" y="440.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="76" style="team;whiteSpace=wrap" />
+      <positioncell id="77" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="78" parent="1" groupid="15" x="10.0" y="540.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="79" style="team;whiteSpace=wrap" />
+      <positioncell id="80" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="81" parent="1" groupid="16" x="10.0" y="640.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="82" style="team;whiteSpace=wrap" />
+      <positioncell id="83" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="84" parent="1" groupid="17" x="10.0" y="740.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="85" style="team;whiteSpace=wrap" />
+      <positioncell id="86" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="87" parent="1" groupid="18" x="200.0" y="540.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="88" style="team;whiteSpace=wrap" />
+      <positioncell id="89" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="90" parent="1" groupid="19" x="200.0" y="640.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="91" style="team;whiteSpace=wrap" />
+      <positioncell id="92" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="93" parent="1" groupid="20" x="200.0" y="740.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="94" style="team;whiteSpace=wrap" />
+      <positioncell id="95" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="96" parent="1" groupid="21" x="390.0" y="640.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="97" style="team;whiteSpace=wrap" />
+      <positioncell id="98" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="99" parent="1" groupid="22" x="610.0" y="640.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="100" style="team;whiteSpace=wrap" />
+      <positioncell id="101" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="102" parent="1" groupid="23" x="800.0" y="640.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="103" style="team;whiteSpace=wrap" />
+      <positioncell id="104" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="105" parent="1" groupid="24" x="610.0" y="740.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="106" style="team;whiteSpace=wrap" />
+      <positioncell id="107" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="108" parent="1" groupid="25" x="390.0" y="740.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="109" style="team;whiteSpace=wrap" />
+      <positioncell id="110" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="111" parent="1" groupid="26" x="990.0" y="740.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="112" style="team;whiteSpace=wrap" />
+      <positioncell id="113" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="114" parent="1" groupid="27" x="800.0" y="740.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="115" style="team;whiteSpace=wrap" />
+      <positioncell id="116" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="117" parent="1" groupid="28" x="990.0" y="640.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="118" style="team;whiteSpace=wrap" />
+      <positioncell id="119" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="120" parent="1" groupid="29" x="990.0" y="540.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="121" style="team;whiteSpace=wrap" />
+      <positioncell id="122" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="123" parent="1" groupid="30" x="800.0" y="540.0" width="180.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="124" style="team;whiteSpace=wrap" />
+      <positioncell id="125" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <groupcell id="126" parent="1" groupid="31" x="480.0" y="130.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
+      <positioncell id="127" style="team;whiteSpace=wrap" />
+      <positioncell id="128" style="team;whiteSpace=wrap" />
+    </groupcell>
+    <cell id="129" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="41" targetid="127" edge="1" vertex="0">
+      <geometry>
+        <points>
+          <point x="430.0" y="170.0" />
+        </points>
+        <source x="340.0" y="190.0" />
+        <target x="510.0" y="170.0" />
+      </geometry>
+    </cell>
+  </gui>
+  <pageformat orientation="0">
+    <paper width="595.3322834645669" height="841.9181102362205" imageablex="72.0" imageabley="72.0" imageablewidth="451.3322834645669" imageableheight="697.9181102362205" />
+  </pageformat>
+</filetype>
+
