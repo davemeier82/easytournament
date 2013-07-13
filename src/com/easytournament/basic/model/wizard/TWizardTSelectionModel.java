@@ -7,14 +7,31 @@ import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JPanel;
+import javax.swing.ListModel;
 
 import com.easytournament.basic.gui.wizard.TWizardTSelectionPanel;
+import com.easytournament.basic.tournamentwizard.TournamentSelector;
 import com.easytournament.basic.tournamentwizard.TournamentWizardData;
+import com.jgoodies.common.collect.ArrayListModel;
 
 public class TWizardTSelectionModel extends WizardModel {
 
-  private TournamentWizardData tournamentData;
+  public static final String PROPERTY_BRONCEMEDALGAMEENABLED = "bronceMedalGameEnabled";
 
+  public static final String PROPERTY_NGROUPS = "nGroups";
+
+  public static final String PROPERTY_GROUPLIST = "grouplist";
+
+  public static final String PROPERTY_NOCKOUTSTAGESLIST = "nockoutstageslist";
+
+  public static final String PROPERTY_NNOCKOUTSTAGES = "nNockoutStages";
+
+  public static final String PROPERTY_NTEAMS = "nTeams";
+  
+  private TournamentWizardData tournamentData;
+  private ArrayListModel<Integer> nockoutstageslist = new ArrayListModel<Integer>();
+  private ArrayListModel<Integer> grouplist = new ArrayListModel<Integer>();
+  
   public TWizardTSelectionModel(TournamentWizardData data) {
     this.tournamentData = data;
   }
@@ -45,7 +62,7 @@ public class TWizardTSelectionModel extends WizardModel {
 
   @Override
   public JPanel getPanel() {
-    TWizardTSelectionPanel panel = new TWizardTSelectionPanel();
+    TWizardTSelectionPanel panel = new TWizardTSelectionPanel(this);
     return panel;
   }
 
@@ -62,7 +79,7 @@ public class TWizardTSelectionModel extends WizardModel {
 
   @Override
   public WizardModel getPreviousModel() {
-    return new TWizardNTeamsSelectionModel(this.tournamentData);
+    return new TournamentTypeWizardModel(this.tournamentData);
   }
 
   @Override
@@ -75,4 +92,75 @@ public class TWizardTSelectionModel extends WizardModel {
     return true;
   }
 
+  /**
+   * @return the nNockoutStages
+   */
+  public int getnNockoutStages() {
+    return this.tournamentData.getnStages();
+  }
+
+  /**
+   * @param nNockoutStages the nNockoutStages to set
+   */
+  public void setnNockoutStages(int nNockoutStages) {
+    this.tournamentData.setnStages(nNockoutStages);
+    updateGroupsList();
+  }
+
+  /**
+   * @return the nGroups
+   */
+  public int getnGroups() {
+    return this.tournamentData.getnGroups();
+  }
+
+  /**
+   * @param nGroups the nGroups to set
+   */
+  public void setnGroups(int nGroups) {
+    this.tournamentData.setnGroups(nGroups);
+  }
+  
+  public ListModel<Integer> getNockoutstageslist() {
+    updateNockoutList();
+    return nockoutstageslist;
+  }
+
+  private void updateNockoutList() {
+    int nStages = TournamentSelector.getMaxNumberOfNockoutStages(this.getnTeams());
+    nockoutstageslist.clear();
+    for(int i = 1; i <= nStages; i++) {
+      nockoutstageslist.add(i);
+    }
+    this.tournamentData.setnStages(nockoutstageslist.get(nockoutstageslist.getSize()-1));
+  }
+  
+  private void updateGroupsList() {
+    grouplist.clear();
+    grouplist.addAll(TournamentSelector.getNumberOfGroups(this.tournamentData.getnTeams(), this.tournamentData.getnStages()));
+    this.tournamentData.setnGroups(grouplist.get(grouplist.getSize()-1));
+  }
+  
+  public ListModel<Integer> getGrouplist() {
+    updateGroupsList();
+    return grouplist;
+  }
+  
+  public void setBronceMedalGameEnabled(boolean value) {
+    this.tournamentData.setAddBronceMedalGame(value);
+  }
+
+  public boolean isBronceMedalGameEnabled() {
+    return this.tournamentData.isAddBronceMedalGame();
+  }
+  
+  public void setnTeams(int nTeams) {
+    this.tournamentData.setnTeams(nTeams);
+    updateNockoutList();
+    updateGroupsList();
+  }
+  
+  public int getnTeams() {
+    return this.tournamentData.getnTeams();
+  }
 }

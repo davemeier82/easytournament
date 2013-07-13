@@ -9,29 +9,37 @@ import javax.swing.Action;
 import javax.swing.JPanel;
 
 import com.easytournament.basic.gui.wizard.TournamentTypeWizardPanel;
+import com.easytournament.basic.tournamentwizard.TournamentType;
 import com.easytournament.basic.tournamentwizard.TournamentWizardData;
 
 public class TournamentTypeWizardModel extends WizardModel {
 
+  public static final String PROPERTY_NAME = "name";
+  public static final String PROPERTY_TOURNAMENTTYPE = "tournamentType";
+
   private TournamentWizardData tournamentData;
 
-  public TournamentTypeWizardModel(TournamentWizardData data) {
-    this.tournamentData = data;
+  /**
+   * @return the tournamentType
+   */
+  public TournamentType getTournamentType() {
+    return tournamentData.getType();
   }
 
   @Override
   public List<Action> getButtonActions() {
     ArrayList<Action> actionList = new ArrayList<Action>();
-    actionList.add(new AbstractAction("Weiter") {      
+    actionList.add(new AbstractAction("Weiter") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        TournamentTypeWizardModel.this.firePropertyChange(NEXT_MODEL_PRESSED, 0, 1);        
+        TournamentTypeWizardModel.this.firePropertyChange(NEXT_MODEL_PRESSED,
+            0, 1);
       }
     });
-    actionList.add(new AbstractAction("Abbrechen") {      
+    actionList.add(new AbstractAction("Abbrechen") {
       @Override
       public void actionPerformed(ActionEvent e) {
-        TournamentTypeWizardModel.this.firePropertyChange(CANCEL_PRESSED, 0, 1);        
+        TournamentTypeWizardModel.this.firePropertyChange(CANCEL_PRESSED, 0, 1);
       }
     });
     return actionList;
@@ -39,7 +47,7 @@ public class TournamentTypeWizardModel extends WizardModel {
 
   @Override
   public JPanel getPanel() {
-    TournamentTypeWizardPanel panel = new TournamentTypeWizardPanel();
+    TournamentTypeWizardPanel panel = new TournamentTypeWizardPanel(this);
     return panel;
   }
 
@@ -50,7 +58,7 @@ public class TournamentTypeWizardModel extends WizardModel {
 
   @Override
   public WizardModel getNextModel() {
-    return new TWizardNTeamsSelectionModel(this.tournamentData);
+    return new TWizardTSelectionModel(this.tournamentData);
   }
 
   @Override
@@ -66,6 +74,26 @@ public class TournamentTypeWizardModel extends WizardModel {
   @Override
   public boolean hasPreviousModel() {
     return false;
+  }
+
+  /**
+   * @param tournamentType
+   *          the tournamentType to set
+   */
+  public void setTournamentType(TournamentType tournamentType) {
+    this.tournamentData.setType(tournamentType);
+  }
+
+  public TournamentTypeWizardModel(TournamentWizardData data) {
+    this.tournamentData = data;
+  }
+
+  public void setName(String name) {
+    this.tournamentData.setName(name);
+  }
+
+  public String getName() {
+    return this.tournamentData.getName();
   }
 
 }

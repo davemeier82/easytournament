@@ -1,10 +1,20 @@
 package com.easytournament.basic.gui.wizard;
 
+import com.easytournament.basic.model.wizard.TournamentTypeWizardModel;
+import com.easytournament.basic.resources.ResourceManager;
+import com.easytournament.basic.resources.Text;
+import com.easytournament.basic.tournamentwizard.TournamentType;
+import com.easytournament.designer.model.settings.PageSetPModel;
+import com.jgoodies.binding.PresentationModel;
+import com.jgoodies.binding.adapter.BasicComponentFactory;
+import com.jgoodies.binding.beans.Model;
 import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
@@ -13,52 +23,54 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class TournamentTypeWizardPanel extends JPanel {
-  JTextField jtextfield1 = new JTextField();
-  JRadioButton jradiobutton1 = new JRadioButton();
-  ButtonGroup buttongroup1 = new ButtonGroup();
-  JRadioButton jradiobutton2 = new JRadioButton();
-  JRadioButton jradiobutton3 = new JRadioButton();
+  private JTextField jtextfield1;
+  private JRadioButton jradiobutton1;
+  private JRadioButton jradiobutton2;
+  private JRadioButton jradiobutton3;
+  
+  private TournamentTypeWizardModel model;
+  private PresentationModel<Model> pm;
 
   /**
    * Default constructor
    */
-  public TournamentTypeWizardPanel() {
+  public TournamentTypeWizardPanel(TournamentTypeWizardModel model) {
+    this.model = model;
+    this.pm = new PresentationModel<Model>(model);
     initializePanel();
   }
 
   public JPanel createPanel() {
     JPanel jpanel1 = new JPanel();
+    jpanel1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     FormLayout formlayout1 = new FormLayout(
-        "FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:MIN(100DLU;DEFAULT):NONE,FILL:DEFAULT:NONE",
+        "FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:MAX(200PX;DEFAULT):NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
     jpanel1.setLayout(formlayout1);
 
-    JLabel jlabel1 = new JLabel();
-    jlabel1.setText("Name");
-    jpanel1.add(jlabel1, cc.xy(2, 2));
+    JLabel jlabel1 = new JLabel("Name");
+    jpanel1.add(jlabel1, cc.xy(1, 2));
 
-    jpanel1.add(jtextfield1, cc.xy(4, 2));
+    jtextfield1 = BasicComponentFactory.createTextField(pm.getModel(TournamentTypeWizardModel.PROPERTY_NAME));
+    jpanel1.add(jtextfield1, cc.xy(3, 2));
 
-    jradiobutton1.setActionCommand("Nockout");
-    jradiobutton1.setRolloverEnabled(true);
-    jradiobutton1.setText("Nockout");
-    buttongroup1.add(jradiobutton1);
-    jpanel1.add(jradiobutton1, cc.xy(2, 4));
+    jradiobutton1 = BasicComponentFactory.createRadioButton(
+        pm.getModel(TournamentTypeWizardModel.PROPERTY_TOURNAMENTTYPE), TournamentType.NOCKOUT,
+        "Nockout");
+    jpanel1.add(jradiobutton1, cc.xy(1, 4));
+    
+    jradiobutton2 = BasicComponentFactory.createRadioButton(
+        pm.getModel(TournamentTypeWizardModel.PROPERTY_TOURNAMENTTYPE), TournamentType.GROUP_NOCKOUT,
+        "Group + Nockout");
+    jpanel1.add(jradiobutton2, cc.xy(1, 6));
 
-    jradiobutton2.setActionCommand("Group + Nockout");
-    jradiobutton2.setRolloverEnabled(true);
-    jradiobutton2.setText("Group + Nockout");
-    buttongroup1.add(jradiobutton2);
-    jpanel1.add(jradiobutton2, cc.xy(2, 6));
+    jradiobutton3 = BasicComponentFactory.createRadioButton(
+        pm.getModel(TournamentTypeWizardModel.PROPERTY_TOURNAMENTTYPE), TournamentType.GROUP,
+        "One Group / League");
+    jpanel1.add(jradiobutton3, cc.xy(1, 8));
 
-    jradiobutton3.setActionCommand("One Group / League");
-    jradiobutton3.setRolloverEnabled(true);
-    jradiobutton3.setText("One Group / League");
-    buttongroup1.add(jradiobutton3);
-    jpanel1.add(jradiobutton3, cc.xy(2, 8));
-
-    addFillComponents(jpanel1, new int[] {1, 2, 3, 4, 5}, new int[] {1, 2, 3,
+    addFillComponents(jpanel1, new int[] {1, 2, 3}, new int[] {1, 2, 3,
         4, 5, 6, 7, 8, 9});
     return jpanel1;
   }

@@ -17,6 +17,7 @@ public class TournamentWizardModel extends WizardModel implements
   private WizardModel currentModel;
 
   public TournamentWizardModel() {
+    this.data = new TournamentWizardData();
     this.currentModel = new TournamentTypeWizardModel(this.data);
     this.currentModel.addPropertyChangeListener(this);
   }
