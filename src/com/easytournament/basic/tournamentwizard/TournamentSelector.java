@@ -39,7 +39,7 @@ public class TournamentSelector {
 
   public static File getTournamentFile(TournamentType type, int nTeams,
       int nGroups, int nNockout, boolean bronceGame) {
-    String pathname = "/templates/";
+    String pathname = "templates/";
 
     switch (type) {
       case NOCKOUT:

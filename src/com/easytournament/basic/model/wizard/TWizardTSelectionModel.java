@@ -45,10 +45,16 @@ public class TWizardTSelectionModel extends WizardModel {
         TWizardTSelectionModel.this.firePropertyChange(PREVIOUS_MODEL_PRESSED, 0, 1);        
       }
     });
-    actionList.add(new AbstractAction("Weiter") {      
+    actionList.add(new AbstractAction("Spielplan erstellen") {      
       @Override
       public void actionPerformed(ActionEvent e) {
         TWizardTSelectionModel.this.firePropertyChange(NEXT_MODEL_PRESSED, 0, 1);        
+      }
+    });
+    actionList.add(new AbstractAction("Fertig") {      
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        TWizardTSelectionModel.this.firePropertyChange(OK_PRESSED, 0, 1);        
       }
     });
     actionList.add(new AbstractAction("Abbrechen") {      

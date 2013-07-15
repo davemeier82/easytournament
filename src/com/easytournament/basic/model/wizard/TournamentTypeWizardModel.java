@@ -81,7 +81,9 @@ public class TournamentTypeWizardModel extends WizardModel {
    *          the tournamentType to set
    */
   public void setTournamentType(TournamentType tournamentType) {
+    TournamentType oldValue = this.tournamentData.getType();
     this.tournamentData.setType(tournamentType);
+    this.firePropertyChange(PROPERTY_TOURNAMENTTYPE, oldValue, tournamentType);
   }
 
   public TournamentTypeWizardModel(TournamentWizardData data) {

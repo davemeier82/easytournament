@@ -196,45 +196,7 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
               save(this.currentFile);
             break;
           case NEW: {
-            if (organizer.isSaved()) {
-              this.firePropertyChange(NavTreeActions.NEW.name(), "1", "2");
-              if (homeScreenVisible) {
-                this.firePropertyChange(NAVTREE_VISIBLE, false, true);
-                this.homeScreenVisible = false;
-                sModel.setSelectionPath(new TreePath(
-                    ((DefaultMutableTreeNode)root.getFirstChild()).getPath()));
-
-              }              
-            }
-            else {
-              int answer = JOptionPane.showConfirmDialog(
-                  organizer.getMainFrame(),
-                  ResourceManager.getText(Text.SAVE_TOURNAMENT));
-              switch (answer) {
-                case JOptionPane.OK_OPTION:
-                	if (this.currentFile == null) {
-                	  if(!saveAs()) return;
-                	}
-                    else
-                      save(this.currentFile);
-                  // break not needed!!
-                  //$FALL-THROUGH$
-                case JOptionPane.NO_OPTION:
-                  this.firePropertyChange(NavTreeActions.NEW.name(), "1", "2");
-                  if (homeScreenVisible) {
-                    this.firePropertyChange(NAVTREE_VISIBLE, false, true);
-                    this.homeScreenVisible = false;
-                    sModel.setSelectionPath(new TreePath(
-                        ((DefaultMutableTreeNode)root.getFirstChild())
-                            .getPath()));
-                  }
-                  this.currentFile = null;
-                  firePropertyChange(PROPERTY_TITLE, "", MetaInfos.APP_NAME);
-                  break;
-                default:
-                  break;
-              }
-            }
+            newTournament();
             break;
           }
           case CLOSE:
@@ -324,6 +286,48 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
             break;
           default:
         }
+      }
+    }
+  }
+
+  public void newTournament() {
+    if (organizer.isSaved()) {
+      this.firePropertyChange(NavTreeActions.NEW.name(), "1", "2");
+      if (homeScreenVisible) {
+        this.firePropertyChange(NAVTREE_VISIBLE, false, true);
+        this.homeScreenVisible = false;
+        sModel.setSelectionPath(new TreePath(
+            ((DefaultMutableTreeNode)root.getFirstChild()).getPath()));
+
+      }              
+    }
+    else {
+      int answer = JOptionPane.showConfirmDialog(
+          organizer.getMainFrame(),
+          ResourceManager.getText(Text.SAVE_TOURNAMENT));
+      switch (answer) {
+        case JOptionPane.OK_OPTION:
+        	if (this.currentFile == null) {
+        	  if(!saveAs()) return;
+        	}
+            else
+              save(this.currentFile);
+          // break not needed!!
+          //$FALL-THROUGH$
+        case JOptionPane.NO_OPTION:
+          this.firePropertyChange(NavTreeActions.NEW.name(), "1", "2");
+          if (homeScreenVisible) {
+            this.firePropertyChange(NAVTREE_VISIBLE, false, true);
+            this.homeScreenVisible = false;
+            sModel.setSelectionPath(new TreePath(
+                ((DefaultMutableTreeNode)root.getFirstChild())
+                    .getPath()));
+          }
+          this.currentFile = null;
+          firePropertyChange(PROPERTY_TITLE, "", MetaInfos.APP_NAME);
+          return;
+        default:
+          return;
       }
     }
   }

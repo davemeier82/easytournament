@@ -18,6 +18,7 @@ public abstract class WizardModel extends Model {
   public static final String NEXT_MODEL_PRESSED = "nextmodel";
   public static final String PREVIOUS_MODEL_PRESSED = "previousmodel";
   public static final String CANCEL_PRESSED = "cancel";
+  public static final String OK_PRESSED = "ok";
 
   public abstract List<Action> getButtonActions();
   public abstract JPanel getPanel();

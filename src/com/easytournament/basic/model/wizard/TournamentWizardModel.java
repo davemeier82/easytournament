@@ -2,13 +2,25 @@ package com.easytournament.basic.model.wizard;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.Action;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import org.jdom.Document;
+
+import com.easytournament.basic.Organizer;
+import com.easytournament.basic.model.MainFramePModel;
+import com.easytournament.basic.resources.ResourceManager;
+import com.easytournament.basic.resources.Text;
+import com.easytournament.basic.tournamentwizard.TournamentSelector;
 import com.easytournament.basic.tournamentwizard.TournamentWizardData;
+import com.easytournament.basic.valueholder.Tournament;
+import com.easytournament.basic.xml.XMLHandler;
+import com.easytournament.designer.navigationitem.DesignerItem;
 
 public class TournamentWizardModel extends WizardModel implements
     PropertyChangeListener {
@@ -85,9 +97,12 @@ public class TournamentWizardModel extends WizardModel implements
         this.currentModel.removePropertyChangeListener(this);
         this.currentModel = this.currentModel.getNextModel();
         this.currentModel.addPropertyChangeListener(this);
-        this.firePropertyChange(WizardModel.BUTTONS_CHANGED, null, this.getButtonActions());
-        this.firePropertyChange(WizardModel.PANEL_CHANGED, null, this.getPanel());
-        this.firePropertyChange(WizardModel.TITLE_CHANGED, null, this.getTitel());
+        this.firePropertyChange(WizardModel.BUTTONS_CHANGED, null,
+            this.getButtonActions());
+        this.firePropertyChange(WizardModel.PANEL_CHANGED, null,
+            this.getPanel());
+        this.firePropertyChange(WizardModel.TITLE_CHANGED, null,
+            this.getTitel());
       }
     }
     else if (evt.getPropertyName() == WizardModel.PREVIOUS_MODEL_PRESSED) {
@@ -95,12 +110,36 @@ public class TournamentWizardModel extends WizardModel implements
         this.currentModel.removePropertyChangeListener(this);
         this.currentModel = this.currentModel.getPreviousModel();
         this.currentModel.addPropertyChangeListener(this);
-        this.firePropertyChange(WizardModel.BUTTONS_CHANGED, null, this.getButtonActions());
-        this.firePropertyChange(WizardModel.PANEL_CHANGED, null, this.getPanel());
-        this.firePropertyChange(WizardModel.TITLE_CHANGED, null, this.getTitel());
+        this.firePropertyChange(WizardModel.BUTTONS_CHANGED, null,
+            this.getButtonActions());
+        this.firePropertyChange(WizardModel.PANEL_CHANGED, null,
+            this.getPanel());
+        this.firePropertyChange(WizardModel.TITLE_CHANGED, null,
+            this.getTitel());
       }
     }
     else if (evt.getPropertyName() == WizardModel.CANCEL_PRESSED) {
+      this.firePropertyChange(WizardModel.DISPOSE, 0, 1);
+    }
+    else if (evt.getPropertyName() == WizardModel.OK_PRESSED) {
+      MainFramePModel.getInstance().newTournament();
+      Tournament tournement = Organizer.getInstance().getCurrentTournament();
+      tournement.setName(this.data.getName());
+
+      Document doc;
+      try {
+        doc = XMLHandler.openXMLDoc(TournamentSelector.getTournamentFile(
+            this.data.getType(), this.data.getnTeams(), this.data.getnGroups(),
+            this.data.getnStages(), this.data.isAddBronceMedalGame()));
+        DesignerItem.openPlan(doc.getRootElement(), true);
+      }
+      catch (Exception e) {
+        JOptionPane.showMessageDialog(Organizer.getInstance().getMainFrame(),
+            ResourceManager.getText(Text.FILE_NOT_FOUND),
+            ResourceManager.getText(Text.FILE_NOT_FOUND),
+            JOptionPane.ERROR_MESSAGE);
+        return;
+      }
       this.firePropertyChange(WizardModel.DISPOSE, 0, 1);
     }
   }
