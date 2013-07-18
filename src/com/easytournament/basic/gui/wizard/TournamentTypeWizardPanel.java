@@ -44,7 +44,7 @@ public class TournamentTypeWizardPanel extends JPanel {
     JPanel jpanel1 = new JPanel();
     jpanel1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     FormLayout formlayout1 = new FormLayout(
-        "FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:MAX(200PX;DEFAULT):NONE",
+        "FILL:DEFAULT:NONE,FILL:10PX:NONE,FILL:MAX(200PX;DEFAULT):NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
     jpanel1.setLayout(formlayout1);

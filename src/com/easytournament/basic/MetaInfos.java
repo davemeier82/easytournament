@@ -33,11 +33,11 @@ public class MetaInfos {
   /**
    * major version number (new features)
    */
-  public static final int VERSION_MAJOR = 6;
+  public static final int VERSION_MAJOR = 7;
   /**
    * minor version number (bugfixes)
    */
-  public static final int VERSION_MINOR = 8;
+  public static final int VERSION_MINOR = 0;
 
   /**
    * save file application identifier
