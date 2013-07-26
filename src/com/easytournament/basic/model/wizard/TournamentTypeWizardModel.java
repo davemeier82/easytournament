@@ -9,6 +9,8 @@ import javax.swing.Action;
 import javax.swing.JPanel;
 
 import com.easytournament.basic.gui.wizard.TournamentTypeWizardPanel;
+import com.easytournament.basic.resources.ResourceManager;
+import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.tournamentwizard.TournamentType;
 import com.easytournament.basic.tournamentwizard.TournamentWizardData;
 
@@ -23,20 +25,20 @@ public class TournamentTypeWizardModel extends WizardModel {
    * @return the tournamentType
    */
   public TournamentType getTournamentType() {
-    return tournamentData.getType();
+    return this.tournamentData.getType();
   }
 
   @Override
   public List<Action> getButtonActions() {
     ArrayList<Action> actionList = new ArrayList<Action>();
-    actionList.add(new AbstractAction("Weiter") {
+    actionList.add(new AbstractAction(ResourceManager.getText(Text.NEXT)) {
       @Override
       public void actionPerformed(ActionEvent e) {
         TournamentTypeWizardModel.this.firePropertyChange(NEXT_MODEL_PRESSED,
             0, 1);
       }
     });
-    actionList.add(new AbstractAction("Abbrechen") {
+    actionList.add(new AbstractAction(ResourceManager.getText(Text.CANCEL)) {
       @Override
       public void actionPerformed(ActionEvent e) {
         TournamentTypeWizardModel.this.firePropertyChange(CANCEL_PRESSED, 0, 1);
@@ -53,7 +55,7 @@ public class TournamentTypeWizardModel extends WizardModel {
 
   @Override
   public String getTitel() {
-    return "Tournament Type";
+    return ResourceManager.getText(Text.TOURNAMENT_TYPE);
   }
 
   @Override

@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -15,14 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
-import javax.swing.ListModel;
 
-import com.easytournament.basic.model.settings.GeneralSetPModel;
 import com.easytournament.basic.model.wizard.TWizardTSelectionModel;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.tournamentwizard.TournamentSelector;
-import com.easytournament.designer.model.settings.GridSetPModel;
+import com.easytournament.basic.tournamentwizard.TournamentType;
 import com.jgoodies.binding.PresentationModel;
 import com.jgoodies.binding.adapter.BasicComponentFactory;
 import com.jgoodies.binding.adapter.ComboBoxAdapter;
@@ -32,10 +29,12 @@ import com.jgoodies.forms.layout.CellConstraints;
 import com.jgoodies.forms.layout.FormLayout;
 
 public class TWizardTSelectionPanel extends JPanel {
-  JSpinner jspinner1 = new JSpinner();
-  JCheckBox jcheckbox1;
-  JComboBox<Integer> jcombobox1;
-  JComboBox<String> jcombobox2;
+
+  private static final long serialVersionUID = 6108397937456041214L;
+  JSpinner nTeamsSpinner;
+  JCheckBox bronceMedalGameCheckbox;
+  JComboBox<Integer> nGroupsCombobox;
+  JComboBox<String> nKOStagesCombobox;
 
   private TWizardTSelectionModel model;
   private PresentationModel<Model> pm;
@@ -50,82 +49,89 @@ public class TWizardTSelectionPanel extends JPanel {
   }
 
   public JPanel createPanel() {
-    JPanel jpanel1 = new JPanel();
-    jpanel1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    JPanel panel = new JPanel();
+    panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     FormLayout formlayout1 = new FormLayout(
         "FILL:DEFAULT:NONE,FILL:10PX:NONE,FILL:MAX(150PX;DEFAULT):NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE",
         "CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE,CENTER:DEFAULT:NONE");
     CellConstraints cc = new CellConstraints();
-    jpanel1.setLayout(formlayout1);
+    panel.setLayout(formlayout1);
 
-    JLabel jlabel1 = new JLabel("Number of teams");
-    jpanel1.add(jlabel1, cc.xy(1, 2));
+    JLabel nTeamsLabel = new JLabel(ResourceManager.getText(Text.NUM_TEAMS));
+    panel.add(nTeamsLabel, cc.xy(1, 2));
 
-    jspinner1 = new JSpinner(SpinnerAdapterFactory.createNumberAdapter(
+    nTeamsSpinner = new JSpinner(SpinnerAdapterFactory.createNumberAdapter(
         pm.getModel(TWizardTSelectionModel.PROPERTY_NTEAMS), 16,
         TournamentSelector.getMinNumberOfTeams(),
         TournamentSelector.getMaxNumberOfTeams(), 1));
-    jpanel1.add(jspinner1, cc.xy(3, 2));
-
-    jcheckbox1 = BasicComponentFactory.createCheckBox(this.pm
-        .getModel(TWizardTSelectionModel.PROPERTY_BRONCEMEDALGAMEENABLED),
-        "Add Bronce Medal Game");
-    jpanel1.add(jcheckbox1, cc.xywh(1, 4, 3, 1));
-
-    ComboBoxAdapter<Integer> nGroupsAdapter = new ComboBoxAdapter<Integer>(
-        this.model.getGrouplist(),
-        this.pm.getModel(TWizardTSelectionModel.PROPERTY_NGROUPS));
-
-    jcombobox1 = new JComboBox<Integer>(nGroupsAdapter);
-    jpanel1.add(jcombobox1, cc.xy(3, 6));
-
-    JLabel jlabel2 = new JLabel("Number of Nockout stages");
-    jpanel1.add(jlabel2, cc.xy(1, 8));
+    panel.add(nTeamsSpinner, cc.xy(3, 2));
     
-    ComboBoxAdapter<Integer> nNOStagesAdapter = new ComboBoxAdapter<Integer>(
-        this.model.getNockoutstageslist(),
-        this.pm.getModel(TWizardTSelectionModel.PROPERTY_NNOCKOUTSTAGES));
-    
-    jcombobox2 = new JComboBox<String>(nNOStagesAdapter);
-    jcombobox2.setRenderer(new DefaultListCellRenderer() {
-      @Override
-      public Component getListCellRendererComponent(JList list, Object value,
-          int index, boolean isSelected, boolean cellHasFocus) {
-        Integer stage = (Integer)value;
-        String label;
-        switch (stage) {
-          case 1:
-            label = "Final";
-            break;
-          case 2:
-            label = "Semi final";
-            break;
-          case 3:
-            label = "Quarter final";
-            break;
-          case 4:
-            label = "Best 16";
-            break;
-          case 5:
-            label = "Best 32";
-            break;
-          default:
-            label = "";
-        }
+    if (this.model.getTournamentType() == TournamentType.GROUP_KNOCKOUT
+        || this.model.getTournamentType() == TournamentType.KNOCKOUT) {
 
-        return super.getListCellRendererComponent(list, label, index,
-            isSelected, cellHasFocus);
+      bronceMedalGameCheckbox = BasicComponentFactory.createCheckBox(this.pm
+          .getModel(TWizardTSelectionModel.PROPERTY_BRONCEMEDALGAMEENABLED),
+          ResourceManager.getText(Text.ADD_BRONCEMEDAL_GAME));
+      panel.add(bronceMedalGameCheckbox, cc.xywh(1, 4, 3, 1));
+      
+      if (this.model.getTournamentType() == TournamentType.GROUP_KNOCKOUT) {
+        JLabel jlabel3 = new JLabel(ResourceManager.getText(Text.NUM_GROUPS));
+        panel.add(jlabel3, cc.xy(1, 6));
+
+        ComboBoxAdapter<Integer> nGroupsAdapter = new ComboBoxAdapter<Integer>(
+            this.model.getGrouplist(),
+            this.pm.getModel(TWizardTSelectionModel.PROPERTY_NGROUPS));
+
+        nGroupsCombobox = new JComboBox<Integer>(nGroupsAdapter);
+        panel.add(nGroupsCombobox, cc.xy(3, 6));      
+    
+        JLabel nKnockoutStagesLabel = new JLabel(
+            ResourceManager.getText(Text.NUM_KOSTAGES));
+        panel.add(nKnockoutStagesLabel, cc.xy(1, 8));
+  
+        ComboBoxAdapter<Integer> nKOStagesAdapter = new ComboBoxAdapter<Integer>(
+            this.model.getKnockoutstageslist(),
+            this.pm.getModel(TWizardTSelectionModel.PROPERTY_NKNOCKOUTSTAGES));
+  
+        nKOStagesCombobox = new JComboBox<String>(nKOStagesAdapter);
+        nKOStagesCombobox.setRenderer(new DefaultListCellRenderer() {
+          @Override
+          public Component getListCellRendererComponent(JList list, Object value,
+              int index, boolean isSelected, boolean cellHasFocus) {
+            Integer stage = (Integer)value;
+            String label;
+            switch (stage) {
+              case 1:
+                label = ResourceManager.getText(Text.FINAL);
+                break;
+              case 2:
+                label = ResourceManager.getText(Text.SEMI_FINAL);
+                break;
+              case 3:
+                label = ResourceManager.getText(Text.QUARTER_FINAL);
+                break;
+              case 4:
+                label = ResourceManager.getText(Text.BEST16);
+                break;
+              case 5:
+                label = ResourceManager.getText(Text.BEST32);
+                break;
+              default:
+                label = "";
+            }
+  
+            return super.getListCellRendererComponent(list, label, index,
+                isSelected, cellHasFocus);
+          }
+        });
+      
+        panel.add(nKOStagesCombobox, cc.xy(3, 8));
       }
-    });
+    }
 
-    jpanel1.add(jcombobox2, cc.xy(3, 8));
-
-    JLabel jlabel3 = new JLabel("Number of Groups");
-    jpanel1.add(jlabel3, cc.xy(1, 6));
-
-    addFillComponents(jpanel1, new int[] {1, 2, 3, 4, 5, 6, 7, 8}, new int[] {
-        1, 2, 3, 4, 5, 6, 7, 8, 9});
-    return jpanel1;
+    addFillComponents(panel, new int[] {1, 2, 3, 4, 5, 6, 7, 8}, new int[] {1,
+        2, 3, 4, 5, 6, 7, 8, 9});
+    return panel;
   }
 
   /**

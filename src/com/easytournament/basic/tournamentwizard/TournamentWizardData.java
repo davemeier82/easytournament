@@ -3,7 +3,7 @@ package com.easytournament.basic.tournamentwizard;
 public class TournamentWizardData {
 
   private String name = "";
-  private TournamentType type = TournamentType.GROUP_NOCKOUT;
+  private TournamentType type = TournamentType.GROUP_KNOCKOUT;
   private int nTeams = 16;
   private boolean addBronceMedalGame;
   private int nGroups = 1;

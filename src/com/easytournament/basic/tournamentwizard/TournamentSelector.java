@@ -42,11 +42,11 @@ public class TournamentSelector {
     String pathname = "templates/";
 
     switch (type) {
-      case NOCKOUT:
-        pathname += "nockout-" + nTeams + "-" + bronceGame + ".xml";
+      case KNOCKOUT:
+        pathname += "knockout-" + nTeams + "-" + bronceGame + ".xml";
         break;
-      case GROUP_NOCKOUT:
-        pathname += "groupnockout-" + nTeams + "-" + nGroups + "-" + nNockout
+      case GROUP_KNOCKOUT:
+        pathname += "groupknockout-" + nTeams + "-" + nGroups + "-" + nNockout
             + "-" + bronceGame + ".xml";
         break;
       case GROUP:

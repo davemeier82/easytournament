@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<filetype application="easytournament" type="plan" version="0.1.2">
+  <plan>
+    <group name="Group" id="0" defaultsettings="1" defaultrules="1" type="NORMAL">
+      <positions>
+        <position name="1. Group" id="0" />
+        <position name="2. Group" id="1" />
+        <position name="3. Group" id="2" />
+        <position name="4. Group" id="3" />
+        <position name="5. Group" id="8" />
+        <position name="6. Group" id="29" />
+        <position name="7. Group" id="54" />
+        <position name="8. Group" id="83" />
+        <position name="9. Group" id="116" />
+        <position name="10. Group" id="153" />
+        <position name="11. Group" id="194" />
+        <position name="12. Group" id="239" />
+        <position name="13. Group" id="288" />
+        <position name="14. Group" id="341" />
+        <position name="15. Group" id="398" />
+        <position name="16. Group" id="459" />
+        <position name="17. Group" id="524" />
+        <position name="18. Group" id="593" />
+        <position name="19. Group" id="666" />
+        <position name="20. Group" id="743" />
+        <position name="21. Group" id="824" />
+        <position name="22. Group" id="909" />
+        <position name="23. Group" id="998" />
+        <position name="24. Group" id="1091" />
+        <position name="25. Group" id="1188" />
+        <position name="26. Group" id="1289" />
+        <position name="27. Group" id="1394" />
+        <position name="28. Group" id="1503" />
+        <position name="29. Group" id="1616" />
+        <position name="30. Group" id="1733" />
+        <position name="31. Group" id="1854" />
+        <position name="32. Group" id="1979" />
+      </positions>
+      <settings>
+        <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
+        <points>
+          <win home="3" away="3" />
+          <draw home="1" away="1" />
+          <defeat home="0" away="0" />
+          <winot home="3" away="3" />
+          <drawot home="1" away="1" />
+          <defeatot home="0" away="0" />
+          <winp home="3" away="3" />
+          <defeatp home="0" away="0" />
+        </points>
+      </settings>
+      <rules>
+        <rule rule="POINTS_RULE" ascending="false" />
+        <rule rule="GOALDIFF_RULE" ascending="false" />
+        <rule rule="RANDOM_RULE" ascending="false" />
+      </rules>
+    </group>
+  </plan>
+  <gui>
+    <cell id="0" parent="none" edge="0" vertex="0" />
+    <cell id="1" parent="0" edge="0" vertex="0" />
+    <groupcell id="2" parent="1" groupid="0" x="510.0" y="10.0" width="100.0" height="820.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+      <positioncell id="493" style="team;whiteSpace=wrap" />
+      <positioncell id="494" style="team;whiteSpace=wrap" />
+      <positioncell id="495" style="team;whiteSpace=wrap" />
+      <positioncell id="496" style="team;whiteSpace=wrap" />
+      <positioncell id="497" style="team;whiteSpace=wrap" />
+      <positioncell id="498" style="team;whiteSpace=wrap" />
+      <positioncell id="499" style="team;whiteSpace=wrap" />
+      <positioncell id="500" style="team;whiteSpace=wrap" />
+      <positioncell id="501" style="team;whiteSpace=wrap" />
+      <positioncell id="502" style="team;whiteSpace=wrap" />
+      <positioncell id="503" style="team;whiteSpace=wrap" />
+      <positioncell id="504" style="team;whiteSpace=wrap" />
+      <positioncell id="505" style="team;whiteSpace=wrap" />
+      <positioncell id="506" style="team;whiteSpace=wrap" />
+      <positioncell id="507" style="team;whiteSpace=wrap" />
+      <positioncell id="508" style="team;whiteSpace=wrap" />
+      <positioncell id="509" style="team;whiteSpace=wrap" />
+      <positioncell id="510" style="team;whiteSpace=wrap" />
+      <positioncell id="511" style="team;whiteSpace=wrap" />
+      <positioncell id="512" style="team;whiteSpace=wrap" />
+      <positioncell id="513" style="team;whiteSpace=wrap" />
+      <positioncell id="514" style="team;whiteSpace=wrap" />
+      <positioncell id="515" style="team;whiteSpace=wrap" />
+      <positioncell id="516" style="team;whiteSpace=wrap" />
+      <positioncell id="517" style="team;whiteSpace=wrap" />
+      <positioncell id="518" style="team;whiteSpace=wrap" />
+      <positioncell id="519" style="team;whiteSpace=wrap" />
+      <positioncell id="520" style="team;whiteSpace=wrap" />
+      <positioncell id="521" style="team;whiteSpace=wrap" />
+      <positioncell id="522" style="team;whiteSpace=wrap" />
+      <positioncell id="523" style="team;whiteSpace=wrap" />
+      <positioncell id="524" style="team;whiteSpace=wrap" />
+    </groupcell>
+  </gui>
+  <pageformat orientation="0">
+    <paper width="595.4456692913386" height="841.5496062992125" imageablex="72.0" imageabley="72.0" imageablewidth="451.44566929133856" imageableheight="697.5496062992125" />
+  </pageformat>
+</filetype>
+

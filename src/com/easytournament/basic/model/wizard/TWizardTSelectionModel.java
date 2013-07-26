@@ -10,7 +10,10 @@ import javax.swing.JPanel;
 import javax.swing.ListModel;
 
 import com.easytournament.basic.gui.wizard.TWizardTSelectionPanel;
+import com.easytournament.basic.resources.ResourceManager;
+import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.tournamentwizard.TournamentSelector;
+import com.easytournament.basic.tournamentwizard.TournamentType;
 import com.easytournament.basic.tournamentwizard.TournamentWizardData;
 import com.jgoodies.common.collect.ArrayListModel;
 
@@ -22,14 +25,14 @@ public class TWizardTSelectionModel extends WizardModel {
 
   public static final String PROPERTY_GROUPLIST = "grouplist";
 
-  public static final String PROPERTY_NOCKOUTSTAGESLIST = "nockoutstageslist";
+  public static final String PROPERTY_KNOCKOUTSTAGESLIST = "knockoutstageslist";
 
-  public static final String PROPERTY_NNOCKOUTSTAGES = "nNockoutStages";
+  public static final String PROPERTY_NKNOCKOUTSTAGES = "nKnockoutStages";
 
   public static final String PROPERTY_NTEAMS = "nTeams";
   
   private TournamentWizardData tournamentData;
-  private ArrayListModel<Integer> nockoutstageslist = new ArrayListModel<Integer>();
+  private ArrayListModel<Integer> knockoutstageslist = new ArrayListModel<Integer>();
   private ArrayListModel<Integer> grouplist = new ArrayListModel<Integer>();
   
   public TWizardTSelectionModel(TournamentWizardData data) {
@@ -39,25 +42,19 @@ public class TWizardTSelectionModel extends WizardModel {
   @Override
   public List<Action> getButtonActions() {
     ArrayList<Action> actionList = new ArrayList<Action>();
-    actionList.add(new AbstractAction("Zurück") {      
+    actionList.add(new AbstractAction(ResourceManager.getText(Text.BACK)) {      
       @Override
       public void actionPerformed(ActionEvent e) {
         TWizardTSelectionModel.this.firePropertyChange(PREVIOUS_MODEL_PRESSED, 0, 1);        
       }
     });
-    actionList.add(new AbstractAction("Spielplan erstellen") {      
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        TWizardTSelectionModel.this.firePropertyChange(NEXT_MODEL_PRESSED, 0, 1);        
-      }
-    });
-    actionList.add(new AbstractAction("Fertig") {      
+    actionList.add(new AbstractAction(ResourceManager.getText(Text.APPLY)) {      
       @Override
       public void actionPerformed(ActionEvent e) {
         TWizardTSelectionModel.this.firePropertyChange(OK_PRESSED, 0, 1);        
       }
     });
-    actionList.add(new AbstractAction("Abbrechen") {      
+    actionList.add(new AbstractAction(ResourceManager.getText(Text.CANCEL)) {      
       @Override
       public void actionPerformed(ActionEvent e) {
         TWizardTSelectionModel.this.firePropertyChange(CANCEL_PRESSED, 0, 1);        
@@ -74,7 +71,7 @@ public class TWizardTSelectionModel extends WizardModel {
 
   @Override
   public String getTitel() {
-    return "Tournament Selection";
+    return ResourceManager.getText(Text.TOURNAMENT_SELECTION);
   }
 
   @Override
@@ -101,15 +98,15 @@ public class TWizardTSelectionModel extends WizardModel {
   /**
    * @return the nNockoutStages
    */
-  public int getnNockoutStages() {
+  public int getnKnockoutStages() {
     return this.tournamentData.getnStages();
   }
 
   /**
-   * @param nNockoutStages the nNockoutStages to set
+   * @param nKnockoutStages the nNockoutStages to set
    */
-  public void setnNockoutStages(int nNockoutStages) {
-    this.tournamentData.setnStages(nNockoutStages);
+  public void setnKnockoutStages(int nKnockoutStages) {
+    this.tournamentData.setnStages(nKnockoutStages);
     updateGroupsList();
   }
 
@@ -127,18 +124,18 @@ public class TWizardTSelectionModel extends WizardModel {
     this.tournamentData.setnGroups(nGroups);
   }
   
-  public ListModel<Integer> getNockoutstageslist() {
-    updateNockoutList();
-    return nockoutstageslist;
+  public ListModel<Integer> getKnockoutstageslist() {
+    updateKnockoutList();
+    return knockoutstageslist;
   }
 
-  private void updateNockoutList() {
+  private void updateKnockoutList() {
     int nStages = TournamentSelector.getMaxNumberOfNockoutStages(this.getnTeams());
-    nockoutstageslist.clear();
+    knockoutstageslist.clear();
     for(int i = 1; i <= nStages; i++) {
-      nockoutstageslist.add(i);
+      knockoutstageslist.add(i);
     }
-    this.tournamentData.setnStages(nockoutstageslist.get(nockoutstageslist.getSize()-1));
+    this.tournamentData.setnStages(knockoutstageslist.get(knockoutstageslist.getSize()-1));
   }
   
   private void updateGroupsList() {
@@ -162,11 +159,15 @@ public class TWizardTSelectionModel extends WizardModel {
   
   public void setnTeams(int nTeams) {
     this.tournamentData.setnTeams(nTeams);
-    updateNockoutList();
+    updateKnockoutList();
     updateGroupsList();
   }
   
   public int getnTeams() {
     return this.tournamentData.getnTeams();
+  }
+  
+  public TournamentType getTournamentType() {
+    return this.tournamentData.getType();
   }
 }

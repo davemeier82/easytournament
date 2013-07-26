@@ -13,6 +13,8 @@ import javax.swing.JPanel;
 import org.jdom.Document;
 
 import com.easytournament.basic.Organizer;
+import com.easytournament.basic.gui.dialog.ErrorDialog;
+import com.easytournament.basic.logging.ErrorLogger;
 import com.easytournament.basic.model.MainFramePModel;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
@@ -21,6 +23,10 @@ import com.easytournament.basic.tournamentwizard.TournamentWizardData;
 import com.easytournament.basic.valueholder.Tournament;
 import com.easytournament.basic.xml.XMLHandler;
 import com.easytournament.designer.navigationitem.DesignerItem;
+import com.easytournament.designer.valueholder.AbstractGroup;
+import com.easytournament.designer.valueholder.DuellGroup;
+import com.easytournament.designer.valueholder.Group;
+import com.jgoodies.common.collect.ArrayListModel;
 
 public class TournamentWizardModel extends WizardModel implements
     PropertyChangeListener {
@@ -132,12 +138,39 @@ public class TournamentWizardModel extends WizardModel implements
             this.data.getType(), this.data.getnTeams(), this.data.getnGroups(),
             this.data.getnStages(), this.data.isAddBronceMedalGame()));
         DesignerItem.openPlan(doc.getRootElement(), true);
+        ArrayListModel<AbstractGroup> groups = tournement.getPlan().getGroups();
+        String groupName = ResourceManager.getText(Text.GROUP);
+        for (AbstractGroup g : groups) {
+          if (g instanceof Group) {
+            Group group = (Group) g;
+            group.setName(groupName);
+          }
+          else {
+            DuellGroup group = (DuellGroup) g;
+            if(group.getName().startsWith("Final")){
+              group.setName(group.getName().replaceFirst("Final", ResourceManager.getText(Text.FINAL)));
+            }
+            else if(group.getName().startsWith("Semi final")){
+              group.setName(group.getName().replaceFirst("Semi final", ResourceManager.getText(Text.SEMI_FINAL)));
+            }
+            else if(group.getName().startsWith("Quarter final")){
+              group.setName(group.getName().replaceFirst("Quarter final", ResourceManager.getText(Text.QUARTER_FINAL)));
+            }
+            else if(group.getName().startsWith("Eighth final")){
+              group.setName(group.getName().replaceFirst("Eighth final", ResourceManager.getText(Text.BEST16)));
+            }
+            else if(group.getName().startsWith("Game")){
+              group.setName(group.getName().replaceFirst("Game", ResourceManager.getText(Text.BEST32_GAME)));
+            }
+          }
+        }
       }
       catch (Exception e) {
-        JOptionPane.showMessageDialog(Organizer.getInstance().getMainFrame(),
-            ResourceManager.getText(Text.FILE_NOT_FOUND),
-            ResourceManager.getText(Text.FILE_NOT_FOUND),
-            JOptionPane.ERROR_MESSAGE);
+        ErrorLogger.getLogger().throwing("XMLHandler", "openXMLDoc", e);
+        ErrorDialog ed = new ErrorDialog(Organizer.getInstance().getMainFrame(),
+            ResourceManager.getText(Text.ERROR), e.toString(), e);
+        ed.setVisible(true);
+        e.printStackTrace();
         return;
       }
       this.firePropertyChange(WizardModel.DISPOSE, 0, 1);

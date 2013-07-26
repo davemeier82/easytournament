@@ -58,7 +58,7 @@ public class WizardDialog extends JDialog implements PropertyChangeListener {
     this.mainpanel = this.pm.getPanel();
     cpane.add(this.mainpanel, BorderLayout.CENTER);
     cpane.add(getButtonPanel(), BorderLayout.SOUTH);
-    this.setSize(800,600);
+    this.setSize(400,300);
   }
 
   private Component getButtonPanel() {
