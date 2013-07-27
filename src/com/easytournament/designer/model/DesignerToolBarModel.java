@@ -10,9 +10,14 @@ import java.util.List;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
+import com.easytournament.basic.Organizer;
 import com.easytournament.basic.action.MainMenuAction;
 import com.easytournament.basic.gui.MainMenuObservable;
+import com.easytournament.basic.gui.wizard.WizardDialog;
+import com.easytournament.basic.model.wizard.TournamentWizardModel;
 import com.easytournament.basic.resources.Icon;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
@@ -33,6 +38,8 @@ public class DesignerToolBarModel extends Model implements
   public static final String PROPERTY_FONTTYPE = "fontType";
 
   public static final int CHANGE_VIEW_ACTION = 0;
+
+  public static final int TOURNAMENT_ASSISTANT_ACTION = 1;
 
   private List<String> fonts = new ArrayList<String>();
 
@@ -89,6 +96,24 @@ public class DesignerToolBarModel extends Model implements
         act.putValue(Action.SHORT_DESCRIPTION,
             ResourceManager.getText(Text.SWITCH_TEAM_DESIGN_VIEW));
         return act;
+      case TOURNAMENT_ASSISTANT_ACTION:
+        AbstractAction tact = new AbstractAction("", ResourceManager.getIcon(Icon.ASSISTANT_ICON_SMALL)) {
+          
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            int answer = JOptionPane.showConfirmDialog(Organizer.getInstance()
+                .getMainFrame(), ResourceManager.getText(Text.LOOSE_DIAG_DATA_MSG),
+                ResourceManager.getText(Text.LOOSE_DATA), JOptionPane.WARNING_MESSAGE);
+            if (answer != JFileChooser.APPROVE_OPTION)
+              return;
+            
+            WizardDialog wizard = new WizardDialog(null, new TournamentWizardModel(false), true);
+            wizard.setVisible(true);
+          }
+        };
+        tact.putValue(Action.SHORT_DESCRIPTION,
+            ResourceManager.getText(Text.TOURNAMENT_ASSISTANT));
+        return tact;
     }
     return null;
   }

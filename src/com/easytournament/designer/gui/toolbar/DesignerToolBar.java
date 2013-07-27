@@ -79,6 +79,9 @@ public class DesignerToolBar extends JToolBar {
     JButton changeViewBtn = new JButton(pm.getAction(DesignerToolBarModel.CHANGE_VIEW_ACTION));
     changeViewBtn.setFocusPainted(false);
     this.add(changeViewBtn);
+    JButton assistantBtn = new JButton(pm.getAction(DesignerToolBarModel.TOURNAMENT_ASSISTANT_ACTION));
+    assistantBtn.setFocusPainted(false);
+    this.add(assistantBtn);
   }
 
 }

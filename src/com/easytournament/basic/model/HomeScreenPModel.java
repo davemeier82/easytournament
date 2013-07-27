@@ -15,6 +15,9 @@ import com.easytournament.basic.gui.wizard.WizardDialog;
 import com.easytournament.basic.model.tablemodel.HistoryTableModel;
 import com.easytournament.basic.model.wizard.TournamentWizardModel;
 import com.easytournament.basic.model.wizard.WizardModel;
+import com.easytournament.basic.resources.Icon;
+import com.easytournament.basic.resources.ResourceManager;
+import com.easytournament.basic.resources.Text;
 import com.jgoodies.binding.beans.Model;
 
 public class HomeScreenPModel extends Model {
@@ -40,14 +43,17 @@ public class HomeScreenPModel extends Model {
   }
   
   public Action getWizardAction() {
-    return new AbstractAction("Wizard") {
+    AbstractAction act = new AbstractAction("", ResourceManager.getIcon(Icon.ASSISTANT_ICON_BIG)) {
       
       @Override
       public void actionPerformed(ActionEvent e) { 
-        WizardDialog wizard = new WizardDialog(null, new TournamentWizardModel(), true);
+        WizardDialog wizard = new WizardDialog(null, new TournamentWizardModel(true), true);
         wizard.setVisible(true);
       }
     };
+    act.putValue(Action.SHORT_DESCRIPTION,
+        ResourceManager.getText(Text.TOURNAMENT_ASSISTANT));
+    return act;
   }
 
 }

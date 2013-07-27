@@ -30,11 +30,13 @@ public class TournamentTypeWizardPanel extends JPanel {
   private JRadioButton leagueRadiobutton;
 
   private PresentationModel<Model> pm;
+  private TournamentTypeWizardModel model;
 
   /**
    * Default constructor
    */
   public TournamentTypeWizardPanel(TournamentTypeWizardModel model) {
+    this.model = model;
     this.pm = new PresentationModel<Model>(model);
     initializePanel();
   }
@@ -48,12 +50,14 @@ public class TournamentTypeWizardPanel extends JPanel {
     CellConstraints cc = new CellConstraints();
     panel.setLayout(formlayout1);
 
-    JLabel nameLabel = new JLabel(ResourceManager.getText(Text.NAME));
-    panel.add(nameLabel, cc.xy(1, 2));
+    if (this.model.isnewTournament()) {
+      JLabel nameLabel = new JLabel(ResourceManager.getText(Text.NAME));
+      panel.add(nameLabel, cc.xy(1, 2));
 
-    this.nameTextfield = BasicComponentFactory.createTextField(this.pm
-        .getModel(TournamentTypeWizardModel.PROPERTY_NAME));
-    panel.add(this.nameTextfield, cc.xy(3, 2));
+      this.nameTextfield = BasicComponentFactory.createTextField(this.pm
+          .getModel(TournamentTypeWizardModel.PROPERTY_NAME));
+      panel.add(this.nameTextfield, cc.xy(3, 2));
+    }
 
     this.nockoutRadiobutton = BasicComponentFactory.createRadioButton(
         this.pm.getModel(TournamentTypeWizardModel.PROPERTY_TOURNAMENTTYPE),
@@ -71,8 +75,8 @@ public class TournamentTypeWizardPanel extends JPanel {
         TournamentType.GROUP, ResourceManager.getText(Text.GROUP_LEAGUE));
     panel.add(this.leagueRadiobutton, cc.xy(1, 8));
 
-    addFillComponents(panel, new int[] {1, 2, 3}, new int[] {1, 2, 3, 4, 5,
-        6, 7, 8, 9});
+    addFillComponents(panel, new int[] {1, 2, 3}, new int[] {1, 2, 3, 4, 5, 6,
+        7, 8, 9});
     return panel;
   }
 

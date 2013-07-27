@@ -47,7 +47,7 @@ public class HomeScreen extends JPanel implements MouseListener {
   private Component getTopPanel() {
     JPanel p = new JPanel();
     p.setOpaque(false);
-    p.setPreferredSize(new Dimension(300, 200));
+    p.setPreferredSize(new Dimension(400, 350));
     JButton wizardButton = new JButton(this.pm.getWizardAction());
     p.add(wizardButton);
     return p;

@@ -8,6 +8,11 @@ public class TournamentWizardData {
   private boolean addBronceMedalGame;
   private int nGroups = 1;
   private int nStages = 1;
+  private boolean newTounament;
+
+  public TournamentWizardData(boolean newTounament) {
+    this.newTounament = newTounament;
+  }
 
   /**
    * @return the type
@@ -96,6 +101,13 @@ public class TournamentWizardData {
    */
   public void setName(String name) {
     this.name = name;
+  }
+
+  /**
+   * @return the newTounament
+   */
+  public boolean isNewTounament() {
+    return newTounament;
   }
 
 }

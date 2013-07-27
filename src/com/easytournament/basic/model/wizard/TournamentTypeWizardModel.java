@@ -18,15 +18,8 @@ public class TournamentTypeWizardModel extends WizardModel {
 
   public static final String PROPERTY_NAME = "name";
   public static final String PROPERTY_TOURNAMENTTYPE = "tournamentType";
-
+  
   private TournamentWizardData tournamentData;
-
-  /**
-   * @return the tournamentType
-   */
-  public TournamentType getTournamentType() {
-    return this.tournamentData.getType();
-  }
 
   @Override
   public List<Action> getButtonActions() {
@@ -79,6 +72,13 @@ public class TournamentTypeWizardModel extends WizardModel {
   }
 
   /**
+   * @return the tournamentType
+   */
+  public TournamentType getTournamentType() {
+    return this.tournamentData.getType();
+  }
+
+  /**
    * @param tournamentType
    *          the tournamentType to set
    */
@@ -98,6 +98,10 @@ public class TournamentTypeWizardModel extends WizardModel {
 
   public String getName() {
     return this.tournamentData.getName();
+  }
+  
+  public boolean isnewTournament() {
+    return this.tournamentData.isNewTounament();
   }
 
 }

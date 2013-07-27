@@ -20,6 +20,7 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.tournamentwizard.TournamentSelector;
 import com.easytournament.basic.tournamentwizard.TournamentWizardData;
+import com.easytournament.basic.valueholder.Team;
 import com.easytournament.basic.valueholder.Tournament;
 import com.easytournament.basic.xml.XMLHandler;
 import com.easytournament.designer.navigationitem.DesignerItem;
@@ -33,11 +34,13 @@ public class TournamentWizardModel extends WizardModel implements
 
   private TournamentWizardData data;
   private WizardModel currentModel;
+  private boolean newTournament;
 
-  public TournamentWizardModel() {
-    this.data = new TournamentWizardData();
+  public TournamentWizardModel(boolean newTournament) {
+    this.data = new TournamentWizardData(newTournament);
     this.currentModel = new TournamentTypeWizardModel(this.data);
     this.currentModel.addPropertyChangeListener(this);
+    this.newTournament = newTournament;
   }
 
   @Override
@@ -128,9 +131,22 @@ public class TournamentWizardModel extends WizardModel implements
       this.firePropertyChange(WizardModel.DISPOSE, 0, 1);
     }
     else if (evt.getPropertyName() == WizardModel.OK_PRESSED) {
-      MainFramePModel.getInstance().newTournament();
+      if (newTournament) {
+        MainFramePModel.getInstance().newTournament();
+      }
       Tournament tournement = Organizer.getInstance().getCurrentTournament();
-      tournement.setName(this.data.getName());
+
+      if (newTournament) {
+        tournement.setName(this.data.getName());
+      }
+      else {
+        tournement.setUnassignedteams(tournement.getTeams());
+        for (Team tm : tournement.getTeams()) {
+          tm.clearGroups();
+        }
+        tournement.getPlan().getGroups().clear();
+        tournement.getSchedules().clear();
+      }
 
       Document doc;
       try {
@@ -142,35 +158,42 @@ public class TournamentWizardModel extends WizardModel implements
         String groupName = ResourceManager.getText(Text.GROUP);
         for (AbstractGroup g : groups) {
           if (g instanceof Group) {
-            Group group = (Group) g;
+            Group group = (Group)g;
             group.setName(group.getName().replaceFirst("Group", groupName));
           }
           else {
-            DuellGroup group = (DuellGroup) g;
-            if(group.getName().startsWith("Final")){
-              group.setName(group.getName().replaceFirst("Final", ResourceManager.getText(Text.FINAL)));
+            DuellGroup group = (DuellGroup)g;
+            if (group.getName().startsWith("Final")) {
+              group.setName(group.getName().replaceFirst("Final",
+                  ResourceManager.getText(Text.FINAL)));
             }
-            else if(group.getName().startsWith("Semi final")){
-              group.setName(group.getName().replaceFirst("Semi final", ResourceManager.getText(Text.SEMI_FINAL)));
+            else if (group.getName().startsWith("Semi final")) {
+              group.setName(group.getName().replaceFirst("Semi final",
+                  ResourceManager.getText(Text.SEMI_FINAL)));
             }
-            else if(group.getName().startsWith("Quarter final")){
-              group.setName(group.getName().replaceFirst("Quarter final", ResourceManager.getText(Text.QUARTER_FINAL)));
+            else if (group.getName().startsWith("Quarter final")) {
+              group.setName(group.getName().replaceFirst("Quarter final",
+                  ResourceManager.getText(Text.QUARTER_FINAL)));
             }
-            else if(group.getName().startsWith("Eighth final")){
-              group.setName(group.getName().replaceFirst("Eighth final", ResourceManager.getText(Text.BEST16)));
+            else if (group.getName().startsWith("Eighth final")) {
+              group.setName(group.getName().replaceFirst("Eighth final",
+                  ResourceManager.getText(Text.BEST16)));
             }
-            else if(group.getName().startsWith("Game")){
-              group.setName(group.getName().replaceFirst("Game", ResourceManager.getText(Text.BEST32_GAME)));
+            else if (group.getName().startsWith("Game")) {
+              group.setName(group.getName().replaceFirst("Game",
+                  ResourceManager.getText(Text.BEST32_GAME)));
             }
-            else if(group.getName().startsWith("Bronce Medal")){
-              group.setName(group.getName().replaceFirst("Bronce Medal", ResourceManager.getText(Text.BRONCEMEDAL_GAME)));
+            else if (group.getName().startsWith("Bronce Medal")) {
+              group.setName(group.getName().replaceFirst("Bronce Medal",
+                  ResourceManager.getText(Text.BRONCEMEDAL_GAME)));
             }
           }
         }
       }
       catch (Exception e) {
         ErrorLogger.getLogger().throwing("XMLHandler", "openXMLDoc", e);
-        ErrorDialog ed = new ErrorDialog(Organizer.getInstance().getMainFrame(),
+        ErrorDialog ed = new ErrorDialog(
+            Organizer.getInstance().getMainFrame(),
             ResourceManager.getText(Text.ERROR), e.toString(), e);
         ed.setVisible(true);
         e.printStackTrace();
