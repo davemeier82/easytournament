@@ -143,7 +143,7 @@ public class TournamentWizardModel extends WizardModel implements
         for (AbstractGroup g : groups) {
           if (g instanceof Group) {
             Group group = (Group) g;
-            group.setName(groupName);
+            group.setName(group.getName().replaceFirst("Group", groupName));
           }
           else {
             DuellGroup group = (DuellGroup) g;
