@@ -39,6 +39,8 @@ public class ResourceManager {
         l, new BundleControl(new File("help")));
     pathRb = ResourceBundle.getBundle("path",
         l, new BundleControl(new File("res/others")));
+    iconRb = ResourceBundle.getBundle("basicicon",
+        locale, new BundleControl(new File("res/icons")));
   }
 
   public static Locale getLocale() {
