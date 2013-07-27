@@ -162,6 +162,9 @@ public class TournamentWizardModel extends WizardModel implements
             else if(group.getName().startsWith("Game")){
               group.setName(group.getName().replaceFirst("Game", ResourceManager.getText(Text.BEST32_GAME)));
             }
+            else if(group.getName().startsWith("Bronce Medal")){
+              group.setName(group.getName().replaceFirst("Bronce Medal", ResourceManager.getText(Text.BRONCEMEDAL_GAME)));
+            }
           }
         }
       }

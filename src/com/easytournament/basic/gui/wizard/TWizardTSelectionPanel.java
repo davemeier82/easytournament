@@ -74,20 +74,11 @@ public class TWizardTSelectionPanel extends JPanel {
           ResourceManager.getText(Text.ADD_BRONCEMEDAL_GAME));
       panel.add(bronceMedalGameCheckbox, cc.xywh(1, 4, 3, 1));
       
-      if (this.model.getTournamentType() == TournamentType.GROUP_KNOCKOUT) {
-        JLabel jlabel3 = new JLabel(ResourceManager.getText(Text.NUM_GROUPS));
-        panel.add(jlabel3, cc.xy(1, 6));
-
-        ComboBoxAdapter<Integer> nGroupsAdapter = new ComboBoxAdapter<Integer>(
-            this.model.getGrouplist(),
-            this.pm.getModel(TWizardTSelectionModel.PROPERTY_NGROUPS));
-
-        nGroupsCombobox = new JComboBox<Integer>(nGroupsAdapter);
-        panel.add(nGroupsCombobox, cc.xy(3, 6));      
+      if (this.model.getTournamentType() == TournamentType.GROUP_KNOCKOUT) {     
     
         JLabel nKnockoutStagesLabel = new JLabel(
             ResourceManager.getText(Text.NUM_KOSTAGES));
-        panel.add(nKnockoutStagesLabel, cc.xy(1, 8));
+        panel.add(nKnockoutStagesLabel, cc.xy(1, 6));
   
         ComboBoxAdapter<Integer> nKOStagesAdapter = new ComboBoxAdapter<Integer>(
             this.model.getKnockoutstageslist(),
@@ -125,7 +116,17 @@ public class TWizardTSelectionPanel extends JPanel {
           }
         });
       
-        panel.add(nKOStagesCombobox, cc.xy(3, 8));
+        panel.add(nKOStagesCombobox, cc.xy(3, 6));        
+
+        JLabel jlabel3 = new JLabel(ResourceManager.getText(Text.NUM_GROUPS));
+        panel.add(jlabel3, cc.xy(1, 8));
+
+        ComboBoxAdapter<Integer> nGroupsAdapter = new ComboBoxAdapter<Integer>(
+            this.model.getGrouplist(),
+            this.pm.getModel(TWizardTSelectionModel.PROPERTY_NGROUPS));
+
+        nGroupsCombobox = new JComboBox<Integer>(nGroupsAdapter);
+        panel.add(nGroupsCombobox, cc.xy(3, 8)); 
       }
     }
 

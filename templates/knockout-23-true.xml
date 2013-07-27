@@ -549,12 +549,12 @@
         <rule rule="RANDOM_RULE" ascending="false" />
       </rules>
     </group>
-    <group name="Group G" id="21" defaultsettings="1" defaultrules="1" type="DUELL">
+    <group name="Game G" id="21" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Winner Group G" id="42">
+        <position name="Winner Game G" id="42">
           <next id="20" />
         </position>
-        <position name="Loser Group G" id="43" />
+        <position name="Loser Game G" id="43" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />

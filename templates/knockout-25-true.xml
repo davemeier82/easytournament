@@ -549,12 +549,12 @@
         <rule rule="RANDOM_RULE" ascending="false" />
       </rules>
     </group>
-    <group name="Group G" id="21" defaultsettings="1" defaultrules="1" type="DUELL">
+    <group name="Game G" id="21" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Winner Group G" id="42">
+        <position name="Winner Game G" id="42">
           <next id="20" />
         </position>
-        <position name="Loser Group G" id="43" />
+        <position name="Loser Game G" id="43" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -575,12 +575,12 @@
         <rule rule="RANDOM_RULE" ascending="false" />
       </rules>
     </group>
-    <group name="Group I" id="22" defaultsettings="1" defaultrules="1" type="DUELL">
+    <group name="Game I" id="22" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Winner Group I" id="44">
+        <position name="Winner Game I" id="44">
           <next id="22" />
         </position>
-        <position name="Loser Group I" id="45" />
+        <position name="Loser Game I" id="45" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -601,12 +601,12 @@
         <rule rule="RANDOM_RULE" ascending="false" />
       </rules>
     </group>
-    <group name="Group H" id="25" defaultsettings="1" defaultrules="1" type="DUELL">
+    <group name="Game H" id="25" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Winner Group H" id="50">
+        <position name="Winner Game H" id="50">
           <next id="21" />
         </position>
-        <position name="Loser Group H" id="51" />
+        <position name="Loser Game H" id="51" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
