@@ -14,9 +14,12 @@ public class TournamentSelector {
     return 4;
   }
 
-  public static int getMaxNumberOfNockoutStages(int nTeams) {
+  public static int getMaxNumberOfNockoutStages(int nTeams, boolean fullStage) {
     if (nTeams < 1) {
       return 0;
+    }
+    if(fullStage){
+      return (int)Math.floor(Math.log(nTeams) / Math.log(2));
     }
     return (int)Math.ceil(Math.log(nTeams) / Math.log(2));
   }

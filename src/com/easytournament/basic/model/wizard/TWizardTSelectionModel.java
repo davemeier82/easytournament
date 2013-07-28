@@ -130,9 +130,10 @@ public class TWizardTSelectionModel extends WizardModel {
   }
 
   private void updateKnockoutList() {
-    int nStages = TournamentSelector.getMaxNumberOfNockoutStages(this.getnTeams());
+    int nStages = TournamentSelector.getMaxNumberOfNockoutStages(this.getnTeams(), this.tournamentData.getType() != TournamentType.KNOCKOUT);
     knockoutstageslist.clear();
-    if(this.getTournamentType() != TournamentType.KNOCKOUT && this.getnTeams() > 16) {
+    if (this.getTournamentType() != TournamentType.KNOCKOUT
+        && this.getnTeams() > 31) {
       --nStages;
     }
     for(int i = 1; i <= nStages; i++) {

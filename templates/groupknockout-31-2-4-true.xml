@@ -500,10 +500,10 @@
         <rule rule="RANDOM_RULE" ascending="false" />
       </rules>
     </group>
-    <group name="Bronce medal" id="33" defaultsettings="1" defaultrules="1" type="DUELL">
+    <group name="Bronce Medal" id="33" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
-        <position name="Winner Bronce medal" id="90" prev="3" />
-        <position name="Loser Bronce medal" id="91" prev="5" />
+        <position name="Winner Bronce Medal" id="90" prev="3" />
+        <position name="Loser Bronce Medal" id="91" prev="5" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
