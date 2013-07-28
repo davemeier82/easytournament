@@ -68,6 +68,11 @@
 						<CreateFolder /> 
 					</Component> 
 				</Directory>
+				<Directory Id="templatesdir" Name ="templates">
+					<Component Id="templatesFolder" Guid="77D04F02-CC8B-48D7-8C1D-F016EF176D4A" KeyPath="yes"> 
+						<CreateFolder /> 
+					</Component> 
+				</Directory>
 				<Directory Id="libdir" Name ="lib">
 				   <Component Id="libFolder" Guid="078FC530-5A15-4015-9BF0-72904AE24525" KeyPath="yes"> 
 						<CreateFolder /> 
@@ -132,12 +137,14 @@
 		<Feature Id='MainProgram' Title='!(loc.MainTitle)' Description='!(loc.MainDesc)' Level='1' Absent='disallow' AllowAdvertise='no'>
 			<ComponentRef Id="helpFolder"/>
 			<ComponentRef Id="resFolder"/>
+			<ComponentRef Id="templatesFolder"/>
 			<ComponentRef Id="sportsFolder"/>	
 			<ComponentRef Id="libFolder"/>
 			<ComponentRef Id="ApplicationFiles"/>
 			<ComponentRef Id="ApplicationFilesDe"/>
 			<ComponentRef Id="HelpFiles"/>
 			<ComponentGroupRef Id="resFiles"/>
+			<ComponentGroupRef Id="templatesFiles"/>
 			<ComponentGroupRef Id="sportsFiles"/>
 			<ComponentGroupRef Id="libFiles"/>
 			<ComponentRef Id="ApplicationShortcuts"/>

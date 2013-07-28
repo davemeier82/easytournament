@@ -68,6 +68,8 @@
 			<fileset defaultexcludes="yes" dir="." targetdir="$INSTALL_PATH">
 				<include name="README*.txt"/>
 				<include name="res"/>
+				<include name="templates"/>
+				<include name="templates/**/*.*"/>
 				<include name="lib"/>
 				<include name="sports"/>
 				<include name="help"/>

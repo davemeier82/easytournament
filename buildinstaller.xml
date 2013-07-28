@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="EasyTournament" default="buildall" basedir=".">
 	<property name="name" value="EasyTournament" />
-	<property name="version" value="0.6.8.0" />
+	<property name="version" value="0.7.0.0" />
 	<property name="author" value="David Meier" />
 	<property name="release" value="${name}" />
 	<property name="release.dir" location="release" />
@@ -72,6 +72,7 @@
 			<zipfileset dir="release" includes="${jar.name}" prefix="${release}" />
 			<zipfileset dir="release" includes="${exe.name}" prefix="${release}" />
 			<zipfileset dir="res" prefix="${release}/res" />
+			<zipfileset dir="templates" prefix="${release}/templates" />
 			<zipfileset dir="sports" prefix="${release}/sports" />
 			<zipfileset dir="lib" prefix="${release}/lib" />
 			<zipfileset dir="help" prefix="${release}/help" />
