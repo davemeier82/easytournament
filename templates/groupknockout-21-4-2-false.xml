@@ -278,7 +278,7 @@
       <positioncell id="92" style="team;whiteSpace=wrap;deletable=false" />
       <positioncell id="93" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
-    <groupcell id="42" parent="1" groupid="7" x="950.0" y="300.0" width="100.0" height="220.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
+    <groupcell id="42" parent="1" groupid="7" x="950.0" y="300.0" width="100.0" height="210.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
       <positioncell id="94" style="team;whiteSpace=wrap;deletable=false" />
       <positioncell id="95" style="team;whiteSpace=wrap;deletable=false" />
       <positioncell id="96" style="team;whiteSpace=wrap;deletable=false" />
