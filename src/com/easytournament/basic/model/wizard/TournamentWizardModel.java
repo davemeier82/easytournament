@@ -199,6 +199,7 @@ public class TournamentWizardModel extends WizardModel implements
         e.printStackTrace();
         return;
       }
+      DesignerItem.clearUndoManager();
       this.firePropertyChange(WizardModel.DISPOSE, 0, 1);
     }
   }

@@ -61,7 +61,7 @@ public class GroupCell extends DuellGroupCell {
       if(style == null && i > 0)
         style = styles.get(new Integer(styles.size()-1));
         
-      mxCell pos = new mxCell(getLabel(g, i), geo1, style==null?TournamentViewer.TEAM_IDENTIFIER+";whiteSpace=wrap":style);
+      mxCell pos = new mxCell(getLabel(g, i), geo1, style==null?TournamentViewer.TEAM_IDENTIFIER+";whiteSpace=wrap;deletable=false":style);
       pos.setId(model.createId(pos));
 
       this.insert(pos, i);

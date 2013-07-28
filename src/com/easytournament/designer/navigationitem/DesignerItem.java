@@ -46,13 +46,13 @@ import com.mxgraph.util.mxEventSource.mxIEventListener;
 
 public class DesignerItem extends NavigationItem implements mxIEventListener {
 
-  private static TournamentViewer t;
+  private static TournamentViewer tournamentViewer;
 
   public void init() {
-    t = new TournamentViewer();
-    t.getUndoManager().addListener(mxEvent.ADD, this);
-    t.getUndoManager().addListener(mxEvent.REDO, this);
-    t.getUndoManager().addListener(mxEvent.UNDO, this);
+    tournamentViewer = new TournamentViewer();
+    tournamentViewer.getUndoManager().addListener(mxEvent.ADD, this);
+    tournamentViewer.getUndoManager().addListener(mxEvent.REDO, this);
+    tournamentViewer.getUndoManager().addListener(mxEvent.UNDO, this);
     toolbar = new DesignerToolBar(DesignerToolBarModel.getInstance());
     SettingsRegistry.register(DesignerSettings.getInstance());
     ExportRegistry.register(ResourceManager.getText(Text.TOURNAMENT_DIAG),
@@ -84,14 +84,14 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
     this.active = true; // we do not call "super" because of menu disabling
     MainMenuPModel.getInstance().enableAllItems();
     ArrayList<MainMenuAction> disable = new ArrayList<MainMenuAction>();
-    if (!t.getUndoManager().canUndo())
+    if (!tournamentViewer.getUndoManager().canUndo())
       disable.add(MainMenuAction.UNDO);
-    if (!t.getUndoManager().canRedo())
+    if (!tournamentViewer.getUndoManager().canRedo())
       disable.add(MainMenuAction.REDO);
     if (disable.size() > 0)
       MainMenuPModel.getInstance().disableItems(disable);
-    if (t.isTeamView())
-      t.setTeamView(true); // update possible changes
+    if (tournamentViewer.isTeamView())
+      tournamentViewer.setTeamView(true); // update possible changes
   }
 
   public boolean deactivate() {
@@ -118,7 +118,7 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
   }
 
   public JComponent getPanel() {
-    return t;
+    return tournamentViewer;
   }
 
   public void propertyChange(PropertyChangeEvent evt) {
@@ -130,8 +130,8 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
       setSettings();
     }
     else if (evt.getPropertyName().equals(NavTreeActions.NEW.name())) {
-      GraphActions.newGraph(t);
-      t.getUndoManager().clear();
+      GraphActions.newGraph(tournamentViewer);
+      tournamentViewer.getUndoManager().clear();
       setSettings();
       ArrayList<MainMenuAction> disable = new ArrayList<MainMenuAction>();
       disable.add(MainMenuAction.UNDO);
@@ -143,9 +143,13 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
   }
 
   public static void openPlan(Element xml, boolean importing) {
-    GraphActions.newGraph(t);
+    GraphActions.newGraph(tournamentViewer);
     DesignerXMLHandler.open(xml, importing);
-    t.getUndoManager().clear();
+    clearUndoManager();
+  }
+
+  public static void clearUndoManager() {
+    tournamentViewer.getUndoManager().clear();
     ArrayList<MainMenuAction> disable = new ArrayList<MainMenuAction>();
     disable.add(MainMenuAction.UNDO);
     disable.add(MainMenuAction.REDO);
@@ -237,11 +241,11 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
             GraphActions.print();
             break;
           case UNDO: {
-            t.getUndoManager().undo();
+            tournamentViewer.getUndoManager().undo();
             ArrayList<MainMenuAction> enable = new ArrayList<MainMenuAction>();
             ArrayList<MainMenuAction> disable = new ArrayList<MainMenuAction>();
             enable.add(MainMenuAction.REDO);
-            if (t.getUndoManager().canUndo())
+            if (tournamentViewer.getUndoManager().canUndo())
               enable.add(MainMenuAction.UNDO);
             else
               disable.add(MainMenuAction.UNDO);
@@ -251,11 +255,11 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
             break;
           }
           case REDO:
-            t.getUndoManager().redo();
+            tournamentViewer.getUndoManager().redo();
             ArrayList<MainMenuAction> enable = new ArrayList<MainMenuAction>();
             ArrayList<MainMenuAction> disable = new ArrayList<MainMenuAction>();
             enable.add(MainMenuAction.UNDO);
-            if (t.getUndoManager().canRedo())
+            if (tournamentViewer.getUndoManager().canRedo())
               enable.add(MainMenuAction.REDO);
             else
               disable.add(MainMenuAction.REDO);
@@ -388,12 +392,12 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
         MainMenuPModel.getInstance().enableItems(enable);
       }
       Organizer.getInstance().setSaved(false);
-      t.refreshLabels();
+      tournamentViewer.refreshLabels();
     }    
   }
 
   public static TournamentViewer getTournamentViewer() {
-    return t;
+    return tournamentViewer;
   }
 
 }

@@ -40,18 +40,18 @@
     <cell id="0" parent="none" edge="0" vertex="0" />
     <cell id="1" parent="0" edge="0" vertex="0" />
     <groupcell id="2" parent="1" groupid="0" x="510.0" y="210.0" width="100.0" height="480.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="63" style="team;whiteSpace=wrap" />
-      <positioncell id="64" style="team;whiteSpace=wrap" />
-      <positioncell id="65" style="team;whiteSpace=wrap" />
-      <positioncell id="66" style="team;whiteSpace=wrap" />
-      <positioncell id="67" style="team;whiteSpace=wrap" />
-      <positioncell id="68" style="team;whiteSpace=wrap" />
-      <positioncell id="69" style="team;whiteSpace=wrap" />
-      <positioncell id="70" style="team;whiteSpace=wrap" />
-      <positioncell id="71" style="team;whiteSpace=wrap" />
-      <positioncell id="72" style="team;whiteSpace=wrap" />
-      <positioncell id="73" style="team;whiteSpace=wrap" />
-      <positioncell id="74" style="team;whiteSpace=wrap" />
+      <positioncell id="63" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="64" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="65" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="66" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="67" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="68" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="69" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="70" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="71" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="72" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="73" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="74" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
   </gui>
   <pageformat orientation="0">

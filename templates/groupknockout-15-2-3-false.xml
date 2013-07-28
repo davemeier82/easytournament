@@ -333,51 +333,51 @@
       </geometry>
     </cell>
     <groupcell id="17" parent="1" groupid="0" x="480.0" y="10.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="18" style="team;whiteSpace=wrap" />
-      <positioncell id="19" style="team;whiteSpace=wrap" />
+      <positioncell id="18" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="19" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="20" parent="1" groupid="2" x="760.0" y="90.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="21" style="team;whiteSpace=wrap" />
-      <positioncell id="22" style="team;whiteSpace=wrap" />
+      <positioncell id="21" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="22" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="24" parent="1" groupid="1" x="200.0" y="90.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="25" style="team;whiteSpace=wrap" />
-      <positioncell id="26" style="team;whiteSpace=wrap" />
+      <positioncell id="25" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="26" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="27" parent="1" groupid="4" x="60.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="28" style="team;whiteSpace=wrap" />
-      <positioncell id="29" style="team;whiteSpace=wrap" />
+      <positioncell id="28" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="29" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="30" parent="1" groupid="5" x="340.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="31" style="team;whiteSpace=wrap" />
-      <positioncell id="32" style="team;whiteSpace=wrap" />
+      <positioncell id="31" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="32" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="33" parent="1" groupid="6" x="620.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="34" style="team;whiteSpace=wrap" />
-      <positioncell id="35" style="team;whiteSpace=wrap" />
+      <positioncell id="34" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="35" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="36" parent="1" groupid="7" x="900.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="37" style="team;whiteSpace=wrap" />
-      <positioncell id="38" style="team;whiteSpace=wrap" />
+      <positioncell id="37" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="38" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="47" parent="1" groupid="8" x="250.0" y="290.0" width="100.0" height="320.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="97" style="team;whiteSpace=wrap" />
-      <positioncell id="98" style="team;whiteSpace=wrap" />
-      <positioncell id="99" style="team;whiteSpace=wrap" />
-      <positioncell id="100" style="team;whiteSpace=wrap" />
-      <positioncell id="101" style="team;whiteSpace=wrap" />
-      <positioncell id="102" style="team;whiteSpace=wrap" />
-      <positioncell id="103" style="team;whiteSpace=wrap" />
-      <positioncell id="104" style="team;whiteSpace=wrap" />
+      <positioncell id="97" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="98" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="99" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="100" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="101" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="102" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="103" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="104" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="48" parent="1" groupid="9" x="810.0" y="290.0" width="100.0" height="290.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="90" style="team;whiteSpace=wrap" />
-      <positioncell id="91" style="team;whiteSpace=wrap" />
-      <positioncell id="92" style="team;whiteSpace=wrap" />
-      <positioncell id="93" style="team;whiteSpace=wrap" />
-      <positioncell id="94" style="team;whiteSpace=wrap" />
-      <positioncell id="95" style="team;whiteSpace=wrap" />
-      <positioncell id="96" style="team;whiteSpace=wrap" />
+      <positioncell id="90" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="91" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="92" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="93" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="94" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="95" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="96" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <cell id="53" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="97" targetid="28" edge="1" vertex="0">
       <geometry>

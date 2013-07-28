@@ -41,19 +41,19 @@
     <cell id="0" parent="none" edge="0" vertex="0" />
     <cell id="1" parent="0" edge="0" vertex="0" />
     <groupcell id="2" parent="1" groupid="0" x="510.0" y="170.0" width="100.0" height="520.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="75" style="team;whiteSpace=wrap" />
-      <positioncell id="76" style="team;whiteSpace=wrap" />
-      <positioncell id="77" style="team;whiteSpace=wrap" />
-      <positioncell id="78" style="team;whiteSpace=wrap" />
-      <positioncell id="79" style="team;whiteSpace=wrap" />
-      <positioncell id="80" style="team;whiteSpace=wrap" />
-      <positioncell id="81" style="team;whiteSpace=wrap" />
-      <positioncell id="82" style="team;whiteSpace=wrap" />
-      <positioncell id="83" style="team;whiteSpace=wrap" />
-      <positioncell id="84" style="team;whiteSpace=wrap" />
-      <positioncell id="85" style="team;whiteSpace=wrap" />
-      <positioncell id="86" style="team;whiteSpace=wrap" />
-      <positioncell id="87" style="team;whiteSpace=wrap" />
+      <positioncell id="75" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="76" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="77" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="78" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="79" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="80" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="81" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="82" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="83" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="84" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="85" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="86" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="87" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
   </gui>
   <pageformat orientation="0">

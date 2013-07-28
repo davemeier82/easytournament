@@ -60,14 +60,14 @@
     <cell id="0" parent="none" edge="0" vertex="0" />
     <cell id="1" parent="0" edge="0" vertex="0" />
     <groupcell id="2" parent="1" groupid="0" x="480.0" y="430.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="3" style="team;whiteSpace=wrap" />
-      <positioncell id="4" style="team;whiteSpace=wrap" />
-      <positioncell id="5" style="team;whiteSpace=wrap" />
-      <positioncell id="6" style="team;whiteSpace=wrap" />
+      <positioncell id="3" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="4" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="5" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="6" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="7" parent="1" groupid="3" x="430.0" y="270.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="8" style="team;whiteSpace=wrap" />
-      <positioncell id="9" style="team;whiteSpace=wrap" />
+      <positioncell id="8" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="9" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <cell id="10" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="3" targetid="8" edge="1" vertex="0">
       <geometry>

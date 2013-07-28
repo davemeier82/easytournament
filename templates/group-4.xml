@@ -32,10 +32,10 @@
     <cell id="0" parent="none" edge="0" vertex="0" />
     <cell id="1" parent="0" edge="0" vertex="0" />
     <groupcell id="2" parent="1" groupid="0" x="510.0" y="250.0" width="100.0" height="200.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="3" style="team;whiteSpace=wrap" />
-      <positioncell id="4" style="team;whiteSpace=wrap" />
-      <positioncell id="5" style="team;whiteSpace=wrap" />
-      <positioncell id="6" style="team;whiteSpace=wrap" />
+      <positioncell id="3" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="4" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="5" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="6" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
   </gui>
   <pageformat orientation="0">

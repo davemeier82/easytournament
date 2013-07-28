@@ -159,43 +159,43 @@
       </geometry>
     </cell>
     <groupcell id="9" parent="1" groupid="0" x="450.0" y="10.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="10" style="team;whiteSpace=wrap" />
-      <positioncell id="11" style="team;whiteSpace=wrap" />
+      <positioncell id="10" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="11" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="12" parent="1" groupid="2" x="750.0" y="120.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="13" style="team;whiteSpace=wrap" />
-      <positioncell id="14" style="team;whiteSpace=wrap" />
+      <positioncell id="13" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="14" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="15" parent="1" groupid="3" x="500.0" y="180.0" width="100.0" height="640.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="415" style="team;whiteSpace=wrap" />
-      <positioncell id="416" style="team;whiteSpace=wrap" />
-      <positioncell id="417" style="team;whiteSpace=wrap" />
-      <positioncell id="418" style="team;whiteSpace=wrap" />
-      <positioncell id="419" style="team;whiteSpace=wrap" />
-      <positioncell id="420" style="team;whiteSpace=wrap" />
-      <positioncell id="421" style="team;whiteSpace=wrap" />
-      <positioncell id="422" style="team;whiteSpace=wrap" />
-      <positioncell id="423" style="team;whiteSpace=wrap" />
-      <positioncell id="424" style="team;whiteSpace=wrap" />
-      <positioncell id="425" style="team;whiteSpace=wrap" />
-      <positioncell id="426" style="team;whiteSpace=wrap" />
-      <positioncell id="427" style="team;whiteSpace=wrap" />
-      <positioncell id="428" style="team;whiteSpace=wrap" />
-      <positioncell id="429" style="team;whiteSpace=wrap" />
-      <positioncell id="430" style="team;whiteSpace=wrap" />
-      <positioncell id="431" style="team;whiteSpace=wrap" />
-      <positioncell id="432" style="team;whiteSpace=wrap" />
-      <positioncell id="433" style="team;whiteSpace=wrap" />
-      <positioncell id="434" style="team;whiteSpace=wrap" />
-      <positioncell id="435" style="team;whiteSpace=wrap" />
-      <positioncell id="436" style="team;whiteSpace=wrap" />
-      <positioncell id="437" style="team;whiteSpace=wrap" />
-      <positioncell id="438" style="team;whiteSpace=wrap" />
-      <positioncell id="439" style="team;whiteSpace=wrap" />
-      <positioncell id="440" style="team;whiteSpace=wrap" />
-      <positioncell id="441" style="team;whiteSpace=wrap" />
-      <positioncell id="442" style="team;whiteSpace=wrap" />
-      <positioncell id="443" style="team;whiteSpace=wrap" />
+      <positioncell id="415" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="416" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="417" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="418" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="419" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="420" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="421" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="422" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="423" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="424" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="425" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="426" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="427" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="428" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="429" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="430" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="431" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="432" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="433" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="434" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="435" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="436" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="437" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="438" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="439" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="440" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="441" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="442" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="443" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <cell id="17" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="416" targetid="13" edge="1" vertex="0">
       <geometry>
@@ -216,8 +216,8 @@
       </geometry>
     </cell>
     <groupcell id="20" parent="1" groupid="1" x="160.0" y="120.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="21" style="team;whiteSpace=wrap" />
-      <positioncell id="22" style="team;whiteSpace=wrap" />
+      <positioncell id="21" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="22" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <cell id="23" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="415" targetid="21" edge="1" vertex="0">
       <geometry>

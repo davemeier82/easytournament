@@ -50,13 +50,13 @@ public class DuellGroupCell extends mxCell implements PropertyChangeListener {
     geo1.setRelative(true);
     geo2.setRelative(true);
 
-    mxCell pos1 = new mxCell(getLabel(g, 0), geo1, TournamentViewer.TEAM_IDENTIFIER+";whiteSpace=wrap");
+    mxCell pos1 = new mxCell(getLabel(g, 0), geo1, TournamentViewer.TEAM_IDENTIFIER+";whiteSpace=wrap;deletable=false");
     this.insert(pos1, 0);
     pos1.setParent(this);
     pos1.setConnectable(true);
     pos1.setVertex(true);
 
-    mxCell pos2 = new mxCell(getLabel(g, 1), geo2, TournamentViewer.TEAM_IDENTIFIER+";whiteSpace=wrap");
+    mxCell pos2 = new mxCell(getLabel(g, 1), geo2, TournamentViewer.TEAM_IDENTIFIER+";whiteSpace=wrap;deletable=false");
     this.insert(pos2, 1);
     pos2.setParent(this);
     pos2.setConnectable(true);

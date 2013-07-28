@@ -341,60 +341,60 @@
       </geometry>
     </cell>
     <groupcell id="17" parent="1" groupid="0" x="480.0" y="10.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="18" style="team;whiteSpace=wrap" />
-      <positioncell id="19" style="team;whiteSpace=wrap" />
+      <positioncell id="18" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="19" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="20" parent="1" groupid="2" x="760.0" y="90.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="21" style="team;whiteSpace=wrap" />
-      <positioncell id="22" style="team;whiteSpace=wrap" />
+      <positioncell id="21" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="22" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="23" parent="1" groupid="3" x="520.0" y="280.0" width="110.0" height="550.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="NORMAL">
-      <positioncell id="351" style="team;whiteSpace=wrap" />
-      <positioncell id="352" style="team;whiteSpace=wrap" />
-      <positioncell id="353" style="team;whiteSpace=wrap" />
-      <positioncell id="354" style="team;whiteSpace=wrap" />
-      <positioncell id="355" style="team;whiteSpace=wrap" />
-      <positioncell id="356" style="team;whiteSpace=wrap" />
-      <positioncell id="357" style="team;whiteSpace=wrap" />
-      <positioncell id="358" style="team;whiteSpace=wrap" />
-      <positioncell id="359" style="team;whiteSpace=wrap" />
-      <positioncell id="360" style="team;whiteSpace=wrap" />
-      <positioncell id="361" style="team;whiteSpace=wrap" />
-      <positioncell id="362" style="team;whiteSpace=wrap" />
-      <positioncell id="363" style="team;whiteSpace=wrap" />
-      <positioncell id="364" style="team;whiteSpace=wrap" />
-      <positioncell id="365" style="team;whiteSpace=wrap" />
-      <positioncell id="366" style="team;whiteSpace=wrap" />
-      <positioncell id="367" style="team;whiteSpace=wrap" />
-      <positioncell id="368" style="team;whiteSpace=wrap" />
-      <positioncell id="369" style="team;whiteSpace=wrap" />
-      <positioncell id="370" style="team;whiteSpace=wrap" />
-      <positioncell id="371" style="team;whiteSpace=wrap" />
-      <positioncell id="372" style="team;whiteSpace=wrap" />
-      <positioncell id="373" style="team;whiteSpace=wrap" />
-      <positioncell id="374" style="team;whiteSpace=wrap" />
-      <positioncell id="375" style="team;whiteSpace=wrap" />
-      <positioncell id="376" style="team;whiteSpace=wrap" />
+      <positioncell id="351" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="352" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="353" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="354" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="355" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="356" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="357" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="358" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="359" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="360" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="361" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="362" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="363" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="364" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="365" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="366" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="367" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="368" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="369" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="370" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="371" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="372" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="373" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="374" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="375" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="376" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="24" parent="1" groupid="1" x="200.0" y="90.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="25" style="team;whiteSpace=wrap" />
-      <positioncell id="26" style="team;whiteSpace=wrap" />
+      <positioncell id="25" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="26" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="27" parent="1" groupid="4" x="60.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="28" style="team;whiteSpace=wrap" />
-      <positioncell id="29" style="team;whiteSpace=wrap" />
+      <positioncell id="28" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="29" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="30" parent="1" groupid="5" x="340.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="31" style="team;whiteSpace=wrap" />
-      <positioncell id="32" style="team;whiteSpace=wrap" />
+      <positioncell id="31" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="32" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="33" parent="1" groupid="6" x="620.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="34" style="team;whiteSpace=wrap" />
-      <positioncell id="35" style="team;whiteSpace=wrap" />
+      <positioncell id="34" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="35" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <groupcell id="36" parent="1" groupid="7" x="900.0" y="190.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="37" style="team;whiteSpace=wrap" />
-      <positioncell id="38" style="team;whiteSpace=wrap" />
+      <positioncell id="37" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="38" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <cell id="39" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="351" targetid="31" edge="1" vertex="0">
       <geometry>
@@ -469,8 +469,8 @@
       </geometry>
     </cell>
     <groupcell id="47" parent="1" groupid="8" x="480.0" y="100.0" width="200.0" height="80.0" titleHeight="30.0" style="group1;foldable=false;editable=false;whiteSpace=wrap" type="DUELL">
-      <positioncell id="48" style="team;whiteSpace=wrap" />
-      <positioncell id="49" style="team;whiteSpace=wrap" />
+      <positioncell id="48" style="team;whiteSpace=wrap;deletable=false" />
+      <positioncell id="49" style="team;whiteSpace=wrap;deletable=false" />
     </groupcell>
     <cell id="52" parent="1" value="" style="fontColor=#000000;fontSize=12;fontFamily=Verdana;strokeColor=#000000;endArrow=classic;endSize=5;strokeWidth=2" sourceid="26" targetid="48" edge="1" vertex="0">
       <geometry>
