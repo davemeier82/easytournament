@@ -42,7 +42,7 @@ public class SGeneratorPModel extends Model {
   protected int breakDays = 0;
   protected int breakHours = 0;
   protected int breakMin = 10;
-  
+
   protected DateFormat dateFormatter = DateFormat.getDateInstance(
       DateFormat.SHORT, ResourceManager.getLocale());
   protected Calendar calendar = new GregorianCalendar(
@@ -57,11 +57,12 @@ public class SGeneratorPModel extends Model {
   protected Tournament t = Organizer.getInstance().getCurrentTournament();
 
   public SGeneratorPModel() {
-    startDate = (Date) t.getBegin().getTime().clone();
+    startDate = (Date)t.getBegin().getTime().clone();
     calendar = (Calendar)t.getBegin().clone();
     for (int i = 0; i < t.getPlan().getOrderedGroups().size(); i++)
       selectedGroups.add(new Boolean(true));
-    tableModel = new GroupSelTableModel(t.getPlan().getOrderedGroups(), selectedGroups);
+    tableModel = new GroupSelTableModel(t.getPlan().getOrderedGroups(),
+        selectedGroups);
   }
 
   public Action getAction(int actionkey) {
@@ -82,26 +83,68 @@ public class SGeneratorPModel extends Model {
           @Override
           public void actionPerformed(ActionEvent e) {
             ArrayListModel<ScheduleEntry> entries = t.getSchedules();
+            HashMap<AbstractGroup,Integer> groupToIdxMap = new HashMap<AbstractGroup,Integer>();
+            for (int i = 0; i < selectedGroups.size(); i++) {
+              groupToIdxMap.put(tableModel.getGroupAt(i), i);
+            }
 
+            ArrayList<AbstractGroup> _processedGroups = new ArrayList<AbstractGroup>();
+            ArrayList<AbstractGroup> _toProcessNext = new ArrayList<AbstractGroup>();
+
+            int lastProcessCount;
+            do {
+              for (int i = 0; i < selectedGroups.size(); i++) {
+                if (selectedGroups.get(i)) {
+                  AbstractGroup g = tableModel.getGroupAt(i);
+                  if (!_processedGroups.contains(g)) {
+                    boolean skipGroup = false;
+                    ArrayList<Position> positions = g.getPositions();
+                    for (Position p : positions) {
+                      if (p.getPrev() != null
+                          && !_processedGroups.contains(p.getPrev().getGroup())
+                          && selectedGroups.get(groupToIdxMap.get(p
+                              .getPrev().getGroup()))) {
+                        // previous group is not processet yet
+                        skipGroup = true;
+                        break;
+
+                      }
+                    }
+                    if (skipGroup) {
+                      continue;
+                    }
+                    _toProcessNext.add(g);
+                  }
+                }
+              }
+              insertScheduleEntriesForGroups(entries, _toProcessNext);
+              _processedGroups.addAll(_toProcessNext);
+              lastProcessCount = _toProcessNext.size();
+              _toProcessNext.clear();
+            } while (lastProcessCount > 0);
+            
+            SGeneratorPModel.this.firePropertyChange(PROPERTY_DISPOSE, false,
+                true);
+          }
+
+          public void insertScheduleEntriesForGroups(
+              ArrayListModel<ScheduleEntry> entries,
+              ArrayList<AbstractGroup> _toProcessNext) {
             ArrayListModel<ScheduleEntry> onegameEntries = new ArrayListModel<ScheduleEntry>();
             ArrayList<Position[]> games = new ArrayList<Position[]>();
             HashMap<Position,ArrayList<Position>> hgames = new HashMap<Position,ArrayList<Position>>();
 
-            for (int i = 0; i < selectedGroups.size(); i++) {
-              if (selectedGroups.get(i)) {
-                AbstractGroup g = tableModel.getGroupAt(i);
+            for (AbstractGroup g : _toProcessNext) {
+              for (Position p : g.getPositions()) {
+                hgames.put(p, new ArrayList<Position>());
+              }
 
-                for (Position p : g.getPositions()) {
-                  hgames.put(p, new ArrayList<Position>());
-                }
+              ArrayList<Position> positions = g.getPositions();
 
-                ArrayList<Position> positions = g.getPositions();
-
-                for (int j = 0; j < positions.size() - 1; j++) {
-                  for (int k = j + 1; k < positions.size(); k++) {
-                    games.add(new Position[] {positions.get(j),
-                        positions.get(k)});
-                  }
+              for (int j = 0; j < positions.size() - 1; j++) {
+                for (int k = j + 1; k < positions.size(); k++) {
+                  games
+                      .add(new Position[] {positions.get(j), positions.get(k)});
                 }
               }
             }
@@ -118,10 +161,7 @@ public class SGeneratorPModel extends Model {
             int gameCount = 0;
             boolean maxGamesReached = false;
             while (games.size() > 0) {
-              for (int i = 0; i < selectedGroups.size(); i++) {
-                if (selectedGroups.get(i)) {
-                  AbstractGroup g = tableModel.getGroupAt(i);
-
+              for (AbstractGroup g : _toProcessNext) {
                   for (Position p : g.getPositions()) {
                     if (!played.contains(p)
                         && (consecutiveGamesAllowed || !lastplayed.contains(p)))
@@ -139,10 +179,8 @@ public class SGeneratorPModel extends Model {
                       }
                   }
                   if (maxGamesReached) {
-
                     break;
                   }
-                }
               }
               date.add(Calendar.HOUR, breakDays * 24 + breakHours);
               date.add(Calendar.MINUTE, breakMin
@@ -198,8 +236,6 @@ public class SGeneratorPModel extends Model {
                 }
               }
             }
-            SGeneratorPModel.this.firePropertyChange(PROPERTY_DISPOSE, false,
-                true);
           }
 
           public boolean findGame(ArrayListModel<ScheduleEntry> entries,
@@ -292,7 +328,7 @@ public class SGeneratorPModel extends Model {
   public Date getStartDate() {
     return startDate;
   }
-  
+
   public void setStartDate(Date date) {
     Date old = this.startDate;
     this.startDate = date;
