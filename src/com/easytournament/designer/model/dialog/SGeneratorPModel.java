@@ -91,6 +91,12 @@ public class SGeneratorPModel extends Model {
             ArrayList<AbstractGroup> _processedGroups = new ArrayList<AbstractGroup>();
             ArrayList<AbstractGroup> _toProcessNext = new ArrayList<AbstractGroup>();
 
+            Calendar date = (Calendar)calendar.clone();
+            Calendar tmp = new GregorianCalendar();
+            tmp.setTime(startDate);
+            date.set(tmp.get(Calendar.YEAR), tmp.get(Calendar.MONTH),
+                tmp.get(Calendar.DATE));
+
             int lastProcessCount;
             do {
               for (int i = 0; i < selectedGroups.size(); i++) {
@@ -102,8 +108,8 @@ public class SGeneratorPModel extends Model {
                     for (Position p : positions) {
                       if (p.getPrev() != null
                           && !_processedGroups.contains(p.getPrev().getGroup())
-                          && selectedGroups.get(groupToIdxMap.get(p
-                              .getPrev().getGroup()))) {
+                          && selectedGroups.get(groupToIdxMap.get(p.getPrev()
+                              .getGroup()))) {
                         // previous group is not processet yet
                         skipGroup = true;
                         break;
@@ -117,19 +123,19 @@ public class SGeneratorPModel extends Model {
                   }
                 }
               }
-              insertScheduleEntriesForGroups(entries, _toProcessNext);
+              insertScheduleEntriesForGroups(entries, _toProcessNext, date);
               _processedGroups.addAll(_toProcessNext);
               lastProcessCount = _toProcessNext.size();
               _toProcessNext.clear();
             } while (lastProcessCount > 0);
-            
+
             SGeneratorPModel.this.firePropertyChange(PROPERTY_DISPOSE, false,
                 true);
           }
 
           public void insertScheduleEntriesForGroups(
               ArrayListModel<ScheduleEntry> entries,
-              ArrayList<AbstractGroup> _toProcessNext) {
+              ArrayList<AbstractGroup> _toProcessNext, Calendar date) {
             ArrayListModel<ScheduleEntry> onegameEntries = new ArrayListModel<ScheduleEntry>();
             ArrayList<Position[]> games = new ArrayList<Position[]>();
             HashMap<Position,ArrayList<Position>> hgames = new HashMap<Position,ArrayList<Position>>();
@@ -149,64 +155,68 @@ public class SGeneratorPModel extends Model {
               }
             }
 
-            Calendar date = (Calendar)calendar.clone();
-            Calendar tmp = new GregorianCalendar();
-            tmp.setTime(startDate);
-            date.set(tmp.get(Calendar.YEAR), tmp.get(Calendar.MONTH),
-                tmp.get(Calendar.DATE));
-
             ArrayList<Position> played = new ArrayList<Position>();
             ArrayList<Position> lastplayed = new ArrayList<Position>();
             ArrayList<Position> skipped = new ArrayList<Position>();
             int gameCount = 0;
             boolean maxGamesReached = false;
             while (games.size() > 0) {
+              boolean addedGame = false;
               for (AbstractGroup g : _toProcessNext) {
-                  for (Position p : g.getPositions()) {
-                    if (!played.contains(p)
-                        && (consecutiveGamesAllowed || !lastplayed.contains(p)))
-                      if (!findGame(entries, onegameEntries, games, hgames,
-                          date, played, lastplayed, consecutiveGamesAllowed, p)) {
-                        skipped.add(p);
-                      }
-                      else if (maxCGamesSelected) {
+                for (Position p : g.getPositions()) {
+                  if (!played.contains(p)
+                      && (consecutiveGamesAllowed || !lastplayed.contains(p)))
+                    if (findGame(entries, onegameEntries, games, hgames, date,
+                        played, lastplayed, consecutiveGamesAllowed, p)) {
+                      addedGame = true;
+                      if (maxCGamesSelected) {
                         gameCount++;
                         if (gameCount == maxConcurrentGames) {
                           gameCount = 0;
-                          maxGamesReached = true;
-                          break;
+                          incrementTime(date, played, lastplayed);
                         }
                       }
-                  }
-                  if (maxGamesReached) {
-                    break;
-                  }
-              }
-              date.add(Calendar.HOUR, breakDays * 24 + breakHours);
-              date.add(Calendar.MINUTE, breakMin
-                  + t.getSettings().getMinPerGameTime()
-                  * t.getSettings().getNumGameTimes());
-              lastplayed.clear();
-              lastplayed.addAll(played);
-              played.clear();
-
-              if (maxGamesReached) {
-                maxGamesReached = false;
-              }
-              else
-                for (Position p : skipped) {
-                  findGame(entries, onegameEntries, games, hgames, date,
-                      played, lastplayed, consecutiveGamesAllowed, p);
+                    }
+                    else {
+                      skipped.add(p);
+                    }
                 }
+              }
+              
+              if (!addedGame) {
+                gameCount = 0;
+                incrementTime(date, played, lastplayed);
+              }
+
+              ArrayList<Position> addedPositions = new ArrayList<Position>();
+              for (Position p : skipped) {
+                if (!played.contains(p)
+                    && (consecutiveGamesAllowed || !lastplayed.contains(p)))
+                  if (findGame(entries, onegameEntries, games, hgames, date,
+                      played, lastplayed, consecutiveGamesAllowed, p)) {
+                    addedPositions.add(p);
+                    addedGame = true;
+                    if (maxCGamesSelected) {
+                      gameCount++;
+                      if (gameCount == maxConcurrentGames) {
+                        gameCount = 0;
+                        incrementTime(date, played, lastplayed);
+                      }
+                    }
+                  }
+              }
+              skipped.removeAll(addedPositions);
             }
 
-            if (lastplayed.size() > 0) {
+            if (played.size() > 0) {
               date.add(Calendar.HOUR, breakDays * 24 + breakHours);
               date.add(Calendar.MINUTE, breakMin
                   + t.getSettings().getMinPerGameTime()
                   * t.getSettings().getNumGameTimes());
             }
 
+            
+            // add games in same order but with home/away changed
             if (onegameEntries.size() > 0) {
 
               Calendar lastTime = (Calendar)onegameEntries.get(0).getDate()
@@ -236,6 +246,17 @@ public class SGeneratorPModel extends Model {
                 }
               }
             }
+          }
+
+          public void incrementTime(Calendar date, ArrayList<Position> played,
+              ArrayList<Position> lastplayed) {
+            date.add(Calendar.HOUR, breakDays * 24 + breakHours);
+            date.add(Calendar.MINUTE, breakMin
+                + t.getSettings().getMinPerGameTime()
+                * t.getSettings().getNumGameTimes());
+            lastplayed.clear();
+            lastplayed.addAll(played);
+            played.clear();
           }
 
           public boolean findGame(ArrayListModel<ScheduleEntry> entries,
