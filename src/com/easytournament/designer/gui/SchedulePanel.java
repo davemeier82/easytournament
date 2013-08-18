@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.AbstractAction;
@@ -24,6 +25,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.event.TableModelEvent;
@@ -32,6 +34,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 import org.pushingpixels.substance.api.renderers.SubstanceDefaultTableCellRenderer;
 
@@ -42,6 +45,7 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.util.popupmenu.TablePopupMenu;
 import com.easytournament.basic.valueholder.Refree;
+import com.easytournament.basic.valueholder.Team;
 import com.easytournament.designer.gui.dialog.ScheduleGeneratorDialog;
 import com.easytournament.designer.gui.editor.PositionSelectionEditor;
 import com.easytournament.designer.gui.editor.RefreeSelectionEditor;
@@ -95,7 +99,18 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     hBox.add(Box.createHorizontalStrut(10));
     hBox.add(new JButton(pm.getAction(SchedulePanelPModel.DELETE_ACTION)));
     hBox.add(Box.createHorizontalStrut(10));
-    hBox.add(new JButton(pm.getAction(SchedulePanelPModel.EXPORT_ACTION)));
+    hBox.add(new JButton(new AbstractAction(
+			ResourceManager.getText(Text.EXPORT_SCHEDULE)) {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					ArrayList<Integer> indices = new ArrayList<Integer>();
+					for(int i = 0; i < schedTable.getRowCount(); ++i){
+						indices.add(schedTable.convertRowIndexToModel(i));
+					}
+					pm.exportSchedule(indices);
+				}    	
+    }));
 
     return hBox;
   }
@@ -110,6 +125,44 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     schedTable.setFillsViewportHeight(true);
     schedTable.getTableHeader().setReorderingAllowed(false);
     tcm = schedTable.getColumnModel();
+    
+    RowFilter<TableModel, Integer> groupFilter = new RowFilter<TableModel, Integer>(){
+		@Override
+		public boolean include(
+				javax.swing.RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
+			
+			String filter = pm.getFilter();
+			if(filter.equals(ResourceManager.getText(Text.NOFILTER))){
+				return true;
+			}
+			Position p = (Position) entry.getValue(0);
+
+			if(p.getGroup().getName().equals(filter)){
+				return true;
+			}
+			Team homeTeam = p.getTeam();
+			if(homeTeam != null && homeTeam.getName().equals(filter)){
+				return true;
+			}
+			
+			Position p2 = (Position) entry.getValue(1);
+			Team awayTeam = p2.getTeam();
+			if(awayTeam != null && awayTeam.getName().equals(filter)){
+				return true;
+			}
+			if(entry.getValueCount() > 5){
+				Refree ref = (Refree) entry.getValue(5);
+				if(ref != null && ref.getName().equals(filter)){
+					return true;
+				}
+			}
+			return false;
+		}    	
+    };
+    TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tm);
+    sorter.setRowFilter(groupFilter);
+    schedTable.setRowSorter(sorter);    
+    
     schedTable.addKeyListener(new KeyAdapter() {
 
       @Override

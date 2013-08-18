@@ -66,6 +66,10 @@ public class GamesTableModel extends AbstractTableModel implements
     this.fireTableStructureChanged();
     this.fireTableDataChanged();
   }
+  
+  public boolean isCheckBoxColumnVisible(){
+	  return this.checkboxVisible;
+  }
 
   public int getRowCount() {
     if (data == null)

@@ -14,6 +14,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.event.TableModelEvent;
@@ -21,6 +22,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 import org.pushingpixels.substance.api.renderers.SubstanceDefaultTableCellRenderer;
 
@@ -31,6 +33,7 @@ import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.util.popupmenu.TablePopupMenu;
 import com.easytournament.basic.valueholder.Refree;
+import com.easytournament.basic.valueholder.Team;
 import com.easytournament.designer.gui.editor.RefreeSelectionEditor;
 import com.easytournament.designer.valueholder.Position;
 import com.easytournament.tournament.gui.dialog.GameDialog;
@@ -38,6 +41,7 @@ import com.easytournament.tournament.gui.renderer.PositionTableCellRenderer;
 import com.easytournament.tournament.gui.renderer.SubstPositionTableCellRenderer;
 import com.easytournament.tournament.model.GamesPanelPModel;
 import com.easytournament.tournament.model.dialog.GameDialogPModel;
+import com.easytournament.tournament.model.tablemodel.GamesTableModel;
 
 public class GamesPanel extends JPanel implements TableModelListener {
 
@@ -61,12 +65,53 @@ public class GamesPanel extends JPanel implements TableModelListener {
   private JComponent getGroupsComponent() {
     Box gBox = Box.createVerticalBox();
 
-    TableModel tm = pm.getTableModel();
+    GamesTableModel tm = pm.getTableModel();
     tm.addTableModelListener(this);
     gamesTable = new JTable(tm);
     gamesTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
     gamesTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
     gamesTable.getTableHeader().setReorderingAllowed(false);
+    
+    RowFilter<TableModel, Integer> groupFilter = new RowFilter<TableModel, Integer>(){
+		@Override
+		public boolean include(
+				javax.swing.RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
+			
+			boolean isRow1Visible = ((GamesTableModel)entry.getModel()).isCheckBoxColumnVisible();
+			
+			String filter = pm.getFilter();
+			if(filter.equals(ResourceManager.getText(Text.NOFILTER))){
+				return true;
+			}
+			Position p = (Position) entry.getValue(isRow1Visible?1:0);
+
+			if(p.getGroup().getName().equals(filter)){
+				return true;
+			}
+			Team homeTeam = p.getTeam();
+			if(homeTeam != null && homeTeam.getName().equals(filter)){
+				return true;
+			}
+			
+			Position p2 = (Position) entry.getValue(isRow1Visible?4:3);
+			Team awayTeam = p2.getTeam();
+			if(awayTeam != null && awayTeam.getName().equals(filter)){
+				return true;
+			}
+			int refreeCol = isRow1Visible?8:7;
+			if(entry.getValueCount() > refreeCol){
+				Refree ref = (Refree) entry.getValue(refreeCol);
+				if(ref != null && ref.getName().equals(filter)){
+					return true;
+				}
+			}
+			return false;
+		}    	
+    };
+    TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tm);
+    sorter.setRowFilter(groupFilter);
+    gamesTable.setRowSorter(sorter);
+    
     gamesTable.addMouseListener(new MouseAdapter() {
 
       @Override

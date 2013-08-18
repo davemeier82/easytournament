@@ -44,7 +44,6 @@ public class ScheduleItem extends NavigationItem {
     SettingsRegistry.register(ScheduleSettings.getInstance());
     spm = new SchedulePanelPModel();
     panel = new SchedulePanel(spm);
-    toolbar = new ScheduleToolBar(spm);
   }
 
   public void activate() {
@@ -57,6 +56,7 @@ public class ScheduleItem extends NavigationItem {
     enable.add(MainMenuAction.EXPORT);
     enable.add(MainMenuAction.IMPORT);
     MainMenuPModel.getInstance().enableItems(enable);
+    toolbar = new ScheduleToolBar(spm);
   }
 
   public boolean deactivate() {
@@ -110,8 +110,13 @@ public class ScheduleItem extends NavigationItem {
     job.setJobName(ResourceManager.getText(Text.SCHEDULE));
     JTable table = panel.getTable();
     table.setRowSelectionAllowed(false);
-    job.setPrintable(new TablePrinter(table, ResourceManager
-        .getText(Text.SCHEDULE)));
+    
+    String subtitle = ResourceManager.getText(Text.SCHEDULE);
+    if(!spm.getFilter().equals(ResourceManager.getText(Text.NOFILTER))){
+    	subtitle += " " + spm.getFilter();
+    }
+    
+    job.setPrintable(new TablePrinter(table, subtitle));
     if (job.printDialog()) {
       try {
         job.print();

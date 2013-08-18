@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.text.DateFormat;
-import java.util.ArrayList;
+import java.util.List;
 
 import com.easytournament.basic.html.HtmlHandler;
 import com.easytournament.basic.resources.ResourceManager;
@@ -13,11 +13,9 @@ import com.easytournament.basic.resources.Text;
 import com.easytournament.designer.settings.ScheduleSettings;
 import com.easytournament.designer.valueholder.ScheduleEntry;
 
-
-
 public class ScheduleHTMLHandler {
   public static void saveSchedule(File filename,
-      ArrayList<ScheduleEntry> entries) throws FileNotFoundException {
+      List<ScheduleEntry> entries, boolean showTeams, String titleExtension) throws FileNotFoundException {
 
     DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.SHORT,
         ResourceManager.getLocale());
@@ -32,6 +30,9 @@ public class ScheduleHTMLHandler {
       HtmlHandler.writeHtmlHead(out);
       out.print("<body>\n<h2>");
       out.print(ResourceManager.getText(Text.SCHEDULE));
+      if(titleExtension.length() > 0){
+    	  out.print(" "+titleExtension);
+      }
       out.println("</h2>");
       out.print("<table>\n\t<tr>\n\t\t<th>");
       out.print(ResourceManager.getText(Text.HOME));
@@ -56,9 +57,15 @@ public class ScheduleHTMLHandler {
             : " style=\"background-color:#dadada\"";
         out.println("\t<tr>");
         out.print("\t\t<td"+ style + ">");
-        out.print(se.getHomePos().getName());
+        if(showTeams && se.getHomeTeam() != null)
+          out.print(se.getHomeTeam().getName());
+        else
+          out.print(se.getHomePos().getName());
         out.print("</td>\n\t\t<td"+ style + ">");
-        out.print(se.getAwayPos().getName());
+        if(showTeams && se.getAwayTeam() != null)
+          out.print(se.getAwayTeam().getName());
+        else
+          out.print(se.getAwayPos().getName());
         out.print("</td>\n\t\t<td"+ style + ">");
         out.print(se.getPlace());
         out.print("</td>\n\t\t<td align=\"center\""+ style + ">");

@@ -5,19 +5,17 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.text.DateFormat;
-import java.util.ArrayList;
+import java.util.List;
 
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.designer.settings.ScheduleSettings;
 import com.easytournament.designer.valueholder.ScheduleEntry;
 
-
-
 public class ScheduleCSVHandler {
 
   public static void saveSchedule(File filename,
-      ArrayList<ScheduleEntry> entries) throws FileNotFoundException {
+      List<ScheduleEntry> entries, boolean showTeams) throws FileNotFoundException {
 
     DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.SHORT,
         ResourceManager.getLocale());
@@ -45,9 +43,15 @@ public class ScheduleCSVHandler {
         out.println();
       }
       for (ScheduleEntry se : entries) {
-        out.print(se.getHomePos().getName());
+    	if(showTeams && se.getHomeTeam() != null)
+          out.print(se.getHomeTeam().getName());
+        else
+          out.print(se.getHomePos().getName());
         out.print(";");
-        out.print(se.getAwayPos().getName());
+        if(showTeams && se.getAwayTeam() != null)
+          out.print(se.getAwayTeam().getName());
+        else
+          out.print(se.getAwayPos().getName());
         out.print(";");
         out.print(se.getPlace());
         out.print(";");

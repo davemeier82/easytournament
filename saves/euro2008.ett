@@ -784,7 +784,7 @@
         <position name="Sieger Semi-Final 1" id="24" prev="16" team="4">
           <next id="28" />
         </position>
-        <position name="Verlierer Semi-Final 1" id="25" prev="18" team="1" />
+        <position name="Verlierer Semi-Final 1" id="25" prev="18" team="15" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -810,7 +810,7 @@
         <position name="Sieger Semi-Final 2" id="26" prev="20" team="11">
           <next id="29" />
         </position>
-        <position name="Verlierer Semi-Final 2" id="27" prev="22" team="6" />
+        <position name="Verlierer Semi-Final 2" id="27" prev="22" team="12" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />
@@ -834,7 +834,7 @@
     <group name="Final" id="10" defaultsettings="1" defaultrules="1" type="DUELL">
       <positions>
         <position name="Sieger Final" id="28" prev="24" team="4" />
-        <position name="Verlierer Final" id="29" prev="26" team="6" />
+        <position name="Verlierer Final" id="29" prev="26" team="12" />
       </positions>
       <settings>
         <game numgametimes="2" minpergametime="45" numovertimes="2" minperovertime="15" />

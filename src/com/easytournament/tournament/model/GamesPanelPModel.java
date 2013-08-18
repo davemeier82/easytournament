@@ -3,6 +3,7 @@ package com.easytournament.tournament.model;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.DefaultListSelectionModel;
 import javax.swing.ListSelectionModel;
@@ -11,7 +12,10 @@ import javax.swing.table.TableModel;
 
 
 import com.easytournament.basic.Organizer;
+import com.easytournament.basic.resources.ResourceManager;
+import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.valueholder.Refree;
+import com.easytournament.basic.valueholder.Team;
 import com.easytournament.basic.valueholder.Tournament;
 import com.easytournament.designer.settings.ScheduleSettings;
 import com.easytournament.designer.valueholder.AbstractGroup;
@@ -20,13 +24,18 @@ import com.easytournament.tournament.calc.Calculator;
 import com.easytournament.tournament.model.dialog.GameDialogPModel;
 import com.easytournament.tournament.model.tablemodel.GamesTableModel;
 import com.jgoodies.binding.beans.Model;
+import com.jgoodies.common.collect.ArrayListModel;
 
 
 public class GamesPanelPModel extends Model implements PropertyChangeListener {
   
+  public static final String PROPERTY_FILTERLABELS = "filterLabels";
+  public static final String PROPERTY_FILTER = "filter";
+
   protected Tournament t = Organizer.getInstance().getCurrentTournament();
   protected GamesTableModel tableModel;
   protected DefaultListSelectionModel selectionModel;
+  private String filter = ResourceManager.getText(Text.NOFILTER);
   
   public GamesPanelPModel(){
     tableModel = new GamesTableModel(t.getSchedules());
@@ -34,7 +43,7 @@ public class GamesPanelPModel extends Model implements PropertyChangeListener {
     ScheduleSettings.getInstance().addPropertyChangeListener(ScheduleSettings.PROPERTY_SHOWREFREES, this);
   }
 
-  public TableModel getTableModel() {
+  public GamesTableModel getTableModel() {
     return tableModel;
   }
   
@@ -73,8 +82,33 @@ public class GamesPanelPModel extends Model implements PropertyChangeListener {
   public void propertyChange(PropertyChangeEvent evt) {
     if(evt.getPropertyName().equals(ScheduleSettings.PROPERTY_SHOWREFREES)){
       this.tableModel.fireTableStructureChanged();
-    }
-    
+    }    
   }
 
+	public String getFilter() {
+		return filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		this.tableModel.fireTableDataChanged();
+	}
+
+	public List<String> getFilterLabels() {
+		ArrayList<String> filters = new ArrayList<String>();
+		ArrayListModel<AbstractGroup> groups = this.t.getPlan()
+				.getOrderedGroups();
+		filters.add(ResourceManager.getText(Text.NOFILTER));
+		for (AbstractGroup g : groups) {
+			filters.add(g.getName());
+		}
+
+		for (Team team : this.t.getTeams()) {
+			filters.add(team.getName());
+		}
+		for (Refree ref : this.t.getRefrees()) {
+			filters.add(ref.getName());
+		}
+		return filters;
+	}
 }

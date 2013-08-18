@@ -30,6 +30,7 @@ import com.easytournament.basic.resources.Text;
 import com.easytournament.tournament.export.GamesExportable;
 import com.easytournament.tournament.export.TablesExportable;
 import com.easytournament.tournament.gui.GamesPanel;
+import com.easytournament.tournament.gui.toolbar.GamesToolBar;
 import com.easytournament.tournament.model.GamesPanelPModel;
 import com.easytournament.tournament.model.tablemodel.GamesTableModel;
 
@@ -37,10 +38,12 @@ import com.easytournament.tournament.model.tablemodel.GamesTableModel;
 public class GamesItem extends NavigationItem {
 
   private GamesPanel panel;
+  private GamesPanelPModel pm;
 
   @Override
   public void init() {
-    panel = new GamesPanel(new GamesPanelPModel());
+	pm = new GamesPanelPModel();
+    panel = new GamesPanel(pm);
     ExportRegistry.register(ResourceManager.getText(Text.RESULTS), new GamesExportable());
     ExportRegistry.register(ResourceManager.getText(Text.TABLES), new TablesExportable());
     super.init();
@@ -56,6 +59,7 @@ public class GamesItem extends NavigationItem {
     enable.add(MainMenuAction.EXPORT);
     enable.add(MainMenuAction.IMPORT);
     MainMenuPModel.getInstance().enableItems(enable);
+    toolbar = new GamesToolBar(pm);
   }
 
   public boolean deactivate() {
@@ -124,10 +128,16 @@ public class GamesItem extends NavigationItem {
     table.setSize(dim);
     table.setMaximumSize(dim);
     table.validate();
+    
+    String subtitle = ResourceManager.getText(Text.GAMES);
+    if(!pm.getFilter().equals(ResourceManager.getText(Text.NOFILTER))){
+    	subtitle += " " + pm.getFilter();
+    }
 
     table.setRowSelectionAllowed(false);
-    job.setJobName(ResourceManager.getText(Text.GAMES));
-    job.setPrintable(new TablePrinter(table, ResourceManager.getText(Text.GAMES)));
+    job.setJobName(subtitle);    
+    
+    job.setPrintable(new TablePrinter(table, subtitle));
     if (job.printDialog()) {
       try {
         job.print();
