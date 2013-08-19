@@ -9,6 +9,8 @@ import javax.swing.Action;
 
 import com.easytournament.basic.export.ExportRegistry;
 import com.easytournament.basic.export.Exportable;
+import com.easytournament.basic.navigationitem.NavTreeItems;
+import com.easytournament.basic.navigationitem.NavigationItem;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.jgoodies.binding.beans.Model;
@@ -33,8 +35,10 @@ public class ExportDialogPModel extends Model {
 
   protected String selection;
   protected HashMap<String,Exportable> exportables = ExportRegistry.getRegistry();
+  private NavigationItem activeModule;
 
-  public ExportDialogPModel() {
+  public ExportDialogPModel(NavigationItem activeModule) {
+    this.activeModule = activeModule;
     for (String s : exportables.keySet()) {
       exportLabels.add(s);
     }
@@ -56,7 +60,7 @@ public class ExportDialogPModel extends Model {
             ExportDialogPModel.this.firePropertyChange(DISPOSE, "1", "2");
             Exportable ex = exportables.get(selection);
             if (ex != null)
-              ex.doExport();
+              ex.doExport(activeModule == ex.getModule());
           }
         };
       case CANCEL_ACTION:

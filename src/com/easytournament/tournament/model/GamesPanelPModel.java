@@ -17,10 +17,12 @@ import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.valueholder.Refree;
 import com.easytournament.basic.valueholder.Team;
 import com.easytournament.basic.valueholder.Tournament;
+import com.easytournament.designer.export.ScheduleExportable;
 import com.easytournament.designer.settings.ScheduleSettings;
 import com.easytournament.designer.valueholder.AbstractGroup;
 import com.easytournament.designer.valueholder.ScheduleEntry;
 import com.easytournament.tournament.calc.Calculator;
+import com.easytournament.tournament.export.GamesExportable;
 import com.easytournament.tournament.model.dialog.GameDialogPModel;
 import com.easytournament.tournament.model.tablemodel.GamesTableModel;
 import com.jgoodies.binding.beans.Model;
@@ -111,4 +113,14 @@ public class GamesPanelPModel extends Model implements PropertyChangeListener {
 		}
 		return filters;
 	}
+
+  public void exportGames(ArrayList<Integer> indices) {
+    GamesExportable e = new GamesExportable(null, null);
+    ArrayList<ScheduleEntry> schedule = new ArrayList<ScheduleEntry>();
+    for(Integer i : indices){
+        schedule.add(this.t.getSchedules().get(i));
+    }       
+    e.export(schedule, filter.equals(ResourceManager.getText(Text.NOFILTER))?"":filter);
+    
+  }
 }

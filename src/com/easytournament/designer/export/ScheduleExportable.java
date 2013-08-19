@@ -9,7 +9,9 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 
 import com.easytournament.basic.Organizer;
+import com.easytournament.basic.export.ExportTriggerable;
 import com.easytournament.basic.export.Exportable;
+import com.easytournament.basic.navigationitem.NavigationItem;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.designer.csv.ScheduleCSVHandler;
@@ -18,18 +20,36 @@ import com.easytournament.designer.valueholder.ScheduleEntry;
 
 public class ScheduleExportable implements Exportable {
 
-  @Override
-  public void doExport() {
-    export(Organizer.getInstance().getCurrentTournament().getSchedules(), false, "");
+  private NavigationItem module;
+  private ExportTriggerable exportable;
+
+  public ScheduleExportable(NavigationItem module, ExportTriggerable exportable) {
+    this.module = module;
+    this.exportable = exportable;
   }
 
-public void export(List<ScheduleEntry> schedule, boolean showTeams, String titleExtension) {
-	JFileChooser chooser = new JFileChooser();
+  @Override
+  public void doExport(boolean activeModule) {
+    if(activeModule)
+    {
+      this.exportable.triggerExport();
+    } else {
+      export(Organizer.getInstance().getCurrentTournament().getSchedules(),
+        false, "");
+    }
+    
+  }
+
+  public void export(List<ScheduleEntry> schedule, boolean showTeams,
+      String titleExtension) {
+    JFileChooser chooser = new JFileChooser();
     chooser.setFileFilter(new FileFilter() {
+      @Override
       public boolean accept(File f) {
         return f.getName().toLowerCase().endsWith(".csv") || f.isDirectory();
       }
 
+      @Override
       public String getDescription() {
         return "CSV (*.csv)";
       }
@@ -57,7 +77,8 @@ public void export(List<ScheduleEntry> schedule, boolean showTeams, String title
             if (!filename.getPath().toLowerCase().endsWith(".html")) {
               filename = new File(filename.getPath() + ".html");
             }
-            ScheduleHTMLHandler.saveSchedule(filename, schedule, showTeams, titleExtension);
+            ScheduleHTMLHandler.saveSchedule(filename, schedule, showTeams,
+                titleExtension);
           }
           else {
             if (!filename.getPath().toLowerCase().endsWith(".csv")) {
@@ -68,12 +89,17 @@ public void export(List<ScheduleEntry> schedule, boolean showTeams, String title
         }
         catch (FileNotFoundException e1) {
           JOptionPane.showInternalMessageDialog(Organizer.getInstance()
-              .getMainFrame(), ResourceManager.getText(Text.COULD_NOT_SAVE_SCHEDULE), ResourceManager.getText(Text.ERROR),
-              JOptionPane.ERROR_MESSAGE);
+              .getMainFrame(), ResourceManager
+              .getText(Text.COULD_NOT_SAVE_SCHEDULE), ResourceManager
+              .getText(Text.ERROR), JOptionPane.ERROR_MESSAGE);
         }
-
       }
     }
-}
+  }  
+
+  @Override
+  public NavigationItem getModule() {
+    return this.module;
+  }
 
 }

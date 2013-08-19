@@ -10,10 +10,6 @@ import com.easytournament.tournament.navigationitem.GamesItem;
 import com.easytournament.tournament.navigationitem.GroupAssignItem;
 import com.easytournament.tournament.navigationitem.TablesItem;
 
-
-
-
-
 public class NavTreeItems {
   public static final List<NavigationItem> NAVMENU_ITEMS = new ArrayList<NavigationItem>() {
     private static final long serialVersionUID = 1L;
@@ -30,5 +26,4 @@ public class NavTreeItems {
       add(new StatisticItem());
     }
   };
-
 }

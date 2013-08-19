@@ -200,7 +200,7 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
 	}
 	
 	public void exportSchedule(List<Integer> indices){		
-		ScheduleExportable e = new ScheduleExportable();
+		ScheduleExportable e = new ScheduleExportable(null, null);
 		ArrayList<ScheduleEntry> schedule = new ArrayList<ScheduleEntry>();
 		for(Integer i : indices){
 			schedule.add(this.t.getSchedules().get(i));

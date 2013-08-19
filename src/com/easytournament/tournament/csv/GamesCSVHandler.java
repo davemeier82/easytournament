@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.text.DateFormat;
-import java.util.ArrayList;
+import java.util.List;
 
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
@@ -14,7 +14,7 @@ import com.easytournament.designer.valueholder.ScheduleEntry;
 
 public class GamesCSVHandler {
 
-  public static void saveGames(File filename, ArrayList<ScheduleEntry> entries)
+  public static void saveGames(File filename, List<ScheduleEntry> entries)
       throws FileNotFoundException {
 
     DateFormat dateFormatter = DateFormat.getDateInstance(DateFormat.SHORT,

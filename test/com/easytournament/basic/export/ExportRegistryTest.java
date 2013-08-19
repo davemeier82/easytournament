@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.easytournament.basic.navigationitem.NavigationItem;
+
 /**
  * Unit tests for ExportRegistry.java
  * @author David Meier
@@ -28,8 +30,13 @@ public class ExportRegistryTest {
     Exportable e = new Exportable() {
       
       @Override
-      public void doExport() {
+      public void doExport(boolean activeModule) {
         //do nothing       
+      }
+
+      @Override
+      public NavigationItem getModule() {
+        return null;
       }
     };
     

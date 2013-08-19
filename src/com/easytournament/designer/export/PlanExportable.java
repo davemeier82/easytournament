@@ -16,6 +16,7 @@ import org.jdom.Element;
 import com.easytournament.basic.MetaInfos;
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.export.Exportable;
+import com.easytournament.basic.navigationitem.NavigationItem;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.xml.XMLHandler;
@@ -31,8 +32,14 @@ import com.mxgraph.util.mxCellRenderer.CanvasFactory;
 
 public class PlanExportable implements Exportable {
 
+  private NavigationItem module;
+
+  public PlanExportable(NavigationItem module) {
+    this.module = module;
+  }
+
   @Override
-  public void doExport() {
+  public void doExport(boolean activeModule) {
     JFileChooser chooser = new JFileChooser();
     chooser.setFileFilter(new FileFilter() {
       public boolean accept(File f) {
@@ -144,12 +151,13 @@ public class PlanExportable implements Exportable {
             JOptionPane.showMessageDialog(graphComponent,
                 mxResources.get("noImageData"));
           }
-
         }
-
       }
     }
-
   }
 
+  @Override
+  public NavigationItem getModule() {
+    return this.module;
+  }
 }

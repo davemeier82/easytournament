@@ -44,8 +44,7 @@ public class GamesItem extends NavigationItem {
   public void init() {
 	pm = new GamesPanelPModel();
     panel = new GamesPanel(pm);
-    ExportRegistry.register(ResourceManager.getText(Text.RESULTS), new GamesExportable());
-    ExportRegistry.register(ResourceManager.getText(Text.TABLES), new TablesExportable());
+    ExportRegistry.register(ResourceManager.getText(Text.RESULTS), new GamesExportable(this, panel));
     super.init();
   }
 

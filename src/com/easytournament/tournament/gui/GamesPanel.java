@@ -5,6 +5,7 @@ import java.awt.FontMetrics;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
@@ -27,6 +28,7 @@ import javax.swing.table.TableRowSorter;
 import org.pushingpixels.substance.api.renderers.SubstanceDefaultTableCellRenderer;
 
 import com.easytournament.basic.Organizer;
+import com.easytournament.basic.export.ExportTriggerable;
 import com.easytournament.basic.gui.tablecellrenderer.CheckboxCellRenderer;
 import com.easytournament.basic.resources.Icon;
 import com.easytournament.basic.resources.ResourceManager;
@@ -43,7 +45,7 @@ import com.easytournament.tournament.model.GamesPanelPModel;
 import com.easytournament.tournament.model.dialog.GameDialogPModel;
 import com.easytournament.tournament.model.tablemodel.GamesTableModel;
 
-public class GamesPanel extends JPanel implements TableModelListener {
+public class GamesPanel extends JPanel implements TableModelListener, ExportTriggerable {
 
   private GamesPanelPModel pm;
   private TablePopupMenu popup;
@@ -233,5 +235,14 @@ public class GamesPanel extends JPanel implements TableModelListener {
 
   public JTable getTable() {
     return gamesTable;
+  }
+
+  @Override
+  public void triggerExport() {
+    ArrayList<Integer> indices = new ArrayList<Integer>();
+    for (int i = 0; i < gamesTable.getRowCount(); ++i) {
+      indices.add(gamesTable.convertRowIndexToModel(i));
+    }
+    pm.exportGames(indices);
   }
 }

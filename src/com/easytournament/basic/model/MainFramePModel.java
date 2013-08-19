@@ -269,7 +269,7 @@ public class MainFramePModel extends Model implements TreeSelectionListener,
           }
           case EXPORT: {
             new ExportDialog(organizer.getMainFrame(), true,
-                new ExportDialogPModel());
+                new ExportDialogPModel(currentItem));
             break;
           }
           case EXIT: {

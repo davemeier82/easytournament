@@ -13,6 +13,7 @@ import org.jdom.Element;
 
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.action.MainMenuAction;
+import com.easytournament.basic.export.ExportRegistry;
 import com.easytournament.basic.gui.MainMenuObservable;
 import com.easytournament.basic.gui.dialog.ErrorDialog;
 import com.easytournament.basic.model.MainMenuPModel;
@@ -21,7 +22,11 @@ import com.easytournament.basic.navigationitem.NaviNode;
 import com.easytournament.basic.navigationitem.NavigationItem;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
+import com.easytournament.tournament.export.GamesExportable;
+import com.easytournament.tournament.export.TablesExportable;
+import com.easytournament.tournament.gui.GamesPanel;
 import com.easytournament.tournament.gui.TablesPanel;
+import com.easytournament.tournament.model.GamesPanelPModel;
 import com.easytournament.tournament.print.TablesPrintable;
 import com.easytournament.tournament.xml.TablesXMLHandler;
 
@@ -29,6 +34,12 @@ import com.easytournament.tournament.xml.TablesXMLHandler;
 public class TablesItem extends NavigationItem {
 
   private TablesPanel panel;
+  
+  @Override
+  public void init() {
+    ExportRegistry.register(ResourceManager.getText(Text.TABLES), new TablesExportable(this));
+    super.init();
+  }
 
   public void activate() {
     super.activate();

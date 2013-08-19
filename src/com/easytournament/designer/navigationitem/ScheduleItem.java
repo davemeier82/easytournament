@@ -39,11 +39,11 @@ public class ScheduleItem extends NavigationItem {
 
   @Override
   public void init() {
-    ExportRegistry.register(ResourceManager.getText(Text.SCHEDULE),
-        new ScheduleExportable());
-    SettingsRegistry.register(ScheduleSettings.getInstance());
     spm = new SchedulePanelPModel();
     panel = new SchedulePanel(spm);
+    ExportRegistry.register(ResourceManager.getText(Text.SCHEDULE),
+        new ScheduleExportable(this, this.panel));
+    SettingsRegistry.register(ScheduleSettings.getInstance());
   }
 
   public void activate() {

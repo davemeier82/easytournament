@@ -56,7 +56,7 @@ public class DesignerItem extends NavigationItem implements mxIEventListener {
     toolbar = new DesignerToolBar(DesignerToolBarModel.getInstance());
     SettingsRegistry.register(DesignerSettings.getInstance());
     ExportRegistry.register(ResourceManager.getText(Text.TOURNAMENT_DIAG),
-        new PlanExportable());
+        new PlanExportable(this));
     ImportRegistry.register(ResourceManager.getText(Text.TOURNAMENT_DIAG),
         new PlanImportable());
     setSettings();
