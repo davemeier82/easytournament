@@ -473,7 +473,7 @@ public class ManualStatsPModel extends Model implements ListDataListener,
     Date old = begin.getTime();
     tmpCal.setTime(date);
     begin.set(tmpCal.get(Calendar.YEAR), tmpCal.get(Calendar.MONTH),
-        tmpCal.get(Calendar.DATE));
+        tmpCal.get(Calendar.DAY_OF_MONTH));
     this.firePropertyChange(PROPERTY_BEGIN_DATE, old, date);
   }
   
@@ -485,7 +485,7 @@ public class ManualStatsPModel extends Model implements ListDataListener,
     Date old = end.getTime();
     tmpCal.setTime(date);
     end.set(tmpCal.get(Calendar.YEAR), tmpCal.get(Calendar.MONTH),
-        tmpCal.get(Calendar.DATE));
+        tmpCal.get(Calendar.DAY_OF_MONTH));
     this.firePropertyChange(PROPERTY_END_DATE, old, date);
   }
   

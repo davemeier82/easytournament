@@ -93,7 +93,7 @@ public class TournamentPanel extends JPanel {
     jlabel3.setText(ResourceManager.getText(Text.BEGINNING));
     jpanel1.add(jlabel3, cc.xy(1, 7));
 
-    JDateChooser beginDateChooser = new JDateChooser();    
+    JDateChooser beginDateChooser = new JDateChooser();
     ValueModel beginModel = new PropertyAdapter<TPanelPModel>(pm, TPanelPModel.PROPERTY_BEGIN_DATE, true);
     Bindings.bind(beginDateChooser, "date", beginModel);
     beginDateChooser.setLocale(ResourceManager.getLocale());    

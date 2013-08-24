@@ -13,6 +13,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.swing.AbstractAction;
@@ -20,8 +21,10 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -40,7 +43,9 @@ import org.pushingpixels.substance.api.renderers.SubstanceDefaultTableCellRender
 
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.export.ExportTriggerable;
+import com.easytournament.basic.gui.dialog.DateChooserDialog;
 import com.easytournament.basic.gui.tablecelleditor.DateCellEditor;
+import com.easytournament.basic.model.dialog.DateChooserDialogModel;
 import com.easytournament.basic.resources.Icon;
 import com.easytournament.basic.resources.ResourceManager;
 import com.easytournament.basic.resources.Text;
@@ -247,8 +252,30 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     JMenuItem deleteItem = new JMenuItem(
         pm.getAction(SchedulePanelPModel.DELETE_ACTION));
     popup.add(deleteItem);
+    JMenuItem delayItem = new JMenuItem(new AbstractAction(
+        "Spiele ab hier verschieben") {
+
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        ArrayList<Integer> indices = new ArrayList<Integer>();
+        int row = popup.getRow();
+        int numRows = schedTable.getRowCount();
+        for (int i = row; i < numRows; ++i) {
+          indices.add(schedTable.convertRowIndexToModel(i));
+        }
+        DateChooserDialogModel dateChooserModel = new DateChooserDialogModel(
+            (Calendar)pm.getDate(indices.get(0)).clone());
+        if (DateChooserDialog.showDialog(
+            Organizer.getInstance().getMainFrame(), "Title", "text",
+            dateChooserModel)) {
+          pm.delayGames(indices, dateChooserModel.getCalendar());
+        }
+      }
+    });
+    popup.add(delayItem);
     schedTable.addMouseListener(new PopupListener());
     spane.addMouseListener(new PopupListener());
+
     return spane;
   }
 

@@ -33,6 +33,7 @@ import com.jgoodies.common.collect.ArrayListModel;
 
 public class TPanelPModel extends Model implements PropertyChangeListener {
 
+  private static final long serialVersionUID = -4282471524543952098L;
   public static final int NEW_SPORT_ACTION = 0;
   public static final int EDIT_SPORT_ACTION = 1;
   public static final int LOGO_ACTION = 3;
@@ -51,17 +52,17 @@ public class TPanelPModel extends Model implements PropertyChangeListener {
   protected Calendar calendar = new GregorianCalendar(
       ResourceManager.getLocale());
   protected LogoAction logoAction;
-  
+
   public TPanelPModel() {
-    logoAction = new LogoAction(null, t.getLogo());
-    t.addPropertyChangeListener(this);
+    this.logoAction = new LogoAction(null, this.t.getLogo());
+    this.t.addPropertyChangeListener(this);
   }
 
   public ValueModel getTournamentValueModel(String propertyName) {
     if (propertyName.equals(Tournament.PROPERTY_SPORT)) {
       return new PropertyAdapter<TPanelPModel>(this, "sport", true);
     }
-    return new PropertyAdapter<Tournament>(t, propertyName, true);
+    return new PropertyAdapter<Tournament>(this.t, propertyName, true);
   }
 
   public Action getAction(int action) {
@@ -69,6 +70,9 @@ public class TPanelPModel extends Model implements PropertyChangeListener {
       case NEW_SPORT_ACTION:
         return new AbstractAction(ResourceManager.getText(Text.NEW)) {
 
+          private static final long serialVersionUID = -2859408984600504000L;
+
+          @SuppressWarnings("unused")
           @Override
           public void actionPerformed(ActionEvent arg0) {
             new SportDialog(Organizer.getInstance().getMainFrame(), true,
@@ -79,29 +83,36 @@ public class TPanelPModel extends Model implements PropertyChangeListener {
       case EDIT_SPORT_ACTION:
         return new AbstractAction(ResourceManager.getText(Text.EDIT)) {
 
+          private static final long serialVersionUID = 1227629601797395521L;
+
+          @SuppressWarnings("unused")
           @Override
           public void actionPerformed(ActionEvent arg0) {
             new SportDialog(Organizer.getInstance().getMainFrame(), true,
-                new SportDialogPModel(t.getSport()));
+                new SportDialogPModel(TPanelPModel.this.t.getSport()));
 
           }
         };
       case LOGO_ACTION:
-        return logoAction;
+        return this.logoAction;
       case RESET_ICON_ACTION:
         return new AbstractAction(
             ResourceManager.getText(Text.RESET_LOGO),
             ResourceManager
                 .getIcon(com.easytournament.basic.resources.Icon.DELETE_ICON_SMALL)) {
 
+          private static final long serialVersionUID = 6808297329369860383L;
+
           @Override
           public void actionPerformed(ActionEvent e) {
             putValue(Action.SMALL_ICON, null);
             putValue(Action.SHORT_DESCRIPTION,
                 ResourceManager.getText(Text.SELECT_LOGO));
-            t.setLogo(null);
+            TPanelPModel.this.t.setLogo(null);
           }
         };
+      default:
+        break;
     }
     return null;
   }
@@ -110,35 +121,37 @@ public class TPanelPModel extends Model implements PropertyChangeListener {
   public void propertyChange(PropertyChangeEvent evt) {
     if (evt.getSource() == this.t) {
       if (evt.getPropertyName() == Tournament.PROPERTY_BEGIN) {
-        firePropertyChange(PROPERTY_BEGIN_TIME, null, t.getBegin().getTime());
-        firePropertyChange(PROPERTY_BEGIN_DATE, null, t.getBegin().getTime());
+        firePropertyChange(PROPERTY_BEGIN_TIME, null, this.t.getBegin()
+            .getTime());
+        firePropertyChange(PROPERTY_BEGIN_DATE, null, this.t.getBegin()
+            .getTime());
       }
       else if (evt.getPropertyName() == Tournament.PROPERTY_END) {
-        firePropertyChange(PROPERTY_END_TIME, null, t.getEnd().getTime());
-        firePropertyChange(PROPERTY_END_DATE, null, t.getEnd().getTime());
+        firePropertyChange(PROPERTY_END_TIME, null, this.t.getEnd().getTime());
+        firePropertyChange(PROPERTY_END_DATE, null, this.t.getEnd().getTime());
       }
       else if (evt.getPropertyName() == Tournament.PROPERTY_LOGO) {
-        logoAction.putValue(Action.SMALL_ICON, t.getLogo());
+        this.logoAction.putValue(Action.SMALL_ICON, this.t.getLogo());
       }
     }
   }
 
   public void setBeginTime(Date time) {
-    calendar.setTime(time);
-    t.setBeginTime(calendar);
+    this.calendar.setTime(time);
+    this.t.setBeginTime(this.calendar);
   }
 
   public Date getBeginTime() {
-    return t.getBegin().getTime();
+    return this.t.getBegin().getTime();
   }
 
   public void setEndTime(Date time) {
-    calendar.setTime(time);
-    t.setEndTime(calendar);
+    this.calendar.setTime(time);
+    this.t.setEndTime(this.calendar);
   }
 
   public Date getEndTime() {
-    return t.getEnd().getTime();
+    return this.t.getEnd().getTime();
   }
 
   class LogoAction extends AbstractAction {
@@ -172,11 +185,10 @@ public class TPanelPModel extends Model implements PropertyChangeListener {
           ImageIcon scaled = Utils.getScaledImage(icon, scale);
           putValue(Action.SMALL_ICON, scaled);
           putValue(Action.SHORT_DESCRIPTION, null);
-          t.setLogo(scaled);
+          TPanelPModel.this.t.setLogo(scaled);
         }
       }
     }
-
   }
 
   public ArrayListModel<Sport> getSports() {
@@ -185,44 +197,44 @@ public class TPanelPModel extends Model implements PropertyChangeListener {
   }
 
   public void setSport(Sport s) {
-    if (t.getSport().isEdited()) {
-      int answer = JOptionPane.showConfirmDialog(Organizer.getInstance()
-          .getMainFrame(),
-          ResourceManager.getText(Text.CHANGE_SPORT1) + t.getSport().getName()
+    if (this.t.getSport().isEdited()) {
+      int answer = JOptionPane.showConfirmDialog(
+          Organizer.getInstance().getMainFrame(),
+          ResourceManager.getText(Text.CHANGE_SPORT1)
+              + this.t.getSport().getName()
               + ResourceManager.getText(Text.CHANGE_SPORT2), ResourceManager
               .getText(Text.CHANGE_SPORT), JOptionPane.YES_NO_OPTION,
           JOptionPane.WARNING_MESSAGE);
       if (answer == JOptionPane.OK_OPTION)
-        t.setSport(s);
+        this.t.setSport(s);
     }
     else {
-      t.setSport(s);
+      this.t.setSport(s);
     }
   }
 
   public Sport getSport() {
-    return t.getSport();
+    return this.t.getSport();
   }
 
   public Date getBeginDate() {
-    return t.getBegin().getTime();
+    return this.t.getBegin().getTime();
   }
 
   public void setBeginDate(Date beginDate) {
-    calendar.setTime(beginDate);
-    t.getBegin().set(calendar.get(Calendar.YEAR),
-        calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
+    this.calendar.setTime(beginDate);
+    this.t.getBegin().set(this.calendar.get(Calendar.YEAR),
+        this.calendar.get(Calendar.MONTH), this.calendar.get(Calendar.DAY_OF_MONTH));
   }
 
   public Date getEndDate() {
-    return t.getEnd().getTime();
+    return this.t.getEnd().getTime();
   }
 
   public void setEndDate(Date endDate) {
-    calendar.setTime(endDate);
-    t.getEnd().set(calendar.get(Calendar.YEAR),
-        calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
+    this.calendar.setTime(endDate);
+    this.t.getEnd().set(this.calendar.get(Calendar.YEAR),
+        this.calendar.get(Calendar.MONTH), this.calendar.get(Calendar.DAY_OF_MONTH));
   }
-  
-  
+
 }

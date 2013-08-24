@@ -130,8 +130,8 @@ public class ScheduleTableModel extends DefaultTableModel implements
           try {
             calendar.setTime((Date) value);
             tempdata.getDate().set(calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH), calendar.get(Calendar.DATE));
-            Collections.sort(this.data, comp);
+                calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+            sortData();
           }
           catch (Exception e) {/* do nothing */}
           break;
@@ -147,7 +147,7 @@ public class ScheduleTableModel extends DefaultTableModel implements
                 calendar.get(Calendar.MILLISECOND));
             tempdata.getDate()
                 .set(Calendar.AM_PM, calendar.get(Calendar.AM_PM));
-            Collections.sort(this.data, comp);
+            sortData();
           }
           catch (Exception e) {/* do nothing */}
           break;
@@ -162,6 +162,10 @@ public class ScheduleTableModel extends DefaultTableModel implements
       this.data.fireContentsChanged(rowIndex);
       this.fireTableDataChanged();
     }
+  }
+
+  public void sortData() {
+    Collections.sort(this.data, comp);
   }
 
   public void addShedule(ScheduleEntry e) {

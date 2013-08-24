@@ -95,7 +95,7 @@ public class SGeneratorPModel extends Model {
             Calendar tmp = new GregorianCalendar();
             tmp.setTime(startDate);
             date.set(tmp.get(Calendar.YEAR), tmp.get(Calendar.MONTH),
-                tmp.get(Calendar.DATE));
+                tmp.get(Calendar.DAY_OF_MONTH));
 
             int lastProcessCount;
             do {
