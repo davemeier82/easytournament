@@ -253,7 +253,7 @@ public class SchedulePanel extends JPanel implements TableModelListener,
         pm.getAction(SchedulePanelPModel.DELETE_ACTION));
     popup.add(deleteItem);
     JMenuItem delayItem = new JMenuItem(new AbstractAction(
-        "Spiele ab hier verschieben") {
+        ResourceManager.getText(Text.DELAY_GAMES), ResourceManager.getIcon(Icon.CHANGE_TIME_ICON_SMALL)) {
 
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -266,7 +266,8 @@ public class SchedulePanel extends JPanel implements TableModelListener,
         DateChooserDialogModel dateChooserModel = new DateChooserDialogModel(
             (Calendar)pm.getDate(indices.get(0)).clone());
         if (DateChooserDialog.showDialog(
-            Organizer.getInstance().getMainFrame(), "Title", "text",
+            Organizer.getInstance().getMainFrame(),
+            ResourceManager.getText(Text.NEW_GAMETIME), ResourceManager.getText(Text.TIME),
             dateChooserModel)) {
           pm.delayGames(indices, dateChooserModel.getCalendar());
         }
@@ -337,13 +338,11 @@ public class SchedulePanel extends JPanel implements TableModelListener,
                   if (p != null)
                     width = Math.max(width, fm.stringWidth(p.toString()));
                 }
-
               }
               catch (Exception ex) {
                 if (value != null)
                   width = Math.max(width, fm.stringWidth(value.toString()));
               }
-
             }
             if (i < 2)
               width += 50;

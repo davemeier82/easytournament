@@ -68,4 +68,5 @@ public enum Icon {
   
   ASSISTANT_ICON_BIG, 
   ASSISTANT_ICON_SMALL,
+  CHANGE_TIME_ICON_SMALL,
 }
