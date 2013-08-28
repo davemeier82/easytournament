@@ -33,7 +33,7 @@ public class MetaInfos {
   /**
    * major version number (new features)
    */
-  public static final int VERSION_MAJOR = 7;
+  public static final int VERSION_MAJOR = 8;
   /**
    * minor version number (bugfixes)
    */

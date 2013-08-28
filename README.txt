@@ -16,6 +16,13 @@ Errors and feature wishes can you tell us as follows:
 - Submitting of an error report if an error occurs.
 - Post a message in the forum at www.easy-tournament.com/forum
 
+Changes to version 0.7.0
+****************************
+- improved schedule generator
+- added filtering of schedule and games
+- added function to delay games
+- updated help
+
 Changes to version 0.6.8
 ****************************
 - Tournament Assistant

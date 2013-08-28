@@ -16,6 +16,14 @@ Fehler und Verbesserungswünsche können sie uns wie folgt mitteilen:
 - Absenden des Error-Reports falls ein Fehler auftritt
 - Schreiben einer Nachricht im Forum auf easy-tournament.com/forum
 
+
+Änderungen zur Version 0.7.0
+****************************
+- Verbesserter Spielplan-Generator
+- Der Spielplan und die Resultate lassen sich nun filtern
+- Spiele können nun verschoben werden
+- Die Hilfe ist nun auf dem neusten Stand
+
 Änderungen zur Version 0.6.8
 ****************************
 - Turnier Assistent
