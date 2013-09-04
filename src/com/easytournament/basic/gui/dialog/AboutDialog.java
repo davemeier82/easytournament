@@ -220,9 +220,10 @@ public class AboutDialog extends JDialog {
     if (lml != null) {
       this.logo.addMouseListener(lml);
       this.website.addMouseListener(lml);
+      this.jcalendar.addMouseListener(lml);
       this.ccodec.addMouseListener(lml);
       this.jdom.addMouseListener(lml);
-      this.substance.addMouseListener(lml);
+      //this.substance.addMouseListener(lml); page doesn't exist anymore
       this.jgoodies.addMouseListener(lml);
       this.jgraph.addMouseListener(lml);
       this.fugue.addMouseListener(lml);
@@ -312,19 +313,19 @@ public class AboutDialog extends JDialog {
       Component c = e.getComponent();
       try {
         if (c == AboutDialog.this.logo || c == AboutDialog.this.website)
-          desktop.browse(new URI(MetaInfos.APP_WEBSITE));
+          desktop.browse(new URI("http://"+MetaInfos.APP_WEBSITE));
         else if (c == AboutDialog.this.ccodec)
           desktop.browse(new URI("http://commons.apache.org/codec/"));
         else if (c == AboutDialog.this.jcalendar)
-          desktop.browse(new URI("www.toedter.com/en/jcalendar/"));
+          desktop.browse(new URI("http://www.toedter.com/en/jcalendar/"));
         else if (c == AboutDialog.this.jdom)
-          desktop.browse(new URI("www.jdom.org"));
+          desktop.browse(new URI("http://www.jdom.org"));
         else if (c == AboutDialog.this.jgoodies)
-          desktop.browse(new URI("www.jgoodies.com"));
+          desktop.browse(new URI("http://www.jgoodies.com"));
         else if (c == AboutDialog.this.jgraph)
-          desktop.browse(new URI("www.jgraph.com"));
+          desktop.browse(new URI("http://www.jgraph.com"));
         else if (c == AboutDialog.this.substance)
-          desktop.browse(new URI("http://insubstantial.posterous.com/"));
+          desktop.browse(new URI("http://http://insubstantial.posterous.com/"));
         else if (c == AboutDialog.this.fugue)
           desktop.browse(new URI("http://p.yusukekamiyamane.com/"));
       }

@@ -17,6 +17,11 @@ Fehler und Verbesserungswünsche können sie uns wie folgt mitteilen:
 - Schreiben einer Nachricht im Forum auf easy-tournament.com/forum
 
 
+Änderungen zur Version 0.8.0
+****************************
+- Java 6 Fehler behoben
+- OS X Fehler behoben
+
 Änderungen zur Version 0.7.0
 ****************************
 - Verbesserter Spielplan-Generator

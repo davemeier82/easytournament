@@ -16,6 +16,11 @@ Errors and feature wishes can you tell us as follows:
 - Submitting of an error report if an error occurs.
 - Post a message in the forum at www.easy-tournament.com/forum
 
+Changes to version 0.8.0
+****************************
+- Java 6 Bugfixes
+- OS X Bugfixes
+
 Changes to version 0.7.0
 ****************************
 - improved schedule generator

@@ -88,7 +88,8 @@ public class WizardDialog extends JDialog implements PropertyChangeListener {
       cpane.remove(this.mainpanel);
       this.mainpanel = this.pm.getPanel();      
       cpane.add(this.mainpanel, BorderLayout.CENTER);
-      this.revalidate();
+      this.invalidate();
+      this.validate();
     }
     else if (evt.getPropertyName() == WizardModel.TITLE_CHANGED) {
       this.setTitle(this.pm.getTitel());

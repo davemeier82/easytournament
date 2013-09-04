@@ -126,7 +126,7 @@ public class GeneralSettings implements Settings {
         if (answer == JOptionPane.YES_OPTION) {
           Desktop desktop = Desktop.getDesktop();
           try {
-            desktop.browse(new URI(MetaInfos.APP_WEBSITE));
+            desktop.browse(new URI("http://"+MetaInfos.APP_WEBSITE));
           }
           catch (Exception ex) {// do nothing
           }
