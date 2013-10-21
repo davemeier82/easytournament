@@ -76,27 +76,30 @@ public class ScheduleXMLHandler {
       ArrayListModel<GameEventEntry> entries, Element scheduleEl) {
     Element gEventEntries = new Element("gameevententries");
     for (GameEventEntry e : entries) {
-      Element gEvnetEntryEl = new Element("gameevententry");
-      gEvnetEntryEl.setAttribute("gameeventid", e.getEvent().getId() + "");
-      gEvnetEntryEl.setAttribute("teamid", e.getTeam().getId() + "");
-      gEvnetEntryEl.setAttribute("timemin", e.getTimeMin() + "");
-      gEvnetEntryEl.setAttribute("timesec", e.getTimeSec() + "");
-      Element mainPlayersEl = new Element("mainplayer");
-      for (Player p : e.getMainPlayers()) {
-        Element playerEl = new Element("player");
-        playerEl.setAttribute("id", p.getId() + "");
-        mainPlayersEl.addContent(playerEl);
-      }
-      gEvnetEntryEl.addContent(mainPlayersEl);
-      Element secPlayersEl = new Element("secondaryplayer");
-      for (Player p : e.getSecondaryPlayers()) {
-        Element playerEl = new Element("player");
-        playerEl.setAttribute("id", p.getId() + "");
-        secPlayersEl.addContent(playerEl);
-      }
-      gEvnetEntryEl.addContent(secPlayersEl);
+      if(e.getEvent() != null && e.getTeam() != null)
+      {
+        Element gEvnetEntryEl = new Element("gameevententry");
+        gEvnetEntryEl.setAttribute("gameeventid", e.getEvent().getId() + "");
+        gEvnetEntryEl.setAttribute("teamid", e.getTeam().getId() + "");
+        gEvnetEntryEl.setAttribute("timemin", e.getTimeMin() + "");
+        gEvnetEntryEl.setAttribute("timesec", e.getTimeSec() + "");
+        Element mainPlayersEl = new Element("mainplayer");
+        for (Player p : e.getMainPlayers()) {
+          Element playerEl = new Element("player");
+          playerEl.setAttribute("id", p.getId() + "");
+          mainPlayersEl.addContent(playerEl);
+        }
+        gEvnetEntryEl.addContent(mainPlayersEl);
+        Element secPlayersEl = new Element("secondaryplayer");
+        for (Player p : e.getSecondaryPlayers()) {
+          Element playerEl = new Element("player");
+          playerEl.setAttribute("id", p.getId() + "");
+          secPlayersEl.addContent(playerEl);
+        }
+        gEvnetEntryEl.addContent(secPlayersEl);
 
-      gEventEntries.addContent(gEvnetEntryEl);
+        gEventEntries.addContent(gEvnetEntryEl);
+      }      
     }
     scheduleEl.addContent(gEventEntries);
   }
@@ -192,27 +195,34 @@ public class ScheduleXMLHandler {
     ArrayListModel<GameEventEntry> gentries = new ArrayListModel<GameEventEntry>();
     Element gEventsEl = seElement.getChild("gameevententries");
     List<Element> gEventEls = gEventsEl.getChildren("gameevententry");
-    for (Element e : gEventEls) {
-      GameEventEntry gee = new GameEventEntry();
-      gee.setEvent(eventMap.get(e.getAttributeValue("gameeventid")));
-      gee.setTeam(teamMap.get(e.getAttributeValue("teamid")));
-      gee.setTimeMin(Integer.parseInt(e.getAttributeValue("timemin")));
-      gee.setTimeSec(Integer.parseInt(e.getAttributeValue("timesec")));
-      Element mainPlayersEl = e.getChild("mainplayer");
-      List<Element> mainplayers = mainPlayersEl.getChildren("player");
-      for (Element mp : mainplayers) {
-        Player p = playerMap.get(mp.getAttributeValue("id"));
-        if (p != null)
-          gee.getMainPlayers().add(p);
+    for (Element e : gEventEls) {      
+      GameEvent gameEvent = eventMap.get(e.getAttributeValue("gameeventid"));
+      Team team = teamMap.get(e.getAttributeValue("teamid"));
+      if(gameEvent != null && team != null)
+      {
+        GameEventEntry gee = new GameEventEntry();
+        gee.setEvent(gameEvent);
+        gee.setTeam(team);
+        gee.setTimeMin(Integer.parseInt(e.getAttributeValue("timemin")));
+        gee.setTimeSec(Integer.parseInt(e.getAttributeValue("timesec")));
+        Element mainPlayersEl = e.getChild("mainplayer");
+        List<Element> mainplayers = mainPlayersEl.getChildren("player");
+        for (Element mp : mainplayers) {
+          Player p = playerMap.get(mp.getAttributeValue("id"));
+          if (p != null)
+            gee.getMainPlayers().add(p);
+        }
+        Element secPlayersEl = e.getChild("secondaryplayer");
+        List<Element> secplayers = secPlayersEl.getChildren("player");
+        for (Element sp : secplayers) {
+          Player p = playerMap.get(sp.getAttributeValue("id"));
+          if (p != null)
+            gee.getSecondaryPlayers().add(p);
+        }
+        gentries.add(gee);
+      } else {
+        ErrorLogger.getLogger().severe("ScheduleXMLHandler.readGameEventEntries(): gameEvent or team are null!");
       }
-      Element secPlayersEl = e.getChild("secondaryplayer");
-      List<Element> secplayers = secPlayersEl.getChildren("player");
-      for (Element sp : secplayers) {
-        Player p = playerMap.get(sp.getAttributeValue("id"));
-        if (p != null)
-          gee.getSecondaryPlayers().add(p);
-      }
-      gentries.add(gee);
     }
 
     return gentries;

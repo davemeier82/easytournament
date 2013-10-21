@@ -39,7 +39,7 @@ public class RefreesItem extends NavigationItem {
   }
 
   public NaviNode getNode() {
-    return new NaviNode(ResourceManager.getText(Text.REFREES), this);
+    return new NaviNode(ResourceManager.getText(Text.REFEREES), this);
   }
 
   public JComponent getPanel() {

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="EasyTournament" default="buildall" basedir=".">
 	<property name="name" value="EasyTournament" />
-	<property name="version" value="0.8.1.0" />
+	<property name="version" value="0.8.2.0" />
 	<property name="author" value="David Meier" />
 	<property name="release" value="${name}" />
 	<property name="release.dir" location="release" />

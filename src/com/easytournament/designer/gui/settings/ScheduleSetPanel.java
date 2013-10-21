@@ -59,7 +59,7 @@ public class ScheduleSetPanel extends JPanel {
 
     JCheckBox refreeBox = BasicComponentFactory.createCheckBox(
         pm.getModel(ScheduleSetPModel.PROPERTY_SHOWREFREES),
-        ResourceManager.getText(Text.SHOW_REFREES));
+        ResourceManager.getText(Text.SHOW_REFEREES));
     p.add(refreeBox, cc.xy(1, 1));
 
     addFillComponents(p, new int[] {2}, new int[] {2});

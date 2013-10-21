@@ -16,6 +16,9 @@ Fehler und Verbesserungswünsche können sie uns wie folgt mitteilen:
 - Absenden des Error-Reports falls ein Fehler auftritt
 - Schreiben einer Nachricht im Forum auf easy-tournament.com/forum
 
+Änderungen zur Version 0.8.1
+****************************
+- Filter und Sortierungs-Fehler behoben
 
 Änderungen zur Version 0.8.0
 ****************************

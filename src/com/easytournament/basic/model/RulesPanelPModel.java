@@ -16,7 +16,6 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 
-
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.gui.dialog.ErrorDialog;
 import com.easytournament.basic.logging.ErrorLogger;
@@ -48,18 +47,20 @@ public class RulesPanelPModel extends Model implements ListDataListener {
   public RulesPanelPModel() {
     rules = t.getDefaultRules();
     rules.addListDataListener(this);
-    availSelModel.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    usedSelModel.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    retrieveData();    
+    availSelModel
+        .setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    usedSelModel
+        .setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    retrieveData();
   }
 
   private void retrieveData() {
     this.usedRules.removeListDataListener(this);
     this.availableRules.removeListDataListener(this);
-    
+
     this.usedRules.clear();
     this.availableRules.clear();
-    
+
     for (Rule r : rules) {
       this.usedRules.addElement(r);
     }
@@ -68,13 +69,12 @@ public class RulesPanelPModel extends Model implements ListDataListener {
     try {
       for (Rule r : Rule.ruleMap.values()) {
         if (!rules.contains(r))
-          temp.add((Rule) r.clone());
+          temp.add((Rule)r.clone());
       }
     }
     catch (CloneNotSupportedException e) {
       ErrorLogger.getLogger().throwing("RulesPanelPModel", "retrieveData", e);
-      ErrorDialog ed = new ErrorDialog(
-          Organizer.getInstance().getMainFrame(),
+      ErrorDialog ed = new ErrorDialog(Organizer.getInstance().getMainFrame(),
           ResourceManager.getText(Text.ERROR), e.toString(), e);
       ed.setVisible(true);
       e.printStackTrace();
@@ -84,8 +84,8 @@ public class RulesPanelPModel extends Model implements ListDataListener {
       this.availableRules.addElement(s);
     }
     this.usedRules.addListDataListener(this);
-    this.availableRules.addListDataListener(this);   
- 
+    this.availableRules.addListDataListener(this);
+
   }
 
   public Action getAction(int actionkey) {
@@ -115,7 +115,7 @@ public class RulesPanelPModel extends Model implements ListDataListener {
     }
     return null;
   }
-  
+
   public ListSelectionModel getListSelectionModel(int usedList) {
     switch (usedList) {
       case AVAILABLE_LIST:
@@ -144,31 +144,31 @@ public class RulesPanelPModel extends Model implements ListDataListener {
         availableRules.removeListDataListener(RulesPanelPModel.this);
         int max = availSelModel.getMaxSelectionIndex();
         int min = availSelModel.getMinSelectionIndex();
-        if(min == -1)
+        if (min == -1)
           return;
-        int usedmin = usedSelModel.getMinSelectionIndex()+1;
-        for(int i = max; i >= min; i--) {
-          if(availSelModel.isSelectedIndex(i))
+        int usedmin = usedSelModel.getMinSelectionIndex() + 1;
+        for (int i = max; i >= min; i--) {
+          if (availSelModel.isSelectedIndex(i))
             usedRules.add(usedmin, availableRules.remove(i));
         }
         usedRules.addListDataListener(RulesPanelPModel.this);
-        availableRules.addListDataListener(RulesPanelPModel.this);   
+        availableRules.addListDataListener(RulesPanelPModel.this);
       }
       else if (this.type == ADDTO_AVAILABLE_ACTION) {
         usedRules.removeListDataListener(RulesPanelPModel.this);
         availableRules.removeListDataListener(RulesPanelPModel.this);
         int max = usedSelModel.getMaxSelectionIndex();
         int min = usedSelModel.getMinSelectionIndex();
-        if(min == -1)
+        if (min == -1)
           return;
-        
-        for(int i = max; i >= min; i--) {
-          if(usedSelModel.isSelectedIndex(i))
+
+        for (int i = max; i >= min; i--) {
+          if (usedSelModel.isSelectedIndex(i))
             availableRules.addElement(usedRules.remove(i));
         }
         sortAvailableRules();
         usedRules.addListDataListener(RulesPanelPModel.this);
-        availableRules.addListDataListener(RulesPanelPModel.this);   
+        availableRules.addListDataListener(RulesPanelPModel.this);
       }
       else if (this.type == UP_ACTION) {
         intervals = new ArrayList<Point>();
@@ -255,31 +255,31 @@ public class RulesPanelPModel extends Model implements ListDataListener {
       }
     }
   }
-  
-  private void updateUsedRules(){
+
+  private void updateUsedRules() {
     this.rules.removeListDataListener(this);
     ArrayListModel<Rule> rules = new ArrayListModel<Rule>();
-    for(int i = 0; i < this.usedRules.getSize(); i++){
-        rules.add(this.usedRules.get(i));
+    for (int i = 0; i < this.usedRules.getSize(); i++) {
+      rules.add(this.usedRules.get(i));
     }
     t.setDefaultRules(rules);
     this.rules.addListDataListener(this);
   }
-  
-  private void sortAvailableRules(){
+
+  private void sortAvailableRules() {
     this.availableRules.removeListDataListener(this);
-    
+
     Rule[] rules = new Rule[availableRules.size()];
-    for(int i = 0; i < availableRules.size(); i++){
+    for (int i = 0; i < availableRules.size(); i++) {
       rules[i] = availableRules.get(i);
-    }    
+    }
     Arrays.sort(rules, new RuleNameComperator<Rule>());
     for (int i = 0; i < availableRules.size(); i++) {
       availableRules.setElementAt(rules[i], i);
     }
     this.availableRules.addListDataListener(this);
   }
-  
+
   public void changeOrdering(int list, int index) {
     switch (list) {
       case AVAILABLE_LIST: {
@@ -295,16 +295,18 @@ public class RulesPanelPModel extends Model implements ListDataListener {
       }
     }
   }
-  
+
   public boolean isAscending(int list, int index) {
-    switch (list) {
-      case AVAILABLE_LIST: {
-        Rule r = this.availableRules.get(index);
-        return r.isAscending();
-      }
-      case USED_LIST: {
-        Rule r = this.usedRules.get(index);
-        return r.isAscending();
+    if (index >= 0) {
+      switch (list) {
+        case AVAILABLE_LIST: {
+          Rule r = this.availableRules.get(index);
+          return r.isAscending();
+        }
+        case USED_LIST: {
+          Rule r = this.usedRules.get(index);
+          return r.isAscending();
+        }
       }
     }
     return false;
@@ -313,11 +315,12 @@ public class RulesPanelPModel extends Model implements ListDataListener {
   @Override
   public void contentsChanged(ListDataEvent e) {
     t.getSport().setEdited(true);
-    if(e.getSource() == this.usedRules)
+    if (e.getSource() == this.usedRules)
       updateUsedRules();
-    else if(e.getSource() == this.availableRules){
+    else if (e.getSource() == this.availableRules) {
       sortAvailableRules();
-    } else {
+    }
+    else {
       retrieveData();
     }
   }
@@ -325,23 +328,25 @@ public class RulesPanelPModel extends Model implements ListDataListener {
   @Override
   public void intervalAdded(ListDataEvent e) {
     t.getSport().setEdited(true);
-    if(e.getSource() == this.usedRules)
+    if (e.getSource() == this.usedRules)
       updateUsedRules();
-    else if(e.getSource() == this.availableRules){
+    else if (e.getSource() == this.availableRules) {
       sortAvailableRules();
-    } else {
+    }
+    else {
       retrieveData();
-    }    
+    }
   }
 
   @Override
   public void intervalRemoved(ListDataEvent e) {
     t.getSport().setEdited(true);
-    if(e.getSource() == this.usedRules)
+    if (e.getSource() == this.usedRules)
       updateUsedRules();
-    else if(e.getSource() == this.availableRules){
+    else if (e.getSource() == this.availableRules) {
       sortAvailableRules();
-    } else {
+    }
+    else {
       retrieveData();
     }
   }

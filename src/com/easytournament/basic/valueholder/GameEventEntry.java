@@ -104,6 +104,7 @@ public class GameEventEntry extends Model implements Cloneable, ListDataListener
     GameEventEntry clone = (GameEventEntry) super.clone();
     clone.setMainPlayers(new ArrayListModel<Player>(this.mainPlayers));
     clone.setSecondaryPlayers(new ArrayListModel<Player>(this.secondaryPlayers));
+    clone.setEvent(this.event);
     return clone;
   }
   @Override

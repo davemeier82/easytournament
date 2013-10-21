@@ -37,6 +37,7 @@ import com.easytournament.basic.util.popupmenu.TablePopupMenu;
 import com.easytournament.basic.valueholder.Refree;
 import com.easytournament.basic.valueholder.Team;
 import com.easytournament.designer.gui.editor.RefreeSelectionEditor;
+import com.easytournament.designer.util.comperator.PositionComparator;
 import com.easytournament.designer.valueholder.Position;
 import com.easytournament.tournament.gui.dialog.GameDialog;
 import com.easytournament.tournament.gui.renderer.PositionTableCellRenderer;
@@ -45,7 +46,8 @@ import com.easytournament.tournament.model.GamesPanelPModel;
 import com.easytournament.tournament.model.dialog.GameDialogPModel;
 import com.easytournament.tournament.model.tablemodel.GamesTableModel;
 
-public class GamesPanel extends JPanel implements TableModelListener, ExportTriggerable {
+public class GamesPanel extends JPanel implements TableModelListener,
+    ExportTriggerable {
 
   private GamesPanelPModel pm;
   private TablePopupMenu popup;
@@ -73,52 +75,57 @@ public class GamesPanel extends JPanel implements TableModelListener, ExportTrig
     gamesTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
     gamesTable.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
     gamesTable.getTableHeader().setReorderingAllowed(false);
-    
-    RowFilter<TableModel, Integer> groupFilter = new RowFilter<TableModel, Integer>(){
-		@Override
-		public boolean include(
-				javax.swing.RowFilter.Entry<? extends TableModel, ? extends Integer> entry) {
-			
-			boolean isRow1Visible = ((GamesTableModel)entry.getModel()).isCheckBoxColumnVisible();
-			
-			String filter = pm.getFilter();
-			if(filter.equals(ResourceManager.getText(Text.NOFILTER))){
-				return true;
-			}
-			Position p = (Position) entry.getValue(isRow1Visible?1:0);
 
-			if(p.getGroup().getName().equals(filter)){
-				return true;
-			}
-			Team homeTeam = p.getTeam();
-			if(homeTeam != null && homeTeam.getName().equals(filter)){
-				return true;
-			}
-			
-			Position p2 = (Position) entry.getValue(isRow1Visible?4:3);
-			Team awayTeam = p2.getTeam();
-			if(awayTeam != null && awayTeam.getName().equals(filter)){
-				return true;
-			}
-			int refreeCol = isRow1Visible?8:7;
-			if(entry.getValueCount() > refreeCol){
-				Refree ref = (Refree) entry.getValue(refreeCol);
-				if(ref != null && ref.getName().equals(filter)){
-					return true;
-				}
-			}
-			return false;
-		}    	
+    RowFilter<TableModel,Integer> groupFilter = new RowFilter<TableModel,Integer>() {
+      @Override
+      public boolean include(
+          javax.swing.RowFilter.Entry<? extends TableModel,? extends Integer> entry) {
+
+        boolean isRow1Visible = ((GamesTableModel)entry.getModel())
+            .isCheckBoxColumnVisible();
+
+        String filter = pm.getFilter();
+        if (filter.equals(ResourceManager.getText(Text.NOFILTER))) {
+          return true;
+        }
+        Position p = (Position)entry.getValue(isRow1Visible? 1 : 0);
+
+        if (p.getGroup().getName().equals(filter)) {
+          return true;
+        }
+        Team homeTeam = p.getTeam();
+        if (homeTeam != null && homeTeam.getName().equals(filter)) {
+          return true;
+        }
+
+        Position p2 = (Position)entry.getValue(isRow1Visible? 4 : 3);
+        Team awayTeam = p2.getTeam();
+        if (awayTeam != null && awayTeam.getName().equals(filter)) {
+          return true;
+        }
+        int refreeCol = isRow1Visible? 8 : 7;
+        if (entry.getValueCount() > refreeCol) {
+          Refree ref = (Refree)entry.getValue(refreeCol);
+          if (ref != null && ref.getName().equals(filter)) {
+            return true;
+          }
+        }
+        return false;
+      }
     };
     TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tm);
     sorter.setRowFilter(groupFilter);
+    PositionComparator<Position> positionComparator = new PositionComparator<Position>();
+    positionComparator.setShowTeamNames(true);
+    sorter.setComparator(1, positionComparator);
+    sorter.setComparator(4, positionComparator);
     gamesTable.setRowSorter(sorter);
-    
     gamesTable.addMouseListener(new MouseAdapter() {
 
       @Override
       public void mouseClicked(MouseEvent e) {
-        int row = gamesTable.rowAtPoint(e.getPoint());
+        int row = gamesTable.convertRowIndexToModel(gamesTable.rowAtPoint(e
+            .getPoint()));
         if (e.getClickCount() > 1 && pm.isGameEditable(row)) {
           GameDialogPModel gdpm = pm.getGameDialogPModel(row);
           if (gdpm != null)
@@ -162,7 +169,7 @@ public class GamesPanel extends JPanel implements TableModelListener, ExportTrig
 
       @Override
       public void actionPerformed(ActionEvent e) {
-        int row = popup.getRow();
+        int row = gamesTable.convertRowIndexToModel(popup.getRow());
         if (row >= 0 && pm.isGameEditable(row)) {
           GameDialogPModel gdpm = pm.getGameDialogPModel(row);
           if (gdpm != null)
@@ -205,24 +212,24 @@ public class GamesPanel extends JPanel implements TableModelListener, ExportTrig
         FontMetrics fm = gamesTable.getTableHeader().getFontMetrics(
             gamesTable.getTableHeader().getFont());
         for (int i = 0; i < gamesTable.getColumnCount(); i++) {
-          if(gamesTable.getColumnClass(i) == Boolean.class)
+          if (gamesTable.getColumnClass(i) == Boolean.class)
             continue;
 
           int width = fm.stringWidth((String)tcm.getColumn(i).getHeaderValue());
           for (int r = 0; r < gamesTable.getRowCount(); r++) {
             Object value = gamesTable.getValueAt(r, i);
-            if (value != null)
-            {
+            if (value != null) {
               try {
-                Position pos = (Position) value;
-                if(pos.getTeam() == null)
-                  width = Math.max(width, fm.stringWidth(value.toString())); 
+                Position pos = (Position)value;
+                if (pos.getTeam() == null)
+                  width = Math.max(width, fm.stringWidth(value.toString()));
                 else
-                  width = Math.max(width, fm.stringWidth(pos.getTeam().getName()));                 
-              } catch (Exception ex)
-              {
-                width = Math.max(width, fm.stringWidth(value.toString())); 
-              }             
+                  width = Math.max(width,
+                      fm.stringWidth(pos.getTeam().getName()));
+              }
+              catch (Exception ex) {
+                width = Math.max(width, fm.stringWidth(value.toString()));
+              }
             }
           }
           width = Math.max(50, width + 20);

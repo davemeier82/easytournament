@@ -126,7 +126,7 @@ public class RefreeOverviewPModel extends Model implements ListDataListener {
     private static final long serialVersionUID = -5932715510680146919L;
 
     public NewTeamAction() {
-      super(ResourceManager.getText(Text.NEW_REFREE), ResourceManager
+      super(ResourceManager.getText(Text.NEW_REFEREE), ResourceManager
           .getIcon(Icon.ADDPERSON_ICON_SMALL));
     }
 
@@ -153,7 +153,7 @@ public class RefreeOverviewPModel extends Model implements ListDataListener {
     private static final long serialVersionUID = -5932715510680146919L;
 
     public ImportTeamAction() {
-      super(ResourceManager.getText(Text.IMPORT_REFREE));
+      super(ResourceManager.getText(Text.IMPORT_REFEREE));
     }
 
     public void actionPerformed(ActionEvent e) {

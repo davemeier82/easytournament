@@ -74,8 +74,10 @@ public class EventDialogPModel extends Model {
     this.newEntry = true;
     this.homeTeam = true;
     this.init();
-    this.entry.setEvent(Organizer.getInstance().getCurrentTournament()
-        .getGameEvents().get(0));
+    ArrayListModel<GameEvent> gameEvents = Organizer.getInstance().getCurrentTournament()
+        .getGameEvents();
+    if(!gameEvents.isEmpty())
+      this.entry.setEvent(gameEvents.get(0));
   }
 
   public EventDialogPModel(ScheduleEntry sentry,

@@ -37,7 +37,7 @@ public class GamesCSVHandler {
       boolean showRef = ScheduleSettings.getInstance().isShowRefrees();
       if (showRef) {
         out.print(";");
-        out.println(ResourceManager.getText(Text.REFREE));
+        out.println(ResourceManager.getText(Text.REFEREE));
       }
       else {
         out.println();

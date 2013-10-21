@@ -465,8 +465,12 @@ public class GameDialogPModel extends Model implements ListDataListener,
               .getText(Text.COULD_NOT_SAVE_GAME), ResourceManager
               .getText(Text.ERROR), JOptionPane.ERROR_MESSAGE);
         }
-
       }
     }
+  }
+
+  public boolean hasGameEvents() {
+    return !Organizer.getInstance().getCurrentTournament()
+        .getGameEvents().isEmpty();
   }
 }

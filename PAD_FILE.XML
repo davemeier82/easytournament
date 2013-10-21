@@ -34,9 +34,9 @@
 	</Company_Info>
 	<Program_Info>
 		<Program_Name>EasyTournament</Program_Name>
-		<Program_Version>0.8.1</Program_Version>
+		<Program_Version>0.8.2</Program_Version>
 		<Program_Release_Month>09</Program_Release_Month>
-		<Program_Release_Day>04</Program_Release_Day>
+		<Program_Release_Day>22</Program_Release_Day>
 		<Program_Release_Year>2013</Program_Release_Year>
 		<Program_Cost_Dollars>0</Program_Cost_Dollars>
 		<Program_Cost_Other_Code />
@@ -67,7 +67,7 @@
 	</Program_Info>
 	<Program_Descriptions>
 		<English>
-			<Keywords>Tournament, Sport, Management, Organize, Freeware, Soccer, Hockey, Basketball, Floorball, Handballl</Keywords>
+			<Keywords>Tournament, Sport, Management, Organize, Freeware, Soccer, Hockey, Basketball, Floorball, Handball</Keywords>
 			<Char_Desc_45>Tournament Management Software</Char_Desc_45>
 			<Char_Desc_80>Tournament Management Software</Char_Desc_80>
 			<Char_Desc_250>EasyTournament is an application which allows you to design and run tournaments very easily. Define rules, design the tournament progress with a graphical editor and evaluate various statistics.</Char_Desc_250>
@@ -108,7 +108,7 @@ Hier eine Auswahl der Funktionen:
 			<Application_XML_File_URL>http://easy-tournament.com/downloads/PAD_FILE.XML</Application_XML_File_URL>
 		</Application_URLs>
 		<Download_URLs>
-			<Primary_Download_URL>http://easy-tournament.com/downloads/EasyTournament-0.8.1.0.msi</Primary_Download_URL>
+			<Primary_Download_URL>http://easy-tournament.com/downloads/EasyTournament-0.8.2.0.msi</Primary_Download_URL>
 			<Secondary_Download_URL />
 			<Additional_Download_URL_1 />
 			<Additional_Download_URL_2 />

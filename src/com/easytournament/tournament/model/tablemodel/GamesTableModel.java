@@ -23,7 +23,7 @@ public class GamesTableModel extends AbstractTableModel implements
   private String[] columnNames = {"", ResourceManager.getText(Text.HOME), "",
       "", ResourceManager.getText(Text.AWAY),
       ResourceManager.getText(Text.PLACE), ResourceManager.getText(Text.DATE),
-      ResourceManager.getText(Text.TIME), ResourceManager.getText(Text.REFREE)};
+      ResourceManager.getText(Text.TIME), ResourceManager.getText(Text.REFEREE)};
   private ArrayListModel<ScheduleEntry> data = new ArrayListModel<ScheduleEntry>();
   private DateFormat dateFormatter = DateFormat.getDateInstance(
       DateFormat.SHORT, ResourceManager.getLocale());
@@ -45,12 +45,15 @@ public class GamesTableModel extends AbstractTableModel implements
 
   @Override
   public Class<?> getColumnClass(int column) {
-    if(!checkboxVisible)
+    if (!checkboxVisible)
       column++;
-      
+
     switch (column) {
       case 0:
         return Boolean.class;
+      case 2:
+      case 3:
+        return String.class;
       case 1:
       case 4:
         return Position.class;
@@ -66,9 +69,9 @@ public class GamesTableModel extends AbstractTableModel implements
     this.fireTableStructureChanged();
     this.fireTableDataChanged();
   }
-  
-  public boolean isCheckBoxColumnVisible(){
-	  return this.checkboxVisible;
+
+  public boolean isCheckBoxColumnVisible() {
+    return this.checkboxVisible;
   }
 
   public int getRowCount() {
@@ -84,12 +87,10 @@ public class GamesTableModel extends AbstractTableModel implements
   public Object getValueAt(int row, int col) {
 
     if (row >= 0 && row < data.size()) {
-
       if (!checkboxVisible)
         col++;
 
       ScheduleEntry tempdata = data.get(row);
-
       if (tempdata == null)
         return null;
 
@@ -98,29 +99,22 @@ public class GamesTableModel extends AbstractTableModel implements
           return tempdata.isGamePlayed();
         case 1:
           return tempdata.getHomePos();
-
         case 2:
           if (tempdata.isGamePlayed())
-            return tempdata.getHomeScore();
+            return Integer.toString(tempdata.getHomeScore());
           return "";
-
         case 3:
           if (tempdata.isGamePlayed())
-            return tempdata.getAwayScore();
+            return Integer.toString(tempdata.getAwayScore());
           return "";
-
         case 4:
           return tempdata.getAwayPos();
-
         case 5:
           return tempdata.getPlace();
-
         case 6:
           return dateFormatter.format(tempdata.getDate().getTime());
-
         case 7:
           return timeFormatter.format(tempdata.getDate().getTime());
-
         case 8:
           if (tempdata.getReferees().size() > 0)
             return tempdata.getReferees().get(0);
@@ -138,7 +132,7 @@ public class GamesTableModel extends AbstractTableModel implements
     if (rowIndex >= 0 && rowIndex < data.size()) {
 
       ScheduleEntry tempdata = data.get(rowIndex);
-      if(tempdata == null)
+      if (tempdata == null)
         return;
 
       switch (columnIndex) {

@@ -48,7 +48,7 @@ public class GamesHTMLHandler {
       boolean showRef = ScheduleSettings.getInstance().isShowRefrees();
       if (showRef) {
         out.print("</th>\n\t\t<th>");
-        out.print(ResourceManager.getText(Text.REFREE));
+        out.print(ResourceManager.getText(Text.REFEREE));
       }
       out.println("</th>\n\t</tr>");
 

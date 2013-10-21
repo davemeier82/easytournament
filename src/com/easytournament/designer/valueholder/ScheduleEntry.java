@@ -126,6 +126,8 @@ public class ScheduleEntry extends Model implements ListDataListener {
   }
 
   public AbstractGroup getGroupAssignedTo() {
+    if(homePos == null)
+      return null;
     return homePos.getGroup();
   }
 
@@ -237,18 +239,20 @@ public class ScheduleEntry extends Model implements ListDataListener {
     int awayPts = 0, tmpAway;
 
     for(GameEventEntry e : gameEvents){
-      
-      if(e.getTeam().equals(this.getHomeTeam())) {
-        tmpHome = e.getEvent().getPointsForTeam();
-        tmpAway = e.getEvent().getPointsForOpponent();
-      } else {
-        tmpHome = e.getEvent().getPointsForOpponent();
-        tmpAway = e.getEvent().getPointsForTeam();
+      GameEvent gameEvent = e.getEvent();
+      if(gameEvent != null) {
+        if(e.getTeam().equals(this.getHomeTeam())) {
+          tmpHome = gameEvent.getPointsForTeam();
+          tmpAway = gameEvent.getPointsForOpponent();
+        } else {
+          tmpHome = gameEvent.getPointsForOpponent();
+          tmpAway = gameEvent.getPointsForTeam();
+        }
+        homePts += tmpHome;
+        awayPts += tmpAway;
+        e.setSummedHomePoints(homePts);
+        e.setSummedAwayPoints(awayPts); 
       }
-      homePts += tmpHome;
-      awayPts += tmpAway;
-      e.setSummedHomePoints(homePts);
-      e.setSummedAwayPoints(awayPts); 
     }
   }
 

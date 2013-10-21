@@ -64,7 +64,7 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
    */
   public RefreeDialog(Frame owener, RefreeDialogPModel pm, boolean modal,
       boolean isAssistant) {
-    super(owener, ResourceManager.getText(Text.REFREE), modal);
+    super(owener, ResourceManager.getText(Text.REFEREE), modal);
     if (isAssistant)
       this.setTitle(ResourceManager.getText(Text.ASSISTANT));
     this.pm = pm;
@@ -83,7 +83,7 @@ public class RefreeDialog extends JDialog implements PropertyChangeListener {
    */
   public RefreeDialog(Dialog owner, RefreeDialogPModel pm, boolean modal,
       boolean isAssistant) {
-    super(owner, ResourceManager.getText(Text.REFREE), modal);
+    super(owner, ResourceManager.getText(Text.REFEREE), modal);
     if (isAssistant)
       this.setTitle(ResourceManager.getText(Text.ASSISTANT));
     this.pm = pm;

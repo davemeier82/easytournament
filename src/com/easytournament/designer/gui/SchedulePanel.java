@@ -60,11 +60,13 @@ import com.easytournament.designer.gui.renderer.PositionTableCellRenderer;
 import com.easytournament.designer.gui.renderer.SubstPositionTableCellRenderer;
 import com.easytournament.designer.model.SchedulePanelPModel;
 import com.easytournament.designer.model.dialog.SGeneratorPModel;
+import com.easytournament.designer.util.comperator.PositionComparator;
 import com.easytournament.designer.valueholder.Position;
 import com.easytournament.tournament.gui.renderer.DateTableCellRenderer;
 import com.easytournament.tournament.gui.renderer.SubstDateTableCellRenderer;
 import com.jgoodies.binding.adapter.Bindings;
 import com.jgoodies.binding.beans.PropertyAdapter;
+import com.jgoodies.binding.beans.PropertyConnector;
 import com.toedter.calendar.JDateChooser;
 import com.toedter.calendar.JTextFieldDateEditor;
 
@@ -103,7 +105,7 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     hBox.add(Box.createHorizontalStrut(10));
     hBox.add(new JButton(pm.getAction(SchedulePanelPModel.NEW_ACTION)));
     hBox.add(Box.createHorizontalStrut(10));
-    hBox.add(new JButton(pm.getAction(SchedulePanelPModel.DELETE_ACTION)));
+    hBox.add(new JButton(new DeleteAction()));
     hBox.add(Box.createHorizontalStrut(10));
     hBox.add(new JButton(new AbstractAction(ResourceManager
         .getText(Text.EXPORT_SCHEDULE)) {
@@ -163,6 +165,12 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     };
     TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(tm);
     sorter.setRowFilter(groupFilter);
+    PositionComparator<Position> positionComparator = new PositionComparator<Position>();
+    PropertyConnector.connect(positionComparator,
+        PositionComparator.PROPERTY_SHOW_TEAMS, this.pm,
+        SchedulePanelPModel.PROPERTY_SHOW_TEAMS);
+    sorter.setComparator(0, positionComparator);
+    sorter.setComparator(1, positionComparator);
     schedTable.setRowSorter(sorter);
 
     schedTable.addKeyListener(new KeyAdapter() {
@@ -171,10 +179,13 @@ public class SchedulePanel extends JPanel implements TableModelListener,
       public void keyReleased(KeyEvent ke) {
         super.keyReleased(ke);
         if (ke.getKeyCode() == KeyEvent.VK_DELETE) {
-          pm.deleteAction();
+          ArrayList<Integer> indices = new ArrayList<Integer>();
+          for (int i : schedTable.getSelectedRows()) {
+            indices.add(schedTable.convertRowIndexToModel(i));
+          }
+          pm.deleteGames(indices);
         }
       }
-
     });
     DefaultTableCellRenderer dtcr = null;
     if (Organizer.getInstance().isSubstance()) {
@@ -249,11 +260,11 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     JMenuItem newItem = new JMenuItem(
         pm.getAction(SchedulePanelPModel.NEW_ACTION));
     popup.add(newItem);
-    JMenuItem deleteItem = new JMenuItem(
-        pm.getAction(SchedulePanelPModel.DELETE_ACTION));
+    JMenuItem deleteItem = new JMenuItem(new DeleteAction());
     popup.add(deleteItem);
     JMenuItem delayItem = new JMenuItem(new AbstractAction(
-        ResourceManager.getText(Text.DELAY_GAMES), ResourceManager.getIcon(Icon.CHANGE_TIME_ICON_SMALL)) {
+        ResourceManager.getText(Text.DELAY_GAMES),
+        ResourceManager.getIcon(Icon.CHANGE_TIME_ICON_SMALL)) {
 
       @Override
       public void actionPerformed(ActionEvent e) {
@@ -267,8 +278,8 @@ public class SchedulePanel extends JPanel implements TableModelListener,
             (Calendar)pm.getDate(indices.get(0)).clone());
         if (DateChooserDialog.showDialog(
             Organizer.getInstance().getMainFrame(),
-            ResourceManager.getText(Text.NEW_GAMETIME), ResourceManager.getText(Text.TIME),
-            dateChooserModel)) {
+            ResourceManager.getText(Text.NEW_GAMETIME),
+            ResourceManager.getText(Text.TIME), dateChooserModel)) {
           pm.delayGames(indices, dateChooserModel.getCalendar());
         }
       }
@@ -278,6 +289,22 @@ public class SchedulePanel extends JPanel implements TableModelListener,
     spane.addMouseListener(new PopupListener());
 
     return spane;
+  }
+
+  class DeleteAction extends AbstractAction {
+    public DeleteAction() {
+      this.putValue(NAME, ResourceManager.getText(Text.DELETE_GAME));
+      this.putValue(SMALL_ICON, ResourceManager.getIcon(Icon.DELETE_ICON_SMALL));
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+      ArrayList<Integer> indices = new ArrayList<Integer>();
+      for (int i : schedTable.getSelectedRows()) {
+        indices.add(schedTable.convertRowIndexToModel(i));
+      }
+      pm.deleteGames(indices);
+    }
   }
 
   class PopupListener extends MouseAdapter {

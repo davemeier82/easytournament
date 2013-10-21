@@ -7,13 +7,12 @@ import java.util.ArrayList;
 import javax.swing.event.ListDataEvent;
 import javax.swing.event.ListDataListener;
 
-
 import com.easytournament.basic.valueholder.Team;
 import com.jgoodies.binding.beans.Model;
 import com.jgoodies.common.collect.ArrayListModel;
 
 public class Position extends Model implements PropertyChangeListener,
-    ListDataListener {
+    ListDataListener, Comparable<Position> {
 
   private static final long serialVersionUID = 1L;
   public static final String PROPERTY_GROUP = "pos_group";
@@ -26,7 +25,7 @@ public class Position extends Model implements PropertyChangeListener,
 
   private AbstractGroup group;
   private Position prev;
-  private String name;
+  private String name = "";
   private Team team;
   private ArrayListModel<Position> next = new ArrayListModel<Position>();
   private int id;
@@ -42,7 +41,7 @@ public class Position extends Model implements PropertyChangeListener,
   }
 
   public boolean addNext(Position next) {
-    if(next == null)
+    if (next == null)
       return false;
     return this.next.add(next);
   }
@@ -152,7 +151,6 @@ public class Position extends Model implements PropertyChangeListener,
   @Override
   public void intervalRemoved(ListDataEvent arg0) {
     this.firePropertyChange(PROPERTY_NEXT, null, this.next);
-
   }
 
   public static void removeConnections(Position p) {
@@ -191,5 +189,26 @@ public class Position extends Model implements PropertyChangeListener,
     if (id != other.id)
       return false;
     return true;
+  }
+
+  @Override
+  public int compareTo(Position o) {
+    if (this.name == null) {
+      if (o == null)
+        return 0;
+      return -1;
+    }
+    if (o == null)
+      return 1;
+
+    if (this.getGroup() == null || o.getGroup() == null) {
+      return this.name.compareTo(o.getName());
+    }
+
+    int value = this.getGroup().getName().compareTo(o.getGroup().getName());
+    if (value == 0) {
+      return this.name.compareTo(o.getName());
+    }
+    return value;
   }
 }

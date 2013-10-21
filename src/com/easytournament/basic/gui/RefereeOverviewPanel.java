@@ -92,7 +92,7 @@ public class RefereeOverviewPanel extends JPanel implements TableModelListener {
         ropm.getAction(RefreeOverviewPModel.NEW_REFREE_ACTION));
     popup.add(newItem);
     JMenuItem editItem = new JMenuItem(new AbstractAction(
-        ResourceManager.getText(Text.EDIT_REFREE),
+        ResourceManager.getText(Text.EDIT_REFEREE),
         ResourceManager.getIcon(Icon.EDIT_ICON_SMALL)) {
 
       @Override

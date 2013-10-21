@@ -15,6 +15,7 @@ import com.easytournament.basic.resources.Text;
 import com.easytournament.basic.valueholder.Refree;
 import com.easytournament.designer.settings.ScheduleSettings;
 import com.easytournament.designer.util.comperator.ScheduleDateComperator;
+import com.easytournament.designer.valueholder.AbstractGroup;
 import com.easytournament.designer.valueholder.Position;
 import com.easytournament.designer.valueholder.ScheduleEntry;
 import com.jgoodies.common.collect.ArrayListModel;
@@ -26,7 +27,7 @@ public class ScheduleTableModel extends DefaultTableModel implements
   private String[] columnNames = {ResourceManager.getText(Text.HOME),
       ResourceManager.getText(Text.AWAY), ResourceManager.getText(Text.PLACE),
       ResourceManager.getText(Text.DATE), ResourceManager.getText(Text.TIME),
-      ResourceManager.getText(Text.REFREE)};
+      ResourceManager.getText(Text.REFEREE)};
   private ArrayListModel<ScheduleEntry> data;
   
   private DateFormat timeFormatter = DateFormat.getTimeInstance(
@@ -43,6 +44,9 @@ public class ScheduleTableModel extends DefaultTableModel implements
   @Override
   public Class<?> getColumnClass(int column) {
     switch (column) {
+      case 0:
+      case 1:
+        return Position.class;
       case 3:
         return Date.class;
       case 5:
@@ -110,9 +114,15 @@ public class ScheduleTableModel extends DefaultTableModel implements
 
       switch (columnIndex) {
         case 0:
-          tempdata.getGroupAssignedTo().getSchedules().remove(tempdata);
+          AbstractGroup group = tempdata.getGroupAssignedTo();
+          if(group != null) {
+            group.getSchedules().remove(tempdata);
+          }
           tempdata.setHomePos((Position)value);
-          tempdata.getGroupAssignedTo().getSchedules().add(tempdata);
+          group = tempdata.getGroupAssignedTo();
+          if(group == null)
+            break;          
+          group.getSchedules().add(tempdata);
           for (Position pos : tempdata.getGroupAssignedTo().getPositions()) {
             if (pos != value) {
               tempdata.setAwayPos(pos);

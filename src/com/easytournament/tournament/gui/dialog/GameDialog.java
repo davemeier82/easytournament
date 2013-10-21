@@ -282,6 +282,7 @@ public class GameDialog extends JDialog implements PropertyChangeListener,
 
     JPanel buttons = new JPanel(new FlowLayout(FlowLayout.LEFT));
     JButton add = new JButton(this.pm.getAction(GameDialogPModel.ADD_ACTION));
+    add.setEnabled(pm.hasGameEvents());
     JButton edit = new JButton(this.pm.getAction(GameDialogPModel.EDIT_ACTION));
     JButton delete = new JButton(
         this.pm.getAction(GameDialogPModel.DELETE_ACTION));

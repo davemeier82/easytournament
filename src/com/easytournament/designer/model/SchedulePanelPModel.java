@@ -5,6 +5,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 
 import javax.swing.AbstractAction;
@@ -40,7 +41,6 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
   public static final String PROPERTY_FILTER = "filter";
 
   public static final int NEW_ACTION = 0;
-  public static final int DELETE_ACTION = 1;
   public static final int CHANGE_TEAMVIEW_ACTION = 3;
 
   protected ScheduleTableModel tableModel;
@@ -74,6 +74,9 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
           public void actionPerformed(ActionEvent arg0) {
             ArrayListModel<AbstractGroup> groups = getTournament().getPlan()
                 .getGroups();
+            if (groups.getSize() < 1) {
+              return;
+            }
             ArrayList<Position> pos = groups.get(0).getPositions();
             if (groups.size() > 0) {
               ScheduleEntry se = new ScheduleEntry(pos.get(0), pos.get(1));
@@ -124,18 +127,6 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
             }
           }
         };
-
-      case DELETE_ACTION:
-        return new AbstractAction(ResourceManager.getText(Text.DELETE_GAME),
-            ResourceManager.getIcon(Icon.DELETE_ICON_SMALL)) {
-
-          private static final long serialVersionUID = -5067597400001217699L;
-
-          @Override
-          public void actionPerformed(ActionEvent arg0) {
-            SchedulePanelPModel.this.deleteAction();
-          }
-        };
       case CHANGE_TEAMVIEW_ACTION:
         AbstractAction act = new AbstractAction("",
             ResourceManager.getIcon(Icon.CHANGE_VIEW_ICON_SMALL)) {
@@ -161,22 +152,15 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
     return this.selectionmodel;
   }
 
-  public void deleteAction() {
-    int min = this.selectionmodel.getMinSelectionIndex();
-    int max = this.selectionmodel.getMaxSelectionIndex();
-    if (this.getTournament().getSchedules().size() > 0) {
-      ArrayList<ScheduleEntry> toremove = new ArrayList<ScheduleEntry>();
-      for (int i = min; i <= max; i++) {
-        if (this.selectionmodel.isSelectedIndex(i)) {
-          toremove.add(this.getTournament().getSchedules().get(i));
-        }
-      }
-      for (ScheduleEntry se : toremove) {
-        this.getTournament().getSchedules().remove(se);
-        se.getGroupAssignedTo().getSchedules().remove(se);
-      }
-      this.tableModel.fireTableDataChanged();
+  public void deleteGames(List<Integer> gameIndices) {
+    ArrayListModel<ScheduleEntry> schedules = this.tournament.getSchedules();
+    Collections.sort(gameIndices, Collections.reverseOrder());
+    for (Integer i : gameIndices) {
+      ScheduleEntry se = schedules.get(i);
+      this.getTournament().getSchedules().remove(se);
+      se.getGroupAssignedTo().getSchedules().remove(se);
     }
+    this.tableModel.fireTableDataChanged();
   }
 
   public boolean isDataChanged() {
@@ -266,9 +250,10 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
 
   public void delayGames(ArrayList<Integer> indices, Calendar calendar) {
     Calendar oldCal = getDate(indices.get(0));
-    int differenceInMin = (int)((calendar.getTimeInMillis() - oldCal.getTimeInMillis()) / (1000*60));
+    int differenceInMin = (int)((calendar.getTimeInMillis() - oldCal
+        .getTimeInMillis()) / (1000 * 60));
     List<ScheduleEntry> schedule = this.tournament.getSchedules();
-    for(Integer i : indices){
+    for (Integer i : indices) {
       schedule.get(i).getDate().add(Calendar.MINUTE, differenceInMin);
     }
     this.tableModel.sortData();
