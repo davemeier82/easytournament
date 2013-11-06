@@ -1,4 +1,4 @@
-package com.easytournament.webapp.entity;
+package com.easytournament.webapp.entity.id;
 
 import java.io.Serializable;
 

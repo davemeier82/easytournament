@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.easytournament.webapp.entity.id.UserTournamentId;
+
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "user_tournament")

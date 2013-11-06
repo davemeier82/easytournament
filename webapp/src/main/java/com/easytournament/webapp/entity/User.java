@@ -45,6 +45,9 @@ public class User implements Serializable {
 
   @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
   private List<UserTournament> userTournament = new ArrayList<UserTournament>();
+  
+  @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+  private List<UserTeam> userTeam = new ArrayList<UserTeam>();
 
   /**
 	 * 
@@ -171,13 +174,6 @@ public class User implements Serializable {
   public void setUserTournament(List<UserTournament> userTournament) {
     this.userTournament = userTournament;
   }
-  
-  public UserTournament addTournament(Tournament t, Integer roleid) {
-    UserTournament ut = new UserTournament(roleid, this, t);
-    this.getUserTournament().add(ut);
-    t.getUserTournament().add(ut);
-    return ut;
-  }
 
   public void setUser(User user) {
     this.activationcode = user.activationcode;
@@ -190,4 +186,19 @@ public class User implements Serializable {
     this.id = user.id;
     this.userTournament = user.userTournament;
   }
+
+  /**
+   * @return the userTeam
+   */
+  public List<UserTeam> getUserTeam() {
+    return userTeam;
+  }
+
+  /**
+   * @param userTeam the userTeam to set
+   */
+  public void setUserTeam(List<UserTeam> userTeam) {
+    this.userTeam = userTeam;
+  }
+
 }
