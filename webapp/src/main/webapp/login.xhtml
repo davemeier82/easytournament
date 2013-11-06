@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>Login</h1>
+
+		<h:form id="reg">
+
+			<rich:panel header="Login">
+
+				<rich:graphValidator value="#{loginBean}" id="gv">
+				
+					<rich:messages for="gv" />
+					<rich:messages globalOnly="true" />
+					
+					<h:panelGrid columns="3" columnClasses="titleCell">
+
+						<h:outputLabel for="username" value="Username" />
+						<h:inputText id="username" value="#{loginBean.username}">
+							<rich:validator />
+						</h:inputText>
+						<rich:message for="username" errorClass="invalid" />
+
+						<h:outputLabel for="password" value="Password:" />
+						<h:inputSecret id="password" value="#{loginBean.password}">
+							<rich:validator />
+						</h:inputSecret>
+						<rich:message for="password" errorClass="invalid" />
+
+						<a4j:commandButton value="Login" action="#{loginBean.login}" />
+
+					</h:panelGrid>
+				</rich:graphValidator>
+			</rich:panel>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

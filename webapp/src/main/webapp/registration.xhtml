@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>User registration</h1>
+
+		<h:form id="reg">
+
+			<rich:panel header="User information">
+
+				<rich:graphValidator value="#{regBean}" id="gv">
+				
+					<rich:messages for="gv" />
+					<rich:messages globalOnly="true" />
+					
+					<h:panelGrid columns="3" columnClasses="titleCell">
+
+						<h:outputLabel for="username" value="Username" />
+						<h:inputText id="username" value="#{regBean.username}">
+							<rich:validator />
+						</h:inputText>
+						<rich:message for="username" errorClass="invalid" />
+
+						<h:outputLabel for="firstname" value="Firstname:" />
+						<h:inputText id="firstname" value="#{regBean.firstname}">
+							<rich:validator />
+						</h:inputText>
+						<rich:message for="firstname" errorClass="invalid" />
+
+						<h:outputLabel for="lastname" value="Lasttname:" />
+						<h:inputText id="lastname" value="#{regBean.lastname}">
+							<rich:validator />
+						</h:inputText>
+						<rich:message for="lastname" errorClass="invalid" />
+
+						<h:outputLabel for="email" value="Email:" />
+						<h:inputText id="email" value="#{regBean.email}">
+							<rich:validator />
+						</h:inputText>
+						<rich:message for="email" errorClass="invalid" />
+
+						<h:outputLabel for="confirmemail" value="Confirm Email:" />
+						<h:inputText id="confirmemail" value="#{regBean.confirmemail}">
+							<rich:validator />
+						</h:inputText>
+						<rich:message for="confirmemail" errorClass="invalid" />
+
+						<h:outputLabel for="password" value="Password:" />
+						<h:inputSecret id="password" value="#{regBean.password}">
+							<rich:validator />
+						</h:inputSecret>
+						<rich:message for="password" errorClass="invalid" />
+
+						<h:outputLabel for="confirmpassword" value="Confirm Password:" />
+						<h:inputSecret id="confirmpassword"
+							value="#{regBean.confirmpassword}">
+							<rich:validator />
+						</h:inputSecret>
+						<rich:message for="confirmpassword" errorClass="invalid" />
+
+						<a4j:commandButton value="Register" action="#{regBean.register}" />
+						<h:commandButton type="reset" value="Reset" />
+
+					</h:panelGrid>
+				</rich:graphValidator>
+			</rich:panel>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

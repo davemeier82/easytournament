@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>Create new tournament</h1>
+
+		<h:form id="reg">
+
+			<rich:panel header="User information">
+
+				<rich:graphValidator value="#{tournamentBean}" id="gv">
+
+					<rich:messages for="gv" />
+					<rich:messages globalOnly="true" />
+
+					<table>
+						<tr>
+							<td><h:outputLabel for="tname" value="Tournament name:" /></td>
+							<td><h:inputText id="tname" value="#{tournamentBean.name}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="tname" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="sportid" value="Sport:" /></td>
+							<td><rich:select value="#{tournamentBean.sportid}"
+									enableManualInput="true" defaultLabel="Enter a sport"
+									id="sportid">
+									<f:selectItems value="#{tournamentBean.sports}" />
+								</rich:select></td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="sport" value="Other sport name:" /></td>
+							<td><h:inputText disabled="true" id="sport"
+									value="#{tournamentBean.sport}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="sport" errorClass="invalid" /></td>
+						</tr>
+
+						<h:selectOneRadio value="#{tournamentBean.teamTournament}">
+							<f:selectItem itemValue="#{true}" itemLabel="Teams" />
+							<f:selectItem itemValue="#{false}" itemLabel="Single player" />
+						</h:selectOneRadio>
+						
+						<h:selectOneRadio value="#{tournamentBean.publicTournament}">
+							<f:selectItem itemValue="#{true}" itemLabel="Public" />
+							<f:selectItem itemValue="#{false}" itemLabel="Private" />
+						</h:selectOneRadio>
+
+						<tr>
+							<td><h:outputLabel for="description" value="Description" /></td>
+							<td><h:inputTextarea id="description"
+									value="#{tournamentBean.description}">
+									<rich:validator />
+								</h:inputTextarea></td>
+							<td><rich:message for="description" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="fee" value="Fee:" /></td>
+							<td><h:inputText id="fee" value="#{tournamentBean.fee}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="fee" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="address" value="Place:" /></td>
+							<td><h:inputTextarea id="address"
+									value="#{tournamentBean.address}">
+									<rich:validator />
+								</h:inputTextarea></td>
+							<td><rich:message for="address" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="city" value="City:" /></td>
+							<td><h:inputText id="city" value="#{tournamentBean.city}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="city" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="country" value="Country:" /></td>
+							<td><rich:select value="#{tournamentBean.country}"
+									enableManualInput="true" defaultLabel="Select a country"
+									id="country">
+									<f:selectItems value="#{tournamentBean.countries}" />
+								</rich:select></td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="website" value="Website:" /></td>
+							<td><h:inputText id="website"
+									value="#{tournamentBean.website}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="website" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="startTime" value="Start date:" /></td>
+							<td><rich:calendar id="startTime" popup="true"
+									value="#{tournamentBean.startTime}" enableManualInput="true" /></td>
+							<td><rich:message for="startTime" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="endTime" value="End date:" /></td>
+							<td><rich:calendar id="endTime" popup="true"
+									value="#{tournamentBean.endTime}" enableManualInput="true" /></td>
+							<td><rich:message for="endTime" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="applTime"
+									value="Application deadline:" /></td>
+							<td><rich:calendar id="applTime" popup="true"
+									value="#{tournamentBean.applicationEndTime}"
+									enableManualInput="true" /></td>
+							<td><rich:message for="applTime" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="nteams"
+									value="Maximum number of teams/players:" /></td>
+							<td><rich:inputNumberSpinner
+									value="#{tournamentBean.nTeams}" id="nteams" minValue="2"
+									maxValue="127">
+								</rich:inputNumberSpinner></td>
+							<td><rich:message for="nteams" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td>Contact person:</td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="firstname" value="Firstname:" /></td>
+							<td><h:inputText id="firstname"
+									value="#{tournamentBean.contactfirstname}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="firstname" errorClass="invalid" /></td>
+						</tr>
+						<tr>
+							<td><h:outputLabel for="lastname" value="Lastname:" /></td>
+							<td><h:inputText id="lastname"
+									value="#{tournamentBean.contactlastname}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="lastname" errorClass="invalid" /></td>
+						</tr>
+						<tr>
+							<td><h:outputLabel for="phone" value="Phone:" /></td>
+							<td><h:inputText id="phone"
+									value="#{tournamentBean.contactphone}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="phone" errorClass="invalid" /></td>
+						</tr>
+						<tr>
+							<td><h:outputLabel for="email" value="Email:" /></td>
+							<td><h:inputText id="email"
+									value="#{tournamentBean.contactemail}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="email" errorClass="invalid" /></td>
+						</tr>
+						<tr>
+							<td><h:outputLabel for="contactaddress" value="Address:" /></td>
+							<td><h:inputTextarea id="contactaddress"
+									value="#{tournamentBean.contactaddress}">
+									<rich:validator />
+								</h:inputTextarea></td>
+							<td><rich:message for="contactaddress" errorClass="invalid" /></td>
+						</tr>
+					</table>
+
+					<a4j:commandButton value="Register"
+						action="#{tournamentBean.create}" />
+					<h:commandButton type="reset" value="Reset" />
+
+				</rich:graphValidator>
+			</rich:panel>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
