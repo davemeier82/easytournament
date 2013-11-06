@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="300"
+   version="1.1"
+   viewBox="0 0 300 300"
+   width="300"
+   id="svg3212"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="bb.svg"
+   inkscape:export-filename="E:\David\Dokumente\assistant_FR.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <metadata
+     id="metadata3437">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1631"
+     inkscape:window-height="979"
+     id="namedview3435"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="234.29449"
+     inkscape:cy="110.61611"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3212" />
+  <defs
+     id="defs3214">
+    <linearGradient
+       id="g1"
+       x1="0"
+       x2="0"
+       y1="0"
+       y2="1">
+      <stop
+         offset="0%"
+         style="stop-color:#adc5ff"
+         id="stop3217" />
+      <stop
+         offset="100%"
+         style="stop-color:#7d85df"
+         id="stop3219" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3610"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.8842153,0,0,0.35632556,110.7979,132.84387)"
+       x1="107.60047"
+       y1="-0.78763592"
+       x2="107.60047"
+       y2="126.80939" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3612"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.78991091,0,0,0.39886589,110.7979,132.84387)"
+       x1="120.44648"
+       y1="41.51429"
+       x2="120.44648"
+       y2="113.28476" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3614"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.78991091,0,0,0.39886589,110.7979,132.84387)"
+       x1="191.50635"
+       y1="41.51429"
+       x2="191.50635"
+       y2="113.28476" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3616"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.8842153,0,0,0.35632556,110.7979,132.84387)"
+       x1="209.17024"
+       y1="172.49226"
+       x2="209.17024"
+       y2="300.08929" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3618"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.78991091,0,0,0.39886589,110.7979,132.84387)"
+       x1="234.14227"
+       y1="196.31334"
+       x2="234.14227"
+       y2="268.0838" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3620"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.78991091,0,0,0.39886589,110.7979,132.84387)"
+       x1="305.20215"
+       y1="196.31334"
+       x2="305.20215"
+       y2="268.0838" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3622"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.8842153,0,0,0.35632556,110.7979,132.84387)"
+       x1="12.378816"
+       y1="172.49226"
+       x2="12.378816"
+       y2="300.08929" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3624"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.78991091,0,0,0.39886589,110.7979,132.84387)"
+       x1="13.856674"
+       y1="196.31334"
+       x2="13.856674"
+       y2="268.0838" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3626"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.78991091,0,0,0.39886589,110.7979,132.84387)"
+       x1="84.916542"
+       y1="196.31334"
+       x2="84.916542"
+       y2="268.0838" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3628"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.41929907,0,0,0.75141713,110.7979,132.84387)"
+       x1="-0.66934282"
+       y1="171.43681"
+       x2="-0.66934282"
+       y2="306.64407" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3630"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="-0.30669105"
+       y1="423.06418"
+       x2="-0.30669105"
+       y2="485.01578" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3632"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="-0.30669105"
+       y1="483.38547"
+       x2="-0.30669105"
+       y2="545.33704" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3634"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="-0.30669105"
+       y1="545.33704"
+       x2="-0.30669105"
+       y2="607.28864" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3636"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="-0.30669105"
+       y1="605.65833"
+       x2="-0.30669105"
+       y2="667.60992" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3638"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.41929907,0,0,0.75141713,110.7979,132.84387)"
+       x1="186.74664"
+       y1="171.43681"
+       x2="186.74664"
+       y2="306.64407" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3640"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="85.566803"
+       y1="423.06418"
+       x2="85.566803"
+       y2="485.01578" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3642"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="85.566803"
+       y1="483.38547"
+       x2="85.566803"
+       y2="545.33704" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3644"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="85.566803"
+       y1="545.33704"
+       x2="85.566803"
+       y2="607.28864" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3646"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="85.566803"
+       y1="605.65833"
+       x2="85.566803"
+       y2="667.60992" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3648"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.41929907,0,0,0.75141713,110.7979,132.84387)"
+       x1="414.32321"
+       y1="171.43681"
+       x2="414.32321"
+       y2="306.64407" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3650"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="189.84177"
+       y1="423.06418"
+       x2="189.84177"
+       y2="485.01578" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3652"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="189.84177"
+       y1="483.38547"
+       x2="189.84177"
+       y2="545.33704" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3654"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="189.84177"
+       y1="545.33704"
+       x2="189.84177"
+       y2="607.28864" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3656"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="189.84177"
+       y1="605.65833"
+       x2="189.84177"
+       y2="667.60992" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3658"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.41929907,0,0,0.75141713,110.7979,132.84387)"
+       x1="601.7392"
+       y1="171.43681"
+       x2="601.7392"
+       y2="306.64407" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3660"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="275.71527"
+       y1="423.06418"
+       x2="275.71527"
+       y2="485.01578" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3662"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="275.71527"
+       y1="483.38547"
+       x2="275.71527"
+       y2="545.33704" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3664"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="275.71527"
+       y1="545.33704"
+       x2="275.71527"
+       y2="607.28864" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#g1"
+       id="linearGradient3666"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.91510597,0,0,0.3442973,110.7979,132.84387)"
+       x1="275.71527"
+       y1="605.65833"
+       x2="275.71527"
+       y2="667.60992" />
+  </defs>
+  <g
+     id="g3497"
+     transform="matrix(0.70592026,0,0,0.70592026,-37.180439,-8.087864)">
+    <g
+       transform="matrix(0.56130964,0,0,0.56130964,110.7979,132.84387)"
+       id="g3221">
+      <path
+         style="fill:#000000;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3223"
+         d="m 490,191 3.75,7.5 -3.75,-1.875 -3.75,1.875 z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3225"
+         d="m 490,259 0,-24 q 0,-10 0,-20 l 0,-25" />
+    </g>
+    <g
+       transform="matrix(0.56130964,0,0,0.56130964,110.7979,132.84387)"
+       id="g3227">
+      <path
+         style="fill:#000000;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3229"
+         d="m 370,191 3.75,7.5 -3.75,-1.875 -3.75,1.875 z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3231"
+         d="m 370,259 0,-24 q 0,-10 0,-20 l 0,-25" />
+    </g>
+    <g
+       transform="matrix(0.56130964,0,0,0.56130964,110.7979,132.84387)"
+       id="g3233">
+      <path
+         style="fill:#000000;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3235"
+         d="m 180,191 3.75,7.5 -3.75,-1.875 -3.75,1.875 z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3237"
+         d="m 180,259 0,-24 q 0,-10 0,-20 l 0,-25" />
+    </g>
+    <g
+       transform="matrix(0.56130964,0,0,0.56130964,110.7979,132.84387)"
+       id="g3239">
+      <path
+         style="fill:#000000;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3241"
+         d="m 60,191 3.75,7.5 -3.75,-1.875 -3.75,1.875 z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3243"
+         d="m 60,259 0,-24 q 0,-10 0,-20 l 0,-25" />
+    </g>
+    <g
+       transform="matrix(0.56130964,0,0,0.56130964,110.7979,132.84387)"
+       id="g3245">
+      <path
+         style="fill:#000000;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3247"
+         d="m 371,50 7.5,-3.75 -1.875,3.75 1.875,3.75 z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3249"
+         d="m 430,139 0,-79 q 0,-10 -10,-10 l -50,0" />
+    </g>
+    <g
+       transform="matrix(0.56130964,0,0,0.56130964,110.7979,132.84387)"
+       id="g3251">
+      <path
+         style="fill:#000000;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3253"
+         d="M 169,50 161.5,53.75 163.375,50 161.5,46.25 z" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:2"
+         inkscape:connector-curvature="0"
+         id="path3255"
+         d="m 120,139 0,-79 q 0,-10 10,-10 l 40,0" />
+    </g>
+    <rect
+       style="fill:url(#linearGradient3610);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3257"
+       y="132.84387"
+       x="206.22054"
+       width="112.26192"
+       height="44.90477" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3259"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3261"
+         y="142.94745"
+         x="262.3515">Final</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3612);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3263"
+       y="149.68317"
+       x="206.22054"
+       width="56.130962"
+       height="28.065481" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3265"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3267"
+         y="162.03197"
+         x="234.28603">Winner</tspan>
+      <tspan
+         id="tspan3269"
+         y="168.76768"
+         x="234.28603">Semi Final 1</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3614);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3271"
+       y="149.68317"
+       x="262.3515"
+       width="56.130962"
+       height="28.065481" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3273"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3275"
+         y="162.03197"
+         x="290.41696">Winner</tspan>
+      <tspan
+         id="tspan3277"
+         y="168.76768"
+         x="290.41696">Semi Final 2</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3616);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3279"
+       y="194.58794"
+       x="296.03006"
+       width="112.26192"
+       height="44.90477" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3281"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3283"
+         y="204.69151"
+         x="352.16104">Semi Final 2</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3618);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3285"
+       y="211.42723"
+       x="296.03006"
+       width="56.130962"
+       height="28.065481" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3287"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3289"
+         y="227.14389"
+         x="324.09555">1. Group C</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3620);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3291"
+       y="211.42723"
+       x="352.16104"
+       width="56.130962"
+       height="28.065481" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3293"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3295"
+         y="227.14389"
+         x="379.66522">1. Group D</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3622);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3297"
+       y="194.58794"
+       x="122.02409"
+       width="112.26192"
+       height="44.90477" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3299"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3301"
+         y="204.69151"
+         x="178.15504">Semi Final 1</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3624);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3303"
+       y="211.42723"
+       x="122.02409"
+       width="56.130962"
+       height="28.065481" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3305"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3307"
+         y="227.14389"
+         x="150.08957">1. Group A</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3626);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3309"
+       y="211.42723"
+       x="178.15504"
+       width="56.130962"
+       height="28.065481" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3311"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3313"
+         y="227.14389"
+         x="206.22054">1. Group B</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3628);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3315"
+       y="261.9451"
+       x="110.7979"
+       width="56.130962"
+       height="101.03574" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3317"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3319"
+         y="272.04868"
+         x="138.30206">Group A</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3630);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3321"
+       y="278.78439"
+       x="110.7979"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3323"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3325"
+         y="291.13321"
+         x="138.86337">1. Group A</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3632);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3327"
+       y="299.55286"
+       x="110.7979"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3329"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3331"
+         y="311.90164"
+         x="138.86337">2. Group A</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3634);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3333"
+       y="320.8826"
+       x="110.7979"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3335"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3337"
+         y="333.23141"
+         x="138.86337">3. Group A</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3636);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3339"
+       y="341.65106"
+       x="110.7979"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3341"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3343"
+         y="353.99988"
+         x="138.86337">4. Group A</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3638);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3345"
+       y="261.9451"
+       x="189.38124"
+       width="56.130962"
+       height="101.03574" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3347"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3349"
+         y="272.04868"
+         x="216.88542">Group B</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3640);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3351"
+       y="278.78439"
+       x="189.38124"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3353"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3355"
+         y="291.13321"
+         x="217.44673">1. Group B</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3642);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3357"
+       y="299.55286"
+       x="189.38124"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3359"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3361"
+         y="311.90164"
+         x="217.44673">2. Group B</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3644);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3363"
+       y="320.8826"
+       x="189.38124"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3365"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3367"
+         y="333.23141"
+         x="217.44673">3. Group B</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3646);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3369"
+       y="341.65106"
+       x="189.38124"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3371"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3373"
+         y="353.99988"
+         x="217.44673">4. Group B</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3648);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3375"
+       y="261.9451"
+       x="284.80386"
+       width="56.130962"
+       height="101.03574" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3377"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3379"
+         y="272.04868"
+         x="312.30804">Group C</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3650);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3381"
+       y="278.78439"
+       x="284.80386"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3383"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3385"
+         y="291.13321"
+         x="312.86935">1. Group C</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3652);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3387"
+       y="299.55286"
+       x="284.80386"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3389"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3391"
+         y="311.90164"
+         x="312.86935">2. Group C</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3654);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3393"
+       y="320.8826"
+       x="284.80386"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3395"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3397"
+         y="333.23141"
+         x="312.86935">3. Group C</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3656);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3399"
+       y="341.65106"
+       x="284.80386"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3401"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3403"
+         y="353.99988"
+         x="312.86935">4. Group C</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3658);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3405"
+       y="261.9451"
+       x="363.38724"
+       width="56.130962"
+       height="101.03574" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3407"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3409"
+         y="272.04868"
+         x="391.45273">Group D</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3660);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3411"
+       y="278.78439"
+       x="363.38724"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3413"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3415"
+         y="291.13321"
+         x="390.89142">1. Group D</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3662);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3417"
+       y="299.55286"
+       x="363.38724"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3419"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3421"
+         y="311.90164"
+         x="390.89142">2. Group D</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3664);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3423"
+       y="320.8826"
+       x="363.38724"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3425"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3427"
+         y="333.23141"
+         x="390.89142">3. Group D</tspan>
+    </text>
+    <rect
+       style="fill:url(#linearGradient3666);stroke:#5d65df;stroke-width:0.56130964"
+       id="rect3429"
+       y="341.65106"
+       x="363.38724"
+       width="56.130962"
+       height="20.768457" />
+    <text
+       style="font-size:6.73571539px;font-weight:normal;text-anchor:middle;fill:#1d258f;font-family:Verdana"
+       y="132.84387"
+       x="110.7979"
+       id="text3431"
+       font-weight="normal"
+       font-size="12"
+       font-decoration="none">
+      <tspan
+         id="tspan3433"
+         y="353.99988"
+         x="390.89142">4. Group D</tspan>
+    </text>
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-size:28.23681068px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="12.35933"
+     y="64.723343"
+     id="text3606"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3608"
+       x="12.35933"
+       y="64.723343">Tournament Assistant</tspan></text>
+</svg>
