@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -48,6 +49,9 @@ public class User implements Serializable {
   
   @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
   private List<UserTeam> userTeam = new ArrayList<UserTeam>();
+  
+  @OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+  private List<Player> players = new ArrayList<Player>();
 
   /**
 	 * 
@@ -199,6 +203,25 @@ public class User implements Serializable {
    */
   public void setUserTeam(List<UserTeam> userTeam) {
     this.userTeam = userTeam;
+  }
+
+  /**
+   * @return the players
+   */
+  public List<Player> getPlayers() {
+    return players;
+  }
+
+  /**
+   * @param players the players to set
+   */
+  public void setPlayers(List<Player> players) {
+    this.players = players;
+  }
+  
+  public void addPlayer(Player player) {
+    player.setUser(this);
+    this.getPlayers().add(player);
   }
 
 }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>Create new player</h1>
+
+		<h:form id="reg">
+
+			<rich:panel header="Player information">
+
+				<rich:graphValidator value="#{playerBean}" id="gv">
+
+					<rich:messages for="gv" />
+					<rich:messages globalOnly="true" />
+
+					<table>
+						<tr>
+							<td><h:outputLabel for="firsname" value="Firstname:" /></td>
+							<td><h:inputText id="firstname"
+									value="#{playerBean.firstname}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="firstname" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="lastname" value="Lastname:" /></td>
+							<td><h:inputText id="lastname"
+									value="#{playerBean.lastname}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="lastname" errorClass="invalid" /></td>
+						</tr>
+
+
+						<tr>
+							<td><h:outputLabel for="street" value="Street:" /></td>
+							<td><h:inputTextarea id="street"
+									value="#{playerBean.street}">
+									<rich:validator />
+								</h:inputTextarea></td>
+							<td><rich:message for="street" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="zip" value="ZIP:" /></td>
+							<td><h:inputText id="zip" value="#{playerBean.zip}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="zip" errorClass="invalid" /></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel for="city" value="City:" /></td>
+							<td><h:inputText id="city" value="#{playerBean.city}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="city" errorClass="invalid" /></td>
+						</tr>
+						
+						<tr>
+							<td><h:outputLabel for="country" value="Country:" /></td>
+							<td><rich:select value="#{playerBean.country}"
+									enableManualInput="true" defaultLabel="Select a country"
+									id="country">
+									<f:selectItems value="#{playerBean.countries}" />
+								</rich:select></td>
+							<td></td>
+						</tr>
+
+						<tr>
+							<h:outputLabel for="email" value="Email:" />
+							<h:inputText id="email" value="#{playerBean.email}">
+								<rich:validator />
+							</h:inputText>
+							<rich:message for="email" errorClass="invalid" />
+						</tr>
+						
+						<tr>
+							<h:outputLabel for="phone" value="Phone:" />
+							<h:inputText id="phone" value="#{playerBean.phone}">
+								<rich:validator />
+							</h:inputText>
+							<rich:message for="phone" errorClass="invalid" />
+						</tr>
+
+					</table>
+
+					<a4j:commandButton value="Add"
+						action="#{playerBean.create}" />
+					<h:commandButton type="reset" value="Reset" />
+
+				</rich:graphValidator>
+			</rich:panel>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

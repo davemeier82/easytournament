@@ -12,7 +12,7 @@
 
 		<h:form id="reg">
 
-			<rich:panel header="User information">
+			<rich:panel header="Tournament information">
 
 				<rich:graphValidator value="#{tournamentBean}" id="gv">
 
@@ -81,6 +81,14 @@
 									<rich:validator />
 								</h:inputTextarea></td>
 							<td><rich:message for="address" errorClass="invalid" /></td>
+						</tr>
+						
+						<tr>
+							<td><h:outputLabel for="zip" value="ZIP:" /></td>
+							<td><h:inputText id="zip" value="#{tournamentBean.zip}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="zip" errorClass="invalid" /></td>
 						</tr>
 
 						<tr>
@@ -189,7 +197,7 @@
 						</tr>
 					</table>
 
-					<a4j:commandButton value="Register"
+					<a4j:commandButton value="Add"
 						action="#{tournamentBean.create}" />
 					<h:commandButton type="reset" value="Reset" />
 

@@ -60,13 +60,16 @@ public class Tournament implements Serializable {
   @Min(0)
   @Column(columnDefinition = "TINYINT")
   private Short sportid;
-  @NotNull
   @Length(min = 1, max = 45)
   private String sport;
-  @Length(min = 0, max = 512)
+  @Length(min = 0, max = 511)
   private String description;
-  @Length(min = 0, max = 256)
+  @Length(min = 0, max = 255)
   private String address;
+  @NotNull
+  @Max(999999999)
+  @Min(0)
+  private Integer zip;
   @NotNull
   private String city;
   @NotNull
@@ -81,7 +84,7 @@ public class Tournament implements Serializable {
   private String contactphone;
   @Length(min = 0, max = 45)
   private String contactemail;
-  @Length(min = 0, max = 256)
+  @Length(min = 0, max = 255)
   private String contactaddress;
   @Length(min = 0, max = 15)
   private String fee;
@@ -459,5 +462,19 @@ public class Tournament implements Serializable {
    */
   public void setCountry(Integer country) {
     this.country = country;
+  }
+
+  /**
+   * @return the zip
+   */
+  public Integer getZip() {
+    return zip;
+  }
+
+  /**
+   * @param zip the zip to set
+   */
+  public void setZip(Integer zip) {
+    this.zip = zip;
   }
 }

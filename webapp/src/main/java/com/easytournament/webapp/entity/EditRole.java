@@ -21,10 +21,10 @@ public class EditRole implements Serializable {
   @NotNull
   private String name;
   @NotNull
-  @Column(name = "tournament")
+  @Column(name = "tournament", columnDefinition = "BIT", length = 1)
   private Boolean editTournament;
   @NotNull
-  @Column(name = "team")
+  @Column(name = "team", columnDefinition = "BIT", length = 1)
   private Boolean editTeam;
 
   /**

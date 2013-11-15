@@ -2,6 +2,7 @@ package com.easytournament.webapp.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -18,6 +19,7 @@ public class Friend implements Serializable {
   private FriendId id = new FriendId();
 
   @NotNull
+  @Column(name = "accepted", columnDefinition = "BIT", length = 1)
   private Boolean accepted;
 
   public Friend() {

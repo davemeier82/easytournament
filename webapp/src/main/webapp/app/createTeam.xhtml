@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>Create new team</h1>
+
+		<h:form id="reg">
+
+			<rich:panel header="Team information">
+
+				<rich:graphValidator value="#{teamBean}" id="gv">
+
+					<rich:messages for="gv" />
+					<rich:messages globalOnly="true" />
+
+					<table>
+						<tr>
+							<td><h:outputLabel for="tname" value="Team name:" /></td>
+							<td><h:inputText id="tname" value="#{teamBean.name}">
+									<rich:validator />
+								</h:inputText></td>
+							<td><rich:message for="tname" errorClass="invalid" /></td>
+						</tr>
+
+						<h:selectOneRadio value="#{teamBean.publicTeam}">
+							<f:selectItem itemValue="#{true}" itemLabel="Public" />
+							<f:selectItem itemValue="#{false}" itemLabel="Private" />
+						</h:selectOneRadio>
+
+					</table>
+
+					<a4j:commandButton value="Register"
+						action="#{teamBean.create}" />
+					<h:commandButton type="reset" value="Reset" />
+
+				</rich:graphValidator>
+			</rich:panel>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

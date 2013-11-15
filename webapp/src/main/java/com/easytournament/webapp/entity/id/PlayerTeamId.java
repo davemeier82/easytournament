@@ -12,16 +12,16 @@ public class PlayerTeamId implements Serializable {
   @NotNull
   private Integer playerid;
   @NotNull
-  private Integer tournamentid;
+  private Integer teamid;
 
   public PlayerTeamId() {
     super();
   }
 
-  public PlayerTeamId(int playerid, int tournamentid) {
+  public PlayerTeamId(int playerid, int teamid) {
     super();
     this.playerid = playerid;
-    this.tournamentid = tournamentid;
+    this.teamid = teamid;
   }
 
   /**
@@ -40,18 +40,18 @@ public class PlayerTeamId implements Serializable {
   }
 
   /**
-   * @return the tournamentid
+   * @return the teamid
    */
-  public Integer getTournamentid() {
-    return tournamentid;
+  public Integer getTeamid() {
+    return teamid;
   }
 
   /**
-   * @param tournamentid
-   *          the tournamentid to set
+   * @param teamid
+   *          the teamid to set
    */
-  public void setTournamentid(Integer tournamentid) {
-    this.tournamentid = tournamentid;
+  public void setTeamid(Integer teamid) {
+    this.teamid = teamid;
   }
 
   /*
@@ -64,8 +64,7 @@ public class PlayerTeamId implements Serializable {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((playerid == null)? 0 : playerid.hashCode());
-    result = prime * result
-        + ((tournamentid == null)? 0 : tournamentid.hashCode());
+    result = prime * result + ((teamid == null)? 0 : teamid.hashCode());
     return result;
   }
 
@@ -89,11 +88,11 @@ public class PlayerTeamId implements Serializable {
     }
     else if (!playerid.equals(other.playerid))
       return false;
-    if (tournamentid == null) {
-      if (other.tournamentid != null)
+    if (teamid == null) {
+      if (other.teamid != null)
         return false;
     }
-    else if (!tournamentid.equals(other.tournamentid))
+    else if (!teamid.equals(other.teamid))
       return false;
     return true;
   }

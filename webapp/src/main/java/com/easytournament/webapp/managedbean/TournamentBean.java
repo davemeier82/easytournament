@@ -17,8 +17,10 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.easytournament.webapp.controller.CountryControllerInterface;
 import com.easytournament.webapp.controller.SportControllerInterface;
 import com.easytournament.webapp.controller.TournamentControllerInterface;
+import com.easytournament.webapp.entity.Country;
 import com.easytournament.webapp.entity.Sport;
 import com.easytournament.webapp.entity.Tournament;
 import com.easytournament.webapp.entity.User;
@@ -33,6 +35,9 @@ public class TournamentBean implements Serializable {
   
   @EJB
   private SportControllerInterface sportController;
+  
+  @EJB
+  private CountryControllerInterface countryController;
   
   @EJB
   private TournamentControllerInterface tournamentController;
@@ -51,8 +56,6 @@ public class TournamentBean implements Serializable {
   private Short nTeams;
 
   private boolean publicTournament = true;
-
-  private boolean closed = false;
   
   private boolean teamTournament = true;
 
@@ -61,16 +64,20 @@ public class TournamentBean implements Serializable {
   private Short sportid = -1;
   
   private List<SelectItem> countries = new ArrayList<SelectItem>();
-  private Short country = -1;
+  private Integer country = -1;
   
   @Length(min = 1, max = 45)
   private String city;
+  @Min(0)
+  @Max(999999999)
+  private Integer zip;
 
+  @Length(min = 1, max = 45)
   private String sport;
 
-  @Length(min = 0, max = 512)
+  @Length(min = 0, max = 511)
   private String description;
-  @Length(min = 0, max = 256)
+  @Length(min = 0, max = 255)
   private String address;
   @Length(min = 0, max = 128)
   private String website;
@@ -82,7 +89,7 @@ public class TournamentBean implements Serializable {
   private String contactphone;
   @Length(min = 0, max = 45)
   private String contactemail;
-  @Length(min = 0, max = 256)
+  @Length(min = 0, max = 255)
   private String contactaddress;
   @Length(min = 0, max = 15)
   private String fee;
@@ -92,6 +99,9 @@ public class TournamentBean implements Serializable {
     Tournament tourn = new Tournament();
     tourn.setName(name);
     tourn.setAddress(address);
+    tourn.setCity(city);
+    tourn.setZip(zip);
+    tourn.setCountry(country);
     tourn.setApplicationEndTime(applicationEndTime);
     tourn.setClosed(false);
     tourn.setContactaddress(contactaddress);
@@ -115,11 +125,16 @@ public class TournamentBean implements Serializable {
   }
   
   @PostConstruct
-  public void initSportsList(){
+  public void initLists(){
     List<Sport> allsports = sportController.loadSports();
     sports.add(new SelectItem(-1, ""));
     for(Sport s : allsports){
       sports.add(new SelectItem(s.getId(), s.getName()));
+    }
+
+    List<Country> allcountries = countryController.loadCountries();
+    for(Country s : allcountries){
+      countries.add(new SelectItem(s.getId(), s.getName()));
     }
   }
   
@@ -186,21 +201,6 @@ public class TournamentBean implements Serializable {
    */
   public void setPublicTournament(boolean publicTournament) {
     this.publicTournament = publicTournament;
-  }
-
-  /**
-   * @return the closed
-   */
-  public boolean isClosed() {
-    return closed;
-  }
-
-  /**
-   * @param closed
-   *          the closed to set
-   */
-  public void setClosed(boolean closed) {
-    this.closed = closed;
   }
 
   /**
@@ -438,14 +438,14 @@ public class TournamentBean implements Serializable {
   /**
    * @return the country
    */
-  public Short getCountry() {
+  public Integer getCountry() {
     return country;
   }
 
   /**
    * @param country the country to set
    */
-  public void setCountry(Short country) {
+  public void setCountry(Integer country) {
     this.country = country;
   }
 
@@ -475,6 +475,20 @@ public class TournamentBean implements Serializable {
    */
   public void setTeamTournament(boolean teamTournament) {
     this.teamTournament = teamTournament;
+  }
+
+  /**
+   * @return the zip
+   */
+  public Integer getZip() {
+    return zip;
+  }
+
+  /**
+   * @param zip the zip to set
+   */
+  public void setZip(Integer zip) {
+    this.zip = zip;
   }
 
 }

@@ -39,6 +39,9 @@ public class Team implements Serializable {
   @OneToMany(mappedBy="team", fetch=FetchType.LAZY)
   private List<UserTeam> userTeam = new ArrayList<UserTeam>();
   
+  @OneToMany(mappedBy="team", fetch=FetchType.LAZY)
+  private List<PlayerTeam> playerTeam = new ArrayList<PlayerTeam>();
+  
   /**
    * @return the id
    */
@@ -111,5 +114,18 @@ public class Team implements Serializable {
   public void setUserTeam(List<UserTeam> userTeam) {
     this.userTeam = userTeam;
   }
+  /**
+   * @return the playerTeam
+   */
+  public List<PlayerTeam> getPlayerTeam() {
+    return playerTeam;
+  }
+  /**
+   * @param playerTeam the playerTeam to set
+   */
+  public void setPlayerTeam(List<PlayerTeam> playerTeam) {
+    this.playerTeam = playerTeam;
+  }
+
   
 }
