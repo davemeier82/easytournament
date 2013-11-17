@@ -9,7 +9,9 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 
+import com.easytournament.webapp.entity.Player;
 import com.easytournament.webapp.entity.User;
+import com.easytournament.webapp.entity.UserTeam;
 import com.easytournament.webapp.entity.UserTournament;
 
 @Stateful(name = "usercontroller")
@@ -67,9 +69,21 @@ public class UserController implements UserControllerInterface {
   }
 
   @Override
-  public List<UserTournament> getUserTournaments(Integer userid) {
+  public List<UserTournament> loadUserTournaments(Integer userid) {
     User user = loadUser(userid);
     return user.getUserTournament();
+  }
+
+  @Override
+  public List<UserTeam> loadUserTeams(Integer userid) {
+    User user = loadUser(userid);
+    return user.getUserTeam();
+  }
+
+  @Override
+  public List<Player> loadPlayers(Integer userid) {
+    User user = loadUser(userid);
+    return user.getPlayers();
   }
 
 }

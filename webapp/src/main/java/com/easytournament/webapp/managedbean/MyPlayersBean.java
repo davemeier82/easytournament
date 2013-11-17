@@ -10,13 +10,13 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.easytournament.webapp.controller.UserControllerInterface;
+import com.easytournament.webapp.entity.Player;
 import com.easytournament.webapp.entity.User;
-import com.easytournament.webapp.entity.UserTournament;
 
 @SuppressWarnings("serial")
-@Named("myTournBean")
+@Named("myPlayersBean")
 @ViewScoped
-public class MyTournamentsBean implements Serializable {
+public class MyPlayersBean implements Serializable {
 
   @EJB
   private UserControllerInterface userController;
@@ -24,27 +24,27 @@ public class MyTournamentsBean implements Serializable {
   @Inject
   private AuthenticationBean authenticationBean;
 
-  private List<UserTournament> tournaments;
+  private List<Player> players;
 
   @PostConstruct
   public void init() {
     User user = authenticationBean.getCurrentUser();
-    tournaments = userController.loadUserTournaments(user.getId());
+    players = userController.loadPlayers(user.getId());
   }
 
   /**
-   * @return the tournaments
+   * @return the players
    */
-  public List<UserTournament> getTournaments() {
-    return tournaments;
+  public List<Player> getPlayers() {
+    return players;
   }
 
   /**
-   * @param tournaments
-   *          the tournaments to set
+   * @param players the players to set
    */
-  public void setTournaments(List<UserTournament> tournaments) {
-    this.tournaments = tournaments;
+  public void setPlayers(List<Player> players) {
+    this.players = players;
   }
+
 
 }
