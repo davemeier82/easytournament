@@ -22,13 +22,13 @@
 					<table>
 						<tr>
 							<td><h:outputLabel for="tname" value="Team name:" /></td>
-							<td><h:inputText id="tname" value="#{teamBean.name}">
+							<td><h:inputText id="tname" value="#{teamBean.team.name}">
 									<rich:validator />
 								</h:inputText></td>
 							<td><rich:message for="tname" errorClass="invalid" /></td>
 						</tr>
 
-						<h:selectOneRadio value="#{teamBean.publicTeam}">
+						<h:selectOneRadio value="#{teamBean.team.publicTeam}">
 							<f:selectItem itemValue="#{true}" itemLabel="Public" />
 							<f:selectItem itemValue="#{false}" itemLabel="Private" />
 						</h:selectOneRadio>

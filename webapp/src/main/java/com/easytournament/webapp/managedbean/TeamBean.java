@@ -7,7 +7,6 @@ import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.validation.constraints.Size;
 
 import com.easytournament.webapp.controller.SportControllerInterface;
 import com.easytournament.webapp.controller.TeamControllerInterface;
@@ -28,15 +27,9 @@ public class TeamBean implements Serializable {
   @EJB
   private TeamControllerInterface teamController;
 
-  @Size(min = 1, max = 45)
-  private String name;
-
-  private boolean publicTeam = false;
+  private Team team = new Team();
 
   public void create() {
-    Team team = new Team();
-    team.setName(name);
-    team.setPublicTeam(publicTeam);
     team.setLastModified(new Date());
     User currentUser = authenticationBean.getCurrentUser();
     teamController.saveTeam(currentUser, team);
@@ -44,32 +37,16 @@ public class TeamBean implements Serializable {
   }
 
   /**
-   * @return the name
+   * @return the team
    */
-  public String getName() {
-    return name;
+  public Team getTeam() {
+    return team;
   }
 
   /**
-   * @param name
-   *          the name to set
+   * @param team the team to set
    */
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  /**
-   * @return the publicTeam
-   */
-  public boolean isPublicTeam() {
-    return publicTeam;
-  }
-
-  /**
-   * @param publicTeam
-   *          the publicTeam to set
-   */
-  public void setPublicTeam(boolean publicTeam) {
-    this.publicTeam = publicTeam;
+  public void setTeam(Team team) {
+    this.team = team;
   }
 }
