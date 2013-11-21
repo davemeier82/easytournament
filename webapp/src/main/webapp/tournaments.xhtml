@@ -14,21 +14,50 @@
 
 			<rich:panel header="Tournaments">
 
-					<h:panelGrid columns="3" columnClasses="titleCell">
-
+				<h:panelGrid columns="3" columnClasses="titleCell">
+					<h:form id="form">
 						<rich:dataScroller for="table" maxPages="5" />
-						<rich:dataTable value="#{tournSelectionBean.tournaments}" var="tourn"
-							id="table" rows="10">
+						<rich:dataTable value="#{tournSelectionBean.tournaments}"
+							var="tourn" id="table" rows="10">
 							<rich:column>
 								<f:facet name="header">
 									<h:outputText value="Name" />
 								</f:facet>
 								<h:outputText value="#{tourn.name}" />
 							</rich:column>
+							<rich:column>
+								<a4j:commandButton value="Detail"
+									action="#{tournSelectionBean.setCurrentTournament(tourn)}"
+									render=":detailpopup"
+									oncomplete="#{rich:component('detailpopup')}.show();" />
+							</rich:column>
 						</rich:dataTable>
 						<rich:dataScroller for="table" maxPages="5" />
 
+					</h:form>
+				</h:panelGrid>
+
+				<rich:popupPanel id="detailpopup" modal="true" resizeable="false"
+					autosized="true"
+					onmaskclick="#{rich:component('detailpopup')}.hide()">
+					<f:facet name="header">
+						<h:outputText value="#{tournSelectionBean.currentTournament.name}" />
+					</f:facet>
+					<f:facet name="controls">
+						<h:outputLink value="#"
+							onclick="#{rich:component('detailpopup')}.hide(); return false;">X
+						</h:outputLink>
+					</f:facet>
+					<h:panelGrid columns="2" columnClasses="titleCell">
+						<h:outputLabel value="City" />
+						<h:outputLabel
+							value="#{tournSelectionBean.currentTournament.city}" />
 					</h:panelGrid>
+					<h:link value="Register" outcome="/app/tournamentRegistration.jsf">
+							<f:param name="tournId" value="#{tournSelectionBean.currentTournament.id}" />
+						</h:link>
+					<a href="#" onclick="#{rich:component('detailpopup')}.hide()">Close</a>
+				</rich:popupPanel>
 			</rich:panel>
 
 		</h:form>

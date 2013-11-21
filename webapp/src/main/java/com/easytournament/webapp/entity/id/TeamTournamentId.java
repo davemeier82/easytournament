@@ -7,36 +7,21 @@ import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("serial")
 @Embeddable
-public class PlayerTournamentId implements Serializable {
+public class TeamTournamentId implements Serializable {
 
-  @NotNull
-  private Integer playerid;
   @NotNull
   private Integer tournamentid;
+  @NotNull
+  private Integer teamid;
 
-  public PlayerTournamentId() {
+  public TeamTournamentId() {
     super();
   }
 
-  public PlayerTournamentId(int playerid, int tournamentid) {
+  public TeamTournamentId(int teamid, int tournamentid) {
     super();
-    this.playerid = playerid;
+    this.teamid = teamid;
     this.tournamentid = tournamentid;
-  }
-
-  /**
-   * @return the playerid
-   */
-  public Integer getPlayerid() {
-    return playerid;
-  }
-
-  /**
-   * @param playerid
-   *          the playerid to set
-   */
-  public void setPlayerid(Integer playerid) {
-    this.playerid = playerid;
   }
 
   /**
@@ -47,31 +32,40 @@ public class PlayerTournamentId implements Serializable {
   }
 
   /**
-   * @param tournamentid
-   *          the tournamentid to set
+   * @param tournamentid the tournamentid to set
    */
   public void setTournamentid(Integer tournamentid) {
     this.tournamentid = tournamentid;
   }
 
-  /*
-   * (non-Javadoc)
-   * 
+  /**
+   * @return the teamid
+   */
+  public Integer getTeamid() {
+    return teamid;
+  }
+
+  /**
+   * @param teamid the teamid to set
+   */
+  public void setTeamid(Integer teamid) {
+    this.teamid = teamid;
+  }
+
+  /* (non-Javadoc)
    * @see java.lang.Object#hashCode()
    */
   @Override
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + ((playerid == null)? 0 : playerid.hashCode());
+    result = prime * result + ((teamid == null)? 0 : teamid.hashCode());
     result = prime * result
         + ((tournamentid == null)? 0 : tournamentid.hashCode());
     return result;
   }
 
-  /*
-   * (non-Javadoc)
-   * 
+  /* (non-Javadoc)
    * @see java.lang.Object#equals(java.lang.Object)
    */
   @Override
@@ -82,12 +76,12 @@ public class PlayerTournamentId implements Serializable {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    PlayerTournamentId other = (PlayerTournamentId)obj;
-    if (playerid == null) {
-      if (other.playerid != null)
+    TeamTournamentId other = (TeamTournamentId)obj;
+    if (teamid == null) {
+      if (other.teamid != null)
         return false;
     }
-    else if (!playerid.equals(other.playerid))
+    else if (!teamid.equals(other.teamid))
       return false;
     if (tournamentid == null) {
       if (other.tournamentid != null)
@@ -97,5 +91,9 @@ public class PlayerTournamentId implements Serializable {
       return false;
     return true;
   }
+
+
+
+
 
 }

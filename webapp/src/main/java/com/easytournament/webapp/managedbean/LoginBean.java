@@ -37,7 +37,8 @@ public class LoginBean implements Serializable {
             user.getPasswordsalt());
         if (encryptedPassword.equals(user.getPassword())) {
           authenticationBean.login(user);
-          return "success";
+          String requestedPage = authenticationBean.getRequestedPage();
+          return requestedPage+"?faces-redirect=true";
         }
       }
       catch (NoSuchAlgorithmException e) {

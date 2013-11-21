@@ -9,6 +9,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 
+import com.easytournament.webapp.entity.Player;
+import com.easytournament.webapp.entity.PlayerTournament;
+import com.easytournament.webapp.entity.Team;
+import com.easytournament.webapp.entity.TeamTournament;
 import com.easytournament.webapp.entity.Tournament;
 import com.easytournament.webapp.entity.User;
 import com.easytournament.webapp.entity.UserTournament;
@@ -43,6 +47,25 @@ public class TournamentController implements TournamentControllerInterface {
         .createQuery("from Tournament t where t.publicTournament = :inpublic and t.closed = :inclosed");
     q.setParameter("inpublic", publicTournament);
     q.setParameter("inclosed", closedTournament);
-    return (List<Tournament>) q.getResultList();
+    return (List<Tournament>)q.getResultList();
+  }
+
+  @Override
+  public void addTeamToTournament(Tournament tournament, Team team,
+      Boolean accepted) {
+    Team managedteam = em.merge(team);
+    TeamTournament tt = new TeamTournament(accepted, managedteam, tournament);
+    tournament.getTeamTournament().add(tt);
+    team.getTeamTournament().add(tt);
+    em.persist(tt);
+  }
+
+  @Override
+  public void addPlayerToTournament(Tournament tournament, Player player,
+      Boolean accepted) {
+    Player managedplayer = em.merge(player);
+    PlayerTournament pt = new PlayerTournament(accepted, managedplayer, tournament);
+    tournament.getPlayerTournament().add(pt);
+    em.persist(pt);
   }
 }

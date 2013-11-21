@@ -18,7 +18,7 @@ import com.easytournament.webapp.managedbean.AuthenticationBean;
 
 @WebFilter("/app/*")
 public class AuthenticationFilter implements Filter {
-  
+
   @Inject
   private AuthenticationBean authenticationBean;
 
@@ -26,12 +26,22 @@ public class AuthenticationFilter implements Filter {
   public void doFilter(ServletRequest request, ServletResponse response,
       FilterChain chain) throws IOException, ServletException {
     HttpServletRequest req = (HttpServletRequest)request;
+
     HttpSession session = req.getSession(false);
-    if (session != null && authenticationBean != null && authenticationBean.isLoggedIn()) {
+    String requestedPage = req.getRequestURI().toString();
+    requestedPage = requestedPage.substring(requestedPage.indexOf("/", 1));
+    requestedPage += "?" + req.getQueryString();
+
+    if (session != null && authenticationBean != null
+        && authenticationBean.isLoggedIn()) {
+      authenticationBean.setRequestedPage(requestedPage);
       // User is logged in, so just continue request.
       chain.doFilter(request, response);
     }
     else {
+      if (authenticationBean != null) {
+        authenticationBean.setRequestedPage(requestedPage);
+      }
       // User is not logged in, so redirect to index.
       HttpServletResponse res = (HttpServletResponse)response;
       res.sendRedirect(req.getContextPath() + "/login.jsf");

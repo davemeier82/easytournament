@@ -94,6 +94,10 @@ public class Tournament implements Serializable {
   private boolean teamTournanament;
   @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)
   List<UserTournament> userTournament = new ArrayList<UserTournament>();
+  @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)
+  List<PlayerTournament> playerTournament = new ArrayList<PlayerTournament>();
+  @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)
+  List<TeamTournament> teamTournament = new ArrayList<TeamTournament>();
   
   /**
    * @return the id
@@ -477,4 +481,33 @@ public class Tournament implements Serializable {
   public void setZip(Integer zip) {
     this.zip = zip;
   }
+
+  /**
+   * @return the playerTournament
+   */
+  public List<PlayerTournament> getPlayerTournament() {
+    return playerTournament;
+  }
+
+  /**
+   * @param playerTournament the playerTournament to set
+   */
+  public void setPlayerTournament(List<PlayerTournament> playerTournament) {
+    this.playerTournament = playerTournament;
+  }
+
+  /**
+   * @return the teamTournament
+   */
+  public List<TeamTournament> getTeamTournament() {
+    return teamTournament;
+  }
+
+  /**
+   * @param teamTournament the teamTournament to set
+   */
+  public void setTeamTournament(List<TeamTournament> teamTournament) {
+    this.teamTournament = teamTournament;
+  }
+
 }

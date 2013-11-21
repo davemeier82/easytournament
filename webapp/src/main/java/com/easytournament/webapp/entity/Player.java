@@ -56,6 +56,9 @@ public class Player implements Serializable {
 
   @OneToMany(mappedBy = "player", fetch = FetchType.LAZY)
   private List<PlayerTeam> playerTeam = new ArrayList<PlayerTeam>();
+  
+  @OneToMany(mappedBy = "player", fetch = FetchType.LAZY)
+  private List<PlayerTournament> playerTournament = new ArrayList<PlayerTournament>();
 
   /**
    * @return the id
@@ -235,6 +238,20 @@ public class Player implements Serializable {
    */
   public void setUser(User user) {
     this.user = user;
+  }
+
+  /**
+   * @return the playerTournament
+   */
+  public List<PlayerTournament> getPlayerTournament() {
+    return playerTournament;
+  }
+
+  /**
+   * @param playerTournament the playerTournament to set
+   */
+  public void setPlayerTournament(List<PlayerTournament> playerTournament) {
+    this.playerTournament = playerTournament;
   }
 
 }
