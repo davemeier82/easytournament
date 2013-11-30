@@ -17,6 +17,10 @@ import com.jgoodies.common.collect.ArrayListModel;
 
 public class Calculator {
   public static void calcTableEntries(AbstractGroup g, boolean calcRecursive) {
+	if(g == null){
+		return;
+	}
+		
     HashMap<Integer,TableEntry> entries = new HashMap<Integer,TableEntry>();
     SportSettings set = null;
     if (g.isDefaultSettings()) {

@@ -10,8 +10,8 @@
 	<property name="jar.path" location="${release.dir}/${jar.name}" />
 	<property name="zip.name" value="${release}-${version}.zip" />
 	<property name="zip.path" location="${release.dir}/${zip.name}" />
-	<property name="launch4j.dir" location="E:\Program Files (x86)\Launch4j" />
-	<property name="eclipse.dir" location="E:\Program Files (x86)\Eclipse" />
+	<property name="launch4j.dir" location="C:\Program Files (x86)\Launch4j" />
+	<property name="eclipse.dir" location="C:\Program Files (x86)\Eclipse" />
 	<property name="reports.tests" location="reports" />
 	<fileset id="jars" dir="lib">
 		<include name="*.jar" />
@@ -23,7 +23,7 @@
 		<fileset refid="jars" />
 	</path>
 	<pathconvert property="classpath" refid="cp" pathsep=" " dirsep="/">
-		<map from="E:/workspace/EasyTournament/lib" to="lib" />
+		<map from="C:/Users/Dave/workspace/EasyTournament/lib" to="lib" />
 	</pathconvert>
 
 	<target name="clean">
@@ -125,7 +125,6 @@
 		</yguard>
 	</target>
 
-
 	<target name="etexe" depends="jar">
 		<copy file="installerfiles/EasyTournament.xml" toFile="installerfiles/EasyTournament_rel.xml" overwrite="true">
 			<filterset>
@@ -152,6 +151,20 @@
 	        :${launch4j.dir}/lib/xstream.jar" />
 		<launch4j configFile="installerfiles/InstallerEXE_rel.xml" />
 		<delete file="installerfiles/InstallerEXE_rel.xml" />
+	</target>
+	
+	<taskdef name="bundleapp"
+	             classname="com.oracle.appbundler.AppBundlerTask"   
+	             classpath="lib/appbundler-1.0.jar" />
+
+    <target name="bundle-buttonDemo" depends="jar">
+        <bundleapp outputdirectory="release"
+            name="EasyTournament"
+            displayname="EasyTournament"
+            identifier="com.easytournament.basic.Main"
+            mainclassname="com.easytournament.basic.Main">
+            <classpath file="release/EasyTournament.jar" />
+        </bundleapp>
 	</target>
 	
 	<target name="msiinstaller" depends="etexe">
