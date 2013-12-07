@@ -7,7 +7,7 @@ import javax.enterprise.context.ConversationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import com.easytournament.webapp.entity.Player;
 import com.easytournament.webapp.entity.PlayerTournament;
@@ -16,6 +16,7 @@ import com.easytournament.webapp.entity.TeamTournament;
 import com.easytournament.webapp.entity.Tournament;
 import com.easytournament.webapp.entity.User;
 import com.easytournament.webapp.entity.UserTournament;
+import com.easytournament.webapp.type.Role;
 
 @Stateful(name = "tournamentcontroller")
 @ConversationScoped
@@ -33,21 +34,20 @@ public class TournamentController implements TournamentControllerInterface {
   public void saveTournament(User user, Tournament tournament) {
     em.persist(tournament);
     User manageduser = em.merge(user); // get managed entity
-    UserTournament ut = new UserTournament(0, manageduser, tournament);
+    UserTournament ut = new UserTournament(Role.OWNER, manageduser, tournament);
     tournament.getUserTournament().add(ut);
     manageduser.getUserTournament().add(ut);
     em.persist(ut);
   }
 
-  @SuppressWarnings({"unchecked", "cast"})
   @Override
   public List<Tournament> loadTournaments(boolean publicTournament,
       boolean closedTournament) {
-    Query q = em
-        .createQuery("from Tournament t where t.publicTournament = :inpublic and t.closed = :inclosed");
+    TypedQuery<Tournament> q = em
+        .createQuery("from Tournament t where t.publicTournament = :inpublic and t.closed = :inclosed", Tournament.class);
     q.setParameter("inpublic", publicTournament);
     q.setParameter("inclosed", closedTournament);
-    return (List<Tournament>)q.getResultList();
+    return q.getResultList();
   }
 
   @Override

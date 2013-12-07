@@ -12,13 +12,11 @@ import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.easytournament.webapp.controller.CountryControllerInterface;
-import com.easytournament.webapp.controller.SportControllerInterface;
 import com.easytournament.webapp.controller.TournamentControllerInterface;
-import com.easytournament.webapp.entity.Country;
-import com.easytournament.webapp.entity.Sport;
 import com.easytournament.webapp.entity.Tournament;
 import com.easytournament.webapp.entity.User;
+import com.easytournament.webapp.type.Country;
+import com.easytournament.webapp.type.Sport;
 
 @SuppressWarnings("serial")
 @Named("tournamentBean")
@@ -29,12 +27,6 @@ public class TournamentBean implements Serializable {
   private AuthenticationBean authenticationBean;
   
   @EJB
-  private SportControllerInterface sportController;
-  
-  @EJB
-  private CountryControllerInterface countryController;
-  
-  @EJB
   private TournamentControllerInterface tournamentController;
   
   private Tournament tournament = new Tournament();
@@ -42,9 +34,7 @@ public class TournamentBean implements Serializable {
   private List<SelectItem> sports = new ArrayList<SelectItem>();
   
   private List<SelectItem> countries = new ArrayList<SelectItem>();
-  
-  
-  
+    
   public void create() {
     tournament.setLastModified(new Date());
     User currentUser = authenticationBean.getCurrentUser();
@@ -53,15 +43,14 @@ public class TournamentBean implements Serializable {
   
   @PostConstruct
   public void initLists(){
-    List<Sport> allsports = sportController.loadSports();
-    sports.add(new SelectItem(-1, ""));
-    for(Sport s : allsports){
-      sports.add(new SelectItem(s.getId(), s.getName()));
+    sports.add(new SelectItem(Sport.OTHER, ""));
+    for (Sport s : Sport.values()) {
+      sports.add(new SelectItem(s, s.name()));
     }
+    
 
-    List<Country> allcountries = countryController.loadCountries();
-    for(Country s : allcountries){
-      countries.add(new SelectItem(s.getId(), s.getName()));
+    for (Country c : Country.values()) {
+      countries.add(new SelectItem(c, c.name()));
     }
   }
 

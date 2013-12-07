@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @SuppressWarnings("serial")
 @Entity
@@ -24,6 +25,7 @@ public class Team implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   @NotNull
+  @Size(max=45)
   private String name;
   @NotNull
   @Column(name = "public", columnDefinition = "BIT", length = 1)

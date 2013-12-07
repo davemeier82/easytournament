@@ -4,18 +4,24 @@ import java.io.Serializable;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.easytournament.webapp.entity.id.UserTournamentId;
+import com.easytournament.webapp.type.Role;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "user_tournament")
 public class UserTournament implements Serializable {
   
-  private Integer roleid;
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  private Role role;
   
   @ManyToOne
   @JoinColumn(name="userid", insertable = false, updatable = false)
@@ -31,9 +37,9 @@ public class UserTournament implements Serializable {
   public UserTournament() {
     super();
   }
-  public UserTournament(Integer roleid, User user, Tournament tournament) {
+  public UserTournament(Role role, User user, Tournament tournament) {
     super();
-    this.roleid = roleid;
+    this.role = role;
     this.user = user;
     this.tournament = tournament;
     this.id.setUserid(user.getId());
@@ -45,14 +51,14 @@ public class UserTournament implements Serializable {
   /**
    * @return the roleid
    */
-  public Integer getRoleid() {
-    return roleid;
+  public Role getRoleid() {
+    return role;
   }
   /**
    * @param roleid the roleid to set
    */
-  public void setRoleid(Integer roleid) {
-    this.roleid = roleid;
+  public void setRoleid(Role roleid) {
+    this.role = roleid;
   }
   /**
    * @return the user
@@ -90,6 +96,5 @@ public class UserTournament implements Serializable {
   public void setId(UserTournamentId id) {
     this.id = id;
   }
-
 
 }

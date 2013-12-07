@@ -14,21 +14,72 @@
 
 			<rich:panel header="Login">
 
-					<h:panelGrid columns="3" columnClasses="titleCell">
+				<h:panelGrid columns="3" columnClasses="titleCell">
 
-						<rich:dataScroller for="table" maxPages="5" />
-						<rich:dataTable value="#{myTournBean.tournaments}" var="tourn"
-							id="table" rows="10">
-							<rich:column>
-								<f:facet name="header">
-									<h:outputText value="Name" />
-								</f:facet>
-								<h:outputText value="#{tourn.tournament.name}" />
-							</rich:column>
-						</rich:dataTable>
-						<rich:dataScroller for="table" maxPages="5" />
-
-					</h:panelGrid>
+					<rich:dataScroller for="table" maxPages="5" />
+					<rich:dataTable value="#{myTournBean.tournaments}" var="tourn"
+						id="table" rows="10">
+						<rich:column>
+							<f:facet name="header">
+								<h:outputText value="Name" />
+							</f:facet>
+							<h:outputText value="#{tourn.tournament.name}" />
+						</rich:column>
+					</rich:dataTable>
+					<rich:dataScroller for="table" maxPages="5" />
+				</h:panelGrid>
+				<br />
+				<h:panelGrid columns="3" columnClasses="titleCell">
+					<rich:dataScroller for="registredteamtable" maxPages="5" />
+					<rich:dataTable value="#{myTournBean.registredTeamTournaments}"
+						var="tourn" id="registredteamtable" rows="10">
+						<rich:column>
+							<f:facet name="header">
+								<h:outputText value="Tournament" />
+							</f:facet>
+							<h:outputText value="#{tourn.tournament.name}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">
+								<h:outputText value="Team" />
+							</f:facet>
+							<h:outputText value="#{tourn.team.name}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">
+								<h:outputText value="Status" />
+							</f:facet>
+							<h:outputText value="#{tourn.accepted}" />
+						</rich:column>
+					</rich:dataTable>
+					<rich:dataScroller for="registredteamtable" maxPages="5" />
+				</h:panelGrid>
+				<br />
+				<h:panelGrid columns="3" columnClasses="titleCell">
+					<rich:dataScroller for="registredplayertable" maxPages="5" />
+					<rich:dataTable value="#{myTournBean.registredPlayerTournaments}"
+						var="tourn" id="registredplayertable" rows="10">
+						<rich:column>
+							<f:facet name="header">
+								<h:outputText value="Tournament" />
+							</f:facet>
+							<h:outputText value="#{tourn.tournament.name}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">
+								<h:outputText value="Lastname" />
+							</f:facet>
+							<h:outputText value="#{tourn.player.lastname}" />
+						</rich:column>
+						<rich:column>
+							<f:facet name="header">
+								<h:outputText value="Status" />
+							</f:facet>
+							<h:outputText value="#{tourn.accepted}" />
+						</rich:column>
+					</rich:dataTable>
+					<rich:dataScroller for="registredplayertable" maxPages="5" />
+				</h:panelGrid>
 			</rich:panel>
 
 		</h:form>

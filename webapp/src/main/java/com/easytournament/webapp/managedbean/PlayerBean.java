@@ -12,11 +12,10 @@ import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.easytournament.webapp.controller.CountryControllerInterface;
 import com.easytournament.webapp.controller.PlayerControllerInterface;
-import com.easytournament.webapp.entity.Country;
 import com.easytournament.webapp.entity.Player;
 import com.easytournament.webapp.entity.User;
+import com.easytournament.webapp.type.Country;
 
 @SuppressWarnings("serial")
 @Named("playerBean")
@@ -28,9 +27,6 @@ public class PlayerBean implements Serializable {
 
   @EJB
   private PlayerControllerInterface playerController;
-
-  @EJB
-  private CountryControllerInterface countryController;
 
   private Player player = new Player();
 
@@ -44,9 +40,8 @@ public class PlayerBean implements Serializable {
 
   @PostConstruct
   public void initCountriesList() {
-    List<Country> allcountries = countryController.loadCountries();
-    for (Country s : allcountries) {
-      countries.add(new SelectItem(s.getId(), s.getName()));
+    for (Country c : Country.values()) {
+      countries.add(new SelectItem(c, c.name()));
     }
   }
 

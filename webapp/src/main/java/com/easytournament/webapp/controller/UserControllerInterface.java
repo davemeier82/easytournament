@@ -5,6 +5,8 @@ import java.util.List;
 import javax.ejb.Local;
 
 import com.easytournament.webapp.entity.Player;
+import com.easytournament.webapp.entity.PlayerTournament;
+import com.easytournament.webapp.entity.TeamTournament;
 import com.easytournament.webapp.entity.User;
 import com.easytournament.webapp.entity.UserTeam;
 import com.easytournament.webapp.entity.UserTournament;
@@ -20,4 +22,6 @@ public interface UserControllerInterface {
   public List<UserTournament> loadUserTournaments(Integer userid);
   public List<UserTeam> loadUserTeams(Integer userid);
   public List<Player> loadPlayers(Integer userid);
+  public List<TeamTournament> loadRegistredTeamTournaments(Integer userid);
+  public List<PlayerTournament> loadRegistredPlayerTournaments(Integer userid);
 }

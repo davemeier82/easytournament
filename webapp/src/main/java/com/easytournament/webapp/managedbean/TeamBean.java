@@ -8,7 +8,6 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.easytournament.webapp.controller.SportControllerInterface;
 import com.easytournament.webapp.controller.TeamControllerInterface;
 import com.easytournament.webapp.entity.Team;
 import com.easytournament.webapp.entity.User;
@@ -20,9 +19,6 @@ public class TeamBean implements Serializable {
 
   @Inject
   private AuthenticationBean authenticationBean;
-
-  @EJB
-  private SportControllerInterface sportController;
 
   @EJB
   private TeamControllerInterface teamController;

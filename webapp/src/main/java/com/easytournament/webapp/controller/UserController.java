@@ -7,9 +7,11 @@ import javax.enterprise.context.ConversationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import com.easytournament.webapp.entity.Player;
+import com.easytournament.webapp.entity.PlayerTournament;
+import com.easytournament.webapp.entity.TeamTournament;
 import com.easytournament.webapp.entity.User;
 import com.easytournament.webapp.entity.UserTeam;
 import com.easytournament.webapp.entity.UserTournament;
@@ -28,14 +30,15 @@ public class UserController implements UserControllerInterface {
 
   @Override
   public User loadUser(String username) {
-    Query q = em.createQuery("from User usr where usr.username = :inusername");
+    TypedQuery<User> q = em.createQuery(
+        "from User usr where usr.username = :inusername", User.class);
     q.setParameter("inusername", username);
-    List<?> results = q.getResultList();
+    List<User> results = q.getResultList();
     if (results.isEmpty()) {
       return null;
     }
     try {
-      User user = (User)results.get(0);
+      User user = results.get(0);
       return user;
     }
     catch (ClassCastException ex) {
@@ -50,9 +53,10 @@ public class UserController implements UserControllerInterface {
 
   @Override
   public boolean isUsernameExist(String username) {
-    Query q = em.createQuery("from User usr where usr.username = :inusername");
+    TypedQuery<User> q = em.createQuery(
+        "from User usr where usr.username = :inusername", User.class);
     q.setParameter("inusername", username);
-    List<?> results = q.getResultList();
+    List<User> results = q.getResultList();
     if (results == null || results.size() <= 0)
       return false;
     return true;
@@ -60,9 +64,10 @@ public class UserController implements UserControllerInterface {
 
   @Override
   public boolean isEmailExist(String email) {
-    Query q = em.createQuery("from User usr where usr.email = :inemail");
+    TypedQuery<User> q = em.createQuery(
+        "from User usr where usr.email = :inemail", User.class);
     q.setParameter("inemail", email);
-    List<?> results = q.getResultList();
+    List<User> results = q.getResultList();
     if (results == null || results.size() <= 0)
       return false;
     return true;
@@ -86,4 +91,23 @@ public class UserController implements UserControllerInterface {
     return user.getPlayers();
   }
 
+  @Override
+  public List<TeamTournament> loadRegistredTeamTournaments(Integer userid) {
+    TypedQuery<TeamTournament> q = em
+        .createQuery(
+            "select tt from Tournament t join t.teamTournament tt join tt.team tm join tm.userTeam ut join ut.user usr where usr.id = :inuserid",
+            TeamTournament.class);
+    q.setParameter("inuserid", userid);
+    return q.getResultList();
+  }
+
+  @Override
+  public List<PlayerTournament> loadRegistredPlayerTournaments(Integer userid) {
+    TypedQuery<PlayerTournament> q = em
+        .createQuery(
+            "select pt from Tournament t join t.playerTournament pt join pt.player p join p.user usr where usr.id = :inuserid",
+            PlayerTournament.class);
+    q.setParameter("inuserid", userid);
+    return q.getResultList();
+  }
 }

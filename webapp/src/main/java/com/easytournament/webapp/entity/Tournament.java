@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,8 +20,10 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Length;
+import com.easytournament.webapp.type.Country;
+import com.easytournament.webapp.type.Sport;
 
 @SuppressWarnings("serial")
 @Entity
@@ -30,7 +34,7 @@ public class Tournament implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   @NotNull
-  @Length(min = 1, max = 45)
+  @Size(min = 1, max = 45)
   private String name;
   @Column(columnDefinition = "TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)
@@ -56,37 +60,37 @@ public class Tournament implements Serializable {
   @Temporal(TemporalType.TIMESTAMP)
   private Date lastModified;
   @NotNull
-  @Max(127)
-  @Min(0)
-  @Column(columnDefinition = "TINYINT")
-  private Short sportid;
-  @Length(min = 1, max = 45)
+  @Enumerated(EnumType.STRING)
+  private Sport sporttype;
+  @Size(min = 1, max = 45)
   private String sport;
-  @Length(min = 0, max = 511)
+  @Size(min = 0, max = 511)
   private String description;
-  @Length(min = 0, max = 255)
+  @Size(min = 0, max = 255)
   private String address;
   @NotNull
   @Max(999999999)
   @Min(0)
   private Integer zip;
   @NotNull
+  @Size(max=45)
   private String city;
   @NotNull
-  private Integer country;
-  @Length(min = 0, max = 128)
+  @Enumerated(EnumType.STRING)
+  private Country country;
+  @Size(min = 0, max = 128)
   private String website;
-  @Length(min = 0, max = 45)
+  @Size(min = 0, max = 45)
   private String contactfirstname;
-  @Length(min = 0, max = 45)
+  @Size(min = 0, max = 45)
   private String contactlastname;
-  @Length(min = 0, max = 20)
+  @Size(min = 0, max = 20)
   private String contactphone;
-  @Length(min = 0, max = 45)
+  @Size(min = 0, max = 45)
   private String contactemail;
-  @Length(min = 0, max = 255)
+  @Size(min = 0, max = 255)
   private String contactaddress;
-  @Length(min = 0, max = 15)
+  @Size(min = 0, max = 15)
   private String fee;
   @Column(name = "websiteok", columnDefinition = "BIT", length = 1)
   private boolean websiteok;
@@ -385,20 +389,6 @@ public class Tournament implements Serializable {
   }
 
   /**
-   * @return the sportid
-   */
-  public Short getSportid() {
-    return sportid;
-  }
-
-  /**
-   * @param sportid the sportid to set
-   */
-  public void setSportid(Short sportid) {
-    this.sportid = sportid;
-  }
-
-  /**
    * @return the fee
    */
   public String getFee() {
@@ -457,14 +447,14 @@ public class Tournament implements Serializable {
   /**
    * @return the country
    */
-  public Integer getCountry() {
+  public Country getCountry() {
     return country;
   }
 
   /**
    * @param country the country to set
    */
-  public void setCountry(Integer country) {
+  public void setCountry(Country country) {
     this.country = country;
   }
 
@@ -508,6 +498,52 @@ public class Tournament implements Serializable {
    */
   public void setTeamTournament(List<TeamTournament> teamTournament) {
     this.teamTournament = teamTournament;
+  }
+
+  /* (non-Javadoc)
+   * @see java.lang.Object#hashCode()
+   */
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + ((id == null)? 0 : id.hashCode());
+    return result;
+  }
+
+  /* (non-Javadoc)
+   * @see java.lang.Object#equals(java.lang.Object)
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj)
+      return true;
+    if (obj == null)
+      return false;
+    if (getClass() != obj.getClass())
+      return false;
+    Tournament other = (Tournament)obj;
+    if (id == null) {
+      if (other.id != null)
+        return false;
+    }
+    else if (!id.equals(other.id))
+      return false;
+    return true;
+  }
+
+  /**
+   * @return the sporttype
+   */
+  public Sport getSporttype() {
+    return sporttype;
+  }
+
+  /**
+   * @param sporttype the sporttype to set
+   */
+  public void setSporttype(Sport sporttype) {
+    this.sporttype = sporttype;
   }
 
 }

@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +21,11 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
+import com.easytournament.webapp.type.Country;
 
 @SuppressWarnings("serial")
 @Entity
@@ -28,21 +35,25 @@ public class Player implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   @NotNull
+  @Size(max=45)
   private String firstname;
   @NotNull
+  @Size(max=45)
   private String lastname;
-
+  @Size(max=255)
   private String street;
   @Max(999999999)
   @Min(0)
   private Integer zip;
   @NotNull
-  private Integer country;
-
+  @Enumerated(EnumType.STRING)
+  private Country country;
+  @Size(max=45)
   private String city;
-
+  @Email
+  @Size(max=45)
   private String email;
-
+  @Size(max=45)
   private String phone;
 
   @ManyToOne
@@ -198,7 +209,7 @@ public class Player implements Serializable {
   /**
    * @return the country
    */
-  public Integer getCountry() {
+  public Country getCountry() {
     return country;
   }
 
@@ -206,7 +217,7 @@ public class Player implements Serializable {
    * @param country
    *          the country to set
    */
-  public void setCountry(Integer country) {
+  public void setCountry(Country country) {
     this.country = country;
   }
 

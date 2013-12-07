@@ -9,6 +9,7 @@ import javax.persistence.PersistenceContextType;
 import com.easytournament.webapp.entity.Team;
 import com.easytournament.webapp.entity.User;
 import com.easytournament.webapp.entity.UserTeam;
+import com.easytournament.webapp.type.Role;
 
 @Stateful(name = "teamcontroller")
 @ConversationScoped
@@ -26,7 +27,7 @@ public class TeamController implements TeamControllerInterface {
   public void saveTeam(User user, Team team) {
     em.persist(team); 
     User manageduser = em.merge(user); // get managed entity
-    UserTeam ut = new UserTeam(0, manageduser, team); 
+    UserTeam ut = new UserTeam(Role.OWNER, manageduser, team); 
     team.getUserTeam().add(ut);
     manageduser.getUserTeam().add(ut);
     em.persist(ut);

@@ -14,6 +14,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
 
 /**
  * Benutzer Hibernate Entity für DB-Tabelle user
@@ -30,16 +33,23 @@ public class User implements Serializable {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   @NotNull
+  @Size(max=32)
   private String username;
   @NotNull
+  @Size(max=45)
   private String firstname;
   @NotNull
+  @Size(max=45)
   private String lastname;
   @NotNull
+  @Size(max=88)
   private String password;
   @NotNull
+  @Size(max=45)
   private String activationcode;
   @NotNull
+  @Email
+  @Size(max=45)
   private String email;
 
   private byte[] passwordsalt;

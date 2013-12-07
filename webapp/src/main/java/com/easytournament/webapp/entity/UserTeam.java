@@ -4,18 +4,24 @@ import java.io.Serializable;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.easytournament.webapp.entity.id.UserTeamId;
+import com.easytournament.webapp.type.Role;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "user_team")
 public class UserTeam implements Serializable {
 
-  private Integer roleid;
+  @NotNull
+  @Enumerated(EnumType.STRING)
+  private Role role;
 
   @ManyToOne
   @JoinColumn(name = "userid", insertable = false, updatable = false)
@@ -32,9 +38,9 @@ public class UserTeam implements Serializable {
     super();
   }
 
-  public UserTeam(Integer roleid, User user, Team team) {
+  public UserTeam(Role role, User user, Team team) {
     super();
-    this.roleid = roleid;
+    this.role = role;
     this.user = user;
     this.team = team;
     this.id.setUserid(user.getId());
@@ -42,21 +48,6 @@ public class UserTeam implements Serializable {
 
     user.getUserTeam().add(this);
     team.getUserTeam().add(this);
-  }
-
-  /**
-   * @return the roleid
-   */
-  public Integer getRoleid() {
-    return roleid;
-  }
-
-  /**
-   * @param roleid
-   *          the roleid to set
-   */
-  public void setRoleid(Integer roleid) {
-    this.roleid = roleid;
   }
 
   /**
@@ -102,6 +93,20 @@ public class UserTeam implements Serializable {
    */
   public void setTeam(Team team) {
     this.team = team;
+  }
+
+  /**
+   * @return the role
+   */
+  public Role getRole() {
+    return role;
+  }
+
+  /**
+   * @param role the role to set
+   */
+  public void setRole(Role role) {
+    this.role = role;
   }
 
 }
