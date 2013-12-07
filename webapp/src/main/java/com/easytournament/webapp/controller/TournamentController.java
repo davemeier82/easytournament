@@ -68,4 +68,24 @@ public class TournamentController implements TournamentControllerInterface {
     tournament.getPlayerTournament().add(pt);
     em.persist(pt);
   }
+
+  @Override
+  public void removePlayerFromTournament(PlayerTournament playerTournament) {
+    PlayerTournament managedPlayerTourn = em.merge(playerTournament);
+    Tournament tournament = managedPlayerTourn.getTournament();
+    tournament.getPlayerTournament().remove(managedPlayerTourn);
+    Player player = managedPlayerTourn.getPlayer();
+    player.getPlayerTournament().remove(managedPlayerTourn);
+    em.remove(managedPlayerTourn);
+  }
+
+  @Override
+  public void removeTeamFromTournament(TeamTournament teamTournament) {
+    TeamTournament managedTeamTournament = em.merge(teamTournament);
+    Tournament tournament = managedTeamTournament.getTournament();
+    tournament.getTeamTournament().remove(managedTeamTournament);
+    Team team = managedTeamTournament.getTeam();
+    team.getTeamTournament().remove(managedTeamTournament);
+    em.remove(managedTeamTournament);
+  }
 }

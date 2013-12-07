@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -38,13 +39,13 @@ public class Team implements Serializable {
   @Temporal(TemporalType.TIMESTAMP)
   private Date lastModified;
 
-  @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "team", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private List<UserTeam> userTeam = new ArrayList<UserTeam>();
 
-  @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "team", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private List<PlayerTeam> playerTeam = new ArrayList<PlayerTeam>();
 
-  @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "team", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private List<TeamTournament> teamTournament = new ArrayList<TeamTournament>();
 
   /**

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -65,10 +66,10 @@ public class Player implements Serializable {
   @Temporal(TemporalType.TIMESTAMP)
   private Date lastModified;
 
-  @OneToMany(mappedBy = "player", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "player", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private List<PlayerTeam> playerTeam = new ArrayList<PlayerTeam>();
   
-  @OneToMany(mappedBy = "player", fetch = FetchType.LAZY)
+  @OneToMany(mappedBy = "player", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   private List<PlayerTournament> playerTournament = new ArrayList<PlayerTournament>();
 
   /**

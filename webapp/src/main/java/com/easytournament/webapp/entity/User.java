@@ -54,10 +54,10 @@ public class User implements Serializable {
 
   private byte[] passwordsalt;
 
-  @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+  @OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
   private List<UserTournament> userTournament = new ArrayList<UserTournament>();
   
-  @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+  @OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
   private List<UserTeam> userTeam = new ArrayList<UserTeam>();
   
   @OneToMany(mappedBy="user", fetch=FetchType.LAZY, cascade = CascadeType.ALL)

@@ -5,7 +5,9 @@ import java.util.List;
 import javax.ejb.Local;
 
 import com.easytournament.webapp.entity.Player;
+import com.easytournament.webapp.entity.PlayerTournament;
 import com.easytournament.webapp.entity.Team;
+import com.easytournament.webapp.entity.TeamTournament;
 import com.easytournament.webapp.entity.Tournament;
 import com.easytournament.webapp.entity.User;
 
@@ -17,5 +19,7 @@ public interface TournamentControllerInterface {
   public void saveTournament(User user, Tournament tournament);
   public void addTeamToTournament(Tournament tournament, Team team, Boolean accepted);
   public void addPlayerToTournament(Tournament tournament, Player team, Boolean accepted);
+  public void removePlayerFromTournament(PlayerTournament playerTournament);
+  public void removeTeamFromTournament(TeamTournament teamTournament);
 
 }

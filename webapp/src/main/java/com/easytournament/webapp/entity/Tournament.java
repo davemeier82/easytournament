@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -98,9 +99,9 @@ public class Tournament implements Serializable {
   private boolean teamTournanament;
   @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)
   List<UserTournament> userTournament = new ArrayList<UserTournament>();
-  @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)
+  @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
   List<PlayerTournament> playerTournament = new ArrayList<PlayerTournament>();
-  @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)
+  @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
   List<TeamTournament> teamTournament = new ArrayList<TeamTournament>();
   
   /**

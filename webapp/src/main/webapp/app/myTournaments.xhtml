@@ -8,11 +8,11 @@
 	xmlns:rich="http://richfaces.org/rich"
 	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
-		<h1>Login</h1>
+		<h1>My Tournaments</h1>
 
-		<h:form id="reg">
+		<h:form id="mytourn">
 
-			<rich:panel header="Login">
+			<rich:panel header="My Tournaments" id="tournpanel">
 
 				<h:panelGrid columns="3" columnClasses="titleCell">
 
@@ -25,6 +25,10 @@
 							</f:facet>
 							<h:outputText value="#{tourn.tournament.name}" />
 						</rich:column>
+						<rich:column>
+							<a4j:commandButton value="Edit" />
+						</rich:column>
+
 					</rich:dataTable>
 					<rich:dataScroller for="table" maxPages="5" />
 				</h:panelGrid>
@@ -50,6 +54,12 @@
 								<h:outputText value="Status" />
 							</f:facet>
 							<h:outputText value="#{tourn.accepted}" />
+						</rich:column>
+						<rich:column>
+							<a4j:commandButton value="Sign off"
+								action="#{myTournBean.setCurrentTeamTournament(tourn)}"
+								render=":signoffpopup"
+								oncomplete="#{rich:component('signoffpopup')}.show();" />
 						</rich:column>
 					</rich:dataTable>
 					<rich:dataScroller for="registredteamtable" maxPages="5" />
@@ -77,11 +87,37 @@
 							</f:facet>
 							<h:outputText value="#{tourn.accepted}" />
 						</rich:column>
+						<rich:column>
+							<a4j:commandButton value="Sign off"
+								action="#{myTournBean.setCurrentPlayerTournament(tourn)}"
+								render=":signoffpopup"
+								oncomplete="#{rich:component('signoffpopup')}.show();" />
+						</rich:column>
 					</rich:dataTable>
 					<rich:dataScroller for="registredplayertable" maxPages="5" />
 				</h:panelGrid>
 			</rich:panel>
-
+			<rich:popupPanel id="signoffpopup" modal="true" resizeable="false"
+				autosized="true"
+				onmaskclick="#{rich:component('signoffpopup')}.hide()">
+				<f:facet name="header">
+					<h:outputText value="Sign off" />
+				</f:facet>
+				<f:facet name="controls">
+					<h:outputLink value="#"
+						onclick="#{rich:component('signoffpopup')}.hide(); return false;">X
+						</h:outputLink>
+				</f:facet>
+				<h:panelGrid columns="2" columnClasses="titleCell">
+					<h:outputLabel
+						value="Do you really want to  sign off from the tournament?" />
+				</h:panelGrid>
+				<a4j:commandButton value="Yes" action="#{myTournBean.signOff()}"
+					render=":tournpanel"
+					oncomplete="#{rich:component('signoffpopup')}.hide();" />
+				<a4j:commandButton value="No"
+					oncomplete="#{rich:component('signoffpopup')}.hide();" />
+			</rich:popupPanel>
 		</h:form>
 	</ui:define>
 </ui:composition>
