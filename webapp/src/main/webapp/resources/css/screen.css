@@ -40,12 +40,12 @@ body {
 }
 #content {
   float: left;
-  width: 500px;
+  width: 700px;
   margin: 20px;
 }
 #aside {
   font-size: 0.9em;
-  width: 275px;
+  width: 50px;
   float: left;
   margin: 20px 0px;
   border: 1px solid #D5D5D5;
@@ -58,10 +58,7 @@ body {
 #aside ul {
   padding-left: 30px;
 }
-.dualbrand {
-  float: right;
-  padding-right: 10px;
-}
+
 #footer {
   clear: both;
   text-align: center;

@@ -15,11 +15,13 @@ import com.easytournament.webapp.entity.User;
 public interface TournamentControllerInterface {
 
   public Tournament loadTournament(Integer id);
+  public Tournament loadTournament(String link);
   public List<Tournament> loadTournaments(boolean publicTournament, boolean closedTournament);
   public void saveTournament(User user, Tournament tournament);
   public void addTeamToTournament(Tournament tournament, Team team, Boolean accepted);
   public void addPlayerToTournament(Tournament tournament, Player team, Boolean accepted);
   public void removePlayerFromTournament(PlayerTournament playerTournament);
   public void removeTeamFromTournament(TeamTournament teamTournament);
+  public List<String> loadLinks();
 
 }

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich"
+	template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="content">
+		<h1>Create new tournament</h1>
+
+		<h:form id="reg">
+
+			<rich:panel header="Tournament information">
+
+				<table>
+					<tr>
+						<td><h:outputLabel value="Tournament name:" /></td>
+						<td><h:outputLabel id="tname"
+								value="#{tournamentBean.tournament.name}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Sport:" /></td>
+						<td><h:outputLabel
+								value="#{tournamentBean.tournament.sporttype}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Other sport name:" /></td>
+						<td><h:outputLabel disabled="true" id="sport"
+								value="#{tournamentBean.tournament.sport}" /></td>
+					</tr>
+
+					<tr>
+						<h:selectOneRadio
+							value="#{tournamentBean.tournament.teamTournanament}">
+							<td><f:selectItem itemValue="#{true}" itemLabel="Teams" /></td>
+							<td><f:selectItem itemValue="#{false}"
+									itemLabel="Single player" /></td>
+						</h:selectOneRadio>
+					</tr>
+					<tr>
+						<h:selectOneRadio
+							value="#{tournamentBean.tournament.publicTournament}">
+							<td><f:selectItem itemValue="#{true}" itemLabel="Public" /></td>
+							<td><f:selectItem itemValue="#{false}" itemLabel="Private" /></td>
+						</h:selectOneRadio>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="Description" /></td>
+						<td><h:outputLabel id="description"
+								value="#{tournamentBean.tournament.description}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Fee:" /></td>
+						<td><h:outputLabel id="fee"
+								value="#{tournamentBean.tournament.fee}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Place:" /></td>
+						<td><h:inputTextarea id="address"
+								value="#{tournamentBean.tournament.address}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="ZIP:" /></td>
+						<td><h:inputText id="zip"
+								value="#{tournamentBean.tournament.zip}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="City:" /></td>
+						<td><h:outputLabel id="city"
+								value="#{tournamentBean.tournament.city}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Country:" /></td>
+						<td><rich:select value="#{tournamentBean.tournament.country}"
+								enableManualInput="true" defaultLabel="Select a country"
+								id="country">
+								<f:selectItems value="#{tournamentBean.countries}" />
+							</rich:select></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Website:" /></td>
+						<td><h:outputLabel id="website"
+								value="#{tournamentBean.tournament.website}" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Start date:" /></td>
+						<td><rich:calendar id="startTime" popup="true"
+								value="#{tournamentBean.tournament.startTime}"
+								enableManualInput="true" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="End date:" /></td>
+						<td><rich:calendar id="endTime" popup="true"
+								value="#{tournamentBean.tournament.endTime}"
+								enableManualInput="true" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Application deadline:" /></td>
+						<td><rich:calendar id="applTime" popup="true"
+								value="#{tournamentBean.tournament.applicationEndTime}"
+								enableManualInput="true" /></td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Maximum number of teams/players:" /></td>
+						<td><rich:inputNumberSpinner
+								value="#{tournamentBean.tournament.nTeams}" id="nteams"
+								minValue="2" maxValue="127">
+							</rich:inputNumberSpinner></td>
+					</tr>
+
+					<tr>
+						<td>Contact person:</td>
+					</tr>
+
+					<tr>
+						<td><h:outputLabel value="Firstname:" /></td>
+						<td><h:outputLabel id="firstname"
+								value="#{tournamentBean.tournament.contactfirstname}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="Lastname:" /></td>
+						<td><h:outputLabel id="lastname"
+								value="#{tournamentBean.tournament.contactlastname}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="Phone:" /></td>
+						<td><h:outputLabel id="phone"
+								value="#{tournamentBean.tournament.contactphone}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="Email:" /></td>
+						<td><h:outputLabel id="email"
+								value="#{tournamentBean.tournament.contactemail}" /></td>
+					</tr>
+					<tr>
+						<td><h:outputLabel value="Address:" /></td>
+						<td><h:outputLabel id="contactaddress"
+								value="#{tournamentBean.tournament.contactaddress}" /></td>
+					</tr>
+				</table>
+
+			</rich:panel>
+
+		</h:form>
+	</ui:define>
+</ui:composition>

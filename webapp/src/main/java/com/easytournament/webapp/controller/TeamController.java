@@ -25,9 +25,9 @@ public class TeamController implements TeamControllerInterface {
 
   @Override
   public void saveTeam(User user, Team team) {
-    em.persist(team); 
+    em.persist(team);
     User manageduser = em.merge(user); // get managed entity
-    UserTeam ut = new UserTeam(Role.OWNER, manageduser, team); 
+    UserTeam ut = new UserTeam(Role.OWNER, manageduser, team);
     team.getUserTeam().add(ut);
     manageduser.getUserTeam().add(ut);
     em.persist(ut);

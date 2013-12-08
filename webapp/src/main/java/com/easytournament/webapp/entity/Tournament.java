@@ -18,6 +18,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -28,14 +29,14 @@ import com.easytournament.webapp.type.Sport;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="tournament")
+@Table(name="tournament", uniqueConstraints={@UniqueConstraint(columnNames={"link"})})
 public class Tournament implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   @NotNull
-  @Size(min = 1, max = 45)
+  @Size(min = 1, max = 100)
   private String name;
   @Column(columnDefinition = "TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)
@@ -97,6 +98,8 @@ public class Tournament implements Serializable {
   private boolean websiteok;
   @Column(name = "teams", columnDefinition = "BIT", length = 1)
   private boolean teamTournanament;
+  @Size(min = 1, max = 128)
+  private String link;
   @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)
   List<UserTournament> userTournament = new ArrayList<UserTournament>();
   @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
@@ -545,6 +548,20 @@ public class Tournament implements Serializable {
    */
   public void setSporttype(Sport sporttype) {
     this.sporttype = sporttype;
+  }
+
+  /**
+   * @return the link
+   */
+  public String getLink() {
+    return link;
+  }
+
+  /**
+   * @param link the link to set
+   */
+  public void setLink(String link) {
+    this.link = link;
   }
 
 }

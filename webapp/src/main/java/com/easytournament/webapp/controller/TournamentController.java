@@ -31,6 +31,19 @@ public class TournamentController implements TournamentControllerInterface {
   }
 
   @Override
+  public Tournament loadTournament(String link) {
+    TypedQuery<Tournament> q = em.createQuery(
+        "select t from Tournament t where t.link = :inlink", Tournament.class);
+    q.setParameter("inlink", link);
+    List<Tournament> result = q.getResultList();
+    if (result.isEmpty()) {
+      return null;
+    }
+
+    return result.get(0);
+  }
+
+  @Override
   public void saveTournament(User user, Tournament tournament) {
     em.persist(tournament);
     User manageduser = em.merge(user); // get managed entity
@@ -44,7 +57,9 @@ public class TournamentController implements TournamentControllerInterface {
   public List<Tournament> loadTournaments(boolean publicTournament,
       boolean closedTournament) {
     TypedQuery<Tournament> q = em
-        .createQuery("from Tournament t where t.publicTournament = :inpublic and t.closed = :inclosed", Tournament.class);
+        .createQuery(
+            "from Tournament t where t.publicTournament = :inpublic and t.closed = :inclosed",
+            Tournament.class);
     q.setParameter("inpublic", publicTournament);
     q.setParameter("inclosed", closedTournament);
     return q.getResultList();
@@ -64,7 +79,8 @@ public class TournamentController implements TournamentControllerInterface {
   public void addPlayerToTournament(Tournament tournament, Player player,
       Boolean accepted) {
     Player managedplayer = em.merge(player);
-    PlayerTournament pt = new PlayerTournament(accepted, managedplayer, tournament);
+    PlayerTournament pt = new PlayerTournament(accepted, managedplayer,
+        tournament);
     tournament.getPlayerTournament().add(pt);
     em.persist(pt);
   }
@@ -87,5 +103,12 @@ public class TournamentController implements TournamentControllerInterface {
     Team team = managedTeamTournament.getTeam();
     team.getTeamTournament().remove(managedTeamTournament);
     em.remove(managedTeamTournament);
+  }
+
+  @Override
+  public List<String> loadLinks() {
+    TypedQuery<String> q = em.createQuery("select t.link from Tournament t",
+        String.class);
+    return q.getResultList();
   }
 }
