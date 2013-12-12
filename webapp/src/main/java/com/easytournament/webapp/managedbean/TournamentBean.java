@@ -10,7 +10,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
+import javax.faces.view.ViewScoped;
 import javax.faces.model.SelectItem;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -27,7 +27,7 @@ import com.easytournament.webapp.type.Sport;
 
 @SuppressWarnings("serial")
 @Named("tournamentBean")
-@RequestScoped
+@ViewScoped
 public class TournamentBean implements Serializable {
 
   @Inject
@@ -44,11 +44,35 @@ public class TournamentBean implements Serializable {
 
   private String link;
 
+  private TournamentBeanMode mode = TournamentBeanMode.CREATE;
+
   public void create() {
     setLink();
     tournament.setLastModified(new Date());
     User currentUser = authenticationBean.getCurrentUser();
     tournamentController.saveTournament(currentUser, tournament);
+  }
+
+  public void update() {
+    tournamentController.updateTournament(tournament);
+  }
+
+  public void acceptPlayer(PlayerTournament playerTournament) {
+    playerTournament.setAccepted(true);
+    tournamentController.updatePlayerTournament(playerTournament);
+  }
+
+  public void declinePlayer(PlayerTournament playerTournament) {
+    tournamentController.removePlayerFromTournament(playerTournament);
+  }
+
+  public void acceptTeam(TeamTournament teamTournament) {
+    teamTournament.setAccepted(true);
+    tournamentController.updateTeamTournament(teamTournament);
+  }
+
+  public void declineTeam(TeamTournament teamTournament) {
+    tournamentController.removeTeamFromTournament(teamTournament);
   }
 
   @PostConstruct
@@ -136,6 +160,7 @@ public class TournamentBean implements Serializable {
    *          the link to set
    */
   public void setLink(String link) {
+    mode = TournamentBeanMode.SHOW;
     this.link = link;
     this.tournament = null;
     if (link != null) {
@@ -146,8 +171,7 @@ public class TournamentBean implements Serializable {
         }
         else {
           User currentUser = authenticationBean.getCurrentUser();
-          if(currentUser != null)
-          {
+          if (currentUser != null) {
             for (UserTournament ut : t.getUserTournament()) {
               if (ut.getUser().equals(currentUser)) {
                 tournament = t;
@@ -177,9 +201,33 @@ public class TournamentBean implements Serializable {
                 }
               }
             }
-          }          
+          }
         }
       }
+    }
+  }
+
+  /**
+   * @return the mode
+   */
+  public TournamentBeanMode getMode() {
+    return mode;
+  }
+
+  /**
+   * @param mode
+   *          the mode to set
+   */
+  public void setMode(TournamentBeanMode mode) {
+    this.mode = mode;
+  }
+
+  public void editParticipants() {
+    if (tournament.isTeamTournanament()) {
+      setMode(TournamentBeanMode.MANAGE_TEAM);
+    }
+    else {
+      setMode(TournamentBeanMode.MANAGE_PLAYER);
     }
   }
 

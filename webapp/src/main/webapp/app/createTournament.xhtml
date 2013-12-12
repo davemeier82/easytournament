@@ -22,7 +22,8 @@
 					<table>
 						<tr>
 							<td><h:outputLabel for="tname" value="Tournament name:" /></td>
-							<td><h:inputText id="tname" value="#{tournamentBean.tournament.name}">
+							<td><h:inputText id="tname"
+									value="#{tournamentBean.tournament.name}">
 									<rich:validator />
 								</h:inputText></td>
 							<td><rich:message for="tname" errorClass="invalid" /></td>
@@ -30,7 +31,8 @@
 
 						<tr>
 							<td><h:outputLabel for="sporttype" value="Sport:" /></td>
-							<td><rich:select value="#{tournamentBean.tournament.sporttype}"
+							<td><rich:select
+									value="#{tournamentBean.tournament.sporttype}"
 									enableManualInput="true" defaultLabel="Enter a sport"
 									id="sporttype">
 									<f:selectItems value="#{tournamentBean.sports}" />
@@ -47,12 +49,14 @@
 							<td><rich:message for="sport" errorClass="invalid" /></td>
 						</tr>
 
-						<h:selectOneRadio value="#{tournamentBean.tournament.teamTournanament}">
+						<h:selectOneRadio
+							value="#{tournamentBean.tournament.teamTournanament}">
 							<f:selectItem itemValue="#{true}" itemLabel="Teams" />
 							<f:selectItem itemValue="#{false}" itemLabel="Single player" />
 						</h:selectOneRadio>
-						
-						<h:selectOneRadio value="#{tournamentBean.tournament.publicTournament}">
+
+						<h:selectOneRadio
+							value="#{tournamentBean.tournament.publicTournament}">
 							<f:selectItem itemValue="#{true}" itemLabel="Public" />
 							<f:selectItem itemValue="#{false}" itemLabel="Private" />
 						</h:selectOneRadio>
@@ -68,7 +72,8 @@
 
 						<tr>
 							<td><h:outputLabel for="fee" value="Fee:" /></td>
-							<td><h:inputText id="fee" value="#{tournamentBean.tournament.fee}">
+							<td><h:inputText id="fee"
+									value="#{tournamentBean.tournament.fee}">
 									<rich:validator />
 								</h:inputText></td>
 							<td><rich:message for="fee" errorClass="invalid" /></td>
@@ -82,10 +87,11 @@
 								</h:inputTextarea></td>
 							<td><rich:message for="address" errorClass="invalid" /></td>
 						</tr>
-						
+
 						<tr>
 							<td><h:outputLabel for="zip" value="ZIP:" /></td>
-							<td><h:inputText id="zip" value="#{tournamentBean.tournament.zip}">
+							<td><h:inputText id="zip"
+									value="#{tournamentBean.tournament.zip}">
 									<rich:validator />
 								</h:inputText></td>
 							<td><rich:message for="zip" errorClass="invalid" /></td>
@@ -93,7 +99,8 @@
 
 						<tr>
 							<td><h:outputLabel for="city" value="City:" /></td>
-							<td><h:inputText id="city" value="#{tournamentBean.tournament.city}">
+							<td><h:inputText id="city"
+									value="#{tournamentBean.tournament.city}">
 									<rich:validator />
 								</h:inputText></td>
 							<td><rich:message for="city" errorClass="invalid" /></td>
@@ -101,7 +108,8 @@
 
 						<tr>
 							<td><h:outputLabel for="country" value="Country:" /></td>
-							<td><rich:select value="#{tournamentBean.tournament.country}"
+							<td><rich:select
+									value="#{tournamentBean.tournament.country}"
 									enableManualInput="true" defaultLabel="Select a country"
 									id="country">
 									<f:selectItems value="#{tournamentBean.countries}" />
@@ -121,14 +129,16 @@
 						<tr>
 							<td><h:outputLabel for="startTime" value="Start date:" /></td>
 							<td><rich:calendar id="startTime" popup="true"
-									value="#{tournamentBean.tournament.startTime}" enableManualInput="true" /></td>
+									value="#{tournamentBean.tournament.startTime}"
+									enableManualInput="true" /></td>
 							<td><rich:message for="startTime" errorClass="invalid" /></td>
 						</tr>
 
 						<tr>
 							<td><h:outputLabel for="endTime" value="End date:" /></td>
 							<td><rich:calendar id="endTime" popup="true"
-									value="#{tournamentBean.tournament.endTime}" enableManualInput="true" /></td>
+									value="#{tournamentBean.tournament.endTime}"
+									enableManualInput="true" /></td>
 							<td><rich:message for="endTime" errorClass="invalid" /></td>
 						</tr>
 
@@ -145,8 +155,8 @@
 							<td><h:outputLabel for="nteams"
 									value="Maximum number of teams/players:" /></td>
 							<td><rich:inputNumberSpinner
-									value="#{tournamentBean.tournament.nTeams}" id="nteams" minValue="2"
-									maxValue="127">
+									value="#{tournamentBean.tournament.nTeams}" id="nteams"
+									minValue="2" maxValue="127">
 								</rich:inputNumberSpinner></td>
 							<td><rich:message for="nteams" errorClass="invalid" /></td>
 						</tr>
@@ -197,8 +207,10 @@
 						</tr>
 					</table>
 
-					<a4j:commandButton value="Add"
-						action="#{tournamentBean.create}" />
+					<a4j:commandButton value="Add" action="#{tournamentBean.create}"
+						rendered="#{tournamentBean.mode == 'CREATE'}" />
+					<a4j:commandButton value="Add" action="#{tournamentBean.update}"
+						rendered="#{tournamentBean.mode == 'EDIT'}" />
 					<h:commandButton type="reset" value="Reset" />
 
 				</rich:graphValidator>

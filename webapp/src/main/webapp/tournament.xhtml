@@ -8,11 +8,14 @@
 	xmlns:rich="http://richfaces.org/rich"
 	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
-		<h1>Create new tournament</h1>
+		<h1>
+			<h:outputLabel value="#{tournamentBean.tournament.name}" />
+		</h1>
 
-		<h:form id="reg">
+		<h:form id="form">
 
-			<rich:panel header="Tournament information">
+			<rich:panel header="Tournament information"
+				rendered="#{tournamentBean.mode == 'SHOW'}">
 
 				<table>
 					<tr>
@@ -152,6 +155,84 @@
 								value="#{tournamentBean.tournament.contactaddress}" /></td>
 					</tr>
 				</table>
+
+				<a4j:commandButton value="Edit Team"
+					action="#{tournamentBean.editParticipants()}" render="form" />
+
+			</rich:panel>
+
+			<rich:panel header="Tournament information"
+				rendered="#{tournamentBean.mode == 'MANAGE_TEAM'}">
+
+				<rich:dataScroller for="teamstable" maxPages="5" />
+				<rich:dataTable value="#{tournamentBean.tournament.teamTournament}"
+					var="team" id="teamstable" rows="10">
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Name" />
+						</f:facet>
+						<h:outputText value="#{team.team.name}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Status" />
+						</f:facet>
+						<h:outputText value="#{team.accepted}" />
+					</rich:column>
+					<rich:column rendered="#{!team.accepted}">
+						<f:facet name="header">
+							<h:outputText value="" />
+						</f:facet>
+						<a4j:commandButton value="Accept"
+							action="#{tournamentBean.acceptTeam(team)}" render="form" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="" />
+						</f:facet>
+						<a4j:commandButton value="Decline"
+							action="#{tournamentBean.declineTeam(team)}" render="form" />
+					</rich:column>
+				</rich:dataTable>
+				<rich:dataScroller for="teamstable" maxPages="5" />
+
+			</rich:panel>
+
+			<rich:panel header="Tournament information"
+				rendered="#{tournamentBean.mode == 'MANAGE_PLAYER'}">
+
+				<rich:dataScroller for="playertable" maxPages="5" />
+				<rich:dataTable
+					value="#{tournamentBean.tournament.playerTournament}" var="player"
+					id="playertable" rows="10">
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Name" />
+						</f:facet>
+						<h:outputText value="#{player.player.lastname}" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="Status" />
+						</f:facet>
+						<h:outputText value="#{player.accepted}" />
+					</rich:column>
+					<rich:column rendered="#{!player.accepted}">
+						<f:facet name="header">
+							<h:outputText value="" />
+						</f:facet>
+						<a4j:commandButton value="Accept"
+							action="#{tournamentBean.acceptPlayer(player)}" render="form" />
+					</rich:column>
+					<rich:column>
+						<f:facet name="header">
+							<h:outputText value="" />
+						</f:facet>
+						<a4j:commandButton value="Decline"
+							action="#{tournamentBean.declinePlayer(player)}" render="form" />
+					</rich:column>
+				</rich:dataTable>
+				<rich:dataScroller for="playertable" maxPages="5" />
 
 			</rich:panel>
 

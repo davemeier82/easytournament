@@ -10,7 +10,7 @@
 
 	<url-mapping id="tournament">
 		<pattern value="/tournament/#{tournamentBean.link}" />
-		<view-id value="/app/tournament.jsf" />
+		<view-id value="/tournament.jsf" />
 	</url-mapping>
 
 </pretty-config>

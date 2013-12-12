@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <project name="EasyTournament" default="buildall" basedir=".">
 	<property name="name" value="EasyTournament" />
-	<property name="version" value="0.8.2.0" />
+	<property name="version" value="0.8.3.0" />
 	<property name="author" value="David Meier" />
 	<property name="release" value="${name}" />
 	<property name="release.dir" location="release" />
@@ -10,8 +10,8 @@
 	<property name="jar.path" location="${release.dir}/${jar.name}" />
 	<property name="zip.name" value="${release}-${version}.zip" />
 	<property name="zip.path" location="${release.dir}/${zip.name}" />
-	<property name="launch4j.dir" location="C:\Program Files (x86)\Launch4j" />
-	<property name="eclipse.dir" location="C:\Program Files (x86)\Eclipse" />
+	<property name="launch4j.dir" location="E:\Program Files (x86)\Launch4j" />
+	<property name="eclipse.dir" location="E:\Program Files (x86)\Eclipse" />
 	<property name="reports.tests" location="reports" />
 	<fileset id="jars" dir="lib">
 		<include name="*.jar" />
@@ -23,7 +23,7 @@
 		<fileset refid="jars" />
 	</path>
 	<pathconvert property="classpath" refid="cp" pathsep=" " dirsep="/">
-		<map from="C:/Users/Dave/workspace/EasyTournament/lib" to="lib" />
+		<map from="E:/workspace/EasyTournament/app/lib" to="lib" />
 	</pathconvert>
 
 	<target name="clean">
@@ -153,7 +153,7 @@
 		<delete file="installerfiles/InstallerEXE_rel.xml" />
 	</target>
 	
-	<taskdef name="bundleapp"
+	<!--taskdef name="bundleapp"
 	             classname="com.oracle.appbundler.AppBundlerTask"   
 	             classpath="lib/appbundler-1.0.jar" />
 
@@ -165,7 +165,7 @@
             mainclassname="com.easytournament.basic.Main">
             <classpath file="release/EasyTournament.jar" />
         </bundleapp>
-	</target>
+	</target-->
 	
 	<target name="msiinstaller" depends="etexe">
 		<copy file="installerfiles/make_msi_installer.bat" toFile="installerfiles/make_msi_installer_rel.bat" overwrite="true">

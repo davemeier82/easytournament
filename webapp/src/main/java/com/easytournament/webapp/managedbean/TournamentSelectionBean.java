@@ -6,15 +6,25 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.easytournament.webapp.controller.TournamentControllerInterface;
+import com.easytournament.webapp.controller.UserControllerInterface;
 import com.easytournament.webapp.entity.Tournament;
+import com.easytournament.webapp.entity.User;
+import com.easytournament.webapp.entity.UserTournament;
 
 @SuppressWarnings("serial")
 @Named("tournSelectionBean")
 @ViewScoped
 public class TournamentSelectionBean implements Serializable {
+
+  @Inject
+  private AuthenticationBean authenticationBean;
+
+  @EJB
+  private UserControllerInterface userController;
 
   @EJB
   private TournamentControllerInterface tournamentController;
@@ -26,6 +36,19 @@ public class TournamentSelectionBean implements Serializable {
   @PostConstruct
   public void init() {
     tournaments = tournamentController.loadTournaments(true, false);
+    User currentUser = authenticationBean.getCurrentUser();
+    if (currentUser != null) {
+      // The user can also see his private tournaments
+      currentUser = userController.loadUser(currentUser.getId());
+      List<UserTournament> _userTournaments = currentUser.getUserTournament();
+      for (UserTournament ut : _userTournaments) {
+        Tournament t = ut.getTournament();
+        if (!t.isClosed() && !tournaments.contains(t)) {
+          tournaments.add(t);
+        }
+      }
+    }
+
   }
 
   /**

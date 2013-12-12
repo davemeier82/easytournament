@@ -111,4 +111,19 @@ public class TournamentController implements TournamentControllerInterface {
         String.class);
     return q.getResultList();
   }
+
+  @Override
+  public void updateTournament(Tournament tournament) {
+    em.merge(tournament);    
+  }
+
+  @Override
+  public void updatePlayerTournament(PlayerTournament playerTournament) {
+    em.merge(playerTournament);    
+  }
+
+  @Override
+  public void updateTeamTournament(TeamTournament teamTournament) {
+    em.merge(teamTournament);    
+  }
 }
