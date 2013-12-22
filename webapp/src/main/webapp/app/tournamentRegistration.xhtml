@@ -4,26 +4,23 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
 		<h1>Tournament Registration</h1>
 
 		<h:form id="reg">
-			<rich:panel header="Tournament Registration">
 				<h:panelGrid rendered="#{tournRegBean.tournament.teamTournanament}"
 					columns="3" columnClasses="titleCell">
-					<rich:dataScroller for="tournamenttable" maxPages="5" />
-					<rich:dataTable value="#{tournRegBean.teams}" var="team"
+					<p:dataTable value="#{tournRegBean.teams}" var="team" sortMode="multiple" paginator="true"
 						id="tournamenttable" rows="10">
-						<rich:column>
+						<p:column>
 							<f:facet name="header">
 								<h:outputText value="Name" />
 							</f:facet>
 							<h:outputText value="#{team.team.name}" />
-						</rich:column>
-						<rich:column>
+						</p:column>
+						<p:column>
 							<f:facet name="header">
 								<h:outputText value="Select" />
 							</f:facet>
@@ -31,28 +28,26 @@
 								<f:setPropertyActionListener target="#{tournRegBean.team}"
 									value="#{team.team}" />
 							</h:commandButton>
-						</rich:column>
-					</rich:dataTable>
-					<rich:dataScroller for="tournamenttable" maxPages="5" />
+						</p:column>
+					</p:dataTable>
 				</h:panelGrid>
 				<h:panelGrid rendered="#{tournRegBean.tournament.teamTournanament == false}" columns="3" columnClasses="titleCell">
-					<rich:dataScroller for="playertable" maxPages="5" />
-					<rich:dataTable
-						value="#{tournRegBean.players}" var="player" id="playertable"
+					<p:dataTable
+						value="#{tournRegBean.players}" var="player" id="playertable" sortMode="multiple" paginator="true"
 						rows="10">
-						<rich:column>
+						<p:column>
 							<f:facet name="header">
 								<h:outputText value="Firstname" />
 							</f:facet>
 							<h:outputText value="#{player.firstname}" />
-						</rich:column>
-						<rich:column>
+						</p:column>
+						<p:column>
 							<f:facet name="header">
 								<h:outputText value="Lastname" />
 							</f:facet>
 							<h:outputText value="#{player.lastname}" />
-						</rich:column>
-						<rich:column>
+						</p:column>
+						<p:column>
 							<f:facet name="header">
 								<h:outputText value="Select" />
 							</f:facet>
@@ -60,12 +55,10 @@
 								<f:setPropertyActionListener target="#{tournRegBean.player}"
 									value="#{player}" />
 							</h:commandButton>
-						</rich:column>
-					</rich:dataTable>
-					<rich:dataScroller for="playertable" maxPages="5" />
+						</p:column>
+					</p:dataTable>
 
 				</h:panelGrid>
-			</rich:panel>
 		</h:form>
 	</ui:define>
 </ui:composition>

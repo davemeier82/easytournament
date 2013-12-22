@@ -74,11 +74,11 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
           public void actionPerformed(ActionEvent arg0) {
             ArrayListModel<AbstractGroup> groups = getTournament().getPlan()
                 .getGroups();
-            if (groups.getSize() < 1) {
+            if (groups.isEmpty()) {
               return;
             }
             ArrayList<Position> pos = groups.get(0).getPositions();
-            if (groups.size() > 0) {
+            if (pos.size() > 1) {
               ScheduleEntry se = new ScheduleEntry(pos.get(0), pos.get(1));
               if (getFilter() != null && getFilter() != "") {
                 boolean found = false;
@@ -249,6 +249,9 @@ public class SchedulePanelPModel extends Model implements TableModelListener,
   }
 
   public void delayGames(ArrayList<Integer> indices, Calendar calendar) {
+    if (indices.isEmpty()) {
+      return;
+    }
     Calendar oldCal = getDate(indices.get(0));
     int differenceInMin = (int)((calendar.getTimeInMillis() - oldCal
         .getTimeInMillis()) / (1000 * 60));

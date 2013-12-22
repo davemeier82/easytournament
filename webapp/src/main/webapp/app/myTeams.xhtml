@@ -4,33 +4,23 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
 		<h1>My Teams</h1>
 
 		<h:form id="reg">
-
-			<rich:panel header="Teams">
-
-					<h:panelGrid columns="3" columnClasses="titleCell">
-
-						<rich:dataScroller for="table" maxPages="5" />
-						<rich:dataTable value="#{myTeamsBean.teams}" var="team"
-							id="table" rows="10">
-							<rich:column>
-								<f:facet name="header">
-									<h:outputText value="Name" />
-								</f:facet>
-								<h:outputText value="#{team.team.name}" />
-							</rich:column>
-						</rich:dataTable>
-						<rich:dataScroller for="table" maxPages="5" />
-
-					</h:panelGrid>
-			</rich:panel>
-
+			<h:panelGrid columns="3" columnClasses="titleCell">
+				<p:dataTable value="#{myTeamsBean.teams}" var="team"
+					sortMode="multiple" paginator="true" id="table" rows="10">
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="Name" />
+						</f:facet>
+						<h:outputText value="#{team.team.name}" />
+						</p:column>
+				</p:dataTable>
+			</h:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>

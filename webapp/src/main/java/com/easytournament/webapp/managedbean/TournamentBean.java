@@ -160,43 +160,46 @@ public class TournamentBean implements Serializable {
    *          the link to set
    */
   public void setLink(String link) {
-    mode = TournamentBeanMode.SHOW;
-    this.link = link;
-    this.tournament = null;
-    if (link != null) {
-      Tournament t = tournamentController.loadTournament(link);
-      if (t != null) {
-        if (t.isPublicTournament()) {
-          tournament = t;
-        }
-        else {
-          User currentUser = authenticationBean.getCurrentUser();
-          if (currentUser != null) {
-            for (UserTournament ut : t.getUserTournament()) {
-              if (ut.getUser().equals(currentUser)) {
-                tournament = t;
-                break;
+
+    if (this.link == null) {
+      mode = TournamentBeanMode.SHOW;
+      this.link = link;
+      this.tournament = null;
+      if (link != null) {
+        Tournament t = tournamentController.loadTournament(link);
+        if (t != null) {
+          if (t.isPublicTournament()) {
+            tournament = t;
+          }
+          else {
+            User currentUser = authenticationBean.getCurrentUser();
+            if (currentUser != null) {
+              for (UserTournament ut : t.getUserTournament()) {
+                if (ut.getUser().equals(currentUser)) {
+                  tournament = t;
+                  break;
+                }
               }
-            }
-            if (tournament == null) {
-              if (t.isTeamTournanament()) {
-                for (TeamTournament tt : t.getTeamTournament()) {
-                  for (UserTeam ut : tt.getTeam().getUserTeam()) {
-                    if (ut.getUser().equals(currentUser)) {
-                      tournament = t;
+              if (tournament == null) {
+                if (t.isTeamTournanament()) {
+                  for (TeamTournament tt : t.getTeamTournament()) {
+                    for (UserTeam ut : tt.getTeam().getUserTeam()) {
+                      if (ut.getUser().equals(currentUser)) {
+                        tournament = t;
+                        break;
+                      }
+                    }
+                    if (tournament != null) {
                       break;
                     }
                   }
-                  if (tournament != null) {
-                    break;
-                  }
                 }
-              }
-              else {
-                for (PlayerTournament pt : t.getPlayerTournament()) {
-                  if (pt.getPlayer().getUser().equals(currentUser)) {
-                    tournament = t;
-                    break;
+                else {
+                  for (PlayerTournament pt : t.getPlayerTournament()) {
+                    if (pt.getPlayer().getUser().equals(currentUser)) {
+                      tournament = t;
+                      break;
+                    }
                   }
                 }
               }

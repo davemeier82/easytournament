@@ -4,101 +4,116 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
 		<h1>Create new player</h1>
 
 		<h:form id="reg">
-
-			<rich:panel header="Player information">
-
-				<rich:graphValidator value="#{playerBean}" id="gv">
-
-					<rich:messages for="gv" />
-					<rich:messages globalOnly="true" />
-
-					<table>
-						<tr>
-							<td><h:outputLabel for="firstname" value="Firstname:" /></td>
-							<td><h:inputText id="firstname"
-									value="#{playerBean.player.firstname}">
-									<rich:validator />
-								</h:inputText></td>
-							<td><rich:message for="firstname" errorClass="invalid" /></td>
-						</tr>
-
-						<tr>
-							<td><h:outputLabel for="lastname" value="Lastname:" /></td>
-							<td><h:inputText id="lastname"
-									value="#{playerBean.player.lastname}">
-									<rich:validator />
-								</h:inputText></td>
-							<td><rich:message for="lastname" errorClass="invalid" /></td>
-						</tr>
-
-
-						<tr>
-							<td><h:outputLabel for="street" value="Street:" /></td>
-							<td><h:inputTextarea id="street"
-									value="#{playerBean.player.street}">
-									<rich:validator />
-								</h:inputTextarea></td>
-							<td><rich:message for="street" errorClass="invalid" /></td>
-						</tr>
-
-						<tr>
-							<td><h:outputLabel for="zip" value="ZIP:" /></td>
-							<td><h:inputText id="zip" value="#{playerBean.player.zip}">
-									<rich:validator />
-								</h:inputText></td>
-							<td><rich:message for="zip" errorClass="invalid" /></td>
-						</tr>
-
-						<tr>
-							<td><h:outputLabel for="city" value="City:" /></td>
-							<td><h:inputText id="city" value="#{playerBean.player.city}">
-									<rich:validator />
-								</h:inputText></td>
-							<td><rich:message for="city" errorClass="invalid" /></td>
-						</tr>
-						
-						<tr>
-							<td><h:outputLabel for="country" value="Country:" /></td>
-							<td><rich:select value="#{playerBean.player.country}"
-									enableManualInput="true" defaultLabel="Select a country"
-									id="country">
-									<f:selectItems value="#{playerBean.countries}" />
-								</rich:select></td>
-							<td></td>
-						</tr>
-
-						<tr>
-							<h:outputLabel for="email" value="Email:" />
-							<h:inputText id="email" value="#{playerBean.player.email}">
-								<rich:validator />
-							</h:inputText>
-							<rich:message for="email" errorClass="invalid" />
-						</tr>
-						
-						<tr>
-							<h:outputLabel for="phone" value="Phone:" />
-							<h:inputText id="phone" value="#{playerBean.player.phone}">
-								<rich:validator />
-							</h:inputText>
-							<rich:message for="phone" errorClass="invalid" />
-						</tr>
-
-					</table>
-
-					<a4j:commandButton value="Add"
-						action="#{playerBean.create}" />
-					<h:commandButton type="reset" value="Reset" />
-
-				</rich:graphValidator>
-			</rich:panel>
-
+			<p:messages globalOnly="true" />
+			<p:panelGrid>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="firstname" value="Firstname:" />
+					</p:column>
+					<p:column>
+						<h:inputText id="firstname" value="#{playerBean.player.firstname}" />
+					</p:column>
+					<p:column>
+						<p:message for="firstname" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="lastname" value="Lastname:" />
+					</p:column>
+					<p:column>
+						<h:inputText id="lastname" value="#{playerBean.player.lastname}" />
+					</p:column>
+					<p:column>
+						<p:message for="lastname" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="street" value="Street:" />
+					</p:column>
+					<p:column>
+						<h:inputTextarea id="street" value="#{playerBean.player.street}" />
+					</p:column>
+					<p:column>
+						<p:message for="street" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="zip" value="ZIP:" />
+					</p:column>
+					<p:column>
+						<h:inputText id="zip" value="#{playerBean.player.zip}" />
+					</p:column>
+					<p:column>
+						<p:message for="zip" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="city" value="City:" />
+					</p:column>
+					<p:column>
+						<h:inputText id="city" value="#{playerBean.player.city}" />
+					</p:column>
+					<p:column>
+						<p:message for="city" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="country" value="Country:" />
+					</p:column>
+					<p:column>
+						<p:selectOneMenu value="#{playerBean.player.country}"
+							effect="fade" filter="true" filterMatchMode="startsWith"
+							id="country">
+							<f:selectItem itemLabel="Select One" itemValue="" />
+							<f:selectItems value="#{playerBean.countries}" />
+						</p:selectOneMenu>
+					</p:column>
+					<p:column>
+						<p:message for="country" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="email" value="Email:" />
+					</p:column>
+					<p:column>
+						<h:inputText id="email" value="#{playerBean.player.email}" />
+					</p:column>
+					<p:column>
+						<p:message for="email" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<h:outputLabel for="phone" value="Phone:" />
+					</p:column>
+					<p:column>
+						<h:inputText id="phone" value="#{playerBean.player.phone}" />
+					</p:column>
+					<p:column>
+						<p:message for="phone" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:commandButton value="Add" actionListener="#{playerBean.create}" />
+					</p:column>
+					<p:column>
+						<h:commandButton type="reset" value="Reset" />
+					</p:column>
+				</p:row>
+			</p:panelGrid>
 		</h:form>
 	</ui:define>
 </ui:composition>

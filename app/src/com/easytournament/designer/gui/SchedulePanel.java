@@ -21,10 +21,8 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -269,7 +267,13 @@ public class SchedulePanel extends JPanel implements TableModelListener,
       @Override
       public void actionPerformed(ActionEvent e) {
         ArrayList<Integer> indices = new ArrayList<Integer>();
+        if(indices.isEmpty()){
+          return;
+        }
         int row = popup.getRow();
+        if(row < 0){
+          return;
+        }
         int numRows = schedTable.getRowCount();
         for (int i = row; i < numRows; ++i) {
           indices.add(schedTable.convertRowIndexToModel(i));

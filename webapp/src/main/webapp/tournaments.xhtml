@@ -4,62 +4,47 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:a4j="http://richfaces.org/a4j"
-	xmlns:rich="http://richfaces.org/rich"
+	xmlns:p="http://primefaces.org/ui"
 	template="/WEB-INF/templates/default.xhtml">
 	<ui:define name="content">
 		<h1>Tournaments</h1>
 
-		<h:form id="reg">
-
-			<rich:panel header="Tournaments">
-
-				<h:panelGrid columns="3" columnClasses="titleCell">
-					<h:form id="form">
-						<rich:dataScroller for="table" maxPages="5" />
-						<rich:dataTable value="#{tournSelectionBean.tournaments}"
-							var="tourn" id="table" rows="10">
-							<rich:column>
-								<f:facet name="header">
-									<h:outputText value="Name" />
-								</f:facet>
-								<h:outputText value="#{tourn.name}" />
-							</rich:column>
-							<rich:column>
-								<a4j:commandButton value="Detail"
-									action="#{tournSelectionBean.setCurrentTournament(tourn)}"
-									render=":detailpopup"
-									oncomplete="#{rich:component('detailpopup')}.show();" />
-							</rich:column>
-						</rich:dataTable>
-						<rich:dataScroller for="table" maxPages="5" />
-
-					</h:form>
-				</h:panelGrid>
-
-				<rich:popupPanel id="detailpopup" modal="true" resizeable="false"
-					autosized="true"
-					onmaskclick="#{rich:component('detailpopup')}.hide()">
-					<f:facet name="header">
-						<h:outputText value="#{tournSelectionBean.currentTournament.name}" />
-					</f:facet>
-					<f:facet name="controls">
-						<h:outputLink value="#"
-							onclick="#{rich:component('detailpopup')}.hide(); return false;">X
-						</h:outputLink>
-					</f:facet>
-					<h:panelGrid columns="2" columnClasses="titleCell">
-						<h:outputLabel value="City" />
-						<h:outputLabel
-							value="#{tournSelectionBean.currentTournament.city}" />
-					</h:panelGrid>
-					<h:link value="Register" outcome="/app/tournamentRegistration.jsf">
-							<f:param name="tournId" value="#{tournSelectionBean.currentTournament.id}" />
-						</h:link>
-					<a href="#" onclick="#{rich:component('detailpopup')}.hide()">Close</a>
-				</rich:popupPanel>
-			</rich:panel>
-
+		<h:form id="listform">
+			<h:panelGrid columns="3" columnClasses="titleCell">
+				<h:form id="form">
+					<p:dataTable value="#{tournSelectionBean.tournaments}" var="tourn"
+						id="table" sortMode="multiple" rows="10" paginator="true">
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Name" />
+							</f:facet>
+							<h:outputText value="#{tourn.name}" />
+						</p:column>
+						<p:column>
+							<p:commandButton value="Detail"
+								actionListener="#{tournSelectionBean.setCurrentTournament(tourn)}" update=":detaildialog"
+								oncomplete="PF('detaildialog').show();" >							
+								</p:commandButton>
+						</p:column>
+					</p:dataTable>
+				</h:form>
+			</h:panelGrid>
 		</h:form>
+
+		<p:dialog id="detaildialog" modal="true" widgetVar="detaildialog"
+			header="#{tournSelectionBean.currentTournament.name}">
+			<h:form id="dialogform">
+			<h:panelGrid columns="2" columnClasses="titleCell">
+				<h:outputLabel value="City" />
+				<h:outputLabel value="#{tournSelectionBean.currentTournament.city}" />
+			</h:panelGrid>
+			<h:link value="Register" outcome="/app/tournamentRegistration.jsf">
+				<f:param name="tournId"
+					value="#{tournSelectionBean.currentTournament.id}" />
+			</h:link>
+			<a href="#" onclick="PF('detaildialog').hide()">Close</a>
+			</h:form>
+		</p:dialog>
+
 	</ui:define>
 </ui:composition>

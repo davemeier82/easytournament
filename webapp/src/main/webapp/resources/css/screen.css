@@ -1,62 +1,22 @@
-/*
- * JBoss, Home of Professional Open Source
- * Copyright 2013, Red Hat, Inc. and/or its affiliates, and individual
- * contributors by the @authors tag. See the copyright.txt in the
- * distribution for a full listing of individual contributors.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* Core styles for the page */
 body {
   margin: 0;
   padding: 0;
-  background-color: #F1F1F1;
+  background-color: #282828;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 0.8em;
-  color:#363636;
+  color:#FFFFFF;
 }
 
 #container {
-  margin: 0 auto;
-  padding: 0 20px 10px 20px;
-  border-top: 5px solid #000000;
-  border-left: 5px solid #8c8f91;
-  border-right: 5px solid #8c8f91;
-  border-bottom: 25px solid #8c8f91;
+  margin: 20px auto;
+  padding: 10px 10px 10px 10px;
   width: 865px; /* subtract 40px from banner width for padding */
-  background: #FFFFFF;
-  background-image: url(#{request.contextPath}/resources/gfx/headerbkg.png);
-  background-repeat: repeat-x;
-  padding-top: 30px;
-  box-shadow: 3px 3px 15px #d5d5d5;
+  background: #464646;
 }
 #content {
   float: left;
-  width: 700px;
+  width: 800px;
   margin: 20px;
-}
-#aside {
-  font-size: 0.9em;
-  width: 50px;
-  float: left;
-  margin: 20px 0px;
-  border: 1px solid #D5D5D5;
-  background: #F1F1F1;
-  background-image: url(#{request.contextPath}/resources/gfx/asidebkg.png);
-  background-repeat: repeat-x;
-  padding: 20px;
-}
-
-#aside ul {
-  padding-left: 30px;
 }
 
 #footer {
@@ -69,22 +29,18 @@ code {
   font-size: 1.1em;
 }
 a {
-  color: #4a5d75;
   text-decoration: none;
 }
 a:hover {
-  color: #369;
   text-decoration: underline;
 }
 h1 {
-  color:#243446;
   font-size: 2.25em;
 }
 h2 {
   font-size: 1em;
 }
 h3 {
-  color:#243446;
 }
 h4 {
 }
@@ -99,9 +55,7 @@ span.invalid {
 }
 form {
   padding: 1em;
-  font: 80%/1 sans-serif;
   width: 375px;
-  border: 1px solid #D5D5D5;
 }
 label {
   float: left;
@@ -111,7 +65,6 @@ label {
   padding-top: 0.2em;
   text-align: right;
   font-weight: bold;
-  color:#363636;
 }
 input {
   margin-bottom: 8px;
@@ -126,7 +79,7 @@ input {
 
 /*  = Simple Table style (black header, grey/white stripes  */
 
-.simpletablestyle {
+/* .simpletablestyle {
   background-color:#E6E7E8;
   clear:both;
   width: 550px;
@@ -185,7 +138,7 @@ input {
   text-align:left;
 }
 
-/* Using new CSS3 selectors for styling*/
+Using new CSS3 selectors for styling
 .simpletablestyle tr:nth-child(odd) {
   background: #f4f3f3;
 }
@@ -196,4 +149,4 @@ input {
 .simpletablestyle td a:hover {
   color:#3883ce;
   text-decoration:none; 
-}
+} */
