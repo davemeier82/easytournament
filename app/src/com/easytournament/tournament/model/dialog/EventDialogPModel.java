@@ -3,6 +3,7 @@ package com.easytournament.tournament.model.dialog;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
@@ -166,12 +167,12 @@ public class EventDialogPModel extends Model {
           public void actionPerformed(ActionEvent arg0) {
             int min = playerSelModel.getMinSelectionIndex();
             int max = playerSelModel.getMaxSelectionIndex();
-            ArrayList<Integer> indices = new ArrayList<Integer>();
+            LinkedList<Integer> indices = new LinkedList<Integer>();
             for (int i = min; i <= max; i++) {
               if (playerSelModel.isSelectedIndex(i))
-                indices.add(i);
+                indices.add(0, i);
             }
-            for (int i = max; i >= min; i--) {
+            for (int i : indices) {
               playerListModel.getData().remove(i);
             }
           }
@@ -205,9 +206,9 @@ public class EventDialogPModel extends Model {
             ArrayList<Integer> indices = new ArrayList<Integer>();
             for (int i = min; i <= max; i++) {
               if (assistSelModel.isSelectedIndex(i))
-                indices.add(i);
+                indices.add(0, i);
             }
-            for (int i = max; i >= min; i--) {
+            for (int i : indices) {
               assistListModel.getData().remove(i);
             }
           }

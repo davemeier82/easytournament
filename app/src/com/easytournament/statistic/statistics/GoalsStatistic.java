@@ -77,16 +77,20 @@ public class GoalsStatistic implements Statistic {
           }
 
           for (GameEventEntry ge : se.getGameEvents()) {
-            if (totalmin > ge.getTimeMin() || (totalmin == ge.getTimeMin() && ge
-                    .getTimeSec() == 0)) {
+            if (totalmin > ge.getTimeMin()
+                || (totalmin == ge.getTimeMin() && ge.getTimeSec() == 0)) {
               if (ge.getTeam().equals(se.getHomePos().getTeam())) {
                 if (se.getHomeTeam() != null)
-                  entryMap.get(se.getHomeTeam().getId())[1] += ge.getEvent().getPointsForTeam();
-                entryMap.get(se.getAwayTeam().getId())[1] += ge.getEvent()
-                    .getPointsForOpponent();
+                  entryMap.get(se.getHomeTeam().getId())[1] += ge.getEvent()
+                      .getPointsForTeam();
+                if (se.getAwayTeam() != null)
+                  entryMap.get(se.getAwayTeam().getId())[1] += ge.getEvent()
+                      .getPointsForOpponent();
               }
               else {
-                entryMap.get(se.getAwayTeam().getId())[1] += ge.getEvent().getPointsForTeam();
+                if (se.getAwayTeam() != null)
+                  entryMap.get(se.getAwayTeam().getId())[1] += ge.getEvent()
+                      .getPointsForTeam();
                 if (se.getHomeTeam() != null)
                   entryMap.get(se.getHomeTeam().getId())[1] += ge.getEvent()
                       .getPointsForOpponent();
@@ -140,8 +144,8 @@ public class GoalsStatistic implements Statistic {
         }
       }
       for (ScheduleEntry se : t.getSchedules()) {
-        if (se.isGamePlayed()){
-          
+        if (se.isGamePlayed()) {
+
           int totalmin;
           if (se.getGroupAssignedTo().isDefaultRules()) {
             SportSettings set = t.getSettings();
@@ -153,7 +157,7 @@ public class GoalsStatistic implements Statistic {
             totalmin = set.getNumGameTimes() * set.getMinPerGameTime()
                 + set.getNumOvertimes() * set.getMinPerOvertime();
           }
-          
+
           for (GameEventEntry ge : se.getGameEvents()) {
             if (totalmin > ge.getTimeMin()
                 || (totalmin == ge.getTimeMin() && ge.getTimeSec() == 0)) {

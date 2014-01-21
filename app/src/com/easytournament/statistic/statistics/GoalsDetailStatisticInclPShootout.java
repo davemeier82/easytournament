@@ -18,8 +18,6 @@ import com.easytournament.designer.valueholder.ScheduleEntry;
 import com.easytournament.statistic.model.tablemodel.StatisticTableModel;
 import com.easytournament.statistic.util.IntegerArrayComparator;
 
-
-
 public class GoalsDetailStatisticInclPShootout implements Statistic {
 
   protected Tournament t = Organizer.getInstance().getCurrentTournament();
@@ -28,7 +26,7 @@ public class GoalsDetailStatisticInclPShootout implements Statistic {
   public String getName() {
     return ResourceManager.getText(Text.GOALS_DETAIL_INCLPS);
   }
-  
+
   @Override
   public String getPrintName() {
     return ResourceManager.getText(Text.TOPSCORER);
@@ -93,13 +91,15 @@ public class GoalsDetailStatisticInclPShootout implements Statistic {
                 if (se.getHomeTeam() != null)
                   entryMap.get(se.getHomeTeam().getId())[typePos.get(ge
                       .getEvent().getId())] += ge.getEvent().getPointsForTeam();
-                entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
-                    .getEvent().getId())] += ge.getEvent()
-                    .getPointsForOpponent();
+                if (se.getAwayTeam() != null)
+                  entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
+                      .getEvent().getId())] += ge.getEvent()
+                      .getPointsForOpponent();
               }
               else {
-                entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
-                    .getEvent().getId())] += ge.getEvent().getPointsForTeam();
+                if (se.getAwayTeam() != null)
+                  entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
+                      .getEvent().getId())] += ge.getEvent().getPointsForTeam();
                 if (se.getHomeTeam() != null)
                   entryMap.get(se.getHomeTeam().getId())[typePos.get(ge
                       .getEvent().getId())] += ge.getEvent()

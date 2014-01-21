@@ -3,7 +3,6 @@ package com.easytournament.designer.gui.jgraph;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
 import com.easytournament.basic.Organizer;
 import com.easytournament.basic.gui.dialog.ErrorDialog;
 import com.easytournament.basic.logging.ErrorLogger;
@@ -20,10 +19,8 @@ import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxUtils;
 import com.mxgraph.view.mxGraph;
 
-
 public class TGraph extends mxGraph {
 
-  
   private mxICell currentSource, currentTarget, oldCell, currentEdge;
 
   public TGraph() {
@@ -32,7 +29,6 @@ public class TGraph extends mxGraph {
     this.allowLoops = false;
     this.multigraph = false;
   }
-
 
   @Override
   public String getEdgeValidationError(Object edge, Object source, Object target) {
@@ -60,7 +56,7 @@ public class TGraph extends mxGraph {
         if (isSource) {
           src = (DuellGroupCell)((mxCell)source).getParent();
           mxICell tmpTrg = ((mxCell)edge).getTerminal(false);
-          if(tmpTrg == null)
+          if (tmpTrg == null)
             return err;
           trg = (DuellGroupCell)tmpTrg.getParent();
           old = (DuellGroupCell)((mxCell)edge).getTerminal(true).getParent();
@@ -80,21 +76,24 @@ public class TGraph extends mxGraph {
 
         }
         else {
-  
           currentSource = ((mxCell)edge).getTerminal(true);
           currentTarget = (mxCell)target;
-          if(currentSource == null)
+          if (currentSource == null)
             return err;
-          
-          src = (DuellGroupCell)currentSource.getParent();
-          if (isNewEdge)
-            oldCell = null;
-          else
-            oldCell = ((mxCell)edge).getTerminal(false);
-          old = oldCell == null? null : (DuellGroupCell)oldCell.getParent();
+          try {
+            src = (DuellGroupCell)currentSource.getParent();
+            if (isNewEdge)
+              oldCell = null;
+            else
+              oldCell = ((mxCell)edge).getTerminal(false);
+            old = oldCell == null? null : (DuellGroupCell)oldCell.getParent();
 
-          trg = (DuellGroupCell)((mxCell)target).getParent();
-          
+            trg = (DuellGroupCell)((mxCell)target).getParent();
+          }
+          catch (ClassCastException ccex) {
+            return "";
+          }
+
           srcIdx = src.getIndex(currentSource);
           trgIdx = trg.getIndex(currentTarget);
 
@@ -114,11 +113,12 @@ public class TGraph extends mxGraph {
           return "";
         }
 
-        Position srcPos, trgPos; 
-        try{
+        Position srcPos, trgPos;
+        try {
           srcPos = src.getGroup().getPosition(srcIdx);
           trgPos = trgIdx < 0? null : trg.getGroup().getPosition(trgIdx);
-        } catch (IndexOutOfBoundsException e) {
+        }
+        catch (IndexOutOfBoundsException e) {
           return "";
         }
 
@@ -174,7 +174,8 @@ public class TGraph extends mxGraph {
         }
       }
       catch (Exception ex) {
-        ErrorLogger.getLogger().throwing("TGraph", "getEdgeValidationError", ex);
+        ErrorLogger.getLogger()
+            .throwing("TGraph", "getEdgeValidationError", ex);
         ErrorDialog ed = new ErrorDialog(
             Organizer.getInstance().getMainFrame(),
             ResourceManager.getText(Text.ERROR), ex.toString(), ex);
@@ -305,7 +306,7 @@ public class TGraph extends mxGraph {
       for (int j = 0; j < cell.getEdgeCount(); j++) {
         edge = cell.getEdgeAt(j);
         mxICell prev = edge.getTerminal(true);
-        if (prev != null && prev != cell ) {
+        if (prev != null && prev != cell) {
           getSplitPosBefore(splits, prev, isSource);
         }
       }
@@ -399,38 +400,47 @@ public class TGraph extends mxGraph {
         });
     setSelectionCells(cells);
   }
-  
+
   /**
-   * Hook method that creates the new edge for insertEdge. This
-   * implementation does not set the source and target of the edge, these
-   * are set when the edge is added to the model.
+   * Hook method that creates the new edge for insertEdge. This implementation
+   * does not set the source and target of the edge, these are set when the edge
+   * is added to the model.
    * 
-   * @param parent Cell that specifies the parent of the new edge.
-   * @param id Optional string that defines the Id of the new edge.
-   * @param value Object to be used as the user object.
-   * @param source Cell that defines the source of the edge.
-   * @param target Cell that defines the target of the edge.
-   * @param style Optional string that defines the cell style.
+   * @param parent
+   *          Cell that specifies the parent of the new edge.
+   * @param id
+   *          Optional string that defines the Id of the new edge.
+   * @param value
+   *          Object to be used as the user object.
+   * @param source
+   *          Cell that defines the source of the edge.
+   * @param target
+   *          Cell that defines the target of the edge.
+   * @param style
+   *          Optional string that defines the cell style.
    * @return Returns the new edge to be inserted.
    */
   public Object createEdge(Object parent, String id, Object value,
-          Object source, Object target, String style)
-  {
-      mxCell edge = new mxCell(value, new mxGeometry(), style);
-      DesignerSettings set = DesignerSettings.getInstance();
-      String s = mxUtils.setStyle(edge.getStyle(), mxConstants.STYLE_FONTCOLOR, set.getLineFontColor());
-      s = mxUtils.setStyle(s, mxConstants.STYLE_FONTSIZE, set.getLineFontSize());
-      s = mxUtils.setStyle(s, mxConstants.STYLE_FONTFAMILY, set.getLineFontType());
-      s = mxUtils.setStyle(s, mxConstants.STYLE_STROKECOLOR, set.getLineColor());
-      s = mxUtils.setStyle(s, mxConstants.STYLE_ENDARROW, set.getLineendType());
-      s = mxUtils.setStyle(s, mxConstants.STYLE_ENDSIZE, set.getLineendSize()+"");
-      s = mxUtils.setStyle(s, mxConstants.STYLE_STROKEWIDTH, set.getLineWidth()+"");
-      edge.setStyle(s);
-      
-      edge.setId(id);
-      edge.setEdge(true);
-      edge.getGeometry().setRelative(true);
+      Object source, Object target, String style) {
+    mxCell edge = new mxCell(value, new mxGeometry(), style);
+    DesignerSettings set = DesignerSettings.getInstance();
+    String s = mxUtils.setStyle(edge.getStyle(), mxConstants.STYLE_FONTCOLOR,
+        set.getLineFontColor());
+    s = mxUtils.setStyle(s, mxConstants.STYLE_FONTSIZE, set.getLineFontSize());
+    s = mxUtils
+        .setStyle(s, mxConstants.STYLE_FONTFAMILY, set.getLineFontType());
+    s = mxUtils.setStyle(s, mxConstants.STYLE_STROKECOLOR, set.getLineColor());
+    s = mxUtils.setStyle(s, mxConstants.STYLE_ENDARROW, set.getLineendType());
+    s = mxUtils.setStyle(s, mxConstants.STYLE_ENDSIZE, set.getLineendSize()
+        + "");
+    s = mxUtils.setStyle(s, mxConstants.STYLE_STROKEWIDTH, set.getLineWidth()
+        + "");
+    edge.setStyle(s);
 
-      return edge;
+    edge.setId(id);
+    edge.setEdge(true);
+    edge.getGeometry().setRelative(true);
+
+    return edge;
   }
 }

@@ -189,19 +189,16 @@ public class ScheduleTableModel extends DefaultTableModel implements
   @Override
   public void intervalAdded(ListDataEvent e) {
     this.fireTableDataChanged();
-
   }
 
   @Override
   public void intervalRemoved(ListDataEvent e) {
     this.fireTableDataChanged();
-
   }
 
   @Override
   public void contentsChanged(ListDataEvent e) {
     this.fireTableDataChanged();
-
   }
 
 }

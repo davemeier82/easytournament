@@ -24,6 +24,7 @@ import com.easytournament.basic.valueholder.Team;
 import com.easytournament.basic.xml.GameEventsXMLHandler;
 import com.easytournament.basic.xml.RefreeXMLHandler;
 import com.easytournament.basic.xml.TeamsXMLHandler;
+import com.easytournament.designer.valueholder.AbstractGroup;
 import com.easytournament.designer.valueholder.Position;
 import com.easytournament.designer.valueholder.ScheduleEntry;
 import com.jgoodies.common.collect.ArrayListModel;
@@ -179,10 +180,13 @@ public class ScheduleXMLHandler {
         }
       }
 
-      se.getGroupAssignedTo().getSchedules().add(se);
-      shedules.add(se);
+      AbstractGroup group = se.getGroupAssignedTo();
+      if(group != null)
+      {
+        group.getSchedules().add(se);
+        shedules.add(se);
+      }
     }
-
     Organizer.getInstance().getCurrentTournament().setSchedules(shedules);
   }
 

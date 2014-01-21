@@ -108,13 +108,15 @@ public class GoalsDetailStatistic implements Statistic {
                 if (se.getHomeTeam() != null)
                   entryMap.get(se.getHomeTeam().getId())[typePos.get(ge
                       .getEvent().getId())] += ge.getEvent().getPointsForTeam();
-                entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
-                    .getEvent().getId())] += ge.getEvent()
-                    .getPointsForOpponent();
+                if (se.getAwayTeam() != null)
+                  entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
+                      .getEvent().getId())] += ge.getEvent()
+                      .getPointsForOpponent();
               }
               else {
-                entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
-                    .getEvent().getId())] += ge.getEvent().getPointsForTeam();
+                if (se.getAwayTeam() != null)
+                  entryMap.get(se.getAwayTeam().getId())[typePos.get(ge
+                      .getEvent().getId())] += ge.getEvent().getPointsForTeam();
                 if (se.getHomeTeam() != null)
                   entryMap.get(se.getHomeTeam().getId())[typePos.get(ge
                       .getEvent().getId())] += ge.getEvent()
