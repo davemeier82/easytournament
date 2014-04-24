@@ -24,9 +24,10 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Email;
+
 
 import com.easytournament.webapp.type.Country;
+import com.easytournament.webapp.validation.Email;
 
 @SuppressWarnings("serial")
 @Entity
@@ -35,26 +36,22 @@ public class Player implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  @NotNull
-  @Size(max=45)
+  @Size(min=1, max=45)
   private String firstname;
-  @NotNull
-  @Size(max=45)
+  @Size(min=1, max=45)
   private String lastname;
-  @Size(max=255)
+  @Size(min=1, max=255)
   private String street;
-  @Max(999999999)
-  @Min(0)
+  @NotNull @Min(100) @Max(999999999)
   private Integer zip;
   @NotNull
   @Enumerated(EnumType.STRING)
   private Country country;
-  @Size(max=45)
+  @Size(min=1, max=45)
   private String city;
-  @Email
-  @Size(max=45)
+  @Email(message = "Email not vaild") 
   private String email;
-  @Size(max=45)
+  @Size(min=1, max=45)
   private String phone;
 
   @ManyToOne

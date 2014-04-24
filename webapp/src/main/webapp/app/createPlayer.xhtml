@@ -10,8 +10,8 @@
 		<h1>Create new player</h1>
 
 		<h:form id="reg">
-			<p:messages globalOnly="true" />
-			<p:panelGrid>
+			<p:messages id="messages" showDetail="true" autoUpdate="true" globalOnly="true" />
+			<p:panelGrid id="grid">
 				<p:row>
 					<p:column>
 						<h:outputLabel for="firstname" value="Firstname:" />
@@ -20,7 +20,7 @@
 						<h:inputText id="firstname" value="#{playerBean.player.firstname}" />
 					</p:column>
 					<p:column>
-						<p:message for="firstname" />
+						<p:message for="firstname"/>
 					</p:column>
 				</p:row>
 				<p:row>
@@ -107,7 +107,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:commandButton value="Add" actionListener="#{playerBean.create}" />
+						<p:commandButton value="Add" actionListener="#{playerBean.create}" update="grid" />
 					</p:column>
 					<p:column>
 						<h:commandButton type="reset" value="Reset" />
@@ -115,5 +115,28 @@
 				</p:row>
 			</p:panelGrid>
 		</h:form>
+		
+		<script type="text/javascript">  
+		/**  
+		 * Bean validator for @Email  
+		 */  
+		PrimeFaces.validator['Email'] = {  
+		      
+		    pattern: /\S+@\S+/,  
+		              
+		    MESSAGE_ID: 'com.easytournament.webapp.validation.email.message',  
+		      
+		    validate: function(element, value) {  
+		        var vc = PrimeFaces.util.ValidationContext;  
+		  
+		        if(!this.pattern.test(value)) {  
+		            var msgStr = element.data('p-email-msg'),  
+		            msg = msgStr ? {summary:msgStr, detail: msgStr} : vc.getMessage(this.MESSAGE_ID);  
+		      
+		            throw msg;  
+		        }  
+		    }  
+		};
+		</script> 
 	</ui:define>
 </ui:composition>
