@@ -25,8 +25,7 @@ public class Team implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  @NotNull
-  @Size(max=45)
+  @Size(min=1, max=45)
   private String name;
   @NotNull
   @Column(name = "public", columnDefinition = "BIT", length = 1)

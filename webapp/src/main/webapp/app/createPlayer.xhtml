@@ -110,7 +110,9 @@
 						<p:commandButton value="Add" actionListener="#{playerBean.create}" update="grid" />
 					</p:column>
 					<p:column>
-						<h:commandButton type="reset" value="Reset" />
+						<p:commandButton value="Reset" update="grid" process="@this">
+							<p:resetInput target="grid" />
+						</p:commandButton>
 					</p:column>
 				</p:row>
 			</p:panelGrid>

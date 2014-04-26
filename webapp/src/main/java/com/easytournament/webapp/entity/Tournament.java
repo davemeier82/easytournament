@@ -35,26 +35,25 @@ public class Tournament implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-  @NotNull
   @Size(min = 1, max = 100)
   private String name;
+  @NotNull
   @Column(columnDefinition = "TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)
   private Date startTime;
+  @NotNull
   @Column(columnDefinition = "TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)
   private Date endTime;
-  @NotNull
-  @Max(127)
-  @Min(2)
+  @NotNull @Min(2) @Max(127)
   @Column(columnDefinition = "TINYINT")
   private Short nTeams;
-  @NotNull
   @Column(name = "public", columnDefinition = "BIT", length = 1)
-  private boolean publicTournament;
+  private boolean publicTournament = true;
   @NotNull
   @Column(name = "closed", columnDefinition = "BIT", length = 1)
   private boolean closed;
+  @NotNull
   @Column(name = "applicationend", columnDefinition = "TIMESTAMP")
   @Temporal(TemporalType.TIMESTAMP)
   private Date applicationEndTime;
@@ -70,12 +69,9 @@ public class Tournament implements Serializable {
   private String description;
   @Size(min = 0, max = 255)
   private String address;
-  @NotNull
-  @Max(999999999)
-  @Min(0)
+  @NotNull @Max(999999999) @Min(0)
   private Integer zip;
-  @NotNull
-  @Size(max=45)
+  @Size(min = 1, max=45)
   private String city;
   @NotNull
   @Enumerated(EnumType.STRING)
@@ -97,7 +93,7 @@ public class Tournament implements Serializable {
   @Column(name = "websiteok", columnDefinition = "BIT", length = 1)
   private boolean websiteok;
   @Column(name = "teams", columnDefinition = "BIT", length = 1)
-  private boolean teamTournanament;
+  private boolean teamTournanament = true;
   @Size(min = 1, max = 128)
   private String link;
   @OneToMany(mappedBy="tournament", fetch=FetchType.LAZY)

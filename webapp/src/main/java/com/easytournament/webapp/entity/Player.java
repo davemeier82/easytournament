@@ -49,7 +49,7 @@ public class Player implements Serializable {
   private Country country;
   @Size(min=1, max=45)
   private String city;
-  @Email(message = "Email not vaild") 
+  @Email(message = "Email is not vaild") 
   private String email;
   @Size(min=1, max=45)
   private String phone;

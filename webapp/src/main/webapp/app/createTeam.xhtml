@@ -10,8 +10,9 @@
 		<h1>Create new team</h1>
 
 		<h:form id="reg">
-		<p:messages globalOnly="true" />
-			<p:panelGrid>
+			<p:messages id="messages" showDetail="true" autoUpdate="true"
+				globalOnly="true" />
+			<p:panelGrid id="grid">
 				<p:row>
 					<p:column>
 						<h:outputLabel for="tname" value="Team name:" />
@@ -33,10 +34,12 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<p:commandButton value="Register" action="#{teamBean.create}" />
+						<p:commandButton value="Create" action="#{teamBean.create}" update="grid" />
 					</p:column>
 					<p:column>
-						<h:commandButton type="reset" value="Reset" />
+						<p:commandButton value="Reset" update="grid" process="@this">
+							<p:resetInput target="grid" />
+						</p:commandButton>
 					</p:column>
 				</p:row>
 			</p:panelGrid>

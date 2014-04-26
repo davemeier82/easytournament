@@ -10,11 +10,11 @@
 		<h1>Create new tournament</h1>
 
 		<h:form id="reg">
-			<p:messages globalOnly="true" />
-			<p:panelGrid>
+			<p:messages id="messages" showDetail="true" autoUpdate="true" globalOnly="true"/>
+			<p:panelGrid id="grid">
 				<p:row>
 					<p:column>
-						<h:outputLabel for="tname" value="Tournament name:" />
+						<h:outputLabel for="tname" value="Tournament name*:" />
 					</p:column>
 					<p:column>
 						<h:inputText id="tname" value="#{tournamentBean.tournament.name}" />
@@ -25,7 +25,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="sporttype" value="Sport:" />
+						<h:outputLabel for="sporttype" value="Sport:*" />
 					</p:column>
 					<p:column>
 						<p:selectOneMenu value="#{tournamentBean.tournament.sporttype}"
@@ -126,7 +126,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="zip" value="ZIP:" />
+						<h:outputLabel for="zip" value="ZIP*:" />
 					</p:column>
 					<p:column>
 						<h:inputText id="zip" value="#{tournamentBean.tournament.zip}" />
@@ -137,7 +137,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="city" value="City:" />
+						<h:outputLabel for="city" value="City*:" />
 					</p:column>
 					<p:column>
 						<h:inputText id="city" value="#{tournamentBean.tournament.city}" />
@@ -148,7 +148,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="country" value="Country:" />
+						<h:outputLabel for="country" value="Country*:" />
 					</p:column>
 					<p:column>
 						<p:selectOneMenu value="#{tournamentBean.tournament.country}"
@@ -176,7 +176,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="startTime" value="Start date:" />
+						<h:outputLabel for="startTime" value="Start date*:" />
 					</p:column>
 					<p:column>
 						<p:calendar id="startTime"
@@ -189,7 +189,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="endTime" value="End date:" />
+						<h:outputLabel for="endTime" value="End date*:" />
 					</p:column>
 					<p:column>
 						<p:calendar id="endTime"
@@ -202,7 +202,7 @@
 				</p:row>
 				<p:row>
 					<p:column>
-						<h:outputLabel for="applTime" value="Application deadline:" />
+						<h:outputLabel for="applTime" value="Application deadline*:" />
 					</p:column>
 					<p:column>
 						<p:calendar id="applTime"
@@ -216,7 +216,7 @@
 				<p:row>
 					<p:column>
 						<h:outputLabel for="nteams"
-							value="Maximum number of teams/players:" />
+							value="Maximum number of teams/players:*" />
 					</p:column>
 					<p:column>
 						<p:spinner value="#{tournamentBean.tournament.nTeams}" id="nteams"
@@ -295,12 +295,14 @@
 				<p:row>
 					<p:column>
 						<p:commandButton value="Add" action="#{tournamentBean.create}"
-							rendered="#{tournamentBean.mode == 'CREATE'}" />
+							rendered="#{tournamentBean.mode == 'CREATE'}" update="grid"/>
 						<p:commandButton value="Add" action="#{tournamentBean.update}"
-							rendered="#{tournamentBean.mode == 'EDIT'}" />
+							rendered="#{tournamentBean.mode == 'EDIT'}" update="grid"/>
 					</p:column>
 					<p:column>
-						<h:commandButton type="reset" value="Reset" />
+						<p:commandButton value="Reset" update="grid" process="@this">
+							<p:resetInput target="grid" />
+						</p:commandButton>
 					</p:column>
 				</p:row>
 			</p:panelGrid>

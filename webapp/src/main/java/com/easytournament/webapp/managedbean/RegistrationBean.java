@@ -10,11 +10,10 @@ import javax.inject.Named;
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Email;
-
 import com.easytournament.webapp.controller.UserControllerInterface;
 import com.easytournament.webapp.entity.User;
 import com.easytournament.webapp.security.PasswordEncripter;
+import com.easytournament.webapp.validation.Email;
 
 @SuppressWarnings("serial")
 @Named("regBean")
@@ -35,7 +34,7 @@ public class RegistrationBean implements Serializable {
   @Size(min = 8, max = 32)
   private String confirmpassword;
   @Size(min = 3, max = 45)
-  @Email(message = "Email Address is not a valid format")
+  @Email(message = "Email is not a valid")
   private String email;
   @Size(min = 3, max = 45)
   private String confirmemail;

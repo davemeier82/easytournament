@@ -11,9 +11,9 @@ xmlns:p="http://primefaces.org/ui"
 
 		<h:form id="reg">
 
-			<p:messages id="messages" showDetail="true" autoUpdate="true" />
+			<p:messages id="messages" showDetail="true" autoUpdate="true" globalOnly="true"/>
 
-			<h:panelGrid columns="3" columnClasses="titleCell">
+			<h:panelGrid id="grid" columns="3" columnClasses="titleCell">
 
 				<h:outputLabel for="username" value="Username" />
 				<h:inputText id="username" value="#{regBean.username}" />
@@ -46,10 +46,36 @@ xmlns:p="http://primefaces.org/ui"
 					label="Confirm Password" required="true" />
 				<p:message for="confirmpassword" />
 
-				<p:commandButton value="Register" actionListener="#{regBean.register}" />
-				<h:commandButton type="reset" value="Reset" />
+				<p:commandButton value="Register" actionListener="#{regBean.register}" update="grid"/>
+				<p:commandButton value="Reset" update="grid" process="@this"  >  
+			        <p:resetInput target="grid" />  
+			    </p:commandButton>  
 
 			</h:panelGrid>
 		</h:form>
+		
+		<script type="text/javascript">  
+		/**  
+		 * Bean validator for @Email  
+		 */  
+		PrimeFaces.validator['Email'] = {  
+		      
+		    pattern: /\S+@\S+/,  
+		              
+		    MESSAGE_ID: 'com.easytournament.webapp.validation.email.message',  
+		      
+		    validate: function(element, value) {  
+		        var vc = PrimeFaces.util.ValidationContext;  
+		  
+		        if(!this.pattern.test(value)) {  
+		            var msgStr = element.data('p-email-msg'),  
+		            msg = msgStr ? {summary:msgStr, detail: msgStr} : vc.getMessage(this.MESSAGE_ID);  
+		      
+		            throw msg;  
+		        }  
+		    }  
+		};
+		</script> 
+		
 	</ui:define>
 </ui:composition>
