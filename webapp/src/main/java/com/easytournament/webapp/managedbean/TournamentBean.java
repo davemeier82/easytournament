@@ -45,6 +45,8 @@ public class TournamentBean implements Serializable {
   private String link;
 
   private TournamentBeanMode mode = TournamentBeanMode.CREATE;
+  
+  private boolean editAllowed = false;
 
   public void create() {
     setLink();
@@ -54,6 +56,8 @@ public class TournamentBean implements Serializable {
   }
 
   public void update() {
+	setLink();
+	tournament.setLastModified(new Date());
     tournamentController.updateTournament(tournament);
   }
 
@@ -160,11 +164,12 @@ public class TournamentBean implements Serializable {
    *          the link to set
    */
   public void setLink(String link) {
-
+	this.tournament = null;
+	this.editAllowed = false;
     if (this.link == null) {
       mode = TournamentBeanMode.SHOW;
       this.link = link;
-      this.tournament = null;
+      
       if (link != null) {
         Tournament t = tournamentController.loadTournament(link);
         if (t != null) {
@@ -177,6 +182,7 @@ public class TournamentBean implements Serializable {
               for (UserTournament ut : t.getUserTournament()) {
                 if (ut.getUser().equals(currentUser)) {
                   tournament = t;
+                  editAllowed = true;
                   break;
                 }
               }
@@ -222,7 +228,19 @@ public class TournamentBean implements Serializable {
    *          the mode to set
    */
   public void setMode(TournamentBeanMode mode) {
+	if(mode != TournamentBeanMode.SHOW && !editAllowed)
+	{
+	  this.tournament = null;
+	}
     this.mode = mode;
+  }
+  
+  public void setModeAsString(String mode) {
+    setMode(TournamentBeanMode.valueOf(mode.toUpperCase()));
+  }
+  
+  public String getModeAsString() {
+    return this.mode.toString();
   }
 
   public void editParticipants() {

@@ -18,10 +18,10 @@
 							<f:facet name="header">
 								<h:outputText value="Name" />
 							</f:facet>
-							<h:outputText value="#{tourn.tournament.name}" />
+							<h:outputLink value="../tournament/#{tourn.tournament.link}">#{tourn.tournament.name}</h:outputLink>
 						</p:column>
 						<p:column>
-							<p:commandButton value="Edit" />
+							<h:outputLink value="../tournament/#{tourn.tournament.link}/EDIT">Edit</h:outputLink>
 						</p:column>
 					</p:dataTable>
 				</h:panelGrid>

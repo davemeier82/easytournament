@@ -12,5 +12,10 @@
 		<pattern value="/tournament/#{tournamentBean.link}" />
 		<view-id value="/tournament.jsf" />
 	</url-mapping>
+	
+	<url-mapping parentId="tournament" id="edittournament">
+		<pattern value="/#{tournamentBean.modeAsString}" />
+		<view-id value="/app/createTournament.jsf" />
+	</url-mapping>
 
 </pretty-config>
