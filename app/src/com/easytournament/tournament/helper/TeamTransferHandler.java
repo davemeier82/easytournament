@@ -51,7 +51,11 @@ public class TeamTransferHandler extends TransferHandler {
     valuelist = new ArrayList<Team>();
     TeamListModel model = (TeamListModel)table.getModel();
     for (int i = 0; i < indices.length; i++) {
-      valuelist.add(model.getTeamAt(indices[i]));
+      Team t = model.getTeamAt(indices[i]);
+      if(t != null)
+      {
+        valuelist.add(t);
+      }
     }
     return new ListTransferable<ArrayList<Team>>(valuelist);
   }

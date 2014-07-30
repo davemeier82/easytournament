@@ -24,7 +24,11 @@ public class TeamListModel extends AbstractListModel<String> {
   }
 
   public Team getTeamAt(int index) {
-    return data.get(index);
+    if(index < data.size())
+    {
+      return data.get(index);
+    }
+    return null;
   }
 
   public void addRow(Team team) {

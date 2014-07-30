@@ -18,7 +18,7 @@ import com.easytournament.basic.resources.Text;
 
 public class XMLHandler {
 
-  private static final String ENCODING = "iso-8859-1";
+  private static final String ENCODING = "UTF-8";
 
   public static Document openXMLDoc(File filename) throws FileNotFoundException {
     Document doc = null;

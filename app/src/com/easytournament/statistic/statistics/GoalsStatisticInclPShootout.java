@@ -64,8 +64,16 @@ public class GoalsStatisticInclPShootout implements Statistic {
       }
       for (ScheduleEntry se : t.getSchedules()) {
         if (se.isGamePlayed()) {
-          entryMap.get(se.getHomeTeam().getId())[1] += se.getHomeScore();
-          entryMap.get(se.getAwayTeam().getId())[1] += se.getAwayScore();
+          Team homeTeam = se.getHomeTeam();
+          Team awayTeam = se.getAwayTeam();
+          if(homeTeam != null)
+          {
+            entryMap.get(se.getHomeTeam().getId())[1] += se.getHomeScore();
+          }
+          if(awayTeam != null)
+          {
+            entryMap.get(se.getAwayTeam().getId())[1] += se.getAwayScore();
+          }
         }
       }
 

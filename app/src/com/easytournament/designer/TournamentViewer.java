@@ -318,13 +318,17 @@ public class TournamentViewer extends JPanel {
             if (cell != null) {
               if (cell.getStyle().contains(GROUP_IDENTIFIER)) {
                 AbstractGroup g = (AbstractGroup)cell.getValue();
-                new GroupDialog(Organizer.getInstance().getMainFrame(), true,
-                    new GroupDialogPModel(g));
+                if(g != null){
+                  new GroupDialog(Organizer.getInstance().getMainFrame(), true,
+                      new GroupDialogPModel(g));
+                }
               }
               else if (cell.getStyle().contains(TEAM_IDENTIFIER)) {
                 AbstractGroup g = (AbstractGroup)cell.getParent().getValue();
-                new GroupDialog(Organizer.getInstance().getMainFrame(), true,
-                    new GroupDialogPModel(g));
+                if(g != null) {
+                  new GroupDialog(Organizer.getInstance().getMainFrame(), true,
+                      new GroupDialogPModel(g));
+                }
               }
             }
           }
