@@ -13,7 +13,7 @@
      startMenu="no"
      startup="no"
      target="/usr/lib/java/bin/java"
-     commandLine="-jar
+     commandLine="-Xms1000m -Xmx2000m -jar
      &quot;$INSTALL_PATH/EasyTournament.jar&quot;"
      initialState="noShow"
      iconFile="$INSTALL_PATH/res/icons/app_icon.png"

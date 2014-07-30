@@ -18,6 +18,8 @@
     <minVersion>1.6.0</minVersion>
     <maxVersion></maxVersion>
     <jdkPreference>preferJre</jdkPreference>
+	<initialHeapPercent>50%</initialHeapPercent>
+	<maxHeapPercent>80%</maxHeapPercent>
   </jre>
   <versionInfo>
     <fileVersion>1.0.0.0</fileVersion>
