@@ -15,6 +15,7 @@ import com.mxgraph.model.mxCell;
 import com.mxgraph.model.mxGeometry;
 import com.mxgraph.model.mxGraphModel;
 import com.mxgraph.model.mxICell;
+import com.mxgraph.model.mxGraphModel.Filter;
 import com.mxgraph.util.mxConstants;
 import com.mxgraph.util.mxUtils;
 import com.mxgraph.view.mxGraph;
@@ -442,5 +443,41 @@ public class TGraph extends mxGraph {
     edge.getGeometry().setRelative(true);
 
     return edge;
+  }
+  
+  /**
+   * Returns the cells which are movable in the given array of cells.
+   */
+  public Object[] getDeletableCells(Object[] cells)
+  {
+    Object[] filteredObjects = mxGraphModel.filterCells(cells, new Filter()
+      {
+          public boolean filter(Object cell)
+          {
+              return isCellDeletable(cell);
+          }
+      });
+    
+    ArrayList<Object> deletable =  new ArrayList<Object>();
+    
+    for(Object obj : filteredObjects)
+    {
+      try{
+        mxCell cell = (mxCell) obj;
+        if(!cell.isEdge())
+        {
+          DuellGroupCell group = (DuellGroupCell) cell.getParent();
+          // do not delete lonely sub group elements
+          continue;
+        }
+      }
+      catch(Exception e)
+      {
+        //do nothing
+      }
+      
+      deletable.add(obj);
+    }    
+    return deletable.toArray();
   }
 }

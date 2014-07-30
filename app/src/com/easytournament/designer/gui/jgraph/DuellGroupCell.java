@@ -103,7 +103,10 @@ public class DuellGroupCell extends mxCell implements PropertyChangeListener {
 	if(this.getChildCount() > 0) {
 		mxGraph graph = TournamentViewer.getGraphComponent().getGraph();
 		mxCellState state = graph.getView().getState(this.getChildAt(0));
-		state.setLabel(getLabel(this.getGroup(), 0));
+		AbstractGroup group = this.getGroup();
+		if(group != null){
+	        state.setLabel(getLabel(group, 0));		  
+		}
 		if(this.getChildCount() > 1) {
 		  this.getChildAt(0).setValue(state.getLabel());
 		  state = graph.getView().getState(this.getChildAt(1));
@@ -130,17 +133,20 @@ public class DuellGroupCell extends mxCell implements PropertyChangeListener {
         model.setValue(this.getChildAt(1), getLabel(this.getGroup(), 1));
       }
       else if (e.getPropertyName().equals(Position.PROPERTY_PERVIOUS)) {
-        mxCellState state = graph.getView().getState(this.getChildAt(0));
-        if(state != null)
+        if(this.getChildCount() == 2)
         {
-          state.setLabel(getLabel(this.getGroup(), 0));
-          this.getChildAt(0).setValue(state.getLabel());
-        }
-        state = graph.getView().getState(this.getChildAt(1));
-        if(state != null)
-        {
-          state.setLabel(getLabel(this.getGroup(), 1));
-          this.getChildAt(1).setValue(state.getLabel());
+          mxCellState state = graph.getView().getState(this.getChildAt(0));
+          if(state != null)
+          {
+            state.setLabel(getLabel(this.getGroup(), 0));
+            this.getChildAt(0).setValue(state.getLabel());
+          }
+          state = graph.getView().getState(this.getChildAt(1));
+          if(state != null)
+          {
+            state.setLabel(getLabel(this.getGroup(), 1));
+            this.getChildAt(1).setValue(state.getLabel());
+          }
         }
       }
       else if (e.getPropertyName().equals(AbstractGroup.PROPERTY_RULES)) {

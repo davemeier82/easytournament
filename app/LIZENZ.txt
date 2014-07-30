@@ -1,7 +1,7 @@
 EasyTournament Lizenz
 ======================
 
-Copyright (c) 2012-2013 David Meier. All rights reserved.
+Copyright (c) 2012-2014 David Meier. All rights reserved.
 
 WEITERVERBREITUNG
 Das Weiterverbreiten von EasyTournament, nachfolgend ET genannt, ist unter folgenden Voraussetzungen erlaubt:
