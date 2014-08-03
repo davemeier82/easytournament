@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <filetype application="easytournament" type="tournament" version="0.1.2">
   <tournament name="FIBA World Cup 2010" website="" description="" location="Turkey" firstname="" lastname="" address="" phone="" email="" notes="" begin="1282946400000" end="1284328740000">
     <sport id="basketball" name="Basketball" edited="1">

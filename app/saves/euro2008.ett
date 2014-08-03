@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <filetype application="easytournament" type="tournament" version="0.1.2">
   <tournament name="Euro 2008" website="" description="" location="Switzerland" firstname="" lastname="" address="" phone="" email="" notes="" begin="1212854400000" end="1214776740000">
     <sport id="soccer" name="Fussball" edited="1">
@@ -34,9 +34,9 @@
   <teams>
     <team id="0" randomPos="1850738479" name="Austria" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
-        <player id="0" gender="0" prename="Ren�" name="Aufhauser" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="0" gender="0" prename="René" name="Aufhauser" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
         <player id="1" gender="0" prename="Christian" name="Fuchs" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
-        <player id="2" gender="0" prename="Gy�rgy" name="Garics" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="2" gender="0" prename="György" name="Garics" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
         <player id="3" gender="0" prename="Ronald" name="Gercaliu" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
         <player id="4" gender="0" prename="Martin" name="Harnik" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="5" gender="0" prename="Martin" name="Hiden" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
@@ -44,108 +44,108 @@
         <player id="7" gender="0" prename="Andreas" name="Ivanschitz" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
         <player id="8" gender="0" prename="Markus" name="Katzer" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
         <player id="9" gender="0" prename="Roman" name="Kienast" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
-        <player id="10" gender="0" prename="�mit" name="Korkmaz" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="10" gender="0" prename="Ümit" name="Korkmaz" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="11" gender="0" prename="Christoph" name="Leitgeb" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
         <player id="12" gender="0" prename="Roland" name="Linz" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
-        <player id="13" gender="0" prename="J�rgen" name="Macho" address="" bdate="0" email="" phone="" notes="" number="21" position="GK" />
+        <player id="13" gender="0" prename="Jürgen" name="Macho" address="" bdate="0" email="" phone="" notes="" number="21" position="GK" />
         <player id="14" gender="0" prename="Alexander " name="Manninger" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
-        <player id="15" gender="0" prename="J�rgen" name="Patocka" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="15" gender="0" prename="Jürgen" name="Patocka" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
         <player id="16" gender="0" prename="Emanuel" name="Pogatetz" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
-        <player id="17" gender="0" prename="Sebastian" name="Pr�dl" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="17" gender="0" prename="Sebastian" name="Prödl" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
         <player id="18" gender="0" prename="Joachim" name="Standfest" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
         <player id="19" gender="0" prename="Martin" name="Stranzl" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
-        <player id="20" gender="0" prename="J�rgen" name="S�umel" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="20" gender="0" prename="Jürgen" name="Säumel" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
         <player id="21" gender="0" prename="Ivica" name="Vastic" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
-        <player id="22" gender="0" prename="Ramazan" name="�zcan" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="22" gender="0" prename="Ramazan" name="Özcan" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
       </players>
       <staff />
     </team>
     <team id="1" randomPos="294752355" name="Croatia" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
         <player id="23" gender="0" prename="Igor" name="Budan" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
-        <player id="24" gender="0" prename="Mario" name="Galinovi&#x107;" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
-        <player id="25" gender="0" prename="Nikola" name="Kalini&#x107;" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
-        <player id="26" gender="0" prename="Ivan" name="Klasni&#x107;" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
-        <player id="27" gender="0" prename="Dario" name="Kne&#x17e;evi&#x107;" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
-        <player id="28" gender="0" prename="Niko" name="Kova&#x10d;" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
-        <player id="29" gender="0" prename="Robert" name="Kova&#x10d;" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
-        <player id="30" gender="0" prename="Niko" name="Kranj&#x10d;ar" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="24" gender="0" prename="Mario" name="Galinović" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
+        <player id="25" gender="0" prename="Nikola" name="Kalinić" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="26" gender="0" prename="Ivan" name="Klasnić" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="27" gender="0" prename="Dario" name="Knežević" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="28" gender="0" prename="Niko" name="Kovač" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="29" gender="0" prename="Robert" name="Kovač" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="30" gender="0" prename="Niko" name="Kranjčar" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
         <player id="31" gender="0" prename="Jerko" name="Leko" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
-        <player id="32" gender="0" prename="Luka" name="Modri&#x107;" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
-        <player id="33" gender="0" prename="Ivica" name="Oli&#x107;" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
-        <player id="34" gender="0" prename="Mladen" name="Petri&#x107;" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="32" gender="0" prename="Luka" name="Modrić" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="33" gender="0" prename="Ivica" name="Olić" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="34" gender="0" prename="Mladen" name="Petrić" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
         <player id="35" gender="0" prename="Stipe" name="Pletikosa" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
-        <player id="36" gender="0" prename="Nikola" name="Pokriva&#x10d;" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
-        <player id="37" gender="0" prename="Danijel" name="Pranji&#x107;" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
-        <player id="38" gender="0" prename="Ivan" name="Rakiti&#x107;" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="36" gender="0" prename="Nikola" name="Pokrivač" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="37" gender="0" prename="Danijel" name="Pranjić" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="38" gender="0" prename="Ivan" name="Rakitić" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
         <player id="39" gender="0" prename="Vedran" name="Runje" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
         <player id="40" gender="0" prename="Darijo" name="Srna" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
-        <player id="41" gender="0" prename="Hrvoje" name="Veji&#x107;" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
-        <player id="42" gender="0" prename="Ognjen" name="Vukojevi&#x107;" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
-        <player id="43" gender="0" prename="Vedran" name="&#x106;orluka" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
-        <player id="44" gender="0" prename="Dario" name="&#x160;imi&#x107;" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
-        <player id="45" gender="0" prename="Josip" name="&#x160;imuni&#x107;" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="41" gender="0" prename="Hrvoje" name="Vejić" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="42" gender="0" prename="Ognjen" name="Vukojević" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="43" gender="0" prename="Vedran" name="Ćorluka" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="44" gender="0" prename="Dario" name="Šimić" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="45" gender="0" prename="Josip" name="Šimunić" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
       </players>
       <staff />
     </team>
     <team id="2" randomPos="417418556" name="Czech Republic" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
-        <player id="46" gender="0" prename="Milan" name="Baro&#x161;" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
-        <player id="47" gender="0" prename="Jarom�r" name="Bla&#x17e;ek" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
+        <player id="46" gender="0" prename="Milan" name="Baroš" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="47" gender="0" prename="Jaromír" name="Blažek" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
         <player id="48" gender="0" prename="Martin" name="Fenin" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
-        <player id="49" gender="0" prename="Tom�&#x161;" name="Gal�sek" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
-        <player id="50" gender="0" prename="Zden&#x11b;k" name="Grygera" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="49" gender="0" prename="Tomáš" name="Galásek" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="50" gender="0" prename="Zdeněk" name="Grygera" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
         <player id="51" gender="0" prename="Marek" name="Jankulovski" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
-        <player id="52" gender="0" prename="David" name="Jarol�m" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="52" gender="0" prename="David" name="Jarolím" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
         <player id="53" gender="0" prename="Michal" name="Kadlec" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
         <player id="54" gender="0" prename="Jan" name="Koller" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
-        <player id="55" gender="0" prename="Radoslav" name="Kov�&#x10d;" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
-        <player id="56" gender="0" prename="Marek" name="Mat&#x11b;jovsk�" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
-        <player id="57" gender="0" prename="Jaroslav" name="Pla&#x161;il" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
-        <player id="58" gender="0" prename="Jan" name="Pol�k" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="55" gender="0" prename="Radoslav" name="Kováč" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="56" gender="0" prename="Marek" name="Matějovský" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="57" gender="0" prename="Jaroslav" name="Plašil" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="58" gender="0" prename="Jan" name="Polák" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
         <player id="59" gender="0" prename="David" name="Rozehnal" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
         <player id="60" gender="0" prename="Libor" name="Sionko" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
-        <player id="61" gender="0" prename="Tom�&#x161;" name="Sivok" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
-        <player id="62" gender="0" prename="Rudolf" name="Sk�cel" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
-        <player id="63" gender="0" prename="V�clav" name="Sv&#x11b;rko&#x161;" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
-        <player id="64" gender="0" prename="Tom�&#x161;" name="Ujfalu&#x161;i" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
-        <player id="65" gender="0" prename="Stanislav" name="Vl&#x10d;ek" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
-        <player id="66" gender="0" prename="Daniel" name="Z�tka" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
-        <player id="67" gender="0" prename="Petr" name="&#x10c;ech" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="61" gender="0" prename="Tomáš" name="Sivok" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="62" gender="0" prename="Rudolf" name="Skácel" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="63" gender="0" prename="Václav" name="Svěrkoš" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="64" gender="0" prename="Tomáš" name="Ujfaluši" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="65" gender="0" prename="Stanislav" name="Vlček" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="66" gender="0" prename="Daniel" name="Zítka" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="67" gender="0" prename="Petr" name="Čech" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
       </players>
       <staff />
     </team>
     <team id="3" randomPos="1070201531" name="France" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
-        <player id="68" gender="0" prename="�ric" name="Abidal" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="68" gender="0" prename="Éric" name="Abidal" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
         <player id="69" gender="0" prename="Nicolas" name="Anelka" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
         <player id="70" gender="0" prename="Karim" name="Benzema" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
         <player id="71" gender="0" prename="Jean-Alain" name="Boumsong" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
-        <player id="72" gender="0" prename="Fran�ois" name="Clerc" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
-        <player id="73" gender="0" prename="Gr�gory" name="Coupet" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="72" gender="0" prename="François" name="Clerc" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="73" gender="0" prename="Grégory" name="Coupet" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
         <player id="74" gender="0" prename="Lassana" name="Diarra" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
         <player id="75" gender="0" prename="Patrice" name="Evra" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
-        <player id="76" gender="0" prename="S�bastien" name="Frey" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
+        <player id="76" gender="0" prename="Sébastien" name="Frey" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
         <player id="77" gender="0" prename="William" name="Gallas" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
-        <player id="78" gender="0" prename="Baf�timbi" name="Gomis" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="78" gender="0" prename="Bafétimbi" name="Gomis" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
         <player id="79" gender="0" prename="Sidney" name="Govou" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
         <player id="80" gender="0" prename="Thierry" name="Henry" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
         <player id="81" gender="0" prename="Claude" name="Makelele" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
         <player id="82" gender="0" prename="Florent" name="Malouda" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
         <player id="83" gender="0" prename="Steve" name="Mandanda" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
         <player id="84" gender="0" prename="Samir" name="Nasri" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
-        <player id="85" gender="0" prename="Franck" name="Rib�ry" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="85" gender="0" prename="Franck" name="Ribéry" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
         <player id="86" gender="0" prename="Willy" name="Sagnol" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
-        <player id="87" gender="0" prename="S�bastien" name="Squillaci" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="87" gender="0" prename="Sébastien" name="Squillaci" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
         <player id="88" gender="0" prename="Lilian" name="Thuram" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
-        <player id="89" gender="0" prename="J�r�my" name="Toulalan" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="89" gender="0" prename="Jérémy" name="Toulalan" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="90" gender="0" prename="Patrick" name="Vieira" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
       </players>
       <staff />
     </team>
     <team id="4" randomPos="771891109" name="Germany" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
-        <player id="91" gender="0" prename="Ren�" name="Adler" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="91" gender="0" prename="René" name="Adler" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
         <player id="92" gender="0" prename="Michael " name="Ballack" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
         <player id="93" gender="0" prename="Tim" name="Borowski" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
         <player id="94" gender="0" prename="Robert" name="Enke" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
@@ -241,7 +241,7 @@
         <player id="169" gender="0" prename="Dirk" name="Kuyt" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
         <player id="170" gender="0" prename="Joris" name="Mathijsen" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
         <player id="171" gender="0" prename="Mario" name="Melchiot" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
-        <player id="172" gender="0" prename="Andr�" name="Ooijer" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="172" gender="0" prename="André" name="Ooijer" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
         <player id="173" gender="0" prename="Arjen" name="Robben" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="174" gender="0" prename="Wesley" name="Sneijder" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
         <player id="175" gender="0" prename="Maarten " name="Stekelenburg" address="" bdate="0" email="" phone="" notes="" number="16" position="GK" />
@@ -258,27 +258,27 @@
     <team id="8" randomPos="1786510736" name="Poland" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
         <player id="183" gender="0" prename="Artur" name="Boruc" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
-        <player id="184" gender="0" prename="Jacek" name="B&#x105;k" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="184" gender="0" prename="Jacek" name="Bąk" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
         <player id="185" gender="0" prename="Dariusz" name="Dudka" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
-        <player id="186" gender="0" prename="&#x141;ukasz" name="Fabia&#x144;ski" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
-        <player id="187" gender="0" prename="&#x141;ukasz" name="Gargu&#x142;a" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
-        <player id="188" gender="0" prename="Pawe&#x142;" name="Gola&#x144;ski" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="186" gender="0" prename="Łukasz" name="Fabiański" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="187" gender="0" prename="Łukasz" name="Garguła" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="188" gender="0" prename="Paweł" name="Golański" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
         <player id="189" gender="0" prename="Roger" name="Guerreiro" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="190" gender="0" prename="Mariusz" name="Jop" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
         <player id="191" gender="0" prename="Adam" name="Kokoszka" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
-        <player id="192" gender="0" prename="Jacek" name="Krzyn�wek" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="192" gender="0" prename="Jacek" name="Krzynówek" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
         <player id="193" gender="0" prename="Mariusz" name="Lewandowski" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
-        <player id="194" gender="0" prename="Rafa&#x142;" name="Murawski" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
-        <player id="195" gender="0" prename="Micha&#x142;" name="Pazdan" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
-        <player id="196" gender="0" prename="&#x141;ukasz" name="Piszczek" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="194" gender="0" prename="Rafał" name="Murawski" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
+        <player id="195" gender="0" prename="Michał" name="Pazdan" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="196" gender="0" prename="Łukasz" name="Piszczek" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
         <player id="197" gender="0" prename="Marek" name="Saganowski" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="198" gender="0" prename="Ebi" name="Smolarek" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
         <player id="199" gender="0" prename="Marcin" name="Wasilewski" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
         <player id="200" gender="0" prename="Jakub" name="Wawrzyniak" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
         <player id="201" gender="0" prename="Tomasz" name="Zahorski" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
-        <player id="202" gender="0" prename="Wojciech" name="&#x141;obodzi&#x144;ski" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
-        <player id="203" gender="0" prename="Micha&#x142;" name="&#x17b;ew&#x142;akow" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
-        <player id="204" gender="0" prename="Maciej" name="&#x17b;urawski" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="202" gender="0" prename="Wojciech" name="Łobodziński" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="203" gender="0" prename="Michał" name="Żewłakow" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
+        <player id="204" gender="0" prename="Maciej" name="Żurawski" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
       </players>
       <staff />
     </team>
@@ -286,7 +286,7 @@
       <players>
         <player id="205" gender="0" prename="Hugo" name="Almeida" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
         <player id="206" gender="0" prename="Bruno" name="Alves" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
-        <player id="207" gender="0" prename="Jos�" name="Bosingwa" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="207" gender="0" prename="José" name="Bosingwa" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
         <player id="208" gender="0" prename="Ricardo" name="Carvalho" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
         <player id="209" gender="0" prename="" name="Deco" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="210" gender="0" prename="Paulo" name="Ferreira" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
@@ -294,17 +294,17 @@
         <player id="212" gender="0" prename="Fernando" name="Meira" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
         <player id="213" gender="0" prename="Raul" name="Meireles" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
         <player id="214" gender="0" prename="" name="Miguel" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
-        <player id="215" gender="0" prename="Jo�o" name="Moutinho" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="215" gender="0" prename="João" name="Moutinho" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
         <player id="216" gender="0" prename="" name="Nani" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
-        <player id="217" gender="0" prename="Rui" name="Patr�cio" address="" bdate="0" email="" phone="" notes="" number="22" position="GK" />
+        <player id="217" gender="0" prename="Rui" name="Patrício" address="" bdate="0" email="" phone="" notes="" number="22" position="GK" />
         <player id="218" gender="0" prename="" name="Pepe" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
         <player id="219" gender="0" prename="" name="Petit" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
-        <player id="220" gender="0" prename="H�lder" name="Postiga" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
+        <player id="220" gender="0" prename="Hélder" name="Postiga" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
         <player id="221" gender="0" prename="Ricardo" name="Quaresma" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
         <player id="222" gender="0" prename="Jorge" name="Ribeiro" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
         <player id="223" gender="0" prename="" name="Ricardo" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
         <player id="224" gender="0" prename="Cristiano" name="Ronaldo" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
-        <player id="225" gender="0" prename="" name="Sim�o" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="225" gender="0" prename="" name="Simão" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="226" gender="0" prename="Miguel" name="Veloso" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
       </players>
       <staff />
@@ -312,28 +312,28 @@
     <team id="10" randomPos="1580698520" name="Romania" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
         <player id="227" gender="0" prename="Cristian" name="Chivu" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
-        <player id="228" gender="0" prename="R&#x103;zvan" name="Coci&#x15f;" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="228" gender="0" prename="Răzvan" name="Cociş" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="229" gender="0" prename="Paul" name="Codrea" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
         <player id="230" gender="0" prename="Cosmin" name="Contra" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
         <player id="231" gender="0" prename="Adrian" name="Cristea" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
-        <player id="232" gender="0" prename="Nicolae " name="Dic&#x103;" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="232" gender="0" prename="Nicolae " name="Dică" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="233" gender="0" prename="Sorin" name="Ghionea" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
         <player id="234" gender="0" prename="Dorin" name="Goian" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
-        <player id="235" gender="0" prename="Bogdan " name="Lobon&#x163;" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="235" gender="0" prename="Bogdan " name="Lobonţ" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
         <player id="236" gender="0" prename="Ciprian" name="Marica" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
-        <player id="237" gender="0" prename="Cosmin" name="Mo&#x163;i" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="237" gender="0" prename="Cosmin" name="Moţi" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
         <player id="238" gender="0" prename="Adrian" name="Mutu" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
-        <player id="239" gender="0" prename="B&#x103;nel" name="Nicoli&#x163;&#x103;" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="239" gender="0" prename="Bănel" name="Nicoliţă" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
         <player id="240" gender="0" prename="Daniel" name="Niculae" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
         <player id="241" gender="0" prename="Marius" name="Niculae" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
         <player id="242" gender="0" prename="Florentin" name="Petre" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
         <player id="243" gender="0" prename="Marius" name="Popa" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
-        <player id="244" gender="0" prename="&#x15e;tefan" name="Radu" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
-        <player id="245" gender="0" prename="R&#x103;zvan" name="Ra&#x163;" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
-        <player id="246" gender="0" prename="Mirel" name="R&#x103;doi" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
-        <player id="247" gender="0" prename="Eduard" name="St&#x103;ncioiu" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
-        <player id="248" gender="0" prename="Cristian" name="S&#x103;punaru" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
-        <player id="249" gender="0" prename="Gabriel" name="Tama&#x15f;" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="244" gender="0" prename="Ştefan" name="Radu" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="245" gender="0" prename="Răzvan" name="Raţ" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
+        <player id="246" gender="0" prename="Mirel" name="Rădoi" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="247" gender="0" prename="Eduard" name="Stăncioiu" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
+        <player id="248" gender="0" prename="Cristian" name="Săpunaru" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="249" gender="0" prename="Gabriel" name="Tamaş" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
       </players>
       <staff />
     </team>
@@ -367,22 +367,22 @@
     </team>
     <team id="12" randomPos="1516392417" name="Spain" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
-        <player id="273" gender="0" prename="Ra�l" name="Albiol" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="273" gender="0" prename="Raúl" name="Albiol" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
         <player id="274" gender="0" prename="Xabi" name="Alonso" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
-        <player id="275" gender="0" prename="�lvaro" name="Arbeloa" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="275" gender="0" prename="Álvaro" name="Arbeloa" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
         <player id="276" gender="0" prename="Joan" name="Capdevila" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="277" gender="0" prename="Iker" name="Casillas" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
         <player id="278" gender="0" prename="Santi" name="Cazorla" address="" bdate="0" email="" phone="" notes="" number="12" position="" />
-        <player id="279" gender="0" prename="Rub�n" name="de la Red" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
-        <player id="280" gender="0" prename="Cesc" name="F�bregas" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
-        <player id="281" gender="0" prename="Sergio" name="Garc�a" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
-        <player id="282" gender="0" prename="Daniel" name="G�iza" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
-        <player id="283" gender="0" prename="Xavi" name="Hern�ndez" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
-        <player id="284" gender="0" prename="Andr�s" name="Iniesta" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
+        <player id="279" gender="0" prename="Rubén" name="de la Red" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="280" gender="0" prename="Cesc" name="Fàbregas" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="281" gender="0" prename="Sergio" name="García" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="282" gender="0" prename="Daniel" name="Güiza" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="283" gender="0" prename="Xavi" name="Hernández" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="284" gender="0" prename="Andrés" name="Iniesta" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
         <player id="285" gender="0" prename="" name="Juanito" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="286" gender="0" prename="Carlos" name="Marchena" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
         <player id="287" gender="0" prename="Fernando" name="Navarro" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
-        <player id="288" gender="0" prename="Andr�s" name="Palop" address="" bdate="0" email="" phone="" notes="" number="13" position="GK" />
+        <player id="288" gender="0" prename="Andrés" name="Palop" address="" bdate="0" email="" phone="" notes="" number="13" position="GK" />
         <player id="289" gender="0" prename="Carles" name="Puyol" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
         <player id="290" gender="0" prename="Sergio" name="Ramos" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
         <player id="291" gender="0" prename="Pepe" name="Reina" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
@@ -396,15 +396,15 @@
     <team id="13" randomPos="907294019" name="Sweden" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
         <player id="296" gender="0" prename="Niclas" name="Alexandersson" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
-        <player id="297" gender="0" prename="Marcus" name="Allb�ck" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="297" gender="0" prename="Marcus" name="Allbäck" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="298" gender="0" prename="Daniel" name="Andersson" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
         <player id="299" gender="0" prename="Mikael" name="Dorsin" address="" bdate="0" email="" phone="" notes="" number="23" position="" />
         <player id="300" gender="0" prename="Johan" name="Elmander" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="301" gender="0" prename="Andreas" name="Granqvist" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
         <player id="302" gender="0" prename="Petter" name="Hansson" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
-        <player id="303" gender="0" prename="Zlatan" name="Ibrahimovi&#x107;" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="303" gender="0" prename="Zlatan" name="Ibrahimović" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
         <player id="304" gender="0" prename="Andreas" name="Isaksson" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
-        <player id="305" gender="0" prename="Kim" name="K�llstr�m" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="305" gender="0" prename="Kim" name="Källström" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
         <player id="306" gender="0" prename="Henrik" name="Larsson" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
         <player id="307" gender="0" prename="Sebastian" name="Larsson" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
         <player id="308" gender="0" prename="Tobias" name="Linderoth" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
@@ -432,20 +432,20 @@
         <player id="325" gender="0" prename="Johan" name="Djourou" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
         <player id="326" gender="0" prename="Gelson" name="Fernandes" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
         <player id="327" gender="0" prename="Alexander" name="Frei" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
-        <player id="328" gender="0" prename="St�phane" name="Grichting" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="328" gender="0" prename="Stéphane" name="Grichting" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
         <player id="329" gender="0" prename="Daniel" name="Gygax" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
         <player id="330" gender="0" prename="Benjamin" name="Huggel" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
-        <player id="331" gender="0" prename="G�khan" name="Inler" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
-        <player id="332" gender="0" prename="Eldin" name="Jakupovi&#x107;" address="" bdate="0" email="" phone="" notes="" number="21" position="GK" />
+        <player id="331" gender="0" prename="Gökhan" name="Inler" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
+        <player id="332" gender="0" prename="Eldin" name="Jakupović" address="" bdate="0" email="" phone="" notes="" number="21" position="GK" />
         <player id="333" gender="0" prename="Stephan" name="Lichtsteiner" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
         <player id="334" gender="0" prename="Ludovic" name="Magnin" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
-        <player id="335" gender="0" prename="Patrick" name="M�ller" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="335" gender="0" prename="Patrick" name="Müller" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="336" gender="0" prename="Philippe" name="Senderos" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
         <player id="337" gender="0" prename="Christoph" name="Spycher" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
         <player id="338" gender="0" prename="Marco" name="Streller" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
         <player id="339" gender="0" prename="Johan" name="Vonlanthen" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
         <player id="340" gender="0" prename="Hakan" name="Yakin" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
-        <player id="341" gender="0" prename="Pascal" name="Zuberb�hler" address="" bdate="0" email="" phone="" notes="" number="18" position="GK" />
+        <player id="341" gender="0" prename="Pascal" name="Zuberbühler" address="" bdate="0" email="" phone="" notes="" number="18" position="GK" />
       </players>
       <staff id="0">
         <person gender="0" prename="Jakob" name="Kuhn" address="" bdate="0" email="" phone="" notes="" function="Coach" />
@@ -454,28 +454,28 @@
     <team id="15" randomPos="337301692" name="Turkey" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players>
         <player id="342" gender="0" prename="Ayhan" name="Akman" address="" bdate="0" email="" phone="" notes="" number="19" position="" />
-        <player id="343" gender="0" prename="Hamit" name="Alt&#x131;ntop" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
-        <player id="344" gender="0" prename="Mehmet" name="Aur�lio" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
-        <player id="345" gender="0" prename="Emre" name="A&#x15f;&#x131;k" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
+        <player id="343" gender="0" prename="Hamit" name="Altıntop" address="" bdate="0" email="" phone="" notes="" number="22" position="" />
+        <player id="344" gender="0" prename="Mehmet" name="Aurélio" address="" bdate="0" email="" phone="" notes="" number="7" position="" />
+        <player id="345" gender="0" prename="Emre" name="Aşık" address="" bdate="0" email="" phone="" notes="" number="15" position="" />
         <player id="346" gender="0" prename="Hakan" name="Balta" address="" bdate="0" email="" phone="" notes="" number="3" position="" />
-        <player id="347" gender="0" prename="Emre" name="Bel�zo&#x11f;lu" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
-        <player id="348" gender="0" prename="U&#x11f;ur" name="Boral" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
+        <player id="347" gender="0" prename="Emre" name="Belözoğlu" address="" bdate="0" email="" phone="" notes="" number="5" position="" />
+        <player id="348" gender="0" prename="Uğur" name="Boral" address="" bdate="0" email="" phone="" notes="" number="16" position="" />
         <player id="349" gender="0" prename="Volkan" name="Demirel" address="" bdate="0" email="" phone="" notes="" number="23" position="GK" />
-        <player id="350" gender="0" prename="Mevl�t" name="Erdin�" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
-        <player id="351" gender="0" prename="Emre" name="G�ng�r" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
+        <player id="350" gender="0" prename="Mevlüt" name="Erdinç" address="" bdate="0" email="" phone="" notes="" number="21" position="" />
+        <player id="351" gender="0" prename="Emre" name="Güngör" address="" bdate="0" email="" phone="" notes="" number="13" position="" />
         <player id="352" gender="0" prename="Nihat" name="Kahveci" address="" bdate="0" email="" phone="" notes="" number="8" position="" />
-        <player id="353" gender="0" prename="G�kdeniz" name="Karadeniz" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
-        <player id="354" gender="0" prename="T�mer" name="Metin" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
-        <player id="355" gender="0" prename="R�&#x15f;t�" name="Re�ber" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
-        <player id="356" gender="0" prename="Colin Kaz&#x131;m" name="Richards" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
-        <player id="357" gender="0" prename="Sabri" name="Sar&#x131;o&#x11f;lu" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
+        <player id="353" gender="0" prename="Gökdeniz" name="Karadeniz" address="" bdate="0" email="" phone="" notes="" number="10" position="" />
+        <player id="354" gender="0" prename="Tümer" name="Metin" address="" bdate="0" email="" phone="" notes="" number="11" position="" />
+        <player id="355" gender="0" prename="Rüştü" name="Reçber" address="" bdate="0" email="" phone="" notes="" number="1" position="GK" />
+        <player id="356" gender="0" prename="Colin Kazım" name="Richards" address="" bdate="0" email="" phone="" notes="" number="18" position="" />
+        <player id="357" gender="0" prename="Sabri" name="Sarıoğlu" address="" bdate="0" email="" phone="" notes="" number="20" position="" />
         <player id="358" gender="0" prename="Mehmet" name="Topal" address="" bdate="0" email="" phone="" notes="" number="6" position="" />
         <player id="359" gender="0" prename="Arda" name="Turan" address="" bdate="0" email="" phone="" notes="" number="14" position="" />
-        <player id="360" gender="0" prename="G�khan" name="Zan" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
+        <player id="360" gender="0" prename="Gökhan" name="Zan" address="" bdate="0" email="" phone="" notes="" number="4" position="" />
         <player id="361" gender="0" prename="Tolga" name="Zengin" address="" bdate="0" email="" phone="" notes="" number="12" position="GK" />
-        <player id="362" gender="0" prename="Servet" name="�etin" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
-        <player id="363" gender="0" prename="Tuncay" name="&#x15e;anl&#x131;" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
-        <player id="364" gender="0" prename="Semih" name="&#x15e;ent�rk" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
+        <player id="362" gender="0" prename="Servet" name="Çetin" address="" bdate="0" email="" phone="" notes="" number="2" position="" />
+        <player id="363" gender="0" prename="Tuncay" name="Şanlı" address="" bdate="0" email="" phone="" notes="" number="17" position="" />
+        <player id="364" gender="0" prename="Semih" name="Şentürk" address="" bdate="0" email="" phone="" notes="" number="9" position="" />
       </players>
       <staff />
     </team>
@@ -499,25 +499,25 @@
         <assistant id="8" gender="0" prename="Volker" name="Wezel" address="" bdate="0" email="" phone="" notes="" function="" />
       </assistants>
     </refree>
-    <refree id="9" gender="0" prename="Peter" name="Fr�jdfeldt" address="" bdate="0" email="" phone="" notes="">
+    <refree id="9" gender="0" prename="Peter" name="Fröjdfeldt" address="" bdate="0" email="" phone="" notes="">
       <assistants>
         <assistant id="10" gender="0" prename="Henrik" name="Andren" address="" bdate="0" email="" phone="" notes="" function="" />
         <assistant id="11" gender="0" prename="Stefan" name="Wittberg" address="" bdate="0" email="" phone="" notes="" function="" />
       </assistants>
     </refree>
-    <refree id="12" gender="0" prename="Tom" name="Henning �vreb�" address="" bdate="0" email="" phone="" notes="">
+    <refree id="12" gender="0" prename="Tom" name="Henning Øvrebø" address="" bdate="0" email="" phone="" notes="">
       <assistants>
-        <assistant id="13" gender="0" prename="Erik" name="R�stad" address="" bdate="0" email="" phone="" notes="" function="" />
-        <assistant id="14" gender="0" prename="Geir" name="�ge Holen" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="13" gender="0" prename="Erik" name="Ræstad" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="14" gender="0" prename="Geir" name="Åge Holen" address="" bdate="0" email="" phone="" notes="" function="" />
       </assistants>
     </refree>
-    <refree id="15" gender="0" prename="Manuel" name="Mejuto Gonz�lez" address="" bdate="0" email="" phone="" notes="">
+    <refree id="15" gender="0" prename="Manuel" name="Mejuto González" address="" bdate="0" email="" phone="" notes="">
       <assistants>
-        <assistant id="16" gender="0" prename="Jes�s" name="Calvo Guadamuro" address="" bdate="0" email="" phone="" notes="" function="" />
-        <assistant id="17" gender="0" prename="Juan Carlos" name="Yuste Jim�nez" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="16" gender="0" prename="Jesús" name="Calvo Guadamuro" address="" bdate="0" email="" phone="" notes="" function="" />
+        <assistant id="17" gender="0" prename="Juan Carlos" name="Yuste Jiménez" address="" bdate="0" email="" phone="" notes="" function="" />
       </assistants>
     </refree>
-    <refree id="18" gender="0" prename="&#x13d;ubo&#x161;" name="Miche&#x13e;" address="" bdate="0" email="" phone="" notes="">
+    <refree id="18" gender="0" prename="Ľuboš" name="Micheľ" address="" bdate="0" email="" phone="" notes="">
       <assistants>
         <assistant id="19" gender="0" prename="Martin" name="Balko" address="" bdate="0" email="" phone="" notes="" function="" />
         <assistant id="20" gender="0" prename="Roman" name="Slysko" address="" bdate="0" email="" phone="" notes="" function="" />

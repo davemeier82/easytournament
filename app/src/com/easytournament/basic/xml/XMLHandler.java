@@ -2,6 +2,7 @@ package com.easytournament.basic.xml;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -51,12 +52,12 @@ public class XMLHandler {
     Format format = Format.getPrettyFormat();
     format.setEncoding(ENCODING);
     XMLOutputter out = new XMLOutputter(format);
-    FileWriter writer;
+    FileOutputStream fileOutput;
     try {
-      writer = new FileWriter(filename);
-      out.output(document, writer);
-      writer.flush();
-      writer.close();
+      fileOutput = new FileOutputStream(filename);
+      out.output(document, fileOutput);
+      fileOutput.flush();
+      fileOutput.close();
     }
     catch (IOException e) {
       ErrorLogger.getLogger().throwing("XMLHandler", "saveXMLDoc", e);

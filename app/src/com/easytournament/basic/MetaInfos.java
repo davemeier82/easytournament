@@ -37,7 +37,7 @@ public class MetaInfos {
   /**
    * minor version number (bugfixes)
    */
-  public static final int VERSION_MINOR = 4;
+  public static final int VERSION_MINOR = 5;
 
   /**
    * save file application identifier

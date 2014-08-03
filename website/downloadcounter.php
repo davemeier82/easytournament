@@ -9,11 +9,11 @@ if (isset($_GET[download])){
 	mysql_query("UPDATE download SET counter = counter + 1");
 	mysql_close($con);
 	if($_GET[download] == 1) {
-		header( 'Location: http://www.easy-tournament.com/downloads/ETInstaller-0.8.4.0.jar' ) ;
+		header( 'Location: http://www.easy-tournament.com/downloads/ETInstaller-0.8.5.0.jar' ) ;
 	} else if($_GET[download] == 2) {
-		header( 'Location: http://www.easy-tournament.com/downloads/EasyTournament-0.8.4.0.msi' ) ;
+		header( 'Location: http://www.easy-tournament.com/downloads/EasyTournament-0.8.5.0.msi' ) ;
 	} else {
-		header( 'Location: http://www.easy-tournament.com/downloads/EasyTournament-0.8.4.0.zip' ) ;
+		header( 'Location: http://www.easy-tournament.com/downloads/EasyTournament-0.8.5.0.zip' ) ;
 	}
 	
 } else {

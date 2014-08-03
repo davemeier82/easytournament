@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <filetype application="easytournament" type="tournament" version="0.1.2">
   <tournament name="Ice Hockey World Championship 2012" website="" description="" location="Helsinki and Stockholm" firstname="" lastname="" address="" phone="" email="" notes="" begin="1336126500000" end="1337551140000">
     <sport id="icehockey" name="Eishockey" edited="1">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <filetype application="easytournament" type="tournament" version="0.1.2">
   <tournament name="Champions League 2010-2011" website="" description="" location="" firstname="" lastname="" address="" phone="" email="" notes="" begin="1284576390128" end="1306608390130">
     <sport id="soccer" name="Fussball" edited="1">
@@ -117,7 +117,7 @@
       <players />
       <staff />
     </team>
-    <team id="21" randomPos="1697117118" name="M&#x160;K &#x17d;ilina" website="" cprename="" cname="" address="" email="" phone="" notes="">
+    <team id="21" randomPos="1697117118" name="MÅ K Å½ilina" website="" cprename="" cname="" address="" email="" phone="" notes="">
       <players />
       <staff />
     </team>
@@ -172,7 +172,7 @@
     <refree id="2" gender="0" prename="Ivan" name="Bebek" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="3" gender="0" prename="Olegário" name="Benquerença" address="" bdate="0" email="" phone="" notes="">
+    <refree id="3" gender="0" prename="OlegÃ¡rio" name="BenquerenÃ§a" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
     <refree id="4" gender="0" prename="Vladislav" name="Bezborodov" address="" bdate="0" email="" phone="" notes="">
@@ -211,7 +211,7 @@
     <refree id="15" gender="0" prename="Jonas" name="Eriksson" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="16" gender="0" prename="Manuel" name="Gräfe" address="" bdate="0" email="" phone="" notes="">
+    <refree id="16" gender="0" prename="Manuel" name="GrÃ¤fe" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
     <refree id="17" gender="0" prename="Serge" name="Gumienny" address="" bdate="0" email="" phone="" notes="">
@@ -235,10 +235,10 @@
     <refree id="23" gender="0" prename="Alan" name="Kelly" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="24" gender="0" prename="Björn" name="Kuipers" address="" bdate="0" email="" phone="" notes="">
+    <refree id="24" gender="0" prename="BjÃ¶rn" name="Kuipers" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="25" gender="0" prename="Stéphane" name="Lannoy" address="" bdate="0" email="" phone="" notes="">
+    <refree id="25" gender="0" prename="StÃ©phane" name="Lannoy" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
     <refree id="26" gender="0" prename="Claus Bo" name="Larsen" address="" bdate="0" email="" phone="" notes="">
@@ -256,10 +256,10 @@
     <refree id="30" gender="0" prename="Aleksei" name="Nikolaev" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="31" gender="0" prename="Bruno" name="Paixão" address="" bdate="0" email="" phone="" notes="">
+    <refree id="31" gender="0" prename="Bruno" name="PaixÃ£o" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="32" gender="0" prename="Pedro" name="Proença" address="" bdate="0" email="" phone="" notes="">
+    <refree id="32" gender="0" prename="Pedro" name="ProenÃ§a" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
     <refree id="33" gender="0" prename="Nicola" name="Rizzoli" address="" bdate="0" email="" phone="" notes="">
@@ -268,7 +268,7 @@
     <refree id="34" gender="0" prename="Gianluca" name="Rocchi" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="35" gender="0" prename="Robert" name="Schörgenhofer" address="" bdate="0" email="" phone="" notes="">
+    <refree id="35" gender="0" prename="Robert" name="SchÃ¶rgenhofer" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
     <refree id="36" gender="0" prename="Damir" name="Skomina" address="" bdate="0" email="" phone="" notes="">
@@ -283,13 +283,13 @@
     <refree id="39" gender="0" prename="Craig" name="Thomson" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="40" gender="0" prename="István" name="Vad" address="" bdate="0" email="" phone="" notes="">
+    <refree id="40" gender="0" prename="IstvÃ¡n" name="Vad" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
     <refree id="41" gender="0" prename="Howard" name="Webb" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
-    <refree id="42" gender="0" prename="Cüneyt" name="Çak&#x131;r" address="" bdate="0" email="" phone="" notes="">
+    <refree id="42" gender="0" prename="CÃ¼neyt" name="Ã‡akÄ±r" address="" bdate="0" email="" phone="" notes="">
       <assistants />
     </refree>
   </refrees>
@@ -1388,7 +1388,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="6" away="7" place="Estádio da Luz, Lisbon" date="1284489900000" played="1">
+    <sheduleentry home="6" away="7" place="EstÃ¡dio da Luz, Lisbon" date="1284489900000" played="1">
       <refrees>
         <refree id="30" />
       </refrees>
@@ -1468,7 +1468,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="11" away="9" place="Bursa Atatürk Stadium, Bursa" date="1284489900000" played="1">
+    <sheduleentry home="11" away="9" place="Bursa AtatÃ¼rk Stadium, Bursa" date="1284489900000" played="1">
       <refrees>
         <refree id="29" />
       </refrees>
@@ -1488,7 +1488,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="19" away="18" place="Stadionul Dr. Constantin R&#x103;dulescu, Cluj-Napoca" date="1284576300000" played="1">
+    <sheduleentry home="19" away="18" place="Stadionul Dr. Constantin RÄƒdulescu, Cluj-Napoca" date="1284576300000" played="1">
       <refrees>
         <refree id="23" />
       </refrees>
@@ -1528,7 +1528,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="21" away="22" place="Stade Vélodrome, Marseille" date="1284576300000" played="1">
+    <sheduleentry home="21" away="22" place="Stade VÃ©lodrome, Marseille" date="1284576300000" played="1">
       <refrees>
         <refree id="28" />
       </refrees>
@@ -1548,7 +1548,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="23" away="20" place="&#x160;tadión pod Dub&#x148;om, &#x17d;ilina" date="1284576300000" played="1">
+    <sheduleentry home="23" away="20" place="Å tadiÃ³n pod DubÅˆom, Å½ilina" date="1284576300000" played="1">
       <refrees>
         <refree id="24" />
       </refrees>
@@ -1568,7 +1568,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="24" away="26" place="Santiago Bernabéu Stadium, Madrid" date="1284576300000" played="1">
+    <sheduleentry home="24" away="26" place="Santiago BernabÃ©u Stadium, Madrid" date="1284576300000" played="1">
       <refrees>
         <refree id="36" />
       </refrees>
@@ -1728,7 +1728,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="27" away="24" place="Stade de l'Abbé-Deschamps, Auxerre" date="1285699500000" played="1">
+    <sheduleentry home="27" away="24" place="Stade de l'AbbÃ©-Deschamps, Auxerre" date="1285699500000" played="1">
       <refrees>
         <refree id="26" />
       </refrees>
@@ -1788,7 +1788,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="30" away="28" place="Estádio Municipal de Braga, Braga" date="1285699500000" played="1">
+    <sheduleentry home="30" away="28" place="EstÃ¡dio Municipal de Braga, Braga" date="1285699500000" played="1">
       <refrees>
         <refree id="5" />
       </refrees>
@@ -2028,7 +2028,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="21" away="23" place="Stade Vélodrome, Marseille" date="1287513900000" played="1">
+    <sheduleentry home="21" away="23" place="Stade VÃ©lodrome, Marseille" date="1287513900000" played="1">
       <refrees>
         <refree id="40" />
       </refrees>
@@ -2068,7 +2068,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="24" away="25" place="Santiago Bernabéu Stadium, Madrid" date="1287513900000" played="1">
+    <sheduleentry home="24" away="25" place="Santiago BernabÃ©u Stadium, Madrid" date="1287513900000" played="1">
       <refrees>
         <refree id="32" />
       </refrees>
@@ -2088,7 +2088,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="30" away="31" place="Estádio Municipal de Braga, Braga" date="1287513900000" played="1">
+    <sheduleentry home="30" away="31" place="EstÃ¡dio Municipal de Braga, Braga" date="1287513900000" played="1">
       <refrees>
         <refree id="13" />
       </refrees>
@@ -2368,7 +2368,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="6" away="5" place="Estádio da Luz, Lisbon" date="1288727100000" played="1">
+    <sheduleentry home="6" away="5" place="EstÃ¡dio da Luz, Lisbon" date="1288727100000" played="1">
       <refrees>
         <refree id="39" />
       </refrees>
@@ -2408,7 +2408,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="11" away="8" place="Bursa Atatürk Stadium, Bursa" date="1288727100000" played="1">
+    <sheduleentry home="11" away="8" place="Bursa AtatÃ¼rk Stadium, Bursa" date="1288727100000" played="1">
       <refrees>
         <refree id="37" />
       </refrees>
@@ -2468,7 +2468,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="19" away="16" place="Stadionul Dr. Constantin R&#x103;dulescu, Cluj-Napoca" date="1288813500000" played="1">
+    <sheduleentry home="19" away="16" place="Stadionul Dr. Constantin RÄƒdulescu, Cluj-Napoca" date="1288813500000" played="1">
       <refrees>
         <refree id="17" />
       </refrees>
@@ -2508,7 +2508,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="23" away="21" place="&#x160;tadión pod Dub&#x148;om, &#x17d;ilina" date="1288813500000" played="1">
+    <sheduleentry home="23" away="21" place="Å tadiÃ³n pod DubÅˆom, Å½ilina" date="1288813500000" played="1">
       <refrees>
         <refree id="21" />
       </refrees>
@@ -2528,7 +2528,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="27" away="26" place="Stade de l'Abbé-Deschamps, Auxerre" date="1288813500000" played="1">
+    <sheduleentry home="27" away="26" place="Stade de l'AbbÃ©-Deschamps, Auxerre" date="1288813500000" played="1">
       <refrees>
         <refree id="10" />
       </refrees>
@@ -2708,7 +2708,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="27" away="25" place="Stade de l'Abbé-Deschamps, Auxerre" date="1290541500000" played="1">
+    <sheduleentry home="27" away="25" place="Stade de l'AbbÃ©-Deschamps, Auxerre" date="1290541500000" played="1">
       <refrees>
         <refree id="36" />
       </refrees>
@@ -2728,7 +2728,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="30" away="29" place="Estádio Municipal de Braga, Braga" date="1290541500000" played="1">
+    <sheduleentry home="30" away="29" place="EstÃ¡dio Municipal de Braga, Braga" date="1290541500000" played="1">
       <refrees>
         <refree id="22" />
       </refrees>
@@ -2928,7 +2928,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="6" away="4" place="Estádio da Luz, Lisbon" date="1291751100000" played="1">
+    <sheduleentry home="6" away="4" place="EstÃ¡dio da Luz, Lisbon" date="1291751100000" played="1">
       <refrees>
         <refree id="41" />
       </refrees>
@@ -3028,7 +3028,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="11" away="10" place="Bursa Atatürk Stadium, Bursa" date="1291751100000" played="1">
+    <sheduleentry home="11" away="10" place="Bursa AtatÃ¼rk Stadium, Bursa" date="1291751100000" played="1">
       <refrees>
         <refree id="9" />
       </refrees>
@@ -3108,7 +3108,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="19" away="17" place="Stadionul Dr. Constantin R&#x103;dulescu, Cluj-Napoca" date="1291837500000" played="1">
+    <sheduleentry home="19" away="17" place="Stadionul Dr. Constantin RÄƒdulescu, Cluj-Napoca" date="1291837500000" played="1">
       <refrees>
         <refree id="11" />
       </refrees>
@@ -3128,7 +3128,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="21" away="20" place="Stade Vélodrome, Marseille" date="1291837500000" played="1">
+    <sheduleentry home="21" away="20" place="Stade VÃ©lodrome, Marseille" date="1291837500000" played="1">
       <refrees>
         <refree id="4" />
       </refrees>
@@ -3148,7 +3148,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="23" away="22" place="&#x160;tadión pod Dub&#x148;om, &#x17d;ilina" date="1291837500000" played="1">
+    <sheduleentry home="23" away="22" place="Å tadiÃ³n pod DubÅˆom, Å½ilina" date="1291837500000" played="1">
       <refrees>
         <refree id="5" />
       </refrees>
@@ -3168,7 +3168,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="24" away="27" place="Santiago Bernabéu Stadium, Madrid" date="1291837500000" played="1">
+    <sheduleentry home="24" away="27" place="Santiago BernabÃ©u Stadium, Madrid" date="1291837500000" played="1">
       <refrees>
         <refree id="17" />
       </refrees>
@@ -3388,7 +3388,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="38" away="39" place="Stade Vélodrome, Marseille" date="1298490300000" played="1">
+    <sheduleentry home="38" away="39" place="Stade VÃ©lodrome, Marseille" date="1298490300000" played="1">
       <refrees>
         <refree id="6" />
       </refrees>
@@ -3528,7 +3528,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="45" away="44" place="Santiago Bernabéu Stadium, Madrid" date="1300304700000" played="1">
+    <sheduleentry home="45" away="44" place="Santiago BernabÃ©u Stadium, Madrid" date="1300304700000" played="1">
       <refrees>
         <refree id="36" />
       </refrees>
@@ -3568,7 +3568,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="48" away="49" place="Santiago Bernabéu Stadium, Madrid" date="1302029100000" played="1">
+    <sheduleentry home="48" away="49" place="Santiago BernabÃ©u Stadium, Madrid" date="1302029100000" played="1">
       <refrees>
         <refree id="6" />
       </refrees>
@@ -3748,7 +3748,7 @@
       </results>
       <gameevententries />
     </sheduleentry>
-    <sheduleentry home="56" away="57" place="Santiago Bernabéu Stadium, Madrid" date="1303929900000" played="1">
+    <sheduleentry home="56" away="57" place="Santiago BernabÃ©u Stadium, Madrid" date="1303929900000" played="1">
       <refrees>
         <refree id="37" />
       </refrees>
