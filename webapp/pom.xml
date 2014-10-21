@@ -14,10 +14,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.easytournament.webapp</groupId>
-	<artifactId>easy-tournment-webapp</artifactId>
+	<artifactId>easy-tournament-webapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>easy-tournment-webapp</name>
+	<name>easy-tournament-webapp</name>
 
 	<url>http://jboss.org/jbossas</url>
 	<licenses>
