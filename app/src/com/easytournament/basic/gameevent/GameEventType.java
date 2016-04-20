@@ -1,12 +1,3 @@
-/* GameEventType.java - Game event type for Statistics
- * Copyright (c) 2013 David Meier
- * david.meier@easy-tournament.com
- * www.easy-tournament.com
- * 
- * This source code must not be used, copied or modified in any way 
- * without the permission of David Meier.
- */
-
 package com.easytournament.basic.gameevent;
 
 import com.easytournament.basic.resources.ResourceManager;

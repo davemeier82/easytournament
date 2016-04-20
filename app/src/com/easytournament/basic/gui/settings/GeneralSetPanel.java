@@ -1,12 +1,3 @@
-/* GeneralSetPanel.java - Panel for the general settings
- * Copyright (c) 2013 David Meier
- * david.meier@easy-tournament.com
- * www.easy-tournament.com
- * 
- * This source code must not be used, copied or modified in any way 
- * without the permission of David Meier.
- */
-
 package com.easytournament.basic.gui.settings;
 
 import java.awt.Container;

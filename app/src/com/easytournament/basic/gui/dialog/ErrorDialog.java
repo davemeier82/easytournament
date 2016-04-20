@@ -1,12 +1,3 @@
-/* ErrorDialog.java - Dialog to show an error message to the user
- * Copyright (c) 2013 David Meier
- * david.meier@easy-tournament.com
- * www.easy-tournament.com
- * 
- * This source code must not be used, copied or modified in any way 
- * without the permission of David Meier.
- */
-
 package com.easytournament.basic.gui.dialog;
 
 import java.awt.BorderLayout;
