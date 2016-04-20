@@ -234,10 +234,7 @@ public class ErrorDialog extends JDialog {
             + URLEncoder.encode(MetaInfos.getVersionNr(), "UTF-8");
         urlStr += "&lang="
             + URLEncoder
-                .encode(ResourceManager.getLocale().toString(), "UTF-8"); // TODO
-        // toLanguageTag()
-        // if java version
-        // 7
+                .encode(ResourceManager.getLocale().toLanguageTag(), "UTF-8");
         urlStr += "&os_name="
             + URLEncoder.encode(System.getProperty("os.name"), "UTF-8");
         urlStr += "&os_arch="
@@ -372,10 +369,7 @@ public class ErrorDialog extends JDialog {
     pw.print("Version: ");
     pw.println(MetaInfos.getVersionNr());
     pw.print("Language: ");
-    pw.println(ResourceManager.getLocale().toString()); // TODO
-                                                        // toLanguageTag()
-                                                        // if java version
-                                                        // 7
+    pw.println(ResourceManager.getLocale().toLanguageTag());
     getThrowable().printStackTrace(pw);
     pw.flush();
     sw.flush();

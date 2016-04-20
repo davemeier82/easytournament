@@ -90,7 +90,7 @@ public class Tournament extends Model implements PropertyChangeListener, ListDat
     this.schedules.clear();
     this.sport.reset();
     
-    setPlan(new com.easytournament.designer.valueholder.TournamentPlan()); //TODO refecence in designer not good
+    setPlan(new com.easytournament.designer.valueholder.TournamentPlan()); //TODO reference in designer not good
   }
 
   public String getDescription() {

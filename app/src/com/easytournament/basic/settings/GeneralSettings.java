@@ -176,8 +176,7 @@ public class GeneralSettings implements Settings {
   public void save(Element xml) {
     Element e = new Element("general");
     Element languageEl = new Element("language");
-    languageEl.setText(newLocale.toString()); // FIXME: set to toLanguageTag()
-                                              // if compiled with java 1.7
+    languageEl.setText(newLocale.toLanguageTag());
     e.addContent(languageEl);
     Element updateEl = new Element("checkupdate");
     updateEl.setText(checkUpdate?"1":"0");
