@@ -11,10 +11,6 @@ because it may contain still several bugs.
 In case you find a bug, we kindly ask you to inform us, so that we can provide you 
 a stable product as soon as possible.
 
-Errors and feature wishes can you tell us as follows:
-- E-Mail to support@easy-tournament.com
-- Submitting of an error report if an error occurs.
-- Post a message in the forum at www.easy-tournament.com/forum
 
 Changes to version 0.8.4
 ****************************

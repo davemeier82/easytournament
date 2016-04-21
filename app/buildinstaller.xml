@@ -33,14 +33,14 @@
 	</target>
 
 	<target name="compile" depends="clean">
-		<javac target="1.6" source="1.6" srcdir="src" destdir="bin" classpathref="classpath" debug="true" debuglevel="lines,vars,source" includeantruntime="false" />
-		<javac target="1.6" source="1.6" srcdir="test" destdir="bin_test" debug="true" debuglevel="lines,vars,source" includeantruntime="false">
+		<javac target="1.8" source="1.8" srcdir="src" destdir="bin" classpathref="classpath" debug="true" debuglevel="lines,vars,source" includeantruntime="false" />
+		<javac target="1.8" source="1.8" srcdir="test" destdir="bin_test" debug="true" debuglevel="lines,vars,source" includeantruntime="false">
 			<classpath>
 				<fileset id="my.file.set" dir="lib">
 				    <include name="**/*.jar" />
 				</fileset>
-				<pathelement location="${eclipse.dir}\plugins\org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
-				<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+				<pathelement location="${eclipse.dir}\plugins\org.junit_4.12.0.v201504281640/junit.jar"/>
+				<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.3.0.v201303031735.jar"/>
 				<pathelement location="bin"/>
 				<pathelement location="bin_test"/>
 			</classpath>
@@ -54,7 +54,7 @@
 		<jar destfile="${jar.path}" basedir="bin">
 			<manifest>
 				<attribute name="Class-Path" value="${classpath}" />
-				<attribute name="Main-Class" value="com.easytournament.basic.Main" />
+				<attribute name="Main-Class" value="easytournament.basic.Main" />
 				<attribute name="Implementation-Title" value="${name}" />
 				<attribute name="Implementation-Version" value="${version}" />
 				<attribute name="Implementation-Vendor" value="${author}" />
@@ -99,18 +99,18 @@
 			<externalclasses>
 				<pathelement location="lib/jcalendar.jar" />
 				<pathelement location="lib/jdom-1.1.3.jar" />
-				<pathelement location="lib/jgoodies-binding-2.5.0.jar" />
-				<pathelement location="lib/jgoodies-common-1.2.1.jar" />
-				<pathelement location="lib/jgoodies-forms-1.4.2.jar" />
+				<pathelement location="lib/jgoodies-binding-2.13.0.jar" />
+				<pathelement location="lib/jgoodies-common-1.7.0.jar" />
+				<pathelement location="lib/jgoodies-forms-1.7.2.jar" />
 				<pathelement location="lib/laf-plugin-7.0.jar" />
 				<pathelement location="lib/laf-widget-7.0.jar" />
-				<pathelement location="lib/mxgraph-all.jar" />
+				<pathelement location="lib/jgraphx-3.5.1.2.jar" />
 				<pathelement location="lib/substance-7.0.jar" />
 				<pathelement location="lib/trident-7.0.jar" />
-				<pathelement location="lib/common-codec-1.6.jar" />
+				<pathelement location="lib/common-codec-1.10.jar" />
 			</externalclasses>
 
-			<rename mainclass="com.easytournament.basic.Main" logfile="renamelog.xml">
+			<rename mainclass="easytournament.basic.Main" logfile="renamelog.xml">
 				<property name="error-checking" value="pedantic" />
 				<keep>
 					<class name="javax.swing.ExtendedTablePrintable" />
@@ -161,8 +161,8 @@
         <bundleapp outputdirectory="release"
             name="EasyTournament"
             displayname="EasyTournament"
-            identifier="com.easytournament.basic.Main"
-            mainclassname="com.easytournament.basic.Main">
+            identifier="easytournament.basic.Main"
+            mainclassname="easytournament.basic.Main">
             <classpath file="release/EasyTournament.jar" />
         </bundleapp>
 	</target-->
@@ -201,8 +201,8 @@
 	      	<fileset id="my.file.set" dir="lib">
 			    <include name="**/*.jar" />
 			</fileset>
-	      	<pathelement location="${eclipse.dir}\plugins\org.junit_4.10.0.v4_10_0_v20120426-0900/junit.jar"/>
-	      	<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+	      	<pathelement location="${eclipse.dir}\plugins\org.junit_4.12.0.v201504281640/junit.jar"/>
+	      	<pathelement location="${eclipse.dir}\plugins\org.hamcrest.core_1.3.0.v201303031735.jar"/>
 	      	<pathelement location="bin"/>
 	      	<pathelement location="bin_test"/>
 	      </classpath>

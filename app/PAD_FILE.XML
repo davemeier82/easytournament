@@ -7,25 +7,25 @@
 	</MASTER_PAD_VERSION_INFO>
 	<Company_Info>
 		<Company_Name>David Meier</Company_Name>
-		<Address_1>Poststrasse 8</Address_1>
+		<Address_1>Brandstrasse 55</Address_1>
 		<Address_2 />
-		<City_Town>Dietikon</City_Town>
+		<City_Town>Schlieren</City_Town>
 		<State_Province />
-		<Zip_Postal_Code>8953</Zip_Postal_Code>
+		<Zip_Postal_Code>8952</Zip_Postal_Code>
 		<Country>Switzerland</Country>
-		<Company_WebSite_URL>http://www.easy-tournament.com</Company_WebSite_URL>
+		<Company_WebSite_URL>https://github.com/davemeier82/easytournament</Company_WebSite_URL>
 		<Contact_Info>
 			<Author_First_Name>David</Author_First_Name>
 			<Author_Last_Name>Meier</Author_Last_Name>
-			<Author_Email>support@easy-tournament.com</Author_Email>
+			<Author_Email></Author_Email>
 			<Contact_First_Name>David</Contact_First_Name>
 			<Contact_Last_Name>Meier</Contact_Last_Name>
-			<Contact_Email>support@easy-tournament.com</Contact_Email>
+			<Contact_Email></Contact_Email>
 		</Contact_Info>
 		<Support_Info>
-			<Sales_Email>support@easy-tournament.com</Sales_Email>
-			<Support_Email>support@easy-tournament.com</Support_Email>
-			<General_Email>support@easy-tournament.com</General_Email>
+			<Sales_Email></Sales_Email>
+			<Support_Email></Support_Email>
+			<General_Email></General_Email>
 			<Sales_Phone />
 			<Support_Phone />
 			<General_Phone />
@@ -115,41 +115,7 @@ Hier eine Auswahl der Funktionen:
 		</Download_URLs>
 	</Web_Info>
 	<Permissions>
-		<Distribution_Permissions>EasyTournament License
-======================
-
-Copyright (c) 2012-2014 David Meier. All rights reserved.
-
-REDISTRIBUTION
-The redistribution of EasyTournament, hereinafter referred to as ET, is allowed under the following conditions:
- - You are not allowed to change ET in any kind. ET has to be exactly the same, as it is downloadable on www.easy-tournament.com
- - A website that allows downloading ET has to provide a link to www.easy-tournament.com on the same site.
- - It is not allowed to use ET or parts of it in another software (excluding the in ET used libraries).
- - It is not allowed to charge any money for ET (Provided that it is free on www.easy-tournament.com).
-   Any kind of profit due to ET belongs to David Meier, the developer of ET.
-   There are the following exceptions (the list is exhaustive)
-   - ET does not claim profits earned due to a tournament, which has been created and/or run by ET.
-   
-WARRANTY / LIABILITY
-ET and whose developers assume no liability for damages of any kind. This includes damages on your computer and/or financial losses 
-(E.g. in case of miscalculations of results). You use ET at your own risk!
-
-USED LIBRARIES
-ET uses the following libraries:
-- Apache Common-Codec (http://commons.apache.org/codec/)
-- JCalendar (www.toedter.com/en/jcalendar/)
-- JDom (www.jdom.org)
-- JGoodies (www.jgoodies.com)
-- JGraph (www.jgraph.com)
-- Substance (http://insubstantial.posterous.com/)
-
-If you use ET you agree to accept the licenses of the above listed libraries.
-You can find the licenses in the installation folder in "libs" or on the corresponding websites.
-
-USED ICONS
-- Fugue (http://p.yusukekamiyamane.com/)
-ET uses the Fugue Icon-Set. If you use ET you agree to accept the licenses of the designer of this icon set (see website).
-</Distribution_Permissions>
+		<Distribution_Permissions>GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007</Distribution_Permissions>
 		<EULA />
 	</Permissions>
 	<Affiliates>
