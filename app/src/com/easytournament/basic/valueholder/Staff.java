@@ -59,11 +59,10 @@ public class Staff extends Person {
 
   @Override
   public boolean equals(Object obj) {
-    try{
+    if (obj instanceof Staff) {
       return id == ((Staff) obj).getId();
-    } catch(ClassCastException ex){
-      return false;
-    }   
+    }
+    return false;   
   }
 
   public void updateId() {

@@ -25,9 +25,9 @@ public class GraphHandler extends mxGraphHandler {
   @Override
   protected Cursor getCursor(MouseEvent e) {
     Cursor c = super.getCursor(e);
-    try {
-      DuellGroupCell cell = (DuellGroupCell)graphComponent.getCellAt(e.getX(),
-          e.getY());
+    Object cellObject = graphComponent.getCellAt(e.getX(), e.getY());
+    if (cellObject instanceof DuellGroupCell) {
+      DuellGroupCell cell = (DuellGroupCell) cellObject;
       if (cell != null) {
         mxGraphView view = graphComponent.getGraph().getView();
         mxCellState state = view.getState(cell);
@@ -37,7 +37,6 @@ public class GraphHandler extends mxGraphHandler {
         }
       }
     }
-    catch (ClassCastException cce) {/*do nothing*/}
     return c;
   }
 
@@ -46,9 +45,9 @@ public class GraphHandler extends mxGraphHandler {
     mouseDownX = e.getX();
     mouseDownY = e.getY();
     this.resize = false;
-    try {
-      resizeCell = (DuellGroupCell)graphComponent.getCellAt(e.getX(),
-          e.getY());
+    Object cellObject = graphComponent.getCellAt(e.getX(), e.getY());
+    if (cellObject instanceof DuellGroupCell) {
+      resizeCell = (DuellGroupCell) cellObject;
       if (resizeCell != null) {
         this.origTitleHight = resizeCell.getTitleHeigth();
         mxGraphView view = graphComponent.getGraph().getView();
@@ -57,14 +56,12 @@ public class GraphHandler extends mxGraphHandler {
             && e.getY() - state.getY() < resizeCell.getTitleHeigth() * view.getScale()) ;
       }      
     }
-    catch (ClassCastException cce) {/*do nothing*/}
     if(resize){
       e.consume();
       graphComponent.getGraph().setSelectionCells(new Object[]{(DuellGroupCell)graphComponent.getCellAt(mouseDownX,
           this.mouseDownY)});
       movePreview.start(e,
           graphComponent.getGraph().getView().getState(initialCell));
-
     }
     
     super.mousePressed(e);

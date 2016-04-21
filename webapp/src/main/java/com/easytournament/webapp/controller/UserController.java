@@ -37,13 +37,7 @@ public class UserController implements UserControllerInterface {
     if (results.isEmpty()) {
       return null;
     }
-    try {
-      User user = results.get(0);
-      return user;
-    }
-    catch (ClassCastException ex) {
-      return null;
-    }
+    return results.get(0);
   }
 
   @Override

@@ -25,19 +25,15 @@ public class SubstDateTableCellRenderer extends
     setHorizontalAlignment(SwingConstants.CENTER);
   }
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, Object value,
       boolean isSelected, boolean hasFocus, int row, int column) {
 
     JLabel label = (JLabel)super.getTableCellRendererComponent(table, value,
         isSelected, hasFocus, row, column);
 
-    if (value != null) {
-      try {
-        label.setText(dateFormatter.format((Date)value));
-      }
-      catch (ClassCastException ex) {
-        // do nothing
-      }
+    if (value != null && value instanceof Date) {
+      label.setText(dateFormatter.format((Date)value));
     }
     return this;
   }

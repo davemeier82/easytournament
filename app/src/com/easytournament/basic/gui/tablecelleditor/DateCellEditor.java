@@ -49,12 +49,11 @@ public class DateCellEditor extends AbstractCellEditor implements
        * @see com.easytournament.basic.gui.tablecelleditor.DateCellEditor.EditorDelegate#setValue(java.lang.Object)
        */
       @Override
-      public void setValue(Object value) {
+      public void setValue(Object value) {        
         Date date = null;
-        try {
+        if(value instanceof Date) {
           date = (Date)value;
-        }
-        catch (ClassCastException ex) {
+        } else {
           date = new Date();
         }
         dateChooser.setDate((date != null)? date : new Date());

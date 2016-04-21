@@ -50,6 +50,7 @@ public class GraphModel extends mxGraphModel {
     execute(new TitleHightChange(this, cell, oldvalue));
   }
 
+  @Override
   protected Object terminalForCellChanged(Object edge, Object terminal,
       boolean isSource) {
     mxICell previous = (mxICell)getTerminal(edge, isSource);
@@ -167,8 +168,10 @@ public class GraphModel extends mxGraphModel {
     return previous;
   }
 
+  @Override
   protected Object parentForCellChanged(Object cell, Object parent, int index) {
-    try {
+    
+    if (cell instanceof DuellGroupCell) {
       DuellGroupCell dgc = (DuellGroupCell)cell;
       Tournament t = Organizer.getInstance().getCurrentTournament();
       TournamentPlan pl = t.getPlan();
@@ -184,7 +187,6 @@ public class GraphModel extends mxGraphModel {
           pl.addGroup(dgc.getGroup());
       }
     }
-    catch (ClassCastException cce) {/* do nothing */}
 
     return super.parentForCellChanged(cell, parent, index);
   }
@@ -194,6 +196,7 @@ public class GraphModel extends mxGraphModel {
    * 
    * @see com.mxgraph.model.mxIGraphModel#setTerminal(Object, Object, boolean)
    */
+  @Override
   public Object setTerminal(Object edge, Object terminal, boolean isSource) {
     boolean terminalChanged = terminal != getTerminal(edge, isSource);
     execute(new TerminalChange(this, edge, terminal, isSource));
@@ -211,6 +214,7 @@ public class GraphModel extends mxGraphModel {
    * 
    * @see com.mxgraph.model.mxIGraphModel#add(Object, Object, int)
    */
+  @Override
   public Object add(Object parent, Object child, int index) {
     if (child != parent && parent != null && child != null) {
       boolean parentChanged = parent != getParent(child);
@@ -286,6 +290,7 @@ public class GraphModel extends mxGraphModel {
       super(arg0, arg1, arg2);
     }
 
+    @Override
     protected void connect(Object cell, boolean isConnect) {
       Object source = getTerminal(cell, true);
       Object target = getTerminal(cell, false);

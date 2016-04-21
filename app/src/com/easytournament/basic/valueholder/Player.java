@@ -76,12 +76,10 @@ public class Player extends Person {
 
   @Override
   public boolean equals(Object obj) {
-    try {
+    if (obj instanceof Player) {
       return id == ((Player)obj).getId();
     }
-    catch (ClassCastException ex) {
-      return false;
-    }
+    return false;
   }
 
   public void updateId() {

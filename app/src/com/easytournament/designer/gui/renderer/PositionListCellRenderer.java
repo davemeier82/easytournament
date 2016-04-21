@@ -27,12 +27,9 @@ public class PositionListCellRenderer extends DefaultListCellRenderer {
       if (showTeams) {
         Team t = null;
         Position pos = null;
-        try {
+        if (value instanceof Position) {
           pos = (Position)value;
           t = pos.getTeam();
-        }
-        catch (ClassCastException ex) {
-          // do nothing
         }
         if (t == null
             || pos == null

@@ -17,6 +17,7 @@ public class PositionTableCellRenderer extends DefaultTableCellRenderer {
   
   protected boolean showTeams = false;
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, Object value,
       boolean isSelected, boolean hasFocus, int row, int column) {
 
@@ -27,12 +28,9 @@ public class PositionTableCellRenderer extends DefaultTableCellRenderer {
       if (showTeams) {
         Team t = null;
         Position pos = null;
-        try {
+        if (value instanceof Position) {
           pos = (Position)value;
           t = pos.getTeam();
-        }
-        catch (ClassCastException ex) {
-          // do nothing
         }
         if (t == null
             || pos == null
